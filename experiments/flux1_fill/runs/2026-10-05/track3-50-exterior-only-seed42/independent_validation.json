@@ -1,0 +1,275 @@
+{
+  "status": "integrity_passed_visual_failed",
+  "independent_audit": "CPU numpy,Pillow,hashlib only; no inference,weights,downloads or original/code/output edits",
+  "audited_utc": "2026-10-05T03:00:58.398447+00:00",
+  "run_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-exterior-only-seed42",
+  "metrics_sha256": "942f66d08a384f579afbf85051df1ed1a6e7ae4fb9099f2777f9afcd191beab8",
+  "output_file_sha256": {
+    "raw.png": "9960a1ac5cea254a634c4219f7a3561897810185cb33d78cb33bd850b865ee62",
+    "composite.png": "67f8432ab359e600174fd1609770d0c4d477ab376f7f8624f413dd653833a83c"
+  },
+  "checks": {
+    "initial_noise": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true,
+      "array_sha256_float32": "9b0f130d9dee403294a1429d7552add46da89cbb424e620aa3d8cbd80d549a1c",
+      "file_sha256": "6212439c5222761ea39e796c4318ec4b643de1c609d24fe5bcde6ff58d8cc9f6",
+      "minimum": -4.789865970611572,
+      "maximum": 4.338210582733154,
+      "mean": 0.0008740242919884622,
+      "std": 0.9988974332809448,
+      "shape_matches_record": true,
+      "hash_matches_record": true
+    },
+    "final_latents": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true,
+      "array_sha256_float32": "0f4ebc923f15b0cb58daa2a7170a9fb1c8d7de0b010d74be1cd576bf38b80347",
+      "file_sha256": "cb8a30a22f76e9c59f72f041f8a0abc1acd92866cf740c552470f29a81ad172f",
+      "minimum": -3.3239572048187256,
+      "maximum": 2.468134641647339,
+      "mean": -0.13499455153942108,
+      "std": 0.8319958448410034,
+      "shape_matches_record": true,
+      "hash_matches_record": true
+    },
+    "matched_baseline": {
+      "baseline_run_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-seed42",
+      "recorded_fields_equal": {
+        "steps": true,
+        "seed": true,
+        "guidance": true,
+        "runner_sha256": true,
+        "source_512_sha256": true,
+        "source_pixels_sha256": true,
+        "canvas_sha256": true,
+        "mask_sha256": true,
+        "static_conditioning_sha256_float32": true,
+        "initial_noise_sha256_float32": true,
+        "scheduler_sigmas": true,
+        "stored_quantization": true,
+        "conditioning_channels": true,
+        "text_tokens_per_forward": true
+      },
+      "initial_noise_actual_array_equal": true,
+      "static_conditioning_identity_basis": "Recorded float32 static conditioning SHA is identical; static tensor not retained. Input PNGs, sourcepixels, code and modelmanifest matched; no audit reencoding.",
+      "prompt_changed": true,
+      "new_prompt_sha_matches_text": true,
+      "new_prompt": "Continuous muted lake water, low green roadside shrubs and a thin metal guardrail extending through the upper area. Uninterrupted dark coarse asphalt continuing through the lower area. Matching twilight illumination, photographic grain and high-angle perspective across the whole scene.",
+      "baseline_prompt": "A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering."
+    },
+    "images": {
+      "raw_size": [
+        512,
+        1152
+      ],
+      "composite_size": [
+        512,
+        1152
+      ],
+      "source_size": [
+        512,
+        512
+      ],
+      "source_exact": true,
+      "generated_region_exact_raw": true,
+      "raw_hash_matches_record": true,
+      "composite_hash_matches_record": true
+    },
+    "raw_source_mae_recomputed": {
+      "all": 7.266298770904541,
+      "top16": 7.311849117279053,
+      "bottom16": 6.903360843658447,
+      "inner": 7.276878356933594
+    },
+    "raw_source_mae_matches_record": true,
+    "source_integrity": {
+      "original_jpg_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "original_jpg_matches_registry": true,
+      "source_square_sha256": "9683ce8fa857b2b91accc641b5e9a5f417542e9393f6dbbc20bf86a028e64349",
+      "source_square_pixels_match_original_crop": true,
+      "source512_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+      "source512_matches_preflight_metrics_baseline": true,
+      "source512_pixels_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+      "source512_pixels_hash_matches_record": true,
+      "source512_matches_LANCZOS_derivation": true,
+      "source_preservation_caveat": "Exact source equality compares the common512x512 Lanczos resized reference, not original720x720 JPG pixels."
+    },
+    "inputs": {
+      "canvas_hash_matches_record": true,
+      "mask_hash_matches_record": true,
+      "source_pixels_exact_canvas": true,
+      "mask_known_all0": true,
+      "mask_unknown_all255": true,
+      "actual_canvas_hash_same_baseline": true,
+      "actual_mask_hash_same_baseline": true
+    },
+    "compute": {
+      "step_count": 50,
+      "step_sequence_exact_1_to50": true,
+      "all_steps_finite": true,
+      "all_steps_target_tokens2304": true,
+      "sigmas_length": 51,
+      "sigmas_strictly_decreasing": true,
+      "sigma_start": 1.0,
+      "sigma_end": 0.0,
+      "step_sigmas_match_scheduler": true,
+      "log_step_sequence_exact_1_to50": true,
+      "log_nfe_matches_step": true,
+      "nfe": 50,
+      "target_token_forwards_recorded": 115200,
+      "target_token_forwards_recomputed": 115200,
+      "joint_block_forwards": 950,
+      "single_block_forwards": 1900,
+      "block_counts": {
+        "joint": 19,
+        "single": 38
+      },
+      "text_tokens_per_forward": 512,
+      "joint_query_tokens_per_forward": 2816,
+      "full_canvas_every_step": true,
+      "basis": "50 perstep events + recorded counters + frozen runner source one native transformer call perstep; not independent GPU kernel instrumentation."
+    },
+    "runtime_provenance": {
+      "runner_sha256": "e63fac021c3e3849baeac7aeb5f41ae44c27a3cbda38a12520963c8955d8b6b3",
+      "runner_matches_launch_metrics_preflight_baseline": true,
+      "runtime_sources": {
+        "native_fill": {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/flux/variants/fill/flux_fill.py",
+          "sha256": "3012abf8a9541aa8600eae80bf2d8bdd6167cddd79030a6190d1df680050fe41",
+          "matches_record_and_baseline": true
+        },
+        "mask_util": {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/flux/variants/fill/mask_util.py",
+          "sha256": "b6f20892105b71e1ff64f325c2a3448d534f379ef95e44bec33d9224f5d5a7e9",
+          "matches_record_and_baseline": true
+        },
+        "config": {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/common/config/config.py",
+          "sha256": "19a862b4414ea082a45c8142ca8932fce483121426b6efd562999eca64ff307d",
+          "matches_record_and_baseline": true
+        },
+        "latent_creator": {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/flux/latent_creator/flux_latent_creator.py",
+          "sha256": "897505135f1d411b8af4967f0b8327ca5b91f8e2b1b9ec503e3fc2ce9f270d5c",
+          "matches_record_and_baseline": true
+        }
+      },
+      "cpu_gate_matches_record": true,
+      "manifest_hash_matches_record_and_baseline": true,
+      "checkpoint_payload_verification": "Runner performed pinned payload hashes before inference; CPU audit did not repeat9.619GB weights I/O.",
+      "model_total_weight_bytes_recorded": 9613055254,
+      "checkpoint_manifest_revision": "eebfbaa12c95107169452c7d22622e04771192a3",
+      "model_manifest_verified_record": true,
+      "mlx_version_recorded": "0.32.3",
+      "metal_device_recorded": {
+        "device_name": "Apple M4 Max",
+        "max_recommended_working_set_size": 30150672384,
+        "memory_size": 38654705664,
+        "architecture": "applegpu_g16s",
+        "max_buffer_length": 22613000192,
+        "resource_limit": 499000
+      },
+      "launch_command": [
+        "experiments/qwen/.venv/bin/python",
+        "experiments/flux1_fill/run_fill_trial.py",
+        "--track",
+        "track3",
+        "--steps",
+        "50",
+        "--seed",
+        "42",
+        "--guidance",
+        "30",
+        "--prompt",
+        "Continuous muted lake water, low green roadside shrubs and a thin metal guardrail extending through the upper area. Uninterrupted dark coarse asphalt continuing through the lower area. Matching twilight illumination, photographic grain and high-angle perspective across the whole scene.",
+        "--output",
+        "experiments/flux1_fill/runs/2026-10-05/track3-50-exterior-only-seed42"
+      ],
+      "launch_status": "success",
+      "launch_exit_code": 0
+    }
+  },
+  "runtime_seconds_recorded": {
+    "elapsed": 314.9178932089999,
+    "denoise": 307.3610236670065,
+    "raw_decode": 0.6988342500117142
+  },
+  "memory_bytes_recorded": {
+    "mlx_peak": 11092551903,
+    "denoise_peak": 8352184846,
+    "process_peak_rss": 10049781760
+  },
+  "direct_visual_inspection": {
+    "whole_raw_and_composite_viewed": true,
+    "quality_gate": "failed",
+    "improvements_vs_baseline": [
+      "No invented yellow text in upper generated area.",
+      "No second red car or extra person in lower generated area."
+    ],
+    "upper_generation": [
+      "Upper rail/source junction broadly connects.",
+      "Generated rail curves into a horizontal/U-shaped barrier crossing the distant water/shore.",
+      "Generated horizon/shore perspective diverges from source high-angle local scene."
+    ],
+    "lower_generation": [
+      "Hard horizontal transition at original bottom source boundary persists.",
+      "Generated coarse brown asphalt has mismatched tone and texture scale vs original dark asphalt."
+    ],
+    "no_cosmetic_repair_performed": true,
+    "raw_and_composite_upper_rail_6x_viewed": true,
+    "composite_lower_join_native_viewed": true,
+    "original_wide_jpg_viewed": true,
+    "original_wide_jpg_context": "Original1280x720 JPEG has flat ochre left/right bars around720x720 photo; no extra photographic side context and no top/bottom content."
+  },
+  "inspection_artifacts": {
+    "upper_rail_join": {
+      "box_xyxy": [
+        224,
+        248,
+        440,
+        392
+      ],
+      "raw_native_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-exterior-only-seed42/upper_rail_join_raw_native.png",
+      "raw_native_sha256": "ba872ce86e6fb08effe590bd3545f7f95aaa08bbcb62e02dd20b2fa690a61251",
+      "raw_6x_nearest_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-exterior-only-seed42/upper_rail_join_raw_6x_nearest.png",
+      "raw_6x_nearest_sha256": "dd780d4ed04b1a188b3917c3c9ea418ab416b8134cc2bc9f0cdc105b3db9d2d7",
+      "composite_native_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-exterior-only-seed42/upper_rail_join_composite_native.png",
+      "composite_native_sha256": "4633075fc629e916b93119264e51a7efef8e7a32fff993df0f8f40ccc24730c5",
+      "composite_6x_nearest_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-exterior-only-seed42/upper_rail_join_composite_6x_nearest.png",
+      "composite_6x_nearest_sha256": "0a8be9f4390e2e15e1c5357fbb01411e348a4ce7a5378550e9902bc2483c504d"
+    },
+    "lower_scene_join": {
+      "box_xyxy": [
+        0,
+        792,
+        512,
+        920
+      ],
+      "raw_native_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-exterior-only-seed42/lower_scene_join_raw_native.png",
+      "raw_native_sha256": "8a1bcba43cce04623a50ad2f30b913b07f16c70565bfc77e1e2c61308e68b993",
+      "raw_6x_nearest_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-exterior-only-seed42/lower_scene_join_raw_6x_nearest.png",
+      "raw_6x_nearest_sha256": "0fb28fe33b7dc01bb28f4db749bde6db9b467f8a5e6aaceb84db2f6e5f8a6f69",
+      "composite_native_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-exterior-only-seed42/lower_scene_join_composite_native.png",
+      "composite_native_sha256": "e9b5bc4ddaa237a7d88588be86a6a6a21295bf6ceca12f68ad825d1ce55743ed",
+      "composite_6x_nearest_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-exterior-only-seed42/lower_scene_join_composite_6x_nearest.png",
+      "composite_6x_nearest_sha256": "7c682b5200c707764374de08ddc8ca1636e3488ea4d7e99602e464318e68bdb0"
+    }
+  },
+  "limitations": [
+    "Static conditioning tensor is not retained; matching conditioning SHA is recorded evidence, no independent VAE reencoding.",
+    "Initial and final latents independently loaded; perstep prediction finiteness is recorded, arrays not retained.",
+    "Model payload hash checks were performed by runner; audit verified manifest hash without rehashing weights.",
+    "No progressive compute or iPhone performance claim."
+  ]
+}
