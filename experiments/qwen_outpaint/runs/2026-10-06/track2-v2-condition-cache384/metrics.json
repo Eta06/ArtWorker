@@ -1,0 +1,60 @@
+{
+  "model_repo": "Qwen/Qwen-Image-2.1",
+  "model_revision": "790c92633540aa0cb11d9abf19eb46d861714758",
+  "checkpoint_export": "local tensor-wise affine q4, group64; complete visual encoder",
+  "upstream_license": "qwen-research",
+  "runtime": "mflux native reference QwenImage21Edit; no latent preservation",
+  "runtime_revision": "25661d8e853996fec9134998b995edf97369bfbd",
+  "adapter_repo": "ausboss/Qwen-Image-2.1-Outpaint-LoRA",
+  "adapter_revision": "449336db42ff074aee970ba0facc0ac0feb77863",
+  "adapter": "v2",
+  "adapter_scale": 1.0,
+  "bake_lora": false,
+  "track": "track2",
+  "width": 384,
+  "height": 864,
+  "source_rect": [
+    0,
+    240,
+    384,
+    624
+  ],
+  "prompt": "Outpaint the image: replace the solid gray areas with a seamless continuation of the scene, keeping the existing picture unchanged. Scene: Two men in sunglasses in front of a cyan studio wall, one in a dark graphic T-shirt and cap, the other in a white T-shirt bearing a printed illustration of a black tote bag. The cyan wall is above their heads and the lower part of the picture contains their clothing. Direct flash photography with existing typography.",
+  "steps": 25,
+  "seed": 42,
+  "guidance": 1.0,
+  "prompt_style": "factual",
+  "turbo": "none",
+  "jointly_trained_adapters": false,
+  "reference_resize": false,
+  "known_latent_clamp": false,
+  "stream_encoder": true,
+  "layerwise_encoder": true,
+  "ondemand_encoder": true,
+  "tiled_encode": true,
+  "scheduler": "MFLUX native flow Euler; not claimed identical to Comfy simple",
+  "visual_quality_accepted": false,
+  "status": "failed",
+  "phases": {
+    "load_seconds": 0.28321779199995945
+  },
+  "input_sha256": "e6bc87342fe1d71f177b131275d5fce90ee865223f9ea84131d85fd1188bd9e2",
+  "adapter_preflight": [
+    {
+      "file": "qwen-image-2.1-outpaint-v2.safetensors",
+      "tensor_count": 384,
+      "unmapped_keys": []
+    }
+  ],
+  "model_bytes": 10288688002,
+  "mlx_version": "0.32.3",
+  "phase": "failed",
+  "elapsed_seconds": 5.104368041000271,
+  "component_bytes": {
+    "text_encoder": 4777697600,
+    "vae": 1350961616
+  },
+  "mlx_active_bytes": 3624448,
+  "error_type": "ValueError",
+  "error": "'bfloat16' is not a valid PEP 3118 buffer format string"
+}
