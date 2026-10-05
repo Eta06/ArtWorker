@@ -20,6 +20,11 @@ venv/
 experiments/maskflow/models/
 experiments/maskflow/runtime/
 *.safetensors
+*.onnx
+*.gguf
+*.mlmodel
+*.mlmodelc/
+*.mlpackage/
 *.ckpt
 *.pt
 *.pth
