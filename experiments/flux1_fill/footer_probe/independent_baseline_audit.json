@@ -1,0 +1,253 @@
+{
+  "status": "passed CPU baseline invariant audit; prompt-native-dtype and Metal schedule equality pending runtime",
+  "scope": "read-only original baseline; CPU native packing/config/tiny normalization probes; no model weights loaded, no GPU work",
+  "baseline": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-local-context50-seed42",
+  "source_512_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track3/source_512.png",
+  "source_512_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+  "baseline_lower_files": {
+    "final_latents.npz": {
+      "bytes": 212619,
+      "sha256": "e213eb4a0c15538dcc7004e24101330e49c4ec513951a04c3157b11475afaa5c"
+    },
+    "initial_noise.npz": {
+      "bytes": 212645,
+      "sha256": "b04deaeef83e9e508eb58812686e2844591b58bfd3a0b94bd8a321c3685d1bc8"
+    },
+    "input_canvas.png": {
+      "bytes": 71321,
+      "sha256": "6caa3c05f6bb9c01280e35ab1551d58e17c824672d8c0fb2c475dc16dddb4ba9"
+    },
+    "input_mask.png": {
+      "bytes": 913,
+      "sha256": "411b31aa0bfb3cd56426340e8978a316a7b15fd36349d189c6a2b8765c566338"
+    },
+    "inputs.json": {
+      "bytes": 2032,
+      "sha256": "009b642a73347ca9a2397a93f3471b26b9f4272d61682a9fd1ecd99f5f748939"
+    },
+    "metrics.json": {
+      "bytes": 15403,
+      "sha256": "4eec475233c9f180b63cc01268618f4f28cceac64418f0aab83588fc16ba05d4"
+    },
+    "prompt_embeddings.npz": {
+      "bytes": 7826212,
+      "sha256": "d5fa13488951fe2379eb197d88df260663eb12aefc10a9b0dcae666edc24db89"
+    },
+    "raw.png": {
+      "bytes": 412744,
+      "sha256": "bf27a5c58b7f2a1bb32a7106d0c8340079c2968538862cd19c3249161d14e93e"
+    },
+    "source_strip.png": {
+      "bytes": 68885,
+      "sha256": "49b6a1ee65181b0cd0b949ecc8bee128af0f3c90385bfdf554df80173812b702"
+    },
+    "static_conditioning.npz": {
+      "bytes": 181293,
+      "sha256": "5b3bad8c58b59efcd8a1e044fee0579015300dce27f3ab5e2f8e3568d5b37dbf"
+    }
+  },
+  "saved_arrays": {
+    "final_latents.npz": {
+      "latents": {
+        "shape": [
+          1,
+          896,
+          64
+        ],
+        "saved_dtype": "float32",
+        "sha256": "1db6e82917793bc39b4747d4f5c7541c85ea4a7eb45df888bca9e4f82032e74f",
+        "finite": true,
+        "all_bf16_representable": false
+      }
+    },
+    "initial_noise.npz": {
+      "latents": {
+        "shape": [
+          1,
+          896,
+          64
+        ],
+        "saved_dtype": "float32",
+        "sha256": "16fc82b582ee21ea099aed9e3ce9f9ffd236c7834a6a00664c310d7d7afde940",
+        "finite": true,
+        "all_bf16_representable": false
+      }
+    },
+    "prompt_embeddings.npz": {
+      "embeddings": {
+        "shape": [
+          1,
+          512,
+          4096
+        ],
+        "saved_dtype": "float32",
+        "sha256": "79fd7c3e2e025f2322b96f508f3e54a78d51fcf607c17c7a21333eea4d70567c",
+        "finite": true,
+        "all_bf16_representable": false
+      },
+      "pooled": {
+        "shape": [
+          1,
+          768
+        ],
+        "saved_dtype": "float32",
+        "sha256": "fd566bee8a8b552d87fc9996743d990262d952518b82fc68f4a34738ac259121",
+        "finite": true,
+        "all_bf16_representable": true
+      }
+    },
+    "static_conditioning.npz": {
+      "static": {
+        "shape": [
+          1,
+          896,
+          320
+        ],
+        "saved_dtype": "float32",
+        "sha256": "d402693be2ff07deeda73c5a7f9fcd2f9b07d3a55c368906623c10c3eca77619",
+        "finite": true,
+        "all_bf16_representable": false
+      }
+    }
+  },
+  "checks": {
+    "source_file_matches_recorded": true,
+    "source_strip_equals_bottom128": true,
+    "canvas_known_rows_equal_source_bottom128": true,
+    "canvas_unknown_rgb128": true,
+    "mask_known0_unknown255": true,
+    "saved_array_hashes_match_recorded": true,
+    "current_native_pixel_mask_exact_saved": true,
+    "static_mask_known256tokens0_unknown640tokens1": true,
+    "native_masked_rgb_unknown_normalized0": true,
+    "runtime_config_matches_baseline": true,
+    "runtime_mask_util_matches_baseline": true,
+    "runtime_latent_creator_matches_baseline": true,
+    "runtime_image_util_matches_baseline": true
+  },
+  "checks_passed": true,
+  "saved_sigmas": {
+    "shape": [
+      51
+    ],
+    "dtype": "float32",
+    "sha256": "9d0fafcbaefb3ee8bffa2423b639c9d08d2a9ad1b0c587b989ffa1c15877ec45",
+    "cpu_native_byte_equal": false,
+    "cpu_native_max_abs_difference": 5.960464477539063e-08,
+    "cpu_native_sha256": "1b3be427efd490abcca65dedd06843c1388b1e9b36417bb9df4bb89ccba326f7",
+    "matched_replay_requirement": "Require exact saved51 values after constructing native Config on Metal. CPU one-ULP difference is not evidence of a schedule change."
+  },
+  "native_config": {
+    "width": 512,
+    "height": 448,
+    "image_seq_len": 896,
+    "num_inference_steps": 50,
+    "init_time_step": 0,
+    "guidance": 30.0,
+    "precision": "mlx.core.bfloat16",
+    "requires_sigma_shift": true,
+    "num_train_steps": 1000
+  },
+  "native_dtype_probes": {
+    "t5_norm_bf16_input_and_weight_output_dtype": "mlx.core.float32",
+    "clip_layernorm_bf16_input_and_weight_output_dtype": "mlx.core.bfloat16",
+    "normalized_image_dtype": "mlx.core.float32",
+    "mask_dtype": "mlx.core.float32",
+    "packed_mask_dtype": "mlx.core.float32",
+    "prompt_saved_dtype_provenance": "Runner stores both arrays as float32 and omitted original native dtypes. Genuine float32 T5 values cannot be cast to BF16 without loss. Pooled values are numerically BF16-representable, but values alone do not prove prior runtime dtype. Fresh native prompt encode with exact saved-value equality and actual dtype recording resolves the ambiguity."
+  },
+  "checkpoint_header_dtype_audit": {
+    "text_encoder": {
+      "0.safetensors": {
+        "header_sha256": "d23f77c7f7e9dcc96dc95178b1d9b5d0d542256ae96dd1dc9196fba14d89182f",
+        "tensor_count": 344,
+        "dtype_counts": {
+          "BF16": 270,
+          "U32": 74
+        },
+        "payload_loaded": false
+      }
+    },
+    "text_encoder_2": {
+      "0.safetensors": {
+        "header_sha256": "4af247efc7607e9f602727c5b49113227686bd78eb211415ffced30bb1fdf50f",
+        "tensor_count": 500,
+        "dtype_counts": {
+          "BF16": 346,
+          "U32": 154
+        },
+        "payload_loaded": false
+      },
+      "1.safetensors": {
+        "header_sha256": "607bc260c339d071186ff3bdc1a2e84db353bc57d07fb1ba7902f2e16f19532d",
+        "tensor_count": 128,
+        "dtype_counts": {
+          "BF16": 89,
+          "U32": 39
+        },
+        "payload_loaded": false
+      }
+    },
+    "vae": {
+      "0.safetensors": {
+        "header_sha256": "e71b7e6215d25215c1becf29b1081f7b1b1854fa96be6801d2ef920e9720e3a2",
+        "tensor_count": 260,
+        "dtype_counts": {
+          "BF16": 252,
+          "U32": 8
+        },
+        "payload_loaded": false
+      }
+    }
+  },
+  "runtime_sources": {
+    "config": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/common/config/config.py",
+      "sha256": "19a862b4414ea082a45c8142ca8932fce483121426b6efd562999eca64ff307d"
+    },
+    "mask_util": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/flux/variants/fill/mask_util.py",
+      "sha256": "b6f20892105b71e1ff64f325c2a3448d534f379ef95e44bec33d9224f5d5a7e9"
+    },
+    "latent_creator": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/flux/latent_creator/flux_latent_creator.py",
+      "sha256": "897505135f1d411b8af4967f0b8327ca5b91f8e2b1b9ec503e3fc2ce9f270d5c"
+    },
+    "image_util": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/utils/image_util.py",
+      "sha256": "acb02842ff528fb5f1a1333b7a2eef6252e58f9e851c5ebf285aa49de9c37003"
+    },
+    "vae": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/flux/model/flux_vae/vae.py",
+      "sha256": "d566e176cbf33f45cb02a7dbd714fa2797e41151beffd33ba0718f4344179722"
+    },
+    "prompt_encoder": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/flux/model/flux_text_encoder/prompt_encoder.py",
+      "sha256": "ed9ea4c171e0b66163c7934b4a4641d08ed1922b7dcc858f0d71fdd304e477ad"
+    },
+    "linear_scheduler": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/common/schedulers/linear_scheduler.py",
+      "sha256": "294ef867120ad30e9a96b46a541e6ed3b037c53075d2244acb164683d97569b5"
+    },
+    "t5_layer_norm": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/flux/model/flux_text_encoder/t5_encoder/t5_layer_norm.py",
+      "sha256": "19b973f5fa249e235b3e15fb9c58981629e4fc8911ddf6ef72a157b5a6003830"
+    }
+  },
+  "replay_conditions": [
+    "Use the same pinned Q4 native Fill checkpoint, source512 file and lower512x448 geometry; 128 known source rows,320 unknown; do not load any LoRA.",
+    "Restore initial_noise.npz float32 latents verbatim; do not regenerate from CPU seed42 or cast to BF16. Native create_noise has explicit mx.random.key(seed), independent of incidental previous draws, but backend numeric differences can still change bytes.",
+    "Keep lower prompt text and both retained prompt arrays exact. Encode the unchanged prompt once natively, assert saved float32 values exact, and use actual native dtypes; do not blindly cast both arrays to config.precision.",
+    "Use native Config 50 steps,guide30,linear schedule,width512,height448,no image_strength. Require exact native Metal51 sigma array against saved values. Guidance30 is an embedding in one branch, not two-branch CFG.",
+    "Keep original generation mask PNG and packed256 channels exact. Changing a footer mask also changes conditioning-mask semantics.",
+    "Only edit declared footer RGB ROI in a copied conditioning canvas. Feed the entire512x448 canvas through native MaskUtil and deterministic VAE posterior mean; preserve old source/file and original display hardpaste.",
+    "The VAE encode uses posterior mean and no random sampling. A footer edit may affect more than nearby64-channel source codes through receptive fields and spatial GroupNorm; do not replace only a hand-selected latent ROI.",
+    "Retain original VAE decode and raw output separately from the source-hardpasted full composite. Keep baseline upper320 generated pixels exactly if assembling a lower-only result.",
+    "Each lower-only arm costs50NFE,44800 target-token forwards,950 joint and1900 single-block calls. Two comparison arms double these; these are independent completed calls, not growing compute."
+  ],
+  "limitations": [
+    "CPU audit does not verify inference output equality, model quality, or device speed.",
+    "Original baseline omitted prompt/static original native dtype fields; actual native prompt re-encode check is still required.",
+    "Tiny normalization dtype behavior and checkpoint header dtypes support inference about CLIP BF16 but cannot replace the exact runtime native check."
+  ]
+}
