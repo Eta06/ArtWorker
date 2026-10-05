@@ -1,0 +1,52 @@
+{
+  "manual_roi": true,
+  "generic_logo_detector": false,
+  "source_roi_xyxy": [
+    238,
+    470,
+    275,
+    509
+  ],
+  "patch_roi_xyxy": [
+    238,
+    86,
+    275,
+    125
+  ],
+  "donor_source_roi_xyxy": [
+    191,
+    470,
+    228,
+    509
+  ],
+  "method": "byte-exact clone of nearby same-row asphalt, 47 pixels left",
+  "roi_pixels": 1443,
+  "actual_changed_pixels": 1443,
+  "condition_before_uint8_sha256": "689175315d33e5687242d903ab5d9e7618e4e0beaeb64da3f4174189df5850e9",
+  "condition_after_uint8_sha256": "528af2c21a2bdbf6b5fd7c90785227f2af379706ed5ced59d915480619e051c1",
+  "roi_mask_uint8_sha256": "bd2e6101e964af4ec20968685c1eb9d14721cc1a0ce55bbc055d89c3aa277b83",
+  "outside_roi_byte_exact": true,
+  "unknown_canvas_byte_exact": true,
+  "original_source_unmodified": true,
+  "display_uses_original_source": true,
+  "donor_mean_rgb": [
+    44.30977130977131,
+    53.817047817047815,
+    60.4975744975745
+  ],
+  "donor_std_rgb": [
+    7.074131386604001,
+    7.210127080583055,
+    7.606884101366837
+  ],
+  "baseline_roi_mean_rgb": [
+    90.29521829521829,
+    99.54608454608454,
+    106.13652113652114
+  ],
+  "baseline_roi_std_rgb": [
+    50.13293649445092,
+    49.41078806690605,
+    49.154163029489816
+  ]
+}
