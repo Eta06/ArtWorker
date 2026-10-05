@@ -1,0 +1,235 @@
+{
+  "status": "passed",
+  "composite_records": 22,
+  "distinct_composite_sha256": 16,
+  "all_source_pixels_exact": true,
+  "all_exterior_beyond_declared_radius_exact": true,
+  "all_model_inputs_sources_and_frozen_helper_unchanged": true,
+  "common_baseline_and_frozen_harmonic_controls_exact_across_suites": true,
+  "all_saved_output_hashes_matched": true,
+  "latest_meaningful_cpu_fixtures": {
+    "status": "passed",
+    "fixtures": [
+      {
+        "method": "harmonic",
+        "affine_original_outward_sign": true,
+        "first_generated_row_value": true,
+        "hermite_second_generated_row_affine_oracle": false,
+        "far_value_zero": true,
+        "clamped_far_slope_if_claimed": false,
+        "decoded_known_source_independence": true
+      },
+      {
+        "method": "hermite",
+        "affine_original_outward_sign": true,
+        "first_generated_row_value": true,
+        "hermite_second_generated_row_affine_oracle": true,
+        "far_value_zero": true,
+        "clamped_far_slope_if_claimed": true,
+        "decoded_known_source_independence": true
+      },
+      {
+        "method": "biharmonic",
+        "affine_original_outward_sign": true,
+        "first_generated_row_value": true,
+        "hermite_second_generated_row_affine_oracle": false,
+        "far_value_zero": true,
+        "clamped_far_slope_if_claimed": true,
+        "decoded_known_source_independence": true
+      }
+    ],
+    "constant_scene_fixed_point": true,
+    "seamless_nonzero_affine_fixed_point": true,
+    "cosine_mean_and_mirror_symmetry": true,
+    "seamless_nonzero_affine_fixed_point_scope": "harmonic/Hermite/biharmonic residuals only; profile intentionally saturates a source-normal color prior farther than two pixels",
+    "profile_opposite_slope_first_two_rows_oracle": true,
+    "profile_source_and_far_exact": true,
+    "profile_constant_fixed_point": true,
+    "profile_mirror_and_cosine_mean": true,
+    "no_model_weights_loaded": true,
+    "cpu_only": true
+  },
+  "gpu_calls": 0,
+  "model_weights_loaded": false,
+  "player_edits": false,
+  "scope": "Derived post-generation RGB finishing experiment, not model raw and not accepted perfect geometry/texture",
+  "post_validation_runner_sha256": "ffeb017475d6d3f590b42f24b131d1f2f6bff169942c631729e0818f0811c01b",
+  "items": [
+    {
+      "suite": "track3-top32-direct",
+      "variant": "baseline",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "d2b141a6610ba78a419577f1de5ba211e89b7c3c9c964b3e0f4a7d758f1f2bc9"
+    },
+    {
+      "suite": "track3-top32-direct",
+      "variant": "frozen-harmonic96",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "1cd731fb60dc8c338d5b270b72ad4e7f8f69666ab24a83b9ec11e40b0eb9618e"
+    },
+    {
+      "suite": "track3-top32-direct",
+      "variant": "direct-harmonic32",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "3984a543ad9420b24ccb7f0d9da898b5ebfb58d19e4733e50b17063a38286563"
+    },
+    {
+      "suite": "track3-top32-direct",
+      "variant": "direct-harmonic64",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "83f9a5b468207b19b0885ab8f8c2f8a88540e24df940ae20abb8c0b487fe8638"
+    },
+    {
+      "suite": "track3-top32-direct",
+      "variant": "direct-harmonic96",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "a90429fb40704cb7abea71cab58e780d2be2fda3d6a9579fce7616fb5e1ebc61"
+    },
+    {
+      "suite": "track3-top32-direct",
+      "variant": "direct-hermite32",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "b65caa56c8c85a8b3699ad84f1f423e746a12db85323f041d34e985d488cbafa"
+    },
+    {
+      "suite": "track3-top32-direct",
+      "variant": "direct-hermite64",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "5e34119f0441f0651d8d23a63dc6a9c5988448a69b0ae2fd2feb4708ac8fb4c9"
+    },
+    {
+      "suite": "track3-top32-direct",
+      "variant": "direct-hermite96",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "a6fbe619b2643cd1406b6df6d315df730c9cf358b31c563f1feee00082321ad0"
+    },
+    {
+      "suite": "track3-top32-direct",
+      "variant": "direct-biharmonic32",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "1046d813a8ababd822af7195a894e5acf479a1d8e3fe333df7b905b92980882d"
+    },
+    {
+      "suite": "track3-top32-direct",
+      "variant": "direct-biharmonic64",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "383ea9dc1b197c7a8de62ef331514fa6c689dd2e61b0506166e100510c41470f"
+    },
+    {
+      "suite": "track3-top32-direct",
+      "variant": "direct-biharmonic96",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "ca8fa01204d5f78b030b4ab05011e053b846b93b399d4f428c2a1f2198ba15bc"
+    },
+    {
+      "suite": "track3-top32-profile16",
+      "variant": "baseline",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "d2b141a6610ba78a419577f1de5ba211e89b7c3c9c964b3e0f4a7d758f1f2bc9"
+    },
+    {
+      "suite": "track3-top32-profile16",
+      "variant": "frozen-harmonic96",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "1cd731fb60dc8c338d5b270b72ad4e7f8f69666ab24a83b9ec11e40b0eb9618e"
+    },
+    {
+      "suite": "track3-top32-profile16",
+      "variant": "direct-profile32",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "6276193a96a740aaa1e197ef3259efa4f77b88a4967bba2a40c0f4973e49f17d"
+    },
+    {
+      "suite": "track3-top32-profile16",
+      "variant": "direct-profile64",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "7108d32aafae0ecdcf37bb142fdabce6d4f4082e8730220c75feef244ee6c5d8"
+    },
+    {
+      "suite": "track3-top32-profile16",
+      "variant": "direct-profile96",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "1ccf14147b09f6277d43432e9c51b575250678814f27465a2ec0f73d16fdc549"
+    },
+    {
+      "suite": "track3-top32-profile4",
+      "variant": "baseline",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "d2b141a6610ba78a419577f1de5ba211e89b7c3c9c964b3e0f4a7d758f1f2bc9"
+    },
+    {
+      "suite": "track3-top32-profile4",
+      "variant": "frozen-harmonic96",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "1cd731fb60dc8c338d5b270b72ad4e7f8f69666ab24a83b9ec11e40b0eb9618e"
+    },
+    {
+      "suite": "track3-top32-profile4",
+      "variant": "direct-profile32",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "5ae76cd3c94030a380c87a67ba5618bb89f2da939be2bf051a157ea7698cdbc6"
+    },
+    {
+      "suite": "track3-top32-profile8",
+      "variant": "baseline",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "d2b141a6610ba78a419577f1de5ba211e89b7c3c9c964b3e0f4a7d758f1f2bc9"
+    },
+    {
+      "suite": "track3-top32-profile8",
+      "variant": "frozen-harmonic96",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "1cd731fb60dc8c338d5b270b72ad4e7f8f69666ab24a83b9ec11e40b0eb9618e"
+    },
+    {
+      "suite": "track3-top32-profile8",
+      "variant": "direct-profile32",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "output_hash_matched": true,
+      "sha256": "523d94693c811c1a1007d730652edb5ce586024fa12599d32ccb74077b5c7eb7"
+    }
+  ]
+}
