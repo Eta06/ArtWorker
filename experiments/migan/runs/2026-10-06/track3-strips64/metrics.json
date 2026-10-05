@@ -1,0 +1,152 @@
+{
+  "track": "track3",
+  "repo": "andraniksargsyan/migan",
+  "revision": "406830d0fa60666da0071c342ad2fbc8f30c5c64",
+  "model_bytes": 28079181,
+  "provider": "CPUExecutionProvider",
+  "threads": 2,
+  "width": 512,
+  "height": 1152,
+  "source_rect": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "mask": "255 known; 0 generate",
+  "runtime_version": "1.30.0",
+  "visual_quality_accepted": false,
+  "method": "strips",
+  "true_single_pass_spatial_streaming": false,
+  "raw_note": "Upstream pipeline already blends known pixels; this is pipeline output, not an uncomposited generator prediction",
+  "status": "completed",
+  "load_seconds": 0.058998833000259765,
+  "calls": [
+    {
+      "edge": "top",
+      "rows": [
+        256,
+        320
+      ],
+      "working_window": [
+        256,
+        768
+      ],
+      "seconds": 0.19006049999916286
+    },
+    {
+      "edge": "bottom",
+      "rows": [
+        832,
+        896
+      ],
+      "working_window": [
+        384,
+        896
+      ],
+      "seconds": 0.19294066700058465
+    },
+    {
+      "edge": "top",
+      "rows": [
+        192,
+        256
+      ],
+      "working_window": [
+        192,
+        704
+      ],
+      "seconds": 0.17224520800027676
+    },
+    {
+      "edge": "bottom",
+      "rows": [
+        896,
+        960
+      ],
+      "working_window": [
+        448,
+        960
+      ],
+      "seconds": 0.17670808299953933
+    },
+    {
+      "edge": "top",
+      "rows": [
+        128,
+        192
+      ],
+      "working_window": [
+        128,
+        640
+      ],
+      "seconds": 0.17908400000032998
+    },
+    {
+      "edge": "bottom",
+      "rows": [
+        960,
+        1024
+      ],
+      "working_window": [
+        512,
+        1024
+      ],
+      "seconds": 0.1787110000004759
+    },
+    {
+      "edge": "top",
+      "rows": [
+        64,
+        128
+      ],
+      "working_window": [
+        64,
+        576
+      ],
+      "seconds": 0.17959520900058124
+    },
+    {
+      "edge": "bottom",
+      "rows": [
+        1024,
+        1088
+      ],
+      "working_window": [
+        576,
+        1088
+      ],
+      "seconds": 0.1791268749993833
+    },
+    {
+      "edge": "top",
+      "rows": [
+        0,
+        64
+      ],
+      "working_window": [
+        0,
+        512
+      ],
+      "seconds": 0.17300183299994387
+    },
+    {
+      "edge": "bottom",
+      "rows": [
+        1088,
+        1152
+      ],
+      "working_window": [
+        640,
+        1152
+      ],
+      "seconds": 0.17724683300002653
+    }
+  ],
+  "iteration_note": "Ten small-window sequential predictions for band64; not one-pass generative streaming, not a matched-cost baseline",
+  "pipeline_inference_seconds": 1.800848459000008,
+  "source_exact_in_pipeline": true,
+  "pipeline_source_mae_255": 0.0,
+  "source_exact_in_composite": true,
+  "evaluation_addendum": "Post-run CPU source-paste evaluation; original pipeline output unchanged"
+}
