@@ -70,8 +70,9 @@ def rail_points(a: np.ndarray, source: bool) -> list[dict]:
     rows = range(*(PROFILE["source_y_half_open"] if source else PROFILE["generated_y_half_open"]))
     points = []
     for y in rows:
-        center = (311 - 1.94 * (y - 320)) if source else (372 - 1.43 * (y - 270))
-        lo, hi = max(2, int(round(center)) - 11), min(509, int(round(center)) + 11)
+        center = (PROFILE["source_nominal_x_at_y320"] + PROFILE["source_nominal_dx_dy"] * (y - 320)) if source else (PROFILE["generated_nominal_x_at_y270"] + PROFILE["generated_nominal_dx_dy"] * (y - 270))
+        half = PROFILE["search_half_width_pixels"]
+        lo, hi = max(2, int(round(center)) - half), min(509, int(round(center)) + half)
         xs = np.arange(lo, hi + 1)
         # Look just beyond a dark->metal edge: bright + blue rather than reeds.
         ahead = smooth[y, xs + 2]
@@ -193,6 +194,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--image", action="append", default=[], metavar="LABEL=PATH", help="saved 512x1152 raw/composite; repeat for new candidates")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUT)
+    parser.add_argument("--corridor", choices=["legacy", "source"], default="legacy",
+                        help="Legacy probe corridor, or tangent extrapolated from the original source alone")
     args = parser.parse_args()
     if args.image:
         items = [(s.split("=", 1)[0], Path(s.split("=", 1)[1]).resolve()) for s in args.image]
@@ -207,6 +210,13 @@ def main():
     source_canvas[320:832] = source
     source_points = rail_points(source_canvas, source=True)
     source_fit = robust_line(source_points, 320, 371)
+    if args.corridor == "source":
+        if not source_fit["valid"]:
+            raise ValueError("Original source rail fit is invalid")
+        PROFILE.update(id="track3-source-tangent-corridor-v2",
+            frozen_from="original source fit only; no generated image inspected to set corridor",
+            generated_nominal_x_at_y270=source_fit["x_extrapolated_at_y320"] - 50 * source_fit["dx_dy"],
+            generated_nominal_dx_dy=source_fit["dx_dy"])
     report = {"status": "diagnostic", "profile": PROFILE, "source": str(SOURCE), "source_rect_xyxy": RECT,
               "source_upper_edge_fit": source_fit, "source_edge_points": source_points,
               "limitations": ["Track3 only; frozen ROI may miss a relocated/invented rail and then cannot judge geometry.",
