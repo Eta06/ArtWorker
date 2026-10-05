@@ -1,0 +1,69 @@
+{
+  "method": "frozen-VAE post-denoise border-latent pixel-consistency projection",
+  "input": "experiments/qwen/projection_inputs/2026-10-05/track3-saved-top32/final_latents.npz",
+  "input_sha256": "16702e506bcf97665c5147a64d0933a835929aaf2a26103794a013791c79697c",
+  "input_kind": "exact-final",
+  "track": "track3",
+  "status": "preflight_passed",
+  "derived_postprocess": true,
+  "new_transformer_calls": 0,
+  "weights_trained": false,
+  "model_components_loaded": [],
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "source_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+  "original_jpg_sha256_before": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+  "parameters": {
+    "track": "track3",
+    "methods": "consistency,derivative",
+    "iterations": 16,
+    "learning_rate": 0.015,
+    "latent_collar": 6,
+    "source_band": 32,
+    "trust_weight": 0.01,
+    "derivative_weight": 1.0,
+    "max_delta": 0.2,
+    "checkpoint_decoder": true,
+    "reference_four_run": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint4-instrumented-v2",
+    "preflight": true
+  },
+  "runs": {},
+  "runner_sha256": "70f6e9f32706379e17ec2acdcee713d3853dd6070e5ec9188e406cf2b741cfbe",
+  "frozen_original_runner_sha256": "1e9cbf4ebf5e451e5ea53f8006c8d5c7eaaee5db860c91249b0fdf97cf3e0cf6",
+  "input_metadata_sha256": "ac51103696585184b444f74ad5ce1199020dd1f7287e0024b019fa457437b2e0",
+  "checkpoint_memory_benefit_measured_before_this_run": false,
+  "four_update_reference": {
+    "directory": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint4-instrumented-v2",
+    "runner_sha256": "06a58842753de3b17577395fcb5fbb231294f0117b90554697ed15f73e4624d6",
+    "retained_file_sha256": {
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint4-instrumented-v2/projection_metrics.json": "4218395fc52f945742f91bd2548ec363629cb39ddd50faf4d262737626057242",
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint4-instrumented-v2/independent_state_pixel_integrity.json": "d494b92fb448ad3199e70616d3c335bd57b9ed0158f595e2167b81b5589fa9f6",
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint4-instrumented-v2/consistency/latest_iteration_state.npz": "d10ca0be9aab1d634057a57806b8928a797e1a4276f5ffd2a07d8300f952553e",
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint4-instrumented-v2/derivative/latest_iteration_state.npz": "14e6443b85e53937c1b0aa5ecc6f43685f70265a15f789938184f456ff861d59"
+    },
+    "start": "same original latent input and zero Adam state; repeated first four updates, then twelve additional updates",
+    "automatic_resume": false
+  },
+  "physical_temperature_measured": false,
+  "mlx_observed_peak_across_scopes_bytes": 0,
+  "cpu_smoke": {
+    "reference_tiler_max_error": 0.0,
+    "nonzero_finite_gradient": true,
+    "model_weights_loaded": false,
+    "checkpoint_forward_error": 0.0,
+    "checkpoint_gradient_max_error": 0.0,
+    "metadata_cases": {
+      "preview_and_exact_final_accepted": true,
+      "correct_raw_paths": true,
+      "invalid_cases_rejected": 3
+    },
+    "device": "cpu"
+  },
+  "phase": "preflight_complete",
+  "elapsed_seconds": 0.029911709018051624,
+  "process_peak_rss_bytes": 264568832
+}
