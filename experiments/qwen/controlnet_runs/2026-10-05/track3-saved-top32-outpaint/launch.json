@@ -1,0 +1,21 @@
+{
+  "command": [
+    "experiments/qwen/.venv/bin/python",
+    "experiments/qwen/controlnet_port/run_known_collar_saved_baseline_trial.py",
+    "--collar-arms",
+    "top32",
+    "--saved-baseline",
+    "experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint",
+    "--output",
+    "experiments/qwen/controlnet_runs/2026-10-05/track3-saved-top32-outpaint"
+  ],
+  "cwd": "/Users/emir/Documents/ChatGPT/ArtWorker",
+  "code_sha256": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_known_collar_saved_baseline_trial.py": "b8f0056e344d3c3444dce118b4d7e3c7c93d7a94ca5f31776d2a692cea394cfa"
+  },
+  "timeout_seconds": 1200.0,
+  "pid": 8031,
+  "status": "success",
+  "exit_code": 0,
+  "elapsed_seconds": 430.19452104202355
+}
