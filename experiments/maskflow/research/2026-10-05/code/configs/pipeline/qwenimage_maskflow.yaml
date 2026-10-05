@@ -1,0 +1,82 @@
+_target_: pipelines.qwenimage.qwenimage_maskflow.QwenImageMaskFlow
+_recursive_: true
+
+pretrained_model: Qwen/Qwen-Image-Edit-2511
+max_condition_resolution: 147456
+divisible_by: 32
+
+mask_dilation_kernel: 25
+mask_blur_kernel: 25
+mask_blur_sigma: 25.0
+# mask_edge_width: 50
+
+mask_loss_weight: 1.0
+# edge_loss_weight: 0.0
+
+# enable_vae_mask_encoding: true
+
+rescale_cfg: true
+
+enable_masked_loss: true
+
+# enable_local_denoise_train: false
+# enable_local_denoise_infer: false
+# local_denoise_steps: [0.0, 1.0]
+
+enable_pixel_blend: true
+
+enable_poisson_train: true
+enable_poisson_infer: true
+poisson_steps: [0.0, 1.0]
+poisson_lambda_e: 1
+poisson_lambda_s: 1
+poisson_num_iter: 50
+poisson_momentum: 0.1
+
+# Optional complete Poisson OFF/ON trajectories with identical initial noise.
+# Null disables comparison. Enabled: twice the denoising forwards + two final decodes.
+velocity_visualization_dir: null
+velocity_visualization_steps: null  # 1-based snapshots; both trajectories always evolve through every step.
+velocity_visualization_max_samples: 1  # Export cap per batch/rank; both full batches are inferred.
+velocity_visualization_grid: 24  # Maximum arrows along the longest image dimension.
+
+fsdp_configs:
+  transformer.transformer_blocks:
+    iterable: true
+    reshard_after_forward: true
+
+  text_pipeline.text_encoder.model.visual.blocks:
+    iterable: true
+    reshard_after_forward: true
+
+  text_pipeline.text_encoder.model.language_model.layers:
+    iterable: true
+    reshard_after_forward: true
+
+  # The root module are set at last
+  transformer:
+    iterable: false
+    reshard_after_forward: false
+
+  text_pipeline.text_encoder:
+    iterable: false
+    reshard_after_forward: false
+
+# If null, the noise scheduler will be initialized with diffusers FlowMatchEulerDiscreteScheduler
+# else, use schedulers.flow_matching.RectifiedFlowMatchingScheduler
+scheduler:
+  _target_: schedulers.MaskFlowScheduler
+  weighting_scheme: logit_normal
+  logit_normal_mean: 0.0
+  logit_normal_std: 1.0
+  mode_scale: 1.29
+  base_image_seq_len: 256
+  base_shift: 0.5
+  max_image_seq_len: 8192
+  max_shift: 0.9
+  shift: 1.0
+  shift_power: 1
+  time_shift_type: exponential
+  use_dynamic_shifting: true
+  unmask_with: noisy_source
+  background_noise_power: 1.0  # >= 1; higher values reveal the source background earlier.
