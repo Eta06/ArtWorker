@@ -1,0 +1,15 @@
+{
+  "processing_seconds": 0.0,
+  "source_pixels_exact": true,
+  "untouched_outer_pixels_exact": true,
+  "generated_changed_pixel_fraction": 0.0,
+  "generated_mean_abs_change_255": 0.0,
+  "top_join_mean_abs_adjacent_row_jump_255": 14.757161458333334,
+  "bottom_join_mean_abs_adjacent_row_jump_255": 5.386067708333333,
+  "collar_horizontal_gradient_energy_ratio": 1.0,
+  "rgb_clipped_low_fraction_in_generated": 0.0,
+  "rgb_clipped_high_fraction_in_generated": 0.0,
+  "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality.",
+  "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track3/baseline/composite.png",
+  "composite_sha256": "03ad495177a35f9ca8e405fc7b5d5a111c4389ee93230ee30381c9b38dcbe2e8"
+}
