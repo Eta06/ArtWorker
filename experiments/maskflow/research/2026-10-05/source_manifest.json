@@ -1,0 +1,169 @@
+{
+  "git_revision": "3125f1ecd72f5a4e068c5a1954e9d6a8df38d443",
+  "adapter_revision": "f18f0828ab6a40a7f3456feace7a33bebe8c511e",
+  "base_revision": "6f3ccc0b56e431dc6a0c2b2039706d7d26f22cb9",
+  "files": [
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/README.md",
+      "bytes": 8075,
+      "sha256": "87598fe06327748e7bb28504f6453a6d83faaa330ab6a2f16419bea62d7d9efa",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/README.md"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/LICENSE",
+      "bytes": 1062,
+      "sha256": "c081ad44351786d4a632848daa6f265ac48ee54ca5177a90acb280bb04bb735a",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/LICENSE"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/pyproject.toml",
+      "bytes": 1357,
+      "sha256": "5710be7034cc7c27759d41b80d02bb14dc49a3d0f208ecd2bbfc9f3735dcacdd",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/pyproject.toml"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/inference.py",
+      "bytes": 2256,
+      "sha256": "ba3b0e7da4132691a92de620fbbd647101b2cdf1d5157766cd1f92b47b39df41",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/inference.py"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/configs/inference.yaml",
+      "bytes": 1078,
+      "sha256": "c49da0be7662c8e205d092e544c988b295290566798d4da517abfcc5730d9bc8",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/configs/inference.yaml"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/configs/pipeline/qwenimage_maskflow.yaml",
+      "bytes": 2304,
+      "sha256": "d11bc222cb4c6dc5be5b9e7109ca80892281c08981a3ad7f27b0f2ac1b873673",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/configs/pipeline/qwenimage_maskflow.yaml"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/configs/pipeline/qwenimage_edit_plus_2511.yaml",
+      "bytes": 1191,
+      "sha256": "7b6969af5fd1564cf68d2cca4e2d1b450bd768c1c06f69afeb3d4b926823ac48",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/configs/pipeline/qwenimage_edit_plus_2511.yaml"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/configs/adapter/qwenimage_lora.yaml",
+      "bytes": 267,
+      "sha256": "26b1d6b99e3c9b9b4d185e7117592599c3250a7d41f02ab59b6e8b17e954727d",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/configs/adapter/qwenimage_lora.yaml"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/configs/trainer/maskflow.yaml",
+      "bytes": 1415,
+      "sha256": "67989ae7c9710ec28f86c5881a89b2108ab73181f1585b609ef2ee1a9662ed11",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/configs/trainer/maskflow.yaml"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/pipelines/qwenimage/qwenimage_maskflow.py",
+      "bytes": 31415,
+      "sha256": "29c8a4418fac59c33b8d73896227214e8e61ba059576c39ef08a4d6a3eb125db",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/pipelines/qwenimage/qwenimage_maskflow.py"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/pipelines/qwenimage/qwenimage_edit_plus.py",
+      "bytes": 16206,
+      "sha256": "4fdd30e13da5d16b603ea90f94bede5dbcf35bbd7901e9c8d8c26fd36a119c18",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/pipelines/qwenimage/qwenimage_edit_plus.py"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/pipelines/model_loading.py",
+      "bytes": 4061,
+      "sha256": "6ea3ac68b905229ce029a79e93e5ee3a67fb9cb7740b8753fee1bf86e1a42703",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/pipelines/model_loading.py"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/pipelines/maskflow_utils.py",
+      "bytes": 3040,
+      "sha256": "7244ac9efe93f71539dade8da1b52fea613adb2927d89b58a24494c4ccc49a16",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/pipelines/maskflow_utils.py"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/pipelines/cfg.py",
+      "bytes": 3569,
+      "sha256": "28575475771eebdf64b5569862ae719a378883a01b535ee8ca4b9d6b7168a424",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/pipelines/cfg.py"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/schedulers/mask_flow.py",
+      "bytes": 5607,
+      "sha256": "f84e9ae1d480428068b63ff496222ef58853090ad357b46c3ee7c93ed4ec97d3",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/schedulers/mask_flow.py"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/schedulers/flow_matching.py",
+      "bytes": 5108,
+      "sha256": "a2fd833dbcf0d5040b49db658d555db59d421ad44f8bcfc453fd25a269e9f7b6",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/schedulers/flow_matching.py"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/trainer/lora_utils.py",
+      "bytes": 4726,
+      "sha256": "17e729f2f93c414f405c0d6f039437b0229dd5ad2a13b0dda7ac8f6747260f3b",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/trainer/lora_utils.py"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/trainer/lora.py",
+      "bytes": 5184,
+      "sha256": "7d533daf34f68556f4f54a174724ab62c54b2c4f770eac1f118f0ffceaefc3bb",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/trainer/lora.py"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/hf/MANIFEST.json",
+      "bytes": 3303,
+      "sha256": "8e2e07f08706d2215978560d12b5e648ec315fea75382e80914d9aa1c1367c9d",
+      "url": "https://huggingface.co/ReyChiaro/MaskFlow/resolve/f18f0828ab6a40a7f3456feace7a33bebe8c511e/MANIFEST.json"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/base/transformer/config.json",
+      "bytes": 362,
+      "sha256": "43c02875ed3e0d4c1b3a1007b34505d0bd2c1607fc90b2107c5e39c53d187113",
+      "url": "https://huggingface.co/Qwen/Qwen-Image-Edit-2511/resolve/6f3ccc0b56e431dc6a0c2b2039706d7d26f22cb9/transformer/config.json"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/base/vae/config.json",
+      "bytes": 730,
+      "sha256": "c448160dba5ce79c965cb075ee02e18d1c42eb6424f787e5869790d577b56a65",
+      "url": "https://huggingface.co/Qwen/Qwen-Image-Edit-2511/resolve/6f3ccc0b56e431dc6a0c2b2039706d7d26f22cb9/vae/config.json"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/base/text_encoder/config.json",
+      "bytes": 3146,
+      "sha256": "4a49f14a1594fd988ab301e491ac522cd9b0e8fd1c9232b806c54568f348c1fb",
+      "url": "https://huggingface.co/Qwen/Qwen-Image-Edit-2511/resolve/6f3ccc0b56e431dc6a0c2b2039706d7d26f22cb9/text_encoder/config.json"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/base/scheduler/scheduler_config.json",
+      "bytes": 485,
+      "sha256": "7ee767e37bae4af31d4eb935e125bb20a2237eeecafd22af6610093865c6f587",
+      "url": "https://huggingface.co/Qwen/Qwen-Image-Edit-2511/resolve/6f3ccc0b56e431dc6a0c2b2039706d7d26f22cb9/scheduler/scheduler_config.json"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/base/model_index.json",
+      "bytes": 516,
+      "sha256": "5ba11ceee68457ad6a48b899b8c9493e347f4685e11e5eeca952a13f16549e35",
+      "url": "https://huggingface.co/Qwen/Qwen-Image-Edit-2511/resolve/6f3ccc0b56e431dc6a0c2b2039706d7d26f22cb9/model_index.json"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/pipelines/base_pipeline.py",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/pipelines/base_pipeline.py",
+      "bytes": 11934,
+      "sha256": "817624783beb64d9b0a44259521d57e8b027640529c232235e45638c2b420380"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/code/data_module/utils.py",
+      "url": "https://raw.githubusercontent.com/ReyChiaro/MaskFlow/3125f1ecd72f5a4e068c5a1954e9d6a8df38d443/data_module/utils.py",
+      "bytes": 5478,
+      "sha256": "f8e6aa8c68d1ca1bf66b85d1c2cdcff937260c0562f6ea51bcafb0d483a89574"
+    },
+    {
+      "path": "experiments/maskflow/research/2026-10-05/diffusers/transformer_qwenimage_v0.37.1.py",
+      "url": "https://raw.githubusercontent.com/huggingface/diffusers/v0.37.1/src/diffusers/models/transformers/transformer_qwenimage.py",
+      "bytes": 45123,
+      "sha256": "2f147aac59f7f62eb70668be3961fa367fbb815b8def25f58a2f4709f7f37e35"
+    }
+  ]
+}
