@@ -1,0 +1,50 @@
+{
+  "method": "frozen-VAE post-denoise border-latent pixel-consistency projection",
+  "input": "experiments/qwen/projection_inputs/2026-10-05/track3-localized40-known-collar/final_latents.npz",
+  "input_sha256": "481eb4831a1a29131dee7886d6493219d2df72f1be92f62d593af1b919573d2f",
+  "input_kind": "exact-final",
+  "track": "track3",
+  "status": "preflight_passed",
+  "derived_postprocess": true,
+  "new_transformer_calls": 0,
+  "weights_trained": false,
+  "model_components_loaded": [],
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "source_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+  "original_jpg_sha256_before": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+  "parameters": {
+    "track": "track3",
+    "methods": "derivative",
+    "iterations": 8,
+    "learning_rate": 0.015,
+    "latent_collar": 6,
+    "source_band": 32,
+    "trust_weight": 0.01,
+    "derivative_weight": 1.0,
+    "max_delta": 0.2,
+    "checkpoint_decoder": true,
+    "preflight": true
+  },
+  "runs": {},
+  "cpu_smoke": {
+    "reference_tiler_max_error": 0.0,
+    "nonzero_finite_gradient": true,
+    "model_weights_loaded": false,
+    "checkpoint_forward_error": 0.0,
+    "checkpoint_gradient_max_error": 0.0,
+    "metadata_cases": {
+      "preview_and_exact_final_accepted": true,
+      "correct_raw_paths": true,
+      "invalid_cases_rejected": 3
+    },
+    "device": "cpu"
+  },
+  "phase": "preflight_complete",
+  "elapsed_seconds": 0.035144792025676,
+  "process_peak_rss_bytes": 262668288
+}
