@@ -1,0 +1,55 @@
+{
+  "status": "passed",
+  "arms": {
+    "edge-control": {
+      "record_count_matches_nfe": true,
+      "inner_count_matches": true,
+      "token_sum_matches": true,
+      "source_pixels_exact": true,
+      "image_shape_correct": true,
+      "preview_latents_finite": true,
+      "composite_hash_matches_record": true
+    },
+    "think1": {
+      "record_count_matches_nfe": true,
+      "inner_count_matches": true,
+      "token_sum_matches": true,
+      "source_pixels_exact": true,
+      "image_shape_correct": true,
+      "preview_latents_finite": true,
+      "composite_hash_matches_record": true
+    },
+    "think2": {
+      "record_count_matches_nfe": true,
+      "inner_count_matches": true,
+      "token_sum_matches": true,
+      "source_pixels_exact": true,
+      "image_shape_correct": true,
+      "preview_latents_finite": true,
+      "composite_hash_matches_record": true
+    }
+  },
+  "matched_conditions": {
+    "source_prefix_sha256": true,
+    "noise_sha256": true,
+    "known_target_sha256": true,
+    "sigmas": true,
+    "prompt": true,
+    "model_revision": true,
+    "adapter_revision": true,
+    "quantization": true,
+    "active_heights_by_step": true
+  },
+  "baseline_exact": {
+    "raw": {
+      "file_sha256_equal": true,
+      "decoded_pixels_equal": true
+    },
+    "composite": {
+      "file_sha256_equal": true,
+      "decoded_pixels_equal": true
+    }
+  },
+  "original_jpeg_hashes_unchanged": true,
+  "current_runner_hash_matches_run": true
+}
