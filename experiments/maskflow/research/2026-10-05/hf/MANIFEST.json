@@ -1,0 +1,104 @@
+{
+  "schema_version": 2,
+  "repository": "ReyChiaro/MaskFlow",
+  "base_model": "Qwen/Qwen-Image-Edit-2511",
+  "format": "diffusers-peft-lora-safetensors",
+  "adapter_names": {
+    "sft": "maskflow",
+    "dmd": "dmd"
+  },
+  "weights": [
+    {
+      "filename": "maskflow-S.safetensors",
+      "variant": "S",
+      "role": "sft",
+      "size_bytes": 1510070696,
+      "sha256": "abde09d33238e6b2133a4a7dd86b9830ef93a8d97978e5ba437d60675c75dafd",
+      "rank": 256,
+      "alpha": 256,
+      "recommended_num_inference_steps": 50,
+      "recommended_text_cfg_scale": 4.0
+    },
+    {
+      "filename": "maskflow-S-tcfg4-step8.safetensors",
+      "variant": "S distilled 8-step",
+      "role": "dmd",
+      "requires": "maskflow-S.safetensors",
+      "size_bytes": 1510070656,
+      "sha256": "109580b294c3993984303fa39cb1dc77dfc90fc892075e90d85d1afd079a49e7",
+      "rank": 256,
+      "alpha": 256,
+      "recommended_num_inference_steps": 8,
+      "recommended_text_cfg_scale": 4.0
+    },
+    {
+      "filename": "maskflow-S-tcfg4-step16.safetensors",
+      "variant": "S distilled 16-step",
+      "role": "dmd",
+      "requires": "maskflow-S.safetensors",
+      "size_bytes": 1510070656,
+      "sha256": "e9292a27cb68b8021d84cea8731ef656f2dcf0a8c66f57a577e7591dd03f0b10",
+      "rank": 256,
+      "alpha": 256,
+      "recommended_num_inference_steps": 16,
+      "recommended_text_cfg_scale": 4.0
+    },
+    {
+      "filename": "maskflow-SEC.safetensors",
+      "variant": "SEC",
+      "role": "sft",
+      "size_bytes": 1510070656,
+      "sha256": "972a2e54547474aaf3cb284f17395445bfba427b56da22b1efbbeea6dbc5fcdf",
+      "rank": 256,
+      "alpha": 256,
+      "recommended_num_inference_steps": 50,
+      "recommended_text_cfg_scale": 4.0
+    },
+    {
+      "filename": "maskflow-SEC-tcfg4-step16.safetensors",
+      "variant": "SEC distilled 16-step",
+      "role": "dmd",
+      "requires": "maskflow-SEC.safetensors",
+      "size_bytes": 1510070656,
+      "sha256": "4af5c87f43a892e5ac07c080e4bc67b3ee88e576371e6255c1132902ebf4646f",
+      "rank": 256,
+      "alpha": 256,
+      "recommended_num_inference_steps": 16,
+      "recommended_text_cfg_scale": 4.0
+    },
+    {
+      "filename": "maskflow-SEC-tcfg4-step8.safetensors",
+      "variant": "SEC distilled 8-step",
+      "role": "dmd",
+      "requires": "maskflow-SEC.safetensors",
+      "size_bytes": 1510070656,
+      "sha256": "157b9f869457b790160099cf3c5d4fbe44d5c46739a3ae49b1fb7abeda5fda1c",
+      "rank": 256,
+      "alpha": 256,
+      "recommended_num_inference_steps": 8,
+      "recommended_text_cfg_scale": 4.0
+    },
+    {
+      "filename": "latest.safetensors",
+      "variant": "Latest general scenes",
+      "role": "sft",
+      "size_bytes": 2453820032,
+      "sha256": "773e815a209ebf948dbe0cf76492dd658cc16030f8119471cc553edb208de7b0",
+      "rank": 256,
+      "alpha": 256,
+      "recommended_num_inference_steps": 50,
+      "recommended_text_cfg_scale": 4.0
+    },
+    {
+      "filename": "latest-I.safetensors",
+      "variant": "Latest infographics",
+      "role": "sft",
+      "size_bytes": 2453820032,
+      "sha256": "904933fd15148685a6bfcd962f6295b1ec148104c4afe019273e27603ef5d1a3",
+      "rank": 256,
+      "alpha": 256,
+      "recommended_num_inference_steps": 50,
+      "recommended_text_cfg_scale": 4.0
+    }
+  ]
+}
