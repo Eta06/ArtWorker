@@ -1,0 +1,1081 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "device": "cpu",
+  "gpu_used": false,
+  "full_checkpoint_loaded": false,
+  "full_vae_tensor_payload_materialized": false,
+  "seed": 261005,
+  "created_at_utc": "2026-10-05T04:03:00.744045+00:00",
+  "checks": [
+    {
+      "name": "__main__.FullArchitectureHeaderGate.test_actual_saved_headers_cover_full_runtime_architectures",
+      "status": "passed"
+    },
+    {
+      "name": "__main__.LoadingGate.test_duplicate_shard_keys_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "__main__.LoadingGate.test_extra_tensor_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "__main__.LoadingGate.test_learned_norm_bias_sidecar_is_exact_and_used",
+      "status": "passed"
+    },
+    {
+      "name": "__main__.LoadingGate.test_missing_learned_bias_rejected_without_sidecar",
+      "status": "passed"
+    },
+    {
+      "name": "__main__.LoadingGate.test_missing_tensor_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "__main__.LoadingGate.test_mixed_saved_quantization_and_exact_values",
+      "status": "passed"
+    },
+    {
+      "name": "__main__.LoadingGate.test_no_shards_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "__main__.LoadingGate.test_nonquantizable_module_scale_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "__main__.LoadingGate.test_scale_without_packed_weight_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "__main__.LoadingGate.test_shape_mismatch_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "__main__.LoadingGate.test_sidecar_collision_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "__main__.LoadingGate.test_unsupported_quantization_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "__main__.RMSNormShapeGate.test_flat_norm_coefficients_reshape_without_value_change",
+      "status": "passed"
+    },
+    {
+      "name": "__main__.RMSNormShapeGate.test_ordinary_weights_are_not_reshaped_even_when_element_count_matches",
+      "status": "passed"
+    },
+    {
+      "name": "__main__.RMSNormShapeGate.test_wrong_norm_channel_count_is_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "__main__.VAEAffineGate.test_official_model_dtype_affine_and_posterior_mode",
+      "status": "passed"
+    }
+  ],
+  "runtime_revision": "99fb94dd3eaa9dd1931cd3cd8eae1ae3e20f2ef3",
+  "runtime_vae_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_vae.py",
+  "mlx_default_device": "Device(cpu, 0)",
+  "torch_version": "2.14.0",
+  "full_architecture_headers": {
+    "components": [
+      {
+        "component": "transformer",
+        "actual_saved_tensor_count": 3624,
+        "sidecar_tensor_count": 1,
+        "full_expected_tensor_count": 3625,
+        "missing_tensors_after_sidecar": [],
+        "unexpected_tensors": [],
+        "shape_errors": [],
+        "quantized_module_counts": {
+          "4": 786,
+          "8": 60
+        },
+        "vae_norm_layout_bridges": [],
+        "dtype_counts": {
+          "BF16": 2779,
+          "U32": 846
+        },
+        "lazy_architecture_peak_rss_increase_bytes": 36880384,
+        "actual_shards": [
+          {
+            "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/0.safetensors",
+            "header_size_bytes": 70277,
+            "header_semantics_sha256": "f1a269cb854a8eeaaa0521ba00b90f9c51a01f769f724f71afb8b3a6be7088d1",
+            "file_size_bytes": 2133769869,
+            "tensor_count": 605,
+            "tensor_payload_read": false
+          },
+          {
+            "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/1.safetensors",
+            "header_size_bytes": 68540,
+            "header_semantics_sha256": "51a6614fe2b1e514d48143bcad9faf63593e33ba3b532fa099fdbf8fa82cd79f",
+            "file_size_bytes": 2142940100,
+            "tensor_count": 584,
+            "tensor_payload_read": false
+          },
+          {
+            "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/2.safetensors",
+            "header_size_bytes": 66674,
+            "header_semantics_sha256": "b010d9ba5ff3677aa75f316a06936ac6ba3876cd01cb91170813f7e105a85ba5",
+            "file_size_bytes": 2103978106,
+            "tensor_count": 568,
+            "tensor_payload_read": false
+          },
+          {
+            "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/3.safetensors",
+            "header_size_bytes": 68945,
+            "header_semantics_sha256": "35bf2135d11f3ef2e05200887ab0e148f6fc1661e68c6c8008aea5d10f86a8e7",
+            "file_size_bytes": 2121682265,
+            "tensor_count": 588,
+            "tensor_payload_read": false
+          },
+          {
+            "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/4.safetensors",
+            "header_size_bytes": 68558,
+            "header_semantics_sha256": "48c167d9ca791106d5217896e2faa0925578aee8b5a81bbea050d343d1572814",
+            "file_size_bytes": 2142940118,
+            "tensor_count": 584,
+            "tensor_payload_read": false
+          },
+          {
+            "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/5.safetensors",
+            "header_size_bytes": 66778,
+            "header_semantics_sha256": "43ee14d2c9ab497d329e6f733f3217f150b4fda334e86e08709b0374f1a79014",
+            "file_size_bytes": 2103978210,
+            "tensor_count": 568,
+            "tensor_payload_read": false
+          },
+          {
+            "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/6.safetensors",
+            "header_size_bytes": 14576,
+            "header_semantics_sha256": "4237a18457d3ae2283f230722099f2e80f5ddcbb3df778b78b80e670c72c2f4e",
+            "file_size_bytes": 449941880,
+            "tensor_count": 127,
+            "tensor_payload_read": false
+          }
+        ],
+        "parameters_evaluated": false,
+        "parameters_quantized": false
+      },
+      {
+        "component": "text_encoder",
+        "actual_saved_tensor_count": 1412,
+        "sidecar_tensor_count": 0,
+        "full_expected_tensor_count": 1412,
+        "missing_tensors_after_sidecar": [],
+        "unexpected_tensors": [],
+        "shape_errors": [],
+        "quantized_module_counts": {
+          "4": 197,
+          "8": 130
+        },
+        "vae_norm_layout_bridges": [],
+        "dtype_counts": {
+          "BF16": 1055,
+          "U32": 327,
+          "F32": 30
+        },
+        "lazy_architecture_peak_rss_increase_bytes": 589824,
+        "actual_shards": [
+          {
+            "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/text_encoder/0.safetensors",
+            "header_size_bytes": 43771,
+            "header_semantics_sha256": "2d218f7fa7ea59e63ff737dbf5f85cab20972ffc931224903efb804bec75e6dd",
+            "file_size_bytes": 2142182659,
+            "tensor_count": 382,
+            "tensor_payload_read": false
+          },
+          {
+            "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/text_encoder/1.safetensors",
+            "header_size_bytes": 72555,
+            "header_semantics_sha256": "ade1427c4fa65e7961993a815a3e3cef0933db53c6b53f358a1a79fb23c9b628",
+            "file_size_bytes": 2146261507,
+            "tensor_count": 631,
+            "tensor_payload_read": false
+          },
+          {
+            "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/text_encoder/2.safetensors",
+            "header_size_bytes": 45955,
+            "header_semantics_sha256": "2ee8aeee5a8d0d31fc666ec16a5907ecd9405144965632a9d0cc93ea79dc7cc6",
+            "file_size_bytes": 541485131,
+            "tensor_count": 399,
+            "tensor_payload_read": false
+          }
+        ],
+        "parameters_evaluated": false,
+        "parameters_quantized": false
+      },
+      {
+        "component": "vae",
+        "actual_saved_tensor_count": 192,
+        "sidecar_tensor_count": 0,
+        "full_expected_tensor_count": 192,
+        "missing_tensors_after_sidecar": [],
+        "unexpected_tensors": [],
+        "shape_errors": [],
+        "quantized_module_counts": {},
+        "vae_norm_layout_bridges": [
+          {
+            "tensor": "decoder.mid_block.attentions.0.norm.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.mid_block.resnets.0.norm1.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.mid_block.resnets.0.norm2.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.mid_block.resnets.1.norm1.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.mid_block.resnets.1.norm2.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block0.resnets.0.norm1.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block0.resnets.0.norm2.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block0.resnets.1.norm1.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block0.resnets.1.norm2.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block0.resnets.2.norm1.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block0.resnets.2.norm2.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block1.resnets.0.norm1.weight",
+            "saved_shape": [
+              192
+            ],
+            "runtime_shape": [
+              192,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block1.resnets.0.norm2.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block1.resnets.1.norm1.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block1.resnets.1.norm2.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block1.resnets.2.norm1.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block1.resnets.2.norm2.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block2.resnets.0.norm1.weight",
+            "saved_shape": [
+              192
+            ],
+            "runtime_shape": [
+              192,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block2.resnets.0.norm2.weight",
+            "saved_shape": [
+              192
+            ],
+            "runtime_shape": [
+              192,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block2.resnets.1.norm1.weight",
+            "saved_shape": [
+              192
+            ],
+            "runtime_shape": [
+              192,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block2.resnets.1.norm2.weight",
+            "saved_shape": [
+              192
+            ],
+            "runtime_shape": [
+              192,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block2.resnets.2.norm1.weight",
+            "saved_shape": [
+              192
+            ],
+            "runtime_shape": [
+              192,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block2.resnets.2.norm2.weight",
+            "saved_shape": [
+              192
+            ],
+            "runtime_shape": [
+              192,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block3.resnets.0.norm1.weight",
+            "saved_shape": [
+              96
+            ],
+            "runtime_shape": [
+              96,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block3.resnets.0.norm2.weight",
+            "saved_shape": [
+              96
+            ],
+            "runtime_shape": [
+              96,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block3.resnets.1.norm1.weight",
+            "saved_shape": [
+              96
+            ],
+            "runtime_shape": [
+              96,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block3.resnets.1.norm2.weight",
+            "saved_shape": [
+              96
+            ],
+            "runtime_shape": [
+              96,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block3.resnets.2.norm1.weight",
+            "saved_shape": [
+              96
+            ],
+            "runtime_shape": [
+              96,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.up_block3.resnets.2.norm2.weight",
+            "saved_shape": [
+              96
+            ],
+            "runtime_shape": [
+              96,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "decoder.norm_out.weight",
+            "saved_shape": [
+              96
+            ],
+            "runtime_shape": [
+              96,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.down_blocks.0.resnets.0.norm1.weight",
+            "saved_shape": [
+              96
+            ],
+            "runtime_shape": [
+              96,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.down_blocks.0.resnets.0.norm2.weight",
+            "saved_shape": [
+              96
+            ],
+            "runtime_shape": [
+              96,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.down_blocks.0.resnets.1.norm1.weight",
+            "saved_shape": [
+              96
+            ],
+            "runtime_shape": [
+              96,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.down_blocks.0.resnets.1.norm2.weight",
+            "saved_shape": [
+              96
+            ],
+            "runtime_shape": [
+              96,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.down_blocks.1.resnets.0.norm1.weight",
+            "saved_shape": [
+              96
+            ],
+            "runtime_shape": [
+              96,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.down_blocks.1.resnets.0.norm2.weight",
+            "saved_shape": [
+              192
+            ],
+            "runtime_shape": [
+              192,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.down_blocks.1.resnets.1.norm1.weight",
+            "saved_shape": [
+              192
+            ],
+            "runtime_shape": [
+              192,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.down_blocks.1.resnets.1.norm2.weight",
+            "saved_shape": [
+              192
+            ],
+            "runtime_shape": [
+              192,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.down_blocks.2.resnets.0.norm1.weight",
+            "saved_shape": [
+              192
+            ],
+            "runtime_shape": [
+              192,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.down_blocks.2.resnets.0.norm2.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.down_blocks.2.resnets.1.norm1.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.down_blocks.2.resnets.1.norm2.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.down_blocks.3.resnets.0.norm1.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.down_blocks.3.resnets.0.norm2.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.down_blocks.3.resnets.1.norm1.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.down_blocks.3.resnets.1.norm2.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.mid_block.attentions.0.norm.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.mid_block.resnets.0.norm1.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.mid_block.resnets.0.norm2.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.mid_block.resnets.1.norm1.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.mid_block.resnets.1.norm2.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          },
+          {
+            "tensor": "encoder.norm_out.weight",
+            "saved_shape": [
+              384
+            ],
+            "runtime_shape": [
+              384,
+              1,
+              1,
+              1
+            ],
+            "value_preserving_reshape": true
+          }
+        ],
+        "dtype_counts": {
+          "BF16": 192
+        },
+        "lazy_architecture_peak_rss_increase_bytes": 32768,
+        "actual_shards": [
+          {
+            "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/vae/0.safetensors",
+            "header_size_bytes": 22645,
+            "header_semantics_sha256": "3aaeb8944384b99a33636438368aa5878aabc4abeb2dee607cba2072ebe11526",
+            "file_size_bytes": 253586147,
+            "tensor_count": 192,
+            "tensor_payload_read": false
+          }
+        ],
+        "parameters_evaluated": false,
+        "parameters_quantized": false
+      }
+    ],
+    "actual_local_safetensors_headers_only": true,
+    "tensor_payload_read": false,
+    "full_architectures_constructed_lazily_on_cpu": true,
+    "payload_checksums_verified_by_this_gate": false
+  },
+  "header_source_sha256": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/model.safetensors.index.json": "f9f03fac574131598f16cdee75d60ffa15dc0fd5e60c37d89bcc74aa3653366c",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/original-sidecar/norm_out.linear.bias.provenance.json": "8d60bf1ab1d4cf2d3498e8f776c6a463a7147c7cccb8737124e920bc16a2f64c",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/text_encoder/model.safetensors.index.json": "e52b7b5e0e0bd4d544df98d16abaa26649a3f2b2613c8e7ed66ddca788c7409c",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/vae/model.safetensors.index.json": "feda700a9485ff767135f5ca4ea92be31a0b8465c624959814b505a827428f3c"
+  },
+  "sidecar": {
+    "tensor": "norm_out.bias",
+    "dtype": "bfloat16",
+    "nonzero_learned_values_preserved_exactly": true,
+    "source_fixture_zero_filled": false,
+    "forward_sensitive_to_learned_bias": true,
+    "tensor_count": 11
+  },
+  "mixed_loading": {
+    "component": "tiny",
+    "shards": 2,
+    "tensor_count": 11,
+    "strict_tensor_coverage": true,
+    "base_values_requantized": false,
+    "load_seconds": 0.02583583298837766,
+    "vae_rms_broadcast_reshapes": [],
+    "quantization_bits": {
+      "q4": 4,
+      "q8": 8
+    },
+    "unquantized_dtype": "bfloat16",
+    "all_saved_tensor_values_bit_exact": true,
+    "forward_max_absolute_error": 0.0,
+    "all_parameters_frozen": true
+  },
+  "rms_norm_reshape": {
+    "passed": true,
+    "coefficient_values_bit_exact": true,
+    "image_forward_bit_exact": true,
+    "video_forward_bit_exact": true,
+    "receipt": [
+      {
+        "tensor": "video_norm.weight",
+        "from": [
+          8
+        ],
+        "to": [
+          8,
+          1,
+          1,
+          1
+        ],
+        "values_changed": false
+      },
+      {
+        "tensor": "image_norm.weight",
+        "from": [
+          8
+        ],
+        "to": [
+          8,
+          1,
+          1
+        ],
+        "values_changed": false
+      }
+    ]
+  },
+  "vae_affine": {
+    "official_equations_source": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/research/2026-10-05/code/pipelines/qwenimage/qwenimage_edit_plus.py",
+    "official_constants_source": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/research/2026-10-05/base/vae/config.json",
+    "full_vae_constructed": false,
+    "cases": [
+      {
+        "dtype": "bfloat16",
+        "input_ndim": 4,
+        "encode_max_absolute_error": 0.0,
+        "decode_max_absolute_error": 0.0,
+        "posterior_mode_independent_of_log_variance": true,
+        "single_frame_axis_inserted_or_preserved": true
+      },
+      {
+        "dtype": "bfloat16",
+        "input_ndim": 5,
+        "encode_max_absolute_error": 0.0,
+        "decode_max_absolute_error": 0.0,
+        "posterior_mode_independent_of_log_variance": true,
+        "single_frame_axis_inserted_or_preserved": true
+      },
+      {
+        "dtype": "float32",
+        "input_ndim": 4,
+        "encode_max_absolute_error": 0.0,
+        "decode_max_absolute_error": 0.0,
+        "posterior_mode_independent_of_log_variance": true,
+        "single_frame_axis_inserted_or_preserved": true
+      },
+      {
+        "dtype": "float32",
+        "input_ndim": 5,
+        "encode_max_absolute_error": 0.0,
+        "decode_max_absolute_error": 0.0,
+        "posterior_mode_independent_of_log_variance": true,
+        "single_frame_axis_inserted_or_preserved": true
+      }
+    ]
+  },
+  "source_sha256": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_loading.py": "a36b0a084fe62498c31510fd6284d70a64dadbb8c8e9ba6b44af1a72dc3d17d7",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_vae.py": "adbaa334b20dc5cc24850f26b46095ca22792339fd5fc541c828e5b6639fd3b9",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_math.py": "ac0c6aff57fa0df022c6a71c293d6a5e97799af64d9accc4efa94a405c82ab90",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_transformer.py": "374b32ea26ed0e8f46bf854d56412f19b1d425c802d9d845866cc9da2d302746",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_adapter.py": "802cec2b7ec4a1e797ba4b4587a1ffe371aec45c1a40cf6e4aa4db27947ef402",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/test_loading_cpu.py": "92d8a64c07f8377db9733f0862d4b397fdd83368c463efcf7f0f919ed8f236f6",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_vae.py": "0d5151f0871907c7c625a196191f7896ddd5ed68c31c1c071aa44477b8a8e7e0",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/research/2026-10-05/base/vae/config.json": "c448160dba5ce79c965cb075ee02e18d1c42eb6424f787e5869790d577b56a65",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/research/2026-10-05/code/pipelines/qwenimage/qwenimage_edit_plus.py": "4fdd30e13da5d16b603ea90f94bede5dbcf35bbd7901e9c8d8c26fd36a119c18",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/__init__.py": "032cb4bc23ec496f30647f53fdc37fe457dfd50b03ab1b9d593f4afb961ce7e7",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_rope.py": "dd397f23e641b1d63fee3d181d3d960c846d1fa9b54d01cdad7057a88e03eee8",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_attention.py": "8534f8b335dba63397cbe3e8c29f417fa05191ca337efa85de6c6578ea020676",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_mlp.py": "bb3503e76db7da59182ef221c7919a048fb15178278aa78677afe94852e045d8",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_rms_norm.py": "f6d65d1d731ceb5b9efe4b3a3a99c4c2fcef57071dc762545a7384f4a7c0fd71",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_encoder_layer.py": "60947e579638174e4a1035749b3bc7c807c9d966ec73efe16e1f98e20daec612",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_encoder.py": "5c3e00284033740fc0e79585a4fc3de3f4ddb0e45d6e097f3ebaf3ddba504489",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_text_encoder.py": "cddca905670cf7c06e9faeafaa97a8fc89c766926c6faec7dd214b200ff58c1f",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_prompt_encoder.py": "c94a5007b15d75502b912d66de5ec11aabd6d27aa13116a6ef9ef9da381d4f04",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/flux/model/flux_transformer/ada_layer_norm_continuous.py": "a37052050e72d1fd44bf5bada535adc8647cb88c168dfc309b54ca36548b3ebb",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_rope.py": "56730081812c4e42c569bcba78f814f72c9056f03b21eb370d4c3eb081075c0e",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_timestep_embedding.py": "79c7d948e75bd50a65ceeecc5211150a9b35a83a57d7ad2aaa4d5766269281c2",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_timesteps.py": "0ed471355bc75655f4e146ecc91d3cac50600d16710951364aa5b6e5d848b91f",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_time_text_embed.py": "e9315673acee7e404fcd25ce91bdeda20c500b9b81954a3d3165f96366574cc8",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_attention.py": "2a35b18b8fb87defc0cc4eb6e90f0795a51618b01df0fac44e80b56d6222b416",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_feed_forward.py": "cd59f6ed765782331ad869211edbf08bb486bca22d9980957737a62b01862007",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_transformer_block.py": "d646cba36a4145b4401d94dc1a4b5a6c5dfe7428997d169ba7ac71f7db1e243d",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_transformer_rms_norm.py": "8667fd1d273ee4390fecc70dd91a5ca9871bb5c9c2178ab79592ced4fb7b232a",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_transformer.py": "b24651be5371c0f21f3e94217e00833e2825a51886f58b217d602ef05943e121",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_transformer_controlnet.py": "3f26b08d1770e64a0e71e0cd04c98d927611e926d9d175579e11365cb9d80896",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_causal_conv_3d.py": "f4b0f0ba185716f8e43b722d88d1a3cf5356b31e82e2810364b326b0df3f0bd4",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_rms_norm.py": "f213c2873888665d5e4452ed38b3f7db5c78149cfc6531c1b4c59ec3d0a6e24a",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_attention_block_3d.py": "50d827ff8de20338b3869003b13bb74087c9872190a919a7beae54038df06ad5",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_res_block_3d.py": "8655b7e5461cdb43acfa642d93381810befd35c616e50de61288706c7dfe69fc",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_mid_block_3d.py": "d5b4cb3e70d358520067e34b121f837a754f373d01c13411cb4f3f3eb6577aeb",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_resample_3d.py": "eac51814d434a368365e6089b04c31b0c9759ec88d19064c44105a53981281e5",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_up_block_3d.py": "231c494a53760d48832981a17d38e0d0cd2b871931253a146a1bdc03db8e89d5",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_decoder_3d.py": "7527d50a14ded51e5257f320cdf254652cd203df256e9d443c20fbd037e534b5",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_down_block_3d.py": "6328740e42788dc7c74942d9ef2757bc1fb5a808200f017574b13cc2b2dcba12",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_encoder_3d.py": "fe65cb9fd15985b7bcb52719a7551bbf3080f09cbad04587a69d641eeb9298f0",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_vision_language_encoder.py": "9841ae256bff249788e7d0a772db88c9e31d52862df7fdc376ee22399b353275",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_patch_merger.py": "a820a75735ca404892a0c9b7fa768bd78918b620efca1e28988d4b364bd75440",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_vision_attention.py": "06408f662ea57d73891a53557e0758c103c2fea3f0f47ec3ccb672458ef763b6",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_vision_mlp.py": "4cd1ab3f206ef4da01444be26705c307fa8b756e81fcafd2703a4b121cec35f0",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_vision_block.py": "b2d62cf87f7a3b34315f1290de6b1ef172928b55f72e0dae5b13df9c3148e76f",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_vision_patch_embed.py": "54cf99bfe31f649265dcf6c535048aef02543a615b0553a490c3ef55027b0e6d",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_vision_rotary_embedding.py": "7cfa9954f91dc43b1b0814c3d420140e720f9945b6adebf5ab08a3782f609180",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_vision_transformer.py": "6de9bbca39e87623a7a1291649481ba29abfffb543750b188f940b11b69ce608",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/model.safetensors.index.json": "f9f03fac574131598f16cdee75d60ffa15dc0fd5e60c37d89bcc74aa3653366c",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/original-sidecar/norm_out.linear.bias.provenance.json": "8d60bf1ab1d4cf2d3498e8f776c6a463a7147c7cccb8737124e920bc16a2f64c",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/text_encoder/model.safetensors.index.json": "e52b7b5e0e0bd4d544df98d16abaa26649a3f2b2613c8e7ed66ddca788c7409c",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/vae/model.safetensors.index.json": "feda700a9485ff767135f5ca4ea92be31a0b8465c624959814b505a827428f3c"
+  },
+  "tests_run": 17,
+  "failure_count": 0
+}
