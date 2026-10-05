@@ -1,0 +1,241 @@
+{
+  "status": "integrity_passed_visual_failed",
+  "independent_audit": "CPU numpy,Pillow,hashlib only; no inference,weights,downloads or original/code/output edits",
+  "audited_utc": "2026-10-05T02:41:28.028435+00:00",
+  "run_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-seed42",
+  "metrics_sha256": "b943e2832df3a249e2fd43ffc93cea39983fdef9f8e00c4376411ce30098c6c2",
+  "checks": {
+    "initial_noise": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true,
+      "array_sha256_float32": "9b0f130d9dee403294a1429d7552add46da89cbb424e620aa3d8cbd80d549a1c",
+      "file_sha256": "6212439c5222761ea39e796c4318ec4b643de1c609d24fe5bcde6ff58d8cc9f6",
+      "minimum": -4.789865970611572,
+      "maximum": 4.338210582733154,
+      "mean": 0.0008740242919884622,
+      "std": 0.9988974332809448,
+      "shape_matches_record": true,
+      "hash_matches_record": true
+    },
+    "final_latents": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true,
+      "array_sha256_float32": "90278c1ecd6049202d7d5a0ec80dd4149d389f366fcea4f52a1363ab188f12fd",
+      "file_sha256": "39597fa26d3d3c591c8e9cb3863acf5b6325ae67168456e0968ad90648e181af",
+      "minimum": -3.404627561569214,
+      "maximum": 3.400190591812134,
+      "mean": -0.13353568315505981,
+      "std": 0.8001073598861694,
+      "shape_matches_record": true,
+      "hash_matches_record": true
+    },
+    "images": {
+      "raw_size": [
+        512,
+        1152
+      ],
+      "composite_size": [
+        512,
+        1152
+      ],
+      "source_size": [
+        512,
+        512
+      ],
+      "source_exact": true,
+      "generated_region_exact_raw": true,
+      "raw_hash_matches_record": true,
+      "composite_hash_matches_record": true
+    },
+    "raw_source_mae_recomputed": {
+      "all": 6.791121006011963,
+      "top16": 7.033731937408447,
+      "bottom16": 6.559122562408447,
+      "inner": 6.790767192840576
+    },
+    "raw_source_mae_matches_record": true,
+    "source_integrity": {
+      "original_jpg_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "original_jpg_matches_registry": true,
+      "source_square_sha256": "9683ce8fa857b2b91accc641b5e9a5f417542e9393f6dbbc20bf86a028e64349",
+      "source_square_pixels_match_original_crop": true,
+      "source512_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+      "source512_matches_preflight_and_metrics": true,
+      "source512_pixels_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+      "source512_pixels_hash_matches_record": true,
+      "source512_matches_LANCZOS_derivation": true,
+      "source_preservation_caveat": "Source equality is against common512x512 Lanczos resized reference; original720x720 JPG crop is independently preserved, not pixel identical to512 composite."
+    },
+    "inputs": {
+      "canvas_hash_matches_record": true,
+      "mask_hash_matches_record": true,
+      "source_pixels_exact_canvas": true,
+      "mask_known_all0": true,
+      "mask_unknown_all255": true,
+      "unknown_mask_pixel_count": 327680
+    },
+    "compute": {
+      "observed_step_count": 50,
+      "step_sequence_exact_1_to50": true,
+      "all_steps_finite": true,
+      "all_step_target_tokens2304": true,
+      "sigmas_length": 51,
+      "sigmas_strictly_decreasing": true,
+      "sigma_start": 1.0,
+      "sigma_end": 0.0,
+      "step_sigmas_match_scheduler": true,
+      "log_step_sequence_exact_1_to50": true,
+      "log_nfe_matches_steps": true,
+      "nfe": 50,
+      "target_token_forwards_recorded": 115200,
+      "target_token_forwards_recomputed": 115200,
+      "joint_block_forwards": 950,
+      "single_block_forwards": 1900,
+      "block_counts": {
+        "joint": 19,
+        "single": 38
+      },
+      "text_tokens_per_forward": 512,
+      "joint_query_tokens_per_forward": 2816,
+      "full_canvas_every_step": true,
+      "basis": "Counters and50 perstep completion/finiteness log events; source runner has one native transformer call perstep. Not independent GPU kernel instrumentation."
+    },
+    "runtime_provenance": {
+      "runner_sha256": "e63fac021c3e3849baeac7aeb5f41ae44c27a3cbda38a12520963c8955d8b6b3",
+      "runner_matches_launch_metrics_preflight": true,
+      "runtime_sources": {
+        "native_fill": {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/flux/variants/fill/flux_fill.py",
+          "sha256": "3012abf8a9541aa8600eae80bf2d8bdd6167cddd79030a6190d1df680050fe41",
+          "matches_record": true
+        },
+        "mask_util": {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/flux/variants/fill/mask_util.py",
+          "sha256": "b6f20892105b71e1ff64f325c2a3448d534f379ef95e44bec33d9224f5d5a7e9",
+          "matches_record": true
+        },
+        "config": {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/common/config/config.py",
+          "sha256": "19a862b4414ea082a45c8142ca8932fce483121426b6efd562999eca64ff307d",
+          "matches_record": true
+        },
+        "latent_creator": {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/flux/latent_creator/flux_latent_creator.py",
+          "sha256": "897505135f1d411b8af4967f0b8327ca5b91f8e2b1b9ec503e3fc2ce9f270d5c",
+          "matches_record": true
+        }
+      },
+      "cpu_gate_matches_record": true,
+      "manifest_hash_matches_record": true,
+      "checkpoint_payload_verification": "Runner performed full pinned manifest payload checks before inference; audit did not reread9.619GB model weights.",
+      "model_total_weight_bytes_recorded": 9613055254,
+      "checkpoint_manifest_revision": "eebfbaa12c95107169452c7d22622e04771192a3",
+      "model_manifest_verified_record": true,
+      "mlx_version_recorded": "0.32.3",
+      "metal_device_recorded": {
+        "device_name": "Apple M4 Max",
+        "max_recommended_working_set_size": 30150672384,
+        "memory_size": 38654705664,
+        "architecture": "applegpu_g16s",
+        "max_buffer_length": 22613000192,
+        "resource_limit": 499000
+      },
+      "launch_command": [
+        "experiments/qwen/.venv/bin/python",
+        "experiments/flux1_fill/run_fill_trial.py",
+        "--track",
+        "track3",
+        "--steps",
+        "50",
+        "--seed",
+        "42",
+        "--output",
+        "experiments/flux1_fill/runs/2026-10-05/track3-50-seed42"
+      ]
+    }
+  },
+  "runtime_seconds_recorded": {
+    "elapsed": 347.4071647080127,
+    "denoise": 339.5151874999865,
+    "raw_decode": 0.7014595410146285
+  },
+  "memory_bytes_recorded": {
+    "mlx_peak": 11092178102,
+    "denoise_peak": 8352201230,
+    "process_peak_rss": 9226731520
+  },
+  "direct_visual_inspection": {
+    "whole_raw_and_composite_viewed": true,
+    "source_reference_viewed": true,
+    "quality_gate": "failed",
+    "upper_generation": [
+      "Large invented yellow three-line text appears in generated area despite prompt asking no lettering.",
+      "Upper water/vegetation introduces a distant river/horizon perspective from an overhead source.",
+      "Guardrail upper continuation is broadly connected but cannot establish fullcomposition quality."
+    ],
+    "lower_generation": [
+      "Bottom generated area changes to a separate scene with another red car/open door and a seated person.",
+      "Hard horizontal scene boundary below original artwork; dark asphalt fails to continue."
+    ],
+    "no_cosmetic_repair_performed": true,
+    "rail_join_6x_viewed": true,
+    "lower_scene_join_native_viewed": true,
+    "rail_profile_observation": "Upper rail continuation is broadly connected, with local profile/tone variation; no standalone exact geometry pass is claimed. Whole scene fails for invented text and duplicated lower scene."
+  },
+  "inspection_artifacts": {
+    "upper_rail_join": {
+      "box_xyxy": [
+        224,
+        248,
+        440,
+        392
+      ],
+      "native_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-seed42/upper_rail_join_composite_native.png",
+      "native_sha256": "ac1a6336dde14a4a815f42533f63169038b0fd6f0776e03f0671dee8dcf945a1",
+      "6x_nearest_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-seed42/upper_rail_join_composite_6x_nearest.png",
+      "6x_nearest_sha256": "c9ba3ff541402ab3db25449b1aa018660a05e96a9c5963078a966fab024a6001",
+      "image_source": "composite.png",
+      "raw_native_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-seed42/upper_rail_join_raw_native.png",
+      "raw_native_sha256": "fe82fc305eaf1bccc6d9d2b13c80fe5a104321259c161c9284edbf96a5b39647",
+      "raw_6x_nearest_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-seed42/upper_rail_join_raw_6x_nearest.png",
+      "raw_6x_nearest_sha256": "06dd37570017521b1ac98facc873017dffb7e821ef802ba7195ae65beeb0d5da"
+    },
+    "lower_scene_join": {
+      "box_xyxy": [
+        0,
+        792,
+        512,
+        920
+      ],
+      "native_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-seed42/lower_scene_join_composite_native.png",
+      "native_sha256": "3e14f62b0a78f3b52b94e310d385d8b1ee85b17f1274ff457067f4893eaedcae",
+      "6x_nearest_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-seed42/lower_scene_join_composite_6x_nearest.png",
+      "6x_nearest_sha256": "f20a1be46ab53734d576314bbfdcf86a6b1d7d7b7ef4c1765539cc159f566799",
+      "image_source": "composite.png",
+      "raw_native_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-seed42/lower_scene_join_raw_native.png",
+      "raw_native_sha256": "5bc58f1a9018ecee5c9a6748d3bdcd0b83c37f8dd2767b953cf34b668febfd6e",
+      "raw_6x_nearest_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-seed42/lower_scene_join_raw_6x_nearest.png",
+      "raw_6x_nearest_sha256": "ef0cd143a2c01680f9d9091d031519cb170f14e651cd1a3e4b14dcb6c440872c"
+    }
+  },
+  "limitations": [
+    "Latent and file hashes independently recomputed; perstep prediction finiteness is recorded by runner, not retained prediction arrays.",
+    "Decoded tensor is not retained; decode finiteness is a runner assertion; raw PNG and source compositing verified directly.",
+    "Model payload hashes were checked by runner; audit independently checked model manifest hash but did not repeat payload I/O.",
+    "This fullcanvas50-step teacher does not verify progressive compute or iPhone performance."
+  ],
+  "output_file_sha256": {
+    "raw.png": "dc83ca70b69957f59e2a020d6fb6a33aaf0a23e0b24e64ad9c6e4f51471e7e15",
+    "composite.png": "c1ff9ddbff04f16c1878b1622e28ecc381bd8a413658617b7cb71fc1413b59d7"
+  }
+}
