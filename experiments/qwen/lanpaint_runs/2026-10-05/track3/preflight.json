@@ -1,0 +1,227 @@
+{
+  "status": "preflight_passed",
+  "track": "track3",
+  "seed": 42,
+  "runs": {},
+  "phases": {},
+  "runner_sha256": "f39372fb65d3fc24115ac3b3f2460db23c145a773fc7fbe749e86cb4e0e9350c",
+  "lanpaint_upstream_revision": "2d7912f9a5efe5ece8de334c7ca18317b8288c39",
+  "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+  "mlx_version": "0.32.3",
+  "mode_output_directories": {
+    "edge-control": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/lanpaint_runs/2026-10-05/track3/edge-control",
+    "think1": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/lanpaint_runs/2026-10-05/track3/think1",
+    "think2": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/lanpaint_runs/2026-10-05/track3/think2"
+  },
+  "layout_smoke": {
+    "device": "CPU",
+    "model_weights_loaded": false,
+    "checks": [
+      {
+        "height": 640,
+        "target_tokens": 1280,
+        "prefix_length": 1041,
+        "window_xyxy": [
+          0,
+          256,
+          512,
+          896
+        ]
+      },
+      {
+        "height": 896,
+        "target_tokens": 1792,
+        "prefix_length": 1041,
+        "window_xyxy": [
+          0,
+          128,
+          512,
+          1024
+        ]
+      },
+      {
+        "height": 1152,
+        "target_tokens": 2304,
+        "prefix_length": 1041,
+        "window_xyxy": [
+          0,
+          0,
+          512,
+          1152
+        ]
+      }
+    ],
+    "status": "passed"
+  },
+  "insertion_smoke": {
+    "status": "passed",
+    "device": "CPU",
+    "model_weights_loaded": false,
+    "checks": [
+      {
+        "initializer": "source-edge",
+        "previous_tokens_exact": true,
+        "new_absolute_noise_matched": true,
+        "new_frontier_mapping_exact": true,
+        "inserted_tokens": 512
+      },
+      {
+        "initializer": "frontier",
+        "previous_tokens_exact": true,
+        "new_absolute_noise_matched": true,
+        "new_frontier_mapping_exact": true,
+        "inserted_tokens": 512
+      }
+    ]
+  },
+  "geometry_smoke": {
+    "status": "passed",
+    "device": "CPU",
+    "model_weights_loaded": false,
+    "source_rgba_unchanged": true,
+    "opaque_alpha_constant": true,
+    "center_crop_rows_exact": [
+      20,
+      52
+    ],
+    "changed_known_target_keeps_prefix_exact": true
+  },
+  "lanpaint_smoke": {
+    "status": "passed",
+    "device": "CPU",
+    "model_weights_loaded": false,
+    "checks": [
+      {
+        "t": 1.0,
+        "count": 0,
+        "actual_inner_nfe": 0,
+        "max_abs_error": 0.0,
+        "finite": true,
+        "zero_iteration_exact": true
+      },
+      {
+        "t": 1.0,
+        "count": 1,
+        "actual_inner_nfe": 1,
+        "max_abs_error": 1.1920928955078125e-07,
+        "finite": true,
+        "zero_iteration_exact": null
+      },
+      {
+        "t": 1.0,
+        "count": 2,
+        "actual_inner_nfe": 2,
+        "max_abs_error": 2.384185791015625e-07,
+        "finite": true,
+        "zero_iteration_exact": null
+      },
+      {
+        "t": 0.92751545,
+        "count": 0,
+        "actual_inner_nfe": 0,
+        "max_abs_error": 0.0,
+        "finite": true,
+        "zero_iteration_exact": true
+      },
+      {
+        "t": 0.92751545,
+        "count": 1,
+        "actual_inner_nfe": 1,
+        "max_abs_error": 1.1920928955078125e-07,
+        "finite": true,
+        "zero_iteration_exact": null
+      },
+      {
+        "t": 0.92751545,
+        "count": 2,
+        "actual_inner_nfe": 2,
+        "max_abs_error": 4.76837158203125e-07,
+        "finite": true,
+        "zero_iteration_exact": null
+      },
+      {
+        "t": 0.64639395,
+        "count": 0,
+        "actual_inner_nfe": 0,
+        "max_abs_error": 0.0,
+        "finite": true,
+        "zero_iteration_exact": true
+      },
+      {
+        "t": 0.64639395,
+        "count": 1,
+        "actual_inner_nfe": 1,
+        "max_abs_error": 1.1920928955078125e-07,
+        "finite": true,
+        "zero_iteration_exact": null
+      },
+      {
+        "t": 0.64639395,
+        "count": 2,
+        "actual_inner_nfe": 2,
+        "max_abs_error": 3.5762786865234375e-07,
+        "finite": true,
+        "zero_iteration_exact": null
+      },
+      {
+        "t": 0.37862548,
+        "count": 0,
+        "actual_inner_nfe": 0,
+        "max_abs_error": 0.0,
+        "finite": true,
+        "zero_iteration_exact": true
+      },
+      {
+        "t": 0.37862548,
+        "count": 1,
+        "actual_inner_nfe": 1,
+        "max_abs_error": 2.980232238769531e-07,
+        "finite": true,
+        "zero_iteration_exact": null
+      },
+      {
+        "t": 0.37862548,
+        "count": 2,
+        "actual_inner_nfe": 2,
+        "max_abs_error": 3.2782554626464844e-07,
+        "finite": true,
+        "zero_iteration_exact": null
+      }
+    ],
+    "planned_effective_inner_iterations": {
+      "edge-control": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "think1": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        0
+      ],
+      "think2": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        0
+      ]
+    },
+    "planned_true_nfe": {
+      "edge-control": 6,
+      "think1": 9,
+      "think2": 12
+    },
+    "upstream_revision": "2d7912f9a5efe5ece8de334c7ca18317b8288c39"
+  },
+  "model_weights_loaded": false,
+  "elapsed_seconds": 3.529583374998765,
+  "process_peak_rss_bytes": 364625920
+}
