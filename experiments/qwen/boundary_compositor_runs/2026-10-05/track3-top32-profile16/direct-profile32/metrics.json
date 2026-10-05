@@ -1,0 +1,72 @@
+{
+  "method": "profile",
+  "radius_pixels": 32,
+  "smoothing_sigma_x": 16.0,
+  "normal_slope_estimate_rows": 8,
+  "value_cap_255": 48,
+  "gradient_cap_255_per_pixel": 0.35,
+  "edges": {
+    "top": {
+      "value_abs_p95_255": 31.056455612182617,
+      "value_max_255": 41.24433517456055,
+      "gradient_abs_p95_255_per_pixel": 0.3499999940395355,
+      "value_residual_capped_fraction": 0.0,
+      "gradient_residual_capped_fraction": 0.9016927083333334,
+      "correction_max_abs_255": 48.0,
+      "correction_first_row_mean_rgb": [
+        1.4316585063934326,
+        -6.692262649536133,
+        -16.323930740356445
+      ],
+      "correction_far_row_max_abs": 0.0,
+      "clipped_pixel_channels_before_uint8": 0,
+      "profile_source_normal_capped_fraction": 0.564453125,
+      "profile_per_row_value_capped_fraction": 0.013346354166666666,
+      "profile_source_normal_max_after_cap": 0.3499999940395355,
+      "profile_first_two_rows_full_weight": true,
+      "profile_normal_distance_saturation_pixels": 10
+    },
+    "bottom": {
+      "value_abs_p95_255": 6.62983512878418,
+      "value_max_255": 9.374412536621094,
+      "gradient_abs_p95_255_per_pixel": 0.3499999940395355,
+      "value_residual_capped_fraction": 0.0,
+      "gradient_residual_capped_fraction": 0.6158854166666666,
+      "correction_max_abs_255": 8.366223335266113,
+      "correction_first_row_mean_rgb": [
+        0.6745619773864746,
+        -2.3707633018493652,
+        -2.905466079711914
+      ],
+      "correction_far_row_max_abs": 0.0,
+      "clipped_pixel_channels_before_uint8": 0,
+      "profile_source_normal_capped_fraction": 0.154296875,
+      "profile_per_row_value_capped_fraction": 0.0,
+      "profile_source_normal_max_after_cap": 0.3499999940395355,
+      "profile_first_two_rows_full_weight": true,
+      "profile_normal_distance_saturation_pixels": 10
+    }
+  },
+  "processing_seconds": 0.0037130000127945095,
+  "source_pixels_exact": true,
+  "far_exterior_pixels_exact": true,
+  "no_geometric_warp": true,
+  "no_line_mask_or_painting": true,
+  "generated_mean_abs_change_255": 0.5312693277994792,
+  "top": {
+    "adjacent_row_rgb_jump_255": 10.460286458333334,
+    "smoothed_first_generated_row_target_mae_255": 1.1251777410507202,
+    "first_two_generated_rows_gradient_target_mae": 2.2771058082580566
+  },
+  "bottom": {
+    "adjacent_row_rgb_jump_255": 5.065755208333333,
+    "smoothed_first_generated_row_target_mae_255": 0.5911380648612976,
+    "first_two_generated_rows_gradient_target_mae": 0.4789194166660309
+  },
+  "collar_horizontal_gradient_energy_ratio": 1.0000872635684868,
+  "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track3-top32-profile16/direct-profile32/composite.png",
+  "composite_sha256": "6276193a96a740aaa1e197ef3259efa4f77b88a4967bba2a40c0f4973e49f17d",
+  "artifact_kind": "derived post-generation exact-source composite; not model raw",
+  "original_one_row_residual_statistics_used_by_profile": false,
+  "actual_profile_cap_statistics_recomputed_without_changing_saved_pixels": true
+}
