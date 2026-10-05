@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "device": "CPU only",
+  "models_loaded": false,
+  "gpu_work": false,
+  "input": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/tangent-canny/localized-hints/final_latents.npz",
+  "input_file_sha256": "6bd41b7960447a8a94a2efb0b1d2e4c6ec45ccde3f57759a5d5e867fbbc1ddd9",
+  "input_metrics_sha256": "15f1bec7bc54eaab7c27d66296e21db5164ff369de52395834e69e7bd4200988",
+  "exact_final_tensor_sha256": "df1fa78c76720e09c4d8bbb7f2c3e7f76595a6860efab266b7f25229fa50a979",
+  "latent_values_bitwise_unchanged": true,
+  "adapted_input": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_inputs/2026-10-05/track3-localized40-known-collar/final_latents.npz",
+  "adapted_file_sha256": "481eb4831a1a29131dee7886d6493219d2df72f1be92f62d593af1b919573d2f",
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "absolute_final_ids_valid": true,
+  "original_raw_png_sha256": "b47c8d1f86b345fa2f1490aed71c973a1890171f6f9a44502e1c1480646561c9",
+  "copied_raw_png_sha256": "b47c8d1f86b345fa2f1490aed71c973a1890171f6f9a44502e1c1480646561c9",
+  "source_pixels_exact_in_original_composite": true,
+  "purpose": "Metadata-only exact-final adapter; no VAE projection or quality result"
+}
