@@ -1,0 +1,163 @@
+{
+  "repo": "Qwen/Qwen-Image-2.1",
+  "revision": "790c92633540aa0cb11d9abf19eb46d861714758",
+  "files": [
+    {
+      "name": "LICENSE",
+      "expected_bytes": 7831,
+      "actual_bytes": 7831,
+      "lfs_sha256": null
+    },
+    {
+      "name": "README.md",
+      "expected_bytes": 5358,
+      "actual_bytes": 5358,
+      "lfs_sha256": null
+    },
+    {
+      "name": "model_index.json",
+      "expected_bytes": 447,
+      "actual_bytes": 447,
+      "lfs_sha256": null
+    },
+    {
+      "name": "processor/added_tokens.json",
+      "expected_bytes": 707,
+      "actual_bytes": 707,
+      "lfs_sha256": null
+    },
+    {
+      "name": "processor/chat_template.jinja",
+      "expected_bytes": 5292,
+      "actual_bytes": 5292,
+      "lfs_sha256": null
+    },
+    {
+      "name": "processor/merges.txt",
+      "expected_bytes": 1671853,
+      "actual_bytes": 1671853,
+      "lfs_sha256": null
+    },
+    {
+      "name": "processor/preprocessor_config.json",
+      "expected_bytes": 782,
+      "actual_bytes": 782,
+      "lfs_sha256": null
+    },
+    {
+      "name": "processor/special_tokens_map.json",
+      "expected_bytes": 613,
+      "actual_bytes": 613,
+      "lfs_sha256": null
+    },
+    {
+      "name": "processor/tokenizer.json",
+      "expected_bytes": 11422654,
+      "actual_bytes": 11422654,
+      "lfs_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    {
+      "name": "processor/tokenizer_config.json",
+      "expected_bytes": 5445,
+      "actual_bytes": 5445,
+      "lfs_sha256": null
+    },
+    {
+      "name": "processor/video_preprocessor_config.json",
+      "expected_bytes": 817,
+      "actual_bytes": 817,
+      "lfs_sha256": null
+    },
+    {
+      "name": "processor/vocab.json",
+      "expected_bytes": 2776833,
+      "actual_bytes": 2776833,
+      "lfs_sha256": null
+    },
+    {
+      "name": "scheduler/scheduler_config.json",
+      "expected_bytes": 485,
+      "actual_bytes": 485,
+      "lfs_sha256": null
+    },
+    {
+      "name": "text_encoder/config.json",
+      "expected_bytes": 1517,
+      "actual_bytes": 1517,
+      "lfs_sha256": null
+    },
+    {
+      "name": "text_encoder/generation_config.json",
+      "expected_bytes": 213,
+      "actual_bytes": 213,
+      "lfs_sha256": null
+    },
+    {
+      "name": "text_encoder/model-00001-of-00004.safetensors",
+      "expected_bytes": 4998056552,
+      "actual_bytes": 4998056552,
+      "lfs_sha256": "dde00291b5f7fb92013895310a3da0ddba78674df9f10d505d375243dc01fc6f"
+    },
+    {
+      "name": "text_encoder/model-00002-of-00004.safetensors",
+      "expected_bytes": 4915962464,
+      "actual_bytes": 4915962464,
+      "lfs_sha256": "9047faccc0a6d98496a52d55f27be1c94a9c259d1e283fbea0128d054a948d42"
+    },
+    {
+      "name": "text_encoder/model-00003-of-00004.safetensors",
+      "expected_bytes": 4915962496,
+      "actual_bytes": 4915962496,
+      "lfs_sha256": "8c54187654c0176b73ae73785bf791dc9a14c9df7fb4310083a09d42048cb57e"
+    },
+    {
+      "name": "text_encoder/model-00004-of-00004.safetensors",
+      "expected_bytes": 2704357976,
+      "actual_bytes": 2704357976,
+      "lfs_sha256": "5311532aaaeae3259eb6a7b2c600636be1159adf7ded35f53579f7d0e7d43cdd"
+    },
+    {
+      "name": "text_encoder/model.safetensors.index.json",
+      "expected_bytes": 67795,
+      "actual_bytes": 67795,
+      "lfs_sha256": null
+    },
+    {
+      "name": "transformer/config.json",
+      "expected_bytes": 370,
+      "actual_bytes": 370,
+      "lfs_sha256": null
+    },
+    {
+      "name": "transformer/diffusion_pytorch_model-00001-of-00002.safetensors",
+      "expected_bytes": 9968332504,
+      "actual_bytes": 9968332504,
+      "lfs_sha256": "9e6bc2d641e67bf277895ea8777141044a38f3edb7101bc469b2961dd7c36b4b"
+    },
+    {
+      "name": "transformer/diffusion_pytorch_model-00002-of-00002.safetensors",
+      "expected_bytes": 4261951904,
+      "actual_bytes": 4261951904,
+      "lfs_sha256": "3aaf234dcbe128530479735854a346b5e3e66283b7c11db56f836bbd1c13ebaa"
+    },
+    {
+      "name": "transformer/diffusion_pytorch_model.safetensors.index.json",
+      "expected_bytes": 30283,
+      "actual_bytes": 30283,
+      "lfs_sha256": null
+    },
+    {
+      "name": "vae/config.json",
+      "expected_bytes": 2079,
+      "actual_bytes": 2079,
+      "lfs_sha256": null
+    },
+    {
+      "name": "vae/diffusion_pytorch_model.safetensors",
+      "expected_bytes": 1350989512,
+      "actual_bytes": 1350989512,
+      "lfs_sha256": "a07a1b7c4ee2966a1b3bdc37de9b4f983d56937e46619f709a80b6e490675417"
+    }
+  ],
+  "complete_downloaded_bytes": 33131614782
+}
