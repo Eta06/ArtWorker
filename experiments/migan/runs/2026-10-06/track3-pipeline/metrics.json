@@ -1,0 +1,27 @@
+{
+  "track": "track3",
+  "repo": "andraniksargsyan/migan",
+  "revision": "406830d0fa60666da0071c342ad2fbc8f30c5c64",
+  "model_bytes": 28079181,
+  "provider": "CPUExecutionProvider",
+  "threads": 2,
+  "width": 512,
+  "height": 1152,
+  "source_rect": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "mask": "255 known; 0 generate",
+  "runtime_version": "1.30.0",
+  "visual_quality_accepted": false,
+  "raw_note": "Upstream pipeline already blends known pixels; this is pipeline output, not an uncomposited generator prediction",
+  "status": "completed",
+  "load_seconds": 0.06079029200009245,
+  "pipeline_inference_seconds": 0.29353029199955927,
+  "source_exact_in_pipeline": false,
+  "pipeline_source_mae_255": 0.0027224223595112562,
+  "source_exact_in_composite": true,
+  "evaluation_addendum": "Post-run CPU source-paste evaluation; original pipeline output unchanged"
+}
