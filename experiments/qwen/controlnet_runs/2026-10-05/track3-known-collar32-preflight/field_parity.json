@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "gpu_work": false,
+  "old_none_requested_field_byte_exact": true,
+  "changed_target_tokens": 64,
+  "changed_packed_rows": [
+    20,
+    21
+  ],
+  "top32_scalar_values": [
+    1.0
+  ],
+  "unknown_target_fields_exact": true,
+  "old_runner_sha256": "3a67d04d8da1eac90f37ede81a4d98083b9bd3b2a93feab08172ed795996e7ad",
+  "old_helper_sha256": "2aa4dee1c5b4d64d119d58b8943f5d224b3119fc0ae8054c9d4b85d069fbd722"
+}
