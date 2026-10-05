@@ -1,0 +1,41 @@
+{
+  "optical_flow": null,
+  "flow_tangent_extrapolation": false,
+  "harmonic_color": true,
+  "strip_pixels": 96,
+  "color_sigma_x": 6,
+  "residual_cap_255": 24,
+  "color_residual": {
+    "top": {
+      "residual_mean_rgb": [
+        1.422041893005371,
+        0.08223461359739304,
+        -0.6102864146232605
+      ],
+      "residual_abs_p95_255": 2.1520864963531494,
+      "residual_max_255": 2.5630288124084473
+    },
+    "bottom": {
+      "residual_mean_rgb": [
+        0.2884851396083832,
+        0.2743661105632782,
+        -1.1903434991836548
+      ],
+      "residual_abs_p95_255": 1.7722247838974,
+      "residual_max_255": 2.484304904937744
+    }
+  },
+  "processing_seconds": 0.005559458018979058,
+  "source_pixels_exact": true,
+  "untouched_outer_pixels_exact": true,
+  "generated_changed_pixel_fraction": 0.163958740234375,
+  "generated_mean_abs_change_255": 0.0749420166015625,
+  "top_join_mean_abs_adjacent_row_jump_255": 3.8619791666666665,
+  "bottom_join_mean_abs_adjacent_row_jump_255": 4.322916666666667,
+  "collar_horizontal_gradient_energy_ratio": 1.0316863836696823,
+  "rgb_clipped_low_fraction_in_generated": 0.5998077392578125,
+  "rgb_clipped_high_fraction_in_generated": 0.0,
+  "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality.",
+  "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track1/color/composite.png",
+  "composite_sha256": "e4c9e67d77d9a7302327962c6a4871ba668cbcf15c5d3336f82040545bf67efa"
+}
