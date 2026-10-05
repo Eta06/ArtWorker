@@ -1,0 +1,213 @@
+{
+  "_id": "6a146c40af2b662d24ec52cd",
+  "id": "AbstractFramework/qwen-image-edit-2511-4bit",
+  "private": false,
+  "pipeline_tag": "image-to-image",
+  "library_name": "mlx-gen",
+  "tags": [
+    "mlx-gen",
+    "safetensors",
+    "mlx",
+    "mflux",
+    "apple-silicon",
+    "4-bit",
+    "mixed-q4",
+    "mixed-q4-q8",
+    "qwen",
+    "qwen-image",
+    "image-editing",
+    "image-to-image",
+    "base_model:Qwen/Qwen-Image-Edit-2511",
+    "base_model:finetune:Qwen/Qwen-Image-Edit-2511",
+    "license:apache-2.0",
+    "region:us"
+  ],
+  "downloads": 0,
+  "likes": 0,
+  "modelId": "AbstractFramework/qwen-image-edit-2511-4bit",
+  "author": "AbstractFramework",
+  "sha": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+  "lastModified": "2026-05-25T17:31:35.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "license": "apache-2.0",
+    "base_model": "Qwen/Qwen-Image-Edit-2511",
+    "pipeline_tag": "image-to-image",
+    "library_name": "mlx-gen",
+    "tags": [
+      "mlx",
+      "mlx-gen",
+      "mflux",
+      "apple-silicon",
+      "4-bit",
+      "mixed-q4",
+      "mixed-q4-q8",
+      "qwen",
+      "qwen-image",
+      "image-editing"
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "f1ca65ce6a5b0774360fde1ec05157d9f937aaa2",
+      "size": 1580
+    },
+    {
+      "rfilename": "LICENSE.md",
+      "blobId": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "size": 11358
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "28e8077bd4071bc5bb0c52a6fcb088fde673a7c9",
+      "size": 2306
+    },
+    {
+      "rfilename": "text_encoder/0.safetensors",
+      "blobId": "7c9b11a6a77582809f2a8e93c31f62e6cade8310",
+      "size": 2142182659,
+      "lfs": {
+        "sha256": "b17f5c5e9a67d4e1e99661429afe277cacc6dfa1b29d505bf38d8b5f1e4ad0da",
+        "size": 2142182659,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "text_encoder/1.safetensors",
+      "blobId": "35fca21e67e4a538d7dae97111a0002373769e89",
+      "size": 2146261507,
+      "lfs": {
+        "sha256": "c7ddb2c4306d9aa0302788597db05b7b2a0654071902e850478993145bef8764",
+        "size": 2146261507,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "text_encoder/2.safetensors",
+      "blobId": "4d905b0c661c7b8d6107e0594802126b924f4a75",
+      "size": 541485131,
+      "lfs": {
+        "sha256": "de51a47f671100e3e5af3b096448c1a4c3a391122a76b2373a0836a66e041ce1",
+        "size": 541485131,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "text_encoder/model.safetensors.index.json",
+      "blobId": "863ce4f1b0f870c1d7f058b262267705363c6125",
+      "size": 92268
+    },
+    {
+      "rfilename": "tokenizer/tokenizer.json",
+      "blobId": "2c0bc81e7ba1bfa2a690d2caaf4bb72d3166e2ac",
+      "size": 11417006,
+      "lfs": {
+        "sha256": "444a80c37c7f34f485c050cf374595a0cb7d88735459cf0505fd204453c33178",
+        "size": 11417006,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "tokenizer/tokenizer_config.json",
+      "blobId": "3299687e615af5b239e5000b69cb0cb62ee2008f",
+      "size": 269
+    },
+    {
+      "rfilename": "transformer/0.safetensors",
+      "blobId": "2c8c5efd4c56f68b6aeb66a96a7b386360d686b1",
+      "size": 2133769869,
+      "lfs": {
+        "sha256": "738989aa3891a1f56c1d6c0b2e1050c29eddbdffffc18ed678d071095c0b8bfa",
+        "size": 2133769869,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "transformer/1.safetensors",
+      "blobId": "8c961d50f5ca4d877889d242570378a6d093880f",
+      "size": 2142940100,
+      "lfs": {
+        "sha256": "7c71d0530db3b07f745bb5b77f9e41044bd5c05ddb8e4eb60a01f679b55a6b0c",
+        "size": 2142940100,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "transformer/2.safetensors",
+      "blobId": "c6cf683da22564ee5ef8fd0baceeb30d95f03b9f",
+      "size": 2103978106,
+      "lfs": {
+        "sha256": "483486b6b9948e482d027f05a260772e2dae30d771dffb49d35154fb36a1fdcb",
+        "size": 2103978106,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "transformer/3.safetensors",
+      "blobId": "5ee4f8da89143621c77cc65857c303911991057c",
+      "size": 2121682265,
+      "lfs": {
+        "sha256": "3ce0d2271c98b0516e9a993c3c83bd1e780228c648b1a120911841ef1f483e3a",
+        "size": 2121682265,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "transformer/4.safetensors",
+      "blobId": "013ca0a48ea943d2357237629e5ef21f327ac10f",
+      "size": 2142940118,
+      "lfs": {
+        "sha256": "8f98dc70700270fa0f65792842df7dad5741fa84c3f3bc08f032d569a6a94572",
+        "size": 2142940118,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "transformer/5.safetensors",
+      "blobId": "602b35e59d8eb2e031ce4dbcfa222e34f4b45180",
+      "size": 2103978210,
+      "lfs": {
+        "sha256": "9eac33fb04eb1c09e673f41f4fed1d77bdde5ca67bcd85418c547c602c00d005",
+        "size": 2103978210,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "transformer/6.safetensors",
+      "blobId": "197c5c537a142addc9349377fa898e72d3efdd03",
+      "size": 449941880,
+      "lfs": {
+        "sha256": "dd7d04622b0d2c462ba316347e2337c8f49075adfe897584b836c8cd51caa85a",
+        "size": 449941880,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "transformer/model.safetensors.index.json",
+      "blobId": "30943ca4517231bf5b17be2dce3f7c6cb7f70731",
+      "size": 241693
+    },
+    {
+      "rfilename": "vae/0.safetensors",
+      "blobId": "6c1144c84463a3a7d93bd62f4665e84f811b1341",
+      "size": 253586147,
+      "lfs": {
+        "sha256": "2c2db147e652a0e011c1c5f40345ab84e9a95819ee9c7b29eb29f245cccd8f64",
+        "size": 253586147,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "vae/model.safetensors.index.json",
+      "blobId": "b0196601c3c7ed7381ccb7fa2a085b402241130a",
+      "size": 13512
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2026-05-25T15:35:28.000Z",
+  "usedStorage": 18294162998
+}
