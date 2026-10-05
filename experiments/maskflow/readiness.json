@@ -1,0 +1,66 @@
+{
+  "status": "ready_for_root_serialized_gpu_queue",
+  "gpu_launched": false,
+  "preflight": {
+    "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runs/2026-10-05/track3-preflight-all/preflight.json",
+    "status": "passed",
+    "sha256": "9870e634cbadf2cd84d0c64ec2db5a1900f70a6ec24a1cc3a7e3e9dfeb5df441",
+    "payload_required": true
+  },
+  "runner_sha256": "50a6d9804f6b95094d903752d14dd6126d9d1e5ecc1bfc73c492fb1151c8aa75",
+  "bounded_launcher_sha256": "35cb0a72802821320f65e8c6e9336c29b166b8ea0cec8fc8aac63ed51d7bdd5d",
+  "manifest_sha256": "bba9861e94cf8f22ad896da2e5ac8dd80dcc27528d2d9ce2f5d6525599eed047",
+  "requirements_sha256": "90026c5357c522f88a16b97d586c47ed2c26aba049c69dab510eae7b7e10057e",
+  "runtime_git": "99fb94dd3eaa9dd1931cd3cd8eae1ae3e20f2ef3",
+  "runtime_clean": true,
+  "cpu_reports": {
+    "adapter_cpu_validation.json": {
+      "status": "passed",
+      "sha256": "b36c1fac33275313e79012277636be5fc735da3fe9b09143a1d6f082ab14f96b",
+      "tests": 14
+    },
+    "checkpoint_cpu_validation.json": {
+      "status": "passed",
+      "sha256": "6964bc99a68664249db6c67943d6da88bf63f983bbfdd327a6ea43ed729b2143",
+      "tests": 9
+    },
+    "conditioning_cpu_validation.json": {
+      "status": "passed",
+      "sha256": "e90181223fd882d0db99d0aa66cb5f12d5394a64a007d5ee22765c38415a5848",
+      "tests": {}
+    },
+    "loading_cpu_validation.json": {
+      "status": "passed",
+      "sha256": "cdb0116f560fc4219e92914fb8df6e67598cc6e5103ba1361c2550f301d492f8",
+      "tests": 17
+    },
+    "math_cpu_validation.json": {
+      "status": "passed",
+      "sha256": "72c99bbd398e41218a4d467eaa7bf07ccb7a7fe9d115ae227fdea082a3606306",
+      "tests": {}
+    },
+    "runner_cpu_validation.json": {
+      "status": "passed",
+      "sha256": "f3e9cf19c61d7fd31ff6d950f38c4219fb6b6412cd04aecddd2c60ecf072b825",
+      "tests": {}
+    },
+    "transformer_cpu_validation.json": {
+      "status": "passed",
+      "sha256": "ee54dfdc4c8255b1d52bdaece6889dd1110c8597b825e4f3b0e1e4a9dc3b860a",
+      "tests": {}
+    }
+  },
+  "disk_free_bytes_now": 123558666240,
+  "bounded_command": "experiments/maskflow/.venv/bin/python experiments/maskflow/port/run_bounded_trial.py --timeout-seconds 3600 -- --output-dir experiments/maskflow/runs/2026-10-05/track3-latest50 --track track3 --fill black --seed 42 --memory-limit-gib 26 --cache-limit-gib 1 --execute-gpu",
+  "actual_teacher_staged_load_measured": false,
+  "actual_teacher_images_exist": false,
+  "quality_accepted": false,
+  "estimated_static_after_vl_release_gib": 14.815,
+  "limitations": [
+    "mixedQ4/Q8 base is a backend/quantization deviation from officialBF16 teacher; actual image quality remains unknown",
+    "CPU Transformer parity uses tiny seededFloat32 parameters; full pretrainedforward not evaluated",
+    "original norm_out bias tensorrange verified, full original982MBshard not checksumverified",
+    "checkpoints proven in CPU mocks; hardwareinterrupt/powerloss not tested",
+    "standardlatest50CFG4 needs100 jointforwardsof6912imagetokens; no iPhone performanceclaim"
+  ]
+}
