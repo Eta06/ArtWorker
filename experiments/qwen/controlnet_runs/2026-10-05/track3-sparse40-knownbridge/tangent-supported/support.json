@@ -1,0 +1,31 @@
+{
+  "experimental_sparse_control": true,
+  "support_polarity": "white/True=retain encoded control64; black/False=literal zero64",
+  "guide_geometry_source": "input guide outside known ROI only; never model output",
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "dilation_pixels": 64,
+  "dilation_metric": "exact Euclidean L2 pixel distance",
+  "guide_rgb_uint8_sha256": "fd9b20c7d94a7dbe57d769424cafbb43046e27d49145307739dd59bf55cd3fbd",
+  "unknown_guide_pixels": 2031,
+  "known_pixels": 262144,
+  "supported_pixels": 290010,
+  "supported_target_tokens": 1121,
+  "total_target_tokens": 2304,
+  "packed_shape": [
+    1,
+    2304,
+    1
+  ],
+  "nearest_coordinates": "floor(output_index*input_size/output_size), raster y-major",
+  "support_pixels_bool_sha256": "dfa2525acfd71143a762c1ea1f6db292ddc3c058c3c0568f78088afb71cffcd8",
+  "support_tokens_bool_sha256": "b628f540265dba9ceb8b221d3abb241ab6bfc8d036ddc8e9ebb0e19c9eb41d39",
+  "source_conditioning_channels_changed": false,
+  "support_path": "experiments/qwen/controlnet_runs/2026-10-05/track3-sparse40-knownbridge/tangent-supported/support.png",
+  "support_png_sha256": "e181e4455adc7efe2acae40ab332a67f13b6782e787506d809e4191627576caa",
+  "guide_file_sha256": "de298a2574b9155b409cc221f5c4ba399f4f809a1ce1a4038691906993b171e3"
+}
