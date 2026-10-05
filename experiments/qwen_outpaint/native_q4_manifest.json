@@ -1,0 +1,78 @@
+{
+  "source_repo": "Qwen/Qwen-Image-2.1",
+  "source_revision": "790c92633540aa0cb11d9abf19eb46d861714758",
+  "license": "qwen-research",
+  "method": "tensor-wise affine q4, group64; full vision encoder included",
+  "distilled": false,
+  "status": "completed",
+  "files": [
+    {
+      "file": "vae/0.safetensors",
+      "bytes": 1350989208,
+      "sha256": "308fc365bd87ea588493b8816008ab117182dcdb0ecee89f29f62a14a6f41c72",
+      "source_shard": "diffusion_pytorch_model.safetensors",
+      "tensor_count": 238
+    },
+    {
+      "file": "transformer/0.safetensors",
+      "bytes": 2925756384,
+      "sha256": "a02dc5edb5e5b7b2530b616d535cb27f58df541a1287779126fe61f1e8c8f6d4",
+      "source_shard": "diffusion_pytorch_model-00001-of-00002.safetensors",
+      "tensor_count": 533
+    },
+    {
+      "file": "transformer/1.safetensors",
+      "bytes": 1222817160,
+      "sha256": "5ecac208aee968a90945137de34ce53e77371eb34bb347a31c41aa676e10c4c6",
+      "source_shard": "diffusion_pytorch_model-00002-of-00002.safetensors",
+      "tensor_count": 220
+    },
+    {
+      "file": "text_encoder/0.safetensors",
+      "bytes": 1601489744,
+      "sha256": "2056fe97c9fd6567d1e0413ead5a0027bf87acbba952ce72706719a994349511",
+      "source_shard": "model-00001-of-00004.safetensors",
+      "tensor_count": 704
+    },
+    {
+      "file": "text_encoder/1.safetensors",
+      "bytes": 1382806456,
+      "sha256": "303ab3e36d9df84be378eb9247693e9f910f6a804425e6cf7549f36c6ac0f808",
+      "source_shard": "model-00002-of-00004.safetensors",
+      "tensor_count": 322
+    },
+    {
+      "file": "text_encoder/2.safetensors",
+      "bytes": 1382806568,
+      "sha256": "89b181ae7408d46df3c097084f33b99102258ac24424d7fa14d5913948bb81be",
+      "source_shard": "model-00003-of-00004.safetensors",
+      "tensor_count": 322
+    },
+    {
+      "file": "text_encoder/3.safetensors",
+      "bytes": 410595080,
+      "sha256": "cdd27d22168b2fc2869e3d4046836302c913a308d74e70632fa3e332cd78b240",
+      "source_shard": "model-00004-of-00004.safetensors",
+      "tensor_count": 86
+    }
+  ],
+  "mlx_version": "0.32.3",
+  "payload_bytes": 10277260600,
+  "source_manifest": "experiments/qwen/base-manifest.json",
+  "published_payloads": false,
+  "upstream_license_preserved": true,
+  "export_receipt": {
+    "status": "completed",
+    "footprint_limit_bytes": 6442450944,
+    "swap_growth_limit_bytes": 268435456,
+    "timeout_seconds": 600.0,
+    "sample_interval_seconds": 0.1,
+    "initial_swap_bytes": 0,
+    "stop_reason": "complete",
+    "exit_code": 0,
+    "elapsed_seconds": 25.825246708000122,
+    "peak_sampled_rss_bytes": 1851310080,
+    "peak_sampled_phys_footprint_bytes": 3818065232,
+    "measurement_note": "RSS and phys_footprint overlap; do not add them. Process-group sums can double-count shared memory. Sampling is not a kernel-enforced limit."
+  }
+}
