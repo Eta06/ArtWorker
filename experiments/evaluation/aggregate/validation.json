@@ -1,0 +1,37 @@
+{
+  "validated_utc": "2026-09-30T01:42:19.887996+00:00",
+  "source_reference": "source_512.png; Lanczos-resized 512×512 reference, not original 720×720 pixel map",
+  "shared_canvas_completed_trials": 28,
+  "shared_canvas_completed_image_records": 56,
+  "verified_exact_source_composites": 28,
+  "all_completed_image_records": 64,
+  "distinct_completed_image_paths": 62,
+  "diagnostic_image_records_excluded_from_grid": 8,
+  "failed_or_incomplete_records": 0,
+  "missing_completed_image_paths": [],
+  "source_equality_failures": [],
+  "shared_geometry_failures": [],
+  "quality_caveat": "No automated perceptual quality score or winner is inferred from these validation checks.",
+  "curated_selection": [
+    {
+      "title": "DreamLite Mobile",
+      "trial_id": "dreamlite-mobile-square-context-phone-seed42",
+      "image": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/dreamlite/results/mobile-square-context-phone-seed42/track3_composite.png"
+    },
+    {
+      "title": "DreamLite Base",
+      "trial_id": "dreamlite-base-28step-portrait-coastal-prompt-seed42",
+      "image": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/dreamlite/results/base-1024-controls-seed42/portrait_outpaint_composite.png"
+    },
+    {
+      "title": "FLUX.2 Klein Base 4B",
+      "trial_id": "flux2-FLUX.2 klein-4b-base / int4-50step-seed42",
+      "image": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux2/results/track3-klein-4b-base-int4-50step-seed42-composite.png"
+    },
+    {
+      "title": "Qwen 2.1 Viggle r256",
+      "trial_id": "qwen21-viggle-v021-r256-6step-knownedge-q4",
+      "image": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r256-6step-knownedge-q4/track3/composite.png"
+    }
+  ]
+}
