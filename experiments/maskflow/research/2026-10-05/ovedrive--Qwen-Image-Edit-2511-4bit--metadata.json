@@ -1,0 +1,251 @@
+{
+  "_id": "6950c0ea4f715c34ac3c5831",
+  "id": "ovedrive/Qwen-Image-Edit-2511-4bit",
+  "private": false,
+  "pipeline_tag": "image-to-image",
+  "library_name": "diffusers",
+  "tags": [
+    "diffusers",
+    "safetensors",
+    "image-to-image",
+    "en",
+    "zh",
+    "arxiv:2508.02324",
+    "base_model:Qwen/Qwen-Image-Edit-2511",
+    "base_model:quantized:Qwen/Qwen-Image-Edit-2511",
+    "license:cc-by-nc-sa-4.0",
+    "diffusers:QwenImageEditPlusPipeline",
+    "8-bit",
+    "region:us"
+  ],
+  "downloads": 2856,
+  "likes": 18,
+  "modelId": "ovedrive/Qwen-Image-Edit-2511-4bit",
+  "author": "ovedrive",
+  "sha": "ae6ddb7c6620c3a2e97e9ecccdd6cab8745c4806",
+  "lastModified": "2026-03-19T08:15:43.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {
+    "diffusers": {
+      "_class_name": "QwenImageEditPlusPipeline"
+    }
+  },
+  "cardData": {
+    "license": "cc-by-nc-sa-4.0",
+    "language": [
+      "en",
+      "zh"
+    ],
+    "library_name": "diffusers",
+    "pipeline_tag": "image-to-image",
+    "quantized_by": "Abhishek Dujari",
+    "base_model": [
+      "Qwen/Qwen-Image-Edit-2511"
+    ],
+    "base_model_relation": "quantized"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "b2ef89be59c5792bf037a43d1bb69d922d28e9d8",
+      "size": 1580
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "e5e31e46cd1f4192f31a3e23c2e020c6b7510ea7",
+      "size": 5215
+    },
+    {
+      "rfilename": "model_index.json",
+      "blobId": "28f21bc6b412bf442c02fd5d7f8a24f558e76c4c",
+      "size": 550
+    },
+    {
+      "rfilename": "processor/added_tokens.json",
+      "blobId": "482ced4679301bf287ebb310bdd1790eb4514232",
+      "size": 605
+    },
+    {
+      "rfilename": "processor/chat_template.jinja",
+      "blobId": "6c226632394ae7474b0d4b13e15793eac2e21ee9",
+      "size": 1017
+    },
+    {
+      "rfilename": "processor/merges.txt",
+      "blobId": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+      "size": 1671853
+    },
+    {
+      "rfilename": "processor/preprocessor_config.json",
+      "blobId": "9a24c5165e5de348ba27d0d00dd52b27c6044ab2",
+      "size": 826
+    },
+    {
+      "rfilename": "processor/special_tokens_map.json",
+      "blobId": "ac23c0aaa2434523c494330aeb79c58395378103",
+      "size": 613
+    },
+    {
+      "rfilename": "processor/tokenizer.json",
+      "blobId": "51ebb3ba93988c73bbd83a3c163a14343fbc5b06",
+      "size": 11421896,
+      "lfs": {
+        "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+        "size": 11421896,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "processor/tokenizer_config.json",
+      "blobId": "203eb2267a9b927c93a97b67990818164bf3c692",
+      "size": 4727
+    },
+    {
+      "rfilename": "processor/video_preprocessor_config.json",
+      "blobId": "ef8f979d86a2255c8fc115327eefce152e5a7cf3",
+      "size": 910
+    },
+    {
+      "rfilename": "processor/vocab.json",
+      "blobId": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "size": 2776833
+    },
+    {
+      "rfilename": "quantization_info.json",
+      "blobId": "27f27061975bb9f66ded87f597e5d178cdf14786",
+      "size": 263
+    },
+    {
+      "rfilename": "scheduler/scheduler_config.json",
+      "blobId": "f400c338630cdaa261c6575648f374eba547b9c6",
+      "size": 485
+    },
+    {
+      "rfilename": "text_encoder/config.json",
+      "blobId": "287e802f7ac46b2027fade319b1805858d75b004",
+      "size": 4890
+    },
+    {
+      "rfilename": "text_encoder/generation_config.json",
+      "blobId": "5fdb82f3b3f12d83074ce7b45e330d8ee4efb7d7",
+      "size": 244
+    },
+    {
+      "rfilename": "text_encoder/model-00001-of-00002.safetensors",
+      "blobId": "8392dfd3f27945004191c8ac2702f04e208153b3",
+      "size": 4809612598,
+      "lfs": {
+        "sha256": "1905aae08b7a148c6f2a69939fe196c314f7a75652934e7b85fe222976a28663",
+        "size": 4809612598,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "text_encoder/model-00002-of-00002.safetensors",
+      "blobId": "8001ccbcf3dee5b563494753e82cf44e359eb67c",
+      "size": 281149198,
+      "lfs": {
+        "sha256": "2b727105e5dbd38583aee6a600cad89d2c911ed6592b728702fd4bb60f108704",
+        "size": 281149198,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "text_encoder/model.safetensors.index.json",
+      "blobId": "4395f67d3756a4125bc635ef833fba8f736d0062",
+      "size": 228886
+    },
+    {
+      "rfilename": "tokenizer/added_tokens.json",
+      "blobId": "482ced4679301bf287ebb310bdd1790eb4514232",
+      "size": 605
+    },
+    {
+      "rfilename": "tokenizer/chat_template.jinja",
+      "blobId": "28028c056af412405debd878cdda0171e35fa5d1",
+      "size": 2427
+    },
+    {
+      "rfilename": "tokenizer/merges.txt",
+      "blobId": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+      "size": 1671853
+    },
+    {
+      "rfilename": "tokenizer/special_tokens_map.json",
+      "blobId": "ac23c0aaa2434523c494330aeb79c58395378103",
+      "size": 613
+    },
+    {
+      "rfilename": "tokenizer/tokenizer_config.json",
+      "blobId": "eaed590d62aaf0ba31e284b66ddcb18222f066c2",
+      "size": 4686
+    },
+    {
+      "rfilename": "tokenizer/vocab.json",
+      "blobId": "6bce3a0a3866c4791a74d83d78f6824c3af64ec3",
+      "size": 3383407
+    },
+    {
+      "rfilename": "transformer/config.json",
+      "blobId": "9af2a580d4ef5903f148ac558d4eebfb84bef676",
+      "size": 2176
+    },
+    {
+      "rfilename": "transformer/diffusion_pytorch_model-00001-of-00002.safetensors",
+      "blobId": "8e2c4862c85a9f5caef7a9ab4a6ace2146109252",
+      "size": 9990996243,
+      "lfs": {
+        "sha256": "10ba6c1dab151ed3774f04d134c91ae53cd13feaa9ca7f0097d52c4fa8b43941",
+        "size": 9990996243,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "transformer/diffusion_pytorch_model-00002-of-00002.safetensors",
+      "blobId": "6f13e4bb3004b0fb71ee2de10ff996a586274a1f",
+      "size": 1595201038,
+      "lfs": {
+        "sha256": "9d49861efe7e99e0de84f452e59d4b71fcb3b23a2a0603c32af07bd9244c294d",
+        "size": 1595201038,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "transformer/diffusion_pytorch_model.safetensors.index.json",
+      "blobId": "544446f459bf1e58ad3d137663f0f693cb9ff714",
+      "size": 685425
+    },
+    {
+      "rfilename": "vae/config.json",
+      "blobId": "35b60f575dd613698c38dcd1428334bd9e27a10c",
+      "size": 2536
+    },
+    {
+      "rfilename": "vae/diffusion_pytorch_model.safetensors",
+      "blobId": "5c203341583690b7e93ff899368ce1a7dce658a6",
+      "size": 253806966,
+      "lfs": {
+        "sha256": "0c8bc8b758c649abef9ea407b95408389a3b2f610d0d10fcb054fe171d0a8344",
+        "size": 253806966,
+        "pointerSize": 134
+      }
+    }
+  ],
+  "spaces": [
+    "tardellirs/model-pulse",
+    "ComoNuncaViu/Qwen-Image-Edit-2511-LoRAs-Fast",
+    "Bashull/Qwen-Image-Edit-2511-LoRAs-Fast"
+  ],
+  "createdAt": "2025-12-28T05:32:26.000Z",
+  "safetensors": {
+    "parameters": {
+      "F32": 1425948,
+      "BF16": 704130624,
+      "U8": 10171498545
+    },
+    "total": 10877055117
+  },
+  "usedStorage": 16942187939
+}
