@@ -1,0 +1,17 @@
+{
+  "failure": "HF Xet 504 and stalled partial transfers",
+  "discarded_owned_temporary_downloads": [
+    {
+      "path": ".build/models/qwen/base/.cache/huggingface/download/transformer/vk2LiEyDcQ1hxk9SVeqFhwEoIws=.9e6bc2d641e67bf277895ea8777141044a38f3edb7101bc469b2961dd7c36b4b.1f74ee6d.incomplete",
+      "bytes": 6572909417
+    },
+    {
+      "path": ".build/models/qwen/base/.cache/huggingface/download/text_encoder/t9msAuTjAZjuQnmzGOwTjiptvIU=.9047faccc0a6d98496a52d55f27be1c94a9c259d1e283fbea0128d054a948d42.a37462b1.incomplete",
+      "bytes": 402471114
+    },
+    {
+      "path": ".build/models/qwen/base/.cache/huggingface/download/text_encoder/IO4xwqmZYzFmxznkwkiNSBwO1H0=.dde00291b5f7fb92013895310a3da0ddba78674df9f10d505d375243dc01fc6f.3ee2b1a5.incomplete",
+      "bytes": 3384635217
+    }
+  ]
+}
