@@ -1,0 +1,15 @@
+# Sedef publication recovery
+
+Date: 2026-10-06 (Europe/Istanbul).
+
+The first publication process was interrupted by two user-reported Mac freezes/restarts. The first surviving main history contained 88 one-file commits; the second contained 134. No GitHub push had occurred at either interruption. The precise cause of the system freezes has not been established.
+
+Inspection found an important separation: at 134 commits, `main` contained 134 files totaling 3,676,546 bytes. A local `refs/codex/turn-diffs/captures/.../base` snapshot contained 930 files totaling 20,942,260,054 bytes, including multi-GB MaskFlow/base weight files. The local object store also contained a roughly 15 GiB pack and interrupted temporary packs. Codex-launched background `git add` processes were observed around 1.3–2.5 GiB RSS. A macOS Git diagnostic recorded roughly 2.15 GB disk writes over 118 seconds. These are observed facts, not proof that any one process caused the freezes.
+
+The recovery creates a separate publication checkout using `git clone --no-local --single-branch --branch main --no-tags`. It transfers only main's reachable history, then copies the reviewed small source/report/manifest files. The initial isolated Git pack was 642 KiB; the clone's sampled process-group RSS peaked at about 23.64 MiB. The original Git directory, including old snapshot refs, weight objects and temporary packs, is retained as a separate local backup outside the active checkout. The active checkout receives the clean main-only Git store after file-content verification. Local input media, model payloads and experiments remain in place; the backup and weight objects are not pushed.
+
+The commit script supports resuming clean committed files without duplicating commits. Each Git add/commit runs at low process priority, with sampled RSS checks about every 100 ms while active. It stops the current process group if its sampled RSS exceeds 256 MiB, combined sampled RSS of all Git processes exceeds 1 GiB, macOS reports elevated memory pressure, or a single write exceeds 60 seconds. RSS sampling cannot catch every instantaneous spike and is not a kernel-enforced memory cap. No constant inter-commit delay is required; the user explicitly requested active monitoring instead.
+
+The RSS cutoff was exercised with a synthetic process allocating 100 MiB and a test threshold of 64 MiB; the process was interrupted as intended. At 423/774 source-file commits in the resumed publication, observed add/commit process-group RSS peaked at 16.8 MiB, with no failed writes and approximately 77% system-wide free memory. This is an intermediate observation, not a bound on all future machines or operations. Final publication counts and commit links are recorded on the [Sedef Space Page](https://chatgpt.com/space/page_704d1c7aeed0819191f996f1a6442ec2).
+
+GitHub receives only `main` in a single grouped push. There is no mirror push, weight upload, history rewrite or deletion of local experiment artifacts. Each commit still changes exactly one file and uses the `sedef:` prefix.
