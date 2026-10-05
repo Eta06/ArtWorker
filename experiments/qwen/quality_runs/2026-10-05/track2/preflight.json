@@ -1,0 +1,77 @@
+{
+  "status": "preflight_passed",
+  "track": "track2",
+  "seed": 42,
+  "runs": {},
+  "phases": {},
+  "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical music album photograph showing two men in sunglasses against a cyan blue studio wall, one wearing a dark graphic shirt and cap, the other wearing a white shirt. Continue the blue wall and the lower parts of their existing clothing naturally above and below the central artwork, matching the original flash lighting and shadows. Preserve the existing central faces and typography. No additional people, titles, logos or lettering.",
+  "mlx_version": "0.32.3",
+  "mode_output_directories": {
+    "full": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/full",
+    "early-frontier": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/early-frontier"
+  },
+  "layout_smoke": {
+    "device": "CPU",
+    "model_weights_loaded": false,
+    "checks": [
+      {
+        "height": 640,
+        "target_tokens": 1280,
+        "prefix_length": 1041,
+        "window_xyxy": [
+          0,
+          256,
+          512,
+          896
+        ]
+      },
+      {
+        "height": 896,
+        "target_tokens": 1792,
+        "prefix_length": 1041,
+        "window_xyxy": [
+          0,
+          128,
+          512,
+          1024
+        ]
+      },
+      {
+        "height": 1152,
+        "target_tokens": 2304,
+        "prefix_length": 1041,
+        "window_xyxy": [
+          0,
+          0,
+          512,
+          1152
+        ]
+      }
+    ],
+    "status": "passed"
+  },
+  "insertion_smoke": {
+    "status": "passed",
+    "device": "CPU",
+    "model_weights_loaded": false,
+    "checks": [
+      {
+        "initializer": "source-edge",
+        "previous_tokens_exact": true,
+        "new_absolute_noise_matched": true,
+        "new_frontier_mapping_exact": true,
+        "inserted_tokens": 512
+      },
+      {
+        "initializer": "frontier",
+        "previous_tokens_exact": true,
+        "new_absolute_noise_matched": true,
+        "new_frontier_mapping_exact": true,
+        "inserted_tokens": 512
+      }
+    ]
+  },
+  "model_weights_loaded": false,
+  "elapsed_seconds": 2.1511348749918398,
+  "process_peak_rss_bytes": 361267200
+}
