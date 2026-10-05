@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "matched_against_full40bridge": {
+    "model_repo": true,
+    "model_revision": true,
+    "control_repo": true,
+    "control_revision": true,
+    "upstream_revision": true,
+    "source_conditioning": true,
+    "compute_mode": true,
+    "growing_compute": true,
+    "prefix_cache_enabled": true,
+    "cfg": true,
+    "adapter": true,
+    "base_quantization": true,
+    "control_quantization": true,
+    "known_bridge_extension": true,
+    "steps": true,
+    "sigmas": true,
+    "source_512_sha256": true,
+    "source_rect_xyxy": true,
+    "noise_sha256": true,
+    "prompt": true,
+    "joint_prefix_tokens": true,
+    "control_map_sha256": true,
+    "pre_gate_complete_context_sha256": true
+  },
+  "support_artifact_checks": {
+    "shape": true,
+    "all_known_pixels_retained": true,
+    "packed_dtype_bool": true,
+    "packed_shape": true,
+    "nearest_absolute_pack": true,
+    "pixel_bool_hash": true,
+    "token_bool_hash": true,
+    "count": true
+  },
+  "cpu_gate_checks": {
+    "mlx.core.float32": {
+      "source65_bytes_exact": true,
+      "retained_structural64_exact": true,
+      "unsupported_structural64_literal_zero": true,
+      "input_tensor_unchanged": true
+    },
+    "mlx.core.bfloat16": {
+      "source65_bytes_exact": true,
+      "retained_structural64_exact": true,
+      "unsupported_structural64_literal_zero": true,
+      "input_tensor_unchanged": true
+    }
+  },
+  "cpu_device": "MLX CPU; no weights loaded, no GPU",
+  "runtime_actual_context_assertions": {
+    "source65_exact_against_full_map_baseline": true,
+    "supported_control64_exact_against_full_map_baseline": true,
+    "unsupported_control64_literal_zero": true
+  },
+  "actual_context_limit": "Full baseline/gated129-channel tensors were not persisted; independent CPU test verifies gate semantics, while actual inference equality is established by recorded runtime assertions and matching pre-gate context hash.",
+  "retained_structural_tokens": 1121,
+  "retained_known_tokens": 1024,
+  "retained_unknown_tokens": 97,
+  "unsupported_structural_tokens": 1183,
+  "compute_limit": "All2304targettokens still forwarded in both chains; this is structural conditioning dropout, not omitted denoiser work."
+}
