@@ -1,0 +1,21 @@
+{
+  "repo": "ausboss/Qwen-Image-2.1-Outpaint-LoRA",
+  "revision": "449336db42ff074aee970ba0facc0ac0feb77863",
+  "license": "qwen-research-license",
+  "files": [
+    {
+      "file": "qwen-image-2.1-outpaint.safetensors",
+      "bytes": 159436576,
+      "expected_sha256": "201ab351b54c3e5d208c91a129011e7e490efdd13e40d89befc4c1f0ca7eb177",
+      "actual_sha256": "201ab351b54c3e5d208c91a129011e7e490efdd13e40d89befc4c1f0ca7eb177",
+      "status": "verified"
+    },
+    {
+      "file": "qwen-image-2.1-outpaint-v2.safetensors",
+      "bytes": 159436576,
+      "expected_sha256": "3611a5ccae5f790405eeacf1dfb2c89285c1e4f2987b9abc88cd0161a60eca28",
+      "actual_sha256": "3611a5ccae5f790405eeacf1dfb2c89285c1e4f2987b9abc88cd0161a60eca28",
+      "status": "verified"
+    }
+  ]
+}
