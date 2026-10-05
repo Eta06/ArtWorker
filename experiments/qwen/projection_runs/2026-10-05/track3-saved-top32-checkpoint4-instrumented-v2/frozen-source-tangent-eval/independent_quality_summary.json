@@ -1,0 +1,271 @@
+{
+  "status": "independent CPU quality diagnostic; no quality acceptance",
+  "frozen_evaluator": "experiments/qwen/evaluate_source_tangent.py",
+  "source_fit": {
+    "valid": true,
+    "point_count": 21,
+    "y_range_half_open": [
+      320,
+      341
+    ],
+    "dx_dy": -1.8762351714835512,
+    "x_extrapolated_at_y320": 310.46760780382766,
+    "angle_from_downward_y_degrees": -61.94317730413087,
+    "median_absolute_fit_residual_px": 0.18948024982245215,
+    "p90_absolute_fit_residual_px": 0.5650285259889074
+  },
+  "images": {
+    "baseline": {
+      "status": "feature-extracted",
+      "metrics": {
+        "near_angle_difference_degrees": 0.34117335609070665,
+        "near_endpoint_signed_dx_px": -2.086448307703165,
+        "last4_source_tangent_median_signed_dx_px": -0.9745387737281703
+      },
+      "valid_near_rows": 15,
+      "total_near_rows": 16,
+      "invalid_reasons": [],
+      "alternative_path_comparable": false,
+      "primary_minus_alternative_score": 69.2430611269793,
+      "last_six_rows": [
+        {
+          "y": 314,
+          "x": 318.8818931717501,
+          "valid": true,
+          "gradient_strength": 9.929799999999993,
+          "source_tangent_offset_px": -2.843125660978842
+        },
+        {
+          "y": 315,
+          "x": 316.9270669233911,
+          "valid": true,
+          "gradient_strength": 11.787400000000012,
+          "source_tangent_offset_px": -2.9217167378542968
+        },
+        {
+          "y": 316,
+          "x": 315.7796232145399,
+          "valid": true,
+          "gradient_strength": 10.931800000000003,
+          "source_tangent_offset_px": -2.192925275221967
+        },
+        {
+          "y": 317,
+          "x": 315.12177454455014,
+          "valid": true,
+          "gradient_strength": 7.325500000000005,
+          "source_tangent_offset_px": -0.9745387737281703
+        },
+        {
+          "y": 318,
+          "x": 314.2200781467948,
+          "valid": false,
+          "gradient_strength": 0.0,
+          "source_tangent_offset_px": 0.0
+        },
+        {
+          "y": 319,
+          "x": 316.2740805604203,
+          "valid": true,
+          "gradient_strength": 7.147000000000006,
+          "source_tangent_offset_px": 3.9302375851091256
+        }
+      ]
+    },
+    "consistency4": {
+      "status": "invalid-feature",
+      "metrics": {
+        "near_angle_difference_degrees": null,
+        "near_endpoint_signed_dx_px": null,
+        "last4_source_tangent_median_signed_dx_px": null
+      },
+      "valid_near_rows": 13,
+      "total_near_rows": 16,
+      "invalid_reasons": [
+        "fewer than three strong edge rows immediately before source"
+      ],
+      "alternative_path_comparable": false,
+      "primary_minus_alternative_score": 62.04046840915869,
+      "last_six_rows": [
+        {
+          "y": 314,
+          "x": 318.70923718324536,
+          "valid": true,
+          "gradient_strength": 8.859599999999993,
+          "source_tangent_offset_px": -3.0157816494835856
+        },
+        {
+          "y": 315,
+          "x": 316.7346059402224,
+          "valid": true,
+          "gradient_strength": 11.359599999999997,
+          "source_tangent_offset_px": -3.1141777210229975
+        },
+        {
+          "y": 316,
+          "x": 315.8333333333333,
+          "valid": true,
+          "gradient_strength": 11.431799999999996,
+          "source_tangent_offset_px": -2.139215156428577
+        },
+        {
+          "y": 317,
+          "x": 314.501926596667,
+          "valid": true,
+          "gradient_strength": 7.361599999999996,
+          "source_tangent_offset_px": -1.594386721611329
+        },
+        {
+          "y": 318,
+          "x": 314.2200781467948,
+          "valid": false,
+          "gradient_strength": 0.0,
+          "source_tangent_offset_px": 0.0
+        },
+        {
+          "y": 319,
+          "x": 312.3438429753112,
+          "valid": false,
+          "gradient_strength": 0.0,
+          "source_tangent_offset_px": 0.0
+        }
+      ],
+      "runner_raw_texture_diagnostics": {
+        "raw_source_top16_mae_255": 5.041097164154053,
+        "raw_source_bottom16_mae_255": 4.054483890533447,
+        "raw_patch_high_frequency_power_ratios_vs_baseline": {
+          "generated_top_water": 1.02974579929679,
+          "raw_known_top_water": 1.0133513391816849,
+          "raw_known_bottom_asphalt": 0.9032411788111098,
+          "generated_bottom_asphalt": 1.0019022652894525,
+          "generated_rail_join": 1.0043117094257898
+        },
+        "raw_known_patch_high_frequency_power_ratios_vs_original_source": {
+          "raw_known_top_water": 1.0125923694528853,
+          "raw_known_bottom_asphalt": 0.994439799757572
+        },
+        "attribution": "these texture values are the instrumented runner diagnostics, not a new independent grain estimator"
+      }
+    },
+    "derivative4": {
+      "status": "feature-extracted",
+      "metrics": {
+        "near_angle_difference_degrees": 0.17722105744098826,
+        "near_endpoint_signed_dx_px": -2.36578454291066,
+        "last4_source_tangent_median_signed_dx_px": -1.6453534307110829
+      },
+      "valid_near_rows": 16,
+      "total_near_rows": 16,
+      "invalid_reasons": [],
+      "alternative_path_comparable": false,
+      "primary_minus_alternative_score": 75.29827058896427,
+      "last_six_rows": [
+        {
+          "y": 314,
+          "x": 319.00481166528937,
+          "valid": true,
+          "gradient_strength": 10.429800000000007,
+          "source_tangent_offset_px": -2.7202071674395825
+        },
+        {
+          "y": 315,
+          "x": 317.40371307789655,
+          "valid": true,
+          "gradient_strength": 11.929800000000007,
+          "source_tangent_offset_px": -2.4450705833488655
+        },
+        {
+          "y": 316,
+          "x": 316.67476867413916,
+          "valid": true,
+          "gradient_strength": 12.753299999999996,
+          "source_tangent_offset_px": -1.2977798156227323
+        },
+        {
+          "y": 317,
+          "x": 316.22814382186533,
+          "valid": true,
+          "gradient_strength": 8.253299999999996,
+          "source_tangent_offset_px": 0.1318305035870253
+        },
+        {
+          "y": 318,
+          "x": 311.71138756358187,
+          "valid": true,
+          "gradient_strength": 7.359599999999993,
+          "source_tangent_offset_px": -2.5086905832129105
+        },
+        {
+          "y": 319,
+          "x": 310.35091592951176,
+          "valid": true,
+          "gradient_strength": 17.144399999999997,
+          "source_tangent_offset_px": -1.9929270457994335
+        }
+      ],
+      "runner_raw_texture_diagnostics": {
+        "raw_source_top16_mae_255": 7.5709228515625,
+        "raw_source_bottom16_mae_255": 5.397176265716553,
+        "raw_patch_high_frequency_power_ratios_vs_baseline": {
+          "generated_top_water": 1.1026399812794876,
+          "raw_known_top_water": 1.0434359873761,
+          "raw_known_bottom_asphalt": 1.033966949879387,
+          "generated_bottom_asphalt": 1.1350922959751473,
+          "generated_rail_join": 1.1229451394686933
+        },
+        "raw_known_patch_high_frequency_power_ratios_vs_original_source": {
+          "raw_known_top_water": 1.0426544851490462,
+          "raw_known_bottom_asphalt": 1.1383647144469164
+        },
+        "attribution": "these texture values are the instrumented runner diagnostics, not a new independent grain estimator"
+      }
+    }
+  },
+  "direct_images_viewed": [
+    "final-comparison.png",
+    "rail-join-4x.png",
+    "frozen-source-tangent-eval/source-tangent-selected-features.png",
+    "frozen-source-tangent-eval/raw-full-comparison.png",
+    "frozen-source-tangent-eval/raw-water-join-3x.png",
+    "frozen-source-tangent-eval/raw-known-source-water-4x.png",
+    "frozen-source-tangent-eval/raw-known-source-asphalt-4x.png",
+    "frozen-source-tangent-eval/raw-rail-join-4x.png"
+  ],
+  "limitations": [
+    "Feature extraction validity is not a geometry/quality pass.",
+    "Hard source paste keeps final source exact while raw known pixels change.",
+    "Patch high-frequency power includes edges and cannot prove natural grain.",
+    "Current run uses a different input and four updates; it is not a controlled checkpoint speedup comparison.",
+    "Earlier failed projection directory and old derivative timeout remain failed."
+  ],
+  "frozen_evaluator_hashes_verified_current": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/evaluate_boundary.py": true,
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/evaluate_source_tangent.py": true
+  },
+  "independent_second_visual_review": {
+    "verdict": "modest local attachment improvement; no smooth/seamless acceptance",
+    "derivative_selected_identity": "plausibly upper metal edge, not lower ridge or post",
+    "derivative_y317_to318_dx": -4.516756258283465,
+    "source_expected_dx_per_row": -1.8762351714835512,
+    "actual_source_first_detected_point": {
+      "y": 320,
+      "x": 310.46760780382766,
+      "valid": true,
+      "gradient_strength": 15.857,
+      "corridor_edge_hit": false,
+      "competing_peak_x": [],
+      "nominal_x": 311.0,
+      "corridor": [
+        300,
+        322
+      ]
+    },
+    "remaining_defects": [
+      "local bend/sharpened border bridge",
+      "rough inner rail/bolt region",
+      "water and vegetation tone/texture band",
+      "bottom asphalt grain transition"
+    ],
+    "no_natural_grain_or_speedup_claim": true
+  }
+}
