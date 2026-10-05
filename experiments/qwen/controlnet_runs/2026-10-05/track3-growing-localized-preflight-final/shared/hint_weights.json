@@ -1,0 +1,33 @@
+{
+  "experimental_localized_hints": true,
+  "shape": "cosine",
+  "radius_pixels": 64,
+  "distance_metric": "exact Euclidean L2 pixel distance",
+  "geometry_source": "nonblack input guide outside source ROI only; no output-derived geometry",
+  "cosine_formula": "0.5*(1+cos(pi*distance/radius)) for distance<radius; otherwise0",
+  "source_roi_always_zero": true,
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "unknown_guide_pixels": 2031,
+  "positive_hint_pixels": 27864,
+  "positive_hint_target_tokens": 97,
+  "total_target_tokens": 2304,
+  "target_hint_weight_sum": 54.756526947021484,
+  "packed_shape": [
+    1,
+    2304,
+    1
+  ],
+  "nearest_coordinates": "floor(output_index*input_size/output_size), raster y-major",
+  "guide_rgb_uint8_sha256": "fd9b20c7d94a7dbe57d769424cafbb43046e27d49145307739dd59bf55cd3fbd",
+  "pixel_weights_float32_sha256": "b55b09223b18f3620de9ead796c7336a204db0b55f660061d5d35e4ab19e8174",
+  "target_weights_float32_sha256": "1f78cd6187786d3be437a98cf50c4945f6ac75a9de2789ecee80ebd2e2427667",
+  "full_joint_computation": true,
+  "sparse_compute": false,
+  "guide_file_sha256": "de298a2574b9155b409cc221f5c4ba399f4f809a1ce1a4038691906993b171e3",
+  "display_png_sha256": "c1778b91c0e72914748050ff47941c99786e141abcd7db653a5b38b92474cbcf"
+}
