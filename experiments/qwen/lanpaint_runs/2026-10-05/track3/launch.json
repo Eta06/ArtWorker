@@ -1,0 +1,23 @@
+{
+  "command": [
+    "experiments/qwen/.venv/bin/python",
+    "experiments/qwen/run_lanpaint_probe.py",
+    "--track",
+    "track3",
+    "--seed",
+    "42",
+    "--quantize",
+    "4",
+    "--output",
+    "experiments/qwen/lanpaint_runs/2026-10-05/track3"
+  ],
+  "cwd": "/Users/emir/Documents/ChatGPT/ArtWorker",
+  "code_sha256": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_lanpaint_probe.py": "f39372fb65d3fc24115ac3b3f2460db23c145a773fc7fbe749e86cb4e0e9350c"
+  },
+  "timeout_seconds": 900.0,
+  "pid": 71900,
+  "status": "success",
+  "exit_code": 0,
+  "elapsed_seconds": 159.17702199998894
+}
