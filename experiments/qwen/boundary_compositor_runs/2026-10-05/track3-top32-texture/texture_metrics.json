@@ -1,0 +1,1496 @@
+{
+  "status": "success",
+  "kind": "CPU local frequency-band finishing diagnostic",
+  "track": "track3",
+  "raw_input": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-saved-top32-outpaint/tangent-canny/top32/raw.png",
+  "source_input": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track3/source_512.png",
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "input_sha256_before": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-saved-top32-outpaint/tangent-canny/top32/raw.png": "adf4a1e7fe993bf6163639c1c5a3a5a34e715d3bad11284393c053aebf29c8c1",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track3/source_512.png": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/Player/Resources/track3.jpg": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_boundary_compositor.py": "5f2ee66d65106dbb050529b5498116aec659c223a4a4e30f5912b2d7a4f867b7",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_direct_boundary_compositor.py": "ffeb017475d6d3f590b42f24b131d1f2f6bff169942c631729e0818f0811c01b"
+  },
+  "input_sha256_after": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-saved-top32-outpaint/tangent-canny/top32/raw.png": "adf4a1e7fe993bf6163639c1c5a3a5a34e715d3bad11284393c053aebf29c8c1",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track3/source_512.png": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/Player/Resources/track3.jpg": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_boundary_compositor.py": "5f2ee66d65106dbb050529b5498116aec659c223a4a4e30f5912b2d7a4f867b7",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_direct_boundary_compositor.py": "ffeb017475d6d3f590b42f24b131d1f2f6bff169942c631729e0818f0811c01b"
+  },
+  "all_inputs_and_frozen_helpers_unchanged": true,
+  "guard": {
+    "source_edge_seed_components": [
+      1,
+      3,
+      6,
+      8,
+      9,
+      17,
+      490
+    ],
+    "source_connected_joint_components": [
+      1,
+      80
+    ],
+    "source_connected_pixel_count": 106482,
+    "strong_gradient_threshold_255_per_pixel": 8,
+    "exact_edge_core_dilation_pixels": 3,
+    "soft_edge_fade_pixels": 8,
+    "canny_thresholds": [
+      40,
+      80
+    ],
+    "minimum_source_component_pixels": 24
+  },
+  "exact_protected_exterior_pixels": 48587,
+  "spectral_bank": {
+    "reflection": "even half-sample horizontal+vertical; no wrap at source edge",
+    "crossover_frequencies_cycles_per_pixel": [
+      0.25,
+      0.125,
+      0.0625,
+      0.03125
+    ],
+    "crossover_transition_octaves": 0.5,
+    "base_below32px_crossover_unchanged": true
+  },
+  "local_gain_patches": {
+    "top": [
+      {
+        "x_half_open": [
+          0,
+          64
+        ],
+        "source_valid_pixels": 1691,
+        "generated_valid_pixels": 92,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 10.530365943908691,
+            "generated_power": 6.022324085235596,
+            "gain": 1.3223294031976163,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 14.862873077392578,
+            "generated_power": 13.469385147094727,
+            "gain": 1.0504551082500786,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 14.587348937988281,
+            "generated_power": 6.504322052001953,
+            "gain": 1.4975700605017246,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 4.6537065505981445,
+            "generated_power": 12.056769371032715,
+            "gain": 0.6212752447229319,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          32,
+          96
+        ],
+        "source_valid_pixels": 1873,
+        "generated_valid_pixels": 0,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 12.526015281677246,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 15.341339111328125,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 12.38316535949707,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 3.585031032562256,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          64,
+          128
+        ],
+        "source_valid_pixels": 1814,
+        "generated_valid_pixels": 0,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 12.891677856445312,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 15.999007225036621,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 7.480507850646973,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 4.8907880783081055,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          96,
+          160
+        ],
+        "source_valid_pixels": 1264,
+        "generated_valid_pixels": 0,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 9.828125,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 16.74714469909668,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 7.227257251739502,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 6.723522186279297,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          128,
+          192
+        ],
+        "source_valid_pixels": 1166,
+        "generated_valid_pixels": 0,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 11.437392234802246,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 17.38616371154785,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 11.157377243041992,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 35.89781951904297,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          160,
+          224
+        ],
+        "source_valid_pixels": 1030,
+        "generated_valid_pixels": 1,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 15.066898345947266,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 16.943092346191406,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 16.784984588623047,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 52.916751861572266,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          192,
+          256
+        ],
+        "source_valid_pixels": 714,
+        "generated_valid_pixels": 4,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 19.036413192749023,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 15.401918411254883,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 17.823678970336914,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 48.868160247802734,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          224,
+          288
+        ],
+        "source_valid_pixels": 937,
+        "generated_valid_pixels": 3,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 13.784402847290039,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 12.019787788391113,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 18.96847152709961,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 43.924217224121094,
+            "generated_power": null,
+            "gain": 1.0,
+            "reason": "insufficient unprotected texture pixels"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          256,
+          320
+        ],
+        "source_valid_pixels": 1294,
+        "generated_valid_pixels": 104,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 8.516042709350586,
+            "generated_power": 3.579747200012207,
+            "gain": 1.5423846741250196,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 11.818549156188965,
+            "generated_power": 13.07689094543457,
+            "gain": 0.9506700974021897,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 45.074485778808594,
+            "generated_power": 5.669243812561035,
+            "gain": 1.6,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 123.2555160522461,
+            "generated_power": 17.92233657836914,
+            "gain": 1.6,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          288,
+          352
+        ],
+        "source_valid_pixels": 1493,
+        "generated_valid_pixels": 271,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 6.957270622253418,
+            "generated_power": 4.198685169219971,
+            "gain": 1.2872496201366375,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 11.107491493225098,
+            "generated_power": 15.154563903808594,
+            "gain": 0.8561232237882633,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 50.912654876708984,
+            "generated_power": 6.680047035217285,
+            "gain": 1.6,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 178.59515380859375,
+            "generated_power": 18.990751266479492,
+            "gain": 1.6,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          320,
+          384
+        ],
+        "source_valid_pixels": 1869,
+        "generated_valid_pixels": 203,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 4.703926086425781,
+            "generated_power": 4.678521633148193,
+            "gain": 1.0027113323942423,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 5.761690616607666,
+            "generated_power": 15.33896541595459,
+            "gain": 0.6128821270859626,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 19.409631729125977,
+            "generated_power": 8.63271713256836,
+            "gain": 1.4994599774775972,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 68.20767211914062,
+            "generated_power": 19.229299545288086,
+            "gain": 1.6,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          352,
+          416
+        ],
+        "source_valid_pixels": 2556,
+        "generated_valid_pixels": 116,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 2.8421823978424072,
+            "generated_power": 3.2393007278442383,
+            "gain": 0.9366996280869146,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 3.0654172897338867,
+            "generated_power": 6.6498332023620605,
+            "gain": 0.6789526120500233,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 5.184530735015869,
+            "generated_power": 11.509407043457031,
+            "gain": 0.671163414602747,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 15.70720100402832,
+            "generated_power": 26.955177307128906,
+            "gain": 0.7633580855325126,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          384,
+          448
+        ],
+        "source_valid_pixels": 2810,
+        "generated_valid_pixels": 847,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 1.7340476512908936,
+            "generated_power": 2.000141143798828,
+            "gain": 0.9311083228921326,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 2.1153268814086914,
+            "generated_power": 1.8705581426620483,
+            "gain": 1.0634158394787203,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 2.100929021835327,
+            "generated_power": 4.913557052612305,
+            "gain": 0.6538945953399851,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 12.550607681274414,
+            "generated_power": 12.609272003173828,
+            "gain": 0.9976710507163461,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          416,
+          480
+        ],
+        "source_valid_pixels": 2930,
+        "generated_valid_pixels": 2051,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 1.3692761659622192,
+            "generated_power": 1.768740177154541,
+            "gain": 0.879859929809382,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 1.5894261598587036,
+            "generated_power": 1.4154345989227295,
+            "gain": 1.059681269236023,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 2.0006022453308105,
+            "generated_power": 2.4686813354492188,
+            "gain": 0.9002183881802407,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 14.35350513458252,
+            "generated_power": 8.093927383422852,
+            "gain": 1.3316782940917524,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          448,
+          512
+        ],
+        "source_valid_pixels": 3072,
+        "generated_valid_pixels": 2678,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 0.8215999603271484,
+            "generated_power": 1.585236668586731,
+            "gain": 0.7199184061964945,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 1.0851446390151978,
+            "generated_power": 1.0977541208267212,
+            "gain": 0.9942401082523142,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 1.578027367591858,
+            "generated_power": 1.1817233562469482,
+            "gain": 1.1555781185319045,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 8.29703426361084,
+            "generated_power": 4.4966044425964355,
+            "gain": 1.3583731139050645,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      }
+    ],
+    "bottom": [
+      {
+        "x_half_open": [
+          0,
+          64
+        ],
+        "source_valid_pixels": 3072,
+        "generated_valid_pixels": 3072,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 2.009406566619873,
+            "generated_power": 4.818016052246094,
+            "gain": 0.6458026908931062,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 1.5359516143798828,
+            "generated_power": 3.459625244140625,
+            "gain": 0.666306910151055,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 0.8792238831520081,
+            "generated_power": 1.6332286596298218,
+            "gain": 0.7337132402977883,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 0.36953821778297424,
+            "generated_power": 0.716600239276886,
+            "gain": 0.7181108526091871,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          32,
+          96
+        ],
+        "source_valid_pixels": 2985,
+        "generated_valid_pixels": 3072,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 4.362369060516357,
+            "generated_power": 6.22236967086792,
+            "gain": 0.83730428285951,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 3.172804832458496,
+            "generated_power": 4.638030052185059,
+            "gain": 0.8270940976869056,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 1.394455075263977,
+            "generated_power": 1.7440050840377808,
+            "gain": 0.8941871438944763,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 0.8103136420249939,
+            "generated_power": 0.6507071852684021,
+            "gain": 1.1159216627140132,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          64,
+          128
+        ],
+        "source_valid_pixels": 2930,
+        "generated_valid_pixels": 3072,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 7.569925785064697,
+            "generated_power": 7.928422451019287,
+            "gain": 0.9771301655245815,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 6.052826404571533,
+            "generated_power": 7.180522918701172,
+            "gain": 0.9181234469945995,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 2.334529399871826,
+            "generated_power": 2.5885655879974365,
+            "gain": 0.9496642649984983,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 1.3107110261917114,
+            "generated_power": 1.8549226522445679,
+            "gain": 0.8406023942116321,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          96,
+          160
+        ],
+        "source_valid_pixels": 2887,
+        "generated_valid_pixels": 3072,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 7.449903964996338,
+            "generated_power": 7.797961711883545,
+            "gain": 0.9774280300009521,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 6.282607555389404,
+            "generated_power": 8.692482948303223,
+            "gain": 0.8501548798628532,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 2.686884641647339,
+            "generated_power": 3.7291667461395264,
+            "gain": 0.8488259175821765,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 1.9447263479232788,
+            "generated_power": 2.3234426975250244,
+            "gain": 0.9148782106915947,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          128,
+          192
+        ],
+        "source_valid_pixels": 2920,
+        "generated_valid_pixels": 3072,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 5.542837142944336,
+            "generated_power": 6.702068328857422,
+            "gain": 0.9094140099454635,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 4.868064880371094,
+            "generated_power": 7.581019878387451,
+            "gain": 0.801335489430572,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 3.0704684257507324,
+            "generated_power": 3.8018856048583984,
+            "gain": 0.8986753074172165,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 2.0750062465667725,
+            "generated_power": 2.3011653423309326,
+            "gain": 0.949589277941452,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          160,
+          224
+        ],
+        "source_valid_pixels": 2734,
+        "generated_valid_pixels": 3072,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 7.077581405639648,
+            "generated_power": 6.5134406089782715,
+            "gain": 1.0424067266836914,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 5.8065924644470215,
+            "generated_power": 7.4674391746521,
+            "gain": 0.8818096242666377,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 4.201371669769287,
+            "generated_power": 4.127748966217041,
+            "gain": 1.00887860398971,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 2.636942148208618,
+            "generated_power": 1.7490483522415161,
+            "gain": 1.2278614129021035,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          192,
+          256
+        ],
+        "source_valid_pixels": 2072,
+        "generated_valid_pixels": 2861,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 9.013139724731445,
+            "generated_power": 6.947062969207764,
+            "gain": 1.1390359384117292,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 7.902014255523682,
+            "generated_power": 8.43142318725586,
+            "gain": 0.9680960814345092,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 10.660414695739746,
+            "generated_power": 3.9949288368225098,
+            "gain": 1.6,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 15.537959098815918,
+            "generated_power": 1.014431357383728,
+            "gain": 1.6,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          224,
+          288
+        ],
+        "source_valid_pixels": 1691,
+        "generated_valid_pixels": 2861,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 10.78966999053955,
+            "generated_power": 7.385704517364502,
+            "gain": 1.208671014338766,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 11.398801803588867,
+            "generated_power": 8.939338684082031,
+            "gain": 1.129215680318776,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 19.718042373657227,
+            "generated_power": 3.4171624183654785,
+            "gain": 1.6,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 39.19045639038086,
+            "generated_power": 1.3179422616958618,
+            "gain": 1.6,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          256,
+          320
+        ],
+        "source_valid_pixels": 2156,
+        "generated_valid_pixels": 2976,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 13.677165031433105,
+            "generated_power": 7.322009563446045,
+            "gain": 1.3667304927256239,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 12.35292911529541,
+            "generated_power": 8.129138946533203,
+            "gain": 1.232715032715424,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 7.732454299926758,
+            "generated_power": 3.193563461303711,
+            "gain": 1.5560403898253732,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 13.598432540893555,
+            "generated_power": 1.247871994972229,
+            "gain": 1.6,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          288,
+          352
+        ],
+        "source_valid_pixels": 2701,
+        "generated_valid_pixels": 2641,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 12.584338188171387,
+            "generated_power": 7.029764175415039,
+            "gain": 1.3379651414410625,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 9.063132286071777,
+            "generated_power": 7.787383556365967,
+            "gain": 1.0788060484352755,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 4.397586822509766,
+            "generated_power": 3.2296383380889893,
+            "gain": 1.166890885270612,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 2.8449041843414307,
+            "generated_power": 1.4056181907653809,
+            "gain": 1.4226565227228622,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          320,
+          384
+        ],
+        "source_valid_pixels": 2920,
+        "generated_valid_pixels": 2221,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 9.334709167480469,
+            "generated_power": 7.6996355056762695,
+            "gain": 1.101070957552825,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 6.790806770324707,
+            "generated_power": 8.648439407348633,
+            "gain": 0.8861185330173962,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 4.513836860656738,
+            "generated_power": 3.8331589698791504,
+            "gain": 1.0851618203507796,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 1.7913116216659546,
+            "generated_power": 2.0977582931518555,
+            "gain": 0.9240763727598583,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          352,
+          416
+        ],
+        "source_valid_pixels": 3072,
+        "generated_valid_pixels": 2199,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 7.529527187347412,
+            "generated_power": 8.219027519226074,
+            "gain": 0.9571359707009006,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 5.752557277679443,
+            "generated_power": 8.7876558303833,
+            "gain": 0.8090846636928017,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 3.1514670848846436,
+            "generated_power": 5.03076171875,
+            "gain": 0.791479261277453,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 1.1649709939956665,
+            "generated_power": 2.1473441123962402,
+            "gain": 0.7365577754381076,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          384,
+          448
+        ],
+        "source_valid_pixels": 3072,
+        "generated_valid_pixels": 2715,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 6.09436559677124,
+            "generated_power": 6.978785514831543,
+            "gain": 0.9344892953695982,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 4.43583345413208,
+            "generated_power": 7.346859931945801,
+            "gain": 0.7770281548663645,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 1.9312235116958618,
+            "generated_power": 4.081873416900635,
+            "gain": 0.6878386303034603,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 0.7223771214485168,
+            "generated_power": 1.5755362510681152,
+            "gain": 0.6771236054099208,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          416,
+          480
+        ],
+        "source_valid_pixels": 3072,
+        "generated_valid_pixels": 3072,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 5.0430684089660645,
+            "generated_power": 5.938966274261475,
+            "gain": 0.9214929281895589,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 3.8889076709747314,
+            "generated_power": 6.253451824188232,
+            "gain": 0.7885948437425393,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 1.851475715637207,
+            "generated_power": 3.3078219890594482,
+            "gain": 0.7481488225178075,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 0.9835259318351746,
+            "generated_power": 1.4263094663619995,
+            "gain": 0.830397616189673,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      },
+      {
+        "x_half_open": [
+          448,
+          512
+        ],
+        "source_valid_pixels": 3072,
+        "generated_valid_pixels": 3072,
+        "bands": [
+          {
+            "band": "fine2-4",
+            "source_power": 4.964278221130371,
+            "generated_power": 4.717997074127197,
+            "gain": 1.0257681751750083,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "middle4-8",
+            "source_power": 3.8740272521972656,
+            "generated_power": 5.440614223480225,
+            "gain": 0.8438347101268129,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse8-16",
+            "source_power": 1.6085304021835327,
+            "generated_power": 2.5461559295654297,
+            "gain": 0.7948262251915308,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          },
+          {
+            "band": "coarse16-32",
+            "source_power": 0.9007030129432678,
+            "generated_power": 1.2163375616073608,
+            "gain": 0.8605256323762803,
+            "reason": "source/exterior local power; clipped gain0.6..1.6"
+          }
+        ]
+      }
+    ]
+  },
+  "gain_range": [
+    0.6,
+    1.6
+  ],
+  "gain_smoothing_sigma_x": 12,
+  "radii_pixels": [
+    64,
+    128
+  ],
+  "strengths": [
+    0.25,
+    0.5
+  ],
+  "variants": {
+    "baseline": {
+      "radius_pixels": 128,
+      "kind": "exact-source model raw composite",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "protected_edge_core_exact": true,
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track3-top32-texture/baseline/composite.png",
+      "composite_sha256": "d2b141a6610ba78a419577f1de5ba211e89b7c3c9c964b3e0f4a7d758f1f2bc9",
+      "generated_mean_abs_change_255": 0.0,
+      "no_source_texture_pixel_copy_or_geometric_warp": true
+    },
+    "protected-profile16": {
+      "radius_pixels": 32,
+      "kind": "source-connected protected color control",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "protected_edge_core_exact": true,
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track3-top32-texture/protected-profile16/composite.png",
+      "composite_sha256": "6afbbda724ff17835f23ab972e64af8c2bf089015946fb240d1bf7bd35e5df47",
+      "generated_mean_abs_change_255": 0.08610738118489583,
+      "no_source_texture_pixel_copy_or_geometric_warp": true
+    },
+    "all-s25-r64": {
+      "radius_pixels": 64,
+      "strength": 0.25,
+      "bands": "all",
+      "edge_statistics": {
+        "top": {
+          "delta_abs_p95_255": 3.5826444033659754e-09,
+          "delta_max_abs_255": 1.0147846937179565,
+          "pixels_changed_before_rounding": 7310,
+          "protected_core_delta_max": 0.0,
+          "clipped_channels_before_uint8": 0
+        },
+        "bottom": {
+          "delta_abs_p95_255": 0.10658004879951477,
+          "delta_max_abs_255": 1.2745177745819092,
+          "pixels_changed_before_rounding": 31290,
+          "protected_core_delta_max": 0.0,
+          "clipped_channels_before_uint8": 0
+        }
+      },
+      "kind": "derived CPU texture-band composite; not model raw",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "protected_edge_core_exact": true,
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track3-top32-texture/all-s25-r64/composite.png",
+      "composite_sha256": "31f2256999fcc45da2afeb8c0d490365225c99f8dfb96465f35a2330e39bd2da",
+      "generated_mean_abs_change_255": 0.0010711669921875,
+      "no_source_texture_pixel_copy_or_geometric_warp": true
+    },
+    "all-s25-r64-color": {
+      "radius_pixels": 64,
+      "strength": 0.25,
+      "bands": "all",
+      "edge_statistics": {
+        "top": {
+          "delta_abs_p95_255": 3.5826444033659754e-09,
+          "delta_max_abs_255": 1.0147846937179565,
+          "pixels_changed_before_rounding": 7310,
+          "protected_core_delta_max": 0.0,
+          "clipped_channels_before_uint8": 0
+        },
+        "bottom": {
+          "delta_abs_p95_255": 0.10658004879951477,
+          "delta_max_abs_255": 1.2745177745819092,
+          "pixels_changed_before_rounding": 31290,
+          "protected_core_delta_max": 0.0,
+          "clipped_channels_before_uint8": 0
+        }
+      },
+      "kind": "derived CPU texture-band composite; not model raw",
+      "protected_profile16_color": true,
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "protected_edge_core_exact": true,
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track3-top32-texture/all-s25-r64-color/composite.png",
+      "composite_sha256": "d5fb433cf8ed88f35aefc7584724cf39c3286c5d8ed3906cbf0c782c187ac7cd",
+      "generated_mean_abs_change_255": 0.08696797688802084,
+      "no_source_texture_pixel_copy_or_geometric_warp": true
+    },
+    "all-s50-r128": {
+      "radius_pixels": 128,
+      "strength": 0.5,
+      "bands": "all",
+      "edge_statistics": {
+        "top": {
+          "delta_abs_p95_255": 0.03540242463350296,
+          "delta_max_abs_255": 3.371387243270874,
+          "pixels_changed_before_rounding": 17260,
+          "protected_core_delta_max": 0.0,
+          "clipped_channels_before_uint8": 0
+        },
+        "bottom": {
+          "delta_abs_p95_255": 0.3765191435813904,
+          "delta_max_abs_255": 2.550471305847168,
+          "pixels_changed_before_rounding": 63041,
+          "protected_core_delta_max": 0.0,
+          "clipped_channels_before_uint8": 0
+        }
+      },
+      "kind": "derived CPU texture-band composite; not model raw",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "protected_edge_core_exact": true,
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track3-top32-texture/all-s50-r128/composite.png",
+      "composite_sha256": "f406e73d7c8e57bc0987320b5b13df0d5856f44a5dc429f7b6038a3ce927e8ad",
+      "generated_mean_abs_change_255": 0.0195343017578125,
+      "no_source_texture_pixel_copy_or_geometric_warp": true
+    },
+    "all-s50-r128-color": {
+      "radius_pixels": 128,
+      "strength": 0.5,
+      "bands": "all",
+      "edge_statistics": {
+        "top": {
+          "delta_abs_p95_255": 0.03540242463350296,
+          "delta_max_abs_255": 3.371387243270874,
+          "pixels_changed_before_rounding": 17260,
+          "protected_core_delta_max": 0.0,
+          "clipped_channels_before_uint8": 0
+        },
+        "bottom": {
+          "delta_abs_p95_255": 0.3765191435813904,
+          "delta_max_abs_255": 2.550471305847168,
+          "pixels_changed_before_rounding": 63041,
+          "protected_core_delta_max": 0.0,
+          "clipped_channels_before_uint8": 0
+        }
+      },
+      "kind": "derived CPU texture-band composite; not model raw",
+      "protected_profile16_color": true,
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "protected_edge_core_exact": true,
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track3-top32-texture/all-s50-r128-color/composite.png",
+      "composite_sha256": "1c5f29d474074b7cbe1bffa1dfd2dea84c32fd8a9a2feb595d144a353997272c",
+      "generated_mean_abs_change_255": 0.09944661458333333,
+      "no_source_texture_pixel_copy_or_geometric_warp": true
+    },
+    "fine-s25-r64": {
+      "radius_pixels": 64,
+      "strength": 0.25,
+      "bands": "fine",
+      "edge_statistics": {
+        "top": {
+          "delta_abs_p95_255": 2.4184487745770866e-09,
+          "delta_max_abs_255": 0.25829175114631653,
+          "pixels_changed_before_rounding": 7111,
+          "protected_core_delta_max": 0.0,
+          "clipped_channels_before_uint8": 0
+        },
+        "bottom": {
+          "delta_abs_p95_255": 0.07565008848905563,
+          "delta_max_abs_255": 0.9584754705429077,
+          "pixels_changed_before_rounding": 31157,
+          "protected_core_delta_max": 0.0,
+          "clipped_channels_before_uint8": 0
+        }
+      },
+      "kind": "derived CPU texture-band composite; not model raw",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "protected_edge_core_exact": true,
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track3-top32-texture/fine-s25-r64/composite.png",
+      "composite_sha256": "aa9bbf7213891a7b51c657db8ddf4b608b5b3c7e769f98d0c9a3e696f8e5b77c",
+      "generated_mean_abs_change_255": 0.0002899169921875,
+      "no_source_texture_pixel_copy_or_geometric_warp": true
+    },
+    "fine-s50-r128": {
+      "radius_pixels": 128,
+      "strength": 0.5,
+      "bands": "fine",
+      "edge_statistics": {
+        "top": {
+          "delta_abs_p95_255": 0.012934048660099506,
+          "delta_max_abs_255": 1.1223167181015015,
+          "pixels_changed_before_rounding": 16494,
+          "protected_core_delta_max": 0.0,
+          "clipped_channels_before_uint8": 0
+        },
+        "bottom": {
+          "delta_abs_p95_255": 0.2662796974182129,
+          "delta_max_abs_255": 1.9180306196212769,
+          "pixels_changed_before_rounding": 62795,
+          "protected_core_delta_max": 0.0,
+          "clipped_channels_before_uint8": 0
+        }
+      },
+      "kind": "derived CPU texture-band composite; not model raw",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "protected_edge_core_exact": true,
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track3-top32-texture/fine-s50-r128/composite.png",
+      "composite_sha256": "de00a7cb2786de555b787d6556be0913aec001e0e816f03dc59e408313184fad",
+      "generated_mean_abs_change_255": 0.007049560546875,
+      "no_source_texture_pixel_copy_or_geometric_warp": true
+    },
+    "middle-s25-r64": {
+      "radius_pixels": 64,
+      "strength": 0.25,
+      "bands": "middle",
+      "edge_statistics": {
+        "top": {
+          "delta_abs_p95_255": 3.1164142377804183e-09,
+          "delta_max_abs_255": 0.45863181352615356,
+          "pixels_changed_before_rounding": 7119,
+          "protected_core_delta_max": 0.0,
+          "clipped_channels_before_uint8": 0
+        },
+        "bottom": {
+          "delta_abs_p95_255": 0.08406829088926315,
+          "delta_max_abs_255": 0.9380850791931152,
+          "pixels_changed_before_rounding": 31165,
+          "protected_core_delta_max": 0.0,
+          "clipped_channels_before_uint8": 0
+        }
+      },
+      "kind": "derived CPU texture-band composite; not model raw",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "protected_edge_core_exact": true,
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track3-top32-texture/middle-s25-r64/composite.png",
+      "composite_sha256": "44fdce82af16ea040c39bb81de0ed58386136ef4eb674bc23d9861d85fe192bd",
+      "generated_mean_abs_change_255": 0.000433349609375,
+      "no_source_texture_pixel_copy_or_geometric_warp": true
+    },
+    "middle-s50-r128": {
+      "radius_pixels": 128,
+      "strength": 0.5,
+      "bands": "middle",
+      "edge_statistics": {
+        "top": {
+          "delta_abs_p95_255": 0.016295064240694046,
+          "delta_max_abs_255": 1.1680598258972168,
+          "pixels_changed_before_rounding": 16979,
+          "protected_core_delta_max": 0.0,
+          "clipped_channels_before_uint8": 0
+        },
+        "bottom": {
+          "delta_abs_p95_255": 0.2964639663696289,
+          "delta_max_abs_255": 1.8761701583862305,
+          "pixels_changed_before_rounding": 62892,
+          "protected_core_delta_max": 0.0,
+          "clipped_channels_before_uint8": 0
+        }
+      },
+      "kind": "derived CPU texture-band composite; not model raw",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "protected_edge_core_exact": true,
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track3-top32-texture/middle-s50-r128/composite.png",
+      "composite_sha256": "f2fb8747e8d8bad3300aeca15e1ddc93c44009d1d8c5dd7abfeffb8dfd9b6e44",
+      "generated_mean_abs_change_255": 0.0098602294921875,
+      "no_source_texture_pixel_copy_or_geometric_warp": true
+    }
+  },
+  "elapsed_seconds": 0.8993086660047993,
+  "runner_sha256": "49fe53ec6e1a5495e737ddcd8173c6f61125687581d3aa49cf9f5e9db944d648",
+  "preflight": {
+    "status": "passed",
+    "cosine_frequency_band_identity": true,
+    "spectral_horizontal_mirror": true,
+    "opposite_fine_middle_gain_direction": true,
+    "source_and128px_far_exterior_exact": true,
+    "sharp_source_connected_edge_exact_after_texture_and_color": true,
+    "matched_reflected_texture_gain1": true,
+    "no_model_or_gpu": true
+  },
+  "gpu_calls": 0,
+  "source_texture_pixels_copied": false,
+  "quality_verdict": "pending direct fullframe/crop and frozen feature review; spectral metric is not acceptance"
+}
