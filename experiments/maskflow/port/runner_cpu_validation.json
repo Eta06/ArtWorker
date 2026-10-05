@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "device": "cpu",
+  "gpu_used": false,
+  "real_model_weights_loaded": false,
+  "created_at_utc": "2026-10-05T04:04:44.489261+00:00",
+  "mocked": [
+    "component weight loaders",
+    "VL/DiT/VAE models",
+    "adapter payload",
+    "CPU/payload authorization receipts",
+    "GPU memory telemetry",
+    "Poisson solver"
+  ],
+  "real": [
+    "runner.execute",
+    "input/canvas/mask preparation",
+    "Torch CPU BF16 initial noise",
+    "MLX schedule and CFG",
+    "Euler source/noise bridge",
+    "pixel blend/hard paste",
+    "atomic safetensors checkpoints",
+    "checkpoint hash/protocol/resume validation"
+  ],
+  "checks": [
+    {
+      "name": "fresh staging order VL -> branches -> release -> VAE -> adapter/DiT",
+      "passed": true,
+      "details": [
+        "cpu_gates",
+        "payload_gates",
+        "device_request",
+        "set:cache_limit",
+        "snapshot:before_model_loading",
+        "load:text_encoder",
+        "construct:text",
+        "construct:vision",
+        "load:tokenizers",
+        "construct:vl",
+        "snapshot:vl_loaded",
+        "encode:both_cfg",
+        "snapshot:vl_released_after_both_cfg_conditions",
+        "vl_absent:vl_released_after_both_cfg_conditions",
+        "load:vae",
+        "construct:vae",
+        "vl_absent:vae_construction",
+        "vae_encode:1",
+        "vae_encode:2",
+        "snapshot:conditions_encoded_before_dit",
+        "load:transformer",
+        "construct:transformer",
+        "vl_absent:dit_construction",
+        "load:synthetic_adapter",
+        "apply:adapter",
+        "snapshot:teacher_and_adapter_loaded_vl_absent",
+        "vl_absent:teacher_and_adapter_loaded_vl_absent",
+        "snapshot:step_01",
+        "snapshot:step_05",
+        "snapshot:step_10",
+        "snapshot:step_15",
+        "snapshot:step_20",
+        "snapshot:step_25",
+        "snapshot:step_30",
+        "snapshot:step_35",
+        "snapshot:step_40",
+        "snapshot:step_45",
+        "snapshot:step_50",
+        "snapshot:dit_released_before_vae_decode",
+        "vae_decode",
+        "snapshot:complete"
+      ]
+    },
+    {
+      "name": "VL weak references absent before VAE and DiT",
+      "passed": true
+    },
+    {
+      "name": "both independently cached CFG branches; exactly 100 fresh forwards",
+      "passed": true
+    },
+    {
+      "name": "source/mask conditioning distinct and reference tokens unchanged",
+      "passed": true
+    },
+    {
+      "name": "exact 50-step native sigma schedule and source bridge",
+      "passed": true
+    },
+    {
+      "name": "atomic checkpoints retain original full sampling state",
+      "passed": true
+    },
+    {
+      "name": "new 2511 Torch CPU BF16 grid noise and hash",
+      "passed": true
+    },
+    {
+      "name": "resume from step20 restores both branches and skips VL and VAE encodes",
+      "passed": true
+    },
+    {
+      "name": "fresh and step20 resumed products are byte identical",
+      "passed": true
+    },
+    {
+      "name": "separate raw/native/composite files; full source512 hard paste exact",
+      "passed": true
+    },
+    {
+      "name": "native processed mask permits exact 24px inner boundary softness",
+      "passed": true,
+      "details": {
+        "source_soft_rows": [
+          320,
+          321,
+          322,
+          323,
+          324,
+          325,
+          326,
+          327,
+          328,
+          329,
+          330,
+          331,
+          332,
+          333,
+          334,
+          335,
+          336,
+          337,
+          338,
+          339,
+          340,
+          341,
+          342,
+          343,
+          808,
+          809,
+          810,
+          811,
+          812,
+          813,
+          814,
+          815,
+          816,
+          817,
+          818,
+          819,
+          820,
+          821,
+          822,
+          823,
+          824,
+          825,
+          826,
+          827,
+          828,
+          829,
+          830,
+          831
+        ],
+        "soft_rows_count": 48
+      }
+    },
+    {
+      "name": "resume rejects changed sampling protocol",
+      "passed": true
+    },
+    {
+      "name": "resume rejects changed state payload bytes",
+      "passed": true
+    },
+    {
+      "name": "all tested sources unchanged during integration gate",
+      "passed": true
+    }
+  ],
+  "source_sha256": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/run_maskflow_trial.py": "50a6d9804f6b95094d903752d14dd6126d9d1e5ecc1bfc73c492fb1151c8aa75",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_checkpoint.py": "da241ff2d3f7d306eb1d23abe761506a3cb84f8e532c37803d2403399f8320da",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_math.py": "ac0c6aff57fa0df022c6a71c293d6a5e97799af64d9accc4efa94a405c82ab90",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_loading.py": "a36b0a084fe62498c31510fd6284d70a64dadbb8c8e9ba6b44af1a72dc3d17d7",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_conditioning.py": "b54fe713bc23dfb8b0425ff949f737d71536605db9ffe0fa509437b9c9d6ae51",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_adapter.py": "802cec2b7ec4a1e797ba4b4587a1ffe371aec45c1a40cf6e4aa4db27947ef402",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_transformer.py": "374b32ea26ed0e8f46bf854d56412f19b1d425c802d9d845866cc9da2d302746",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_vae.py": "adbaa334b20dc5cc24850f26b46095ca22792339fd5fc541c828e5b6639fd3b9",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/test_runner_cpu.py": "cb452fb39e90c56a8f8cfb5ab2e46f25af9b409e83366cb60ca4b360ca668104"
+  },
+  "fresh_summary": {
+    "forwards": 100,
+    "steps": 50,
+    "cfg_encodes": 1,
+    "vae_encodes": 2,
+    "checkpoints": [
+      0,
+      1,
+      5,
+      10,
+      15,
+      20,
+      25,
+      30,
+      35,
+      40,
+      45,
+      50
+    ]
+  },
+  "resume_summary": {
+    "start_step": 20,
+    "forwards": 60,
+    "steps": 30,
+    "cfg_encodes": 0,
+    "vae_encodes": 0,
+    "checkpoints": [
+      20,
+      25,
+      30,
+      35,
+      40,
+      45,
+      50
+    ]
+  },
+  "mock_output_sha256": {
+    "raw_decoded.png": "a2187445a453e7d6d73bc177e4a9b0710c3bc76ef1962c72fb3034da62b68fe0",
+    "native_softblend.png": "3e305b1811cca31e9eb556c7d8b834194042e3185c74bc3d4e8682a5b19068b5",
+    "composite.png": "229edac1a7d3e16dbf54c1913531d97a98b6b62a4437735ef5243f1d1f833bf1",
+    "processed_mask.png": "d5347a53156360e42fe392f9ec24a8880efad4e7d1d0cb1f9ba660becb9fe072"
+  },
+  "limitation": "Mocked CPU orchestration confirms neither pretrained teacher quality nor GPU execution/memory."
+}
