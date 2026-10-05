@@ -1,0 +1,24 @@
+{
+  "command": [
+    "experiments/qwen/.venv/bin/python",
+    "experiments/qwen/controlnet_port/run_sparse_control_trial.py",
+    "--track",
+    "track3",
+    "--steps",
+    "40",
+    "--modes",
+    "tangent-supported",
+    "--known-bridge",
+    "--output",
+    "experiments/qwen/controlnet_runs/2026-10-05/track3-sparse40-knownbridge"
+  ],
+  "cwd": "/Users/emir/Documents/ChatGPT/ArtWorker",
+  "code_sha256": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_sparse_control_trial.py": "a409b723933c27a3f1053c05ae03b83a0aabbb4390c4bb152bbe44a20f89c549"
+  },
+  "timeout_seconds": 1200.0,
+  "pid": 81704,
+  "status": "success",
+  "exit_code": 0,
+  "elapsed_seconds": 290.15793287497945
+}
