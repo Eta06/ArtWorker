@@ -1,0 +1,29 @@
+{
+  "status": "stopped_or_failed",
+  "command": [
+    "experiments/qwen/.venv/bin/python",
+    "experiments/qwen_outpaint/run_trial.py",
+    "--track",
+    "track3",
+    "--adapter",
+    "v1",
+    "--turbo",
+    "v03-r128",
+    "--steps",
+    "6",
+    "--output",
+    "experiments/qwen_outpaint/runs/2026-10-06/track3-v1-v03turbo6-factual"
+  ],
+  "footprint_limit_bytes": 12884901888,
+  "swap_growth_limit_bytes": 268435456,
+  "timeout_seconds": 300.0,
+  "sample_interval_seconds": 0.1,
+  "initial_swap_bytes": 0,
+  "pid": 47062,
+  "stop_reason": "system_memory_pressure",
+  "exit_code": -15,
+  "elapsed_seconds": 7.671109041999898,
+  "peak_sampled_rss_bytes": 5336530944,
+  "peak_sampled_phys_footprint_bytes": 6779851960,
+  "measurement_note": "RSS and phys_footprint overlap; do not add them. Process-group sums can double-count shared memory. Sampling is not a kernel-enforced limit."
+}
