@@ -1,0 +1,383 @@
+{
+  "_id": "694245ee81aa933d0a1237c8",
+  "id": "Qwen/Qwen-Image-Edit-2511",
+  "private": false,
+  "pipeline_tag": "image-to-image",
+  "library_name": "diffusers",
+  "tags": [
+    "diffusers",
+    "safetensors",
+    "image-to-image",
+    "en",
+    "zh",
+    "arxiv:2508.02324",
+    "license:apache-2.0",
+    "diffusers:QwenImageEditPlusPipeline",
+    "region:us"
+  ],
+  "downloads": 270248,
+  "likes": 1439,
+  "modelId": "Qwen/Qwen-Image-Edit-2511",
+  "author": "Qwen",
+  "sha": "6f3ccc0b56e431dc6a0c2b2039706d7d26f22cb9",
+  "lastModified": "2025-12-23T13:13:52.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {
+    "diffusers": {
+      "_class_name": "QwenImageEditPlusPipeline"
+    }
+  },
+  "cardData": {
+    "license": "apache-2.0",
+    "language": [
+      "en",
+      "zh"
+    ],
+    "library_name": "diffusers",
+    "pipeline_tag": "image-to-image"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "b2ef89be59c5792bf037a43d1bb69d922d28e9d8",
+      "size": 1580
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "277c39d3f5bb2c3908b435727e80c98af75f934a",
+      "size": 7179
+    },
+    {
+      "rfilename": "model_index.json",
+      "blobId": "a2e083f28f4f6c958c08f3882c89038b8f6da872",
+      "size": 516
+    },
+    {
+      "rfilename": "processor/added_tokens.json",
+      "blobId": "482ced4679301bf287ebb310bdd1790eb4514232",
+      "size": 605
+    },
+    {
+      "rfilename": "processor/chat_template.jinja",
+      "blobId": "6c226632394ae7474b0d4b13e15793eac2e21ee9",
+      "size": 1017
+    },
+    {
+      "rfilename": "processor/merges.txt",
+      "blobId": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+      "size": 1671853
+    },
+    {
+      "rfilename": "processor/preprocessor_config.json",
+      "blobId": "9a24c5165e5de348ba27d0d00dd52b27c6044ab2",
+      "size": 826
+    },
+    {
+      "rfilename": "processor/special_tokens_map.json",
+      "blobId": "ac23c0aaa2434523c494330aeb79c58395378103",
+      "size": 613
+    },
+    {
+      "rfilename": "processor/tokenizer.json",
+      "blobId": "51ebb3ba93988c73bbd83a3c163a14343fbc5b06",
+      "size": 11421896,
+      "lfs": {
+        "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+        "size": 11421896,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "processor/tokenizer_config.json",
+      "blobId": "203eb2267a9b927c93a97b67990818164bf3c692",
+      "size": 4727
+    },
+    {
+      "rfilename": "processor/video_preprocessor_config.json",
+      "blobId": "ef8f979d86a2255c8fc115327eefce152e5a7cf3",
+      "size": 910
+    },
+    {
+      "rfilename": "processor/vocab.json",
+      "blobId": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "size": 2776833
+    },
+    {
+      "rfilename": "scheduler/scheduler_config.json",
+      "blobId": "f400c338630cdaa261c6575648f374eba547b9c6",
+      "size": 485
+    },
+    {
+      "rfilename": "text_encoder/config.json",
+      "blobId": "52b1556c2927e08c13529f2a107b08c87c7a4e65",
+      "size": 3146
+    },
+    {
+      "rfilename": "text_encoder/generation_config.json",
+      "blobId": "5fdb82f3b3f12d83074ce7b45e330d8ee4efb7d7",
+      "size": 244
+    },
+    {
+      "rfilename": "text_encoder/model-00001-of-00004.safetensors",
+      "blobId": "184b37ee89f2f2e1a3cfd32094f3a6b620abb892",
+      "size": 4968243304,
+      "lfs": {
+        "sha256": "d725335e4ea2399be706469e4b8807716a8fa64bd03468252e9f7acf2415fee4",
+        "size": 4968243304,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "text_encoder/model-00002-of-00004.safetensors",
+      "blobId": "39c7b109b36e503a584b9e6570ff44ee51f99eaa",
+      "size": 4991495816,
+      "lfs": {
+        "sha256": "b1830db6908dcc76df3a71492acbcf2b8cac130114cf1f3c2d9edae8de8c6de3",
+        "size": 4991495816,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "text_encoder/model-00003-of-00004.safetensors",
+      "blobId": "550aeb0dada74ffbd038b974d8558c45231a2349",
+      "size": 4932751040,
+      "lfs": {
+        "sha256": "09c1807c6d00d7cab94f7db39d4c02ebb8537225ccde383861ac48db97945aa6",
+        "size": 4932751040,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "text_encoder/model-00004-of-00004.safetensors",
+      "blobId": "e4d8aef129d402105054573957c663123303830a",
+      "size": 1691924384,
+      "lfs": {
+        "sha256": "5dd068336d14d45ffb43cef374d286cc6ba9d8741b028f90a7d040d847961f4a",
+        "size": 1691924384,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "text_encoder/model.safetensors.index.json",
+      "blobId": "92b467639266f4aa72a9b5ab73dbdf5a1f936ee4",
+      "size": 57655
+    },
+    {
+      "rfilename": "tokenizer/added_tokens.json",
+      "blobId": "482ced4679301bf287ebb310bdd1790eb4514232",
+      "size": 605
+    },
+    {
+      "rfilename": "tokenizer/chat_template.jinja",
+      "blobId": "28028c056af412405debd878cdda0171e35fa5d1",
+      "size": 2427
+    },
+    {
+      "rfilename": "tokenizer/merges.txt",
+      "blobId": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+      "size": 1671853
+    },
+    {
+      "rfilename": "tokenizer/special_tokens_map.json",
+      "blobId": "ac23c0aaa2434523c494330aeb79c58395378103",
+      "size": 613
+    },
+    {
+      "rfilename": "tokenizer/tokenizer_config.json",
+      "blobId": "eaed590d62aaf0ba31e284b66ddcb18222f066c2",
+      "size": 4686
+    },
+    {
+      "rfilename": "tokenizer/vocab.json",
+      "blobId": "6bce3a0a3866c4791a74d83d78f6824c3af64ec3",
+      "size": 3383407
+    },
+    {
+      "rfilename": "transformer/config.json",
+      "blobId": "199398df180d275eee9da066489f9bb6e2b97609",
+      "size": 362
+    },
+    {
+      "rfilename": "transformer/diffusion_pytorch_model-00001-of-00005.safetensors",
+      "blobId": "5aaa7c50c84092816e872acd26f54b27526ee54c",
+      "size": 9973578592,
+      "lfs": {
+        "sha256": "2a0c30c9ba44a5f11c21ca139e37951430bbde814ff4e0b5b1a68b80530e7a1a",
+        "size": 9973578592,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "transformer/diffusion_pytorch_model-00002-of-00005.safetensors",
+      "blobId": "bed33d1e9c920fcd65d178038abea2d16c270261",
+      "size": 9987326072,
+      "lfs": {
+        "sha256": "54ec249b07b4376e19cf16b764054f03ca03ae2cfbd9939453e2085f4e9bd259",
+        "size": 9987326072,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "transformer/diffusion_pytorch_model-00003-of-00005.safetensors",
+      "blobId": "8f3fcdef0deb1d03ad76e9f02b2d1626518f216d",
+      "size": 9987307440,
+      "lfs": {
+        "sha256": "c55157843525653161e8f6af5acc670ba3aceff04284f7cf657199d24d065e16",
+        "size": 9987307440,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "transformer/diffusion_pytorch_model-00004-of-00005.safetensors",
+      "blobId": "bc77ec9ed820459ecab4e259f1310d04df2a3bd0",
+      "size": 9930685712,
+      "lfs": {
+        "sha256": "ffcfb5a4895702635890a67bad183591e0ae515d794bdcb26e217b27a7f6d12d",
+        "size": 9930685712,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "transformer/diffusion_pytorch_model-00005-of-00005.safetensors",
+      "blobId": "22353f9ff2f617a2e881c02010111b104f172cdf",
+      "size": 982130472,
+      "lfs": {
+        "sha256": "2b2556b736629e10a5a0dfa14606f2057f4f81c2ba53f94103682c7ac42d4940",
+        "size": 982130472,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "transformer/diffusion_pytorch_model.safetensors.index.json",
+      "blobId": "2fdb0449e2b2299b77e056c95b1a7caec5a3f438",
+      "size": 198887
+    },
+    {
+      "rfilename": "vae/config.json",
+      "blobId": "ebc479e2fe5a2265f4bcaf1e1073df64a2d4e33e",
+      "size": 730
+    },
+    {
+      "rfilename": "vae/diffusion_pytorch_model.safetensors",
+      "blobId": "5c203341583690b7e93ff899368ce1a7dce658a6",
+      "size": 253806966,
+      "lfs": {
+        "sha256": "0c8bc8b758c649abef9ea407b95408389a3b2f610d0d10fcb054fe171d0a8344",
+        "size": 253806966,
+        "pointerSize": 134
+      }
+    }
+  ],
+  "spaces": [
+    "aet256/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental",
+    "AST-1320/Qwen-2511-Plus-Flux.2-klein-9B",
+    "tardellirs/model-pulse",
+    "embedl/hfviewer",
+    "ARandomCoder2026/Qwen_Img_Space",
+    "LPX55/Qwen-Image-Edit-2511-Turbo-Lightning",
+    "prithivMLmods/Qwen-Image-Edit-2511-LoRAs-Fast",
+    "RioShiina/ImageGen",
+    "PGausL/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental",
+    "Qwen/Qwen-Image-Edit-2511",
+    "multimodalart/qwen-image-multiple-angles-3d-camera",
+    "kogutt999/Pro-Realism-Edit-Studio",
+    "Gameyguy/Qwen-Image-Edit-2511-Turbo-Lightning",
+    "ovi054/Qwen-Image-Edit-2511-LoRA",
+    "aquanode/gpu-vram-calculator",
+    "CultriX/Qwen-Image-Edit-2511-LoRAs-Fast",
+    "NeoLeoLP/Qwen-Image-Edit-2511-LoRAs-Fast",
+    "kayraharika/Qwen-Image-Edit-2511-LoRAs-Fast",
+    "akhaliq/Qwen-Image-Edit-2511-LoRAs-Fast",
+    "CopoZ/Qwen-Image-Edit-Rapid-AIO-Loras-Plus",
+    "vml12/qwen-2511-ai",
+    "alxander84/ImageGen-32",
+    "HasinduR/IWMI-GIS",
+    "Sbui503/Qwen-Image-Edit-2511-LoRAs-Fast",
+    "sanrenti/Qwen-Image-Edit-2511-LoRAs-Fast",
+    "iAkashPaul/qedit",
+    "hugging-apps/replan-image-editing",
+    "Hittler-AI/Qwen-Image-Edit-2511-Fast",
+    "jt65/Qwen-Image-Edit-2511-LoRA-nsfw",
+    "Ivan1617/qwen-image-edit-plus-nsfw-demo",
+    "TheR3verend/Qwen-Edit-2511-XXX-Fast",
+    "linoyts/Qwen-Image-Edit-2511-AnyPose",
+    "linoyts/Qwen-Image-Edit-2511-Fast",
+    "yeq6x/QIE-Image2GuideBody",
+    "systms/ACTION-HF",
+    "lenML/Qwen-Image-Edit-2511-Fast",
+    "limuloo1999/RefineAnything",
+    "Qdpie/Qdpie-Qwen-Image-Editor",
+    "Mccscs2/Qwen-Image-Edit-Rapid-AIO-Loras-Experimental",
+    "Upsampler/qwen-image-edit",
+    "Lubi153/Pro-Realism-Edit-Studio-v.17",
+    "PixelSmile/PixelSmile-Demo",
+    "Heartsync/qedit",
+    "Woffee/qwen-image-multiple-angles-3d-camera",
+    "GiorgioV/Qwen-Image-Edit-2509-2",
+    "GiorgioV/Test-Qwen-Image-Edit-2509-LoRAs-Fast",
+    "Yellowbox2026/Qwen-Image-Edit-2511-AnyPose",
+    "ravenrose996688/Pro-Realism-Edit-Studio-v.17",
+    "systms/INFL8",
+    "ysharma/qwen_camera_angles_custom_component",
+    "ghjjhv/Qwen-Image-Edit-2511-LoRAs-Fast",
+    "darask0/Qwen-Image-Edit-2511-Lora-Sheet",
+    "GiorgioV/Qwen-Image-Edit-2509-1",
+    "akhaliq/Qwen-Image-Edit-2511-Lightning",
+    "ahuggingface01/BFS-Best-Face-Swap",
+    "build-small-hackathon/Color-Grade-Transfer",
+    "aiqtech/Qwen-Image-Edit-2511-LoRAs-Fast",
+    "dx8152/Ai-Studio",
+    "linoyts/Qwen-Image-Edit-2511-Multiple-Angles-LoRA",
+    "ovi054/Color-Grade-Transfer-Qwen-Image",
+    "andrymamboro/image_studio",
+    "prithivMLmods/QIE-Bbox-Studio",
+    "ohokaystar/Qwen-Image-Edit-2511-LoRAs-Slow",
+    "Zenx566/Qwen-Image-Edit-2511-LoRAs-Fast",
+    "Bils/qwen-image-multiple-angles-3d-camera",
+    "walkeralbashar/Qwen-Image-Edit-2511-LoRAs-Fast",
+    "WaifuLuna/QwenEditHot",
+    "cpuai/Qwen-Image-Edit-2511-LoRAs-Fast",
+    "FresherDifference/Qwen-Image-Edit-2511-LoRAs-Fast",
+    "Qkz88422/Qwen-Image-Edit-2511-Custom-AIO",
+    "r3lax/Qwen-Image-Edit-2511-Lora-Sheet",
+    "Heartsync/qwen-multiangles-3d",
+    "Ivaylo77/FireRed-Image_MULTI",
+    "tariqshams/Qwen-image-layered-to-image-edit-pipeline",
+    "furaidosu/Qwen-Image-Edit-2511-LoRAs-Fast",
+    "Codergeek911/Qwen-Image-Edit-2511-LoRAs-Fast",
+    "techfreakworm/qwen-image-editor",
+    "SeedOfEvil/Pro-Realism-Edit-Studio-Qwen-2511",
+    "alaub/uqied",
+    "WeReCooking/Qwen-Image-Edit-CPU",
+    "witcherderivia/TeleStyleV2-QIE2511",
+    "cydyffufufu1/Qwen-Edit-2511-XXX-V23",
+    "Shourabhji500/Qwen-Image-Edit-2511-LoRAs-Fast",
+    "rahul7star/Qwen-Image-2509-Full",
+    "MySafeCode/Qwen-Image-Edit-2511-AnyPose",
+    "ReyBan82/Qwen-Qwen-Image-Edit-2511",
+    "GiorgioV/Qwen-Image-Edit-2511-Fast_Reference",
+    "fantasticstar/Qwen-Image-Edit-1956-LoRAs-Fast",
+    "danilonovais/qwen-image-multiple-angles-3d-camera",
+    "GiorgioV/Qwen-Image-Edit-2509-testv4",
+    "mobowuhan/qwen-image-multiple-angles-3d-camera",
+    "build-small-hackathon/NEXUS_Visual_Weaver",
+    "pyisoe/Qwen-Image-Edit-PSS",
+    "WonseokJayJung/ai-profile",
+    "hitoshifreak/Ai-Image",
+    "hy3dlab/Image-to-Image",
+    "hugging-apps/maskflow-regional-image-editing",
+    "javier233455/Qwen-Image-Edit-2509-LoRAs-manga",
+    "khanbrlr/Qwen-Image-Edit-2511-AnyPose",
+    "rishi2025/Qwen-Image-Edit-2511-LoRAs-Fast"
+  ],
+  "createdAt": "2025-12-17T05:55:58.000Z",
+  "safetensors": {
+    "parameters": {
+      "BF16": 20430401088
+    },
+    "total": 20430401088
+  },
+  "usedStorage": 57716379878
+}
