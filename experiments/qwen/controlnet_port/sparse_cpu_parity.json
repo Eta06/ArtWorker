@@ -1,0 +1,340 @@
+{
+  "status": "passed",
+  "device": "CPU only",
+  "checkpoint_or_model_weights_used": false,
+  "decoder_rerun": false,
+  "geometry_oracle": "integer squared Euclidean distances to input-only unknown guide pixels",
+  "packing_oracle": "Torch interpolate(mode=nearest) then y-major reshape",
+  "geometry_cases": [
+    {
+      "radius_pixels": 0,
+      "pixel_support_exact": true,
+      "torch_nearest_packed_exact": true,
+      "unknown_guide_pixels": 3,
+      "supported_pixels": 4827,
+      "supported_tokens": 17
+    },
+    {
+      "radius_pixels": 1,
+      "pixel_support_exact": true,
+      "torch_nearest_packed_exact": true,
+      "unknown_guide_pixels": 3,
+      "supported_pixels": 4837,
+      "supported_tokens": 17
+    },
+    {
+      "radius_pixels": 3,
+      "pixel_support_exact": true,
+      "torch_nearest_packed_exact": true,
+      "unknown_guide_pixels": 3,
+      "supported_pixels": 4893,
+      "supported_tokens": 17
+    },
+    {
+      "radius_pixels": 16,
+      "pixel_support_exact": true,
+      "torch_nearest_packed_exact": true,
+      "unknown_guide_pixels": 3,
+      "supported_pixels": 6337,
+      "supported_tokens": 23
+    },
+    {
+      "radius_pixels": 64,
+      "pixel_support_exact": true,
+      "torch_nearest_packed_exact": true,
+      "unknown_guide_pixels": 3,
+      "supported_pixels": 14626,
+      "supported_tokens": 54
+    }
+  ],
+  "geometry_invariants": {
+    "off_grid_roi_floor_samples_exact": true,
+    "empty_and_known_only_guides_do_not_expand_support": true,
+    "guide_input_unchanged": true,
+    "known_support_polarity": "True retains encoded first64 control channels",
+    "guide_inside_known_excluded_before_dilation": true
+  },
+  "gate_cases": [
+    {
+      "dtype": "float32",
+      "support_case": 0,
+      "torch_gate_max_abs_error": 0.0,
+      "supported_control64_exact": true,
+      "unsupported_control64_literal_zero": true,
+      "source65_bytes_exact_after_float32_view": true,
+      "dtype_preserved": true,
+      "absolute_nonmonotonic_duplicate_gather_exact": true
+    },
+    {
+      "dtype": "float32",
+      "support_case": 1,
+      "torch_gate_max_abs_error": 0.0,
+      "supported_control64_exact": true,
+      "unsupported_control64_literal_zero": true,
+      "source65_bytes_exact_after_float32_view": true,
+      "dtype_preserved": true,
+      "absolute_nonmonotonic_duplicate_gather_exact": true
+    },
+    {
+      "dtype": "float32",
+      "support_case": 2,
+      "torch_gate_max_abs_error": 0.0,
+      "supported_control64_exact": true,
+      "unsupported_control64_literal_zero": true,
+      "source65_bytes_exact_after_float32_view": true,
+      "dtype_preserved": true,
+      "absolute_nonmonotonic_duplicate_gather_exact": true
+    },
+    {
+      "dtype": "float32",
+      "support_case": 3,
+      "torch_gate_max_abs_error": 0.0,
+      "supported_control64_exact": true,
+      "unsupported_control64_literal_zero": true,
+      "source65_bytes_exact_after_float32_view": true,
+      "dtype_preserved": true,
+      "absolute_nonmonotonic_duplicate_gather_exact": true
+    },
+    {
+      "dtype": "float32",
+      "support_case": 4,
+      "torch_gate_max_abs_error": 0.0,
+      "supported_control64_exact": true,
+      "unsupported_control64_literal_zero": true,
+      "source65_bytes_exact_after_float32_view": true,
+      "dtype_preserved": true,
+      "absolute_nonmonotonic_duplicate_gather_exact": true
+    },
+    {
+      "dtype": "float32",
+      "support_case": 5,
+      "torch_gate_max_abs_error": 0.0,
+      "supported_control64_exact": true,
+      "unsupported_control64_literal_zero": true,
+      "source65_bytes_exact_after_float32_view": true,
+      "dtype_preserved": true,
+      "absolute_nonmonotonic_duplicate_gather_exact": true
+    },
+    {
+      "dtype": "float32",
+      "support_case": 6,
+      "torch_gate_max_abs_error": 0.0,
+      "supported_control64_exact": true,
+      "unsupported_control64_literal_zero": true,
+      "source65_bytes_exact_after_float32_view": true,
+      "dtype_preserved": true,
+      "absolute_nonmonotonic_duplicate_gather_exact": true
+    },
+    {
+      "dtype": "float32",
+      "support_case": 7,
+      "torch_gate_max_abs_error": 0.0,
+      "supported_control64_exact": true,
+      "unsupported_control64_literal_zero": true,
+      "source65_bytes_exact_after_float32_view": true,
+      "dtype_preserved": true,
+      "absolute_nonmonotonic_duplicate_gather_exact": true
+    },
+    {
+      "dtype": "bfloat16",
+      "support_case": 0,
+      "torch_gate_max_abs_error": 0.0,
+      "supported_control64_exact": true,
+      "unsupported_control64_literal_zero": true,
+      "source65_bytes_exact_after_float32_view": true,
+      "dtype_preserved": true,
+      "absolute_nonmonotonic_duplicate_gather_exact": true
+    },
+    {
+      "dtype": "bfloat16",
+      "support_case": 1,
+      "torch_gate_max_abs_error": 0.0,
+      "supported_control64_exact": true,
+      "unsupported_control64_literal_zero": true,
+      "source65_bytes_exact_after_float32_view": true,
+      "dtype_preserved": true,
+      "absolute_nonmonotonic_duplicate_gather_exact": true
+    },
+    {
+      "dtype": "bfloat16",
+      "support_case": 2,
+      "torch_gate_max_abs_error": 0.0,
+      "supported_control64_exact": true,
+      "unsupported_control64_literal_zero": true,
+      "source65_bytes_exact_after_float32_view": true,
+      "dtype_preserved": true,
+      "absolute_nonmonotonic_duplicate_gather_exact": true
+    },
+    {
+      "dtype": "bfloat16",
+      "support_case": 3,
+      "torch_gate_max_abs_error": 0.0,
+      "supported_control64_exact": true,
+      "unsupported_control64_literal_zero": true,
+      "source65_bytes_exact_after_float32_view": true,
+      "dtype_preserved": true,
+      "absolute_nonmonotonic_duplicate_gather_exact": true
+    },
+    {
+      "dtype": "bfloat16",
+      "support_case": 4,
+      "torch_gate_max_abs_error": 0.0,
+      "supported_control64_exact": true,
+      "unsupported_control64_literal_zero": true,
+      "source65_bytes_exact_after_float32_view": true,
+      "dtype_preserved": true,
+      "absolute_nonmonotonic_duplicate_gather_exact": true
+    },
+    {
+      "dtype": "bfloat16",
+      "support_case": 5,
+      "torch_gate_max_abs_error": 0.0,
+      "supported_control64_exact": true,
+      "unsupported_control64_literal_zero": true,
+      "source65_bytes_exact_after_float32_view": true,
+      "dtype_preserved": true,
+      "absolute_nonmonotonic_duplicate_gather_exact": true
+    },
+    {
+      "dtype": "bfloat16",
+      "support_case": 6,
+      "torch_gate_max_abs_error": 0.0,
+      "supported_control64_exact": true,
+      "unsupported_control64_literal_zero": true,
+      "source65_bytes_exact_after_float32_view": true,
+      "dtype_preserved": true,
+      "absolute_nonmonotonic_duplicate_gather_exact": true
+    },
+    {
+      "dtype": "bfloat16",
+      "support_case": 7,
+      "torch_gate_max_abs_error": 0.0,
+      "supported_control64_exact": true,
+      "unsupported_control64_literal_zero": true,
+      "source65_bytes_exact_after_float32_view": true,
+      "dtype_preserved": true,
+      "absolute_nonmonotonic_duplicate_gather_exact": true
+    }
+  ],
+  "max_abs_gate_error": 0.0,
+  "scope": "Experimental input context gating only. Literal-zero input control64 does not prove zero learned ControlNet hints. This test does not assess generated image quality or remove VAE receptive-field effects inside retained support.",
+  "source_hashes": {
+    "test_sparse_cpu_parity.py": "b4f633bc381b35205e660d574268024c6847fb30dad0a0c0397de2e0a366d7b3",
+    "sparse_conditioning.py": "458a8eda69b31600365360822a25369bf479ba86246fdb110b07a546fbb12b0f",
+    "conditioning.py": "a1526bdd8704de2b086ceafdd33ac57fa18b0aa6ad096f7c01525d4a772e7dfb",
+    "run_sparse_control_trial.py": "a409b723933c27a3f1053c05ae03b83a0aabbb4390c4bb152bbe44a20f89c549"
+  },
+  "existing_white_artifacts": {
+    "artifacts": [
+      {
+        "raw": {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-20/mask-only/raw.png",
+          "mode": "RGB",
+          "size": [
+            512,
+            1152
+          ],
+          "rgb_min_gt240_fraction": 0.0,
+          "rows_with_gt95pct_white_width_inclusive": [],
+          "sha256": "7861298cf9bba3cfbea3c37f00f9a54ba3f27f62e22dd5b56a2829ac07d86734"
+        },
+        "composite": {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-20/mask-only/composite.png",
+          "mode": "RGB",
+          "size": [
+            512,
+            1152
+          ],
+          "rgb_min_gt240_fraction": 0.0,
+          "rows_with_gt95pct_white_width_inclusive": [],
+          "sha256": "462faf7a4ac900ce95cfa2004511f0ffe3ab9a4f84ff3cd2439e0df44bf82a17"
+        }
+      },
+      {
+        "raw": {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-20/tangent-canny/raw.png",
+          "mode": "RGB",
+          "size": [
+            512,
+            1152
+          ],
+          "rgb_min_gt240_fraction": 0.12208726671006945,
+          "rows_with_gt95pct_white_width_inclusive": [
+            [
+              0,
+              67
+            ],
+            [
+              1125,
+              1151
+            ]
+          ],
+          "sha256": "1e30c759ac1f7871c62135ee815282685c64f8e422c52656f4aeacdc3621048d"
+        },
+        "composite": {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-20/tangent-canny/composite.png",
+          "mode": "RGB",
+          "size": [
+            512,
+            1152
+          ],
+          "rgb_min_gt240_fraction": 0.12208726671006945,
+          "rows_with_gt95pct_white_width_inclusive": [
+            [
+              0,
+              67
+            ],
+            [
+              1125,
+              1151
+            ]
+          ],
+          "sha256": "d916df456924c2c301376ef44e7048344e93bc74f7a791f8fdafed63597f4399"
+        }
+      },
+      {
+        "raw": {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-40-knownbridge/tangent-canny/raw.png",
+          "mode": "RGB",
+          "size": [
+            512,
+            1152
+          ],
+          "rgb_min_gt240_fraction": 0.3113115098741319,
+          "rows_with_gt95pct_white_width_inclusive": [
+            [
+              0,
+              73
+            ],
+            [
+              868,
+              1151
+            ]
+          ],
+          "sha256": "2274b422d767f20fdbf484917d1c3a93773f2d6d38450b5eb3af0481b2859433"
+        },
+        "composite": {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-40-knownbridge/tangent-canny/composite.png",
+          "mode": "RGB",
+          "size": [
+            512,
+            1152
+          ],
+          "rgb_min_gt240_fraction": 0.3113115098741319,
+          "rows_with_gt95pct_white_width_inclusive": [
+            [
+              0,
+              73
+            ],
+            [
+              868,
+              1151
+            ]
+          ],
+          "sha256": "22ffce55dd2617be862115838e0711981b6050d6bc225d31db0e3914b075beb4"
+        }
+      }
+    ],
+    "interpretation": "Existing saved images are RGB. White regions appear in raw and composite at identical target rows; runner discards decoded alpha and never composites it onto white. Decoder alpha itself was not saved/inspected, and no decoder rerun occurred."
+  }
+}
