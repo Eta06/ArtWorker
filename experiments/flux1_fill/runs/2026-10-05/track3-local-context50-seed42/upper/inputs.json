@@ -1,0 +1,56 @@
+{
+  "source_crop_xyxy": [
+    0,
+    0,
+    512,
+    128
+  ],
+  "known_patch_rect_xyxy": [
+    0,
+    320,
+    512,
+    448
+  ],
+  "generated_patch_rect_xyxy": [
+    0,
+    0,
+    512,
+    320
+  ],
+  "generated_final_rect_xyxy": [
+    0,
+    0,
+    512,
+    320
+  ],
+  "patch_size": [
+    512,
+    448
+  ],
+  "target_tokens": 896,
+  "known_pixels": 65536,
+  "unknown_pixels": 163840,
+  "known_tokens": 256,
+  "unknown_tokens": 640,
+  "mask_convention": "white255 regenerates; black0 preserves",
+  "source_strip_uint8_sha256": "cc7bae39aef984eb46923247e21ba582523badc4b1af30ac6caceba9d849beba",
+  "canvas_uint8_sha256": "21b30db9923a0a64ecbc3571c6b7cba687911c50cb29c3e22392807b4560c235",
+  "mask_uint8_sha256": "bed69e66a4817e7328f9e04c2cf63ad09360b98467580a524bbb07a5b14a1156",
+  "source_strip_byte_exact": true,
+  "no_rotation_flip_or_resize": true,
+  "canvas_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-local-context50-seed42/upper/input_canvas.png",
+  "mask_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-local-context50-seed42/upper/input_mask.png",
+  "source_strip_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-local-context50-seed42/upper/source_strip.png",
+  "canvas_sha256": "ff203880bbaad90f66658539e3e809fa407b61075ecb4afe3ff81fe22da220de",
+  "mask_sha256": "cfe04cf720dfbe7bd108256efa8f54875c829232b79b349a5cd311a7ea6f4638",
+  "strip_file_sha256": "af9a2e00a03f5a761425e156ea2d6d002f963f65ba4b7a27ebd6b860f427292b",
+  "prompt": "Continue the adjacent lakeside background upward into the masked region: continuous lake water, low shrubs and a thin metal guardrail, seen from the same high camera angle. Muted twilight colors and coarse film grain. One continuous texture and perspective.",
+  "prompt_sha256": "cbcd7402541fee5bde09198a3ecfe77e44450909ef13282087b9488742337078",
+  "status": "prepared",
+  "nfe": 0,
+  "target_token_forwards": 0,
+  "joint_block_forwards": 0,
+  "single_block_forwards": 0,
+  "step_metrics": [],
+  "phases": {}
+}
