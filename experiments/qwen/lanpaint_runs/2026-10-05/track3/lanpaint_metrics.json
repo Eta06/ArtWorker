@@ -1,0 +1,1664 @@
+{
+  "status": "success",
+  "track": "track3",
+  "seed": 42,
+  "runs": {
+    "edge-control": {
+      "model_repo": "Qwen/Qwen-Image-2.1",
+      "model_revision": "790c92633540aa0cb11d9abf19eb46d861714758",
+      "runtime": "mflux native MLX QwenImage21Edit; experimental actual target-token growth",
+      "runtime_git_revision": "25661d8e853996fec9134998b995edf97369bfbd",
+      "adapter_repo": "Viggle/Qwen-Image-2.1-viggle-turbo",
+      "adapter_revision": "bb26a0f38e5fe6c124aaccc9187a87eed5d9ed13",
+      "adapter_file": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/qwen/viggle/Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors",
+      "adapter_rank": 256,
+      "adapter_baked": false,
+      "quantization": 4,
+      "track": "track3",
+      "seed": 42,
+      "steps": 6,
+      "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+      "width": 512,
+      "height": 1152,
+      "source_rect_xyxy": [
+        0,
+        320,
+        512,
+        832
+      ],
+      "status": "success",
+      "spatial_mode": "edge-control",
+      "diagnostic_control": true,
+      "shared_canvas_comparable": false,
+      "lanpaint_suite": "experiments/qwen/lanpaint_runs/2026-10-05/track3/lanpaint_metrics.json",
+      "generation_order_within_process": 1,
+      "source_prefix": "actual 512-square source; fixed 1024 latent image tokens",
+      "source_prefix_latent_tokens": 1024,
+      "joint_prefix_tokens": 1197,
+      "source_prefix_sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "source_encoding_shared_between_arms": true,
+      "fresh_prefix_cache_per_arm": true,
+      "known_target_encoding_context": "edge-padded-full-canvas-center-crop",
+      "known_target_sha256": "5bfd5056ecb4c0c53a3386f8575c1ffe7a16a52925b4363d467ab25e7ef16c1a",
+      "reference_prefix_unchanged": true,
+      "target_context_encode_seconds_shared": 0.34324204199947417,
+      "source_prefix_and_known_target_separate": true,
+      "conditional_correction": {
+        "implementation": "experimental LanPaint-style MLX overdamped port",
+        "upstream_revision": "2d7912f9a5efe5ece8de334c7ca18317b8288c39",
+        "requested_inner_iterations": 0,
+        "selected_outer_steps": [
+          3,
+          4,
+          5
+        ],
+        "step_size": 0.1,
+        "conditional_lambda": 5.0,
+        "min_step_fraction": 1.0,
+        "inner_count_rounds_with_remaining_variance": true,
+        "extra_noise": "separate deterministic absolute-position stream; never changes original outer noise",
+        "same_timestep_for_inner_and_final_forward": true,
+        "cfg": 1.0,
+        "big_guidance_is_same_conditional_prediction": true
+      },
+      "sigmas": [
+        1.0,
+        0.9648136496543884,
+        0.92751544713974,
+        0.8457746505737305,
+        0.6463939547538757,
+        0.3786254823207855,
+        0.0
+      ],
+      "schedule_shift_target_tokens": 2304,
+      "target_tokens_future_absent_from_forward": true,
+      "active_heights_by_step": [
+        640,
+        896,
+        1152,
+        1152,
+        1152,
+        1152
+      ],
+      "initializer": "predicted-clean-active-frontier",
+      "late_activation_initializer": "(1-sigma)*predicted-clean-active-frontier extrapolation + sigma*same absolute noise; untrained heuristic",
+      "inner_region_denoising": "continues refining at the same global target sigma",
+      "mask_method": "separate known TARGET source latent flow bridge restored before/after every step; reference prefix unchanged",
+      "trained_spatial_time_schedule": false,
+      "transformer_calls": 6,
+      "inner_transformer_calls": 0,
+      "target_token_forward_sum": 12288,
+      "all_forward_records": [
+        {
+          "outer_step": 1,
+          "purpose": "outer-final",
+          "sigma": 1.0,
+          "model_timestep": 1.0,
+          "target_tokens_forwarded": 1280,
+          "future_tokens_absent": 1024,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": false,
+          "attention_query_tokens": 2477,
+          "status": "success"
+        },
+        {
+          "outer_step": 2,
+          "purpose": "outer-final",
+          "sigma": 0.9648136496543884,
+          "model_timestep": 0.96484375,
+          "target_tokens_forwarded": 1792,
+          "future_tokens_absent": 512,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 1792,
+          "status": "success"
+        },
+        {
+          "outer_step": 3,
+          "purpose": "outer-final",
+          "sigma": 0.92751544713974,
+          "model_timestep": 0.9296875,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        },
+        {
+          "outer_step": 4,
+          "purpose": "outer-final",
+          "sigma": 0.8457746505737305,
+          "model_timestep": 0.84375,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        },
+        {
+          "outer_step": 5,
+          "purpose": "outer-final",
+          "sigma": 0.6463939547538757,
+          "model_timestep": 0.6484375,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        },
+        {
+          "outer_step": 6,
+          "purpose": "outer-final",
+          "sigma": 0.3786254823207855,
+          "model_timestep": 0.37890625,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        }
+      ],
+      "preview_definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+      "metal_device": {
+        "device_name": "Apple M4 Max",
+        "max_recommended_working_set_size": 30150672384,
+        "memory_size": 38654705664,
+        "architecture": "applegpu_g16s",
+        "max_buffer_length": 22613000192,
+        "resource_limit": 499000
+      },
+      "mlx_version": "0.32.3",
+      "phases": {
+        "load_seconds": 9.985876958002336,
+        "conditioning_seconds": 2.4892861249973066,
+        "denoising_seconds": 25.354445540957386,
+        "core_loop_wall_seconds": 25.537978833017405,
+        "preview_capture_seconds": 0.17999754098127596,
+        "decode_seconds": 4.214587582973763,
+        "preview_decode_seconds": 4.252410208020592
+      },
+      "shared_phase_scope": "load and conditioning executed once for entire suite; values attributed to each arm for context",
+      "load_mlx_peak_bytes": 26306185728,
+      "conditioning_mlx_peak_bytes": 11641876732,
+      "step_records": [
+        {
+          "step": 1,
+          "sigma": 1.0,
+          "next_sigma": 0.9648136496543884,
+          "active_height": 640,
+          "active_window_xyxy": [
+            0,
+            256,
+            512,
+            896
+          ],
+          "target_tokens_forwarded": 1280,
+          "future_target_tokens_absent": 1024,
+          "newly_activated_tokens": 1280,
+          "input_image_latent_tokens": 2304,
+          "effective_inner_iterations": 0,
+          "transformer_calls_this_step": 1,
+          "correction_details": {
+            "iterations": 0,
+            "sigma_unchanged": true,
+            "prefix_unchanged": true
+          },
+          "correction_noise_records": [],
+          "target_token_forward_sum_this_step": 1280,
+          "attention_query_token_sum_this_step": 2477,
+          "attention_query_tokens": 2477,
+          "attention_key_value_tokens": 2477,
+          "core_step_seconds": 4.3955447919724975
+        },
+        {
+          "step": 2,
+          "sigma": 0.9648136496543884,
+          "next_sigma": 0.92751544713974,
+          "active_height": 896,
+          "active_window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ],
+          "target_tokens_forwarded": 1792,
+          "future_target_tokens_absent": 512,
+          "newly_activated_tokens": 512,
+          "input_image_latent_tokens": 2816,
+          "effective_inner_iterations": 0,
+          "transformer_calls_this_step": 1,
+          "correction_details": {
+            "iterations": 0,
+            "sigma_unchanged": true,
+            "prefix_unchanged": true
+          },
+          "correction_noise_records": [],
+          "target_token_forward_sum_this_step": 1792,
+          "attention_query_token_sum_this_step": 1792,
+          "attention_query_tokens": 1792,
+          "attention_key_value_tokens": 2989,
+          "core_step_seconds": 3.1576452500012238
+        },
+        {
+          "step": 3,
+          "sigma": 0.92751544713974,
+          "next_sigma": 0.8457746505737305,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 512,
+          "input_image_latent_tokens": 3328,
+          "effective_inner_iterations": 0,
+          "transformer_calls_this_step": 1,
+          "correction_details": {
+            "iterations": 0,
+            "sigma_unchanged": true,
+            "prefix_unchanged": true
+          },
+          "correction_noise_records": [],
+          "target_token_forward_sum_this_step": 2304,
+          "attention_query_token_sum_this_step": 2304,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.3360862499976065
+        },
+        {
+          "step": 4,
+          "sigma": 0.8457746505737305,
+          "next_sigma": 0.6463939547538757,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "effective_inner_iterations": 0,
+          "transformer_calls_this_step": 1,
+          "correction_details": {
+            "iterations": 0,
+            "sigma_unchanged": true,
+            "prefix_unchanged": true
+          },
+          "correction_noise_records": [],
+          "target_token_forward_sum_this_step": 2304,
+          "attention_query_token_sum_this_step": 2304,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.495133457996417
+        },
+        {
+          "step": 5,
+          "sigma": 0.6463939547538757,
+          "next_sigma": 0.3786254823207855,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "effective_inner_iterations": 0,
+          "transformer_calls_this_step": 1,
+          "correction_details": {
+            "iterations": 0,
+            "sigma_unchanged": true,
+            "prefix_unchanged": true
+          },
+          "correction_noise_records": [],
+          "target_token_forward_sum_this_step": 2304,
+          "attention_query_token_sum_this_step": 2304,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.525583332986571
+        },
+        {
+          "step": 6,
+          "sigma": 0.3786254823207855,
+          "next_sigma": 0.0,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "effective_inner_iterations": 0,
+          "transformer_calls_this_step": 1,
+          "correction_details": {
+            "iterations": 0,
+            "sigma_unchanged": true,
+            "prefix_unchanged": true
+          },
+          "correction_noise_records": [],
+          "target_token_forward_sum_this_step": 2304,
+          "attention_query_token_sum_this_step": 2304,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.44445245800307
+        }
+      ],
+      "previews": [
+        {
+          "step": 2,
+          "active_height": 896,
+          "active_window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ],
+          "latent_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/edge-control/previews/step02_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/edge-control/previews/step02_predicted_clean_raw.png",
+          "composite_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/edge-control/previews/step02_predicted_clean_composite.png",
+          "decode_seconds": 1.1380392919818405,
+          "source_pixels_exact": true
+        },
+        {
+          "step": 4,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "latent_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/edge-control/previews/step04_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/edge-control/previews/step04_predicted_clean_raw.png",
+          "composite_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/edge-control/previews/step04_predicted_clean_composite.png",
+          "decode_seconds": 1.558869499975117,
+          "source_pixels_exact": true
+        },
+        {
+          "step": 6,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "latent_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/edge-control/previews/step06_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/edge-control/previews/step06_predicted_clean_raw.png",
+          "composite_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/edge-control/previews/step06_predicted_clean_composite.png",
+          "decode_seconds": 1.5546187500003725,
+          "source_pixels_exact": true
+        }
+      ],
+      "process_peak_rss_bytes": 10044719104,
+      "final_latents_finite": true,
+      "known_source_latents_exact_at_sigma_zero": true,
+      "denoising_timing_scope": "sum of six active outer steps including all conditional inner forwards, noise and Euler updates; preview capture and VAE decode excluded",
+      "denoising_mlx_peak_bytes": 9072811890,
+      "raw_source_region_mae_255": 3.4519666035970054,
+      "raw_source_region_max_error_255": 92,
+      "raw_source_top16_mae_255": 8.716593424479166,
+      "raw_source_bottom16_mae_255": 4.978474934895833,
+      "raw_source_inner_mae_255": 3.2255954318576388,
+      "decoded_pixels_finite": true,
+      "decoding_mlx_peak_bytes": 6108741530,
+      "preview_decoding_mlx_peak_bytes": 6198607786,
+      "source_pixels_exact": true,
+      "raw_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/edge-control/raw.png",
+      "composite_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/edge-control/composite.png",
+      "elapsed_seconds": 145.30507479200605,
+      "mlx_peak_bytes": 11641876732,
+      "output_sha256": "03ad495177a35f9ca8e405fc7b5d5a111c4389ee93230ee30381c9b38dcbe2e8",
+      "generation_seconds_excluding_load_previews": 32.058319248928456
+    },
+    "think1": {
+      "model_repo": "Qwen/Qwen-Image-2.1",
+      "model_revision": "790c92633540aa0cb11d9abf19eb46d861714758",
+      "runtime": "mflux native MLX QwenImage21Edit; experimental actual target-token growth",
+      "runtime_git_revision": "25661d8e853996fec9134998b995edf97369bfbd",
+      "adapter_repo": "Viggle/Qwen-Image-2.1-viggle-turbo",
+      "adapter_revision": "bb26a0f38e5fe6c124aaccc9187a87eed5d9ed13",
+      "adapter_file": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/qwen/viggle/Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors",
+      "adapter_rank": 256,
+      "adapter_baked": false,
+      "quantization": 4,
+      "track": "track3",
+      "seed": 42,
+      "steps": 6,
+      "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+      "width": 512,
+      "height": 1152,
+      "source_rect_xyxy": [
+        0,
+        320,
+        512,
+        832
+      ],
+      "status": "success",
+      "spatial_mode": "think1",
+      "diagnostic_control": true,
+      "shared_canvas_comparable": false,
+      "lanpaint_suite": "experiments/qwen/lanpaint_runs/2026-10-05/track3/lanpaint_metrics.json",
+      "generation_order_within_process": 2,
+      "source_prefix": "actual 512-square source; fixed 1024 latent image tokens",
+      "source_prefix_latent_tokens": 1024,
+      "joint_prefix_tokens": 1197,
+      "source_prefix_sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "source_encoding_shared_between_arms": true,
+      "fresh_prefix_cache_per_arm": true,
+      "known_target_encoding_context": "edge-padded-full-canvas-center-crop",
+      "known_target_sha256": "5bfd5056ecb4c0c53a3386f8575c1ffe7a16a52925b4363d467ab25e7ef16c1a",
+      "reference_prefix_unchanged": true,
+      "target_context_encode_seconds_shared": 0.34324204199947417,
+      "source_prefix_and_known_target_separate": true,
+      "conditional_correction": {
+        "implementation": "experimental LanPaint-style MLX overdamped port",
+        "upstream_revision": "2d7912f9a5efe5ece8de334c7ca18317b8288c39",
+        "requested_inner_iterations": 1,
+        "selected_outer_steps": [
+          3,
+          4,
+          5
+        ],
+        "step_size": 0.1,
+        "conditional_lambda": 5.0,
+        "min_step_fraction": 1.0,
+        "inner_count_rounds_with_remaining_variance": true,
+        "extra_noise": "separate deterministic absolute-position stream; never changes original outer noise",
+        "same_timestep_for_inner_and_final_forward": true,
+        "cfg": 1.0,
+        "big_guidance_is_same_conditional_prediction": true
+      },
+      "sigmas": [
+        1.0,
+        0.9648136496543884,
+        0.92751544713974,
+        0.8457746505737305,
+        0.6463939547538757,
+        0.3786254823207855,
+        0.0
+      ],
+      "schedule_shift_target_tokens": 2304,
+      "target_tokens_future_absent_from_forward": true,
+      "active_heights_by_step": [
+        640,
+        896,
+        1152,
+        1152,
+        1152,
+        1152
+      ],
+      "initializer": "predicted-clean-active-frontier",
+      "late_activation_initializer": "(1-sigma)*predicted-clean-active-frontier extrapolation + sigma*same absolute noise; untrained heuristic",
+      "inner_region_denoising": "continues refining at the same global target sigma",
+      "mask_method": "separate known TARGET source latent flow bridge restored before/after every step; reference prefix unchanged",
+      "trained_spatial_time_schedule": false,
+      "transformer_calls": 9,
+      "inner_transformer_calls": 3,
+      "target_token_forward_sum": 19200,
+      "all_forward_records": [
+        {
+          "outer_step": 1,
+          "purpose": "outer-final",
+          "sigma": 1.0,
+          "model_timestep": 1.0,
+          "target_tokens_forwarded": 1280,
+          "future_tokens_absent": 1024,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": false,
+          "attention_query_tokens": 2477,
+          "status": "success"
+        },
+        {
+          "outer_step": 2,
+          "purpose": "outer-final",
+          "sigma": 0.9648136496543884,
+          "model_timestep": 0.96484375,
+          "target_tokens_forwarded": 1792,
+          "future_tokens_absent": 512,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 1792,
+          "status": "success"
+        },
+        {
+          "outer_step": 3,
+          "purpose": "inner-1-coefficient",
+          "sigma": 0.92751544713974,
+          "model_timestep": 0.9296875,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        },
+        {
+          "outer_step": 3,
+          "purpose": "outer-final",
+          "sigma": 0.92751544713974,
+          "model_timestep": 0.9296875,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        },
+        {
+          "outer_step": 4,
+          "purpose": "inner-1-coefficient",
+          "sigma": 0.8457746505737305,
+          "model_timestep": 0.84375,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        },
+        {
+          "outer_step": 4,
+          "purpose": "outer-final",
+          "sigma": 0.8457746505737305,
+          "model_timestep": 0.84375,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        },
+        {
+          "outer_step": 5,
+          "purpose": "inner-1-coefficient",
+          "sigma": 0.6463939547538757,
+          "model_timestep": 0.6484375,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        },
+        {
+          "outer_step": 5,
+          "purpose": "outer-final",
+          "sigma": 0.6463939547538757,
+          "model_timestep": 0.6484375,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        },
+        {
+          "outer_step": 6,
+          "purpose": "outer-final",
+          "sigma": 0.3786254823207855,
+          "model_timestep": 0.37890625,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        }
+      ],
+      "preview_definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+      "metal_device": {
+        "device_name": "Apple M4 Max",
+        "max_recommended_working_set_size": 30150672384,
+        "memory_size": 38654705664,
+        "architecture": "applegpu_g16s",
+        "max_buffer_length": 22613000192,
+        "resource_limit": 499000
+      },
+      "mlx_version": "0.32.3",
+      "phases": {
+        "load_seconds": 9.985876958002336,
+        "conditioning_seconds": 2.4892861249973066,
+        "denoising_seconds": 40.70905441700597,
+        "core_loop_wall_seconds": 40.88910654099891,
+        "preview_capture_seconds": 0.176417707989458,
+        "decode_seconds": 1.5789375830208883,
+        "preview_decode_seconds": 4.8339672919828445
+      },
+      "shared_phase_scope": "load and conditioning executed once for entire suite; values attributed to each arm for context",
+      "load_mlx_peak_bytes": 26306185728,
+      "conditioning_mlx_peak_bytes": 11641876732,
+      "step_records": [
+        {
+          "step": 1,
+          "sigma": 1.0,
+          "next_sigma": 0.9648136496543884,
+          "active_height": 640,
+          "active_window_xyxy": [
+            0,
+            256,
+            512,
+            896
+          ],
+          "target_tokens_forwarded": 1280,
+          "future_target_tokens_absent": 1024,
+          "newly_activated_tokens": 1280,
+          "input_image_latent_tokens": 2304,
+          "effective_inner_iterations": 0,
+          "transformer_calls_this_step": 1,
+          "correction_details": {
+            "iterations": 0,
+            "sigma_unchanged": true,
+            "prefix_unchanged": true
+          },
+          "correction_noise_records": [],
+          "target_token_forward_sum_this_step": 1280,
+          "attention_query_token_sum_this_step": 2477,
+          "attention_query_tokens": 2477,
+          "attention_key_value_tokens": 2477,
+          "core_step_seconds": 4.778441750007914
+        },
+        {
+          "step": 2,
+          "sigma": 0.9648136496543884,
+          "next_sigma": 0.92751544713974,
+          "active_height": 896,
+          "active_window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ],
+          "target_tokens_forwarded": 1792,
+          "future_target_tokens_absent": 512,
+          "newly_activated_tokens": 512,
+          "input_image_latent_tokens": 2816,
+          "effective_inner_iterations": 0,
+          "transformer_calls_this_step": 1,
+          "correction_details": {
+            "iterations": 0,
+            "sigma_unchanged": true,
+            "prefix_unchanged": true
+          },
+          "correction_noise_records": [],
+          "target_token_forward_sum_this_step": 1792,
+          "attention_query_token_sum_this_step": 1792,
+          "attention_query_tokens": 1792,
+          "attention_key_value_tokens": 2989,
+          "core_step_seconds": 3.4967114579922054
+        },
+        {
+          "step": 3,
+          "sigma": 0.92751544713974,
+          "next_sigma": 0.8457746505737305,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 512,
+          "input_image_latent_tokens": 3328,
+          "effective_inner_iterations": 1,
+          "transformer_calls_this_step": 2,
+          "correction_details": {
+            "iterations": 1,
+            "flow_time": 0.92751544713974,
+            "vp_alpha_bar": 0.006070218579171191,
+            "vp_noise_fraction": 0.9939297814208288,
+            "step_size": 0.1,
+            "conditional_lambda": 5.0,
+            "scheme": "overdamped",
+            "source_target_changes_inside_correction": true,
+            "known_target_restored_after_outer_update": true,
+            "sigma_unchanged": true,
+            "prefix_unchanged": true
+          },
+          "correction_noise_records": [
+            {
+              "iteration": 0,
+              "phase": 0,
+              "seed": 700242,
+              "full_field_sha256": "da355de3b938d24a6b1980a6d167f17b7a845b4c93654e75688705bbde6db8ef",
+              "active_absolute_id_count": 2304
+            }
+          ],
+          "target_token_forward_sum_this_step": 4608,
+          "attention_query_token_sum_this_step": 4608,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 9.124348667013692
+        },
+        {
+          "step": 4,
+          "sigma": 0.8457746505737305,
+          "next_sigma": 0.6463939547538757,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "effective_inner_iterations": 1,
+          "transformer_calls_this_step": 2,
+          "correction_details": {
+            "iterations": 1,
+            "flow_time": 0.8457746505737305,
+            "vp_alpha_bar": 0.03218077090536539,
+            "vp_noise_fraction": 0.9678192290946346,
+            "step_size": 0.1,
+            "conditional_lambda": 5.0,
+            "scheme": "overdamped",
+            "source_target_changes_inside_correction": true,
+            "known_target_restored_after_outer_update": true,
+            "sigma_unchanged": true,
+            "prefix_unchanged": true
+          },
+          "correction_noise_records": [
+            {
+              "iteration": 0,
+              "phase": 0,
+              "seed": 700342,
+              "full_field_sha256": "113beb614b18d06d112aa070fd4c9f4e0ef7cb4f4ddc747617de357c096fe100",
+              "active_absolute_id_count": 2304
+            }
+          ],
+          "target_token_forward_sum_this_step": 4608,
+          "attention_query_token_sum_this_step": 4608,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 9.463114457990741
+        },
+        {
+          "step": 5,
+          "sigma": 0.6463939547538757,
+          "next_sigma": 0.3786254823207855,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "effective_inner_iterations": 1,
+          "transformer_calls_this_step": 2,
+          "correction_details": {
+            "iterations": 1,
+            "flow_time": 0.6463939547538757,
+            "vp_alpha_bar": 0.23032952705234605,
+            "vp_noise_fraction": 0.769670472947654,
+            "step_size": 0.1,
+            "conditional_lambda": 5.0,
+            "scheme": "overdamped",
+            "source_target_changes_inside_correction": true,
+            "known_target_restored_after_outer_update": true,
+            "sigma_unchanged": true,
+            "prefix_unchanged": true
+          },
+          "correction_noise_records": [
+            {
+              "iteration": 0,
+              "phase": 0,
+              "seed": 700442,
+              "full_field_sha256": "005dda3d17fc83bee5289af8cbd9e9d0b12375df57dc226d002c31fe3d7c89fd",
+              "active_absolute_id_count": 2304
+            }
+          ],
+          "target_token_forward_sum_this_step": 4608,
+          "attention_query_token_sum_this_step": 4608,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 9.25384420901537
+        },
+        {
+          "step": 6,
+          "sigma": 0.3786254823207855,
+          "next_sigma": 0.0,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "effective_inner_iterations": 0,
+          "transformer_calls_this_step": 1,
+          "correction_details": {
+            "iterations": 0,
+            "sigma_unchanged": true,
+            "prefix_unchanged": true
+          },
+          "correction_noise_records": [],
+          "target_token_forward_sum_this_step": 2304,
+          "attention_query_token_sum_this_step": 2304,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.592593874986051
+        }
+      ],
+      "previews": [
+        {
+          "step": 2,
+          "active_height": 896,
+          "active_window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ],
+          "latent_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think1/previews/step02_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think1/previews/step02_predicted_clean_raw.png",
+          "composite_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think1/previews/step02_predicted_clean_composite.png",
+          "decode_seconds": 1.293803458014736,
+          "source_pixels_exact": true
+        },
+        {
+          "step": 4,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "latent_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think1/previews/step04_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think1/previews/step04_predicted_clean_raw.png",
+          "composite_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think1/previews/step04_predicted_clean_composite.png",
+          "decode_seconds": 1.7616517080168705,
+          "source_pixels_exact": true
+        },
+        {
+          "step": 6,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "latent_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think1/previews/step06_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think1/previews/step06_predicted_clean_raw.png",
+          "composite_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think1/previews/step06_predicted_clean_composite.png",
+          "decode_seconds": 1.7777320840104949,
+          "source_pixels_exact": true
+        }
+      ],
+      "process_peak_rss_bytes": 10044719104,
+      "final_latents_finite": true,
+      "known_source_latents_exact_at_sigma_zero": true,
+      "denoising_timing_scope": "sum of six active outer steps including all conditional inner forwards, noise and Euler updates; preview capture and VAE decode excluded",
+      "denoising_mlx_peak_bytes": 9081497426,
+      "raw_source_region_mae_255": 3.432234446207682,
+      "raw_source_region_max_error_255": 92,
+      "raw_source_top16_mae_255": 8.5604248046875,
+      "raw_source_bottom16_mae_255": 4.777058919270833,
+      "raw_source_inner_mae_255": 3.21646728515625,
+      "decoded_pixels_finite": true,
+      "decoding_mlx_peak_bytes": 6108741530,
+      "preview_decoding_mlx_peak_bytes": 6198607786,
+      "source_pixels_exact": true,
+      "raw_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think1/raw.png",
+      "composite_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think1/composite.png",
+      "elapsed_seconds": 151.71939245800604,
+      "mlx_peak_bytes": 11641876732,
+      "output_sha256": "58d4ebcaf34cab8084573710a4816de743cea2b30c1600c3c3f7f26693e5dc8b",
+      "generation_seconds_excluding_load_previews": 44.77727812502417
+    },
+    "think2": {
+      "model_repo": "Qwen/Qwen-Image-2.1",
+      "model_revision": "790c92633540aa0cb11d9abf19eb46d861714758",
+      "runtime": "mflux native MLX QwenImage21Edit; experimental actual target-token growth",
+      "runtime_git_revision": "25661d8e853996fec9134998b995edf97369bfbd",
+      "adapter_repo": "Viggle/Qwen-Image-2.1-viggle-turbo",
+      "adapter_revision": "bb26a0f38e5fe6c124aaccc9187a87eed5d9ed13",
+      "adapter_file": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/qwen/viggle/Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors",
+      "adapter_rank": 256,
+      "adapter_baked": false,
+      "quantization": 4,
+      "track": "track3",
+      "seed": 42,
+      "steps": 6,
+      "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+      "width": 512,
+      "height": 1152,
+      "source_rect_xyxy": [
+        0,
+        320,
+        512,
+        832
+      ],
+      "status": "success",
+      "spatial_mode": "think2",
+      "diagnostic_control": true,
+      "shared_canvas_comparable": false,
+      "lanpaint_suite": "experiments/qwen/lanpaint_runs/2026-10-05/track3/lanpaint_metrics.json",
+      "generation_order_within_process": 3,
+      "source_prefix": "actual 512-square source; fixed 1024 latent image tokens",
+      "source_prefix_latent_tokens": 1024,
+      "joint_prefix_tokens": 1197,
+      "source_prefix_sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "source_encoding_shared_between_arms": true,
+      "fresh_prefix_cache_per_arm": true,
+      "known_target_encoding_context": "edge-padded-full-canvas-center-crop",
+      "known_target_sha256": "5bfd5056ecb4c0c53a3386f8575c1ffe7a16a52925b4363d467ab25e7ef16c1a",
+      "reference_prefix_unchanged": true,
+      "target_context_encode_seconds_shared": 0.34324204199947417,
+      "source_prefix_and_known_target_separate": true,
+      "conditional_correction": {
+        "implementation": "experimental LanPaint-style MLX overdamped port",
+        "upstream_revision": "2d7912f9a5efe5ece8de334c7ca18317b8288c39",
+        "requested_inner_iterations": 2,
+        "selected_outer_steps": [
+          3,
+          4,
+          5
+        ],
+        "step_size": 0.1,
+        "conditional_lambda": 5.0,
+        "min_step_fraction": 1.0,
+        "inner_count_rounds_with_remaining_variance": true,
+        "extra_noise": "separate deterministic absolute-position stream; never changes original outer noise",
+        "same_timestep_for_inner_and_final_forward": true,
+        "cfg": 1.0,
+        "big_guidance_is_same_conditional_prediction": true
+      },
+      "sigmas": [
+        1.0,
+        0.9648136496543884,
+        0.92751544713974,
+        0.8457746505737305,
+        0.6463939547538757,
+        0.3786254823207855,
+        0.0
+      ],
+      "schedule_shift_target_tokens": 2304,
+      "target_tokens_future_absent_from_forward": true,
+      "active_heights_by_step": [
+        640,
+        896,
+        1152,
+        1152,
+        1152,
+        1152
+      ],
+      "initializer": "predicted-clean-active-frontier",
+      "late_activation_initializer": "(1-sigma)*predicted-clean-active-frontier extrapolation + sigma*same absolute noise; untrained heuristic",
+      "inner_region_denoising": "continues refining at the same global target sigma",
+      "mask_method": "separate known TARGET source latent flow bridge restored before/after every step; reference prefix unchanged",
+      "trained_spatial_time_schedule": false,
+      "transformer_calls": 12,
+      "inner_transformer_calls": 6,
+      "target_token_forward_sum": 26112,
+      "all_forward_records": [
+        {
+          "outer_step": 1,
+          "purpose": "outer-final",
+          "sigma": 1.0,
+          "model_timestep": 1.0,
+          "target_tokens_forwarded": 1280,
+          "future_tokens_absent": 1024,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": false,
+          "attention_query_tokens": 2477,
+          "status": "success"
+        },
+        {
+          "outer_step": 2,
+          "purpose": "outer-final",
+          "sigma": 0.9648136496543884,
+          "model_timestep": 0.96484375,
+          "target_tokens_forwarded": 1792,
+          "future_tokens_absent": 512,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 1792,
+          "status": "success"
+        },
+        {
+          "outer_step": 3,
+          "purpose": "inner-1-coefficient",
+          "sigma": 0.92751544713974,
+          "model_timestep": 0.9296875,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        },
+        {
+          "outer_step": 3,
+          "purpose": "inner-2-coefficient",
+          "sigma": 0.92751544713974,
+          "model_timestep": 0.9296875,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        },
+        {
+          "outer_step": 3,
+          "purpose": "outer-final",
+          "sigma": 0.92751544713974,
+          "model_timestep": 0.9296875,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        },
+        {
+          "outer_step": 4,
+          "purpose": "inner-1-coefficient",
+          "sigma": 0.8457746505737305,
+          "model_timestep": 0.84375,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        },
+        {
+          "outer_step": 4,
+          "purpose": "inner-2-coefficient",
+          "sigma": 0.8457746505737305,
+          "model_timestep": 0.84375,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        },
+        {
+          "outer_step": 4,
+          "purpose": "outer-final",
+          "sigma": 0.8457746505737305,
+          "model_timestep": 0.84375,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        },
+        {
+          "outer_step": 5,
+          "purpose": "inner-1-coefficient",
+          "sigma": 0.6463939547538757,
+          "model_timestep": 0.6484375,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        },
+        {
+          "outer_step": 5,
+          "purpose": "inner-2-coefficient",
+          "sigma": 0.6463939547538757,
+          "model_timestep": 0.6484375,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        },
+        {
+          "outer_step": 5,
+          "purpose": "outer-final",
+          "sigma": 0.6463939547538757,
+          "model_timestep": 0.6484375,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        },
+        {
+          "outer_step": 6,
+          "purpose": "outer-final",
+          "sigma": 0.3786254823207855,
+          "model_timestep": 0.37890625,
+          "target_tokens_forwarded": 2304,
+          "future_tokens_absent": 0,
+          "source_prefix_tokens": 1024,
+          "cached_prefix": true,
+          "attention_query_tokens": 2304,
+          "status": "success"
+        }
+      ],
+      "preview_definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+      "metal_device": {
+        "device_name": "Apple M4 Max",
+        "max_recommended_working_set_size": 30150672384,
+        "memory_size": 38654705664,
+        "architecture": "applegpu_g16s",
+        "max_buffer_length": 22613000192,
+        "resource_limit": 499000
+      },
+      "mlx_version": "0.32.3",
+      "phases": {
+        "load_seconds": 9.985876958002336,
+        "conditioning_seconds": 2.4892861249973066,
+        "denoising_seconds": 56.13871179200942,
+        "core_loop_wall_seconds": 56.32900516598602,
+        "preview_capture_seconds": 0.18718366703251377,
+        "decode_seconds": 1.7429852499917615,
+        "preview_decode_seconds": 4.915329250012292
+      },
+      "shared_phase_scope": "load and conditioning executed once for entire suite; values attributed to each arm for context",
+      "load_mlx_peak_bytes": 26306185728,
+      "conditioning_mlx_peak_bytes": 11641876732,
+      "step_records": [
+        {
+          "step": 1,
+          "sigma": 1.0,
+          "next_sigma": 0.9648136496543884,
+          "active_height": 640,
+          "active_window_xyxy": [
+            0,
+            256,
+            512,
+            896
+          ],
+          "target_tokens_forwarded": 1280,
+          "future_target_tokens_absent": 1024,
+          "newly_activated_tokens": 1280,
+          "input_image_latent_tokens": 2304,
+          "effective_inner_iterations": 0,
+          "transformer_calls_this_step": 1,
+          "correction_details": {
+            "iterations": 0,
+            "sigma_unchanged": true,
+            "prefix_unchanged": true
+          },
+          "correction_noise_records": [],
+          "target_token_forward_sum_this_step": 1280,
+          "attention_query_token_sum_this_step": 2477,
+          "attention_query_tokens": 2477,
+          "attention_key_value_tokens": 2477,
+          "core_step_seconds": 4.808104083000217
+        },
+        {
+          "step": 2,
+          "sigma": 0.9648136496543884,
+          "next_sigma": 0.92751544713974,
+          "active_height": 896,
+          "active_window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ],
+          "target_tokens_forwarded": 1792,
+          "future_target_tokens_absent": 512,
+          "newly_activated_tokens": 512,
+          "input_image_latent_tokens": 2816,
+          "effective_inner_iterations": 0,
+          "transformer_calls_this_step": 1,
+          "correction_details": {
+            "iterations": 0,
+            "sigma_unchanged": true,
+            "prefix_unchanged": true
+          },
+          "correction_noise_records": [],
+          "target_token_forward_sum_this_step": 1792,
+          "attention_query_token_sum_this_step": 1792,
+          "attention_query_tokens": 1792,
+          "attention_key_value_tokens": 2989,
+          "core_step_seconds": 3.556042209005682
+        },
+        {
+          "step": 3,
+          "sigma": 0.92751544713974,
+          "next_sigma": 0.8457746505737305,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 512,
+          "input_image_latent_tokens": 3328,
+          "effective_inner_iterations": 2,
+          "transformer_calls_this_step": 3,
+          "correction_details": {
+            "iterations": 2,
+            "flow_time": 0.92751544713974,
+            "vp_alpha_bar": 0.006070218579171191,
+            "vp_noise_fraction": 0.9939297814208288,
+            "step_size": 0.1,
+            "conditional_lambda": 5.0,
+            "scheme": "overdamped",
+            "source_target_changes_inside_correction": true,
+            "known_target_restored_after_outer_update": true,
+            "sigma_unchanged": true,
+            "prefix_unchanged": true
+          },
+          "correction_noise_records": [
+            {
+              "iteration": 0,
+              "phase": 0,
+              "seed": 700242,
+              "full_field_sha256": "da355de3b938d24a6b1980a6d167f17b7a845b4c93654e75688705bbde6db8ef",
+              "active_absolute_id_count": 2304
+            },
+            {
+              "iteration": 1,
+              "phase": 0,
+              "seed": 700245,
+              "full_field_sha256": "acbfd06d649de611f4e71cda4cf528811111323d87d517c7c0d46ae34a9a91c9",
+              "active_absolute_id_count": 2304
+            },
+            {
+              "iteration": 1,
+              "phase": 1,
+              "seed": 700246,
+              "full_field_sha256": "9ef17954900ba362f6f9d61e1f444410928641508a827f70340ed1aa6344763e",
+              "active_absolute_id_count": 2304
+            }
+          ],
+          "target_token_forward_sum_this_step": 6912,
+          "attention_query_token_sum_this_step": 6912,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 13.789288208005019
+        },
+        {
+          "step": 4,
+          "sigma": 0.8457746505737305,
+          "next_sigma": 0.6463939547538757,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "effective_inner_iterations": 2,
+          "transformer_calls_this_step": 3,
+          "correction_details": {
+            "iterations": 2,
+            "flow_time": 0.8457746505737305,
+            "vp_alpha_bar": 0.03218077090536539,
+            "vp_noise_fraction": 0.9678192290946346,
+            "step_size": 0.1,
+            "conditional_lambda": 5.0,
+            "scheme": "overdamped",
+            "source_target_changes_inside_correction": true,
+            "known_target_restored_after_outer_update": true,
+            "sigma_unchanged": true,
+            "prefix_unchanged": true
+          },
+          "correction_noise_records": [
+            {
+              "iteration": 0,
+              "phase": 0,
+              "seed": 700342,
+              "full_field_sha256": "113beb614b18d06d112aa070fd4c9f4e0ef7cb4f4ddc747617de357c096fe100",
+              "active_absolute_id_count": 2304
+            },
+            {
+              "iteration": 1,
+              "phase": 0,
+              "seed": 700345,
+              "full_field_sha256": "711627658eab5b1f97d4db4bd13b65c7d181ef98d34efd78dd2c9b01a58e999c",
+              "active_absolute_id_count": 2304
+            },
+            {
+              "iteration": 1,
+              "phase": 1,
+              "seed": 700346,
+              "full_field_sha256": "88c9515206256f1a718c47c1003b662c24c6fb48b7c48c13119e15b99fd05ef6",
+              "active_absolute_id_count": 2304
+            }
+          ],
+          "target_token_forward_sum_this_step": 6912,
+          "attention_query_token_sum_this_step": 6912,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 14.14231816699612
+        },
+        {
+          "step": 5,
+          "sigma": 0.6463939547538757,
+          "next_sigma": 0.3786254823207855,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "effective_inner_iterations": 2,
+          "transformer_calls_this_step": 3,
+          "correction_details": {
+            "iterations": 2,
+            "flow_time": 0.6463939547538757,
+            "vp_alpha_bar": 0.23032952705234605,
+            "vp_noise_fraction": 0.769670472947654,
+            "step_size": 0.1,
+            "conditional_lambda": 5.0,
+            "scheme": "overdamped",
+            "source_target_changes_inside_correction": true,
+            "known_target_restored_after_outer_update": true,
+            "sigma_unchanged": true,
+            "prefix_unchanged": true
+          },
+          "correction_noise_records": [
+            {
+              "iteration": 0,
+              "phase": 0,
+              "seed": 700442,
+              "full_field_sha256": "005dda3d17fc83bee5289af8cbd9e9d0b12375df57dc226d002c31fe3d7c89fd",
+              "active_absolute_id_count": 2304
+            },
+            {
+              "iteration": 1,
+              "phase": 0,
+              "seed": 700445,
+              "full_field_sha256": "4c04d084874a87c379a8b8f7eec3e37baf74b0abb03fd0aaf1af6df24443c02f",
+              "active_absolute_id_count": 2304
+            },
+            {
+              "iteration": 1,
+              "phase": 1,
+              "seed": 700446,
+              "full_field_sha256": "4fe1b7dd757e9ca06d09e24d58af6819d30aea41ba0f1b7a7ab35f78cfce22cf",
+              "active_absolute_id_count": 2304
+            }
+          ],
+          "target_token_forward_sum_this_step": 6912,
+          "attention_query_token_sum_this_step": 6912,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 14.498449584003538
+        },
+        {
+          "step": 6,
+          "sigma": 0.3786254823207855,
+          "next_sigma": 0.0,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "effective_inner_iterations": 0,
+          "transformer_calls_this_step": 1,
+          "correction_details": {
+            "iterations": 0,
+            "sigma_unchanged": true,
+            "prefix_unchanged": true
+          },
+          "correction_noise_records": [],
+          "target_token_forward_sum_this_step": 2304,
+          "attention_query_token_sum_this_step": 2304,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 5.344509540998843
+        }
+      ],
+      "previews": [
+        {
+          "step": 2,
+          "active_height": 896,
+          "active_window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ],
+          "latent_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think2/previews/step02_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think2/previews/step02_predicted_clean_raw.png",
+          "composite_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think2/previews/step02_predicted_clean_composite.png",
+          "decode_seconds": 1.2704870839952491,
+          "source_pixels_exact": true
+        },
+        {
+          "step": 4,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "latent_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think2/previews/step04_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think2/previews/step04_predicted_clean_raw.png",
+          "composite_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think2/previews/step04_predicted_clean_composite.png",
+          "decode_seconds": 1.821586208010558,
+          "source_pixels_exact": true
+        },
+        {
+          "step": 6,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "latent_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think2/previews/step06_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think2/previews/step06_predicted_clean_raw.png",
+          "composite_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think2/previews/step06_predicted_clean_composite.png",
+          "decode_seconds": 1.8224654159857891,
+          "source_pixels_exact": true
+        }
+      ],
+      "process_peak_rss_bytes": 10044719104,
+      "final_latents_finite": true,
+      "known_source_latents_exact_at_sigma_zero": true,
+      "denoising_timing_scope": "sum of six active outer steps including all conditional inner forwards, noise and Euler updates; preview capture and VAE decode excluded",
+      "denoising_mlx_peak_bytes": 9081497426,
+      "raw_source_region_mae_255": 3.421741485595703,
+      "raw_source_region_max_error_255": 93,
+      "raw_source_top16_mae_255": 8.719685872395834,
+      "raw_source_bottom16_mae_255": 4.635416666666667,
+      "raw_source_inner_mae_255": 3.2046875,
+      "decoded_pixels_finite": true,
+      "decoding_mlx_peak_bytes": 6108741530,
+      "preview_decoding_mlx_peak_bytes": 6198607786,
+      "source_pixels_exact": true,
+      "raw_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think2/raw.png",
+      "composite_path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think2/composite.png",
+      "elapsed_seconds": 158.379184874997,
+      "mlx_peak_bytes": 11641876732,
+      "output_sha256": "baad6328c5539ac44d8f7cee30dd70538c6e4cf9b88921cb46dd0df9a962e414",
+      "generation_seconds_excluding_load_previews": 60.370983166998485
+    }
+  },
+  "phases": {
+    "load_seconds": 9.985876958002336,
+    "conditioning_seconds": 2.4892861249973066
+  },
+  "runner_sha256": "f39372fb65d3fc24115ac3b3f2460db23c145a773fc7fbe749e86cb4e0e9350c",
+  "lanpaint_upstream_revision": "2d7912f9a5efe5ece8de334c7ca18317b8288c39",
+  "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+  "mlx_version": "0.32.3",
+  "mode_output_directories": {
+    "edge-control": "experiments/qwen/lanpaint_runs/2026-10-05/track3/edge-control",
+    "think1": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think1",
+    "think2": "experiments/qwen/lanpaint_runs/2026-10-05/track3/think2"
+  },
+  "metal_device": {
+    "device_name": "Apple M4 Max",
+    "max_recommended_working_set_size": 30150672384,
+    "memory_size": 38654705664,
+    "architecture": "applegpu_g16s",
+    "max_buffer_length": 22613000192,
+    "resource_limit": 499000
+  },
+  "phase": "complete",
+  "elapsed_seconds": 158.38000195802306,
+  "process_peak_rss_bytes": 10044719104,
+  "loaded_component_parameter_bytes": {
+    "transformer": 5507571712,
+    "text_encoder": 4777530024,
+    "vae": 1350961616
+  },
+  "load_mlx_peak_bytes": 26306185728,
+  "target_context_encode_seconds": 0.34324204199947417,
+  "known_target_sha256_by_arm": {
+    "edge-control": "5bfd5056ecb4c0c53a3386f8575c1ffe7a16a52925b4363d467ab25e7ef16c1a",
+    "think1": "5bfd5056ecb4c0c53a3386f8575c1ffe7a16a52925b4363d467ab25e7ef16c1a",
+    "think2": "5bfd5056ecb4c0c53a3386f8575c1ffe7a16a52925b4363d467ab25e7ef16c1a"
+  },
+  "prefix_unchanged_by_context_encoding": true,
+  "conditioning_mlx_peak_bytes": 11641876732,
+  "sigmas": [
+    1.0,
+    0.9648136496543884,
+    0.92751544713974,
+    0.8457746505737305,
+    0.6463939547538757,
+    0.3786254823207855,
+    0.0
+  ],
+  "source_prefix_latent_tokens": 1024,
+  "joint_prefix_tokens": 1197,
+  "full_target_tokens": 2304,
+  "source_prefix_sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+  "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+  "hash_representation": "float32 values converted from the shared inference tensors",
+  "arm_specifications": {
+    "edge-control": {
+      "heights": [
+        640,
+        896,
+        1152,
+        1152,
+        1152,
+        1152
+      ],
+      "initializer": "predicted-clean-active-frontier",
+      "known_context": "edge-padded-full-canvas-center-crop",
+      "inner_requested": 0
+    },
+    "think1": {
+      "heights": [
+        640,
+        896,
+        1152,
+        1152,
+        1152,
+        1152
+      ],
+      "initializer": "predicted-clean-active-frontier",
+      "known_context": "edge-padded-full-canvas-center-crop",
+      "inner_requested": 1
+    },
+    "think2": {
+      "heights": [
+        640,
+        896,
+        1152,
+        1152,
+        1152,
+        1152
+      ],
+      "initializer": "predicted-clean-active-frontier",
+      "known_context": "edge-padded-full-canvas-center-crop",
+      "inner_requested": 2
+    }
+  },
+  "preview_steps": [
+    2,
+    4,
+    6
+  ],
+  "current_mode": "think2",
+  "core_seconds": 56.13871179200942,
+  "nfe": 12,
+  "lanpaint_comparison": {
+    "nfe": {
+      "edge-control": 6,
+      "think1": 9,
+      "think2": 12
+    },
+    "target_token_forward_sum": {
+      "edge-control": 12288,
+      "think1": 19200,
+      "think2": 26112
+    },
+    "core_seconds": {
+      "edge-control": 25.354445540957386,
+      "think1": 40.70905441700597,
+      "think2": 56.13871179200942
+    },
+    "source_prefix_matched": true,
+    "noise_prompt_sigmas_matched": true,
+    "conditional_inner_correction_is_only_arm_change": true,
+    "timing_limit": "single process and seed; execution order/thermal/kernel warm-up can affect time; previews excluded",
+    "quality_limit": "Experimental LanPaint-style correction has no growing-canvas quality guarantee; all extra forwards counted; inspect both boundaries and whole frame"
+  }
+}
