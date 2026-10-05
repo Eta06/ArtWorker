@@ -1,0 +1,291 @@
+{
+  "status": "passed",
+  "device": "CPU only",
+  "dtype": "float32",
+  "real_models_loaded": false,
+  "checkpoint_weights_used": false,
+  "downloads": false,
+  "scope": "Post-chain hint localization mechanics; full32/16 computation; no trained quality or quantized checkpoint parity.",
+  "fields": {
+    "status": "passed",
+    "cases": [
+      {
+        "shape": "hard",
+        "oracle_max_abs": 0.0,
+        "metadata": {
+          "experimental_localized_hints": true,
+          "shape": "hard",
+          "radius_pixels": 64,
+          "distance_metric": "exact Euclidean L2 pixel distance",
+          "geometry_source": "nonblack input guide outside source ROI only; no output-derived geometry",
+          "cosine_formula": null,
+          "source_roi_always_zero": true,
+          "source_rect_xyxy": [
+            96,
+            96,
+            128,
+            128
+          ],
+          "unknown_guide_pixels": 1,
+          "positive_hint_pixels": 5570,
+          "positive_hint_target_tokens": 26,
+          "total_target_tokens": 100,
+          "target_hint_weight_sum": 26.0,
+          "packed_shape": [
+            1,
+            100,
+            1
+          ],
+          "nearest_coordinates": "floor(output_index*input_size/output_size), raster y-major",
+          "guide_rgb_uint8_sha256": "6f699ddc4d136cf6022d587d6683a80b335ed99b773ed6b1c8e39dade3c165cf",
+          "pixel_weights_float32_sha256": "a34c287652df5f7cdac089c583bd157e6f7cf174b221d351310764bf7e87b28f",
+          "target_weights_float32_sha256": "31ac1b6f0e19236bbebf5247d52d53084e1b0d92e69b0161710b73cd5866ca3e",
+          "full_joint_computation": true,
+          "sparse_compute": false
+        }
+      },
+      {
+        "shape": "cosine",
+        "oracle_max_abs": 1.1920928955078125e-07,
+        "metadata": {
+          "experimental_localized_hints": true,
+          "shape": "cosine",
+          "radius_pixels": 64,
+          "distance_metric": "exact Euclidean L2 pixel distance",
+          "geometry_source": "nonblack input guide outside source ROI only; no output-derived geometry",
+          "cosine_formula": "0.5*(1+cos(pi*distance/radius)) for distance<radius; otherwise0",
+          "source_roi_always_zero": true,
+          "source_rect_xyxy": [
+            96,
+            96,
+            128,
+            128
+          ],
+          "unknown_guide_pixels": 1,
+          "positive_hint_pixels": 5568,
+          "positive_hint_target_tokens": 24,
+          "total_target_tokens": 100,
+          "target_hint_weight_sum": 10.88869857788086,
+          "packed_shape": [
+            1,
+            100,
+            1
+          ],
+          "nearest_coordinates": "floor(output_index*input_size/output_size), raster y-major",
+          "guide_rgb_uint8_sha256": "6f699ddc4d136cf6022d587d6683a80b335ed99b773ed6b1c8e39dade3c165cf",
+          "pixel_weights_float32_sha256": "0208e8048b792e4e05503ef792227c38adaea06e0c3ae29d6bf596fffa11adbf",
+          "target_weights_float32_sha256": "74e386a82067ac9d37efaef0bdb230fae796ba12ba496e69f47cbdf209a7098f",
+          "full_joint_computation": true,
+          "sparse_compute": false
+        }
+      }
+    ],
+    "known_seed_excluded": true,
+    "empty_guide_all_zero": true,
+    "radius_zero_exact": true,
+    "multiple_seed_min_distance_exact": true,
+    "guide_unmodified": true,
+    "nearest_samples_exact": true
+  },
+  "tiny_cases": [
+    {
+      "status": "passed",
+      "padded_prompt": false,
+      "shape": "cosine",
+      "base_blocks": 32,
+      "control_hints": 16,
+      "raw_hints_full_joint_unchanged_exactly": true,
+      "prefix_hint_zero_exact": true,
+      "outside_unknown_hint_zero_exact": true,
+      "known_source_target_hint_zero_exact": true,
+      "supported_hint_nonzero": true,
+      "soft_scaling_exact": true,
+      "base_prefix_trace_exact_all32_blocks": true,
+      "alpha_one_exact_validated_reference_gated_forward": true,
+      "alpha_zero_exact_base": true,
+      "scale_zero_exact_base": true,
+      "source_hidden_context_unmodified": true,
+      "target_output_effect_max_abs": 2.3043909072875977,
+      "cache_rejected": true,
+      "known_target_hidden_trace_preservation_claim": false,
+      "field_metadata": {
+        "experimental_localized_hints": true,
+        "shape": "cosine",
+        "radius_pixels": 64,
+        "distance_metric": "exact Euclidean L2 pixel distance",
+        "geometry_source": "nonblack input guide outside source ROI only; no output-derived geometry",
+        "cosine_formula": "0.5*(1+cos(pi*distance/radius)) for distance<radius; otherwise0",
+        "source_roi_always_zero": true,
+        "source_rect_xyxy": [
+          32,
+          32,
+          96,
+          96
+        ],
+        "unknown_guide_pixels": 1,
+        "positive_hint_pixels": 4076,
+        "positive_hint_target_tokens": 16,
+        "total_target_tokens": 64,
+        "target_hint_weight_sum": 8.897533416748047,
+        "packed_shape": [
+          1,
+          64,
+          1
+        ],
+        "nearest_coordinates": "floor(output_index*input_size/output_size), raster y-major",
+        "guide_rgb_uint8_sha256": "8fa22f971023959febfabad2f457e5d7ab6260c651d302044704fa2163d22857",
+        "pixel_weights_float32_sha256": "37b4db34b48f3294db2bf6f7b325487fa8fcfcd45f4894f3c1c8123a1fea522c",
+        "target_weights_float32_sha256": "30974b153d3e09b980a4a3bff68c07a6797ab45801598355b304910c560303a5",
+        "full_joint_computation": true,
+        "sparse_compute": false
+      }
+    },
+    {
+      "status": "passed",
+      "padded_prompt": true,
+      "shape": "cosine",
+      "base_blocks": 32,
+      "control_hints": 16,
+      "raw_hints_full_joint_unchanged_exactly": true,
+      "prefix_hint_zero_exact": true,
+      "outside_unknown_hint_zero_exact": true,
+      "known_source_target_hint_zero_exact": true,
+      "supported_hint_nonzero": true,
+      "soft_scaling_exact": true,
+      "base_prefix_trace_exact_all32_blocks": true,
+      "alpha_one_exact_validated_reference_gated_forward": true,
+      "alpha_zero_exact_base": true,
+      "scale_zero_exact_base": true,
+      "source_hidden_context_unmodified": true,
+      "target_output_effect_max_abs": 1.5597472190856934,
+      "cache_rejected": true,
+      "known_target_hidden_trace_preservation_claim": false,
+      "field_metadata": {
+        "experimental_localized_hints": true,
+        "shape": "cosine",
+        "radius_pixels": 64,
+        "distance_metric": "exact Euclidean L2 pixel distance",
+        "geometry_source": "nonblack input guide outside source ROI only; no output-derived geometry",
+        "cosine_formula": "0.5*(1+cos(pi*distance/radius)) for distance<radius; otherwise0",
+        "source_roi_always_zero": true,
+        "source_rect_xyxy": [
+          32,
+          32,
+          96,
+          96
+        ],
+        "unknown_guide_pixels": 1,
+        "positive_hint_pixels": 4076,
+        "positive_hint_target_tokens": 16,
+        "total_target_tokens": 64,
+        "target_hint_weight_sum": 8.897533416748047,
+        "packed_shape": [
+          1,
+          64,
+          1
+        ],
+        "nearest_coordinates": "floor(output_index*input_size/output_size), raster y-major",
+        "guide_rgb_uint8_sha256": "8fa22f971023959febfabad2f457e5d7ab6260c651d302044704fa2163d22857",
+        "pixel_weights_float32_sha256": "37b4db34b48f3294db2bf6f7b325487fa8fcfcd45f4894f3c1c8123a1fea522c",
+        "target_weights_float32_sha256": "30974b153d3e09b980a4a3bff68c07a6797ab45801598355b304910c560303a5",
+        "full_joint_computation": true,
+        "sparse_compute": false
+      }
+    },
+    {
+      "status": "passed",
+      "padded_prompt": false,
+      "shape": "hard",
+      "base_blocks": 32,
+      "control_hints": 16,
+      "raw_hints_full_joint_unchanged_exactly": true,
+      "prefix_hint_zero_exact": true,
+      "outside_unknown_hint_zero_exact": true,
+      "known_source_target_hint_zero_exact": true,
+      "supported_hint_nonzero": true,
+      "soft_scaling_exact": true,
+      "base_prefix_trace_exact_all32_blocks": true,
+      "alpha_one_exact_validated_reference_gated_forward": true,
+      "alpha_zero_exact_base": true,
+      "scale_zero_exact_base": true,
+      "source_hidden_context_unmodified": true,
+      "target_output_effect_max_abs": 2.3141260147094727,
+      "cache_rejected": true,
+      "known_target_hidden_trace_preservation_claim": false,
+      "field_metadata": {
+        "experimental_localized_hints": true,
+        "shape": "hard",
+        "radius_pixels": 64,
+        "distance_metric": "exact Euclidean L2 pixel distance",
+        "geometry_source": "nonblack input guide outside source ROI only; no output-derived geometry",
+        "cosine_formula": null,
+        "source_roi_always_zero": true,
+        "source_rect_xyxy": [
+          32,
+          32,
+          96,
+          96
+        ],
+        "unknown_guide_pixels": 1,
+        "positive_hint_pixels": 4078,
+        "positive_hint_target_tokens": 18,
+        "total_target_tokens": 64,
+        "target_hint_weight_sum": 18.0,
+        "packed_shape": [
+          1,
+          64,
+          1
+        ],
+        "nearest_coordinates": "floor(output_index*input_size/output_size), raster y-major",
+        "guide_rgb_uint8_sha256": "8fa22f971023959febfabad2f457e5d7ab6260c651d302044704fa2163d22857",
+        "pixel_weights_float32_sha256": "9fb1818303b5f79c7676b440738a2a1b24765f3347dff2cb9afcfc40908eab5e",
+        "target_weights_float32_sha256": "125123a108d88414544e5b8c4e5536dddab5273acc20cd678931dc1770b2acd9",
+        "full_joint_computation": true,
+        "sparse_compute": false
+      }
+    }
+  ],
+  "source_code_sha256": {
+    "control.py": "f4017d5989b5a97db5783cc6f100938ffa1f8a17de92587a1608db5418dd9d2a",
+    "conditioning.py": "a1526bdd8704de2b086ceafdd33ac57fa18b0aa6ad096f7c01525d4a772e7dfb",
+    "reference_control.py": "ff8f404714defaf2909e82770cd5ec62811ffcca5b627ee5763efef3b92d09d9",
+    "localized_reference_control.py": "2aa4dee1c5b4d64d119d58b8943f5d224b3119fc0ae8054c9d4b85d069fbd722",
+    "sparse_conditioning.py": "458a8eda69b31600365360822a25369bf479ba86246fdb110b07a546fbb12b0f",
+    "test_reference_control_cpu.py": "d3b6f628b0699eadd9526db4157985d9a7e2f673730e4c179d887a1af0d2bbfa"
+  },
+  "runtime_dependency_hashes": {
+    "qwen21_attention": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_attention.py",
+      "sha256": "e992e21c193cb2cd9f2225e8afb67af2424a770b853d3e065ff60c5b95581e83"
+    },
+    "qwen21_transformer_block": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_transformer_block.py",
+      "sha256": "60ed91c00e12066417636ea54f5e225198586af0e5e88ccc76dfe209d285b3de"
+    },
+    "qwen21_layout": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_layout.py",
+      "sha256": "37bd0839fa8a215d2d25aec4e8f65f0e05c279ad1f1eab15e1af041368c0be44"
+    },
+    "qwen21_transformer": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_transformer.py",
+      "sha256": "8ee62ba80495fb36e8cf885b8b463bc7353cbfe2eb90b377d46283c539686735"
+    },
+    "qwen21_norm_out": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_norm_out.py",
+      "sha256": "f403e5f7f63e297869190fdfe1155a6aabb2a13df480fca0ebf3af733adc911d"
+    },
+    "qwen21_text_projection": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_text_projection.py",
+      "sha256": "aca4d4c74c5450fa0238b4650984f478e5f59a5ecf25ddffe60a0a31514ca1aa"
+    },
+    "qwen21_time_text_embed": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_time_text_embed.py",
+      "sha256": "c051d7f82f285a9dd4be2c361e50afa51b1de13774d46b3a42037b3637ced348"
+    },
+    "qwen21_rope": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_rope.py",
+      "sha256": "395f5c7281a77abb91fd1d40145a139b6b31d3af4112d7e6857efc2224fed1e6"
+    }
+  },
+  "script_sha256": "5d8264091bb467529f90f2726d2386f03630c4763de2549052266f98f7d74328"
+}
