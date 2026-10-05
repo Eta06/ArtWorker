@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "quality_status": "not assessed by integrity validation; inspect actual finals",
+  "suite": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-sparse40-knownbridge",
+  "steps": 40,
+  "arms": {
+    "tangent-supported": {
+      "complete_record_count": true,
+      "base_block_count": true,
+      "control_block_count": true,
+      "token_sum": true,
+      "full_target_in_every_step": true,
+      "raw_shape": true,
+      "composite_shape": true,
+      "source_pixels_exact": true,
+      "latents_shape": true,
+      "latents_finite": true,
+      "latent_hash": true,
+      "composite_hash": true,
+      "outer_noise_matches_suite": true,
+      "sigmas_match_suite": true
+    }
+  },
+  "shared": {
+    "source_file_hash_matches": true,
+    "original_jpeg_hashes_unchanged": true,
+    "known_context_matched_record": true,
+    "full_compute_declared": true,
+    "no_turbo_adapter": true
+  },
+  "raw_near_white_diagnostic": {
+    "tangent-supported": {
+      "definition": "all RGB channels>=230; row bands require90 percent pixels; brightness alone is not quality",
+      "row_bands_inclusive": [],
+      "top_generated_fraction": 0.0,
+      "bottom_generated_fraction": 0.0
+    }
+  },
+  "known_bridge_extension": true,
+  "suite_metrics_sha256": "a99df6e631347947f7b43bd70664aac3c49455e5919ba27f42c405ff3638a39c",
+  "current_validator_sha256": "d06858b908c40d18fd732fad1ec21cf5711c43af48cd6a09321ff38399c0cb37",
+  "baseline_comparison_limit": "Older edge-context uses Turbo, image prefix and real target growth. Comparison is qualitative, not a matched ControlNet-only ablation."
+}
