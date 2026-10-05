@@ -1,0 +1,335 @@
+{
+  "status": "success",
+  "kind": "CPU post-generation compositor diagnostic",
+  "track": "track1",
+  "input_raw": "experiments/evaluation/results/qwen21-viggle-v021-r128-6step-q4/track1/raw.png",
+  "input_source": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track1/source_512.png",
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "strip_pixels": 96,
+  "input_sha256_before": {
+    "experiments/evaluation/results/qwen21-viggle-v021-r128-6step-q4/track1/raw.png": "bccd54094f83c94b59f1bcc79f3f164089c31f8cb462221a8770fa08f3597215",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track1/source_512.png": "d02d2fe0e696e91194f814f0dda34cfa7539a23a6c0d5d5803c83f70f5f26265",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/Player/Resources/track1.jpg": "2d7162f9c4462b7706ef5d33c4b81d13b42da3e3c781175ee36447b7eb7a99b9"
+  },
+  "preflight": {
+    "inverse_warp_direction_passed": true,
+    "harmonic_constant_mode_passed": true,
+    "original_source_exact_passed": true,
+    "far_exterior_exact_passed": true,
+    "cpu_only": true,
+    "no_model_weights_loaded": true,
+    "opencv_version": "4.14.0"
+  },
+  "variants": {
+    "color": {
+      "optical_flow": null,
+      "flow_tangent_extrapolation": false,
+      "harmonic_color": true,
+      "strip_pixels": 96,
+      "color_sigma_x": 6,
+      "residual_cap_255": 24,
+      "color_residual": {
+        "top": {
+          "residual_mean_rgb": [
+            1.422041893005371,
+            0.08223461359739304,
+            -0.6102864146232605
+          ],
+          "residual_abs_p95_255": 2.1520864963531494,
+          "residual_max_255": 2.5630288124084473
+        },
+        "bottom": {
+          "residual_mean_rgb": [
+            0.2884851396083832,
+            0.2743661105632782,
+            -1.1903434991836548
+          ],
+          "residual_abs_p95_255": 1.7722247838974,
+          "residual_max_255": 2.484304904937744
+        }
+      },
+      "processing_seconds": 0.005559458018979058,
+      "source_pixels_exact": true,
+      "untouched_outer_pixels_exact": true,
+      "generated_changed_pixel_fraction": 0.163958740234375,
+      "generated_mean_abs_change_255": 0.0749420166015625,
+      "top_join_mean_abs_adjacent_row_jump_255": 3.8619791666666665,
+      "bottom_join_mean_abs_adjacent_row_jump_255": 4.322916666666667,
+      "collar_horizontal_gradient_energy_ratio": 1.0316863836696823,
+      "rgb_clipped_low_fraction_in_generated": 0.5998077392578125,
+      "rgb_clipped_high_fraction_in_generated": 0.0,
+      "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality.",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track1/color/composite.png",
+      "composite_sha256": "e4c9e67d77d9a7302327962c6a4871ba668cbcf15c5d3336f82040545bf67efa"
+    },
+    "dis-flow": {
+      "optical_flow": "dis",
+      "flow_tangent_extrapolation": false,
+      "harmonic_color": false,
+      "strip_pixels": 96,
+      "color_sigma_x": 6,
+      "residual_cap_255": 24,
+      "registration": {
+        "algorithm": "dis",
+        "cap_pixels": 6,
+        "source_before_mae_255": 3.1689974466959634,
+        "source_after_mae_255": 3.1493873596191406,
+        "source_top16_after_mae_255": 0.8661702473958334,
+        "source_bottom16_after_mae_255": 1.1987711588541667,
+        "flow_magnitude_p50": 0.0414852648973465,
+        "flow_magnitude_p95": 0.5345717668533325,
+        "flow_magnitude_max_before_cap": 2.885493516921997
+      },
+      "exterior_flow": {
+        "top": {
+          "boundary_mean_dx": -0.4503042697906494,
+          "boundary_mean_dy": 0.2357444316148758,
+          "boundary_max_displacement": 2.87265944480896
+        },
+        "bottom": {
+          "boundary_mean_dx": -0.1020275205373764,
+          "boundary_mean_dy": -0.21848025918006897,
+          "boundary_max_displacement": 2.8405237197875977
+        }
+      },
+      "processing_seconds": 0.03504458299721591,
+      "source_pixels_exact": true,
+      "untouched_outer_pixels_exact": true,
+      "generated_changed_pixel_fraction": 0.0484283447265625,
+      "generated_mean_abs_change_255": 0.023503621419270832,
+      "top_join_mean_abs_adjacent_row_jump_255": 3.4954427083333335,
+      "bottom_join_mean_abs_adjacent_row_jump_255": 3.6569010416666665,
+      "collar_horizontal_gradient_energy_ratio": 1.0473208072373,
+      "rgb_clipped_low_fraction_in_generated": 0.62117919921875,
+      "rgb_clipped_high_fraction_in_generated": 0.0,
+      "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality.",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track1/dis-flow/composite.png",
+      "composite_sha256": "44806a4ae6521b0cc98099ccd4f18ce571940a2a8c1fe948d46dedf8c9765294"
+    },
+    "dis-color": {
+      "optical_flow": "dis",
+      "flow_tangent_extrapolation": false,
+      "harmonic_color": true,
+      "strip_pixels": 96,
+      "color_sigma_x": 6,
+      "residual_cap_255": 24,
+      "registration": {
+        "algorithm": "dis",
+        "cap_pixels": 6,
+        "source_before_mae_255": 3.1689974466959634,
+        "source_after_mae_255": 3.1493873596191406,
+        "source_top16_after_mae_255": 0.8661702473958334,
+        "source_bottom16_after_mae_255": 1.1987711588541667,
+        "flow_magnitude_p50": 0.0414852648973465,
+        "flow_magnitude_p95": 0.5345717668533325,
+        "flow_magnitude_max_before_cap": 2.885493516921997
+      },
+      "exterior_flow": {
+        "top": {
+          "boundary_mean_dx": -0.4503042697906494,
+          "boundary_mean_dy": 0.2357444316148758,
+          "boundary_max_displacement": 2.87265944480896
+        },
+        "bottom": {
+          "boundary_mean_dx": -0.1020275205373764,
+          "boundary_mean_dy": -0.21848025918006897,
+          "boundary_max_displacement": 2.8405237197875977
+        }
+      },
+      "color_residual": {
+        "top": {
+          "residual_mean_rgb": [
+            1.291516900062561,
+            0.10563226789236069,
+            -0.3801267445087433
+          ],
+          "residual_abs_p95_255": 2.2825584411621094,
+          "residual_max_255": 3.6079161167144775
+        },
+        "bottom": {
+          "residual_mean_rgb": [
+            0.3434596061706543,
+            0.3040216565132141,
+            -1.093995451927185
+          ],
+          "residual_abs_p95_255": 1.7295252084732056,
+          "residual_max_255": 2.3474223613739014
+        }
+      },
+      "processing_seconds": 0.007529082999099046,
+      "source_pixels_exact": true,
+      "untouched_outer_pixels_exact": true,
+      "generated_changed_pixel_fraction": 0.15870361328125,
+      "generated_mean_abs_change_255": 0.08813578287760417,
+      "top_join_mean_abs_adjacent_row_jump_255": 2.9739583333333335,
+      "bottom_join_mean_abs_adjacent_row_jump_255": 3.7135416666666665,
+      "collar_horizontal_gradient_energy_ratio": 1.0409185803757828,
+      "rgb_clipped_low_fraction_in_generated": 0.5995819091796875,
+      "rgb_clipped_high_fraction_in_generated": 0.0,
+      "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality.",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track1/dis-color/composite.png",
+      "composite_sha256": "61a70612131423f1f34039165f19d7797d397a8afd6edf84d489da205dcaa3f0"
+    },
+    "dis-tangent-color": {
+      "optical_flow": "dis",
+      "flow_tangent_extrapolation": true,
+      "harmonic_color": true,
+      "strip_pixels": 96,
+      "color_sigma_x": 6,
+      "residual_cap_255": 24,
+      "registration": {
+        "algorithm": "dis",
+        "cap_pixels": 6,
+        "source_before_mae_255": 3.1689974466959634,
+        "source_after_mae_255": 3.1493873596191406,
+        "source_top16_after_mae_255": 0.8661702473958334,
+        "source_bottom16_after_mae_255": 1.1987711588541667,
+        "flow_magnitude_p50": 0.0414852648973465,
+        "flow_magnitude_p95": 0.5345717668533325,
+        "flow_magnitude_max_before_cap": 2.885493516921997
+      },
+      "exterior_flow": {
+        "top": {
+          "boundary_mean_dx": -0.4503042697906494,
+          "boundary_mean_dy": 0.2357444316148758,
+          "boundary_max_displacement": 2.87265944480896
+        },
+        "bottom": {
+          "boundary_mean_dx": -0.1020275205373764,
+          "boundary_mean_dy": -0.21848025918006897,
+          "boundary_max_displacement": 2.8405237197875977
+        }
+      },
+      "color_residual": {
+        "top": {
+          "residual_mean_rgb": [
+            1.291516900062561,
+            0.10563226789236069,
+            -0.3801267445087433
+          ],
+          "residual_abs_p95_255": 2.2825584411621094,
+          "residual_max_255": 3.6079161167144775
+        },
+        "bottom": {
+          "residual_mean_rgb": [
+            0.3434596061706543,
+            0.3040216565132141,
+            -1.093995451927185
+          ],
+          "residual_abs_p95_255": 1.7295252084732056,
+          "residual_max_255": 2.3474223613739014
+        }
+      },
+      "processing_seconds": 0.007604458020068705,
+      "source_pixels_exact": true,
+      "untouched_outer_pixels_exact": true,
+      "generated_changed_pixel_fraction": 0.1634552001953125,
+      "generated_mean_abs_change_255": 0.09494222005208333,
+      "top_join_mean_abs_adjacent_row_jump_255": 2.9641927083333335,
+      "bottom_join_mean_abs_adjacent_row_jump_255": 3.703125,
+      "collar_horizontal_gradient_energy_ratio": 1.0593365808397124,
+      "rgb_clipped_low_fraction_in_generated": 0.5993499755859375,
+      "rgb_clipped_high_fraction_in_generated": 0.0,
+      "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality.",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track1/dis-tangent-color/composite.png",
+      "composite_sha256": "35bb92125e0add41c77bcdaa33a663840c14ac614fcc33cd3e64a96b179d047e"
+    },
+    "farneback-color": {
+      "optical_flow": "farneback",
+      "flow_tangent_extrapolation": false,
+      "harmonic_color": true,
+      "strip_pixels": 96,
+      "color_sigma_x": 6,
+      "residual_cap_255": 24,
+      "registration": {
+        "algorithm": "farneback",
+        "cap_pixels": 6,
+        "source_before_mae_255": 3.1689974466959634,
+        "source_after_mae_255": 3.1577936808268228,
+        "source_top16_after_mae_255": 0.9183756510416666,
+        "source_bottom16_after_mae_255": 1.2382405598958333,
+        "flow_magnitude_p50": 0.04102201759815216,
+        "flow_magnitude_p95": 0.1413230150938034,
+        "flow_magnitude_max_before_cap": 0.6536687612533569
+      },
+      "exterior_flow": {
+        "top": {
+          "boundary_mean_dx": -0.01076844334602356,
+          "boundary_mean_dy": -0.0003836965188384056,
+          "boundary_max_displacement": 0.16016680002212524
+        },
+        "bottom": {
+          "boundary_mean_dx": -0.010016117244958878,
+          "boundary_mean_dy": -0.0018801261903718114,
+          "boundary_max_displacement": 0.21778225898742676
+        }
+      },
+      "color_residual": {
+        "top": {
+          "residual_mean_rgb": [
+            1.423966646194458,
+            0.084783174097538,
+            -0.6075724363327026
+          ],
+          "residual_abs_p95_255": 2.153359889984131,
+          "residual_max_255": 2.5630288124084473
+        },
+        "bottom": {
+          "residual_mean_rgb": [
+            0.29558423161506653,
+            0.28037017583847046,
+            -1.181433081626892
+          ],
+          "residual_abs_p95_255": 1.7712080478668213,
+          "residual_max_255": 2.3521440029144287
+        }
+      },
+      "processing_seconds": 0.04259945801459253,
+      "source_pixels_exact": true,
+      "untouched_outer_pixels_exact": true,
+      "generated_changed_pixel_fraction": 0.16385498046875,
+      "generated_mean_abs_change_255": 0.07505289713541667,
+      "top_join_mean_abs_adjacent_row_jump_255": 3.8483072916666665,
+      "bottom_join_mean_abs_adjacent_row_jump_255": 4.307942708333333,
+      "collar_horizontal_gradient_energy_ratio": 1.032428670842032,
+      "rgb_clipped_low_fraction_in_generated": 0.5993621826171875,
+      "rgb_clipped_high_fraction_in_generated": 0.0,
+      "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality.",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track1/farneback-color/composite.png",
+      "composite_sha256": "66aa11bdceec9c49805c441721114d9abfbd28c850a0c8c19068956ef54695e8"
+    },
+    "baseline": {
+      "processing_seconds": 0.0,
+      "source_pixels_exact": true,
+      "untouched_outer_pixels_exact": true,
+      "generated_changed_pixel_fraction": 0.0,
+      "generated_mean_abs_change_255": 0.0,
+      "top_join_mean_abs_adjacent_row_jump_255": 4.254557291666667,
+      "bottom_join_mean_abs_adjacent_row_jump_255": 4.232421875,
+      "collar_horizontal_gradient_energy_ratio": 1.0,
+      "rgb_clipped_low_fraction_in_generated": 0.6228190104166667,
+      "rgb_clipped_high_fraction_in_generated": 0.0,
+      "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality.",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track1/baseline/composite.png",
+      "composite_sha256": "ce720de75bcc4582d129b8c04b3acdf7f2b37069fb848b746cb9f3467d75136f"
+    }
+  },
+  "input_sha256_after": {
+    "experiments/evaluation/results/qwen21-viggle-v021-r128-6step-q4/track1/raw.png": "bccd54094f83c94b59f1bcc79f3f164089c31f8cb462221a8770fa08f3597215",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track1/source_512.png": "d02d2fe0e696e91194f814f0dda34cfa7539a23a6c0d5d5803c83f70f5f26265",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/Player/Resources/track1.jpg": "2d7162f9c4462b7706ef5d33c4b81d13b42da3e3c781175ee36447b7eb7a99b9"
+  },
+  "inputs_unchanged": true,
+  "elapsed_seconds": 0.6779225000063889,
+  "runner_sha256": "5ee56d57500af577fe313bbfe12e852907bd991bb5c8c36e3faca23e4be75607",
+  "all_source_pixels_exact": true,
+  "all_far_exterior_exact": true,
+  "quality_verdict": "No meaningful scene completion; source/black exterior preserved. Color-only bottom jump slightly worsens.",
+  "quality_verdict_basis": "Direct full-frame, top/bottom strip and track3 6x closeup inspection",
+  "quality_inspected_at_utc": "2026-10-05T01:21:54.347510+00:00"
+}
