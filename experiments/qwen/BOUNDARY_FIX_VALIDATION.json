@@ -1,0 +1,733 @@
+{
+  "status": "passed",
+  "checked_at_utc": "2026-10-05T03:15:26.722280+00:00",
+  "scope": "CPU-only document link and completed launch/source provenance validation; no weights or GPU; does not assess image quality",
+  "report": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/BOUNDARY_FIX_RESULTS.md",
+  "report_sha256": "7c9b3a5e56ce451c64abbc52ee07789e1abf0d1b036f0db366777c34ca7b6569",
+  "word_count": 2091,
+  "local_links_checked": 70,
+  "local_links": [
+    {
+      "target": "BOUNDARY_SAMPLER_RESULTS.md",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "PROJECTION_RESULTS.md",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "TURBO_TAIL_RESULTS.md",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "LANPAINT_RESULTS.md",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_eval/2026-10-05/scene-prompt/REPORT.md",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "COMPOSITOR_RESULTS.md",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-20/controlnet_metrics.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-40-knownbridge/independent-review/REPORT.md",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_eval/2026-10-05/controlnet40-comparison/REVIEW.md",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_eval/2026-10-05/controlnet-sparse40-comparison/REVIEW.md",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_eval/2026-10-05/controlnet-reference40-comparison/REVIEW.md",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_eval/2026-10-05/controlnet-localized40-comparison/REVIEW.md",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "../flux1_fill/FILL_RESULTS.md",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "../flux1_fill/FILL_RESULTS.md",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_eval/2026-10-05/controlnet-growing-localized6-comparison/REVIEW.md",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_port/SAVED_KNOWN_COLLAR_PLAN.md",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_eval/2026-10-05/controlnet-localized40-comparison/full-comparison.png",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "../flux1_fill/runs/2026-10-05/track3-50-seed42/composite.png",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-saved-top32-outpaint/independent_saved_top32_integrity.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_eval/2026-10-05/controlnet-top32-source-tangent/REPORT.md",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_runs/2026-10-05/track3/launch.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_runs/2026-10-05/track3/boundary_metrics.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_runs/2026-10-05/comparison/validation.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_runs/2026-10-05/track3-dynamic/launch.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_runs/2026-10-05/track3-dynamic/boundary_metrics.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "projection_runs/2026-10-05/track3-exact-v2/launch.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "projection_runs/2026-10-05/track3-exact-v2/projection_metrics.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "turbo_tail_runs/2026-10-05/track3/launch.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "turbo_tail_runs/2026-10-05/track3/turbo_tail_metrics.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "turbo_tail_runs/2026-10-05/track3/validation.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "lanpaint_runs/2026-10-05/track3/launch.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "lanpaint_runs/2026-10-05/track3/lanpaint_metrics.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "lanpaint_runs/2026-10-05/track3/independent_validation.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "prompt_runs/2026-10-05/track3/launch.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "prompt_runs/2026-10-05/track3/edge-context/metrics.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_eval/2026-10-05/scene-prompt/metrics.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_compositor_runs/2026-10-05/validation.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-20/launch.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-20/independent_validation.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_port/cpu_parity.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-40-knownbridge/launch.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-40-knownbridge/independent_validation.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-40-knownbridge/controlnet_metrics.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-40/launch.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-40/independent_validation.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-sparse40-knownbridge/launch.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-sparse40-knownbridge/independent_validation.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_eval/2026-10-05/controlnet-sparse40-comparison/comparison_validation.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-reference40-outpaint/launch.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-reference40-outpaint/independent_validation.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_eval/2026-10-05/controlnet-reference40-comparison/comparison_validation.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-localized40-outpaint/launch.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_eval/2026-10-05/controlnet-localized40-comparison/independent_validation.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_eval/2026-10-05/controlnet-localized40-comparison/compositor_independent_validation.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "../flux1_fill/runs/2026-10-05/track3-50-seed42/launch.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "../flux1_fill/runs/2026-10-05/track3-50-seed42/independent_validation.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "../flux1_fill/runs/2026-10-05/track3-50-seed42/metrics.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "../flux1_fill/runs/2026-10-05/track3-50-exterior-only-seed42/launch.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "../flux1_fill/prompt_arms/2026-10-05/exterior-only/prompt_match_independent.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-growing-localized6/launch.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "boundary_eval/2026-10-05/controlnet-growing-localized6-comparison/independent_validation.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-saved-top32-outpaint/launch.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-saved-top32-outpaint/independent_saved_top32_integrity.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-saved-top32-outpaint/saved_known_collar_reference_metrics.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "BOUNDARY_FIX_VALIDATION.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "../flux1_fill/runs/2026-10-05/track3-local-context50-seed42/launch.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "../flux1_fill/local_context_cpu_validation.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_port/known_collar_cpu_validation.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "projection_runs/2026-10-05/track3-localized40-checkpoint-preflight/preflight.json",
+      "exists": true,
+      "is_file": true
+    },
+    {
+      "target": "controlnet_runs/2026-10-05/track3-canvasreference-localized40-preflight-v3/preflight.json",
+      "exists": true,
+      "is_file": true
+    }
+  ],
+  "source_512_file_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+  "source_file_hash_matches_controlnet20_record": true,
+  "completed_launch_records": [
+    {
+      "path": "experiments/qwen/boundary_runs/2026-10-05/track3/launch.json",
+      "status": "success",
+      "exit_code": 0,
+      "elapsed_seconds": 132.0493398749968,
+      "runner_provenance": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_boundary_suite_v1.py",
+          "recorded_sha256": "08c6f5f06134359b2424c40f2ef9971c0f1f3fdfab43f1ff351df396cbc5e9f1",
+          "current_sha256": "08c6f5f06134359b2424c40f2ef9971c0f1f3fdfab43f1ff351df396cbc5e9f1",
+          "current_matches_launch": true
+        }
+      ]
+    },
+    {
+      "path": "experiments/qwen/boundary_runs/2026-10-05/track3-dynamic/launch.json",
+      "status": "success",
+      "exit_code": 0,
+      "elapsed_seconds": 60.54974254098488,
+      "runner_provenance": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_boundary_suite.py",
+          "recorded_sha256": "402b73572e73517176f43e035394d525ee5017f18f68e434cf78fab66d502669",
+          "current_sha256": "402b73572e73517176f43e035394d525ee5017f18f68e434cf78fab66d502669",
+          "current_matches_launch": true
+        }
+      ]
+    },
+    {
+      "path": "experiments/qwen/projection_runs/2026-10-05/track3-exact-v2/launch.json",
+      "status": "timeout",
+      "exit_code": -15,
+      "elapsed_seconds": 600.4336597499787,
+      "runner_provenance": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_boundary_projection.py",
+          "recorded_sha256": "d6501a023b4b6ab3d3c05db94e3a6194b91f2b99c08218d71d118affd3b0bbe7",
+          "current_sha256": "1e9cbf4ebf5e451e5ea53f8006c8d5c7eaaee5db860c91249b0fdf97cf3e0cf6",
+          "current_matches_launch": false
+        }
+      ]
+    },
+    {
+      "path": "experiments/qwen/turbo_tail_runs/2026-10-05/track3/launch.json",
+      "status": "success",
+      "exit_code": 0,
+      "elapsed_seconds": 128.02747416700004,
+      "runner_provenance": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_turbo_tail_suite.py",
+          "recorded_sha256": "afefc6c531c1be2aeae2ec5052bfaccfd4899a30521111b13640e03f468b63b7",
+          "current_sha256": "afefc6c531c1be2aeae2ec5052bfaccfd4899a30521111b13640e03f468b63b7",
+          "current_matches_launch": true
+        }
+      ]
+    },
+    {
+      "path": "experiments/qwen/lanpaint_runs/2026-10-05/track3/launch.json",
+      "status": "success",
+      "exit_code": 0,
+      "elapsed_seconds": 159.17702199998894,
+      "runner_provenance": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_lanpaint_probe.py",
+          "recorded_sha256": "f39372fb65d3fc24115ac3b3f2460db23c145a773fc7fbe749e86cb4e0e9350c",
+          "current_sha256": "f39372fb65d3fc24115ac3b3f2460db23c145a773fc7fbe749e86cb4e0e9350c",
+          "current_matches_launch": true
+        }
+      ]
+    },
+    {
+      "path": "experiments/qwen/prompt_runs/2026-10-05/track3/launch.json",
+      "status": "success",
+      "exit_code": 0,
+      "elapsed_seconds": 47.093468042003224,
+      "runner_provenance": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_scene_prompt_probe.py",
+          "recorded_sha256": "377a2ebd0dc00e911fa277cb1cc0292254cfea77a392b84616fd856c9d1d0938",
+          "current_sha256": "377a2ebd0dc00e911fa277cb1cc0292254cfea77a392b84616fd856c9d1d0938",
+          "current_matches_launch": true
+        }
+      ]
+    },
+    {
+      "path": "experiments/qwen/controlnet_runs/2026-10-05/track3-20/launch.json",
+      "status": "success",
+      "exit_code": 0,
+      "elapsed_seconds": 448.89649687497877,
+      "runner_provenance": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_control_trial.py",
+          "recorded_sha256": "10c6dd5693437f5619bb2d45bcc1d1650829035cb70fd474aa56c762cfb50ec4",
+          "current_sha256": "10c6dd5693437f5619bb2d45bcc1d1650829035cb70fd474aa56c762cfb50ec4",
+          "current_matches_launch": true
+        }
+      ]
+    },
+    {
+      "path": "experiments/qwen/controlnet_runs/2026-10-05/track3-40-knownbridge/launch.json",
+      "status": "success",
+      "exit_code": 0,
+      "elapsed_seconds": 288.86216258400236,
+      "runner_provenance": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_control_trial.py",
+          "recorded_sha256": "10c6dd5693437f5619bb2d45bcc1d1650829035cb70fd474aa56c762cfb50ec4",
+          "current_sha256": "10c6dd5693437f5619bb2d45bcc1d1650829035cb70fd474aa56c762cfb50ec4",
+          "current_matches_launch": true
+        }
+      ]
+    },
+    {
+      "path": "experiments/qwen/controlnet_runs/2026-10-05/track3-40/launch.json",
+      "status": "success",
+      "exit_code": 0,
+      "elapsed_seconds": 274.30581733302097,
+      "runner_provenance": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_control_trial.py",
+          "recorded_sha256": "10c6dd5693437f5619bb2d45bcc1d1650829035cb70fd474aa56c762cfb50ec4",
+          "current_sha256": "10c6dd5693437f5619bb2d45bcc1d1650829035cb70fd474aa56c762cfb50ec4",
+          "current_matches_launch": true
+        }
+      ]
+    },
+    {
+      "path": "experiments/qwen/controlnet_runs/2026-10-05/track3-sparse40-knownbridge/launch.json",
+      "status": "success",
+      "exit_code": 0,
+      "elapsed_seconds": 290.15793287497945,
+      "runner_provenance": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_sparse_control_trial.py",
+          "recorded_sha256": "a409b723933c27a3f1053c05ae03b83a0aabbb4390c4bb152bbe44a20f89c549",
+          "current_sha256": "a409b723933c27a3f1053c05ae03b83a0aabbb4390c4bb152bbe44a20f89c549",
+          "current_matches_launch": true
+        }
+      ]
+    },
+    {
+      "path": "experiments/qwen/controlnet_runs/2026-10-05/track3-reference40-outpaint/launch.json",
+      "status": "success",
+      "exit_code": 0,
+      "elapsed_seconds": 425.983823165996,
+      "runner_provenance": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_reference_control_trial.py",
+          "recorded_sha256": "850f9bd3ea8d162d152e37a4fe49a8f9c3e1d8f49f158939c2e8fb5339f477c8",
+          "current_sha256": "850f9bd3ea8d162d152e37a4fe49a8f9c3e1d8f49f158939c2e8fb5339f477c8",
+          "current_matches_launch": true
+        }
+      ]
+    },
+    {
+      "path": "experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/launch.json",
+      "status": "success",
+      "exit_code": 0,
+      "elapsed_seconds": 435.1994111670065,
+      "runner_provenance": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_localized_reference_control_trial.py",
+          "recorded_sha256": "3a67d04d8da1eac90f37ede81a4d98083b9bd3b2a93feab08172ed795996e7ad",
+          "current_sha256": "3a67d04d8da1eac90f37ede81a4d98083b9bd3b2a93feab08172ed795996e7ad",
+          "current_matches_launch": true
+        }
+      ]
+    },
+    {
+      "path": "experiments/flux1_fill/runs/2026-10-05/track3-50-seed42/launch.json",
+      "status": "success",
+      "exit_code": 0,
+      "elapsed_seconds": 347.639701084001,
+      "runner_provenance": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/run_fill_trial.py",
+          "recorded_sha256": "e63fac021c3e3849baeac7aeb5f41ae44c27a3cbda38a12520963c8955d8b6b3",
+          "current_sha256": "e63fac021c3e3849baeac7aeb5f41ae44c27a3cbda38a12520963c8955d8b6b3",
+          "current_matches_launch": true
+        }
+      ]
+    },
+    {
+      "path": "experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/launch.json",
+      "status": "success",
+      "exit_code": 0,
+      "elapsed_seconds": 211.1848900830082,
+      "runner_provenance": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_growing_localized_control_trial.py",
+          "recorded_sha256": "6158d3812e811af840df0e5bdb300c5191b3e743b2572013bbdfdf75c39ea965",
+          "current_sha256": "6158d3812e811af840df0e5bdb300c5191b3e743b2572013bbdfdf75c39ea965",
+          "current_matches_launch": true
+        }
+      ]
+    },
+    {
+      "path": "experiments/qwen/controlnet_runs/2026-10-05/track3-saved-top32-outpaint/launch.json",
+      "status": "success",
+      "exit_code": 0,
+      "elapsed_seconds": 430.19452104202355,
+      "runner_provenance": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_known_collar_saved_baseline_trial.py",
+          "recorded_sha256": "b8f0056e344d3c3444dce118b4d7e3c7c93d7a94ca5f31776d2a692cea394cfa",
+          "current_sha256": "b8f0056e344d3c3444dce118b4d7e3c7c93d7a94ca5f31776d2a692cea394cfa",
+          "current_matches_launch": true
+        }
+      ]
+    },
+    {
+      "path": "experiments/flux1_fill/runs/2026-10-05/track3-50-exterior-only-seed42/launch.json",
+      "status": "success",
+      "exit_code": 0,
+      "elapsed_seconds": 315.1561075420177,
+      "runner_provenance": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/run_fill_trial.py",
+          "recorded_sha256": "e63fac021c3e3849baeac7aeb5f41ae44c27a3cbda38a12520963c8955d8b6b3",
+          "current_sha256": "e63fac021c3e3849baeac7aeb5f41ae44c27a3cbda38a12520963c8955d8b6b3",
+          "current_matches_launch": true
+        }
+      ]
+    }
+  ],
+  "pending_launch_record_contents_read": false,
+  "completed_controlnet40_bridge_artifacts": {
+    "suite_metrics_sha256_matches_independent_validation": true,
+    "composite_file_sha256_matches_record": true,
+    "composite_dimensions_correct": true,
+    "resized_source_pixels_exact": true,
+    "known_bridge_extension": true,
+    "recorded_integrity_validation_status": "passed",
+    "quality_assessment": "separate direct full comparison and retained independent review; not inferred from hash validation"
+  },
+  "prepared_cpu_records": [
+    {
+      "path": "experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized-preflight-guarded/preflight.json",
+      "status": "preflight_files_ready",
+      "device": "CPU only",
+      "model_weights_loaded": false,
+      "planned_nfe_per_arm": 6,
+      "scope": "CPU preparation only; does not establish generated quality or timing",
+      "superseded_by_completed_run": "experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6"
+    },
+    {
+      "path": "experiments/qwen/controlnet_runs/2026-10-05/track3-known-collar32-preflight/preflight.json",
+      "status": "preflight_files_ready",
+      "device": "CPU only",
+      "model_weights_loaded": false,
+      "planned_nfe_per_arm": 40,
+      "scope": "CPU preparation only; does not establish generated quality or timing",
+      "superseded_by_completed_run": "experiments/qwen/controlnet_runs/2026-10-05/track3-saved-top32-outpaint"
+    },
+    {
+      "path": "experiments/qwen/controlnet_runs/2026-10-05/track3-canvasreference-localized40-preflight-v3/preflight.json",
+      "status": "preflight_files_ready",
+      "device": "CPU only",
+      "model_weights_loaded": false,
+      "planned_nfe_per_arm": 40,
+      "scope": "CPU preparation only; does not establish generated quality or timing"
+    }
+  ],
+  "new_completed_artifact_checks": {
+    "native40": {
+      "metrics_path": "experiments/qwen/controlnet_runs/2026-10-05/track3-40/controlnet_metrics.json",
+      "metrics_file_sha256": "8f144db415b9cb3e30421428549ebb644d0732e5892dc471e3da5ad0b1d0b20d",
+      "composite_file_sha256_matches_record": true,
+      "raw_file_sha256": "1dca94a5c63ad3448faf905dc6e0051a87d7a650b34c4e26ea88f28947c99e82",
+      "composite_dimensions_correct": true,
+      "source_file_hash_matches_record": true,
+      "resized_source_pixels_exact": true,
+      "generated_top_exact_raw": true,
+      "generated_bottom_exact_raw": true
+    },
+    "sparse40": {
+      "metrics_path": "experiments/qwen/controlnet_runs/2026-10-05/track3-sparse40-knownbridge/controlnet_metrics.json",
+      "metrics_file_sha256": "a99df6e631347947f7b43bd70664aac3c49455e5919ba27f42c405ff3638a39c",
+      "composite_file_sha256_matches_record": true,
+      "raw_file_sha256": "c983c178fa202e5bd3e73d7684d0a3fc40f03814a1099113e4acf5bdcb176dbb",
+      "composite_dimensions_correct": true,
+      "source_file_hash_matches_record": true,
+      "resized_source_pixels_exact": true,
+      "generated_top_exact_raw": true,
+      "generated_bottom_exact_raw": true
+    },
+    "reference40": {
+      "metrics_path": "experiments/qwen/controlnet_runs/2026-10-05/track3-reference40-outpaint/reference_control_metrics.json",
+      "metrics_file_sha256": "178e84b35a921d706e8534a5d2848458ea604989ebdc9efc45c49bc5589a66d7",
+      "composite_file_sha256_matches_record": true,
+      "raw_file_sha256": "a6bfac8a9ac0d112d1b080f57afccb0baa3f14395d6543833c11ccf52e36c961",
+      "composite_dimensions_correct": true,
+      "source_file_hash_matches_record": true,
+      "resized_source_pixels_exact": true,
+      "generated_top_exact_raw": true,
+      "generated_bottom_exact_raw": true,
+      "raw_file_sha256_matches_record": true
+    },
+    "localized40": {
+      "metrics_path": "experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/localized_reference_metrics.json",
+      "metrics_file_sha256": "b8a34e2343eff12448cbc1a8ed6b98ede4286a61c1d1d9db4131c3035af933a8",
+      "composite_file_sha256_matches_record": true,
+      "raw_file_sha256": "b47c8d1f86b345fa2f1490aed71c973a1890171f6f9a44502e1c1480646561c9",
+      "composite_dimensions_correct": true,
+      "source_file_hash_matches_record": true,
+      "resized_source_pixels_exact": true,
+      "generated_top_exact_raw": true,
+      "generated_bottom_exact_raw": true,
+      "raw_file_sha256_matches_record": true
+    },
+    "fill50": {
+      "metrics_path": "experiments/flux1_fill/runs/2026-10-05/track3-50-seed42/metrics.json",
+      "metrics_file_sha256": "b943e2832df3a249e2fd43ffc93cea39983fdef9f8e00c4376411ce30098c6c2",
+      "composite_file_sha256_matches_record": true,
+      "raw_file_sha256": "dc83ca70b69957f59e2a020d6fb6a33aaf0a23e0b24e64ad9c6e4f51471e7e15",
+      "composite_dimensions_correct": true,
+      "source_file_hash_matches_record": true,
+      "resized_source_pixels_exact": true,
+      "generated_top_exact_raw": true,
+      "generated_bottom_exact_raw": true,
+      "raw_file_sha256_matches_record": true
+    }
+  },
+  "pending_followup": {
+    "path": "experiments/flux1_fill/runs/2026-10-05/track3-local-context50-seed42/launch.json",
+    "status_at_parent_update": "running",
+    "completed_quality_outcome_included": false,
+    "metrics_or_outcome_read": false,
+    "planned_independent_calls": 2,
+    "planned_nfe": 100,
+    "planned_target_token_forwards": 89600,
+    "true_growth_or_streaming": false
+  },
+  "latest_completion_fact_checks": {
+    "scope": "Lightweight JSON/report fact and link refresh; previously passing full artifact audits were not repeated",
+    "growing6": {
+      "independent_validation_path": "experiments/qwen/boundary_eval/2026-10-05/controlnet-growing-localized6-comparison/independent_validation.json",
+      "file_sha256": "7547cee1dbc8ab3d12ae8c5eb6a4e074c23777bbb46dccf76e5d57804c6534f7",
+      "status": "passed",
+      "check_count": 551,
+      "zero_failures": true,
+      "visual_review_path": "experiments/qwen/boundary_eval/2026-10-05/controlnet-growing-localized6-comparison/REVIEW.md",
+      "completed_all_scale_arms_visual_failed": true
+    },
+    "saved_top32": {
+      "independent_validation_path": "experiments/qwen/controlnet_runs/2026-10-05/track3-saved-top32-outpaint/independent_saved_top32_integrity.json",
+      "file_sha256": "34ff1ae3f51505ebf4fd5b2adad1cc1211e5d138b3699e52ff348fd7fa962860",
+      "status": "passed",
+      "actual_new_transformer_calls": 40,
+      "actual_common_persisted_tensor_count": 7,
+      "actual_changed_hint_token_count": 64,
+      "actual_gpu_baseline_rerun_performed": false,
+      "suite_elapsed_seconds": 429.4005481659842,
+      "source_tangent_near_angle_degrees": 0.34117335609070665,
+      "source_tangent_endpoint_signed_dx_px": -2.086448307703165,
+      "source_tangent_last4_median_signed_dx_px": -0.9745387737281703,
+      "near_strong_rows": 15,
+      "near_total_rows": 16,
+      "independent_full_visual_review_status_at_parent_update": "pending",
+      "integrity_quality_verdict": "not assessed by this integrity audit"
+    },
+    "fill_exterior_prompt50": {
+      "matched_prompt_audit_path": "experiments/flux1_fill/prompt_arms/2026-10-05/exterior-only/prompt_match_independent.json",
+      "file_sha256": "41d4bd76869bebbc2c124602e0413fec08695f06914a5bd6061d7f2f86103e50",
+      "status": "running_arm_inputs_exact_matched_visual_result_pending",
+      "visual_report_path": "experiments/flux1_fill/FILL_RESULTS.md",
+      "visual_failed": true
+    }
+  }
+}
