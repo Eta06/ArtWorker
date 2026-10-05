@@ -1,0 +1,179 @@
+{
+  "repo": "carlofkl/DreamLite-base",
+  "revision": "751cb8dbb9072a8c8ffd8684e0f254b50f20531b",
+  "gated": false,
+  "files": [
+    {
+      "filename": ".gitattributes",
+      "size": 1641,
+      "lfs_sha256": null,
+      "actual_size": 1641
+    },
+    {
+      "filename": "README.md",
+      "size": 578,
+      "lfs_sha256": null,
+      "actual_size": 578
+    },
+    {
+      "filename": "model_index.json",
+      "size": 480,
+      "lfs_sha256": null,
+      "actual_size": 480
+    },
+    {
+      "filename": "processor/added_tokens.json",
+      "size": 707,
+      "lfs_sha256": null,
+      "actual_size": 707
+    },
+    {
+      "filename": "processor/chat_template.jinja",
+      "size": 5292,
+      "lfs_sha256": null,
+      "actual_size": 5292
+    },
+    {
+      "filename": "processor/merges.txt",
+      "size": 1671853,
+      "lfs_sha256": null,
+      "actual_size": 1671853
+    },
+    {
+      "filename": "processor/preprocessor_config.json",
+      "size": 782,
+      "lfs_sha256": null,
+      "actual_size": 782
+    },
+    {
+      "filename": "processor/special_tokens_map.json",
+      "size": 613,
+      "lfs_sha256": null,
+      "actual_size": 613
+    },
+    {
+      "filename": "processor/tokenizer.json",
+      "size": 11422654,
+      "lfs_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "actual_size": 11422654,
+      "actual_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "verified": true
+    },
+    {
+      "filename": "processor/tokenizer_config.json",
+      "size": 5445,
+      "lfs_sha256": null,
+      "actual_size": 5445
+    },
+    {
+      "filename": "processor/video_preprocessor_config.json",
+      "size": 817,
+      "lfs_sha256": null,
+      "actual_size": 817
+    },
+    {
+      "filename": "processor/vocab.json",
+      "size": 2776833,
+      "lfs_sha256": null,
+      "actual_size": 2776833
+    },
+    {
+      "filename": "scheduler/scheduler_config.json",
+      "size": 481,
+      "lfs_sha256": null,
+      "actual_size": 481
+    },
+    {
+      "filename": "text_encoder/config.json",
+      "size": 1546,
+      "lfs_sha256": null,
+      "actual_size": 1546
+    },
+    {
+      "filename": "text_encoder/generation_config.json",
+      "size": 213,
+      "lfs_sha256": null,
+      "actual_size": 213
+    },
+    {
+      "filename": "text_encoder/model.safetensors",
+      "size": 4255140312,
+      "lfs_sha256": "7de1838c87a5349b016c26a1c3f7d2bc400a3d485f95ef39a7059ffd734977a0",
+      "actual_size": 4255140312,
+      "actual_sha256": "7de1838c87a5349b016c26a1c3f7d2bc400a3d485f95ef39a7059ffd734977a0",
+      "verified": true
+    },
+    {
+      "filename": "tokenizer/added_tokens.json",
+      "size": 707,
+      "lfs_sha256": null,
+      "actual_size": 707
+    },
+    {
+      "filename": "tokenizer/chat_template.jinja",
+      "size": 5292,
+      "lfs_sha256": null,
+      "actual_size": 5292
+    },
+    {
+      "filename": "tokenizer/merges.txt",
+      "size": 1671853,
+      "lfs_sha256": null,
+      "actual_size": 1671853
+    },
+    {
+      "filename": "tokenizer/special_tokens_map.json",
+      "size": 613,
+      "lfs_sha256": null,
+      "actual_size": 613
+    },
+    {
+      "filename": "tokenizer/tokenizer.json",
+      "size": 11422654,
+      "lfs_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "actual_size": 11422654,
+      "actual_sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "verified": true
+    },
+    {
+      "filename": "tokenizer/tokenizer_config.json",
+      "size": 5404,
+      "lfs_sha256": null,
+      "actual_size": 5404
+    },
+    {
+      "filename": "tokenizer/vocab.json",
+      "size": 2776833,
+      "lfs_sha256": null,
+      "actual_size": 2776833
+    },
+    {
+      "filename": "unet/config.json",
+      "size": 1983,
+      "lfs_sha256": null,
+      "actual_size": 1983
+    },
+    {
+      "filename": "unet/diffusion_pytorch_model.safetensors",
+      "size": 780074688,
+      "lfs_sha256": "f983bd1710344cb44f7d12d05c0ca961984b48391dcbb095ad710609cbde3246",
+      "actual_size": 780074688,
+      "actual_sha256": "f983bd1710344cb44f7d12d05c0ca961984b48391dcbb095ad710609cbde3246",
+      "verified": true
+    },
+    {
+      "filename": "vae/config.json",
+      "size": 634,
+      "lfs_sha256": null,
+      "actual_size": 634
+    },
+    {
+      "filename": "vae/diffusion_pytorch_model.safetensors",
+      "size": 4903270,
+      "lfs_sha256": "e175c3284b8514a2ecb1a70f004b0b09320decd6842e77dfebbdb5dbbdf0312b",
+      "actual_size": 4903270,
+      "actual_sha256": "e175c3284b8514a2ecb1a70f004b0b09320decd6842e77dfebbdb5dbbdf0312b",
+      "verified": true
+    }
+  ]
+}
