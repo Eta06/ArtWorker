@@ -1,0 +1,302 @@
+{
+  "schema": "independent_local_context_fill_validation_v1",
+  "reviewed_at_utc": "2026-10-05T03:24:54.002011+00:00",
+  "scope": "Completed run reviewed CPU-only using Pillow/NumPy, code and artifact hashes, and direct native view_image inspection. No MLX imports, GPU work, weights, or downloads.",
+  "run_directory": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-local-context50-seed42",
+  "mechanical_status": "passed",
+  "mechanical_check_count": 85,
+  "checks": {
+    "execution_status": true,
+    "source_png_file_unchanged": true,
+    "source_pixel_hash": true,
+    "source_copy_exact": true,
+    "final_size": true,
+    "source_center_exact_by_assembly": true,
+    "jpeg_before_after_current_match": true,
+    "code_runner_sha256": true,
+    "code_native_runner_sha256": true,
+    "code_input_helper_sha256": true,
+    "code_cpu_test_sha256": true,
+    "code_native_cpu_oracle_sha256": true,
+    "runtime_native_fill": true,
+    "runtime_mask_util": true,
+    "runtime_config": true,
+    "runtime_latent_creator": true,
+    "runtime_image_util": true,
+    "composite.png_hash": true,
+    "raw_context_assembly.png_hash": true,
+    "upper_strip_orientation": true,
+    "upper_canvas_known_exact": true,
+    "upper_canvas_unknown_RGB128": true,
+    "upper_mask_black_known_white_unknown": true,
+    "upper_mask_counts": true,
+    "upper_input_canvas.png_hash": true,
+    "upper_input_mask.png_hash": true,
+    "upper_source_strip.png_hash": true,
+    "upper_raw.png_hash": true,
+    "upper_canvas_uint8_sha256": true,
+    "upper_mask_uint8_sha256": true,
+    "upper_source_strip_uint8_sha256": true,
+    "upper_initial_noise.npz_shape_dtype_finite": true,
+    "upper_initial_noise.npz_tensor_hash": true,
+    "upper_final_latents.npz_shape_dtype_finite": true,
+    "upper_final_latents.npz_tensor_hash": true,
+    "upper_static_conditioning.npz_shape_dtype_finite": true,
+    "upper_static_conditioning.npz_tensor_hash": true,
+    "upper_actual_static_mask_tail256_exact": true,
+    "upper_static_known256_unknown640": true,
+    "upper_prompt_shapes_finite": true,
+    "upper_prompt_hash": true,
+    "upper_50_native_steps": true,
+    "upper_counters": true,
+    "upper_sigma_curve_native896x50": true,
+    "upper_step_sigmas": true,
+    "upper_raw_size": true,
+    "upper_raw_known_error_metrics": true,
+    "lower_strip_orientation": true,
+    "lower_canvas_known_exact": true,
+    "lower_canvas_unknown_RGB128": true,
+    "lower_mask_black_known_white_unknown": true,
+    "lower_mask_counts": true,
+    "lower_input_canvas.png_hash": true,
+    "lower_input_mask.png_hash": true,
+    "lower_source_strip.png_hash": true,
+    "lower_raw.png_hash": true,
+    "lower_canvas_uint8_sha256": true,
+    "lower_mask_uint8_sha256": true,
+    "lower_source_strip_uint8_sha256": true,
+    "lower_initial_noise.npz_shape_dtype_finite": true,
+    "lower_initial_noise.npz_tensor_hash": true,
+    "lower_final_latents.npz_shape_dtype_finite": true,
+    "lower_final_latents.npz_tensor_hash": true,
+    "lower_static_conditioning.npz_shape_dtype_finite": true,
+    "lower_static_conditioning.npz_tensor_hash": true,
+    "lower_actual_static_mask_tail256_exact": true,
+    "lower_static_known256_unknown640": true,
+    "lower_prompt_shapes_finite": true,
+    "lower_prompt_hash": true,
+    "lower_50_native_steps": true,
+    "lower_counters": true,
+    "lower_sigma_curve_native896x50": true,
+    "lower_step_sigmas": true,
+    "lower_raw_size": true,
+    "lower_raw_known_error_metrics": true,
+    "same_seed_independent_noise_exact": true,
+    "upper_generated_raw_exact": true,
+    "lower_generated_raw_exact": true,
+    "raw_context_diagnostic_definition": true,
+    "edge_composite_upper": true,
+    "edge_composite_lower": true,
+    "edge_raw_upper": true,
+    "edge_raw_lower": true,
+    "suite_totals": true,
+    "teacher_mode": true
+  },
+  "second_independent_pixel_review": {
+    "agent": "pixel_integrity",
+    "mechanical_checks_passed": 66,
+    "edits": false,
+    "GPU_or_model_execution": false
+  },
+  "launch_elapsed_seconds": 320.9798853749817,
+  "totals": {
+    "nfe": 100,
+    "target_token_forwards": 89600,
+    "joint_block_forwards": 1900,
+    "single_block_forwards": 3800
+  },
+  "calls": {
+    "upper": {
+      "known_patch_y": [
+        320,
+        448
+      ],
+      "known_pixels": 65536,
+      "unknown_pixels": 163840,
+      "known_tokens": 256,
+      "unknown_tokens": 640,
+      "steps": 50,
+      "tokens_per_step": 896,
+      "nfe": 50,
+      "target_token_forwards": 44800,
+      "joint_block_forwards": 950,
+      "single_block_forwards": 1900,
+      "denoise_seconds": 143.49362695901073,
+      "tensors": {
+        "initial_noise.npz": {
+          "shape": [
+            1,
+            896,
+            64
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "tensor_sha256": "16fc82b582ee21ea099aed9e3ce9f9ffd236c7834a6a00664c310d7d7afde940",
+          "file_sha256": "b04deaeef83e9e508eb58812686e2844591b58bfd3a0b94bd8a321c3685d1bc8"
+        },
+        "final_latents.npz": {
+          "shape": [
+            1,
+            896,
+            64
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "tensor_sha256": "28e2f10904291657235fbf38cbfdd8796578f8d56399cbf974218b526e24a384",
+          "file_sha256": "848c2eb2d7d07d8abea567c58126149ac7fd5159f20b4787acb363e510573d39"
+        },
+        "static_conditioning.npz": {
+          "shape": [
+            1,
+            896,
+            320
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "tensor_sha256": "ea0339ed3ab807006438c3b3fc82384b5d05cf0711bd853d64c8a4b5aa515174",
+          "file_sha256": "79579a99f8a52936862939714f5cd4a4cc9bc490b993629418c0a6155dd84c5b"
+        }
+      },
+      "prompt_embeddings": {
+        "embeddings": {
+          "shape": [
+            1,
+            512,
+            4096
+          ],
+          "dtype": "float32",
+          "tensor_sha256": "1139e1a3cf387dcc317633885c76ca9646e34738dc92f62b16f95828069c1b53",
+          "finite": true
+        },
+        "pooled": {
+          "shape": [
+            1,
+            768
+          ],
+          "dtype": "float32",
+          "tensor_sha256": "cb3eecd33b4b6201cd383609f40955186a5d5c450908f42a82847201c799513d",
+          "finite": true
+        }
+      },
+      "raw_sha256": "48a5653386db98588ca69f104fd802e0014f1b13e275cd51688ac23b989add41",
+      "raw_known_source_mae_0_255": 9.882553100585938,
+      "raw_known_source_max_error_0_255": 99.0
+    },
+    "lower": {
+      "known_patch_y": [
+        0,
+        128
+      ],
+      "known_pixels": 65536,
+      "unknown_pixels": 163840,
+      "known_tokens": 256,
+      "unknown_tokens": 640,
+      "steps": 50,
+      "tokens_per_step": 896,
+      "nfe": 50,
+      "target_token_forwards": 44800,
+      "joint_block_forwards": 950,
+      "single_block_forwards": 1900,
+      "denoise_seconds": 168.7909534170176,
+      "tensors": {
+        "initial_noise.npz": {
+          "shape": [
+            1,
+            896,
+            64
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "tensor_sha256": "16fc82b582ee21ea099aed9e3ce9f9ffd236c7834a6a00664c310d7d7afde940",
+          "file_sha256": "b04deaeef83e9e508eb58812686e2844591b58bfd3a0b94bd8a321c3685d1bc8"
+        },
+        "final_latents.npz": {
+          "shape": [
+            1,
+            896,
+            64
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "tensor_sha256": "1db6e82917793bc39b4747d4f5c7541c85ea4a7eb45df888bca9e4f82032e74f",
+          "file_sha256": "e213eb4a0c15538dcc7004e24101330e49c4ec513951a04c3157b11475afaa5c"
+        },
+        "static_conditioning.npz": {
+          "shape": [
+            1,
+            896,
+            320
+          ],
+          "dtype": "float32",
+          "finite": true,
+          "tensor_sha256": "d402693be2ff07deeda73c5a7f9fcd2f9b07d3a55c368906623c10c3eca77619",
+          "file_sha256": "5b3bad8c58b59efcd8a1e044fee0579015300dce27f3ab5e2f8e3568d5b37dbf"
+        }
+      },
+      "prompt_embeddings": {
+        "embeddings": {
+          "shape": [
+            1,
+            512,
+            4096
+          ],
+          "dtype": "float32",
+          "tensor_sha256": "79fd7c3e2e025f2322b96f508f3e54a78d51fcf607c17c7a21333eea4d70567c",
+          "finite": true
+        },
+        "pooled": {
+          "shape": [
+            1,
+            768
+          ],
+          "dtype": "float32",
+          "tensor_sha256": "fd566bee8a8b552d87fc9996743d990262d952518b82fc68f4a34738ac259121",
+          "finite": true
+        }
+      },
+      "raw_sha256": "bf27a5c58b7f2a1bb32a7106d0c8340079c2968538862cd19c3249161d14e93e",
+      "raw_known_source_mae_0_255": 9.561248779296875,
+      "raw_known_source_max_error_0_255": 88.0
+    }
+  },
+  "source_preservation": "Source 512x512 center is pixel-byte exact by hard-paste assembly. Native raw known strips differ and are retained separately.",
+  "original_jpeg_current_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+  "source_png_current_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+  "source_pixels_uint8_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+  "composite_sha256": "0865e626c104e0ec844dc14b65d6fd1aa021b76bf7838ea489bd35702a6228d3",
+  "visual_quality": {
+    "status": "not_accepted_overall",
+    "inspected_images": [
+      "source_512.png",
+      "composite.png",
+      "upper/raw.png",
+      "lower/raw.png",
+      "raw_context_assembly.png",
+      "edges/composite_upper.png",
+      "edges/composite_lower.png",
+      "edges/raw_upper.png",
+      "edges/raw_lower.png"
+    ],
+    "upper": "Plausible continuous lake, shore shrubs/trees and diagonal guardrail. No visible duplicate car, person, repeated scene panel or additional artwork text in generated upper320 rows. Hard-pasted source boundary y320 has a discernible water/rail texture and sharpness change; geometric rail continuation appears aligned.",
+    "lower": "Generated bottom320 rows contain two full-width pale road stripes despite uninterrupted dark coarse asphalt prompt. Generated asphalt is denser/brighter in texture than source road and joins with a visible change. No duplicate car/person or additional artwork text is visible in generated lower region.",
+    "generated_lower_bright_band_ranges_final_y_inclusive": [
+      [
+        855,
+        865
+      ],
+      [
+        1029,
+        1041
+      ]
+    ],
+    "bright_band_measurement": "Full-width mean RGB exceeds120; localization only, not a semantic classifier.",
+    "known_raw_context": "Native raw upper roof/rail and lower source logo are altered. Final original source restores these exactly by assembly.",
+    "acceptance_limit": "Two independent local-context teacher calls; neither true growth/streaming nor a single-factor matched full-canvas comparison. Execution and preservation success do not establish acceptable outpainting quality."
+  },
+  "limitations": [
+    "Native VAE source64 encoding was not semantically recomputed. Saved static320 shape, finiteness and hashes were checked; actual mask256 tail was independently reconstructed from geometry.",
+    "NFE/block counts reconcile with saved step logs and frozen19-joint/38-single call loop; audit did not profile GPU kernel execution.",
+    "Raw-context diagnostic contains both raw448 crops plus original center256; it is not full-canvas model raw output.",
+    "Runtime and original file hashes are current. Checkpoint payload hashing remains completed runner evidence rather than repeated weight reads in this review."
+  ]
+}
