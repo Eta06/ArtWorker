@@ -1,0 +1,472 @@
+{
+  "status": "independent CPU comparison; 16-update quality regression versus4; not accepted",
+  "source_fit": {
+    "valid": true,
+    "point_count": 21,
+    "y_range_half_open": [
+      320,
+      341
+    ],
+    "dx_dy": -1.8762351714835512,
+    "x_extrapolated_at_y320": 310.46760780382766,
+    "angle_from_downward_y_degrees": -61.94317730413087,
+    "median_absolute_fit_residual_px": 0.18948024982245215,
+    "p90_absolute_fit_residual_px": 0.5650285259889074
+  },
+  "evaluations": {
+    "consistency4": {
+      "status": "invalid-feature",
+      "metrics": {
+        "near_angle_difference_degrees": null,
+        "near_endpoint_signed_dx_px": null,
+        "last4_source_tangent_median_signed_dx_px": null
+      },
+      "near_strong_rows": 13,
+      "near_total_rows": 16,
+      "invalid_reasons": [
+        "fewer than three strong edge rows immediately before source"
+      ],
+      "near_fit_p90_absolute_residual": 1.1819482000263406,
+      "alternative_path_comparable": false,
+      "last_eight_rows": [
+        {
+          "y": 312,
+          "x": 323.6027959149506,
+          "valid": true,
+          "gradient_strength": 7.253300000000003,
+          "source_tangent_dx": -1.8746932607454667
+        },
+        {
+          "y": 313,
+          "x": 320.8378827977316,
+          "valid": true,
+          "gradient_strength": 8.146999999999998,
+          "source_tangent_dx": -2.763371206480926
+        },
+        {
+          "y": 314,
+          "x": 318.70923718324536,
+          "valid": true,
+          "gradient_strength": 8.859599999999993,
+          "source_tangent_dx": -3.015781649483605
+        },
+        {
+          "y": 315,
+          "x": 316.7346059402224,
+          "valid": true,
+          "gradient_strength": 11.359599999999997,
+          "source_tangent_dx": -3.114177721022994
+        },
+        {
+          "y": 316,
+          "x": 315.8333333333333,
+          "valid": true,
+          "gradient_strength": 11.431799999999996,
+          "source_tangent_dx": -2.139215156428552
+        },
+        {
+          "y": 317,
+          "x": 314.501926596667,
+          "valid": true,
+          "gradient_strength": 7.361599999999996,
+          "source_tangent_dx": -1.5943867216113388
+        },
+        {
+          "y": 318,
+          "x": 314.2200781467948,
+          "valid": false,
+          "gradient_strength": 0.0,
+          "source_tangent_dx": 1.2434497875801753e-14
+        },
+        {
+          "y": 319,
+          "x": 312.3438429753112,
+          "valid": false,
+          "gradient_strength": 0.0,
+          "source_tangent_dx": -2.220446049250313e-14
+        }
+      ]
+    },
+    "derivative4": {
+      "status": "feature-extracted",
+      "metrics": {
+        "near_angle_difference_degrees": 0.17722105744098826,
+        "near_endpoint_signed_dx_px": -2.36578454291066,
+        "last4_source_tangent_median_signed_dx_px": -1.6453534307110829
+      },
+      "near_strong_rows": 16,
+      "near_total_rows": 16,
+      "invalid_reasons": [],
+      "near_fit_p90_absolute_residual": 1.1600469021186086,
+      "alternative_path_comparable": false,
+      "last_eight_rows": [
+        {
+          "y": 312,
+          "x": 323.02932696268226,
+          "valid": true,
+          "gradient_strength": 9.463899999999995,
+          "source_tangent_dx": -2.448162213013809
+        },
+        {
+          "y": 313,
+          "x": 321.140071716719,
+          "valid": true,
+          "gradient_strength": 8.036099999999998,
+          "source_tangent_dx": -2.4611822874935427
+        },
+        {
+          "y": 314,
+          "x": 319.00481166528937,
+          "valid": true,
+          "gradient_strength": 10.429800000000007,
+          "source_tangent_dx": -2.720207167439602
+        },
+        {
+          "y": 315,
+          "x": 317.40371307789655,
+          "valid": true,
+          "gradient_strength": 11.929800000000007,
+          "source_tangent_dx": -2.445070583348862
+        },
+        {
+          "y": 316,
+          "x": 316.67476867413916,
+          "valid": true,
+          "gradient_strength": 12.753299999999996,
+          "source_tangent_dx": -1.2977798156227074
+        },
+        {
+          "y": 317,
+          "x": 316.22814382186533,
+          "valid": true,
+          "gradient_strength": 8.253299999999996,
+          "source_tangent_dx": 0.13183050358701554
+        },
+        {
+          "y": 318,
+          "x": 311.71138756358187,
+          "valid": true,
+          "gradient_strength": 7.359599999999993,
+          "source_tangent_dx": -2.508690583212898
+        },
+        {
+          "y": 319,
+          "x": 310.35091592951176,
+          "valid": true,
+          "gradient_strength": 17.144399999999997,
+          "source_tangent_dx": -1.9929270457994557
+        }
+      ]
+    },
+    "baseline": {
+      "status": "feature-extracted",
+      "metrics": {
+        "near_angle_difference_degrees": 0.34117335609070665,
+        "near_endpoint_signed_dx_px": -2.086448307703165,
+        "last4_source_tangent_median_signed_dx_px": -0.9745387737281703
+      },
+      "near_strong_rows": 15,
+      "near_total_rows": 16,
+      "invalid_reasons": [],
+      "near_fit_p90_absolute_residual": 1.7618565967717355,
+      "alternative_path_comparable": false,
+      "last_eight_rows": [
+        {
+          "y": 312,
+          "x": 323.0743695030935,
+          "valid": true,
+          "gradient_strength": 8.463900000000002,
+          "source_tangent_dx": -2.40311967260255
+        },
+        {
+          "y": 313,
+          "x": 320.5336690915874,
+          "valid": true,
+          "gradient_strength": 7.465899999999998,
+          "source_tangent_dx": -3.0675849126251222
+        },
+        {
+          "y": 314,
+          "x": 318.8818931717501,
+          "valid": true,
+          "gradient_strength": 9.929799999999993,
+          "source_tangent_dx": -2.8431256609788615
+        },
+        {
+          "y": 315,
+          "x": 316.9270669233911,
+          "valid": true,
+          "gradient_strength": 11.787400000000012,
+          "source_tangent_dx": -2.921716737854293
+        },
+        {
+          "y": 316,
+          "x": 315.7796232145399,
+          "valid": true,
+          "gradient_strength": 10.931800000000003,
+          "source_tangent_dx": -2.192925275221942
+        },
+        {
+          "y": 317,
+          "x": 315.12177454455014,
+          "valid": true,
+          "gradient_strength": 7.325500000000005,
+          "source_tangent_dx": -0.9745387737281801
+        },
+        {
+          "y": 318,
+          "x": 314.2200781467948,
+          "valid": false,
+          "gradient_strength": 0.0,
+          "source_tangent_dx": 1.2434497875801753e-14
+        },
+        {
+          "y": 319,
+          "x": 316.2740805604203,
+          "valid": true,
+          "gradient_strength": 7.147000000000006,
+          "source_tangent_dx": 3.9302375851091034
+        }
+      ]
+    },
+    "consistency16": {
+      "status": "invalid-feature",
+      "metrics": {
+        "near_angle_difference_degrees": null,
+        "near_endpoint_signed_dx_px": null,
+        "last4_source_tangent_median_signed_dx_px": null
+      },
+      "near_strong_rows": 12,
+      "near_total_rows": 16,
+      "invalid_reasons": [
+        "fewer than80 percent of near rows have a strong metal edge",
+        "near ridge is discontinuous or strongly curved/ambiguous in the local fit"
+      ],
+      "near_fit_p90_absolute_residual": 2.6319122706192277,
+      "alternative_path_comparable": false,
+      "last_eight_rows": [
+        {
+          "y": 312,
+          "x": 325.47748917569606,
+          "valid": false,
+          "gradient_strength": 0.0,
+          "source_tangent_dx": -7.105427357601002e-15
+        },
+        {
+          "y": 313,
+          "x": 323.60125400421254,
+          "valid": false,
+          "gradient_strength": 0.0,
+          "source_tangent_dx": 1.4210854715202004e-14
+        },
+        {
+          "y": 314,
+          "x": 319.0577909367954,
+          "valid": true,
+          "gradient_strength": 9.5381,
+          "source_tangent_dx": -2.6672278959335554
+        },
+        {
+          "y": 315,
+          "x": 316.92101541090847,
+          "valid": true,
+          "gradient_strength": 12.074200000000005,
+          "source_tangent_dx": -2.9277682503369498
+        },
+        {
+          "y": 316,
+          "x": 315.9131789526923,
+          "valid": true,
+          "gradient_strength": 12.07419999999999,
+          "source_tangent_dx": -2.0593695370695606
+        },
+        {
+          "y": 317,
+          "x": 315.870942508184,
+          "valid": true,
+          "gradient_strength": 11.216600000000007,
+          "source_tangent_dx": -0.22537081009432836
+        },
+        {
+          "y": 318,
+          "x": 315.9716942477977,
+          "valid": true,
+          "gradient_strength": 8.465300000000006,
+          "source_tangent_dx": 1.751616101002936
+        },
+        {
+          "y": 319,
+          "x": 312.3438429753112,
+          "valid": false,
+          "gradient_strength": 0.0,
+          "source_tangent_dx": -2.220446049250313e-14
+        }
+      ]
+    },
+    "derivative16": {
+      "status": "feature-extracted",
+      "metrics": {
+        "near_angle_difference_degrees": 1.0483924705720113,
+        "near_endpoint_signed_dx_px": -1.1537761806491176,
+        "last4_source_tangent_median_signed_dx_px": -1.9081005866888177
+      },
+      "near_strong_rows": 16,
+      "near_total_rows": 16,
+      "invalid_reasons": [],
+      "near_fit_p90_absolute_residual": 1.7026883042944974,
+      "alternative_path_comparable": false,
+      "last_eight_rows": [
+        {
+          "y": 312,
+          "x": 324.0685133329673,
+          "valid": true,
+          "gradient_strength": 10.499999999999993,
+          "source_tangent_dx": -1.4089758427287578
+        },
+        {
+          "y": 313,
+          "x": 322.6963205519172,
+          "valid": true,
+          "gradient_strength": 8.857599999999998,
+          "source_tangent_dx": -0.9049334522953103
+        },
+        {
+          "y": 314,
+          "x": 320.4223488922349,
+          "valid": true,
+          "gradient_strength": 8.465900000000005,
+          "source_tangent_dx": -1.3026699404940896
+        },
+        {
+          "y": 315,
+          "x": 318.29777670111974,
+          "valid": true,
+          "gradient_strength": 8.465899999999998,
+          "source_tangent_dx": -1.5510069601256724
+        },
+        {
+          "y": 316,
+          "x": 316.61127100186684,
+          "valid": true,
+          "gradient_strength": 9.072200000000002,
+          "source_tangent_dx": -1.361277487895027
+        },
+        {
+          "y": 317,
+          "x": 312.3947080253543,
+          "valid": true,
+          "gradient_strength": 10.036099999999994,
+          "source_tangent_dx": -3.70160529292401
+        },
+        {
+          "y": 318,
+          "x": 311.7651544613122,
+          "valid": true,
+          "gradient_strength": 30.28739999999999,
+          "source_tangent_dx": -2.454923685482571
+        },
+        {
+          "y": 319,
+          "x": 311.1427426178089,
+          "valid": true,
+          "gradient_strength": 49.465900000000005,
+          "source_tangent_dx": -1.2011003575023205
+        }
+      ]
+    }
+  },
+  "raw_texture_profiles_path": "independent_raw_row_texture_profiles.json",
+  "direct_images_viewed": [
+    "final-comparison.png",
+    "rail-join-4x.png",
+    "frozen-source-tangent-eval/source-tangent-selected-features.png",
+    "frozen-source-tangent-eval/raw-rail-4-vs16-4x.png",
+    "frozen-source-tangent-eval/composite-rail-4-vs16-4x.png",
+    "frozen-source-tangent-eval/raw-water-4-vs16-3x.png",
+    "frozen-source-tangent-eval/raw-source-water-4-vs16-3x.png",
+    "frozen-source-tangent-eval/raw-source-asphalt-4-vs16-4x.png",
+    "frozen-source-tangent-eval/raw-bottom-join-4-vs16-3x.png"
+  ],
+  "prior_failures_remain_failed": true,
+  "no_speedup_or_mobile_claim": true,
+  "frozen_evaluator_hashes_unchanged": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/evaluate_boundary.py": true,
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/evaluate_source_tangent.py": true
+  },
+  "source_fit_exact_old4": true,
+  "instrumented_runner_texture_diagnostics": {
+    "consistency4": {
+      "raw_source_top16_mae_255": 5.041097164154053,
+      "raw_source_bottom16_mae_255": 4.054483890533447,
+      "raw_source_inner_mae_255": 3.314159631729126,
+      "composited_boundary_derivative_top_mae_255": 17.93619728088379,
+      "composited_boundary_derivative_bottom_mae_255": 6.7734375,
+      "raw_patch_high_frequency_power_ratios_vs_baseline": {
+        "generated_top_water": 1.02974579929679,
+        "raw_known_top_water": 1.0133513391816849,
+        "raw_known_bottom_asphalt": 0.9032411788111098,
+        "generated_bottom_asphalt": 1.0019022652894525,
+        "generated_rail_join": 1.0043117094257898
+      },
+      "raw_known_patch_high_frequency_power_ratios_vs_original_source": {
+        "raw_known_top_water": 1.0125923694528853,
+        "raw_known_bottom_asphalt": 0.994439799757572
+      }
+    },
+    "derivative4": {
+      "raw_source_top16_mae_255": 7.5709228515625,
+      "raw_source_bottom16_mae_255": 5.397176265716553,
+      "raw_source_inner_mae_255": 3.326449394226074,
+      "composited_boundary_derivative_top_mae_255": 8.137370109558105,
+      "composited_boundary_derivative_bottom_mae_255": 3.646484375,
+      "raw_patch_high_frequency_power_ratios_vs_baseline": {
+        "generated_top_water": 1.1026399812794876,
+        "raw_known_top_water": 1.0434359873761,
+        "raw_known_bottom_asphalt": 1.033966949879387,
+        "generated_bottom_asphalt": 1.1350922959751473,
+        "generated_rail_join": 1.1229451394686933
+      },
+      "raw_known_patch_high_frequency_power_ratios_vs_original_source": {
+        "raw_known_top_water": 1.0426544851490462,
+        "raw_known_bottom_asphalt": 1.1383647144469164
+      }
+    },
+    "consistency16": {
+      "raw_source_top16_mae_255": 3.1580810546875,
+      "raw_source_bottom16_mae_255": 2.6147868633270264,
+      "raw_source_inner_mae_255": 3.5308518409729004,
+      "composited_boundary_derivative_top_mae_255": 15.180989265441895,
+      "composited_boundary_derivative_bottom_mae_255": 6.034505367279053,
+      "raw_patch_high_frequency_power_ratios_vs_baseline": {
+        "generated_top_water": 0.9430954921353345,
+        "raw_known_top_water": 0.7413117179939227,
+        "raw_known_bottom_asphalt": 0.7213526158546962,
+        "generated_bottom_asphalt": 0.8763754237678307,
+        "generated_rail_join": 0.8957575592889498
+      },
+      "raw_known_patch_high_frequency_power_ratios_vs_original_source": {
+        "raw_known_top_water": 0.7407564977738398,
+        "raw_known_bottom_asphalt": 0.7941862790283158
+      }
+    },
+    "derivative16": {
+      "raw_source_top16_mae_255": 5.6663818359375,
+      "raw_source_bottom16_mae_255": 3.6600749492645264,
+      "raw_source_inner_mae_255": 3.671501636505127,
+      "composited_boundary_derivative_top_mae_255": 4.40625,
+      "composited_boundary_derivative_bottom_mae_255": 2.1432292461395264,
+      "raw_patch_high_frequency_power_ratios_vs_baseline": {
+        "generated_top_water": 1.188344814170058,
+        "raw_known_top_water": 1.0771275042524378,
+        "raw_known_bottom_asphalt": 0.9281480587286897,
+        "generated_bottom_asphalt": 1.2883176939288579,
+        "generated_rail_join": 1.4147349117977979
+      },
+      "raw_known_patch_high_frequency_power_ratios_vs_original_source": {
+        "raw_known_top_water": 1.0763207680907771,
+        "raw_known_bottom_asphalt": 1.0218614820932086
+      }
+    }
+  },
+  "instrumented_texture_attribution": "These spectral values are reported by the instrumented runner. Independent raw row profiles and actual crops are separate CPU diagnostics. Spectral texture contains object edges and does not prove natural grain."
+}
