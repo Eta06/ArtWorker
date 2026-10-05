@@ -1,0 +1,43 @@
+{
+  "repo": "Viggle/Qwen-Image-2.1-viggle-turbo",
+  "revision": "bb26a0f38e5fe6c124aaccc9187a87eed5d9ed13",
+  "files": [
+    {
+      "name": "LICENSE",
+      "expected_bytes": 7831,
+      "actual_bytes": 7831,
+      "lfs_sha256": null
+    },
+    {
+      "name": "NOTICE",
+      "expected_bytes": 2131,
+      "actual_bytes": 2131,
+      "lfs_sha256": null
+    },
+    {
+      "name": "Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r128.safetensors",
+      "expected_bytes": 679604800,
+      "actual_bytes": 679604800,
+      "lfs_sha256": "bafb91d0047df3f9b8a5a850b0c967f051164314d8aad778dfa34d9c24ec345b"
+    },
+    {
+      "name": "Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors",
+      "expected_bytes": 1359147904,
+      "actual_bytes": 1359147904,
+      "lfs_sha256": "2a0148f5c73abbed5f97da5ea356e439318aadb281d01fce4af39cdf43728803"
+    },
+    {
+      "name": "README.md",
+      "expected_bytes": 20674,
+      "actual_bytes": 20674,
+      "lfs_sha256": null
+    },
+    {
+      "name": "comfyui/viggle_turbo.py",
+      "expected_bytes": 5469,
+      "actual_bytes": 5469,
+      "lfs_sha256": null
+    }
+  ],
+  "complete_downloaded_bytes": 2038788809
+}
