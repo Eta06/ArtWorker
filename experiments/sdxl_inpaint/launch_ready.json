@@ -1,0 +1,53 @@
+{
+  "status": "verified_cpu_ready",
+  "gpu_launched_by_author": false,
+  "argv": [
+    "/Users/emir/Documents/ChatGPT/ArtWorker/.build/dreamlite-venv/bin/python",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/sdxl_inpaint/run_sdxl_trial.py",
+    "--track",
+    "track3",
+    "--steps",
+    "20",
+    "--guidance",
+    "8",
+    "--strength",
+    "0.99",
+    "--seed",
+    "42",
+    "--output",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/sdxl_inpaint/runs/2026-10-05/track3-20-cfg8-strength099-seed42"
+  ],
+  "runner_sha256": "2a636b4c34cc1f2c714569dc1f2b5e48f45382dc79951ebdcbb675d3461261f0",
+  "repo": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
+  "revision": "115134f363124c53c7d878647567d04daf26e41e",
+  "verified_manifest_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/sdxl-inpaint-fp16.manifest.json",
+  "expected_bytes": 6941218469,
+  "expected_actual_unet_calls": 19,
+  "expected_cfg_branch_samples": 38,
+  "geometry": [
+    512,
+    1152
+  ],
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "source_and_mask_shared_with_fill": true,
+  "canvas_and_noise_identical_to_fill": false,
+  "full_init_canvas_unknown_rgb": [
+    0,
+    0,
+    0
+  ],
+  "masked_source_unknown_normalized_rgb": 0,
+  "guidance": 8,
+  "strength": 0.99,
+  "requested_steps": 20,
+  "seed": 42,
+  "compute_semantics": "native fullcanvas learned9channelinpaint; no growth/mobileclaim",
+  "quality_verdict": "not run; no generated-quality evidence",
+  "verified_manifest_sha256": "8d8d4d1834a4c3b7137e46d66e015cfd348fa77ea678f830974968272ce50f2c",
+  "verified_preflight_sha256": "5a4c4d88f123623a4e9c65e58818057d9b3ae4e15da6c3348c4d2c724427109e"
+}
