@@ -1,0 +1,44 @@
+{
+  "status": "passed",
+  "matched_fields": {
+    "model_repo": true,
+    "model_revision": true,
+    "control_repo": true,
+    "control_revision": true,
+    "upstream_revision": true,
+    "base_quantization": true,
+    "control_quantization": true,
+    "cfg": true,
+    "adapter": true,
+    "known_bridge_extension": true,
+    "steps": true,
+    "sigmas": true,
+    "source_512_sha256": true,
+    "source_rect_xyxy": true,
+    "noise_sha256": true,
+    "prefix_cache_enabled": true,
+    "growing_compute": true,
+    "actual_target_control_context_hash": true,
+    "pre_gate_context_hash": true,
+    "control_map_hash": true,
+    "saved_source65_hash_matches_native_sparse": true
+  },
+  "combined_changes": {
+    "source_reference_image_prefix_tokens": [
+      0,
+      1024
+    ],
+    "prompt_equal": false,
+    "native_prompt": "One coherent portrait music album artwork. A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+    "reference_prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+    "native_completed_prefix_hints": "full trained-style text prefix hints",
+    "reference_completed_prefix_hints": "disabled on full173text+1024reference prefix after all hints computed",
+    "native_text_prefix_tokens": 96,
+    "reference_text_prefix_tokens": 173,
+    "joint_query_tokens_per_step": [
+      2400,
+      3501
+    ]
+  },
+  "comparison_limit": "Combined reference/prompt/prefix-hint-gate experiment, not a single-factor ablation; target sparse control context and known bridge unchanged."
+}
