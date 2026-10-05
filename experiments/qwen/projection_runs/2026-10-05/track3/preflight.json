@@ -1,0 +1,41 @@
+{
+  "method": "frozen-VAE post-denoise border-latent pixel-consistency projection",
+  "input": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step06_predicted_clean.npz",
+  "input_sha256": "568cf55c157f5436ef2bb476713f77178387b67eb246b98fee5127f988f13298",
+  "track": "track3",
+  "status": "preflight_passed",
+  "derived_postprocess": true,
+  "new_transformer_calls": 0,
+  "weights_trained": false,
+  "model_components_loaded": [],
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "source_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+  "original_jpg_sha256_before": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+  "parameters": {
+    "track": "track3",
+    "methods": "consistency,derivative",
+    "iterations": 8,
+    "learning_rate": 0.015,
+    "latent_collar": 6,
+    "source_band": 32,
+    "trust_weight": 0.01,
+    "derivative_weight": 1.0,
+    "max_delta": 0.2,
+    "preflight": true
+  },
+  "runs": {},
+  "cpu_smoke": {
+    "reference_tiler_max_error": 0.0,
+    "nonzero_finite_gradient": true,
+    "model_weights_loaded": false,
+    "device": "cpu"
+  },
+  "phase": "preflight_complete",
+  "elapsed_seconds": 0.010261165996780619,
+  "process_peak_rss_bytes": 260374528
+}
