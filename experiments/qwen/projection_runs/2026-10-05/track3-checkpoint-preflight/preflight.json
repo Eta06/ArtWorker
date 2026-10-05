@@ -1,0 +1,50 @@
+{
+  "method": "frozen-VAE post-denoise border-latent pixel-consistency projection",
+  "input": "experiments/qwen/boundary_runs/2026-10-05/track3/edge-context/final_latents.npz",
+  "input_sha256": "65b588a84fbc2541fe0654ea5349881ae9b4e2de3e9f1af0940124f9e73b91ac",
+  "input_kind": "exact-final",
+  "track": "track3",
+  "status": "preflight_passed",
+  "derived_postprocess": true,
+  "new_transformer_calls": 0,
+  "weights_trained": false,
+  "model_components_loaded": [],
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "source_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+  "original_jpg_sha256_before": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+  "parameters": {
+    "track": "track3",
+    "methods": "consistency,derivative",
+    "iterations": 8,
+    "learning_rate": 0.015,
+    "latent_collar": 6,
+    "source_band": 32,
+    "trust_weight": 0.01,
+    "derivative_weight": 1.0,
+    "max_delta": 0.2,
+    "checkpoint_decoder": true,
+    "preflight": true
+  },
+  "runs": {},
+  "cpu_smoke": {
+    "reference_tiler_max_error": 0.0,
+    "nonzero_finite_gradient": true,
+    "model_weights_loaded": false,
+    "checkpoint_forward_error": 0.0,
+    "checkpoint_gradient_max_error": 0.0,
+    "metadata_cases": {
+      "preview_and_exact_final_accepted": true,
+      "correct_raw_paths": true,
+      "invalid_cases_rejected": 3
+    },
+    "device": "cpu"
+  },
+  "phase": "preflight_complete",
+  "elapsed_seconds": 1.4026053749839775,
+  "process_peak_rss_bytes": 261292032
+}
