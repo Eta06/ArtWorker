@@ -1,0 +1,44 @@
+{
+  "source": "/Users/emir/Documents/ChatGPT/ArtWorker/Player/Resources/track3.jpg",
+  "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+  "direct_view_completed": true,
+  "actual_photo_crop": [
+    280,
+    0,
+    1000,
+    720
+  ],
+  "full_size": [
+    1280,
+    720
+  ],
+  "side_interpretation": "flat ochre JPEG-letterbox; not photographic context",
+  "real_top_bottom_context_available": false,
+  "earlier_width_only_context_inference": "incorrect; corrected after direct view",
+  "left_interior": {
+    "mean_rgb": [
+      76.99996425653595,
+      64.99884599673203,
+      17.002216094771242
+    ],
+    "per_channel_std": [
+      0.005978476934538116,
+      0.03454737642194935,
+      0.0712802443718661
+    ],
+    "distinct_rgb": 5
+  },
+  "right_interior": {
+    "mean_rgb": [
+      77.00006638071895,
+      64.99645629084968,
+      17.006648284313727
+    ],
+    "per_channel_std": [
+      0.012980774074034487,
+      0.06027665766140849,
+      0.12032397574607158
+    ],
+    "distinct_rgb": 5
+  }
+}
