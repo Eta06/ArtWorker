@@ -1,0 +1,139 @@
+{
+  "source_runtime_commit": "315c27e83187909bc5e1f880b4850918342d891b",
+  "runtime_configuration": "Xcode Release; adjacent mlx resource bundle required",
+  "components": [
+    {
+      "repo_id": "black-forest-labs/FLUX.2-klein-4B",
+      "files": [
+        {
+          "file": "model_index.json",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux2/flux2-transformer-klein4b-bf16/model_index.json",
+          "bytes": 446,
+          "download_revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+          "hub_etag": "554a39bf1019138dd0b28809b745df8ef33657c8"
+        },
+        {
+          "file": "flux-2-klein-4b.safetensors",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux2/flux2-transformer-klein4b-bf16/flux-2-klein-4b.safetensors",
+          "bytes": 7751105712,
+          "download_revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+          "hub_etag": "ec3d4e733a771f61c052fb4856c48b336c55eaf2c65487c2a1faeb9bbda7a343"
+        }
+      ]
+    },
+    {
+      "repo_id": "black-forest-labs/FLUX.2-klein-base-4B",
+      "files": [
+        {
+          "file": "model_index.json",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux2/black-forest-labs/FLUX.2-klein-base-4B-klein4b-base-bf16/model_index.json",
+          "bytes": 422,
+          "download_revision": "a3b4f4849157f664bdbc776fd7453c2783562f4d",
+          "hub_etag": "8bd1147173cb71f16e20819cbb8b7955695f5a16"
+        },
+        {
+          "file": "flux-2-klein-base-4b.safetensors",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux2/black-forest-labs/FLUX.2-klein-base-4B-klein4b-base-bf16/flux-2-klein-base-4b.safetensors",
+          "bytes": 7751105712,
+          "download_revision": "a3b4f4849157f664bdbc776fd7453c2783562f4d",
+          "hub_etag": "9c5fed22b76baea749d88fc2abe3ad53245e7b21a0d353a762665eea00043b92"
+        }
+      ]
+    },
+    {
+      "repo_id": "black-forest-labs/FLUX.2-small-decoder",
+      "files": [
+        {
+          "file": "config.json",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux2/flux2-vae-small-decoder/config.json",
+          "bytes": 842,
+          "download_revision": "a3efc24f613ef42d9428af62fdbd6f5fd8856c4a",
+          "hub_etag": "8c88d9f9c8a262fd323b3d0706ee3e912ba17296"
+        },
+        {
+          "file": "diffusion_pytorch_model.safetensors",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux2/flux2-vae-small-decoder/diffusion_pytorch_model.safetensors",
+          "bytes": 249521340,
+          "download_revision": "a3efc24f613ef42d9428af62fdbd6f5fd8856c4a",
+          "hub_etag": "d8d52ba036475f5fb07c8b435e176d3d97ebfa82f0d1a1c317f9cc1e25bd013b"
+        },
+        {
+          "file": "full_encoder_small_decoder.safetensors",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux2/flux2-vae-small-decoder/full_encoder_small_decoder.safetensors",
+          "bytes": 249519092,
+          "download_revision": "a3efc24f613ef42d9428af62fdbd6f5fd8856c4a",
+          "hub_etag": "ea4273f02d1fafbf8e1d1c2cf6018ed8748652eb0bf34f2dd91171f16f15ab62"
+        },
+        {
+          "file": "small_decoder.safetensors",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux2/flux2-vae-small-decoder/small_decoder.safetensors",
+          "bytes": 111801980,
+          "download_revision": "a3efc24f613ef42d9428af62fdbd6f5fd8856c4a",
+          "hub_etag": "ad783347747561d974f347f1b7377ebca15330621ace6a2e3f8dfaa83f5c211f"
+        }
+      ]
+    },
+    {
+      "repo_id": "lmstudio-community/Qwen3-4B-MLX-4bit",
+      "files": [
+        {
+          "file": "model.safetensors",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux2/lmstudio-community/Qwen3-4B-MLX-4bit/model.safetensors",
+          "bytes": 2263022417,
+          "download_revision": "480ec45ecf06ae3c061e4ef11345d05c7fdb02f1",
+          "hub_etag": "365a6fff57490ca4e89e354c3295b7f2f60ac3fcb0a8a3fa06e21b80bb4d19ca"
+        },
+        {
+          "file": "added_tokens.json",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux2/lmstudio-community/Qwen3-4B-MLX-4bit/added_tokens.json",
+          "bytes": 707,
+          "download_revision": "480ec45ecf06ae3c061e4ef11345d05c7fdb02f1",
+          "hub_etag": "b54f9135e44c1e81047e8d05cb027af8bc039eed"
+        },
+        {
+          "file": "tokenizer_config.json",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux2/lmstudio-community/Qwen3-4B-MLX-4bit/tokenizer_config.json",
+          "bytes": 10219,
+          "download_revision": "480ec45ecf06ae3c061e4ef11345d05c7fdb02f1",
+          "hub_etag": "06bac65b43d75058ff7ad1e0b44f61291c4e722d"
+        },
+        {
+          "file": "special_tokens_map.json",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux2/lmstudio-community/Qwen3-4B-MLX-4bit/special_tokens_map.json",
+          "bytes": 613,
+          "download_revision": "480ec45ecf06ae3c061e4ef11345d05c7fdb02f1",
+          "hub_etag": "ac23c0aaa2434523c494330aeb79c58395378103"
+        },
+        {
+          "file": "config.json",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux2/lmstudio-community/Qwen3-4B-MLX-4bit/config.json",
+          "bytes": 937,
+          "download_revision": "480ec45ecf06ae3c061e4ef11345d05c7fdb02f1",
+          "hub_etag": "032ad326a0daaaeeec00f2a585262acf5f692861"
+        },
+        {
+          "file": "tokenizer.json",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux2/lmstudio-community/Qwen3-4B-MLX-4bit/tokenizer.json",
+          "bytes": 11422654,
+          "download_revision": "480ec45ecf06ae3c061e4ef11345d05c7fdb02f1",
+          "hub_etag": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+        },
+        {
+          "file": "vocab.json",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux2/lmstudio-community/Qwen3-4B-MLX-4bit/vocab.json",
+          "bytes": 2776833,
+          "download_revision": "480ec45ecf06ae3c061e4ef11345d05c7fdb02f1",
+          "hub_etag": "4783fe10ac3adce15ac8f358ef5462739852c569"
+        },
+        {
+          "file": "model.safetensors.index.json",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux2/lmstudio-community/Qwen3-4B-MLX-4bit/model.safetensors.index.json",
+          "bytes": 63924,
+          "download_revision": "480ec45ecf06ae3c061e4ef11345d05c7fdb02f1",
+          "hub_etag": "07e230a328dd17a09d96ee045d49b27596656aff"
+        }
+      ]
+    }
+  ],
+  "note": "Hub metadata etag recorded; this manifest does not claim independently rehashed local files. Canonical ModelRegistry paths for distilled transformer and VAE use hardlinks."
+}
