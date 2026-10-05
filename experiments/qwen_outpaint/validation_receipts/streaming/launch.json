@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "command": [
+    "experiments/qwen/.venv/bin/python",
+    "experiments/qwen_outpaint/verify_streaming_encoder.py"
+  ],
+  "footprint_limit_bytes": 1073741824,
+  "swap_growth_limit_bytes": 268435456,
+  "timeout_seconds": 60.0,
+  "sample_interval_seconds": 0.1,
+  "initial_swap_bytes": 0,
+  "pid": 78546,
+  "stop_reason": "complete",
+  "exit_code": 0,
+  "elapsed_seconds": 0.6320998330002112,
+  "peak_sampled_rss_bytes": 57278464,
+  "peak_sampled_phys_footprint_bytes": 188662504,
+  "measurement_note": "RSS and phys_footprint overlap; do not add them. Process-group sums can double-count shared memory. Sampling is not a kernel-enforced limit."
+}
