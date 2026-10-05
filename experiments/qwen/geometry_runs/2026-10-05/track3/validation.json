@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "baseline_reproduced_exact": true,
+  "reference_prefix_and_absolute_noise_match_prior": true,
+  "changed_context_did_not_change_prefix": true,
+  "runs": {
+    "square-known": {
+      "six_calls": true,
+      "target_tokens": 12288,
+      "source_pixels_exact": true,
+      "finite": true,
+      "known_target_sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01"
+    },
+    "edge-context": {
+      "six_calls": true,
+      "target_tokens": 12288,
+      "source_pixels_exact": true,
+      "finite": true,
+      "known_target_sha256": "5bfd5056ecb4c0c53a3386f8575c1ffe7a16a52925b4363d467ab25e7ef16c1a"
+    }
+  },
+  "original_jpegs_unchanged": {
+    "track1": true,
+    "track2": true,
+    "track3": true
+  },
+  "local_report_links_exist": true
+}
