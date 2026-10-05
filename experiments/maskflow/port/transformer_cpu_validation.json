@@ -1,0 +1,3075 @@
+{
+  "status": "passed",
+  "target": "port",
+  "tiny_model_config": {
+    "in_channels": 8,
+    "out_channels": 2,
+    "num_layers": 60,
+    "attention_head_dim": 12,
+    "num_attention_heads": 2,
+    "joint_attention_dim": 10,
+    "patch_size": 2,
+    "axes_dims_rope": [
+      4,
+      4,
+      4
+    ],
+    "zero_cond_t": true
+  },
+  "dtype": "float32",
+  "tolerances": {
+    "atol": 5e-05,
+    "rtol": 2e-05
+  },
+  "cpu_only": {
+    "mlx_default_device": "Device(cpu, 0)",
+    "torch_default_device": "cpu",
+    "pretrained_weights_loaded": false,
+    "model_downloads": false
+  },
+  "versions": {
+    "python": "3.13.14",
+    "torch": "2.14.0",
+    "mlx": "0.32.3",
+    "numpy": "2.5.3",
+    "diffusers": "0.37.1"
+  },
+  "fixtures": {
+    "seed": 2511,
+    "numpy_weights_sha256": "5d2f64334e8ac7cb620b93cd6a394f98a8591c13af8b8483e6dc8ba08a132124",
+    "tensor_count": 1933,
+    "parameter_count": 1298898,
+    "image_shape": [
+      2,
+      35,
+      8
+    ],
+    "text_shape": [
+      2,
+      5,
+      10
+    ],
+    "text_mask": [
+      [
+        true,
+        false,
+        true,
+        true,
+        false
+      ],
+      [
+        true,
+        true,
+        false,
+        true,
+        true
+      ]
+    ],
+    "token_order": [
+      "target",
+      "source",
+      "mask"
+    ],
+    "image_grids": [
+      [
+        1,
+        3,
+        5
+      ],
+      [
+        1,
+        2,
+        4
+      ],
+      [
+        1,
+        4,
+        3
+      ]
+    ],
+    "segment_lengths": [
+      15,
+      8,
+      12
+    ],
+    "segment_offsets": [
+      0,
+      15,
+      23
+    ]
+  },
+  "native_runtime_baseline": {
+    "weight_coverage": {
+      "torch_count": 1933,
+      "mlx_count": 1932,
+      "loaded_count": 1932,
+      "missing_torch_parameters": [
+        "norm_out.linear.bias"
+      ],
+      "extra_mlx_parameters": [],
+      "layout": "Both Linear weights are [out_features,in_features]; no transpose"
+    },
+    "actual_forward_failure": "ValueError: [broadcast_shapes] Shapes (2,5,2,6) and (1,4,1,6) cannot be broadcast.",
+    "numeric_result": null,
+    "expected_text_rope_width": 5,
+    "native_mask_sum_max": 4
+  },
+  "weight_coverage": {
+    "torch_count": 1933,
+    "mlx_count": 1933,
+    "loaded_count": 1933,
+    "missing_torch_parameters": [],
+    "extra_mlx_parameters": [],
+    "layout": "Both Linear weights are [out_features,in_features]; no transpose"
+  },
+  "comparisons": {
+    "rope.image.cos": {
+      "shape": [
+        35,
+        6
+      ],
+      "max_abs_error": 2.9802322387695312e-08,
+      "rms_error": 1.1074890985447266e-08,
+      "max_tolerance_ratio": 0.010522327716507783,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "finite": true,
+      "passed": true
+    },
+    "rope.image.sin": {
+      "shape": [
+        35,
+        6
+      ],
+      "max_abs_error": 5.960464477539063e-08,
+      "rms_error": 2.5019079016548128e-08,
+      "max_tolerance_ratio": 0.01618397633566033,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "finite": true,
+      "passed": true
+    },
+    "rope.text.cos": {
+      "shape": [
+        5,
+        6
+      ],
+      "max_abs_error": 2.9802322387695312e-08,
+      "rms_error": 1.3328003749250112e-08,
+      "max_tolerance_ratio": 0.011608319692009919,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "finite": true,
+      "passed": true
+    },
+    "rope.text.sin": {
+      "shape": [
+        5,
+        6
+      ],
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "finite": true,
+      "passed": true
+    },
+    "rope.image.segment_0.cos": {
+      "shape": [
+        15,
+        6
+      ],
+      "max_abs_error": 2.9802322387695312e-08,
+      "rms_error": 8.885335832833408e-09,
+      "max_tolerance_ratio": 0.010522327716507783,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "finite": true,
+      "passed": true
+    },
+    "rope.image.segment_1.cos": {
+      "shape": [
+        8,
+        6
+      ],
+      "max_abs_error": 2.9802322387695312e-08,
+      "rms_error": 6.083373583314762e-09,
+      "max_tolerance_ratio": 0.010522327716507783,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "finite": true,
+      "passed": true
+    },
+    "rope.image.segment_2.cos": {
+      "shape": [
+        12,
+        6
+      ],
+      "max_abs_error": 2.9802322387695312e-08,
+      "rms_error": 1.5309487787308735e-08,
+      "max_tolerance_ratio": 0.010522327716507783,
+      "atol": 2e-06,
+      "rtol": 2e-06,
+      "finite": true,
+      "passed": true
+    },
+    "routing.target_source_mask_index": {
+      "shape": [
+        2,
+        35
+      ],
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "atol": 0,
+      "rtol": 0,
+      "finite": true,
+      "passed": true
+    },
+    "time.distinct_batch_t_then_zero": {
+      "shape": [
+        4,
+        24
+      ],
+      "max_abs_error": 2.644956111907959e-06,
+      "rms_error": 8.201026165598355e-07,
+      "max_tolerance_ratio": 0.05154435890248072,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "routing.selected_image_modulation": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.1457672119140625e-06,
+      "rms_error": 3.677866869929731e-07,
+      "max_tolerance_ratio": 0.025866419748287215,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "routing.selected_image_gates": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.6093254089355469e-06,
+      "rms_error": 2.795992893667047e-07,
+      "max_tolerance_ratio": 0.031742400590817774,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "routing.batch_0.target.values": {
+      "shape": [
+        15,
+        24
+      ],
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "routing.batch_0.target.gates": {
+      "shape": [
+        15,
+        24
+      ],
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "routing.batch_0.source.values": {
+      "shape": [
+        8,
+        24
+      ],
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "routing.batch_0.source.gates": {
+      "shape": [
+        8,
+        24
+      ],
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "routing.batch_0.mask.values": {
+      "shape": [
+        12,
+        24
+      ],
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "routing.batch_0.mask.gates": {
+      "shape": [
+        12,
+        24
+      ],
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "routing.batch_1.target.values": {
+      "shape": [
+        15,
+        24
+      ],
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "routing.batch_1.target.gates": {
+      "shape": [
+        15,
+        24
+      ],
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "routing.batch_1.source.values": {
+      "shape": [
+        8,
+        24
+      ],
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "routing.batch_1.source.gates": {
+      "shape": [
+        8,
+        24
+      ],
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "routing.batch_1.mask.values": {
+      "shape": [
+        12,
+        24
+      ],
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "routing.batch_1.mask.gates": {
+      "shape": [
+        12,
+        24
+      ],
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "routing.text_target_time": {
+      "shape": [
+        2,
+        144
+      ],
+      "max_abs_error": 1.4491379261016846e-06,
+      "rms_error": 3.26560572024986e-07,
+      "max_tolerance_ratio": 0.028947522781730194,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.00.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 4.246830940246582e-07,
+      "rms_error": 6.640934334988853e-08,
+      "max_tolerance_ratio": 0.008181969035404215,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.00.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 3.5762786865234375e-07,
+      "rms_error": 1.0156277997782615e-07,
+      "max_tolerance_ratio": 0.006548115525348411,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.01.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 4.76837158203125e-07,
+      "rms_error": 7.375513434407002e-08,
+      "max_tolerance_ratio": 0.0090574049779577,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.01.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 4.76837158203125e-07,
+      "rms_error": 1.3282005302753776e-07,
+      "max_tolerance_ratio": 0.007528771652596697,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.02.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 5.364418029785156e-07,
+      "rms_error": 8.903194677557689e-08,
+      "max_tolerance_ratio": 0.010197499042964714,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.02.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 5.960464477539062e-07,
+      "rms_error": 1.6849363738900608e-07,
+      "max_tolerance_ratio": 0.009046438080599139,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.03.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 8.940696716308594e-07,
+      "rms_error": 1.0942467474390465e-07,
+      "max_tolerance_ratio": 0.016165157561198025,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.03.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 6.556510925292969e-07,
+      "rms_error": 1.8445978171243933e-07,
+      "max_tolerance_ratio": 0.011109581018816247,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.04.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 8.344650268554688e-07,
+      "rms_error": 1.2820784732909385e-07,
+      "max_tolerance_ratio": 0.015471133250721606,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.04.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 7.450580596923828e-07,
+      "rms_error": 2.0151843168911008e-07,
+      "max_tolerance_ratio": 0.012605058371605147,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.05.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 9.08970832824707e-07,
+      "rms_error": 1.3444780225064347e-07,
+      "max_tolerance_ratio": 0.01693674349536314,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.05.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 7.450580596923828e-07,
+      "rms_error": 2.1881610906212128e-07,
+      "max_tolerance_ratio": 0.012602098166674987,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.06.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 8.940696716308594e-07,
+      "rms_error": 1.4559841294191828e-07,
+      "max_tolerance_ratio": 0.01667144896442127,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.06.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 8.344650268554688e-07,
+      "rms_error": 2.507235536646434e-07,
+      "max_tolerance_ratio": 0.01461003758760206,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.07.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 8.046627044677734e-07,
+      "rms_error": 1.5383585116412372e-07,
+      "max_tolerance_ratio": 0.015129973533305408,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.07.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 8.940696716308594e-07,
+      "rms_error": 2.7163066806254506e-07,
+      "max_tolerance_ratio": 0.015198456022565605,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.08.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.0132789611816406e-06,
+      "rms_error": 1.6473357399052386e-07,
+      "max_tolerance_ratio": 0.016832219132838923,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.08.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.0728836059570312e-06,
+      "rms_error": 2.874679743558199e-07,
+      "max_tolerance_ratio": 0.014884493354669095,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.09.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.0728836059570312e-06,
+      "rms_error": 1.746203508103635e-07,
+      "max_tolerance_ratio": 0.017818651388242217,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.09.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.1920928955078125e-06,
+      "rms_error": 3.062694936954364e-07,
+      "max_tolerance_ratio": 0.016977449687019173,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.10.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.1324882507324219e-06,
+      "rms_error": 1.9070285738788645e-07,
+      "max_tolerance_ratio": 0.018900871920101675,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.10.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.0728836059570312e-06,
+      "rms_error": 3.257176066236602e-07,
+      "max_tolerance_ratio": 0.019077180571450046,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.11.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.1026859283447266e-06,
+      "rms_error": 1.9769743619604873e-07,
+      "max_tolerance_ratio": 0.01915327075694047,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.11.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.0728836059570312e-06,
+      "rms_error": 3.328509957445016e-07,
+      "max_tolerance_ratio": 0.018942244833674956,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.12.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.1324882507324219e-06,
+      "rms_error": 2.0610904283420202e-07,
+      "max_tolerance_ratio": 0.01972768083422517,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.12.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.0728836059570312e-06,
+      "rms_error": 3.390636222230696e-07,
+      "max_tolerance_ratio": 0.020196391048117216,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.13.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.2638047337532043e-06,
+      "rms_error": 2.1535106727927217e-07,
+      "max_tolerance_ratio": 0.025220127109816054,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.13.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.043081283569336e-06,
+      "rms_error": 3.398418944079201e-07,
+      "max_tolerance_ratio": 0.019381553852397867,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.14.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.3113021850585938e-06,
+      "rms_error": 2.2518095590572657e-07,
+      "max_tolerance_ratio": 0.02604707653047317,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.14.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.0132789611816406e-06,
+      "rms_error": 3.46783478109526e-07,
+      "max_tolerance_ratio": 0.018437903287230082,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.15.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.3778917491436005e-06,
+      "rms_error": 2.325674346718268e-07,
+      "max_tolerance_ratio": 0.027498668783310663,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.15.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 9.834766387939453e-07,
+      "rms_error": 3.595376146875058e-07,
+      "max_tolerance_ratio": 0.017468640246080035,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.16.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.321546733379364e-06,
+      "rms_error": 2.4182842855982594e-07,
+      "max_tolerance_ratio": 0.026280724479676058,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.16.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.1920928955078125e-06,
+      "rms_error": 3.706115428320547e-07,
+      "max_tolerance_ratio": 0.017551138934186028,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.17.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.5385448932647705e-06,
+      "rms_error": 2.5093396857262596e-07,
+      "max_tolerance_ratio": 0.030406637221438722,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.17.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.3113021850585938e-06,
+      "rms_error": 3.9377945427130063e-07,
+      "max_tolerance_ratio": 0.02005986163610137,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.18.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.5366822481155396e-06,
+      "rms_error": 2.568158097585184e-07,
+      "max_tolerance_ratio": 0.03047710045538684,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.18.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.3113021850585938e-06,
+      "rms_error": 4.056856754251075e-07,
+      "max_tolerance_ratio": 0.020529572232914347,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.19.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.5422701835632324e-06,
+      "rms_error": 2.636531246506943e-07,
+      "max_tolerance_ratio": 0.030636547763092072,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.19.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.2218952178955078e-06,
+      "rms_error": 4.0637207073522417e-07,
+      "max_tolerance_ratio": 0.02060168600781423,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.20.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.6093254089355469e-06,
+      "rms_error": 2.751918854168061e-07,
+      "max_tolerance_ratio": 0.03061412107612678,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.20.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.3709068298339844e-06,
+      "rms_error": 4.216884617328325e-07,
+      "max_tolerance_ratio": 0.02301021262266832,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.21.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.5348196029663086e-06,
+      "rms_error": 2.7557728570952174e-07,
+      "max_tolerance_ratio": 0.030254197092932186,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.21.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.5497207641601562e-06,
+      "rms_error": 4.277515591156969e-07,
+      "max_tolerance_ratio": 0.023875122366219605,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.22.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.5795230865478516e-06,
+      "rms_error": 2.823464883280723e-07,
+      "max_tolerance_ratio": 0.029571569822112335,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.22.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.5497207641601562e-06,
+      "rms_error": 4.4967605436300584e-07,
+      "max_tolerance_ratio": 0.024355997841919413,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.23.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.605600118637085e-06,
+      "rms_error": 2.8444449016485236e-07,
+      "max_tolerance_ratio": 0.031437871324022405,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.23.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.3113021850585938e-06,
+      "rms_error": 4.5268626550897714e-07,
+      "max_tolerance_ratio": 0.021046584870498184,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.24.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.642853021621704e-06,
+      "rms_error": 2.8934865193940037e-07,
+      "max_tolerance_ratio": 0.032125776064412116,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.24.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.3709068298339844e-06,
+      "rms_error": 4.6784905278400634e-07,
+      "max_tolerance_ratio": 0.021299595761454525,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.25.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.564621925354004e-06,
+      "rms_error": 2.937624340302713e-07,
+      "max_tolerance_ratio": 0.03056307802099106,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.25.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.4901161193847656e-06,
+      "rms_error": 4.907266509720663e-07,
+      "max_tolerance_ratio": 0.022382518636182402,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.26.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.6540288925170898e-06,
+      "rms_error": 3.001611158091026e-07,
+      "max_tolerance_ratio": 0.03123464613132569,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.26.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.430511474609375e-06,
+      "rms_error": 4.928672170427405e-07,
+      "max_tolerance_ratio": 0.023993982788996174,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.27.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.564621925354004e-06,
+      "rms_error": 3.0591540020912367e-07,
+      "max_tolerance_ratio": 0.03008783474622074,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.27.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.430511474609375e-06,
+      "rms_error": 4.880576494606432e-07,
+      "max_tolerance_ratio": 0.02323006350056841,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.28.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.712702214717865e-06,
+      "rms_error": 3.1264415308051514e-07,
+      "max_tolerance_ratio": 0.03415282894725736,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.28.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.430511474609375e-06,
+      "rms_error": 5.07510149650859e-07,
+      "max_tolerance_ratio": 0.023859103947264926,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.29.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.7136335372924805e-06,
+      "rms_error": 3.227990568975097e-07,
+      "max_tolerance_ratio": 0.033801074264566584,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.29.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.3709068298339844e-06,
+      "rms_error": 5.137911130449944e-07,
+      "max_tolerance_ratio": 0.026150788619383726,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.30.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.7723068594932556e-06,
+      "rms_error": 3.3288584623717185e-07,
+      "max_tolerance_ratio": 0.035332841851955926,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.30.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.5497207641601562e-06,
+      "rms_error": 5.141785952900362e-07,
+      "max_tolerance_ratio": 0.026267945388901124,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.31.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.6856938600540161e-06,
+      "rms_error": 3.3514013827336717e-07,
+      "max_tolerance_ratio": 0.0334823249437112,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.31.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.5497207641601562e-06,
+      "rms_error": 5.193289289942249e-07,
+      "max_tolerance_ratio": 0.025564608002185876,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.32.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.737847924232483e-06,
+      "rms_error": 3.4443901707069e-07,
+      "max_tolerance_ratio": 0.034391900068648076,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.32.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.5497207641601562e-06,
+      "rms_error": 5.19040408958667e-07,
+      "max_tolerance_ratio": 0.026182482539210423,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.33.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.7657876014709473e-06,
+      "rms_error": 3.476722135872158e-07,
+      "max_tolerance_ratio": 0.034812827225978775,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.33.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.6689300537109375e-06,
+      "rms_error": 5.108919939901747e-07,
+      "max_tolerance_ratio": 0.025622599317305834,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.34.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.7657876014709473e-06,
+      "rms_error": 3.6062607302139517e-07,
+      "max_tolerance_ratio": 0.034193788322881294,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.34.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.5497207641601562e-06,
+      "rms_error": 5.045709554517919e-07,
+      "max_tolerance_ratio": 0.02469098332201948,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.35.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.7881393432617188e-06,
+      "rms_error": 3.658218397350244e-07,
+      "max_tolerance_ratio": 0.03444542730006097,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.35.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.6689300537109375e-06,
+      "rms_error": 5.052133151607994e-07,
+      "max_tolerance_ratio": 0.026564347882449574,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.36.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.7508864402770996e-06,
+      "rms_error": 3.6665358632917283e-07,
+      "max_tolerance_ratio": 0.033606622386581006,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.36.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.6689300537109375e-06,
+      "rms_error": 5.075429374854165e-07,
+      "max_tolerance_ratio": 0.025616751761720943,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.37.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.9744038581848145e-06,
+      "rms_error": 3.7303147320889277e-07,
+      "max_tolerance_ratio": 0.038462788585903615,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.37.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.6689300537109375e-06,
+      "rms_error": 5.082425941081462e-07,
+      "max_tolerance_ratio": 0.024566318032189546,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.38.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.2221356630325317e-06,
+      "rms_error": 3.786257268785293e-07,
+      "max_tolerance_ratio": 0.04392423375269563,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.38.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.6093254089355469e-06,
+      "rms_error": 5.249798083950732e-07,
+      "max_tolerance_ratio": 0.024539778631942448,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.39.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 1.989305019378662e-06,
+      "rms_error": 3.8603959704515565e-07,
+      "max_tolerance_ratio": 0.03883405918092741,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.39.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.7881393432617188e-06,
+      "rms_error": 5.314480131669522e-07,
+      "max_tolerance_ratio": 0.02618280745397298,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.40.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.1047890186309814e-06,
+      "rms_error": 3.9616787715304414e-07,
+      "max_tolerance_ratio": 0.04132300124508323,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.40.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.8477439880371094e-06,
+      "rms_error": 5.557796448962262e-07,
+      "max_tolerance_ratio": 0.02713474462949134,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.41.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.1047890186309814e-06,
+      "rms_error": 4.002715196861473e-07,
+      "max_tolerance_ratio": 0.0414787909302743,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.41.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.7881393432617188e-06,
+      "rms_error": 5.613603609506166e-07,
+      "max_tolerance_ratio": 0.027214776009255273,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.42.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.2426247596740723e-06,
+      "rms_error": 4.028614680464773e-07,
+      "max_tolerance_ratio": 0.04443459862968865,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.42.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.9669532775878906e-06,
+      "rms_error": 5.729515067861736e-07,
+      "max_tolerance_ratio": 0.029062629279161718,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.43.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.384185791015625e-06,
+      "rms_error": 4.167373084044098e-07,
+      "max_tolerance_ratio": 0.046073162609977965,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.43.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 1.9669532775878906e-06,
+      "rms_error": 5.737689344335812e-07,
+      "max_tolerance_ratio": 0.03076237721640321,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.44.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.600252628326416e-06,
+      "rms_error": 4.18094508490171e-07,
+      "max_tolerance_ratio": 0.050140013329370556,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.44.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 2.1457672119140625e-06,
+      "rms_error": 5.869233185780082e-07,
+      "max_tolerance_ratio": 0.03747470184372514,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.45.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.4810433387756348e-06,
+      "rms_error": 4.2037085395980937e-07,
+      "max_tolerance_ratio": 0.0476303474473076,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.45.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 2.1457672119140625e-06,
+      "rms_error": 5.879412944834218e-07,
+      "max_tolerance_ratio": 0.037411691650384875,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.46.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.4884939193725586e-06,
+      "rms_error": 4.274203934631251e-07,
+      "max_tolerance_ratio": 0.047912462611065104,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.46.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 2.1457672119140625e-06,
+      "rms_error": 5.987709484960551e-07,
+      "max_tolerance_ratio": 0.037357269159549754,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.47.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.4884939193725586e-06,
+      "rms_error": 4.3118853925495785e-07,
+      "max_tolerance_ratio": 0.04790713217917995,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.47.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 2.115964889526367e-06,
+      "rms_error": 6.020990015819883e-07,
+      "max_tolerance_ratio": 0.037169552599728026,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.48.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.466142177581787e-06,
+      "rms_error": 4.3298104954445043e-07,
+      "max_tolerance_ratio": 0.04752745207888134,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.48.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 2.086162567138672e-06,
+      "rms_error": 6.168773076176621e-07,
+      "max_tolerance_ratio": 0.03663392047738813,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.49.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.339482307434082e-06,
+      "rms_error": 4.3752979045924835e-07,
+      "max_tolerance_ratio": 0.04613823413207358,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.49.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 2.1457672119140625e-06,
+      "rms_error": 6.250278364677979e-07,
+      "max_tolerance_ratio": 0.037557983658333516,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.50.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.277083694934845e-06,
+      "rms_error": 4.42522154886885e-07,
+      "max_tolerance_ratio": 0.04544266281071219,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.50.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 2.1457672119140625e-06,
+      "rms_error": 6.36255190763532e-07,
+      "max_tolerance_ratio": 0.03756567889383601,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.51.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.2328458726406097e-06,
+      "rms_error": 4.4411946166319735e-07,
+      "max_tolerance_ratio": 0.044557261170632495,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.51.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 2.086162567138672e-06,
+      "rms_error": 6.3942446724953e-07,
+      "max_tolerance_ratio": 0.03666062283130157,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.52.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.230517566204071e-06,
+      "rms_error": 4.446977648927501e-07,
+      "max_tolerance_ratio": 0.04450704705126276,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.52.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 2.0265579223632812e-06,
+      "rms_error": 6.307454168779092e-07,
+      "max_tolerance_ratio": 0.03438138777533709,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.53.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.2314488887786865e-06,
+      "rms_error": 4.496626211891507e-07,
+      "max_tolerance_ratio": 0.04448307684562027,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.53.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 2.0265579223632812e-06,
+      "rms_error": 6.351103871235749e-07,
+      "max_tolerance_ratio": 0.035350803700522127,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.54.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.0265579223632812e-06,
+      "rms_error": 4.4431427855937213e-07,
+      "max_tolerance_ratio": 0.03898450177647699,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.54.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 2.0265579223632812e-06,
+      "rms_error": 6.427865460386996e-07,
+      "max_tolerance_ratio": 0.03171725990785585,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.55.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.0265579223632812e-06,
+      "rms_error": 4.4642192971247605e-07,
+      "max_tolerance_ratio": 0.038411079118590354,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.55.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 2.1457672119140625e-06,
+      "rms_error": 6.468246575113315e-07,
+      "max_tolerance_ratio": 0.030734403040584706,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.56.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.205371856689453e-06,
+      "rms_error": 4.4672668180129423e-07,
+      "max_tolerance_ratio": 0.040979262837220636,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.56.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 2.1457672119140625e-06,
+      "rms_error": 6.451707322796465e-07,
+      "max_tolerance_ratio": 0.031817330052608436,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.57.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.041459083557129e-06,
+      "rms_error": 4.4268175469919277e-07,
+      "max_tolerance_ratio": 0.03766554474297208,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.57.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 2.1457672119140625e-06,
+      "rms_error": 6.468339679912349e-07,
+      "max_tolerance_ratio": 0.03280631361775602,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.58.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.086162567138672e-06,
+      "rms_error": 4.424995539320545e-07,
+      "max_tolerance_ratio": 0.03848739289638959,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.58.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 2.0265579223632812e-06,
+      "rms_error": 6.583041420179271e-07,
+      "max_tolerance_ratio": 0.03457673181883406,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.59.image": {
+      "shape": [
+        2,
+        35,
+        24
+      ],
+      "max_abs_error": 2.205371856689453e-06,
+      "rms_error": 4.410176238615739e-07,
+      "max_tolerance_ratio": 0.03896095953208101,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "block.59.text": {
+      "shape": [
+        2,
+        5,
+        24
+      ],
+      "max_abs_error": 2.0265579223632812e-06,
+      "rms_error": 6.617136381366877e-07,
+      "max_tolerance_ratio": 0.03373160558908337,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "transformer.distinct_batch_times_manual_chain": {
+      "shape": [
+        2,
+        35,
+        8
+      ],
+      "max_abs_error": 5.364418029785156e-06,
+      "rms_error": 9.30190196221962e-07,
+      "max_tolerance_ratio": 0.0908277046984233,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "transformer.full_forward": {
+      "shape": [
+        2,
+        35,
+        8
+      ],
+      "max_abs_error": 3.933906555175781e-06,
+      "rms_error": 6.366533459324528e-07,
+      "max_tolerance_ratio": 0.06930768646500587,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "mask.perturbed_padding.torch_invariance": {
+      "shape": [
+        2,
+        35,
+        8
+      ],
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "atol": 3e-06,
+      "rtol": 3e-06,
+      "finite": true,
+      "passed": true
+    },
+    "mask.perturbed_padding.mlx_invariance": {
+      "shape": [
+        2,
+        35,
+        8
+      ],
+      "max_abs_error": 0.0,
+      "rms_error": 0.0,
+      "max_tolerance_ratio": 0.0,
+      "atol": 3e-06,
+      "rtol": 3e-06,
+      "finite": true,
+      "passed": true
+    },
+    "mask.perturbed_padding.parity": {
+      "shape": [
+        2,
+        35,
+        8
+      ],
+      "max_abs_error": 3.933906555175781e-06,
+      "rms_error": 6.366533459324528e-07,
+      "max_tolerance_ratio": 0.06930768646500587,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "mask.appended_padding.torch_invariance": {
+      "shape": [
+        2,
+        35,
+        8
+      ],
+      "max_abs_error": 7.152557373046875e-07,
+      "rms_error": 1.5696734814226013e-07,
+      "max_tolerance_ratio": 0.1258466292656777,
+      "atol": 3e-06,
+      "rtol": 3e-06,
+      "finite": true,
+      "passed": true
+    },
+    "mask.appended_padding.mlx_invariance": {
+      "shape": [
+        2,
+        35,
+        8
+      ],
+      "max_abs_error": 5.662441253662109e-07,
+      "rms_error": 1.577631695643207e-07,
+      "max_tolerance_ratio": 0.16391936940805246,
+      "atol": 3e-06,
+      "rtol": 3e-06,
+      "finite": true,
+      "passed": true
+    },
+    "mask.appended_padding.parity": {
+      "shape": [
+        2,
+        35,
+        8
+      ],
+      "max_abs_error": 3.7848949432373047e-06,
+      "rms_error": 6.367694293140214e-07,
+      "max_tolerance_ratio": 0.06668239671151403,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "mask.active_perturbation.parity": {
+      "shape": [
+        2,
+        35,
+        8
+      ],
+      "max_abs_error": 3.4570693969726562e-06,
+      "rms_error": 6.573319143014694e-07,
+      "max_tolerance_ratio": 0.06040580683520658,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    },
+    "time.changed_target_t.parity": {
+      "shape": [
+        2,
+        35,
+        8
+      ],
+      "max_abs_error": 8.761882781982422e-06,
+      "rms_error": 1.2796197490522109e-06,
+      "max_tolerance_ratio": 0.1748134308861648,
+      "atol": 5e-05,
+      "rtol": 2e-05,
+      "finite": true,
+      "passed": true
+    }
+  },
+  "routing": {
+    "batch_time_fixture": [
+      0.3700000047683716,
+      0.8100000023841858,
+      0.0,
+      0.0
+    ],
+    "image_temporal_routes": [
+      "target t",
+      "source 0",
+      "mask 0"
+    ],
+    "text_temporal_route": "target t",
+    "final_norm_temporal_route": "target t"
+  },
+  "layer_coverage": {
+    "actual_layers": 60,
+    "every_image_and_text_block_output_compared": true,
+    "production_layer_count": 60,
+    "hidden_dim": 24,
+    "rationale": "Same complete 60-layer graph at reduced channels/head width; tests float32 semantics, not pretrained quality"
+  },
+  "negative_controls": {
+    "active_text_max_output_change": 0.21593838930130005,
+    "target_time_max_output_change": 0.7383336424827576,
+    "minimum_sensitive_change": 0.0001
+  },
+  "limits": [
+    "Random tiny weights; does not validate pretrained model or generation quality",
+    "Float32 CPU only; excludes fp16 clipping, quantization and Metal behavior",
+    "Production channel/head sizes and 2511 text encoder/VAE are not executed"
+  ],
+  "provenance": {
+    "runtime_git_revision": "99fb94dd3eaa9dd1931cd3cd8eae1ae3e20f2ef3",
+    "runtime_clean": true,
+    "official_source_sha256": "2f147aac59f7f62eb70668be3961fa367fbb815b8def25f58a2f4709f7f37e35",
+    "executed_source_hashes": {
+      "experiments/maskflow/port/maskflow_transformer.py": "374b32ea26ed0e8f46bf854d56412f19b1d425c802d9d845866cc9da2d302746",
+      "experiments/maskflow/research/2026-10-05/diffusers/transformer_qwenimage_v0.37.1.py": "2f147aac59f7f62eb70668be3961fa367fbb815b8def25f58a2f4709f7f37e35",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/__init__.py": "77cebf5eab53cc2abbbdea60d5345554a848b13d4e173be408db35a82b9345b1",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/callbacks/__init__.py": "fee7054cc298c7617c5e5c4987590bd5ac459b22795c1c5c9940b7881d78daad",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/callbacks/callback.py": "a622fb6555f479adceeff209c3ab38c8e0a7e41df83c5e78be0566a5bda62c2c",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/callbacks/callback_registry.py": "995155e3332aa7876f30bd41db57b4bbf470428ca3353e7fbce70dd3691883bf",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/callbacks/progress.py": "9b730a8d9a14369f12a0ffa9fdb3c957c0eadd5d405b9e58450bc9af3ca51876",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/cli/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/cli/defaults/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/cli/defaults/defaults.py": "0c9df66882fec1da7a794012058d1f46fd7f9095666403febd414b9cc12e04d6",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/cli/output_paths.py": "1456d68b283752abd5c419a373aa27d6634efedcc59e83057b8388250e6f1686",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/lora_validation_registry.py": "bc7e8804f230c2096edc92637c4fc0aa91a0131234a63cb0176b7597ec8f05e0",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/config/__init__.py": "e04d65bc70a5e61ec0906c9d9fa007b47204febd7eff92ac4f86cd1efb3abca9",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/config/config.py": "3e387599fda451451a38333e0cf1c05b6054f4e5dbd9ed317fca2b08696149d9",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/config/inference_defaults.py": "290eb04de5266d26d9c40077ab60ea14bf4b66d08715341a254ad74cdfdd345b",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/config/model_config.py": "2b86ee38ffa674dd57d41bf117fc65ab271a6004ee84db32674b0af25b1b568b",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/download_policy.py": "fafef0220e9cac787d7a3f7ca08cdf087b597e3a53e2f1988ce0f7dd7c69ccd2",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/latent_creator/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/latent_creator/latent_creator.py": "bf40f1b749480133db691f6da3ace30f3cb8b879ee25d689190727dd571575cc",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/lora/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/lora/layer/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/lora/layer/fused_linear_lora_layer.py": "0dcb28e9142ac2842dbc2d090faaa445a34cb37d95169b0d908329d75db0c0d9",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/lora/layer/linear_lora_layer.py": "2a67a9a03d72697493ff1109cbaddbce41dedd3bf2f2c1052b4051d2f6ef4b42",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/lora/lora_compatibility.py": "715ba2cddbf0a1ec2e643ff5a1db63cbb089c5b6e01932517848395f7b78b68f",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/lora/mapping/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/lora/mapping/lora_loader.py": "554dc77493a78b54f380533bddc73b45769c8db2e4c9e133f682be9e4f69c07c",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/lora/mapping/lora_mapping.py": "28dcb66cec1e393a0071a7b26a78fed7d9aa464bd043392f3681e44bb297ffe2",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/lora/mapping/lora_saver.py": "862404745719a3e75ad55e0a97076f045cb5fb8b82b5094594fdfd2e942a759d",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/resolution/__init__.py": "ca9f1897b3b306e5d7549f318dce86646884cf55b1c3fdcc7e49aa0ff4d2053f",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/resolution/actions.py": "a86612c70a9072b6ca4bc73b303c35472839f12e5f8bf49ad005e7ab04500c1c",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/resolution/config_resolution.py": "97af61af1298c3f2cf7b96310eb1421c8728b39bff5893742cb6ba79c8fe9b06",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/resolution/lora_resolution.py": "e9c5eadf36e323a7268f4c7ba1597ae6dcc4b0b76448a3f8e40791251415202c",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/resolution/path_resolution.py": "72db26ecf6a9b32b03ee22a5f4371f109feb2a50b3a81257f0d9e180518ab61e",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/resolution/quantization_resolution.py": "da11e15ba40bcdcea59f30b4a11dc865fdb76510cfe97ebd2e9f63eadc44b8bf",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/schedulers/__init__.py": "4ff3285094a6804735b15b06893d6229aafe07154f095afd30c1f8ae819a676b",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/schedulers/base_scheduler.py": "e7bae4df813277d2b26be28f91bf6e8eb14e7451a55be0fc86a1fd9c15b1def5",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/schedulers/flow_match_euler_discrete_scheduler.py": "df4b41c5091dde3e735bf87b829b6996e33639c236968a27615e12818254fccb",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/schedulers/linear_scheduler.py": "294ef867120ad30e9a96b46a541e6ed3b037c53075d2244acb164683d97569b5",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/schedulers/seedvr2_euler_scheduler.py": "80f2d559a399d4f33ab6a65976085c36f0ee73889b90384ed891619f403f2360",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/tokenizer/__init__.py": "7593e6c30c993864937a5d44b75501e8843dbaf761ad6b3f3bcc557940727173",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/tokenizer/tokenizer.py": "f5b89e98c1a44eaf380653391f12aa7f7bb9e47402d62e00f597f0b8c9fc56f7",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/tokenizer/tokenizer_loader.py": "f063a6a47e0cf876b14c96201f309df92e7b62c2bce73dec1b966fb7959fd6a9",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/tokenizer/tokenizer_output.py": "da5a3cd0eedb7f1456b287471c85e1655736bd8d95b0ded578b0152e695dd56f",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/vae/__init__.py": "ecc388ae11c72748e249a591d7d7f3641de79095ad5c3b03295f89a6adf7d343",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/vae/tiling_config.py": "d377ca59b285ee896b12c00a248c5cd26f578213d9467278eea612bc170d7df9",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/vae/vae_tiler.py": "8eafdb2e7a98a845a69a22e4045bb63b7a4097052562b003de18679dd4dd9f86",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/vae/vae_util.py": "9e030bef8032723475b4dd273cd70aaded1a61f11299f4742327b74af27168bf",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/weights/__init__.py": "45b404e6ac7f1945ede2859fe2afe275f990abbbd7ced39072a2bf148e0a172a",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/weights/loading/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/weights/loading/loaded_weights.py": "f3075cacbe3458f2e079ab52a560e69f82dd5da199dbd7224e41cab715ac781a",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/weights/loading/weight_applier.py": "0b63a589c0c2cf473695f4e31ca65c8bdf68a9971acdd38a8b3a8b0e0693529a",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/weights/loading/weight_definition.py": "97dfec42c33eb6ee4d648b949122c3de37e60d248d15dff22ce8a5a543e120b6",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/weights/loading/weight_loader.py": "255186d56aa16435eebd4f0b6122b233cde48127e795d41e0a914407b40f02e9",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/weights/loading/weight_prefetcher.py": "0155eea0f5d58ee668c93fc579b70e9e488cffb69578cb19999e10186cf59a66",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/weights/mapping/__init__.py": "5ac765e9ddfa12d2c46a88914e57e84b44a4f549c0c26b7ea092d668a49c7863",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/weights/mapping/weight_mapper.py": "ade6c47cabad0287930f2616de6f55ae585a0bb75fae7d0beccf8a4e345b00c3",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/weights/mapping/weight_mapping.py": "53164aec06ecd642f3c8b518d843a104cafd92ab29f2cc3f7a04174a1cb90cca",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/weights/mapping/weight_transforms.py": "616c1cb44e61e8e28571143b3aab54c8f09278333a344aa0946d13b819f7e292",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/weights/saving/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/weights/saving/model_card_saver.py": "972122838a4dd3bc0ccbf5cce90274229029643484b5b6a49357512bae7df3b4",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/common/weights/saving/model_saver.py": "37c8df0af2904435a1051eb7334850a21dd498c5cd0800194a31981eb9ffced8",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/flux/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/flux/latent_creator/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/flux/latent_creator/flux_latent_creator.py": "897505135f1d411b8af4967f0b8327ca5b91f8e2b1b9ec503e3fc2ce9f270d5c",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/flux/model/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/flux/model/flux_transformer/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/flux/model/flux_transformer/ada_layer_norm_continuous.py": "a37052050e72d1fd44bf5bada535adc8647cb88c168dfc309b54ca36548b3ebb",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/flux/model/flux_transformer/ada_layer_norm_zero.py": "1c0a1d25dccda1a95ee45cbbeaa620f4c58968b0ec653c975b4dc41b972414c0",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/flux/model/flux_transformer/common/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/flux/model/flux_transformer/common/attention_utils.py": "87ce6b54bf66579ac86932fc2775dbf0c3b69baa88d76e2e51b6a8f4bd382edf",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/flux/model/flux_transformer/feed_forward.py": "3508722659c3557a60d4bcf1e7e8b8ccb162efe957585c990340afcd00918f8c",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/flux/model/flux_transformer/joint_attention.py": "071de6c52360f5b892c968def8c46c932fd26545d896ebe5aec743cdc5f3001e",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/flux/model/flux_transformer/joint_transformer_block.py": "93ebfc2239159ad5cefcf07230f0f28c3e9927fe02453f865815cc609b66e564",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/flux/variants/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/flux/variants/concept_attention/__init__.py": "3d7b0e2d2c66f154706a9021acfa9e67a3039499ab34f1d8de00b380053265ac",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/flux/variants/concept_attention/attention_data.py": "95fd029a70586d5d078a3d2bff46cbfd3d3c81b2f71cc490fd780baefb9c226f",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/flux/variants/concept_attention/joint_attention_concept.py": "3395723f98e95bffb75823bcc9af9ffa17bc1f2ff3caaeb3272ba0323bdbd4f4",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/flux/variants/concept_attention/joint_transformer_block_concept.py": "a3e3cf927090596b7e09a4cf7d52566a9b673cfc6ea4034c89011488f7f536d8",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/__init__.py": "cd66f0e59667f8fe801c1ca134bb7891be49517c6b59492f4efab2b59a3f28ed",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/latent_creator/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/latent_creator/qwen_latent_creator.py": "3efe89ee478aac9ccaf020e143534304ac50a786ef6b7c165cbf6526423f1d2a",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/__init__.py": "032cb4bc23ec496f30647f53fdc37fe457dfd50b03ab1b9d593f4afb961ce7e7",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_attention.py": "8534f8b335dba63397cbe3e8c29f417fa05191ca337efa85de6c6578ea020676",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_encoder.py": "5c3e00284033740fc0e79585a4fc3de3f4ddb0e45d6e097f3ebaf3ddba504489",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_encoder_layer.py": "60947e579638174e4a1035749b3bc7c807c9d966ec73efe16e1f98e20daec612",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_mlp.py": "bb3503e76db7da59182ef221c7919a048fb15178278aa78677afe94852e045d8",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_patch_merger.py": "a820a75735ca404892a0c9b7fa768bd78918b620efca1e28988d4b364bd75440",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_prompt_encoder.py": "c94a5007b15d75502b912d66de5ec11aabd6d27aa13116a6ef9ef9da381d4f04",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_rms_norm.py": "f6d65d1d731ceb5b9efe4b3a3a99c4c2fcef57071dc762545a7384f4a7c0fd71",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_rope.py": "dd397f23e641b1d63fee3d181d3d960c846d1fa9b54d01cdad7057a88e03eee8",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_text_encoder.py": "cddca905670cf7c06e9faeafaa97a8fc89c766926c6faec7dd214b200ff58c1f",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_vision_attention.py": "06408f662ea57d73891a53557e0758c103c2fea3f0f47ec3ccb672458ef763b6",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_vision_block.py": "b2d62cf87f7a3b34315f1290de6b1ef172928b55f72e0dae5b13df9c3148e76f",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_vision_language_encoder.py": "9841ae256bff249788e7d0a772db88c9e31d52862df7fdc376ee22399b353275",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_vision_mlp.py": "4cd1ab3f206ef4da01444be26705c307fa8b756e81fcafd2703a4b121cec35f0",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_vision_patch_embed.py": "54cf99bfe31f649265dcf6c535048aef02543a615b0553a490c3ef55027b0e6d",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_vision_rotary_embedding.py": "7cfa9954f91dc43b1b0814c3d420140e720f9945b6adebf5ab08a3782f609180",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_vision_transformer.py": "6de9bbca39e87623a7a1291649481ba29abfffb543750b188f940b11b69ce608",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_attention.py": "2a35b18b8fb87defc0cc4eb6e90f0795a51618b01df0fac44e80b56d6222b416",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_feed_forward.py": "cd59f6ed765782331ad869211edbf08bb486bca22d9980957737a62b01862007",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_rope.py": "56730081812c4e42c569bcba78f814f72c9056f03b21eb370d4c3eb081075c0e",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_time_text_embed.py": "e9315673acee7e404fcd25ce91bdeda20c500b9b81954a3d3165f96366574cc8",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_timestep_embedding.py": "79c7d948e75bd50a65ceeecc5211150a9b35a83a57d7ad2aaa4d5766269281c2",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_timesteps.py": "0ed471355bc75655f4e146ecc91d3cac50600d16710951364aa5b6e5d848b91f",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_transformer.py": "b24651be5371c0f21f3e94217e00833e2825a51886f58b217d602ef05943e121",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_transformer_block.py": "d646cba36a4145b4401d94dc1a4b5a6c5dfe7428997d169ba7ac71f7db1e243d",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_transformer_controlnet.py": "3f26b08d1770e64a0e71e0cd04c98d927611e926d9d175579e11365cb9d80896",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_transformer/qwen_transformer_rms_norm.py": "8667fd1d273ee4390fecc70dd91a5ca9871bb5c9c2178ab79592ced4fb7b232a",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_attention_block_3d.py": "50d827ff8de20338b3869003b13bb74087c9872190a919a7beae54038df06ad5",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_causal_conv_3d.py": "f4b0f0ba185716f8e43b722d88d1a3cf5356b31e82e2810364b326b0df3f0bd4",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_decoder_3d.py": "7527d50a14ded51e5257f320cdf254652cd203df256e9d443c20fbd037e534b5",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_down_block_3d.py": "6328740e42788dc7c74942d9ef2757bc1fb5a808200f017574b13cc2b2dcba12",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_encoder_3d.py": "fe65cb9fd15985b7bcb52719a7551bbf3080f09cbad04587a69d641eeb9298f0",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_mid_block_3d.py": "d5b4cb3e70d358520067e34b121f837a754f373d01c13411cb4f3f3eb6577aeb",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_res_block_3d.py": "8655b7e5461cdb43acfa642d93381810befd35c616e50de61288706c7dfe69fc",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_resample_3d.py": "eac51814d434a368365e6089b04c31b0c9759ec88d19064c44105a53981281e5",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_rms_norm.py": "f213c2873888665d5e4452ed38b3f7db5c78149cfc6531c1b4c59ec3d0a6e24a",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_image_up_block_3d.py": "231c494a53760d48832981a17d38e0d0cd2b871931253a146a1bdc03db8e89d5",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_vae.py": "0d5151f0871907c7c625a196191f7896ddd5ed68c31c1c071aa44477b8a8e7e0",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/qwen_initializer.py": "f7fe1ccfba9990823704a9bc522b0d62c265332e0d9375d4097c4f69606ff4d3",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/tokenizer/__init__.py": "3f82441b9ab1d92f2d01926fe2b54b8ca1f568c7538b823166212394c42adc83",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/tokenizer/qwen_image_processor.py": "ecc6a36d83bd20b673bbecfd40bf495aa10225fa5dc87e193b69a7c00446c489",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/tokenizer/qwen_vision_language_processor.py": "5ad5d25305a0ea0bc8bae1a129434c419b7bbfc2f30407d86a2c4bd8559dc97c",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/tokenizer/qwen_vision_language_tokenizer.py": "c6a8c4324de99f9ed5a4a3d5ad75ce7f0b005fc5cc50a2e7f613eec6541b1693",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/variants/__init__.py": "073b274e5743adeb9d6e133a6cbe24e9be7e6392d823911382ae619dc6e69c47",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/variants/controlnet/qwen_controlnet_util.py": "bd823d405e1b1bd985fd5c5a9cef77eff7ab2b3377d90e88b931a54e4467519e",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/variants/controlnet/qwen_image_controlnet.py": "fb498d2d4604e3eff77fe2bfc446293deb1be65cfb8617b6b78d8d9689c44bb5",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/variants/edit/__init__.py": "6a4b32b8870e7867fdd32648cd66d0d14486cdefe4fb063e170ecf853a4ace96",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/variants/edit/qwen_edit_util.py": "2fb353eb20729bc0115ddaeb3c0a0a57238116d0ca7028072c110f12f6d18631",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/variants/edit/qwen_image_edit.py": "675fc57ba36f269cfd69ffe34cae51d781ea7863345f610db3441ba86047852d",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/variants/txt2img/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/variants/txt2img/qwen_image.py": "4a0d39328dff57eeacaa4f5e00d0acd4d2f27fb62b6eed894aa5ab9991a15713",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/weights/__init__.py": "a966a916e16b357059f55ef0a9e503564159beb07cd4d3a2eb9c1aaa45fd37ab",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/weights/qwen_controlnet_weight_definition.py": "f7c5ba50945c7ae2c647bfbf227bde4ddfcf151718fae80e278d6bc8d4af656e",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/weights/qwen_lora_mapping.py": "32c8d0f30afa29e35d5611a688f2c1888a8e0c3443c5926995d6d4ded4ef0f42",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/weights/qwen_weight_definition.py": "0d8831a091b40bba86398ac477fb1a534a96d19d65930e4d3cc0198b56a47783",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/weights/qwen_weight_mapping.py": "392ca77b73d358864365e5405cf2d4bb2d08382ebf92c5ecdc4dc54ca134e62c",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/python_runtime.py": "75cc21e48fadc5e24f9f7d348b4a90347df9168421134e85ac776e3662503654",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/release/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/release/validation_registry.py": "66670e835ed4cffdb28f8d1bfad62583933f3897b846a5d8b1271a2e0ef554f6",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/task_inference.py": "6b442aa928679cb9db17a6575a9a16c0a205a030740bef2dd5eef6d5ca944dbe",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/utils/box_values.py": "57882dbcc04b4e6691dc3463593d328078296fc1f01b57ae3907376d34e63b70",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/utils/dimension_resolver.py": "cbb3adc6a653ef9d7865a28f9a279a0c61108cd48b38fcdc11557c5553100310",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/utils/exceptions.py": "b218f9c85b01ec1aa36ea447cedb640da9920a745d3f678ec5f95492011b89a2",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/utils/generated_image.py": "ee0ab18dcf82c65af15f7dfba8088035562c152540329eb5c938abad1fc7db9f",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/utils/image_util.py": "cbaad89993d768dd9bfcbf8d5ddd508fc3e98e5f08e9d6c015bb6deb1cea143b",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/utils/mask_util.py": "a12604f6b2fc9097d3086929a4db518257470a396a4ec3050acafd6295ecc18c",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/utils/metadata_builder.py": "54cb823a6c38be0025223790b03c73ea13ace93d62fa807df950bf7a9f9c5e6c",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/utils/metadata_schema.py": "a7e1fcff3b37fdd004fbffedfbb9e910af499e2f8b7905e3e8c8232f0618a8f9",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/utils/runtime_memory.py": "ef44116c30d88339c8bb37b69d0c71f5226bb629f231ea4a54b1d07e73db433c",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/utils/runtime_timer.py": "d97449408cf3efc745e1a2754e4c3f946c9fa70242ae17b2dead56c5641e33ab",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/utils/scale_factor.py": "3ac2a91f79090311c6eab99018e73dfeffacadf7c512d29b040618101eee7848",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/utils/tensor_health.py": "74d73b0b91aebaa809f6ccca35fcb00bead08d7813b9b308006ebedffbcc3ce6",
+      "experiments/maskflow/runtime/mlx-gen/src/mflux/utils/version_util.py": "0841bc765d3b3d9ec6e2fe3d3fc447a1171dc3e5238459b45870447592f6929c"
+    },
+    "diffusers_support_sources": {
+      "diffusers.configuration_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/configuration_utils.py",
+        "sha256": "4a7af9be48913edfa77f3d32c375c997fa15b53c3f04efd5c371b36c5c6c1960"
+      },
+      "diffusers.dependency_versions_check": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/dependency_versions_check.py",
+        "sha256": "3dc4ff75e5aebc82ab3648e40a740a8b465358297beed1c2d36961b6d6ea4073"
+      },
+      "diffusers.dependency_versions_table": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/dependency_versions_table.py",
+        "sha256": "cdfbba92b678b3c784e34e855ae36ae636589449efdb3a4f249409a1844229c9"
+      },
+      "diffusers.hooks": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/hooks/__init__.py",
+        "sha256": "c89d40fdbb9375903301f6d10d027de095c84ab909d26ae646cc5e9a61b4b7a4"
+      },
+      "diffusers.hooks._common": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/hooks/_common.py",
+        "sha256": "aef3faf2d54912591a9aaa701f6fd948ca47494d1c9cc99e44543e39980524c0"
+      },
+      "diffusers.hooks._helpers": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/hooks/_helpers.py",
+        "sha256": "959d2da65e1d938467f16dac1129fb9d0b30cf99ae9ff4d78970bb9b4e81fbfd"
+      },
+      "diffusers.hooks.context_parallel": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/hooks/context_parallel.py",
+        "sha256": "4c7b7844aab49de586764d589ec7add890f4eb8b090ae197fd44aaa2c66ffeec"
+      },
+      "diffusers.hooks.faster_cache": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/hooks/faster_cache.py",
+        "sha256": "35162ce45eb5cff76d2e3fc42ff0a6de25f8db213ab6f12663f8740a47837f3c"
+      },
+      "diffusers.hooks.first_block_cache": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/hooks/first_block_cache.py",
+        "sha256": "9839891a1e1a2402360edf1241decece1dfdb00026e0798bf3364e12cd528e35"
+      },
+      "diffusers.hooks.group_offloading": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/hooks/group_offloading.py",
+        "sha256": "9beaa9a09380eafc16f609ddface59cd1ae27fae507c36d837a469a69281b09f"
+      },
+      "diffusers.hooks.hooks": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/hooks/hooks.py",
+        "sha256": "28c96d51cb119090ffe7755f4caccd4071dadc4b7bd9fff306b2f9671df58f63"
+      },
+      "diffusers.hooks.layer_skip": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/hooks/layer_skip.py",
+        "sha256": "0ed2bccfe63e6b5b2f6eb174a6319ad428eb5a986c985d0bcc32861bf5548a82"
+      },
+      "diffusers.hooks.layerwise_casting": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/hooks/layerwise_casting.py",
+        "sha256": "22c39c2fab49454b0a22f97f7e33f2515f6a1a8a47bc21db2984f82f6ca730f6"
+      },
+      "diffusers.hooks.mag_cache": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/hooks/mag_cache.py",
+        "sha256": "46f7020607913beb3edddc7b1fdba5224091546f4bf2c2b420f43b9c257225c4"
+      },
+      "diffusers.hooks.pyramid_attention_broadcast": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/hooks/pyramid_attention_broadcast.py",
+        "sha256": "54c9732ff6cb06070f3d327a5d3d53b16575d5d062b9665d55b75b123df4793f"
+      },
+      "diffusers.hooks.smoothed_energy_guidance_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/hooks/smoothed_energy_guidance_utils.py",
+        "sha256": "a6ebea263b5eddb3cbde2b3f9a26150f46121e97c9cb9237d7ebb7644685ddf3"
+      },
+      "diffusers.hooks.taylorseer_cache": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/hooks/taylorseer_cache.py",
+        "sha256": "7014eed6db7651d82fe9d8f85d5781651b8d1fda439d96316612ce92d51c0e74"
+      },
+      "diffusers.image_processor": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/image_processor.py",
+        "sha256": "c69c94207341f339b08f4771e071ee052a2fc923b2fd4b0c8aabbf75fa59691f"
+      },
+      "diffusers.loaders": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/loaders/__init__.py",
+        "sha256": "b2c98ed0b70ea5758fb8c3dfd8a9c57ea970c52cb8d72d8da9e50bc0647cc907"
+      },
+      "diffusers.loaders.lora_base": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/loaders/lora_base.py",
+        "sha256": "6c3b254c3beda28bf282553ae807bd60c08db405f887b5b3b880dc76b09d0c24"
+      },
+      "diffusers.loaders.lora_conversion_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/loaders/lora_conversion_utils.py",
+        "sha256": "c22cc9b03548507b9e832d5ac91a11e1a276d66b00e2f1235180f17c704cd6cd"
+      },
+      "diffusers.loaders.lora_pipeline": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/loaders/lora_pipeline.py",
+        "sha256": "db5da705d363fd66457ddfa237829bbb1470e7cfd7a59ae1269b90ccad60bea4"
+      },
+      "diffusers.loaders.peft": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/loaders/peft.py",
+        "sha256": "4e2d56eca6d5ffe63a9958eca24c0ba9b7815ad98974b6c1c6ffc1fb2b7e1b85"
+      },
+      "diffusers.loaders.single_file_model": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/loaders/single_file_model.py",
+        "sha256": "2a62d6786e9be75cc0afae5fcf64bb336632db5182543c0af0e6bc6c8c865756"
+      },
+      "diffusers.loaders.single_file_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/loaders/single_file_utils.py",
+        "sha256": "37decb1eb76fa13c7b2eb68d9bf8ac966c5d2ddc85c6786d3252705f4c769572"
+      },
+      "diffusers.loaders.transformer_flux": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/loaders/transformer_flux.py",
+        "sha256": "5da931cd2df39d0873a7e97e3e33ad990f8308ac3a70494c5ef31175e7511007"
+      },
+      "diffusers.loaders.transformer_sd3": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/loaders/transformer_sd3.py",
+        "sha256": "531d9c75852935af947aea32ba54c6eb72768e3ee688c44db25b403fb04552ff"
+      },
+      "diffusers.loaders.unet": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/loaders/unet.py",
+        "sha256": "f7300cb8338b2f84b770b8577ac10cc6d9bd1f9aa77c038d83961337fccb7e7b"
+      },
+      "diffusers.loaders.unet_loader_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/loaders/unet_loader_utils.py",
+        "sha256": "548943fe5ff988975c2809ac113e0456fb0beaa2d1c81a3a50d432d2e43750a1"
+      },
+      "diffusers.loaders.utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/loaders/utils.py",
+        "sha256": "13aedbf1df52f0ae74db432e0d331c6f208aad4fbff4b8fe7c8865ee26d03ff2"
+      },
+      "diffusers.models": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/__init__.py",
+        "sha256": "3a7e1c7b025262c55d5e86b998776ab923b61feecdd4802bfe16ca1caafe46fa"
+      },
+      "diffusers.models._modeling_parallel": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/_modeling_parallel.py",
+        "sha256": "30feb1c10225f2506bb40dc94c18a8b03d9667f8ce856b1ef835dc04c72b4dee"
+      },
+      "diffusers.models.activations": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/activations.py",
+        "sha256": "ab1767e8e44e7d4bf1cb18299ba33654329e2711fa983b1423fc4fe12de2c3ab"
+      },
+      "diffusers.models.attention": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/attention.py",
+        "sha256": "0192998d3979533cdbc8eef9c8f783d0b4a4a547dec9e4388a17c9ae3b1c8ea8"
+      },
+      "diffusers.models.attention_dispatch": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/attention_dispatch.py",
+        "sha256": "3b1eff82f86071dee40714fdce50cae426ff8ef0a53cc6dba49a156e925d165a"
+      },
+      "diffusers.models.attention_processor": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/attention_processor.py",
+        "sha256": "906172d0304c0ba5dcb09ccadae1365449a83d082040eb597a8f26ab45d972a8"
+      },
+      "diffusers.models.cache_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/cache_utils.py",
+        "sha256": "99389deac865266e285e233039bcdc89549af2398e6f0daec1ffc59c4f3ebaa3"
+      },
+      "diffusers.models.downsampling": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/downsampling.py",
+        "sha256": "2852f787a39f6f679578b9992c37b114c4b76cb9449b473267490429c22c396c"
+      },
+      "diffusers.models.embeddings": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/embeddings.py",
+        "sha256": "d7a90ef799569e3f0fab41cadde1ecba023abd053af956c022bbfc097662a302"
+      },
+      "diffusers.models.model_loading_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/model_loading_utils.py",
+        "sha256": "0b2f50ef964598c4d6a7fb6e5cfbc20cdd51661a44fdd8614204f6b9b1882cdd"
+      },
+      "diffusers.models.modeling_outputs": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/modeling_outputs.py",
+        "sha256": "5c7dec24edf83115ba52e5aaa8aa34e6656ac464811516b3a5aa7ff982f03b62"
+      },
+      "diffusers.models.modeling_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/modeling_utils.py",
+        "sha256": "efa49a2151c168c9d549aa6ec72760dbc1627b226d39d6ea595899d6c86910f5"
+      },
+      "diffusers.models.normalization": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/normalization.py",
+        "sha256": "e92ebbb130082578f3cff3361891a1adaa32331347e7bb09e4c70b208a0a6059"
+      },
+      "diffusers.models.resnet": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/resnet.py",
+        "sha256": "b601e45d78a640e66b05822d3d008e40a039b92bb126abd1a9bdef6124666d84"
+      },
+      "diffusers.models.transformers": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/__init__.py",
+        "sha256": "64363766ce347b6158d21407485328c115cc88a4d5e47180a044e644430fa6cc"
+      },
+      "diffusers.models.transformers.auraflow_transformer_2d": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/auraflow_transformer_2d.py",
+        "sha256": "6e33bc89023c8aa5f01e1bca3e4dbd28b084f38cb8eb31b315af82279a03c37b"
+      },
+      "diffusers.models.transformers.cogvideox_transformer_3d": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/cogvideox_transformer_3d.py",
+        "sha256": "ff2b135e17543c7830a85d3d9b618f54060e1ee2522876b9e18f5025aa1977af"
+      },
+      "diffusers.models.transformers.consisid_transformer_3d": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/consisid_transformer_3d.py",
+        "sha256": "790cb6afccde34711aa739d1f18c07faf3819ce52a68a04b3dfc6e838e8936fe"
+      },
+      "diffusers.models.transformers.dit_transformer_2d": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/dit_transformer_2d.py",
+        "sha256": "c6f0ff8344c31600e1d3c07e821f7b51c6efd380c125eb2de3f5ec8cde19d741"
+      },
+      "diffusers.models.transformers.dual_transformer_2d": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/dual_transformer_2d.py",
+        "sha256": "c3080adedd53766065df0c22f7d280734efcf3658bdce3111c8a91055cd860ce"
+      },
+      "diffusers.models.transformers.hunyuan_transformer_2d": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/hunyuan_transformer_2d.py",
+        "sha256": "fde09d980273c752f8e992285f09a85859a69837c33d8df1349415ed039236bd"
+      },
+      "diffusers.models.transformers.latte_transformer_3d": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/latte_transformer_3d.py",
+        "sha256": "b8d7b118639b29b46445d1669d65b0a8b5785b20bbf45a316c402343c5589a8b"
+      },
+      "diffusers.models.transformers.lumina_nextdit2d": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/lumina_nextdit2d.py",
+        "sha256": "0fb0544b20d083f07e18cec144c1ae7fa682b40aacd3db3e217343eeaedd21c5"
+      },
+      "diffusers.models.transformers.pixart_transformer_2d": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/pixart_transformer_2d.py",
+        "sha256": "06c6e6ffbdd4767ae0dd94c6171f7626aa4befb5fb05f058dfee0f7d9906cfe1"
+      },
+      "diffusers.models.transformers.prior_transformer": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/prior_transformer.py",
+        "sha256": "4c95575555afa74feaae9093e5da17266ba124c550c8d71497e732114a0cb528"
+      },
+      "diffusers.models.transformers.sana_transformer": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/sana_transformer.py",
+        "sha256": "4cdcf5eadc79cc6b1f43c4e3ec3f89d0786cf2bc4a0f9f18ae0511b70ee3a2c3"
+      },
+      "diffusers.models.transformers.stable_audio_transformer": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/stable_audio_transformer.py",
+        "sha256": "4598f20262d7c413a2161f9209f606f0f8bec7e6542b364de3d3bc69f0b5d191"
+      },
+      "diffusers.models.transformers.t5_film_transformer": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/t5_film_transformer.py",
+        "sha256": "f5e0a915109d6977a1de1604ccfabecb80208f3c6c9a806075a3ce0e805c1443"
+      },
+      "diffusers.models.transformers.transformer_2d": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_2d.py",
+        "sha256": "74282409d3da265bb999a5cf52746b3dcb3dd955b740fed48aa200e1da142c36"
+      },
+      "diffusers.models.transformers.transformer_allegro": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_allegro.py",
+        "sha256": "6c8bb0a93915c954e28c5c5ae959d2c343d3f1d865f22141763d56fa757305d4"
+      },
+      "diffusers.models.transformers.transformer_bria": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_bria.py",
+        "sha256": "b32116c20d343117d7c5c17e4a228c61cb7c487dfa233dc52a891a9a44616d58"
+      },
+      "diffusers.models.transformers.transformer_bria_fibo": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_bria_fibo.py",
+        "sha256": "14f3e65a6a7e259a5d977561cfd3c28c3e3f6be4f77c680b16bca8adec3acc0d"
+      },
+      "diffusers.models.transformers.transformer_chroma": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_chroma.py",
+        "sha256": "939f313eef40ed367c405432004a1570b33209f01fc9dffbec6b2fcb53021398"
+      },
+      "diffusers.models.transformers.transformer_chronoedit": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_chronoedit.py",
+        "sha256": "b5bac5316a8c81756e7623588fb665ef0104a5848af7babf032c09cf6b6661a6"
+      },
+      "diffusers.models.transformers.transformer_cogview3plus": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_cogview3plus.py",
+        "sha256": "6e9e97d8394e3ecc069912f984100d96d09aacf5356ac9247d39dbc219656369"
+      },
+      "diffusers.models.transformers.transformer_cogview4": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_cogview4.py",
+        "sha256": "3ff1e20d444ffbf9ed354c0f693b40940987a17f3941c3ed4a8696b6897a73e6"
+      },
+      "diffusers.models.transformers.transformer_cosmos": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_cosmos.py",
+        "sha256": "a998d673b81b72445c42cafdf13b98331585860fa066e6471eac6c6df3f4e859"
+      },
+      "diffusers.models.transformers.transformer_easyanimate": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_easyanimate.py",
+        "sha256": "e260f36498fe4e2416e68caeb1d82c9af807d72b448a03a50b21e9b458efcc7e"
+      },
+      "diffusers.models.transformers.transformer_flux": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_flux.py",
+        "sha256": "c537d690c63219979d2ad686a480f3553d7212e915c8c550b93a9f3b3efcbe83"
+      },
+      "diffusers.models.transformers.transformer_flux2": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_flux2.py",
+        "sha256": "0107b8d4c127d8753e2c1b9ebf3b275c88d042a796c483d5c7965924c16a9eef"
+      },
+      "diffusers.models.transformers.transformer_glm_image": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_glm_image.py",
+        "sha256": "f6dde13015174ab1358efe0843423c6cb2f8261fb9c21765b34674523e2cf74f"
+      },
+      "diffusers.models.transformers.transformer_helios": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_helios.py",
+        "sha256": "0ef81e7ba54e73857544e88702223e32119588a0f118c5a88cbc4b8287902adc"
+      },
+      "diffusers.models.transformers.transformer_hidream_image": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_hidream_image.py",
+        "sha256": "6c720bd49c6387a26f5825ce859e0bb208834506e9e0125c3952314b9a493b46"
+      },
+      "diffusers.models.transformers.transformer_hunyuan_video": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_hunyuan_video.py",
+        "sha256": "559f662191a33e27b13ad05348cee9378115ab50531f7cd53fa1c2c1668a1c4f"
+      },
+      "diffusers.models.transformers.transformer_hunyuan_video15": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_hunyuan_video15.py",
+        "sha256": "90fb9ab9c181bf4d3d892128f573fcecc116719c4b6c017ad046848f890d4d42"
+      },
+      "diffusers.models.transformers.transformer_hunyuan_video_framepack": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_hunyuan_video_framepack.py",
+        "sha256": "90e253f0306a339b1f1ee6fd0df6430b10c2efbe6493e42173fd2ad57c6460c5"
+      },
+      "diffusers.models.transformers.transformer_hunyuanimage": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_hunyuanimage.py",
+        "sha256": "c841a87e46d0408312f489a022fdaad849a102fbc6f952c7a62ddb15152bbe33"
+      },
+      "diffusers.models.transformers.transformer_kandinsky": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_kandinsky.py",
+        "sha256": "51edf1fab0bf9ea45f22c189e3fbc6d57e500e74f7953190f52bfb5ef782cef9"
+      },
+      "diffusers.models.transformers.transformer_longcat_image": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_longcat_image.py",
+        "sha256": "d7464238aec8279e6e0fee277e4a6991016e11c5a31883b857da7ace706595ee"
+      },
+      "diffusers.models.transformers.transformer_ltx": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_ltx.py",
+        "sha256": "a3cddf30002e2a60fd1f6497b75f1d9d991058c613f276c8c92c80be2733530e"
+      },
+      "diffusers.models.transformers.transformer_ltx2": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_ltx2.py",
+        "sha256": "c593f407adb650b404f5da685be4deb61aefe11e51e77c0ebf640b8621476470"
+      },
+      "diffusers.models.transformers.transformer_lumina2": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_lumina2.py",
+        "sha256": "82fe3f66544818da10544b5e906e6acb447ced68eb420012dbbeab636f106f7f"
+      },
+      "diffusers.models.transformers.transformer_mochi": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_mochi.py",
+        "sha256": "99bd49d853e67d9cba6319d19733d211f64838e84e144c362246422657b6415e"
+      },
+      "diffusers.models.transformers.transformer_omnigen": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_omnigen.py",
+        "sha256": "bb51b6a3304de4557f67ee12c3821d664bf5bb52c851df9ae0a89301aa47bd6a"
+      },
+      "diffusers.models.transformers.transformer_ovis_image": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_ovis_image.py",
+        "sha256": "456d8a03fc10d72354c6f2ce2e423c795102e721d2544455bbff2f4a38f104a1"
+      },
+      "diffusers.models.transformers.transformer_prx": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_prx.py",
+        "sha256": "9ea6e302aedca8af2d8c7e85e4c2a7dae4adc1b460fac63c59a796c24d70378f"
+      },
+      "diffusers.models.transformers.transformer_qwenimage": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_qwenimage.py",
+        "sha256": "2f147aac59f7f62eb70668be3961fa367fbb815b8def25f58a2f4709f7f37e35"
+      },
+      "diffusers.models.transformers.transformer_sana_video": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_sana_video.py",
+        "sha256": "f13222c1a3250f775709943decaa05ad8d65fb5c2615145e5e4562b98a8893e3"
+      },
+      "diffusers.models.transformers.transformer_sd3": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_sd3.py",
+        "sha256": "daf7c20b3a2455c1cfe81728ee05569cdc72a058e75b3c51fd4d85e1c9d100b0"
+      },
+      "diffusers.models.transformers.transformer_skyreels_v2": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_skyreels_v2.py",
+        "sha256": "e4fac8d9fd04b09eb6ce67db6ba5fa31f7a641419333b169ea92d16e369ed382"
+      },
+      "diffusers.models.transformers.transformer_temporal": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_temporal.py",
+        "sha256": "6c365e4929598ed27e3025539f968ba703a2d572d4a3a438337b977913a76024"
+      },
+      "diffusers.models.transformers.transformer_wan": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_wan.py",
+        "sha256": "2540d7704e5bbd2f65002f32a26caf2a5215741075f3ba98c6527e58b1608c15"
+      },
+      "diffusers.models.transformers.transformer_wan_animate": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_wan_animate.py",
+        "sha256": "d434e01cef7304f70b13f365b8a50bb763e6f33ce0130314699d17a2af84b972"
+      },
+      "diffusers.models.transformers.transformer_wan_vace": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_wan_vace.py",
+        "sha256": "cc9bcf4f92c8d9c7ec434c5e534424e965744f1f630f305a5a9e54005e7ad032"
+      },
+      "diffusers.models.transformers.transformer_z_image": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/transformers/transformer_z_image.py",
+        "sha256": "d51a484963fcd035c199f6500d53cc5ce10a4207646182083abf54bd35282008"
+      },
+      "diffusers.models.upsampling": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/models/upsampling.py",
+        "sha256": "55173237780f25219fe14498d5ddb1c82a85fb56dd6200133f02b85bdf05ecee"
+      },
+      "diffusers.quantizers": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/quantizers/__init__.py",
+        "sha256": "5913e0aff760b9a7695b0a204c015b752160afa111f83c07b6ab9954f00e3616"
+      },
+      "diffusers.quantizers.auto": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/quantizers/auto.py",
+        "sha256": "4d68dbc8919a96069afaa623c2d17c3e59183e664567d82c1b93066caf6c966f"
+      },
+      "diffusers.quantizers.base": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/quantizers/base.py",
+        "sha256": "97ee5f055183222ed1de0c14a542cbdcae1c1bb24b5a478f7a6c0bebf1c14fff"
+      },
+      "diffusers.quantizers.bitsandbytes": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/quantizers/bitsandbytes/__init__.py",
+        "sha256": "20b08ce99a299f3ae133f7d6d6887827f60236c684400a6d7284ee49581769bf"
+      },
+      "diffusers.quantizers.bitsandbytes.bnb_quantizer": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/quantizers/bitsandbytes/bnb_quantizer.py",
+        "sha256": "7ca23c82d6a7f880b2bc0afda1d3f4f4be61e3f2087e8daf19308f37ff42c1b7"
+      },
+      "diffusers.quantizers.bitsandbytes.utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/quantizers/bitsandbytes/utils.py",
+        "sha256": "98afc099e496113ba056cc96d417a315af37714724c3e080ef6217c2798c57f5"
+      },
+      "diffusers.quantizers.gguf": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/quantizers/gguf/__init__.py",
+        "sha256": "d9bc6f7d96c5af8c6a9bde7771968624c8120918862405b06f02b135140812ce"
+      },
+      "diffusers.quantizers.gguf.gguf_quantizer": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/quantizers/gguf/gguf_quantizer.py",
+        "sha256": "b36df9f5dc88932cddbd94086a0e1cb76b601da0c79b9c01ae05baf3f57e0b43"
+      },
+      "diffusers.quantizers.modelopt": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/quantizers/modelopt/__init__.py",
+        "sha256": "b091a0a24c21611726b4b655e234a939eee1048b2093fd0bf998c458e1e2a696"
+      },
+      "diffusers.quantizers.modelopt.modelopt_quantizer": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/quantizers/modelopt/modelopt_quantizer.py",
+        "sha256": "5fa146ae74ae1a08a163c22062057f772fc4e1ade06fac6b382b4eb0affa2683"
+      },
+      "diffusers.quantizers.pipe_quant_config": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/quantizers/pipe_quant_config.py",
+        "sha256": "1edf1faf79b7616275a8ec345c4225463cc3050c82b1cb6c3302c95bec7309aa"
+      },
+      "diffusers.quantizers.quantization_config": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/quantizers/quantization_config.py",
+        "sha256": "7a05cfce2005010f888b6364e051ee52b7bc1cf4c61ca7a6067b796be3611f8a"
+      },
+      "diffusers.quantizers.quanto": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/quantizers/quanto/__init__.py",
+        "sha256": "ca74bb8ff5531be42d8a66f2c4701a8a15268ba795a840f10397672868de4b93"
+      },
+      "diffusers.quantizers.quanto.quanto_quantizer": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/quantizers/quanto/quanto_quantizer.py",
+        "sha256": "d70266b0378cae10554cf3bee3ca09fb7b66275b1eb0980f3e0661d646cbb669"
+      },
+      "diffusers.quantizers.torchao": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/quantizers/torchao/__init__.py",
+        "sha256": "b498a656948642ccf7a30a37cb38764ae0a0ecd41f88c9eb1e4007c981e49860"
+      },
+      "diffusers.quantizers.torchao.torchao_quantizer": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/quantizers/torchao/torchao_quantizer.py",
+        "sha256": "d8d68d921ac1f00b36d659dda105e7cb54b791cb8c774c089c18a32eb02ff06e"
+      },
+      "diffusers.schedulers": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/schedulers/__init__.py",
+        "sha256": "18105c3ce51782f3238a3a68967ec5affcbbfc652ed9dbc74d7acbe3f9dfcfce"
+      },
+      "diffusers.schedulers.scheduling_ddim": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/schedulers/scheduling_ddim.py",
+        "sha256": "a61e4d99402d1186d2aec1bec8b0f336108b06d72c07e7eb2eb837a44a9b196c"
+      },
+      "diffusers.schedulers.scheduling_dpmsolver_multistep": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/schedulers/scheduling_dpmsolver_multistep.py",
+        "sha256": "f07cfc4ac22058de8d1984a00219bc45f08e5981f670889a2117586fdcf6ca7d"
+      },
+      "diffusers.schedulers.scheduling_edm_dpmsolver_multistep": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/schedulers/scheduling_edm_dpmsolver_multistep.py",
+        "sha256": "b977f5fc444bbb651b1cec60f3e5f068bec16b555d3464ea186ae2813ecca5cf"
+      },
+      "diffusers.schedulers.scheduling_euler_ancestral_discrete": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/schedulers/scheduling_euler_ancestral_discrete.py",
+        "sha256": "9ac11e9c2851863668e35dc685db89bca406958c9f8eb95a4f04e99896ab78b1"
+      },
+      "diffusers.schedulers.scheduling_euler_discrete": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/schedulers/scheduling_euler_discrete.py",
+        "sha256": "6fc0cea9236ec1656ea025a6b0097f4aed2f2fc9491d968f8c2c77672d8d00fb"
+      },
+      "diffusers.schedulers.scheduling_heun_discrete": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/schedulers/scheduling_heun_discrete.py",
+        "sha256": "a995e69684575c3c7417a452305962cee401984ac15b97337dbbb56739b6731e"
+      },
+      "diffusers.schedulers.scheduling_pndm": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/schedulers/scheduling_pndm.py",
+        "sha256": "bd08f2e9ce309078b441f57a73d932041f9590b74d53c26bc5104b7316c9f8aa"
+      },
+      "diffusers.schedulers.scheduling_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/schedulers/scheduling_utils.py",
+        "sha256": "42e73ce54889767b27a12c558d1397ad0557e84f6ceaae6defd6cf2b36ebedb0"
+      },
+      "diffusers.utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/__init__.py",
+        "sha256": "25e03746afaa98c17135594993b37e84a6462748d3e210cd055e17f8b1172b58"
+      },
+      "diffusers.utils.constants": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/constants.py",
+        "sha256": "24194c628c2ab13957a94a99a84d5d26e3b1229961bc658cc0be0d00d826d978"
+      },
+      "diffusers.utils.deprecation_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/deprecation_utils.py",
+        "sha256": "620ccd4d637d66dcb3a41570bdaeeeccd8c9f4b4c9a6be775d3f77a5ea71522c"
+      },
+      "diffusers.utils.distributed_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/distributed_utils.py",
+        "sha256": "e77fab001a4866832b08530544349ee42f3b8ddcd37e43beca6dbc194c584779"
+      },
+      "diffusers.utils.doc_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/doc_utils.py",
+        "sha256": "df1f94849ae6ede35c26240062761e7e81fb43e576a8f99cd384f36c4af6e7ea"
+      },
+      "diffusers.utils.dummy_flax_and_transformers_objects": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/dummy_flax_and_transformers_objects.py",
+        "sha256": "5f28aa9e369c45bf3ab12f45fd5c27881acb2c499f7f672024cd97e13fd1020e"
+      },
+      "diffusers.utils.dummy_flax_objects": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/dummy_flax_objects.py",
+        "sha256": "108c8eee360f1f8ca3b81231cac656134ae46b7a8f2c49754e6301b794b05cd0"
+      },
+      "diffusers.utils.dummy_note_seq_objects": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/dummy_note_seq_objects.py",
+        "sha256": "0df7d7e34983cd64cc0b26212ae76021e061b6a4d2a624a4573700311b9ef1d6"
+      },
+      "diffusers.utils.dummy_onnx_objects": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/dummy_onnx_objects.py",
+        "sha256": "e19eb59b73fd354c1b79bb0ae7cc002aceb2df621de946a2491c9e1d7a3779c0"
+      },
+      "diffusers.utils.dummy_torch_and_librosa_objects": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/dummy_torch_and_librosa_objects.py",
+        "sha256": "2547ea5369f7b52287c966e3497ae9756fe3afe61b33102f0212e53dadbf471b"
+      },
+      "diffusers.utils.dummy_torch_and_scipy_objects": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/dummy_torch_and_scipy_objects.py",
+        "sha256": "cce2dd9aa6ed99ae676a491d620a04ac8495dbcc9aced9812c8df0ac2d99fdb5"
+      },
+      "diffusers.utils.dummy_torch_and_torchsde_objects": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/dummy_torch_and_torchsde_objects.py",
+        "sha256": "109884c5f5ef6bcb67449127f9568291c208df55a73ebd87a9d4e1dcf050fa39"
+      },
+      "diffusers.utils.dummy_torch_and_transformers_and_onnx_objects": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/dummy_torch_and_transformers_and_onnx_objects.py",
+        "sha256": "4a22a78bb619fa9999aeeac7537fa585b0c628e182095c522b71896eb011aa05"
+      },
+      "diffusers.utils.dummy_transformers_and_torch_and_note_seq_objects": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/dummy_transformers_and_torch_and_note_seq_objects.py",
+        "sha256": "cfe26b3e03e8d9d5aff9bb8ccad52a05de90a84c7c5216ba33570a6ba811e037"
+      },
+      "diffusers.utils.dynamic_modules_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/dynamic_modules_utils.py",
+        "sha256": "d7c8e125a39b15ec6e04fd185ec7aeeac5909ac4cb3973b49820310ce9ba241a"
+      },
+      "diffusers.utils.export_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/export_utils.py",
+        "sha256": "889e51f99e2f6f8dbd44902ed58c4b9f4589d8f73a27b6eac1ff21aaf278a567"
+      },
+      "diffusers.utils.hub_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/hub_utils.py",
+        "sha256": "051c6a2cb2d92ef614c10e90557a41c861c3f31d19a68f6527d72f8bab670bcd"
+      },
+      "diffusers.utils.import_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/import_utils.py",
+        "sha256": "ec9d3a5598787bb1b93926aaf865b2d254a08b2d0bf12d71b32b05b88ac89de1"
+      },
+      "diffusers.utils.loading_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/loading_utils.py",
+        "sha256": "9f803527eb617833ca2b7509afac278a25288d1aca986cfe3ad25e0c46675b23"
+      },
+      "diffusers.utils.logging": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/logging.py",
+        "sha256": "ec2bd89b1357d00076019fe47908b70d4449a65f27fd9ad529aa388b86da60a2"
+      },
+      "diffusers.utils.outputs": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/outputs.py",
+        "sha256": "7660b43a487f4d42c3f9c4b890347fc033b0d66a25179f1b2ef123a76ff42f6b"
+      },
+      "diffusers.utils.peft_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/peft_utils.py",
+        "sha256": "78d1748aeec2a730f639bdeddc5c988c9f16e389c420d5ad8b150a50978c26dc"
+      },
+      "diffusers.utils.pil_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/pil_utils.py",
+        "sha256": "d91b3aa4c0e112997e4a4061099b9b039a75e3f57110d64a84f43eaf04530f02"
+      },
+      "diffusers.utils.remote_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/remote_utils.py",
+        "sha256": "35d5661d0dfd3f8daf80900eeda39fd9193107a2c497d592f38b08ae5550ff63"
+      },
+      "diffusers.utils.state_dict_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/state_dict_utils.py",
+        "sha256": "fce142b3564cc1c31ada9b5fae704d1b483439efeb3620f6e7c89e90d9ec76fd"
+      },
+      "diffusers.utils.torch_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/torch_utils.py",
+        "sha256": "bc8fbe5266c5fe7a82bfd9c5764c2ec931024b4695bee433ff53979d73e6827f"
+      },
+      "diffusers.utils.typing_utils": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/typing_utils.py",
+        "sha256": "ad984e95285a856c190174a662ecfa31d20dac9f126dcd69f2b85d940fe6b095"
+      },
+      "diffusers.utils.versions": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/utils/versions.py",
+        "sha256": "746d72f310592b60a07eb1657bca74f9b2577ffe3145b588a439997bc5c2f730"
+      },
+      "diffusers.video_processor": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/video_processor.py",
+        "sha256": "fc757775be6e8ee8578dd677f9a39be71a7e63c46791f2588dcfddba8541155c"
+      }
+    },
+    "test_file_sha256": "ecdd848958b4ce839420f78bb2d8492e744703e82fb5ce5b22c89845aacee35f"
+  },
+  "runtime_git_revision": "99fb94dd3eaa9dd1931cd3cd8eae1ae3e20f2ef3",
+  "source_sha256": {
+    "experiments/maskflow/port/test_transformer_cpu.py": "ecdd848958b4ce839420f78bb2d8492e744703e82fb5ce5b22c89845aacee35f",
+    "experiments/maskflow/port/maskflow_transformer.py": "374b32ea26ed0e8f46bf854d56412f19b1d425c802d9d845866cc9da2d302746"
+  },
+  "numeric_summary": {
+    "comparison_count": 154,
+    "max_abs_error": 8.761882781982422e-06,
+    "max_tolerance_ratio": 0.1748134308861648,
+    "all_passed": true
+  },
+  "elapsed_seconds": 8.12843608300318
+}
