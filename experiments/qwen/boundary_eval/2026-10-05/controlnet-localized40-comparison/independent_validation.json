@@ -1,0 +1,925 @@
+{
+  "status": "passed",
+  "scope": "CPU-only saved artifact integrity; no visual quality conclusion",
+  "suite": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint",
+  "reference_suite": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-reference40-outpaint",
+  "checks": {
+    "localized:complete": true,
+    "localized:steps40": true,
+    "localized:layout": true,
+    "reference:complete": true,
+    "reference:steps40": true,
+    "reference:layout": true,
+    "localized:single_expected_arm": true,
+    "reference:single_expected_arm": true,
+    "shared_setting:track": true,
+    "shared_setting:seed": true,
+    "shared_setting:steps": true,
+    "shared_setting:cfg": true,
+    "shared_setting:adapter": true,
+    "shared_setting:prompt": true,
+    "shared_setting:prompt_style": true,
+    "shared_setting:width": true,
+    "shared_setting:height": true,
+    "shared_setting:source_rect_xyxy": true,
+    "shared_setting:known_bridge_extension": true,
+    "shared_setting:structural_support": true,
+    "shared_setting:model_revision": true,
+    "shared_setting:base_quantization": true,
+    "shared_setting:control_revision": true,
+    "shared_setting:upstream_revision": true,
+    "shared_setting:sigmas": true,
+    "shared_setting:prefix_cache_enabled": true,
+    "shared_setting:growing_compute": true,
+    "target_geometry": true,
+    "hint_recipe": true,
+    "full_compute_recorded": true,
+    "shared_array:source_latents": true,
+    "localized:shape:source_latents": true,
+    "localized:dtype:source_latents": true,
+    "localized:finite:source_latents": true,
+    "array_hash:localized:source_latents": true,
+    "reference:shape:source_latents": true,
+    "reference:dtype:source_latents": true,
+    "reference:finite:source_latents": true,
+    "array_hash:reference:source_latents": true,
+    "shared_array:prompt_embeds": true,
+    "localized:shape:prompt_embeds": true,
+    "localized:dtype:prompt_embeds": true,
+    "localized:finite:prompt_embeds": true,
+    "array_hash:localized:prompt_embeds": true,
+    "reference:shape:prompt_embeds": true,
+    "reference:dtype:prompt_embeds": true,
+    "reference:finite:prompt_embeds": true,
+    "array_hash:reference:prompt_embeds": true,
+    "shared_array:image_slots": true,
+    "localized:shape:image_slots": true,
+    "localized:dtype:image_slots": true,
+    "localized:finite:image_slots": true,
+    "array_hash:localized:image_slots": true,
+    "reference:shape:image_slots": true,
+    "reference:dtype:image_slots": true,
+    "reference:finite:image_slots": true,
+    "array_hash:reference:image_slots": true,
+    "shared_array:noise": true,
+    "localized:shape:noise": true,
+    "localized:dtype:noise": true,
+    "localized:finite:noise": true,
+    "array_hash:localized:noise": true,
+    "reference:shape:noise": true,
+    "reference:dtype:noise": true,
+    "reference:finite:noise": true,
+    "array_hash:reference:noise": true,
+    "shared_array:target_context": true,
+    "localized:shape:target_context": true,
+    "localized:dtype:target_context": true,
+    "localized:finite:target_context": true,
+    "array_hash:localized:target_context": true,
+    "reference:shape:target_context": true,
+    "reference:dtype:target_context": true,
+    "reference:finite:target_context": true,
+    "array_hash:reference:target_context": true,
+    "shared_array:padded_image_context": true,
+    "localized:shape:padded_image_context": true,
+    "localized:dtype:padded_image_context": true,
+    "localized:finite:padded_image_context": true,
+    "array_hash:localized:padded_image_context": true,
+    "reference:shape:padded_image_context": true,
+    "reference:dtype:padded_image_context": true,
+    "reference:finite:padded_image_context": true,
+    "array_hash:reference:padded_image_context": true,
+    "shared_array:structural_support": true,
+    "localized:shape:structural_support": true,
+    "localized:dtype:structural_support": true,
+    "localized:finite:structural_support": true,
+    "array_hash:localized:structural_support": true,
+    "reference:shape:structural_support": true,
+    "reference:dtype:structural_support": true,
+    "reference:finite:structural_support": true,
+    "array_hash:reference:structural_support": true,
+    "image_slots_256_and_173_text": true,
+    "literal_zero_reference129": true,
+    "target_exact_after_padding": true,
+    "target_known_mask_exact": true,
+    "unsupported_structural64_literal_zero": true,
+    "known_structural_support_all_true": true,
+    "source65_exact_against_reference": true,
+    "localized:actual_square_rgba": true,
+    "localized:rgba_source_pixels_exact": true,
+    "localized:opaque_source_alpha": true,
+    "file_hash:localized:source512": true,
+    "array_hash:localized:source_rgb": true,
+    "array_hash:localized:source_rgba": true,
+    "file_hash:localized:control_map": true,
+    "file_hash:localized:input_guide": true,
+    "reference:actual_square_rgba": true,
+    "reference:rgba_source_pixels_exact": true,
+    "reference:opaque_source_alpha": true,
+    "file_hash:reference:source512": true,
+    "array_hash:reference:source_rgb": true,
+    "array_hash:reference:source_rgba": true,
+    "file_hash:reference:control_map": true,
+    "file_hash:reference:input_guide": true,
+    "guide_shape": true,
+    "known_geometry_independent_exact": true,
+    "cosine_pixels_independent_exact": true,
+    "nearest16_desired_weights_independent_exact": true,
+    "requested_weights_exact": true,
+    "support_independent_exact": true,
+    "support_display_exact": true,
+    "hint_display_exact": true,
+    "effective_target_shape": true,
+    "effective_joint_shape": true,
+    "all1197_prefix_weights_literal_zero": true,
+    "effective_joint_tail_exact": true,
+    "all1024_known_target_weights_literal_zero": true,
+    "effective_weights_finite_and_bounded": true,
+    "positive97_unknown_cells_only": true,
+    "positive_cells_equal_requested": true,
+    "positive_hint_cells_within_structural_support": true,
+    "effective_exact_bf16_rne": true,
+    "effective_stored_float32": true,
+    "bf16_precision_recorded": true,
+    "guide_unknown_count": true,
+    "positive_pixel_count": true,
+    "support_token_count": true,
+    "support_pixel_count": true,
+    "desired_weight_sum": true,
+    "array_hash:guide_rgb": true,
+    "array_hash:hint_pixels_desired": true,
+    "array_hash:hint_target_desired": true,
+    "array_hash:hint_requested_target": true,
+    "array_hash:hint_effective_target": true,
+    "array_hash:hint_effective_joint": true,
+    "array_hash:support_pixels_reconstructed": true,
+    "array_hash:support_tokens_saved": true,
+    "file_hash:hint_display": true,
+    "file_hash:support_display": true,
+    "localized:run_complete": true,
+    "localized:40_recorded_nfe": true,
+    "localized:step_sequence": true,
+    "localized:per_call_and_total:base_blocks": true,
+    "localized:per_call_and_total:control_blocks": true,
+    "localized:per_call_and_total:target_tokens_forwarded": true,
+    "localized:per_call_and_total:reference_image_tokens_forwarded": true,
+    "localized:per_call_and_total:joint_query_tokens": true,
+    "localized:step_sigmas_match": true,
+    "localized:recorded_prefix_assertions": true,
+    "localized:final_latent_shape_finite": true,
+    "localized:final_known_source_latents_exact": true,
+    "localized:saved_prefix_cpu_assembly_exact": true,
+    "localized:raw_and_composite_shapes": true,
+    "localized:composite_source_pixels_exact": true,
+    "localized:run_source_prefix_hash": true,
+    "localized:run_noise_hash": true,
+    "array_hash:localized:final_latents": true,
+    "file_hash:localized:raw_image": true,
+    "file_hash:localized:composite_image": true,
+    "reference:run_complete": true,
+    "reference:40_recorded_nfe": true,
+    "reference:step_sequence": true,
+    "reference:per_call_and_total:base_blocks": true,
+    "reference:per_call_and_total:control_blocks": true,
+    "reference:per_call_and_total:target_tokens_forwarded": true,
+    "reference:per_call_and_total:reference_image_tokens_forwarded": true,
+    "reference:per_call_and_total:joint_query_tokens": true,
+    "reference:step_sigmas_match": true,
+    "reference:recorded_prefix_assertions": true,
+    "reference:final_latent_shape_finite": true,
+    "reference:final_known_source_latents_exact": true,
+    "reference:saved_prefix_cpu_assembly_exact": true,
+    "reference:raw_and_composite_shapes": true,
+    "reference:composite_source_pixels_exact": true,
+    "reference:run_source_prefix_hash": true,
+    "reference:run_noise_hash": true,
+    "array_hash:reference:final_latents": true,
+    "file_hash:reference:raw_image": true,
+    "file_hash:reference:composite_image": true,
+    "file_hash:localized:runner": true,
+    "file_hash:localized:code:control.py": true,
+    "file_hash:localized:code:conditioning.py": true,
+    "file_hash:localized:code:reference_control.py": true,
+    "file_hash:localized:code:sparse_conditioning.py": true,
+    "file_hash:localized:code:localized_reference_control.py": true,
+    "file_hash:localized:code:test_reference_control_cpu.py": true,
+    "file_hash:localized:code:test_localized_reference_cpu.py": true,
+    "file_hash:localized:runtime_module:qwen21_attention": true,
+    "file_hash:localized:runtime_module:qwen21_transformer_block": true,
+    "file_hash:localized:runtime_module:qwen21_layout": true,
+    "file_hash:localized:runtime_module:qwen21_transformer": true,
+    "file_hash:localized:runtime_module:qwen21_norm_out": true,
+    "file_hash:localized:runtime_module:qwen21_text_projection": true,
+    "file_hash:localized:runtime_module:qwen21_time_text_embed": true,
+    "file_hash:localized:runtime_module:qwen21_rope": true,
+    "file_hash:reference:runner": true,
+    "file_hash:reference:code:control.py": true,
+    "file_hash:reference:code:conditioning.py": true,
+    "file_hash:reference:code:reference_control.py": true,
+    "file_hash:reference:code:sparse_conditioning.py": true,
+    "reference_scale_one_from_pinned_runner_source": true,
+    "file_hash:original_jpeg:track1": true,
+    "file_hash:original_jpeg:track2": true,
+    "file_hash:original_jpeg:track3": true
+  },
+  "file_hashes": {
+    "localized_metrics": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/localized_reference_metrics.json",
+      "sha256": "b8a34e2343eff12448cbc1a8ed6b98ede4286a61c1d1d9db4131c3035af933a8"
+    },
+    "reference_metrics": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-reference40-outpaint/reference_control_metrics.json",
+      "sha256": "178e84b35a921d706e8534a5d2848458ea604989ebdc9efc45c49bc5589a66d7"
+    },
+    "localized_shared:reference_conditioning.npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/shared/reference_conditioning.npz",
+      "sha256": "82c43708d5af2310a150a1d14c1a0457fdd36d7390dbaff14efdd1f544c00b1f"
+    },
+    "reference_shared:reference_conditioning.npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-reference40-outpaint/shared/reference_conditioning.npz",
+      "sha256": "82c43708d5af2310a150a1d14c1a0457fdd36d7390dbaff14efdd1f544c00b1f"
+    },
+    "localized_shared:target_noise.npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/shared/target_noise.npz",
+      "sha256": "66f5fcc50aca469517350f763804ecb2cb3ef6f42caccfab95c761a06e0ab0db"
+    },
+    "reference_shared:target_noise.npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-reference40-outpaint/shared/target_noise.npz",
+      "sha256": "66f5fcc50aca469517350f763804ecb2cb3ef6f42caccfab95c761a06e0ab0db"
+    },
+    "localized_shared:tangent-canny_contexts.npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/shared/tangent-canny_contexts.npz",
+      "sha256": "5a973dd8b447de5e0bf5edaf56a80139f1deb816a9cbc244418afc28a9784d27"
+    },
+    "reference_shared:tangent-canny_contexts.npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-reference40-outpaint/shared/tangent-canny_contexts.npz",
+      "sha256": "5a973dd8b447de5e0bf5edaf56a80139f1deb816a9cbc244418afc28a9784d27"
+    },
+    "localized:source512": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track3/source_512.png",
+      "sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+      "recorded_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+      "matches_recorded": true
+    },
+    "localized:source_rgba": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/source_rgba.png",
+      "sha256": "38d08d8113c8518d37cdb45d1034e9bd7a9331e28362b8839a6059cb370bc01f"
+    },
+    "localized:control_map": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track3/canny_extrapolated.png",
+      "sha256": "77ef3e3fc7967a54de11b7a8d60985eb5d09ed25f28f65c1bc407960e37e39d8",
+      "recorded_sha256": "77ef3e3fc7967a54de11b7a8d60985eb5d09ed25f28f65c1bc407960e37e39d8",
+      "matches_recorded": true
+    },
+    "localized:input_guide": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track3/extrapolated_only.png",
+      "sha256": "de298a2574b9155b409cc221f5c4ba399f4f809a1ce1a4038691906993b171e3",
+      "recorded_sha256": "de298a2574b9155b409cc221f5c4ba399f4f809a1ce1a4038691906993b171e3",
+      "matches_recorded": true
+    },
+    "reference:source512": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track3/source_512.png",
+      "sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+      "recorded_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+      "matches_recorded": true
+    },
+    "reference:source_rgba": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-reference40-outpaint/source_rgba.png",
+      "sha256": "38d08d8113c8518d37cdb45d1034e9bd7a9331e28362b8839a6059cb370bc01f"
+    },
+    "reference:control_map": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track3/canny_extrapolated.png",
+      "sha256": "77ef3e3fc7967a54de11b7a8d60985eb5d09ed25f28f65c1bc407960e37e39d8",
+      "recorded_sha256": "77ef3e3fc7967a54de11b7a8d60985eb5d09ed25f28f65c1bc407960e37e39d8",
+      "matches_recorded": true
+    },
+    "reference:input_guide": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track3/extrapolated_only.png",
+      "sha256": "de298a2574b9155b409cc221f5c4ba399f4f809a1ce1a4038691906993b171e3",
+      "recorded_sha256": "de298a2574b9155b409cc221f5c4ba399f4f809a1ce1a4038691906993b171e3",
+      "matches_recorded": true
+    },
+    "localized_shared:hint_pixel_weights_float32.npy": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/shared/hint_pixel_weights_float32.npy",
+      "sha256": "b93812ec78c3748e4e15552796e8c282d9712f5ba04a190f54f3e97d9efbde2f"
+    },
+    "localized_shared:hint_target_weights_float32.npy": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/shared/hint_target_weights_float32.npy",
+      "sha256": "31567ec0ea4c64305afdd2259da0a1699e378f4682ba9c7ffec045a4af3e1fe4"
+    },
+    "localized_shared:support_tokens.npy": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/shared/support_tokens.npy",
+      "sha256": "38ed40e7186380d66e2d7733ef92456210bf5e765a670a0931887e2a1ccc1a55"
+    },
+    "localized_shared:effective_hint_weights.npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/shared/effective_hint_weights.npz",
+      "sha256": "389f82f5c924717f025171825b2ccad6b3ca22a676051da4f38ac5405f3fc8d0"
+    },
+    "localized_shared:hint_weights.json": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/shared/hint_weights.json",
+      "sha256": "14ce93d29ed85a4d3dc7c0ee4d010e93593458c8bdf62802c7ef9bb14943c0a1"
+    },
+    "localized_shared:support.json": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/shared/support.json",
+      "sha256": "b963ae452fb38d808d0628543b23ef259a9e87d182ed0a107e1d02025f94ede7"
+    },
+    "hint_display": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/shared/hint_weights.png",
+      "sha256": "c1778b91c0e72914748050ff47941c99786e141abcd7db653a5b38b92474cbcf",
+      "recorded_sha256": "c1778b91c0e72914748050ff47941c99786e141abcd7db653a5b38b92474cbcf",
+      "matches_recorded": true
+    },
+    "support_display": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/shared/support.png",
+      "sha256": "e181e4455adc7efe2acae40ab332a67f13b6782e787506d809e4191627576caa",
+      "recorded_sha256": "e181e4455adc7efe2acae40ab332a67f13b6782e787506d809e4191627576caa",
+      "matches_recorded": true
+    },
+    "localized:final_latents_npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/tangent-canny/localized-hints/final_latents.npz",
+      "sha256": "6bd41b7960447a8a94a2efb0b1d2e4c6ec45ccde3f57759a5d5e867fbbc1ddd9"
+    },
+    "localized:raw_image": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/tangent-canny/localized-hints/raw.png",
+      "sha256": "b47c8d1f86b345fa2f1490aed71c973a1890171f6f9a44502e1c1480646561c9",
+      "recorded_sha256": "b47c8d1f86b345fa2f1490aed71c973a1890171f6f9a44502e1c1480646561c9",
+      "matches_recorded": true
+    },
+    "localized:composite_image": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/tangent-canny/localized-hints/composite.png",
+      "sha256": "0499773395f8a40c30b2eb5182a431202a2488f7a957254b99dfbe118479ae85",
+      "recorded_sha256": "0499773395f8a40c30b2eb5182a431202a2488f7a957254b99dfbe118479ae85",
+      "matches_recorded": true
+    },
+    "reference:final_latents_npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-reference40-outpaint/tangent-canny/prefix-hints-disabled/final_latents.npz",
+      "sha256": "b782d84210a65452d52cac0a28511b3a1c6d39e6312e33b2d5544915b3a2f8c2"
+    },
+    "reference:raw_image": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-reference40-outpaint/tangent-canny/prefix-hints-disabled/raw.png",
+      "sha256": "a6bfac8a9ac0d112d1b080f57afccb0baa3f14395d6543833c11ccf52e36c961",
+      "recorded_sha256": "a6bfac8a9ac0d112d1b080f57afccb0baa3f14395d6543833c11ccf52e36c961",
+      "matches_recorded": true
+    },
+    "reference:composite_image": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-reference40-outpaint/tangent-canny/prefix-hints-disabled/composite.png",
+      "sha256": "3580be31ffb95a938811dca5d095f5087a495239b86a1fe1f9edf47175dce15d",
+      "recorded_sha256": "3580be31ffb95a938811dca5d095f5087a495239b86a1fe1f9edf47175dce15d",
+      "matches_recorded": true
+    },
+    "localized:runner": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_localized_reference_control_trial.py",
+      "sha256": "3a67d04d8da1eac90f37ede81a4d98083b9bd3b2a93feab08172ed795996e7ad",
+      "recorded_sha256": "3a67d04d8da1eac90f37ede81a4d98083b9bd3b2a93feab08172ed795996e7ad",
+      "matches_recorded": true
+    },
+    "localized:code:control.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/control.py",
+      "sha256": "f4017d5989b5a97db5783cc6f100938ffa1f8a17de92587a1608db5418dd9d2a",
+      "recorded_sha256": "f4017d5989b5a97db5783cc6f100938ffa1f8a17de92587a1608db5418dd9d2a",
+      "matches_recorded": true
+    },
+    "localized:code:conditioning.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/conditioning.py",
+      "sha256": "a1526bdd8704de2b086ceafdd33ac57fa18b0aa6ad096f7c01525d4a772e7dfb",
+      "recorded_sha256": "a1526bdd8704de2b086ceafdd33ac57fa18b0aa6ad096f7c01525d4a772e7dfb",
+      "matches_recorded": true
+    },
+    "localized:code:reference_control.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/reference_control.py",
+      "sha256": "ff8f404714defaf2909e82770cd5ec62811ffcca5b627ee5763efef3b92d09d9",
+      "recorded_sha256": "ff8f404714defaf2909e82770cd5ec62811ffcca5b627ee5763efef3b92d09d9",
+      "matches_recorded": true
+    },
+    "localized:code:sparse_conditioning.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/sparse_conditioning.py",
+      "sha256": "458a8eda69b31600365360822a25369bf479ba86246fdb110b07a546fbb12b0f",
+      "recorded_sha256": "458a8eda69b31600365360822a25369bf479ba86246fdb110b07a546fbb12b0f",
+      "matches_recorded": true
+    },
+    "localized:code:localized_reference_control.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/localized_reference_control.py",
+      "sha256": "2aa4dee1c5b4d64d119d58b8943f5d224b3119fc0ae8054c9d4b85d069fbd722",
+      "recorded_sha256": "2aa4dee1c5b4d64d119d58b8943f5d224b3119fc0ae8054c9d4b85d069fbd722",
+      "matches_recorded": true
+    },
+    "localized:code:test_reference_control_cpu.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/test_reference_control_cpu.py",
+      "sha256": "d3b6f628b0699eadd9526db4157985d9a7e2f673730e4c179d887a1af0d2bbfa",
+      "recorded_sha256": "d3b6f628b0699eadd9526db4157985d9a7e2f673730e4c179d887a1af0d2bbfa",
+      "matches_recorded": true
+    },
+    "localized:code:test_localized_reference_cpu.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/test_localized_reference_cpu.py",
+      "sha256": "5d8264091bb467529f90f2726d2386f03630c4763de2549052266f98f7d74328",
+      "recorded_sha256": "5d8264091bb467529f90f2726d2386f03630c4763de2549052266f98f7d74328",
+      "matches_recorded": true
+    },
+    "localized:runtime_module:qwen21_attention": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_attention.py",
+      "sha256": "e992e21c193cb2cd9f2225e8afb67af2424a770b853d3e065ff60c5b95581e83",
+      "recorded_sha256": "e992e21c193cb2cd9f2225e8afb67af2424a770b853d3e065ff60c5b95581e83",
+      "matches_recorded": true
+    },
+    "localized:runtime_module:qwen21_transformer_block": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_transformer_block.py",
+      "sha256": "60ed91c00e12066417636ea54f5e225198586af0e5e88ccc76dfe209d285b3de",
+      "recorded_sha256": "60ed91c00e12066417636ea54f5e225198586af0e5e88ccc76dfe209d285b3de",
+      "matches_recorded": true
+    },
+    "localized:runtime_module:qwen21_layout": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_layout.py",
+      "sha256": "37bd0839fa8a215d2d25aec4e8f65f0e05c279ad1f1eab15e1af041368c0be44",
+      "recorded_sha256": "37bd0839fa8a215d2d25aec4e8f65f0e05c279ad1f1eab15e1af041368c0be44",
+      "matches_recorded": true
+    },
+    "localized:runtime_module:qwen21_transformer": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_transformer.py",
+      "sha256": "8ee62ba80495fb36e8cf885b8b463bc7353cbfe2eb90b377d46283c539686735",
+      "recorded_sha256": "8ee62ba80495fb36e8cf885b8b463bc7353cbfe2eb90b377d46283c539686735",
+      "matches_recorded": true
+    },
+    "localized:runtime_module:qwen21_norm_out": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_norm_out.py",
+      "sha256": "f403e5f7f63e297869190fdfe1155a6aabb2a13df480fca0ebf3af733adc911d",
+      "recorded_sha256": "f403e5f7f63e297869190fdfe1155a6aabb2a13df480fca0ebf3af733adc911d",
+      "matches_recorded": true
+    },
+    "localized:runtime_module:qwen21_text_projection": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_text_projection.py",
+      "sha256": "aca4d4c74c5450fa0238b4650984f478e5f59a5ecf25ddffe60a0a31514ca1aa",
+      "recorded_sha256": "aca4d4c74c5450fa0238b4650984f478e5f59a5ecf25ddffe60a0a31514ca1aa",
+      "matches_recorded": true
+    },
+    "localized:runtime_module:qwen21_time_text_embed": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_time_text_embed.py",
+      "sha256": "c051d7f82f285a9dd4be2c361e50afa51b1de13774d46b3a42037b3637ced348",
+      "recorded_sha256": "c051d7f82f285a9dd4be2c361e50afa51b1de13774d46b3a42037b3637ced348",
+      "matches_recorded": true
+    },
+    "localized:runtime_module:qwen21_rope": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_rope.py",
+      "sha256": "395f5c7281a77abb91fd1d40145a139b6b31d3af4112d7e6857efc2224fed1e6",
+      "recorded_sha256": "395f5c7281a77abb91fd1d40145a139b6b31d3af4112d7e6857efc2224fed1e6",
+      "matches_recorded": true
+    },
+    "reference:runner": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_reference_control_trial.py",
+      "sha256": "850f9bd3ea8d162d152e37a4fe49a8f9c3e1d8f49f158939c2e8fb5339f477c8",
+      "recorded_sha256": "850f9bd3ea8d162d152e37a4fe49a8f9c3e1d8f49f158939c2e8fb5339f477c8",
+      "matches_recorded": true
+    },
+    "reference:code:control.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/control.py",
+      "sha256": "f4017d5989b5a97db5783cc6f100938ffa1f8a17de92587a1608db5418dd9d2a",
+      "recorded_sha256": "f4017d5989b5a97db5783cc6f100938ffa1f8a17de92587a1608db5418dd9d2a",
+      "matches_recorded": true
+    },
+    "reference:code:conditioning.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/conditioning.py",
+      "sha256": "a1526bdd8704de2b086ceafdd33ac57fa18b0aa6ad096f7c01525d4a772e7dfb",
+      "recorded_sha256": "a1526bdd8704de2b086ceafdd33ac57fa18b0aa6ad096f7c01525d4a772e7dfb",
+      "matches_recorded": true
+    },
+    "reference:code:reference_control.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/reference_control.py",
+      "sha256": "ff8f404714defaf2909e82770cd5ec62811ffcca5b627ee5763efef3b92d09d9",
+      "recorded_sha256": "ff8f404714defaf2909e82770cd5ec62811ffcca5b627ee5763efef3b92d09d9",
+      "matches_recorded": true
+    },
+    "reference:code:sparse_conditioning.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/sparse_conditioning.py",
+      "sha256": "458a8eda69b31600365360822a25369bf479ba86246fdb110b07a546fbb12b0f",
+      "recorded_sha256": "458a8eda69b31600365360822a25369bf479ba86246fdb110b07a546fbb12b0f",
+      "matches_recorded": true
+    },
+    "input_manifest": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/inputs.json",
+      "sha256": "89a17818b11b905bdf42cd64bb7fc2c55ea428784611568f3c7b48f048bc9afe"
+    },
+    "original_jpeg:track1": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/Player/Resources/track1.jpg",
+      "sha256": "2d7162f9c4462b7706ef5d33c4b81d13b42da3e3c781175ee36447b7eb7a99b9",
+      "recorded_sha256": "2d7162f9c4462b7706ef5d33c4b81d13b42da3e3c781175ee36447b7eb7a99b9",
+      "matches_recorded": true
+    },
+    "original_jpeg:track2": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/Player/Resources/track2.jpg",
+      "sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "recorded_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "matches_recorded": true
+    },
+    "original_jpeg:track3": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/Player/Resources/track3.jpg",
+      "sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "recorded_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "matches_recorded": true
+    },
+    "validator": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/validate_localized_outputs.py",
+      "sha256": "c222c42d04b14cb3de9c8ecad2e14fc197c370d153b2681065e15cf60da92d7d"
+    },
+    "strict_reference_validator_retained": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/validate_reference_outputs.py",
+      "sha256": "96f878ba45a422a18caf016096539dd683a98e9ef904092199e6318273779d60"
+    }
+  },
+  "array_hashes": {
+    "localized:source_latents": {
+      "shape": [
+        1,
+        1024,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "recorded_sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "matches_recorded": true
+    },
+    "reference:source_latents": {
+      "shape": [
+        1,
+        1024,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "recorded_sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "matches_recorded": true
+    },
+    "localized:prompt_embeds": {
+      "shape": [
+        1,
+        429,
+        4096
+      ],
+      "dtype": "float32",
+      "sha256": "56c33a6f81fcd6a3e2888636c7ce37200d6a894cb117b6553bab0737a2ff9ae1",
+      "recorded_sha256": "56c33a6f81fcd6a3e2888636c7ce37200d6a894cb117b6553bab0737a2ff9ae1",
+      "matches_recorded": true
+    },
+    "reference:prompt_embeds": {
+      "shape": [
+        1,
+        429,
+        4096
+      ],
+      "dtype": "float32",
+      "sha256": "56c33a6f81fcd6a3e2888636c7ce37200d6a894cb117b6553bab0737a2ff9ae1",
+      "recorded_sha256": "56c33a6f81fcd6a3e2888636c7ce37200d6a894cb117b6553bab0737a2ff9ae1",
+      "matches_recorded": true
+    },
+    "localized:image_slots": {
+      "shape": [
+        429
+      ],
+      "dtype": "bool",
+      "sha256": "a21c9e5a04f4be9d1f618bff6c332b0ce185922e3e69b3b154e00d188447313b",
+      "recorded_sha256": "a21c9e5a04f4be9d1f618bff6c332b0ce185922e3e69b3b154e00d188447313b",
+      "matches_recorded": true
+    },
+    "reference:image_slots": {
+      "shape": [
+        429
+      ],
+      "dtype": "bool",
+      "sha256": "a21c9e5a04f4be9d1f618bff6c332b0ce185922e3e69b3b154e00d188447313b",
+      "recorded_sha256": "a21c9e5a04f4be9d1f618bff6c332b0ce185922e3e69b3b154e00d188447313b",
+      "matches_recorded": true
+    },
+    "localized:noise": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "recorded_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "matches_recorded": true
+    },
+    "reference:noise": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "recorded_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "matches_recorded": true
+    },
+    "localized:target_context": {
+      "shape": [
+        1,
+        2304,
+        129
+      ],
+      "dtype": "float32",
+      "sha256": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+      "recorded_sha256": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+      "matches_recorded": true
+    },
+    "reference:target_context": {
+      "shape": [
+        1,
+        2304,
+        129
+      ],
+      "dtype": "float32",
+      "sha256": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+      "recorded_sha256": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+      "matches_recorded": true
+    },
+    "localized:padded_image_context": {
+      "shape": [
+        1,
+        3328,
+        129
+      ],
+      "dtype": "float32",
+      "sha256": "981a307df789d30812d7c55b1fcab59d018e446b03fcc68edc4b296eb5c405df",
+      "recorded_sha256": "981a307df789d30812d7c55b1fcab59d018e446b03fcc68edc4b296eb5c405df",
+      "matches_recorded": true
+    },
+    "reference:padded_image_context": {
+      "shape": [
+        1,
+        3328,
+        129
+      ],
+      "dtype": "float32",
+      "sha256": "981a307df789d30812d7c55b1fcab59d018e446b03fcc68edc4b296eb5c405df",
+      "recorded_sha256": "981a307df789d30812d7c55b1fcab59d018e446b03fcc68edc4b296eb5c405df",
+      "matches_recorded": true
+    },
+    "localized:structural_support": {
+      "shape": [
+        1,
+        2304,
+        1
+      ],
+      "dtype": "bool",
+      "sha256": "b628f540265dba9ceb8b221d3abb241ab6bfc8d036ddc8e9ebb0e19c9eb41d39",
+      "recorded_sha256": "b628f540265dba9ceb8b221d3abb241ab6bfc8d036ddc8e9ebb0e19c9eb41d39",
+      "matches_recorded": true
+    },
+    "reference:structural_support": {
+      "shape": [
+        1,
+        2304,
+        1
+      ],
+      "dtype": "bool",
+      "sha256": "b628f540265dba9ceb8b221d3abb241ab6bfc8d036ddc8e9ebb0e19c9eb41d39",
+      "recorded_sha256": "b628f540265dba9ceb8b221d3abb241ab6bfc8d036ddc8e9ebb0e19c9eb41d39",
+      "matches_recorded": true
+    },
+    "localized:source_rgb": {
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "dtype": "uint8",
+      "sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+      "recorded_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+      "matches_recorded": true
+    },
+    "localized:source_rgba": {
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "dtype": "uint8",
+      "sha256": "6aa4eb9ffe533514a32f592113827881d3c360b52d278e0badb2ebbc001b575c",
+      "recorded_sha256": "6aa4eb9ffe533514a32f592113827881d3c360b52d278e0badb2ebbc001b575c",
+      "matches_recorded": true
+    },
+    "reference:source_rgb": {
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "dtype": "uint8",
+      "sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+      "recorded_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+      "matches_recorded": true
+    },
+    "reference:source_rgba": {
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "dtype": "uint8",
+      "sha256": "6aa4eb9ffe533514a32f592113827881d3c360b52d278e0badb2ebbc001b575c",
+      "recorded_sha256": "6aa4eb9ffe533514a32f592113827881d3c360b52d278e0badb2ebbc001b575c",
+      "matches_recorded": true
+    },
+    "guide_rgb": {
+      "shape": [
+        1152,
+        512,
+        3
+      ],
+      "dtype": "uint8",
+      "sha256": "fd9b20c7d94a7dbe57d769424cafbb43046e27d49145307739dd59bf55cd3fbd",
+      "recorded_sha256": "fd9b20c7d94a7dbe57d769424cafbb43046e27d49145307739dd59bf55cd3fbd",
+      "matches_recorded": true
+    },
+    "hint_pixels_desired": {
+      "shape": [
+        1152,
+        512
+      ],
+      "dtype": "float32",
+      "sha256": "b55b09223b18f3620de9ead796c7336a204db0b55f660061d5d35e4ab19e8174",
+      "recorded_sha256": "b55b09223b18f3620de9ead796c7336a204db0b55f660061d5d35e4ab19e8174",
+      "matches_recorded": true
+    },
+    "hint_target_desired": {
+      "shape": [
+        1,
+        2304,
+        1
+      ],
+      "dtype": "float32",
+      "sha256": "1f78cd6187786d3be437a98cf50c4945f6ac75a9de2789ecee80ebd2e2427667",
+      "recorded_sha256": "1f78cd6187786d3be437a98cf50c4945f6ac75a9de2789ecee80ebd2e2427667",
+      "matches_recorded": true
+    },
+    "hint_requested_target": {
+      "shape": [
+        1,
+        2304,
+        1
+      ],
+      "dtype": "float32",
+      "sha256": "1f78cd6187786d3be437a98cf50c4945f6ac75a9de2789ecee80ebd2e2427667",
+      "recorded_sha256": "1f78cd6187786d3be437a98cf50c4945f6ac75a9de2789ecee80ebd2e2427667",
+      "matches_recorded": true
+    },
+    "hint_effective_target": {
+      "shape": [
+        1,
+        2304,
+        1
+      ],
+      "dtype": "float32",
+      "sha256": "84a394acbbc26e450054e217e2cd7531f808ef4412019ca85a3db34734c62e89",
+      "recorded_sha256": "84a394acbbc26e450054e217e2cd7531f808ef4412019ca85a3db34734c62e89",
+      "matches_recorded": true
+    },
+    "hint_effective_joint": {
+      "shape": [
+        1,
+        3501,
+        1
+      ],
+      "dtype": "float32",
+      "sha256": "59c6d0faf720c72d8bb9f450f1fd86d61852645532dee449bf8ce120390e7385",
+      "recorded_sha256": "59c6d0faf720c72d8bb9f450f1fd86d61852645532dee449bf8ce120390e7385",
+      "matches_recorded": true
+    },
+    "support_pixels_reconstructed": {
+      "shape": [
+        1152,
+        512
+      ],
+      "dtype": "bool",
+      "sha256": "dfa2525acfd71143a762c1ea1f6db292ddc3c058c3c0568f78088afb71cffcd8",
+      "recorded_sha256": "dfa2525acfd71143a762c1ea1f6db292ddc3c058c3c0568f78088afb71cffcd8",
+      "matches_recorded": true
+    },
+    "support_tokens_saved": {
+      "shape": [
+        1,
+        2304,
+        1
+      ],
+      "dtype": "bool",
+      "sha256": "b628f540265dba9ceb8b221d3abb241ab6bfc8d036ddc8e9ebb0e19c9eb41d39",
+      "recorded_sha256": "b628f540265dba9ceb8b221d3abb241ab6bfc8d036ddc8e9ebb0e19c9eb41d39",
+      "matches_recorded": true
+    },
+    "localized:final_latents": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "df1fa78c76720e09c4d8bbb7f2c3e7f76595a6860efab266b7f25229fa50a979",
+      "recorded_sha256": "df1fa78c76720e09c4d8bbb7f2c3e7f76595a6860efab266b7f25229fa50a979",
+      "matches_recorded": true
+    },
+    "reference:final_latents": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "81839dcc095b8b55aca2dd7b1544dc8cf1e95a4be1ee8ba002a0c4934f27674f",
+      "recorded_sha256": "81839dcc095b8b55aca2dd7b1544dc8cf1e95a4be1ee8ba002a0c4934f27674f",
+      "matches_recorded": true
+    }
+  },
+  "shared_array_comparison": {
+    "source_latents": {
+      "shape_dtype_and_values_exact": true
+    },
+    "prompt_embeds": {
+      "shape_dtype_and_values_exact": true
+    },
+    "image_slots": {
+      "shape_dtype_and_values_exact": true
+    },
+    "noise": {
+      "shape_dtype_and_values_exact": true
+    },
+    "target_context": {
+      "shape_dtype_and_values_exact": true
+    },
+    "padded_image_context": {
+      "shape_dtype_and_values_exact": true
+    },
+    "structural_support": {
+      "shape_dtype_and_values_exact": true
+    }
+  },
+  "provenance": {
+    "baseline_control_scale": {
+      "value": 1.0,
+      "evidence_kind": "inferred from hash-matched runner source; not a stored metrics field or runtime trace",
+      "runner_call_line": 386,
+      "runner_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_reference_control_trial.py",
+      "explicit_control_scale_keyword": true
+    }
+  },
+  "shared_container_byte_equal": {
+    "reference_conditioning.npz": true,
+    "target_noise.npz": true,
+    "tangent-canny_contexts.npz": true
+  },
+  "hint_geometry": {
+    "shape": "cosine",
+    "radius_pixels": 64,
+    "unknown_guide_pixels": 2031,
+    "positive_hint_pixels": 27864,
+    "positive_target_tokens": 97,
+    "known_target_tokens_zero": 1024,
+    "joint_prefix_tokens_zero": 1197,
+    "desired_sum": 54.756526947021484,
+    "effective_sum": 54.759117126464844,
+    "bf16_rounded_cells": 88,
+    "maximum_bf16_rounding_error": 0.001889348030090332,
+    "support_target_tokens": 1121,
+    "support_pixels": 290010,
+    "numpy_version": "2.5.3",
+    "opencv_version": "4.14.0"
+  },
+  "recorded_runtime": {
+    "localized": {
+      "nfe": 40,
+      "base_blocks": 1280,
+      "control_blocks": 640,
+      "target_token_forward_sum": 92160,
+      "reference_token_forward_sum": 40960,
+      "joint_query_token_forward_sum": 140040,
+      "denoising_seconds": 415.03060637501767,
+      "full_suite_elapsed_seconds": 434.7839477500238
+    },
+    "reference": {
+      "nfe": 40,
+      "base_blocks": 1280,
+      "control_blocks": 640,
+      "target_token_forward_sum": 92160,
+      "reference_token_forward_sum": 40960,
+      "joint_query_token_forward_sum": 140040,
+      "denoising_seconds": 403.8563635830069,
+      "full_suite_elapsed_seconds": 424.99742500000866
+    }
+  },
+  "input_counts_per_forward": {
+    "target": 2304,
+    "source_reference_images": 1024,
+    "text": 173,
+    "joint_queries": 3501,
+    "packed_image_context_rows": 3328
+  },
+  "limitations": [
+    "Actual saved source, prompt, slots, noise, structural contexts and support compare exactly with reference40; every model forward was not independently replayed.",
+    "NFE, block totals, per-call counts and per-forward prefix equality are internally consistent saved runtime records and assertions, not a separately collected execution trace.",
+    "Effective gate arrays are independently verified. Their application after all 16 hints is a recorded runtime claim backed by source provenance; no real-model per-layer hint trace is saved in this artifact suite.",
+    "Zero direct hints on known target cells do not prove preservation of intermediate hidden states. Only final known latents and composited source pixels are independently verified here.",
+    "The source65 comparison is with saved reference40 contexts. Unsparsified baseline contexts are not saved, so source65 preservation during context construction is a recorded assertion.",
+    "Model weight payload hashes and model forwards were not reverified; no GPU or inference runtime was used.",
+    "Recorded denoising durations are descriptive single-run values and do not establish a speedup. Hint localization retains full joint computation.",
+    "No visual quality or feature continuation acceptance follows from passing integrity checks."
+  ],
+  "failures": [],
+  "check_count": 216
+}
