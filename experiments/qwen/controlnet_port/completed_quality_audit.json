@@ -1,0 +1,272 @@
+{
+  "status": "completed_runtime_success_visual_quality_failed",
+  "audit_device": "CPU/read-only image files",
+  "model_weights_loaded": false,
+  "decoder_rerun": false,
+  "cases": [
+    {
+      "suite": "track3-20",
+      "mode": "mask-only",
+      "runtime_status": "success",
+      "visual_quality_gate": "failed",
+      "raw_and_composite_directly_viewed": true,
+      "source_pixels_exact": true,
+      "source_png_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+      "output_sha256": "462faf7a4ac900ce95cfa2004511f0ffe3ab9a4f84ff3cd2439e0df44bf82a17",
+      "latent_sha256": "8a4456aff39f9aeea20df85e184620f99c996e7c054f8de42d42e8a7e9f14142",
+      "latent_shape": [
+        1,
+        2304,
+        64
+      ],
+      "latent_finite": true,
+      "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "known_bridge": false,
+      "full_canvas_every_step": true,
+      "growing_compute": false,
+      "nfe": 20,
+      "base_block_calls": 640,
+      "control_block_calls": 320,
+      "target_token_forwards": 46080,
+      "denoise_seconds": 128.74045258300612,
+      "decode_seconds": 5.074446332990192,
+      "denoise_mlx_peak_bytes": 14226883348,
+      "raw_source_top16_mae_255": 5.214518229166667,
+      "raw_source_bottom16_mae_255": 4.0687255859375,
+      "raw_source_all_mae_255": 3.729656219482422,
+      "rgb_min_gt240_fraction": 0.0,
+      "rows_gt95pct_width_rgb_min_gt240_inclusive": []
+    },
+    {
+      "suite": "track3-20",
+      "mode": "source-canny",
+      "runtime_status": "success",
+      "visual_quality_gate": "failed",
+      "raw_and_composite_directly_viewed": true,
+      "source_pixels_exact": true,
+      "source_png_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+      "output_sha256": "02b8c005fcb8930017aa013727be9aec62dc4dfbd029fc4260e5a340a6d4f55e",
+      "latent_sha256": "5b944bde568ee9ffbdd07f73e1c9f8c85e617ddc2b2295114f817dc310b1c131",
+      "latent_shape": [
+        1,
+        2304,
+        64
+      ],
+      "latent_finite": true,
+      "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "known_bridge": false,
+      "full_canvas_every_step": true,
+      "growing_compute": false,
+      "nfe": 20,
+      "base_block_calls": 640,
+      "control_block_calls": 320,
+      "target_token_forwards": 46080,
+      "denoise_seconds": 154.7954625840066,
+      "decode_seconds": 1.5730389170057606,
+      "denoise_mlx_peak_bytes": 14226883348,
+      "raw_source_top16_mae_255": 5.303873697916667,
+      "raw_source_bottom16_mae_255": 3.6652018229166665,
+      "raw_source_all_mae_255": 3.6019617716471353,
+      "rgb_min_gt240_fraction": 0.06192186143663195,
+      "rows_gt95pct_width_rgb_min_gt240_inclusive": [
+        [
+          33,
+          33
+        ],
+        [
+          35,
+          43
+        ],
+        [
+          48,
+          49
+        ],
+        [
+          51,
+          51
+        ],
+        [
+          53,
+          53
+        ],
+        [
+          55,
+          55
+        ],
+        [
+          59,
+          63
+        ]
+      ]
+    },
+    {
+      "suite": "track3-20",
+      "mode": "tangent-canny",
+      "runtime_status": "success",
+      "visual_quality_gate": "failed",
+      "raw_and_composite_directly_viewed": true,
+      "source_pixels_exact": true,
+      "source_png_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+      "output_sha256": "d916df456924c2c301376ef44e7048344e93bc74f7a791f8fdafed63597f4399",
+      "latent_sha256": "544d7410d02979cc31241a93bf09b23ead854c49630c4f8e4e5f0142e45809bc",
+      "latent_shape": [
+        1,
+        2304,
+        64
+      ],
+      "latent_finite": true,
+      "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "known_bridge": false,
+      "full_canvas_every_step": true,
+      "growing_compute": false,
+      "nfe": 20,
+      "base_block_calls": 640,
+      "control_block_calls": 320,
+      "target_token_forwards": 46080,
+      "denoise_seconds": 140.813839792012,
+      "decode_seconds": 1.5889589159924071,
+      "denoise_mlx_peak_bytes": 14226883348,
+      "raw_source_top16_mae_255": 5.084798177083333,
+      "raw_source_bottom16_mae_255": 3.6289876302083335,
+      "raw_source_all_mae_255": 3.598759969075521,
+      "rgb_min_gt240_fraction": 0.12208726671006945,
+      "rows_gt95pct_width_rgb_min_gt240_inclusive": [
+        [
+          0,
+          67
+        ],
+        [
+          1125,
+          1151
+        ]
+      ]
+    },
+    {
+      "suite": "track3-40",
+      "mode": "tangent-canny",
+      "runtime_status": "success",
+      "visual_quality_gate": "failed",
+      "raw_and_composite_directly_viewed": true,
+      "source_pixels_exact": true,
+      "source_png_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+      "output_sha256": "e2ad9a179665942508e919fc9ffe628be5a88b984b9e1e516c474207cd82a154",
+      "latent_sha256": "0e86d6f33fac296eee05ac4abc21acbea455ec4c862354bd9be8301b25d83e26",
+      "latent_shape": [
+        1,
+        2304,
+        64
+      ],
+      "latent_finite": true,
+      "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "known_bridge": false,
+      "full_canvas_every_step": true,
+      "growing_compute": false,
+      "nfe": 40,
+      "base_block_calls": 1280,
+      "control_block_calls": 640,
+      "target_token_forwards": 92160,
+      "denoise_seconds": 253.79453650000505,
+      "decode_seconds": 4.869389832980232,
+      "denoise_mlx_peak_bytes": 14224458596,
+      "raw_source_top16_mae_255": 5.284261067708333,
+      "raw_source_bottom16_mae_255": 3.7513020833333335,
+      "raw_source_all_mae_255": 3.6168810526529946,
+      "rgb_min_gt240_fraction": 0.3112369113498264,
+      "rows_gt95pct_width_rgb_min_gt240_inclusive": [
+        [
+          0,
+          73
+        ],
+        [
+          868,
+          1151
+        ]
+      ]
+    },
+    {
+      "suite": "track3-40-knownbridge",
+      "mode": "tangent-canny",
+      "runtime_status": "success",
+      "visual_quality_gate": "failed",
+      "raw_and_composite_directly_viewed": true,
+      "source_pixels_exact": true,
+      "source_png_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+      "output_sha256": "22ffce55dd2617be862115838e0711981b6050d6bc225d31db0e3914b075beb4",
+      "latent_sha256": "0e125c334f2087c64e061b4817d1aa66bfbb5af7c75157f54ddad6f6f5c50fae",
+      "latent_shape": [
+        1,
+        2304,
+        64
+      ],
+      "latent_finite": true,
+      "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "known_bridge": true,
+      "full_canvas_every_step": true,
+      "growing_compute": false,
+      "nfe": 40,
+      "base_block_calls": 1280,
+      "control_block_calls": 640,
+      "target_token_forwards": 92160,
+      "denoise_seconds": 267.80233308300376,
+      "decode_seconds": 4.897551708010724,
+      "denoise_mlx_peak_bytes": 14225050722,
+      "raw_source_top16_mae_255": 9.3087158203125,
+      "raw_source_bottom16_mae_255": 7.40234375,
+      "raw_source_all_mae_255": 3.5071500142415366,
+      "rgb_min_gt240_fraction": 0.3113115098741319,
+      "rows_gt95pct_width_rgb_min_gt240_inclusive": [
+        [
+          0,
+          73
+        ],
+        [
+          868,
+          1151
+        ]
+      ]
+    },
+    {
+      "suite": "track3-sparse40-knownbridge",
+      "mode": "tangent-supported",
+      "runtime_status": "success",
+      "visual_quality_gate": "failed",
+      "visual_observation": "white bands removed; duplicated road/rail/sea exterior remains",
+      "raw_and_composite_directly_viewed": true,
+      "alpha_directly_viewed": true,
+      "source_pixels_exact": true,
+      "source_png_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+      "output_sha256": "1d19c88c406d4ed4b1c5cb0ea6afcb8ff5b106c49c4e7a0e9fdad32cc515ec3e",
+      "latent_sha256": "ac805dcbe5773ccc12b0c4488a75ad94942c489349379c8cabb3c2a2cc13eecb",
+      "latent_finite": true,
+      "latent_shape": [
+        1,
+        2304,
+        64
+      ],
+      "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "known_bridge": true,
+      "full_canvas_every_step": true,
+      "growing_compute": false,
+      "nfe": 40,
+      "base_block_calls": 1280,
+      "control_block_calls": 640,
+      "target_token_forwards": 92160,
+      "denoise_seconds": 269.6745074999926,
+      "decode_seconds": 4.234307500009891,
+      "denoise_mlx_peak_bytes": 14245907554,
+      "raw_source_top16_mae_255": 9.738810221354166,
+      "raw_source_bottom16_mae_255": 8.1968994140625,
+      "raw_source_all_mae_255": 3.559917449951172,
+      "rgb_min_gt240_fraction": 0.0,
+      "decoded_alpha": {
+        "min_normalized": 0.9467695355415344,
+        "max_normalized": 1.0,
+        "mean_normalized": 0.9979755878448486,
+        "alpha_png_path": "experiments/qwen/controlnet_runs/2026-10-05/track3-sparse40-knownbridge/tangent-supported/alpha.png"
+      },
+      "source65_preservation_in_run_assertion": true,
+      "supported_control64_in_run_assertion": true,
+      "unsupported_control64_in_run_assertion": true
+    }
+  ]
+}
