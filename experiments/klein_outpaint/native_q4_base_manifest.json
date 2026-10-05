@@ -1,0 +1,19 @@
+{
+  "model": "base",
+  "source_file": "flux-2-klein-base-4b.safetensors",
+  "source_bytes": 7751105712,
+  "file": ".build/models/flux2/black-forest-labs/FLUX.2-klein-base-4B-klein4b-base-bf16/mlx-prequantized/int4/transformer.safetensors",
+  "bytes": 2180050128,
+  "sha256": "d65b2bed5387ef13c77d0c08583b53015ab4e7fa0d7061915977a681963da4c1",
+  "tensor_count": 387,
+  "method": "tensor-wise native int4, all Linear matrices, QKV split, swapped final scale/shift",
+  "license": "Apache-2.0 upstream",
+  "lora_baked": false,
+  "runtime_validation": {
+    "status": "passed_all_387_native_keys_shapes_dtypes",
+    "evidence": "track3-base28-native-q4-cfg1-standard-generic/execution.log",
+    "inference_result": "stopped_for_memory_no_output"
+  },
+  "source_repo": "black-forest-labs/FLUX.2-klein-base-4B",
+  "source_revision": "a3b4f4849157f664bdbc776fd7453c2783562f4d"
+}
