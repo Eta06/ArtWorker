@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "deepstack": false,
+      "max_abs_error": 0.0,
+      "all_decoder_layers_released": true,
+      "reuse_rejected": true
+    },
+    {
+      "deepstack": true,
+      "max_abs_error": 0.0,
+      "all_decoder_layers_released": true,
+      "reuse_rejected": true
+    }
+  ],
+  "vision_cases": [
+    {
+      "deepstack": false,
+      "max_abs_errors": [
+        0.0
+      ],
+      "all_used_layers_released": true,
+      "reuse_rejected": true
+    },
+    {
+      "deepstack": true,
+      "max_abs_errors": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "all_used_layers_released": true,
+      "reuse_rejected": true
+    }
+  ],
+  "ondemand_checkpoint_cases": {
+    "language_max_abs_error": 0.0,
+    "vision_max_abs_errors": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "embedding_max_abs_error": 0.0,
+    "sequential_component_max_abs_error": 0.0
+  },
+  "scope": "Reduced actual decoder and vision classes, affine Q4, FP16, with/without deepstack. Not full VLM image quality or iPhone proof."
+}
