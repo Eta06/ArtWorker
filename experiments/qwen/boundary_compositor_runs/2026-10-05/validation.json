@@ -1,0 +1,208 @@
+{
+  "status": "passed",
+  "composite_record_count": 24,
+  "distinct_composite_sha256_count": 22,
+  "all_original_jpeg_hashes_match_manifest": true,
+  "all_input_raw_and_source_hashes_unchanged": true,
+  "all_original_resized_512_source_pixels_exact": true,
+  "all_far_exterior_pixels_exact": true,
+  "cubic_baseline_and_color_controls_reproduced_exactly": true,
+  "gpu_calls": 0,
+  "model_weights_loaded": false,
+  "player_changed": false,
+  "scope": "post-generation compositor; not model-quality success",
+  "items": [
+    {
+      "directory": "track1",
+      "variant": "color",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "e4c9e67d77d9a7302327962c6a4871ba668cbcf15c5d3336f82040545bf67efa"
+    },
+    {
+      "directory": "track1",
+      "variant": "dis-flow",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "44806a4ae6521b0cc98099ccd4f18ce571940a2a8c1fe948d46dedf8c9765294"
+    },
+    {
+      "directory": "track1",
+      "variant": "dis-color",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "61a70612131423f1f34039165f19d7797d397a8afd6edf84d489da205dcaa3f0"
+    },
+    {
+      "directory": "track1",
+      "variant": "dis-tangent-color",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "35bb92125e0add41c77bcdaa33a663840c14ac614fcc33cd3e64a96b179d047e"
+    },
+    {
+      "directory": "track1",
+      "variant": "farneback-color",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "66aa11bdceec9c49805c441721114d9abfbd28c850a0c8c19068956ef54695e8"
+    },
+    {
+      "directory": "track1",
+      "variant": "baseline",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "ce720de75bcc4582d129b8c04b3acdf7f2b37069fb848b746cb9f3467d75136f"
+    },
+    {
+      "directory": "track2",
+      "variant": "color",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "eecbba62f359c4e89070eea54cf00736ca49e978fef79a3ad6a7012f9c65720e"
+    },
+    {
+      "directory": "track2",
+      "variant": "dis-flow",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "7637c97cf7f3f6723763c7f38a6bcd8dade31929ae896bb846bf4256570e2f00"
+    },
+    {
+      "directory": "track2",
+      "variant": "dis-color",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "d05dd76d833c40ac2eb389adca2062308e75ce189c14bea5e8352869d486f73e"
+    },
+    {
+      "directory": "track2",
+      "variant": "dis-tangent-color",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "0176d31d19f7398ecb28f3d1baeaa9d3db62ccbe207c3f090dbc080abe0cd9ce"
+    },
+    {
+      "directory": "track2",
+      "variant": "farneback-color",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "aeddafb533c050b76f5d85c33c2cb4833c4f56ad66441f911343bd2789cfaca9"
+    },
+    {
+      "directory": "track2",
+      "variant": "baseline",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "a6eca53f75d31def54691325e91ed65976d61904c6e669cf0c4d24c7783ce0aa"
+    },
+    {
+      "directory": "track3",
+      "variant": "color",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "9ee3b753e28b96222cd63ebc5488dca02beb6460c7889f576e45131c214eda91"
+    },
+    {
+      "directory": "track3",
+      "variant": "dis-flow",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "996d8321a96ab923f6663aca89fe91c84bc4c181a8797e8f236fd033f2422958"
+    },
+    {
+      "directory": "track3",
+      "variant": "dis-color",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "2753c7534da006c086a5380ef046d6bc725680c7f583dc65e82e3cc1c7d4d2e9"
+    },
+    {
+      "directory": "track3",
+      "variant": "dis-tangent-color",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "86768398d3a7bd3e9c3512f6b7e06501ed5b598734db2c7356e9439737fb8613"
+    },
+    {
+      "directory": "track3",
+      "variant": "farneback-color",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "919fdd9b99cd594a726965910d1a203fbd7c2b4f1b067e8e75d9dda20f4aa7d3"
+    },
+    {
+      "directory": "track3",
+      "variant": "baseline",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "03ad495177a35f9ca8e405fc7b5d5a111c4389ee93230ee30381c9b38dcbe2e8"
+    },
+    {
+      "directory": "track3-cubic",
+      "variant": "color",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "9ee3b753e28b96222cd63ebc5488dca02beb6460c7889f576e45131c214eda91"
+    },
+    {
+      "directory": "track3-cubic",
+      "variant": "dis-flow",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "c4154dbd4f86fbdd6a3e51ab5ed4cbc7e37273cb9a2420152309afd8e593767d"
+    },
+    {
+      "directory": "track3-cubic",
+      "variant": "dis-color",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "4a7f5b7f411baf92000db1481a9150bf2cbb41f129cdbcf4d49109c6c849c3a6"
+    },
+    {
+      "directory": "track3-cubic",
+      "variant": "dis-tangent-color",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "37a674266d378304fe5d4910113374cd11192afbb56cbbdb4b25979b15278c4b"
+    },
+    {
+      "directory": "track3-cubic",
+      "variant": "farneback-color",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "04ee85fd0d5bad6f85231b5ed922108a90a9cfa2f103c5f77f9b20ad24558e39"
+    },
+    {
+      "directory": "track3-cubic",
+      "variant": "baseline",
+      "source_exact": true,
+      "far_exterior_exact": true,
+      "recorded_output_hash_matched": true,
+      "sha256": "03ad495177a35f9ca8e405fc7b5d5a111c4389ee93230ee30381c9b38dcbe2e8"
+    }
+  ]
+}
