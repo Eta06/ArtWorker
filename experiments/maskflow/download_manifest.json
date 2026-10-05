@@ -1,0 +1,732 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-05T03:27:20.970282+00:00",
+  "status": "complete_verified",
+  "download": {
+    "method": "hf download --revision <commit> --local-dir <dir> --max-workers 2",
+    "implicit_token_disabled": true,
+    "cache_duplication_avoided_with_local_dir": true,
+    "free_disk_bytes_before": 153675243520,
+    "expected_total_payload_bytes": 20748346016,
+    "max_workers_per_repository": 2,
+    "adapter_policy": "latest.safetensors only; no old or distilled checkpoints",
+    "started_at_utc": "2026-10-05T03:27:21.030411+00:00",
+    "finished_at_utc": "2026-10-05T03:42:15.867565+00:00",
+    "fallback_reason": "First anonymous Xet attempt stalled for several minutes at ~110 KiB base and zero adapter payload; original partial files and logs retained.",
+    "xet_disabled_on_retry": true,
+    "retry_started_at_utc": "2026-10-05T03:33:07.327028+00:00",
+    "free_disk_bytes_after": 122686078976
+  },
+  "repositories": [
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "public": true,
+      "gated": false,
+      "local_dir": "experiments/maskflow/models/qwen-image-edit-2511-4bit",
+      "status": "complete_verified",
+      "files": [
+        {
+          "path": ".gitattributes",
+          "expected_size_bytes": 1580,
+          "expected_lfs_sha256": null,
+          "expected_git_blob_id": "f1ca65ce6a5b0774360fde1ec05157d9f937aaa2",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/.gitattributes",
+          "actual_size_bytes": 1580,
+          "size": 1580,
+          "actual_sha256": "caf3ca02d5e883f643e939cbed54f94237f94c171797f0dfea5e25c7e33315b3",
+          "sha256": "caf3ca02d5e883f643e939cbed54f94237f94c171797f0dfea5e25c7e33315b3",
+          "expected_sha256": null,
+          "actual_git_blob_id": "f1ca65ce6a5b0774360fde1ec05157d9f937aaa2",
+          "verified": true
+        },
+        {
+          "path": "LICENSE.md",
+          "expected_size_bytes": 11358,
+          "expected_lfs_sha256": null,
+          "expected_git_blob_id": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/LICENSE.md",
+          "actual_size_bytes": 11358,
+          "size": 11358,
+          "actual_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+          "expected_sha256": null,
+          "actual_git_blob_id": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+          "verified": true
+        },
+        {
+          "path": "README.md",
+          "expected_size_bytes": 2306,
+          "expected_lfs_sha256": null,
+          "expected_git_blob_id": "28e8077bd4071bc5bb0c52a6fcb088fde673a7c9",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/README.md",
+          "actual_size_bytes": 2306,
+          "size": 2306,
+          "actual_sha256": "de648d76db67c90d35e4b15490176a310158b643f5a0278f2525598769e4bb1e",
+          "sha256": "de648d76db67c90d35e4b15490176a310158b643f5a0278f2525598769e4bb1e",
+          "expected_sha256": null,
+          "actual_git_blob_id": "28e8077bd4071bc5bb0c52a6fcb088fde673a7c9",
+          "verified": true
+        },
+        {
+          "path": "text_encoder/0.safetensors",
+          "expected_size_bytes": 2142182659,
+          "expected_lfs_sha256": "b17f5c5e9a67d4e1e99661429afe277cacc6dfa1b29d505bf38d8b5f1e4ad0da",
+          "expected_git_blob_id": "7c9b11a6a77582809f2a8e93c31f62e6cade8310",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/text_encoder/0.safetensors",
+          "actual_size_bytes": 2142182659,
+          "size": 2142182659,
+          "actual_sha256": "b17f5c5e9a67d4e1e99661429afe277cacc6dfa1b29d505bf38d8b5f1e4ad0da",
+          "sha256": "b17f5c5e9a67d4e1e99661429afe277cacc6dfa1b29d505bf38d8b5f1e4ad0da",
+          "expected_sha256": "b17f5c5e9a67d4e1e99661429afe277cacc6dfa1b29d505bf38d8b5f1e4ad0da",
+          "actual_git_blob_id": null,
+          "verified": true
+        },
+        {
+          "path": "text_encoder/1.safetensors",
+          "expected_size_bytes": 2146261507,
+          "expected_lfs_sha256": "c7ddb2c4306d9aa0302788597db05b7b2a0654071902e850478993145bef8764",
+          "expected_git_blob_id": "35fca21e67e4a538d7dae97111a0002373769e89",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/text_encoder/1.safetensors",
+          "actual_size_bytes": 2146261507,
+          "size": 2146261507,
+          "actual_sha256": "c7ddb2c4306d9aa0302788597db05b7b2a0654071902e850478993145bef8764",
+          "sha256": "c7ddb2c4306d9aa0302788597db05b7b2a0654071902e850478993145bef8764",
+          "expected_sha256": "c7ddb2c4306d9aa0302788597db05b7b2a0654071902e850478993145bef8764",
+          "actual_git_blob_id": null,
+          "verified": true
+        },
+        {
+          "path": "text_encoder/2.safetensors",
+          "expected_size_bytes": 541485131,
+          "expected_lfs_sha256": "de51a47f671100e3e5af3b096448c1a4c3a391122a76b2373a0836a66e041ce1",
+          "expected_git_blob_id": "4d905b0c661c7b8d6107e0594802126b924f4a75",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/text_encoder/2.safetensors",
+          "actual_size_bytes": 541485131,
+          "size": 541485131,
+          "actual_sha256": "de51a47f671100e3e5af3b096448c1a4c3a391122a76b2373a0836a66e041ce1",
+          "sha256": "de51a47f671100e3e5af3b096448c1a4c3a391122a76b2373a0836a66e041ce1",
+          "expected_sha256": "de51a47f671100e3e5af3b096448c1a4c3a391122a76b2373a0836a66e041ce1",
+          "actual_git_blob_id": null,
+          "verified": true
+        },
+        {
+          "path": "text_encoder/model.safetensors.index.json",
+          "expected_size_bytes": 92268,
+          "expected_lfs_sha256": null,
+          "expected_git_blob_id": "863ce4f1b0f870c1d7f058b262267705363c6125",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/text_encoder/model.safetensors.index.json",
+          "actual_size_bytes": 92268,
+          "size": 92268,
+          "actual_sha256": "e52b7b5e0e0bd4d544df98d16abaa26649a3f2b2613c8e7ed66ddca788c7409c",
+          "sha256": "e52b7b5e0e0bd4d544df98d16abaa26649a3f2b2613c8e7ed66ddca788c7409c",
+          "expected_sha256": null,
+          "actual_git_blob_id": "863ce4f1b0f870c1d7f058b262267705363c6125",
+          "verified": true
+        },
+        {
+          "path": "tokenizer/tokenizer.json",
+          "expected_size_bytes": 11417006,
+          "expected_lfs_sha256": "444a80c37c7f34f485c050cf374595a0cb7d88735459cf0505fd204453c33178",
+          "expected_git_blob_id": "2c0bc81e7ba1bfa2a690d2caaf4bb72d3166e2ac",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/tokenizer/tokenizer.json",
+          "actual_size_bytes": 11417006,
+          "size": 11417006,
+          "actual_sha256": "444a80c37c7f34f485c050cf374595a0cb7d88735459cf0505fd204453c33178",
+          "sha256": "444a80c37c7f34f485c050cf374595a0cb7d88735459cf0505fd204453c33178",
+          "expected_sha256": "444a80c37c7f34f485c050cf374595a0cb7d88735459cf0505fd204453c33178",
+          "actual_git_blob_id": null,
+          "verified": true
+        },
+        {
+          "path": "tokenizer/tokenizer_config.json",
+          "expected_size_bytes": 269,
+          "expected_lfs_sha256": null,
+          "expected_git_blob_id": "3299687e615af5b239e5000b69cb0cb62ee2008f",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/tokenizer/tokenizer_config.json",
+          "actual_size_bytes": 269,
+          "size": 269,
+          "actual_sha256": "ebf4e7d1ac441e3d84a44228a1a7392977b375a34c8fbc8b87c68e6a832e98ba",
+          "sha256": "ebf4e7d1ac441e3d84a44228a1a7392977b375a34c8fbc8b87c68e6a832e98ba",
+          "expected_sha256": null,
+          "actual_git_blob_id": "3299687e615af5b239e5000b69cb0cb62ee2008f",
+          "verified": true
+        },
+        {
+          "path": "transformer/0.safetensors",
+          "expected_size_bytes": 2133769869,
+          "expected_lfs_sha256": "738989aa3891a1f56c1d6c0b2e1050c29eddbdffffc18ed678d071095c0b8bfa",
+          "expected_git_blob_id": "2c8c5efd4c56f68b6aeb66a96a7b386360d686b1",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/0.safetensors",
+          "actual_size_bytes": 2133769869,
+          "size": 2133769869,
+          "actual_sha256": "738989aa3891a1f56c1d6c0b2e1050c29eddbdffffc18ed678d071095c0b8bfa",
+          "sha256": "738989aa3891a1f56c1d6c0b2e1050c29eddbdffffc18ed678d071095c0b8bfa",
+          "expected_sha256": "738989aa3891a1f56c1d6c0b2e1050c29eddbdffffc18ed678d071095c0b8bfa",
+          "actual_git_blob_id": null,
+          "verified": true
+        },
+        {
+          "path": "transformer/1.safetensors",
+          "expected_size_bytes": 2142940100,
+          "expected_lfs_sha256": "7c71d0530db3b07f745bb5b77f9e41044bd5c05ddb8e4eb60a01f679b55a6b0c",
+          "expected_git_blob_id": "8c961d50f5ca4d877889d242570378a6d093880f",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/1.safetensors",
+          "actual_size_bytes": 2142940100,
+          "size": 2142940100,
+          "actual_sha256": "7c71d0530db3b07f745bb5b77f9e41044bd5c05ddb8e4eb60a01f679b55a6b0c",
+          "sha256": "7c71d0530db3b07f745bb5b77f9e41044bd5c05ddb8e4eb60a01f679b55a6b0c",
+          "expected_sha256": "7c71d0530db3b07f745bb5b77f9e41044bd5c05ddb8e4eb60a01f679b55a6b0c",
+          "actual_git_blob_id": null,
+          "verified": true
+        },
+        {
+          "path": "transformer/2.safetensors",
+          "expected_size_bytes": 2103978106,
+          "expected_lfs_sha256": "483486b6b9948e482d027f05a260772e2dae30d771dffb49d35154fb36a1fdcb",
+          "expected_git_blob_id": "c6cf683da22564ee5ef8fd0baceeb30d95f03b9f",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/2.safetensors",
+          "actual_size_bytes": 2103978106,
+          "size": 2103978106,
+          "actual_sha256": "483486b6b9948e482d027f05a260772e2dae30d771dffb49d35154fb36a1fdcb",
+          "sha256": "483486b6b9948e482d027f05a260772e2dae30d771dffb49d35154fb36a1fdcb",
+          "expected_sha256": "483486b6b9948e482d027f05a260772e2dae30d771dffb49d35154fb36a1fdcb",
+          "actual_git_blob_id": null,
+          "verified": true
+        },
+        {
+          "path": "transformer/3.safetensors",
+          "expected_size_bytes": 2121682265,
+          "expected_lfs_sha256": "3ce0d2271c98b0516e9a993c3c83bd1e780228c648b1a120911841ef1f483e3a",
+          "expected_git_blob_id": "5ee4f8da89143621c77cc65857c303911991057c",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/3.safetensors",
+          "actual_size_bytes": 2121682265,
+          "size": 2121682265,
+          "actual_sha256": "3ce0d2271c98b0516e9a993c3c83bd1e780228c648b1a120911841ef1f483e3a",
+          "sha256": "3ce0d2271c98b0516e9a993c3c83bd1e780228c648b1a120911841ef1f483e3a",
+          "expected_sha256": "3ce0d2271c98b0516e9a993c3c83bd1e780228c648b1a120911841ef1f483e3a",
+          "actual_git_blob_id": null,
+          "verified": true
+        },
+        {
+          "path": "transformer/4.safetensors",
+          "expected_size_bytes": 2142940118,
+          "expected_lfs_sha256": "8f98dc70700270fa0f65792842df7dad5741fa84c3f3bc08f032d569a6a94572",
+          "expected_git_blob_id": "013ca0a48ea943d2357237629e5ef21f327ac10f",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/4.safetensors",
+          "actual_size_bytes": 2142940118,
+          "size": 2142940118,
+          "actual_sha256": "8f98dc70700270fa0f65792842df7dad5741fa84c3f3bc08f032d569a6a94572",
+          "sha256": "8f98dc70700270fa0f65792842df7dad5741fa84c3f3bc08f032d569a6a94572",
+          "expected_sha256": "8f98dc70700270fa0f65792842df7dad5741fa84c3f3bc08f032d569a6a94572",
+          "actual_git_blob_id": null,
+          "verified": true
+        },
+        {
+          "path": "transformer/5.safetensors",
+          "expected_size_bytes": 2103978210,
+          "expected_lfs_sha256": "9eac33fb04eb1c09e673f41f4fed1d77bdde5ca67bcd85418c547c602c00d005",
+          "expected_git_blob_id": "602b35e59d8eb2e031ce4dbcfa222e34f4b45180",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/5.safetensors",
+          "actual_size_bytes": 2103978210,
+          "size": 2103978210,
+          "actual_sha256": "9eac33fb04eb1c09e673f41f4fed1d77bdde5ca67bcd85418c547c602c00d005",
+          "sha256": "9eac33fb04eb1c09e673f41f4fed1d77bdde5ca67bcd85418c547c602c00d005",
+          "expected_sha256": "9eac33fb04eb1c09e673f41f4fed1d77bdde5ca67bcd85418c547c602c00d005",
+          "actual_git_blob_id": null,
+          "verified": true
+        },
+        {
+          "path": "transformer/6.safetensors",
+          "expected_size_bytes": 449941880,
+          "expected_lfs_sha256": "dd7d04622b0d2c462ba316347e2337c8f49075adfe897584b836c8cd51caa85a",
+          "expected_git_blob_id": "197c5c537a142addc9349377fa898e72d3efdd03",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/6.safetensors",
+          "actual_size_bytes": 449941880,
+          "size": 449941880,
+          "actual_sha256": "dd7d04622b0d2c462ba316347e2337c8f49075adfe897584b836c8cd51caa85a",
+          "sha256": "dd7d04622b0d2c462ba316347e2337c8f49075adfe897584b836c8cd51caa85a",
+          "expected_sha256": "dd7d04622b0d2c462ba316347e2337c8f49075adfe897584b836c8cd51caa85a",
+          "actual_git_blob_id": null,
+          "verified": true
+        },
+        {
+          "path": "transformer/model.safetensors.index.json",
+          "expected_size_bytes": 241693,
+          "expected_lfs_sha256": null,
+          "expected_git_blob_id": "30943ca4517231bf5b17be2dce3f7c6cb7f70731",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/model.safetensors.index.json",
+          "actual_size_bytes": 241693,
+          "size": 241693,
+          "actual_sha256": "f9f03fac574131598f16cdee75d60ffa15dc0fd5e60c37d89bcc74aa3653366c",
+          "sha256": "f9f03fac574131598f16cdee75d60ffa15dc0fd5e60c37d89bcc74aa3653366c",
+          "expected_sha256": null,
+          "actual_git_blob_id": "30943ca4517231bf5b17be2dce3f7c6cb7f70731",
+          "verified": true
+        },
+        {
+          "path": "vae/0.safetensors",
+          "expected_size_bytes": 253586147,
+          "expected_lfs_sha256": "2c2db147e652a0e011c1c5f40345ab84e9a95819ee9c7b29eb29f245cccd8f64",
+          "expected_git_blob_id": "6c1144c84463a3a7d93bd62f4665e84f811b1341",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/vae/0.safetensors",
+          "actual_size_bytes": 253586147,
+          "size": 253586147,
+          "actual_sha256": "2c2db147e652a0e011c1c5f40345ab84e9a95819ee9c7b29eb29f245cccd8f64",
+          "sha256": "2c2db147e652a0e011c1c5f40345ab84e9a95819ee9c7b29eb29f245cccd8f64",
+          "expected_sha256": "2c2db147e652a0e011c1c5f40345ab84e9a95819ee9c7b29eb29f245cccd8f64",
+          "actual_git_blob_id": null,
+          "verified": true
+        },
+        {
+          "path": "vae/model.safetensors.index.json",
+          "expected_size_bytes": 13512,
+          "expected_lfs_sha256": null,
+          "expected_git_blob_id": "b0196601c3c7ed7381ccb7fa2a085b402241130a",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/vae/model.safetensors.index.json",
+          "actual_size_bytes": 13512,
+          "size": 13512,
+          "actual_sha256": "feda700a9485ff767135f5ca4ea92be31a0b8465c624959814b505a827428f3c",
+          "sha256": "feda700a9485ff767135f5ca4ea92be31a0b8465c624959814b505a827428f3c",
+          "expected_sha256": null,
+          "actual_git_blob_id": "b0196601c3c7ed7381ccb7fa2a085b402241130a",
+          "verified": true
+        }
+      ],
+      "download_command": [
+        "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/.venv/bin/hf",
+        "download",
+        "AbstractFramework/qwen-image-edit-2511-4bit",
+        "--revision",
+        "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+        "--local-dir",
+        "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit",
+        "--max-workers",
+        "2"
+      ],
+      "download_log": "experiments/maskflow/models/qwen-image-edit-2511-4bit.http.download.log",
+      "download_exit_code": 0,
+      "attempts": [
+        {
+          "download_command": [
+            "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/.venv/bin/hf",
+            "download",
+            "AbstractFramework/qwen-image-edit-2511-4bit",
+            "--revision",
+            "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+            "--local-dir",
+            "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit",
+            "--max-workers",
+            "2"
+          ],
+          "log": "experiments/maskflow/models/qwen-image-edit-2511-4bit.download.log",
+          "exit_code": -15,
+          "transport": "xet",
+          "status": "stalled_terminated"
+        },
+        {
+          "download_command": [
+            "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/.venv/bin/hf",
+            "download",
+            "AbstractFramework/qwen-image-edit-2511-4bit",
+            "--revision",
+            "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+            "--local-dir",
+            "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit",
+            "--max-workers",
+            "2"
+          ],
+          "log": "experiments/maskflow/models/qwen-image-edit-2511-4bit.http.download.log",
+          "exit_code": 0,
+          "transport": "http"
+        }
+      ]
+    },
+    {
+      "repo_id": "ReyChiaro/MaskFlow",
+      "revision": "f18f0828ab6a40a7f3456feace7a33bebe8c511e",
+      "public": true,
+      "gated": false,
+      "local_dir": "experiments/maskflow/models/MaskFlow",
+      "status": "complete_verified",
+      "files": [
+        {
+          "path": "latest.safetensors",
+          "expected_size_bytes": 2453820032,
+          "expected_lfs_sha256": "773e815a209ebf948dbe0cf76492dd658cc16030f8119471cc553edb208de7b0",
+          "expected_git_blob_id": "0f0f81d7e122171ea1c243ac13bdd3b6621dc1b6",
+          "status": "verified",
+          "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/MaskFlow/latest.safetensors",
+          "actual_size_bytes": 2453820032,
+          "size": 2453820032,
+          "actual_sha256": "773e815a209ebf948dbe0cf76492dd658cc16030f8119471cc553edb208de7b0",
+          "sha256": "773e815a209ebf948dbe0cf76492dd658cc16030f8119471cc553edb208de7b0",
+          "expected_sha256": "773e815a209ebf948dbe0cf76492dd658cc16030f8119471cc553edb208de7b0",
+          "actual_git_blob_id": null,
+          "verified": true
+        }
+      ],
+      "download_command": [
+        "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/.venv/bin/hf",
+        "download",
+        "ReyChiaro/MaskFlow",
+        "latest.safetensors",
+        "--revision",
+        "f18f0828ab6a40a7f3456feace7a33bebe8c511e",
+        "--local-dir",
+        "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/MaskFlow",
+        "--max-workers",
+        "2"
+      ],
+      "download_log": "experiments/maskflow/models/MaskFlow.http.download.log",
+      "download_exit_code": 0,
+      "attempts": [
+        {
+          "download_command": [
+            "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/.venv/bin/hf",
+            "download",
+            "ReyChiaro/MaskFlow",
+            "latest.safetensors",
+            "--revision",
+            "f18f0828ab6a40a7f3456feace7a33bebe8c511e",
+            "--local-dir",
+            "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/MaskFlow",
+            "--max-workers",
+            "2"
+          ],
+          "log": "experiments/maskflow/models/MaskFlow.download.log",
+          "exit_code": -15,
+          "transport": "xet",
+          "status": "stalled_terminated"
+        },
+        {
+          "download_command": [
+            "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/.venv/bin/hf",
+            "download",
+            "ReyChiaro/MaskFlow",
+            "latest.safetensors",
+            "--revision",
+            "f18f0828ab6a40a7f3456feace7a33bebe8c511e",
+            "--local-dir",
+            "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/MaskFlow",
+            "--max-workers",
+            "2"
+          ],
+          "log": "experiments/maskflow/models/MaskFlow.http.download.log",
+          "exit_code": 0,
+          "transport": "http"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "full_payload_sha256_status": "verified",
+    "adapter_tensor_validation": "passed",
+    "gpu_used": false,
+    "adapter_cpu_validation_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/adapter_cpu_validation.json",
+    "adapter_cpu_validation_sha256": "b36c1fac33275313e79012277636be5fc735da3fe9b09143a1d6f082ab14f96b",
+    "adapter_cpu_tests_passed": 14,
+    "runtime_git_revision": "99fb94dd3eaa9dd1931cd3cd8eae1ae3e20f2ef3",
+    "full_model_loaded": false,
+    "adapter_mapping_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_adapter.py",
+    "adapter_mapping_sha256": "802cec2b7ec4a1e797ba4b4587a1ffe371aec45c1a40cf6e4aa4db27947ef402"
+  },
+  "payload_verified": true,
+  "complete": true,
+  "files": [
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/.gitattributes",
+      "size": 1580,
+      "sha256": "caf3ca02d5e883f643e939cbed54f94237f94c171797f0dfea5e25c7e33315b3",
+      "expected_sha256": null,
+      "expected_git_blob_id": "f1ca65ce6a5b0774360fde1ec05157d9f937aaa2",
+      "verified": true
+    },
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/LICENSE.md",
+      "size": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "expected_sha256": null,
+      "expected_git_blob_id": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "verified": true
+    },
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/README.md",
+      "size": 2306,
+      "sha256": "de648d76db67c90d35e4b15490176a310158b643f5a0278f2525598769e4bb1e",
+      "expected_sha256": null,
+      "expected_git_blob_id": "28e8077bd4071bc5bb0c52a6fcb088fde673a7c9",
+      "verified": true
+    },
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/text_encoder/0.safetensors",
+      "size": 2142182659,
+      "sha256": "b17f5c5e9a67d4e1e99661429afe277cacc6dfa1b29d505bf38d8b5f1e4ad0da",
+      "expected_sha256": "b17f5c5e9a67d4e1e99661429afe277cacc6dfa1b29d505bf38d8b5f1e4ad0da",
+      "expected_git_blob_id": null,
+      "verified": true
+    },
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/text_encoder/1.safetensors",
+      "size": 2146261507,
+      "sha256": "c7ddb2c4306d9aa0302788597db05b7b2a0654071902e850478993145bef8764",
+      "expected_sha256": "c7ddb2c4306d9aa0302788597db05b7b2a0654071902e850478993145bef8764",
+      "expected_git_blob_id": null,
+      "verified": true
+    },
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/text_encoder/2.safetensors",
+      "size": 541485131,
+      "sha256": "de51a47f671100e3e5af3b096448c1a4c3a391122a76b2373a0836a66e041ce1",
+      "expected_sha256": "de51a47f671100e3e5af3b096448c1a4c3a391122a76b2373a0836a66e041ce1",
+      "expected_git_blob_id": null,
+      "verified": true
+    },
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/text_encoder/model.safetensors.index.json",
+      "size": 92268,
+      "sha256": "e52b7b5e0e0bd4d544df98d16abaa26649a3f2b2613c8e7ed66ddca788c7409c",
+      "expected_sha256": null,
+      "expected_git_blob_id": "863ce4f1b0f870c1d7f058b262267705363c6125",
+      "verified": true
+    },
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/tokenizer/tokenizer.json",
+      "size": 11417006,
+      "sha256": "444a80c37c7f34f485c050cf374595a0cb7d88735459cf0505fd204453c33178",
+      "expected_sha256": "444a80c37c7f34f485c050cf374595a0cb7d88735459cf0505fd204453c33178",
+      "expected_git_blob_id": null,
+      "verified": true
+    },
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/tokenizer/tokenizer_config.json",
+      "size": 269,
+      "sha256": "ebf4e7d1ac441e3d84a44228a1a7392977b375a34c8fbc8b87c68e6a832e98ba",
+      "expected_sha256": null,
+      "expected_git_blob_id": "3299687e615af5b239e5000b69cb0cb62ee2008f",
+      "verified": true
+    },
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/0.safetensors",
+      "size": 2133769869,
+      "sha256": "738989aa3891a1f56c1d6c0b2e1050c29eddbdffffc18ed678d071095c0b8bfa",
+      "expected_sha256": "738989aa3891a1f56c1d6c0b2e1050c29eddbdffffc18ed678d071095c0b8bfa",
+      "expected_git_blob_id": null,
+      "verified": true
+    },
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/1.safetensors",
+      "size": 2142940100,
+      "sha256": "7c71d0530db3b07f745bb5b77f9e41044bd5c05ddb8e4eb60a01f679b55a6b0c",
+      "expected_sha256": "7c71d0530db3b07f745bb5b77f9e41044bd5c05ddb8e4eb60a01f679b55a6b0c",
+      "expected_git_blob_id": null,
+      "verified": true
+    },
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/2.safetensors",
+      "size": 2103978106,
+      "sha256": "483486b6b9948e482d027f05a260772e2dae30d771dffb49d35154fb36a1fdcb",
+      "expected_sha256": "483486b6b9948e482d027f05a260772e2dae30d771dffb49d35154fb36a1fdcb",
+      "expected_git_blob_id": null,
+      "verified": true
+    },
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/3.safetensors",
+      "size": 2121682265,
+      "sha256": "3ce0d2271c98b0516e9a993c3c83bd1e780228c648b1a120911841ef1f483e3a",
+      "expected_sha256": "3ce0d2271c98b0516e9a993c3c83bd1e780228c648b1a120911841ef1f483e3a",
+      "expected_git_blob_id": null,
+      "verified": true
+    },
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/4.safetensors",
+      "size": 2142940118,
+      "sha256": "8f98dc70700270fa0f65792842df7dad5741fa84c3f3bc08f032d569a6a94572",
+      "expected_sha256": "8f98dc70700270fa0f65792842df7dad5741fa84c3f3bc08f032d569a6a94572",
+      "expected_git_blob_id": null,
+      "verified": true
+    },
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/5.safetensors",
+      "size": 2103978210,
+      "sha256": "9eac33fb04eb1c09e673f41f4fed1d77bdde5ca67bcd85418c547c602c00d005",
+      "expected_sha256": "9eac33fb04eb1c09e673f41f4fed1d77bdde5ca67bcd85418c547c602c00d005",
+      "expected_git_blob_id": null,
+      "verified": true
+    },
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/6.safetensors",
+      "size": 449941880,
+      "sha256": "dd7d04622b0d2c462ba316347e2337c8f49075adfe897584b836c8cd51caa85a",
+      "expected_sha256": "dd7d04622b0d2c462ba316347e2337c8f49075adfe897584b836c8cd51caa85a",
+      "expected_git_blob_id": null,
+      "verified": true
+    },
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/transformer/model.safetensors.index.json",
+      "size": 241693,
+      "sha256": "f9f03fac574131598f16cdee75d60ffa15dc0fd5e60c37d89bcc74aa3653366c",
+      "expected_sha256": null,
+      "expected_git_blob_id": "30943ca4517231bf5b17be2dce3f7c6cb7f70731",
+      "verified": true
+    },
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/vae/0.safetensors",
+      "size": 253586147,
+      "sha256": "2c2db147e652a0e011c1c5f40345ab84e9a95819ee9c7b29eb29f245cccd8f64",
+      "expected_sha256": "2c2db147e652a0e011c1c5f40345ab84e9a95819ee9c7b29eb29f245cccd8f64",
+      "expected_git_blob_id": null,
+      "verified": true
+    },
+    {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/vae/model.safetensors.index.json",
+      "size": 13512,
+      "sha256": "feda700a9485ff767135f5ca4ea92be31a0b8465c624959814b505a827428f3c",
+      "expected_sha256": null,
+      "expected_git_blob_id": "b0196601c3c7ed7381ccb7fa2a085b402241130a",
+      "verified": true
+    },
+    {
+      "repo_id": "ReyChiaro/MaskFlow",
+      "revision": "f18f0828ab6a40a7f3456feace7a33bebe8c511e",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/MaskFlow/latest.safetensors",
+      "size": 2453820032,
+      "sha256": "773e815a209ebf948dbe0cf76492dd658cc16030f8119471cc553edb208de7b0",
+      "expected_sha256": "773e815a209ebf948dbe0cf76492dd658cc16030f8119471cc553edb208de7b0",
+      "expected_git_blob_id": null,
+      "verified": true
+    },
+    {
+      "repo_id": "Qwen/Qwen-Image-Edit-2511",
+      "revision": "6f3ccc0b56e431dc6a0c2b2039706d7d26f22cb9",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/original-sidecar/norm_out.linear.bias.safetensors",
+      "size": 12664,
+      "sha256": "17d819538335f64ae06b2f68353b33a9c474ba50c78d3d152c3823e7aa00dff9",
+      "expected_sha256": null,
+      "verified": true,
+      "verification_basis": "Pinned anonymous HTTP 206 response with exact Content-Range and byte count; local payload and generated sidecar hashes. Full source shard SHA256 is unverified.",
+      "source_full_shard_payload_verified": false
+    }
+  ],
+  "verified_at_utc": "2026-10-05T03:47:10.107249+00:00",
+  "selected": {
+    "base": {
+      "repo_id": "AbstractFramework/qwen-image-edit-2511-4bit",
+      "revision": "dbc6d597c1316fc34c0f7726904121a284a69c0b",
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit"
+    },
+    "adapter": {
+      "repo_id": "ReyChiaro/MaskFlow",
+      "revision": "f18f0828ab6a40a7f3456feace7a33bebe8c511e",
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/MaskFlow/latest.safetensors"
+    },
+    "norm_out_bias_sidecar": {
+      "repo_id": "Qwen/Qwen-Image-Edit-2511",
+      "revision": "6f3ccc0b56e431dc6a0c2b2039706d7d26f22cb9",
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/original-sidecar/norm_out.linear.bias.safetensors",
+      "tensor": "norm_out.linear.bias",
+      "provenance_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/original-sidecar/norm_out.linear.bias.provenance.json"
+    }
+  },
+  "leftover_incomplete_files": [
+    {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/.cache/huggingface/download/text_encoder/EyungE0_iOj0gd7KELZIUY6XP2o=.b17f5c5e9a67d4e1e99661429afe277cacc6dfa1b29d505bf38d8b5f1e4ad0da.1e5024c0.incomplete",
+      "size_bytes": 57327,
+      "status": "leftover_from_terminated_xet_attempt_preserved"
+    },
+    {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/.cache/huggingface/download/text_encoder/13lWd3rXHrjXtEhrgKAc7_WSE5Y=.c7ddb2c4306d9aa0302788597db05b7b2a0654071902e850478993145bef8764.346bcb97.incomplete",
+      "size_bytes": 56142,
+      "status": "leftover_from_terminated_xet_attempt_preserved"
+    },
+    {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/MaskFlow/.cache/huggingface/download/9QftrcxYQzha-AMUOuszjEGv6AU=.773e815a209ebf948dbe0cf76492dd658cc16030f8119471cc553edb208de7b0.37fa6395.incomplete",
+      "size_bytes": 0,
+      "status": "leftover_from_terminated_xet_attempt_preserved"
+    }
+  ],
+  "repairs": [
+    {
+      "purpose": "Restore original learned norm_out.linear.bias omitted from selected quantized derivative",
+      "tensor": "norm_out.linear.bias",
+      "repo_id": "Qwen/Qwen-Image-Edit-2511",
+      "revision": "6f3ccc0b56e431dc6a0c2b2039706d7d26f22cb9",
+      "source_shard": "transformer/diffusion_pytorch_model-00005-of-00005.safetensors",
+      "source_tensor_dtype": "BF16",
+      "source_tensor_shape": [
+        6144
+      ],
+      "source_payload_range": "bytes 4776-17063/982130472",
+      "source_tensor_bytes": 12288,
+      "source_full_shard_payload_verified": false,
+      "source_shard_expected_sha256": "2b2556b736629e10a5a0dfa14606f2057f4f81c2ba53f94103682c7ac42d4940",
+      "local_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/original-sidecar/norm_out.linear.bias.safetensors",
+      "size": 12664,
+      "sha256": "17d819538335f64ae06b2f68353b33a9c474ba50c78d3d152c3823e7aa00dff9",
+      "expected_sha256": null,
+      "verified": true,
+      "verification_basis": "Pinned anonymous HTTP 206 response with exact Content-Range and byte count; local payload and generated sidecar hashes. Full source shard SHA256 is unverified.",
+      "provenance_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/original-sidecar/norm_out.linear.bias.provenance.json",
+      "provenance_sha256": "8d60bf1ab1d4cf2d3498e8f776c6a463a7147c7cccb8737124e920bc16a2f64c",
+      "status": "bounded_tensor_range_verified_locally"
+    }
+  ],
+  "updated_at_utc": "2026-10-05T03:53:08.568500+00:00"
+}
