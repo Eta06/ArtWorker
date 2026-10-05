@@ -1,0 +1,27 @@
+{
+  "command": [
+    ".build/dreamlite-venv/bin/python",
+    "experiments/sdxl_inpaint/run_sdxl_strength1_trial.py",
+    "--track",
+    "track3",
+    "--steps",
+    "20",
+    "--guidance",
+    "8",
+    "--strength",
+    "1",
+    "--seed",
+    "42",
+    "--output",
+    "experiments/sdxl_inpaint/runs/2026-10-05/track3-20-cfg8-strength1-seed42"
+  ],
+  "cwd": "/Users/emir/Documents/ChatGPT/ArtWorker",
+  "code_sha256": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/sdxl_inpaint/run_sdxl_strength1_trial.py": "9dce19ce14c3ec0f9bd1e711b440e827b92f9b6b6ddee9361622fca57d05c508"
+  },
+  "timeout_seconds": 300.0,
+  "pid": 33885,
+  "status": "success",
+  "exit_code": 0,
+  "elapsed_seconds": 25.113810167007614
+}
