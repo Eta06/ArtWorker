@@ -1,0 +1,154 @@
+{
+  "method": "derivative",
+  "input": "experiments/qwen/boundary_runs/2026-10-05/track3/edge-context/final_latents.npz",
+  "input_sha256": "65b588a84fbc2541fe0654ea5349881ae9b4e2de3e9f1af0940124f9e73b91ac",
+  "input_kind": "exact-final",
+  "track": "track3",
+  "status": "running",
+  "derived_postprocess": true,
+  "new_transformer_calls": 0,
+  "weights_trained": false,
+  "model_components_loaded": [
+    "vae"
+  ],
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "source_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+  "original_jpg_sha256_before": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+  "parameters": {
+    "track": "track3",
+    "methods": "consistency,derivative",
+    "iterations": 8,
+    "learning_rate": 0.015,
+    "latent_collar": 6,
+    "source_band": 32,
+    "trust_weight": 0.01,
+    "derivative_weight": 1.0,
+    "max_delta": 0.2,
+    "preflight": false
+  },
+  "runs": {
+    "consistency": {
+      "status": "success",
+      "objective": "known source border pixel MSE + latent trust",
+      "iteration_records": [
+        {
+          "iteration": 1,
+          "pre_update_loss": 0.004616783931851387,
+          "delta_rms": 0.013597042299807072
+        },
+        {
+          "iteration": 2,
+          "pre_update_loss": 0.0032975892536342144,
+          "delta_rms": 0.023642072454094887
+        },
+        {
+          "iteration": 3,
+          "pre_update_loss": 0.002537979045882821,
+          "delta_rms": 0.03231426700949669
+        },
+        {
+          "iteration": 4,
+          "pre_update_loss": 0.0020872701425105333,
+          "delta_rms": 0.039918139576911926
+        },
+        {
+          "iteration": 5,
+          "pre_update_loss": 0.0018047242192551494,
+          "delta_rms": 0.046576593071222305
+        },
+        {
+          "iteration": 6,
+          "pre_update_loss": 0.0016290576895698905,
+          "delta_rms": 0.05235295370221138
+        },
+        {
+          "iteration": 7,
+          "pre_update_loss": 0.0015106513164937496,
+          "delta_rms": 0.057352058589458466
+        },
+        {
+          "iteration": 8,
+          "pre_update_loss": 0.0014204552862793207,
+          "delta_rms": 0.06166306883096695
+        }
+      ],
+      "latent_outside_collar_exact": true,
+      "projection_seconds": 296.39096954101115,
+      "mlx_projection_peak_bytes": 43593100788,
+      "raw_source_top16_mae_255": 4.235555171966553,
+      "raw_source_bottom16_mae_255": 2.818359375,
+      "raw_source_top32_mae_255": 3.7246906757354736,
+      "raw_source_bottom32_mae_255": 2.6543376445770264,
+      "raw_source_inner_mae_255": 3.4468936920166016,
+      "raw_source_mae_255": 3.4147212505340576,
+      "composited_boundary_derivative_top_mae_255": 8.977864265441895,
+      "composited_boundary_derivative_bottom_mae_255": 5.504557132720947,
+      "source_pixels_exact": true,
+      "finite": true,
+      "raw_generated_far_from_collar_change_mae_255": 0.0342661552131176
+    },
+    "derivative": {
+      "status": "running",
+      "objective": "known source border pixel MSE + latent trust + one-pixel RGB boundary derivative MSE",
+      "iteration_records": [
+        {
+          "iteration": 1,
+          "pre_update_loss": 0.02465200610458851,
+          "delta_rms": 0.014455202035605907
+        },
+        {
+          "iteration": 2,
+          "pre_update_loss": 0.016663353890180588,
+          "delta_rms": 0.025117427110671997
+        },
+        {
+          "iteration": 3,
+          "pre_update_loss": 0.011686374433338642,
+          "delta_rms": 0.0343845970928669
+        },
+        {
+          "iteration": 4,
+          "pre_update_loss": 0.008533284068107605,
+          "delta_rms": 0.042554017156362534
+        },
+        {
+          "iteration": 5,
+          "pre_update_loss": 0.006574304774403572,
+          "delta_rms": 0.049721211194992065
+        },
+        {
+          "iteration": 6,
+          "pre_update_loss": 0.005506125278770924,
+          "delta_rms": 0.05595605447888374
+        }
+      ]
+    }
+  },
+  "phase": "projection",
+  "elapsed_seconds": 548.1309622499975,
+  "process_peak_rss_bytes": 1687552000,
+  "load_seconds": 0.21061091701267287,
+  "vae_parameter_bytes": 1350961616,
+  "real_vae_tiler_max_error": 0.0,
+  "original_final_raw_path": "experiments/qwen/boundary_runs/2026-10-05/track3/edge-context/raw.png",
+  "snapshot_vs_previous_final_max_error_255": 0,
+  "snapshot_vs_previous_final_mae_255": 0.0,
+  "baseline_metrics": {
+    "raw_source_top16_mae_255": 8.716593742370605,
+    "raw_source_bottom16_mae_255": 4.978475093841553,
+    "raw_source_top32_mae_255": 6.78900146484375,
+    "raw_source_bottom32_mae_255": 4.198384761810303,
+    "raw_source_inner_mae_255": 3.1602914333343506,
+    "raw_source_mae_255": 3.4519665241241455,
+    "composited_boundary_derivative_top_mae_255": 17.28255271911621,
+    "composited_boundary_derivative_bottom_mae_255": 7.444010257720947
+  },
+  "iteration": 6,
+  "pre_update_loss": 0.005506125278770924,
+  "delta_rms": 0.05595605447888374
+}
