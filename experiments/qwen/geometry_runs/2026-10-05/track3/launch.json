@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/.venv/bin/python",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_geometry_trial.py",
+    "--track",
+    "track3",
+    "--seed",
+    "42",
+    "--quantize",
+    "4"
+  ],
+  "timeout_seconds": 600,
+  "runner_sha256": "68c169700228af7a219caf66fb5526dbd2bf3684c92ca14a56c53d1767ab215f",
+  "started_utc": "2026-10-05T00:44:53Z",
+  "exit_code": 0,
+  "timed_out": false
+}
