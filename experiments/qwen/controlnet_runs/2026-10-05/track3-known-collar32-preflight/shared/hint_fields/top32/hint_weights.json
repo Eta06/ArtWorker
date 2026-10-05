@@ -1,0 +1,51 @@
+{
+  "experimental_localized_hints": true,
+  "shape": "cosine",
+  "radius_pixels": 64,
+  "distance_metric": "exact Euclidean L2 pixel distance",
+  "geometry_source": "nonblack input guide outside source ROI only; no output-derived geometry",
+  "cosine_formula": "0.5*(1+cos(pi*distance/radius)) for distance<radius; otherwise0",
+  "source_roi_always_zero": false,
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "unknown_guide_pixels": 2031,
+  "positive_hint_pixels": 44248,
+  "positive_hint_target_tokens": 161,
+  "total_target_tokens": 2304,
+  "target_hint_weight_sum": 118.75653076171875,
+  "packed_shape": [
+    1,
+    2304,
+    1
+  ],
+  "nearest_coordinates": "floor(output_index*input_size/output_size), raster y-major",
+  "guide_rgb_uint8_sha256": "fd9b20c7d94a7dbe57d769424cafbb43046e27d49145307739dd59bf55cd3fbd",
+  "pixel_weights_float32_sha256": "906cbb6c5844639ed008170930d6e3694501e6511455b2c3bea2691f5e25fbbe",
+  "target_weights_float32_sha256": "cdb3823495b18c315aa0dcd283733e44c13b9dfd6e0e34056e96fdf4ccaf909e",
+  "full_joint_computation": true,
+  "sparse_compute": false,
+  "experimental_known_top_collar_hints": true,
+  "known_collar_pixels": 32,
+  "known_collar_scalar_weight": 1.0,
+  "known_collar_pixel_rows_half_open": [
+    320,
+    352
+  ],
+  "known_collar_packed_rows_half_open": [
+    20,
+    22
+  ],
+  "known_collar_positive_tokens": 64,
+  "known_outside_collar_positive_tokens": 0,
+  "unknown_field_exact_against_old_localized": true,
+  "bottom_and_source_interior_hints_zero": true,
+  "reference_prefix_hints_zero": true,
+  "source_conditioning_channels_changed": false,
+  "old_target_weights_float32_sha256": "1f78cd6187786d3be437a98cf50c4945f6ac75a9de2789ecee80ebd2e2427667",
+  "guide_file_sha256": "de298a2574b9155b409cc221f5c4ba399f4f809a1ce1a4038691906993b171e3",
+  "display_png_sha256": "e850d259a59654f717aedd61bac18b599c1c3b6fc6def3a35ac14d28c6bbc7ab"
+}
