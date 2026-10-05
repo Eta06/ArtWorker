@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/.venv/bin/python",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_spatial_ablation.py",
+    "--track",
+    "track2",
+    "--seed",
+    "42",
+    "--quantize",
+    "4",
+    "--arms",
+    "full",
+    "early-frontier"
+  ],
+  "timeout_seconds": 600,
+  "runner_sha256": "03899bbe81cc34404fd31a15fefcf0f0e684d6b120d929b87ca8e1e713d137ea",
+  "started_utc": "2026-10-05T00:17:24Z",
+  "exit_code": 0,
+  "timed_out": false
+}
