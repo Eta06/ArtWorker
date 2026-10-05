@@ -1,0 +1,313 @@
+{
+  "status": "passed",
+  "device": "CPU only",
+  "model_weights_loaded": false,
+  "actual_gpu_baseline_rerun_performed": false,
+  "persisted_validation": {
+    "status": "passed",
+    "baseline_directory": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint",
+    "baseline_arm": "tangent-canny/localized-hints",
+    "new_arms": [
+      "top32"
+    ],
+    "actual_gpu_baseline_rerun_performed": false,
+    "comparison": "completed saved localized40 result versus new top32; common inference tensors restored exactly",
+    "recipe_keys_exact": [
+      "track",
+      "seed",
+      "steps",
+      "width",
+      "height",
+      "source_rect_xyxy",
+      "prompt",
+      "prompt_style",
+      "source_512_sha256",
+      "source_uint8_sha256",
+      "source_rgba_uint8_sha256",
+      "map_sha256",
+      "model_repo",
+      "model_revision",
+      "base_quantization",
+      "control_quantization",
+      "cfg",
+      "adapter",
+      "hint_shape",
+      "hint_radius_pixels",
+      "control_scale",
+      "structural_support",
+      "known_bridge_extension",
+      "scheduler_resolution_basis",
+      "prefix_cache_enabled",
+      "compute_mode",
+      "growing_compute",
+      "base_manifest_sha256",
+      "base_config_sha256",
+      "checkpoint_header",
+      "control_revision",
+      "upstream_revision"
+    ],
+    "persisted_array_sha256": {
+      "source_latents": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "prompt_embeds": "56c33a6f81fcd6a3e2888636c7ce37200d6a894cb117b6553bab0737a2ff9ae1",
+      "image_slots": "a21c9e5a04f4be9d1f618bff6c332b0ce185922e3e69b3b154e00d188447313b",
+      "target_context": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+      "padded_image_context": "981a307df789d30812d7c55b1fcab59d018e446b03fcc68edc4b296eb5c405df",
+      "noise": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "old_effective_target_hint": "84a394acbbc26e450054e217e2cd7531f808ef4412019ca85a3db34734c62e89",
+      "old_effective_joint_hint": "59c6d0faf720c72d8bb9f450f1fd86d61852645532dee449bf8ce120390e7385",
+      "old_requested_target_hint": "1f78cd6187786d3be437a98cf50c4945f6ac75a9de2789ecee80ebd2e2427667",
+      "expected_effective_top32_hint": "84901f9b4dd136b17567a166497d8e626feafde638ad4d964016ae94881aee4b",
+      "sigmas": "e19e0539429db154147e06cc716323ed064ac2801d0d708117d67aeb20ca92b9"
+    },
+    "persisted_file_sha256": {
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/localized_reference_metrics.json": "b8a34e2343eff12448cbc1a8ed6b98ede4286a61c1d1d9db4131c3035af933a8",
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/tangent-canny/localized-hints/metrics.json": "15f1bec7bc54eaab7c27d66296e21db5164ff369de52395834e69e7bd4200988",
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/tangent-canny/localized-hints/final_latents.npz": "6bd41b7960447a8a94a2efb0b1d2e4c6ec45ccde3f57759a5d5e867fbbc1ddd9",
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/tangent-canny/localized-hints/raw.png": "b47c8d1f86b345fa2f1490aed71c973a1890171f6f9a44502e1c1480646561c9",
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/tangent-canny/localized-hints/composite.png": "0499773395f8a40c30b2eb5182a431202a2488f7a957254b99dfbe118479ae85",
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/shared/reference_conditioning.npz": "82c43708d5af2310a150a1d14c1a0457fdd36d7390dbaff14efdd1f544c00b1f",
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/shared/tangent-canny_contexts.npz": "5a973dd8b447de5e0bf5edaf56a80139f1deb816a9cbc244418afc28a9784d27",
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/shared/target_noise.npz": "66f5fcc50aca469517350f763804ecb2cb3ef6f42caccfab95c761a06e0ab0db",
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/shared/effective_hint_weights.npz": "389f82f5c924717f025171825b2ccad6b3ca22a676051da4f38ac5405f3fc8d0",
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/shared/support_tokens.npy": "38ed40e7186380d66e2d7733ef92456210bf5e765a670a0931887e2a1ccc1a55"
+    },
+    "frozen_baseline_runner_sha256": "3a67d04d8da1eac90f37ede81a4d98083b9bd3b2a93feab08172ed795996e7ad",
+    "frozen_baseline_helper_sha256": "2aa4dee1c5b4d64d119d58b8943f5d224b3119fc0ae8054c9d4b85d069fbd722",
+    "frozen_forward_ast_exact_after_name_docstring": true,
+    "old_unknown_hint_builder_ast_exact": true,
+    "bf16_inference_value_roundtrip_exact": true,
+    "context129_restored_including_mask_and_masked_source": true,
+    "source_reference_and_prompt_embeddings_restored": true,
+    "noise_restored_without_rng_draw": true,
+    "known_bridge_code_unchanged": true,
+    "saved_final_known_bridge_exact": true,
+    "source_pixels_exact": true,
+    "far_baseline_image_retained": true,
+    "all_other_effective_hint_tokens_exact": true,
+    "hint_changed_token_ids": [
+      640,
+      641,
+      642,
+      643,
+      644,
+      645,
+      646,
+      647,
+      648,
+      649,
+      650,
+      651,
+      652,
+      653,
+      654,
+      655,
+      656,
+      657,
+      658,
+      659,
+      660,
+      661,
+      662,
+      663,
+      664,
+      665,
+      666,
+      667,
+      668,
+      669,
+      670,
+      671,
+      672,
+      673,
+      674,
+      675,
+      676,
+      677,
+      678,
+      679,
+      680,
+      681,
+      682,
+      683,
+      684,
+      685,
+      686,
+      687,
+      688,
+      689,
+      690,
+      691,
+      692,
+      693,
+      694,
+      695,
+      696,
+      697,
+      698,
+      699,
+      700,
+      701,
+      702,
+      703
+    ],
+    "hint_changed_packed_rows": [
+      20,
+      21
+    ],
+    "hint_prefix_weights_zero": true,
+    "frozen_baseline_final_latents_sha256": "df1fa78c76720e09c4d8bbb7f2c3e7f76595a6860efab266b7f25229fa50a979",
+    "frozen_baseline_raw_sha256": "b47c8d1f86b345fa2f1490aed71c973a1890171f6f9a44502e1c1480646561c9",
+    "inference_encodes_planned": 0,
+    "inference_rng_draws_planned": 0,
+    "gpu_determinism_of_repeated_baseline_unmeasured": true,
+    "weight_payload_hash_reverified": false
+  },
+  "actual_mlx_bf16_restores_exact": [
+    "source_latents",
+    "prompt_embeds",
+    "target_context",
+    "padded_image_context",
+    "noise",
+    "old_effective_target_hint",
+    "old_effective_joint_hint",
+    "expected_effective_top32_hint"
+  ],
+  "actual_mlx_top32_rounding_exact": true,
+  "persisted_bridge_cases": [
+    {
+      "sigma": 1.0,
+      "known_exact": true,
+      "unknown_latents_exact": true,
+      "output_sha256": "14fe469c4e616496a093c95dba93f4bf7d98695c8b060f2f5d3c94329caca717"
+    },
+    {
+      "sigma": 0.6372233629226685,
+      "known_exact": true,
+      "unknown_latents_exact": true,
+      "output_sha256": "bc13ad623b8a3ae7deb2f0c4a8fcef3f25cb1704757d8f3cd2145dbfcce74743"
+    },
+    {
+      "sigma": 0.0,
+      "known_exact": true,
+      "unknown_latents_exact": true,
+      "output_sha256": "67009a08023cddd128dd5b1280a4468983e9c410bda8eb2ad0e44ed6a480d13f"
+    }
+  ],
+  "invalid_input_cases": [
+    {
+      "case": "recipe_seed",
+      "exception": "ValueError",
+      "reason": "Saved baseline recipe drift: {'seed': {'saved': 42, 'current': 43}}"
+    },
+    {
+      "case": "recipe_prompt",
+      "exception": "ValueError",
+      "reason": "Saved baseline recipe drift: {'prompt': {'saved': 'Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.', 'current': 'different prompt'}}"
+    },
+    {
+      "case": "recipe_steps",
+      "exception": "ValueError",
+      "reason": "Saved baseline recipe drift: {'steps': {'saved': 40, 'current': 39}}"
+    },
+    {
+      "case": "recipe_control_scale",
+      "exception": "ValueError",
+      "reason": "Saved baseline recipe drift: {'control_scale': {'saved': 1.0, 'current': 0.5}}"
+    },
+    {
+      "case": "recipe_known_bridge_extension",
+      "exception": "ValueError",
+      "reason": "Saved baseline recipe drift: {'known_bridge_extension': {'saved': True, 'current': False}}"
+    },
+    {
+      "case": "recipe_known_collar_arms",
+      "exception": "ValueError",
+      "reason": "Saved-baseline runner supports top32 alone; no baseline rerun"
+    },
+    {
+      "case": "recipe_known_collar_scalar_weight",
+      "exception": "ValueError",
+      "reason": "Saved-baseline top32 probe has fixed scalar 1"
+    },
+    {
+      "case": "recipe_structural_modes",
+      "exception": "ValueError",
+      "reason": "The matched arm requires tangent-canny and the original known bridge"
+    },
+    {
+      "case": "recipe_source_rect_xyxy",
+      "exception": "ValueError",
+      "reason": "Saved baseline recipe drift: {'source_rect_xyxy': {'saved': [0, 320, 512, 832], 'current': [0, 336, 512, 848]}}"
+    },
+    {
+      "case": "recipe_base_manifest_sha256",
+      "exception": "ValueError",
+      "reason": "Saved baseline recipe drift: {'base_manifest_sha256': {'saved': '3443d63b64d670c5ee42daa62b8d387c1167036145032d3561699d9eed6e4320', 'current': 'changed'}}"
+    },
+    {
+      "case": "runtime_dependency",
+      "exception": "ValueError",
+      "reason": "Imported transformer runtime differs from the saved baseline"
+    },
+    {
+      "case": "hint_extra_source_row",
+      "exception": "ValueError",
+      "reason": "Hint difference must be exactly 64 top32 tokens at scalar 1"
+    },
+    {
+      "case": "hint_unknown_outside_support",
+      "exception": "ValueError",
+      "reason": "Hint difference must be exactly 64 top32 tokens at scalar 1"
+    },
+    {
+      "case": "hint_missing_top32_token",
+      "exception": "ValueError",
+      "reason": "Hint difference must be exactly 64 top32 tokens at scalar 1"
+    },
+    {
+      "case": "structural_support_mutation",
+      "exception": "ValueError",
+      "reason": "Structural support differs from persisted baseline"
+    },
+    {
+      "case": "persisted_noise_hash",
+      "exception": "ValueError",
+      "reason": "Persisted tensor hash mismatch: noise"
+    },
+    {
+      "case": "persisted_masked_source_hash",
+      "exception": "ValueError",
+      "reason": "Persisted tensor hash mismatch: target_context"
+    },
+    {
+      "case": "suite_arm_schedule_disagreement",
+      "exception": "ValueError",
+      "reason": "Saved per-arm metrics differ from completed suite record"
+    },
+    {
+      "case": "output_overlap_same",
+      "reason": "Output and saved baseline must be separate directories without nesting"
+    },
+    {
+      "case": "output_overlap_child",
+      "reason": "Output and saved baseline must be separate directories without nesting"
+    },
+    {
+      "case": "output_overlap_parent",
+      "reason": "Output and saved baseline must be separate directories without nesting"
+    },
+    {
+      "case": "baseline_mutation_after_initial_validation",
+      "reason": "Saved baseline changed during the matched trial: /var/folders/nm/qrwpzz0j6753d325jb9mhph80000gn/T/artworker-saved-input-audit-_u_9zw6d/baseline/retained.txt"
+    }
+  ],
+  "preflight_sha256": "731e300a257c14b2119c42c2577004702fb9b833e84f00675cb9d2759811782a",
+  "source_code_sha256": {
+    "known_collar_saved_baseline.py": "f25c31fcfbf699506dfa2ba3bf16e7bb2f688ea25e2255a138b17c6adec997d1",
+    "run_known_collar_saved_baseline_trial.py": "b8f0056e344d3c3444dce118b4d7e3c7c93d7a94ca5f31776d2a692cea394cfa",
+    "known_collar_reference_control.py": "d2479285007aac746a03535218451a2ccb6d6c921be3321c0ee81bcbecfcab94",
+    "localized_reference_control.py": "2aa4dee1c5b4d64d119d58b8943f5d224b3119fc0ae8054c9d4b85d069fbd722",
+    "reference_control.py": "ff8f404714defaf2909e82770cd5ec62811ffcca5b627ee5763efef3b92d09d9"
+  },
+  "script_sha256": "9f2efba50a99d1b065f9680b25eb816eb66ae2401f465ea1f961cfe0b85ca50e"
+}
