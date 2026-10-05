@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "script_sha256": "01a5c331c6ac5a608324f11ef5d74eb1cb67211084a8cb3de5b4dec8437cf401",
+  "inputs_sha256": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/composite.png": "b573535f0b7be0f81cb36cd2ec23ae1dfbad5e4f7811a14fe6e6da2d63a2c29a",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/composite.png": "23d1c69c04da05f7f87dfc4fff714d701e55adf4ffc7d21bfcf0725ae21597c0",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/composite.png": "bc1baac780457724295345eb0a6b43b08ab0dbc3d4e50fb2330c6e2ed7c44d29",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/composite.png": "ab4d41404e5422cc5c630e5e7f55efbbeba1a0c7e98431590150e91ee77e78df",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step02_predicted_clean_composite.png": "27041a612ef08eec519af457bb9af1cb24733689095d1a0c6278312ff1d9eb01",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step04_predicted_clean_composite.png": "0b251ac07a9185f2686638cc7e255e4ccee267736a5b29497cba316cff788b0c",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step06_predicted_clean_composite.png": "23d1c69c04da05f7f87dfc4fff714d701e55adf4ffc7d21bfcf0725ae21597c0",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step02_predicted_clean_composite.png": "d5715efc7c8b1519c9339da629db2df0abee98c7c4d83649ad17e477a19c7e14",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step04_predicted_clean_composite.png": "451fd51741fc91fe1741d6823367587a09e81a22fb1762d3442bd3565fafca5d",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step06_predicted_clean_composite.png": "ab4d41404e5422cc5c630e5e7f55efbbeba1a0c7e98431590150e91ee77e78df"
+  },
+  "outputs": {
+    "rail-join-6x.png": {
+      "sha256": "1ead40ae94c5a2ef4052e5d74a8408a40cc1acbb6a000991b5d15ebefeae9ea8",
+      "source_crop_xyxy": [
+        256,
+        286,
+        432,
+        350
+      ],
+      "nearest_scale": 6
+    },
+    "asphalt-join-2x.png": {
+      "sha256": "f23526c75a42494265d6c47fdd6a20f1ba9ac12524d4c8005a35818708a42e11",
+      "source_crop_xyxy": [
+        0,
+        768,
+        512,
+        896
+      ],
+      "nearest_scale": 2
+    },
+    "step-progression.png": {
+      "sha256": "d14c8f7e9b46f683e1be5d344c484344e18e58464eba83d098c9909e6383c45b",
+      "step2_actual_window_xyxy": [
+        0,
+        128,
+        512,
+        1024
+      ],
+      "grey_bands_definition": "future target rows absent from this preview",
+      "nearest_scale": 0.75
+    }
+  },
+  "original_outputs_unchanged": true,
+  "generated_pixels": false
+}
