@@ -1,0 +1,2271 @@
+{
+  "method": "frozen-VAE post-denoise border-latent pixel-consistency projection",
+  "input": "experiments/qwen/projection_inputs/2026-10-05/track3-saved-top32/final_latents.npz",
+  "input_sha256": "16702e506bcf97665c5147a64d0933a835929aaf2a26103794a013791c79697c",
+  "input_kind": "exact-final",
+  "track": "track3",
+  "status": "complete",
+  "derived_postprocess": true,
+  "new_transformer_calls": 0,
+  "weights_trained": false,
+  "model_components_loaded": [
+    "vae"
+  ],
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "source_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+  "original_jpg_sha256_before": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+  "parameters": {
+    "track": "track3",
+    "methods": "consistency,derivative",
+    "iterations": 16,
+    "learning_rate": 0.015,
+    "latent_collar": 6,
+    "source_band": 32,
+    "trust_weight": 0.01,
+    "derivative_weight": 1.0,
+    "max_delta": 0.2,
+    "checkpoint_decoder": true,
+    "reference_four_run": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint4-instrumented-v2",
+    "preflight": false
+  },
+  "runs": {
+    "consistency": {
+      "status": "success",
+      "objective": "known source border pixel MSE + latent trust",
+      "iteration_records": [
+        {
+          "iteration": 1,
+          "pre_update_loss": 0.004794054664671421,
+          "delta_rms": 0.013820881955325603,
+          "optimization_seconds": 3.3182525000011083,
+          "mlx_peak_since_arm_reset_bytes": 9904802652,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/consistency/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.014741457998752594,
+          "iteration_total_seconds": 3.3463217499956954
+        },
+        {
+          "iteration": 2,
+          "pre_update_loss": 0.0034038089215755463,
+          "delta_rms": 0.024383051320910454,
+          "optimization_seconds": 3.3458525839960203,
+          "mlx_peak_since_arm_reset_bytes": 9905982292,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/consistency/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.013601500017102808,
+          "iteration_total_seconds": 3.372013624990359
+        },
+        {
+          "iteration": 3,
+          "pre_update_loss": 0.002593030920252204,
+          "delta_rms": 0.033546317368745804,
+          "optimization_seconds": 3.429085000010673,
+          "mlx_peak_since_arm_reset_bytes": 9905982292,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/consistency/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.012721292005153373,
+          "iteration_total_seconds": 3.4552686670213006
+        },
+        {
+          "iteration": 4,
+          "pre_update_loss": 0.002130392473191023,
+          "delta_rms": 0.04148542881011963,
+          "optimization_seconds": 3.4264445419830736,
+          "mlx_peak_since_arm_reset_bytes": 9905982292,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/consistency/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.020129666983848438,
+          "iteration_total_seconds": 3.4591390419809613
+        },
+        {
+          "iteration": 5,
+          "pre_update_loss": 0.0018439911073073745,
+          "delta_rms": 0.048334669321775436,
+          "optimization_seconds": 3.5481888339854777,
+          "mlx_peak_since_arm_reset_bytes": 9905982292,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/consistency/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.01528891600901261,
+          "iteration_total_seconds": 3.5780193340033293
+        },
+        {
+          "iteration": 6,
+          "pre_update_loss": 0.0016552337910979986,
+          "delta_rms": 0.05422298610210419,
+          "optimization_seconds": 3.470767209015321,
+          "mlx_peak_since_arm_reset_bytes": 9907751764,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/consistency/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.01498854099190794,
+          "iteration_total_seconds": 3.5004637090023607
+        },
+        {
+          "iteration": 7,
+          "pre_update_loss": 0.0015222770161926746,
+          "delta_rms": 0.05928004905581474,
+          "optimization_seconds": 3.4992845410015434,
+          "mlx_peak_since_arm_reset_bytes": 9907751764,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/consistency/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.014540915988618508,
+          "iteration_total_seconds": 3.5281034579966217
+        },
+        {
+          "iteration": 8,
+          "pre_update_loss": 0.0014186602784320712,
+          "delta_rms": 0.06364811211824417,
+          "optimization_seconds": 3.5188705420005135,
+          "mlx_peak_since_arm_reset_bytes": 9907751764,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/consistency/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.01520012499531731,
+          "iteration_total_seconds": 3.548516999988351
+        },
+        {
+          "iteration": 9,
+          "pre_update_loss": 0.0013353913091123104,
+          "delta_rms": 0.06741859018802643,
+          "optimization_seconds": 3.4799417500034906,
+          "mlx_peak_since_arm_reset_bytes": 9907751764,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/consistency/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.014268041995819658,
+          "iteration_total_seconds": 3.5086339580011554
+        },
+        {
+          "iteration": 10,
+          "pre_update_loss": 0.0012632237048819661,
+          "delta_rms": 0.07066438347101212,
+          "optimization_seconds": 3.527845333010191,
+          "mlx_peak_since_arm_reset_bytes": 9907751764,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/consistency/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.014363374997628853,
+          "iteration_total_seconds": 3.5565341250039637
+        },
+        {
+          "iteration": 11,
+          "pre_update_loss": 0.0012023623567074537,
+          "delta_rms": 0.0734451413154602,
+          "optimization_seconds": 3.511174083017977,
+          "mlx_peak_since_arm_reset_bytes": 9907751764,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/consistency/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.012467207998270169,
+          "iteration_total_seconds": 3.53541083302116
+        },
+        {
+          "iteration": 12,
+          "pre_update_loss": 0.0011507183080539107,
+          "delta_rms": 0.07581055164337158,
+          "optimization_seconds": 3.585662792000221,
+          "mlx_peak_since_arm_reset_bytes": 9907751764,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/consistency/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.013668166007846594,
+          "iteration_total_seconds": 3.6124058330024127
+        },
+        {
+          "iteration": 13,
+          "pre_update_loss": 0.0011062115663662553,
+          "delta_rms": 0.07780595868825912,
+          "optimization_seconds": 3.6930222079972737,
+          "mlx_peak_since_arm_reset_bytes": 9907751764,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/consistency/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.013913458009483293,
+          "iteration_total_seconds": 3.7208152080129366
+        },
+        {
+          "iteration": 14,
+          "pre_update_loss": 0.0010664878645911813,
+          "delta_rms": 0.07947129756212234,
+          "optimization_seconds": 3.666931791987736,
+          "mlx_peak_since_arm_reset_bytes": 9907751764,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/consistency/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.014910917001543567,
+          "iteration_total_seconds": 3.6958379579882603
+        },
+        {
+          "iteration": 15,
+          "pre_update_loss": 0.0010293942177668214,
+          "delta_rms": 0.08082260191440582,
+          "optimization_seconds": 3.689639625023119,
+          "mlx_peak_since_arm_reset_bytes": 9907751764,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/consistency/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.014144999993732199,
+          "iteration_total_seconds": 3.7160765420121606
+        },
+        {
+          "iteration": 16,
+          "pre_update_loss": 0.0009971753461286426,
+          "delta_rms": 0.08187533915042877,
+          "optimization_seconds": 3.7457778330135625,
+          "mlx_peak_since_arm_reset_bytes": 9907751764,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/consistency/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.014618709014030173,
+          "iteration_total_seconds": 3.773225957993418
+        }
+      ],
+      "thermal_before_optimization": {
+        "probe": "pmset -g therm",
+        "returncode": 0,
+        "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+        "stderr": "",
+        "temperature_celsius": null,
+        "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+      },
+      "first_four_state_comparison": {
+        "array_max_abs_error": {
+          "delta": 0.0,
+          "moment": 0.0,
+          "variance": 0.0
+        },
+        "array_bit_exact": {
+          "delta": true,
+          "moment": true,
+          "variance": true
+        },
+        "all_three_arrays_bit_exact": true,
+        "comparison_is_diagnostic_not_an_abort_guard": true,
+        "preserved_iteration04_state_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/consistency/iteration04_state.npz",
+        "reference_four_state_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint4-instrumented-v2/consistency/latest_iteration_state.npz"
+      },
+      "latent_outside_collar_exact": true,
+      "projection_seconds": 56.933024291996844,
+      "mlx_projection_peak_bytes": 9907751764,
+      "final_decode_seconds": 1.471315875009168,
+      "mlx_arm_peak_including_final_decode_bytes": 9907751764,
+      "thermal_after_final_decode": {
+        "probe": "pmset -g therm",
+        "returncode": 0,
+        "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+        "stderr": "",
+        "temperature_celsius": null,
+        "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+      },
+      "raw_texture_profiles": {
+        "raw_patch_spectra": {
+          "generated_top_water": {
+            "xyxy": [
+              16,
+              280,
+              192,
+              312
+            ],
+            "mean_rgb": [
+              105.69921875,
+              127.45915985107422,
+              138.8794403076172
+            ],
+            "luma_std": 14.446306228637695,
+            "high_frequency_power": 57140.26508929286,
+            "high_frequency_fraction": 0.059684523226483176
+          },
+          "raw_known_top_water": {
+            "xyxy": [
+              16,
+              320,
+              192,
+              352
+            ],
+            "mean_rgb": [
+              112.7981185913086,
+              137.13352966308594,
+              151.60084533691406
+            ],
+            "luma_std": 16.22364616394043,
+            "high_frequency_power": 40767.823340027215,
+            "high_frequency_fraction": 0.06977613523556452
+          },
+          "raw_known_bottom_asphalt": {
+            "xyxy": [
+              16,
+              800,
+              128,
+              832
+            ],
+            "mean_rgb": [
+              39.49163055419922,
+              48.54966354370117,
+              53.35658645629883
+            ],
+            "luma_std": 4.074283599853516,
+            "high_frequency_power": 11824.335871551335,
+            "high_frequency_fraction": 0.260506536773469
+          },
+          "generated_bottom_asphalt": {
+            "xyxy": [
+              16,
+              832,
+              128,
+              864
+            ],
+            "mean_rgb": [
+              39.84067916870117,
+              48.71930694580078,
+              53.04827117919922
+            ],
+            "luma_std": 5.653756618499756,
+            "high_frequency_power": 28279.45928003922,
+            "high_frequency_fraction": 0.23721146599982473
+          },
+          "generated_rail_join": {
+            "xyxy": [
+              270,
+              296,
+              380,
+              320
+            ],
+            "mean_rgb": [
+              59.99772644042969,
+              70.48446655273438,
+              69.85037994384766
+            ],
+            "luma_std": 20.847986221313477,
+            "high_frequency_power": 59538.96495359732,
+            "high_frequency_fraction": 0.036317530543458675
+          }
+        },
+        "raw_two_sided_row_profiles": {
+          "top": {
+            "rows_y": [
+              312,
+              313,
+              314,
+              315,
+              316,
+              317,
+              318,
+              319,
+              320,
+              321,
+              322,
+              323,
+              324,
+              325,
+              326,
+              327
+            ],
+            "row_mean_rgb": [
+              [
+                75.517578125,
+                91.953125,
+                96.24609375
+              ],
+              [
+                74.294921875,
+                90.3828125,
+                93.6328125
+              ],
+              [
+                73.08984375,
+                88.55078125,
+                91.3046875
+              ],
+              [
+                73.033203125,
+                87.701171875,
+                90.552734375
+              ],
+              [
+                72.51171875,
+                86.244140625,
+                89.591796875
+              ],
+              [
+                69.13671875,
+                82.58203125,
+                86.9296875
+              ],
+              [
+                75.357421875,
+                88.25,
+                93.189453125
+              ],
+              [
+                89.283203125,
+                102.26953125,
+                107.748046875
+              ],
+              [
+                80.904296875,
+                93.99609375,
+                99.263671875
+              ],
+              [
+                79.419921875,
+                93.103515625,
+                98.029296875
+              ],
+              [
+                78.4296875,
+                92.205078125,
+                97.322265625
+              ],
+              [
+                76.658203125,
+                91.10546875,
+                96.041015625
+              ],
+              [
+                75.314453125,
+                89.921875,
+                95.134765625
+              ],
+              [
+                76.205078125,
+                91.388671875,
+                96.421875
+              ],
+              [
+                77.13671875,
+                92.294921875,
+                97.609375
+              ],
+              [
+                76.69921875,
+                92.2890625,
+                97.34765625
+              ]
+            ],
+            "row_luma_std": [
+              30.269901275634766,
+              30.071596145629883,
+              30.308731079101562,
+              30.122648239135742,
+              29.62870216369629,
+              28.578998565673828,
+              27.30349349975586,
+              41.573917388916016,
+              47.63019943237305,
+              46.84843063354492,
+              46.44010925292969,
+              45.556365966796875,
+              45.373130798339844,
+              46.488929748535156,
+              46.53510665893555,
+              44.716529846191406
+            ],
+            "adjacent_rgb_mae": [
+              4.028645992279053,
+              4.069661617279053,
+              3.576171875,
+              3.8548176288604736,
+              6.359375,
+              9.84375,
+              19.58724021911621,
+              13.35546875,
+              4.583984375,
+              4.100911617279053,
+              4.256510257720947,
+              4.190104007720947,
+              4.674479007720947,
+              5.024088382720947,
+              5.642578125
+            ]
+          },
+          "bottom": {
+            "rows_y": [
+              824,
+              825,
+              826,
+              827,
+              828,
+              829,
+              830,
+              831,
+              832,
+              833,
+              834,
+              835,
+              836,
+              837,
+              838,
+              839
+            ],
+            "row_mean_rgb": [
+              [
+                43.849609375,
+                52.853515625,
+                59.125
+              ],
+              [
+                43.2890625,
+                52.630859375,
+                58.62890625
+              ],
+              [
+                40.603515625,
+                49.9921875,
+                55.85546875
+              ],
+              [
+                41.560546875,
+                51.1875,
+                57.05859375
+              ],
+              [
+                41.2890625,
+                50.927734375,
+                56.8515625
+              ],
+              [
+                40.58203125,
+                50.330078125,
+                56.3046875
+              ],
+              [
+                40.62890625,
+                50.091796875,
+                56.517578125
+              ],
+              [
+                42.2734375,
+                51.71875,
+                58.484375
+              ],
+              [
+                43.541015625,
+                52.923828125,
+                59.806640625
+              ],
+              [
+                45.041015625,
+                54.40625,
+                61.35546875
+              ],
+              [
+                42.962890625,
+                51.794921875,
+                58.62109375
+              ],
+              [
+                41.265625,
+                49.8828125,
+                55.943359375
+              ],
+              [
+                40.91796875,
+                48.875,
+                54.75
+              ],
+              [
+                42.380859375,
+                50.61328125,
+                55.681640625
+              ],
+              [
+                42.009765625,
+                49.939453125,
+                55.595703125
+              ],
+              [
+                42.794921875,
+                51.236328125,
+                56.3125
+              ]
+            ],
+            "row_luma_std": [
+              14.593456268310547,
+              12.66470718383789,
+              5.151056289672852,
+              4.525458812713623,
+              4.779536247253418,
+              4.145392894744873,
+              4.271579265594482,
+              4.744791030883789,
+              5.0998430252075195,
+              6.297876358032227,
+              6.185774326324463,
+              4.739517688751221,
+              4.0745391845703125,
+              4.108805179595947,
+              4.7584710121154785,
+              4.897215843200684
+            ],
+            "adjacent_rgb_mae": [
+              3.1087238788604736,
+              4.90234375,
+              3.1744792461395264,
+              2.9440104961395264,
+              3.0104167461395264,
+              2.501953125,
+              3.02734375,
+              3.634765625,
+              4.059895992279053,
+              3.8157551288604736,
+              3.8704426288604736,
+              2.6061198711395264,
+              2.7591145038604736,
+              2.3444011211395264,
+              2.4654948711395264
+            ]
+          }
+        },
+        "spectral_limitation": "Fixed patches include edges; these descriptive values do not prove grain preservation"
+      },
+      "raw_patch_high_frequency_power_ratios_vs_baseline": {
+        "generated_top_water": 0.9430954921353345,
+        "raw_known_top_water": 0.7413117179939227,
+        "raw_known_bottom_asphalt": 0.7213526158546962,
+        "generated_bottom_asphalt": 0.8763754237678307,
+        "generated_rail_join": 0.8957575592889498
+      },
+      "raw_known_patch_high_frequency_power_ratios_vs_original_source": {
+        "raw_known_top_water": 0.7407564977738398,
+        "raw_known_bottom_asphalt": 0.7941862790283158
+      },
+      "raw_source_top16_mae_255": 3.1580810546875,
+      "raw_source_bottom16_mae_255": 2.6147868633270264,
+      "raw_source_top32_mae_255": 2.93853759765625,
+      "raw_source_bottom32_mae_255": 2.48468017578125,
+      "raw_source_inner_mae_255": 3.5308518409729004,
+      "raw_source_mae_255": 3.4284465312957764,
+      "composited_boundary_derivative_top_mae_255": 15.180989265441895,
+      "composited_boundary_derivative_bottom_mae_255": 6.034505367279053,
+      "source_pixels_exact": true,
+      "finite": true,
+      "raw_generated_far_from_collar_change_mae_255": 0.0316789411008358,
+      "raw_png_sha256": "1243e734eb56f8d1897d089fc6ef605834459ee207148b364d3f05db764ae921",
+      "composite_png_sha256": "2604d11f96b2f619b6e0ed63f876250dd0274092dd6c85e065466004f45cfa90",
+      "arm_total_seconds_through_image_and_state_saves": 58.531085124996025
+    },
+    "derivative": {
+      "status": "success",
+      "objective": "known source border pixel MSE + latent trust + one-pixel RGB boundary derivative MSE",
+      "iteration_records": [
+        {
+          "iteration": 1,
+          "pre_update_loss": 0.030504345893859863,
+          "delta_rms": 0.01454185601323843,
+          "optimization_seconds": 3.7400645000161603,
+          "mlx_peak_since_arm_reset_bytes": 9906584432,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.01635399999213405,
+          "iteration_total_seconds": 3.7683284170052502
+        },
+        {
+          "iteration": 2,
+          "pre_update_loss": 0.017585773020982742,
+          "delta_rms": 0.025031978264451027,
+          "optimization_seconds": 3.7575864999962505,
+          "mlx_peak_since_arm_reset_bytes": 9907764072,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.016243541991570964,
+          "iteration_total_seconds": 3.7893152920005377
+        },
+        {
+          "iteration": 3,
+          "pre_update_loss": 0.011933336034417152,
+          "delta_rms": 0.03401761129498482,
+          "optimization_seconds": 3.760798875009641,
+          "mlx_peak_since_arm_reset_bytes": 9907764072,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.015057959011755884,
+          "iteration_total_seconds": 3.790455667010974
+        },
+        {
+          "iteration": 4,
+          "pre_update_loss": 0.009441071189939976,
+          "delta_rms": 0.04168742522597313,
+          "optimization_seconds": 3.7514586670149583,
+          "mlx_peak_since_arm_reset_bytes": 9907764072,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.02175825001904741,
+          "iteration_total_seconds": 3.786382667021826
+        },
+        {
+          "iteration": 5,
+          "pre_update_loss": 0.007953576743602753,
+          "delta_rms": 0.048315778374671936,
+          "optimization_seconds": 3.7519083750084974,
+          "mlx_peak_since_arm_reset_bytes": 9907764072,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.013337957992916927,
+          "iteration_total_seconds": 3.7773779160052072
+        },
+        {
+          "iteration": 6,
+          "pre_update_loss": 0.0067390622571110725,
+          "delta_rms": 0.054168879985809326,
+          "optimization_seconds": 3.8400729999993928,
+          "mlx_peak_since_arm_reset_bytes": 9907764072,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.014449541020439938,
+          "iteration_total_seconds": 3.8683311250060797
+        },
+        {
+          "iteration": 7,
+          "pre_update_loss": 0.005924518220126629,
+          "delta_rms": 0.0593348853290081,
+          "optimization_seconds": 3.737238708010409,
+          "mlx_peak_since_arm_reset_bytes": 9907764072,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.013174708001315594,
+          "iteration_total_seconds": 3.7631022080022376
+        },
+        {
+          "iteration": 8,
+          "pre_update_loss": 0.005478827282786369,
+          "delta_rms": 0.06386466324329376,
+          "optimization_seconds": 3.8618170839909,
+          "mlx_peak_since_arm_reset_bytes": 9907764072,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.013272875017719343,
+          "iteration_total_seconds": 3.8875667090178467
+        },
+        {
+          "iteration": 9,
+          "pre_update_loss": 0.005187598988413811,
+          "delta_rms": 0.06786493957042694,
+          "optimization_seconds": 4.4510385830071755,
+          "mlx_peak_since_arm_reset_bytes": 9907764072,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.014950583019526675,
+          "iteration_total_seconds": 4.479765708005289
+        },
+        {
+          "iteration": 10,
+          "pre_update_loss": 0.004990606568753719,
+          "delta_rms": 0.07142803817987442,
+          "optimization_seconds": 4.26996054200572,
+          "mlx_peak_since_arm_reset_bytes": 9907764072,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.01648845901945606,
+          "iteration_total_seconds": 4.297715499997139
+        },
+        {
+          "iteration": 11,
+          "pre_update_loss": 0.004787922371178865,
+          "delta_rms": 0.07458944618701935,
+          "optimization_seconds": 3.869959834002657,
+          "mlx_peak_since_arm_reset_bytes": 9907764072,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.014426208013901487,
+          "iteration_total_seconds": 3.896923542022705
+        },
+        {
+          "iteration": 12,
+          "pre_update_loss": 0.004562770947813988,
+          "delta_rms": 0.07740429788827896,
+          "optimization_seconds": 3.7344384170137346,
+          "mlx_peak_since_arm_reset_bytes": 9907764072,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.0151255420059897,
+          "iteration_total_seconds": 3.7625769170117564
+        },
+        {
+          "iteration": 13,
+          "pre_update_loss": 0.004340277519077063,
+          "delta_rms": 0.079914890229702,
+          "optimization_seconds": 3.7120372090139426,
+          "mlx_peak_since_arm_reset_bytes": 9907764072,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.015451708022737876,
+          "iteration_total_seconds": 3.739920374995563
+        },
+        {
+          "iteration": 14,
+          "pre_update_loss": 0.004124429542571306,
+          "delta_rms": 0.08215165883302689,
+          "optimization_seconds": 3.7096037910087034,
+          "mlx_peak_since_arm_reset_bytes": 9907764072,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.015185458003543317,
+          "iteration_total_seconds": 3.737643125001341
+        },
+        {
+          "iteration": 15,
+          "pre_update_loss": 0.003917505498975515,
+          "delta_rms": 0.08412992209196091,
+          "optimization_seconds": 3.8235333330230787,
+          "mlx_peak_since_arm_reset_bytes": 9907764072,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.015035082993563265,
+          "iteration_total_seconds": 3.8525184580066707
+        },
+        {
+          "iteration": 16,
+          "pre_update_loss": 0.003736283630132675,
+          "delta_rms": 0.08585710823535919,
+          "optimization_seconds": 3.6961880830058362,
+          "mlx_peak_since_arm_reset_bytes": 9907764072,
+          "thermal_status": {
+            "probe": "pmset -g therm",
+            "returncode": 0,
+            "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+            "stderr": "",
+            "temperature_celsius": null,
+            "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+          },
+          "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/latest_iteration_state.npz",
+          "state_serialization_seconds": 0.015446374978637323,
+          "iteration_total_seconds": 3.725334750022739
+        }
+      ],
+      "thermal_before_optimization": {
+        "probe": "pmset -g therm",
+        "returncode": 0,
+        "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+        "stderr": "",
+        "temperature_celsius": null,
+        "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+      },
+      "first_four_state_comparison": {
+        "array_max_abs_error": {
+          "delta": 0.0,
+          "moment": 0.0,
+          "variance": 0.0
+        },
+        "array_bit_exact": {
+          "delta": true,
+          "moment": true,
+          "variance": true
+        },
+        "all_three_arrays_bit_exact": true,
+        "comparison_is_diagnostic_not_an_abort_guard": true,
+        "preserved_iteration04_state_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/iteration04_state.npz",
+        "reference_four_state_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint4-instrumented-v2/derivative/latest_iteration_state.npz"
+      },
+      "latent_outside_collar_exact": true,
+      "projection_seconds": 61.95150712499162,
+      "mlx_projection_peak_bytes": 9907764072,
+      "final_decode_seconds": 1.3817772500042338,
+      "mlx_arm_peak_including_final_decode_bytes": 9907764072,
+      "thermal_after_final_decode": {
+        "probe": "pmset -g therm",
+        "returncode": 0,
+        "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+        "stderr": "",
+        "temperature_celsius": null,
+        "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+      },
+      "raw_texture_profiles": {
+        "raw_patch_spectra": {
+          "generated_top_water": {
+            "xyxy": [
+              16,
+              280,
+              192,
+              312
+            ],
+            "mean_rgb": [
+              104.56552124023438,
+              128.27130126953125,
+              140.787109375
+            ],
+            "luma_std": 14.749531745910645,
+            "high_frequency_power": 71999.4298195835,
+            "high_frequency_fraction": 0.08102190862550851
+          },
+          "raw_known_top_water": {
+            "xyxy": [
+              16,
+              320,
+              192,
+              352
+            ],
+            "mean_rgb": [
+              113.8053970336914,
+              137.80238342285156,
+              151.32652282714844
+            ],
+            "luma_std": 16.541032791137695,
+            "high_frequency_power": 59235.73409426099,
+            "high_frequency_fraction": 0.09026003435506133
+          },
+          "raw_known_bottom_asphalt": {
+            "xyxy": [
+              16,
+              800,
+              128,
+              832
+            ],
+            "mean_rgb": [
+              39.26534652709961,
+              48.57477569580078,
+              53.509765625
+            ],
+            "luma_std": 4.64113712310791,
+            "high_frequency_power": 15214.10492416797,
+            "high_frequency_fraction": 0.2878517807070759
+          },
+          "generated_bottom_asphalt": {
+            "xyxy": [
+              16,
+              832,
+              128,
+              864
+            ],
+            "mean_rgb": [
+              39.63336944580078,
+              48.66518020629883,
+              52.89480972290039
+            ],
+            "luma_std": 5.596315383911133,
+            "high_frequency_power": 41572.28372354149,
+            "high_frequency_fraction": 0.31901342278410394
+          },
+          "generated_rail_join": {
+            "xyxy": [
+              270,
+              296,
+              380,
+              320
+            ],
+            "mean_rgb": [
+              56.91893768310547,
+              66.92424011230469,
+              66.06591033935547
+            ],
+            "luma_std": 21.588830947875977,
+            "high_frequency_power": 94034.20764768396,
+            "high_frequency_fraction": 0.06579300658084904
+          }
+        },
+        "raw_two_sided_row_profiles": {
+          "top": {
+            "rows_y": [
+              312,
+              313,
+              314,
+              315,
+              316,
+              317,
+              318,
+              319,
+              320,
+              321,
+              322,
+              323,
+              324,
+              325,
+              326,
+              327
+            ],
+            "row_mean_rgb": [
+              [
+                73.919921875,
+                91.1796875,
+                96.232421875
+              ],
+              [
+                72.78515625,
+                90.03125,
+                94.65234375
+              ],
+              [
+                72.00390625,
+                88.7734375,
+                93.052734375
+              ],
+              [
+                72.521484375,
+                88.541015625,
+                92.787109375
+              ],
+              [
+                69.65625,
+                84.525390625,
+                88.73828125
+              ],
+              [
+                65.84765625,
+                80.234375,
+                84.6484375
+              ],
+              [
+                73.87890625,
+                87.41015625,
+                92.2265625
+              ],
+              [
+                81.98828125,
+                95.666015625,
+                100.658203125
+              ],
+              [
+                79.734375,
+                93.451171875,
+                98.90625
+              ],
+              [
+                80.080078125,
+                94.654296875,
+                100.12890625
+              ],
+              [
+                79.82421875,
+                94.609375,
+                100.501953125
+              ],
+              [
+                78.078125,
+                93.59765625,
+                99.2109375
+              ],
+              [
+                76.658203125,
+                92.248046875,
+                98.001953125
+              ],
+              [
+                77.349609375,
+                93.31640625,
+                98.634765625
+              ],
+              [
+                78.484375,
+                94.224609375,
+                99.36328125
+              ],
+              [
+                76.654296875,
+                92.451171875,
+                97.111328125
+              ]
+            ],
+            "row_luma_std": [
+              32.10055923461914,
+              31.99970245361328,
+              32.31272506713867,
+              33.59938049316406,
+              32.63589859008789,
+              26.21407699584961,
+              36.38493728637695,
+              49.79054260253906,
+              48.91878128051758,
+              47.56510543823242,
+              46.8038215637207,
+              45.38858413696289,
+              44.50254821777344,
+              45.77095031738281,
+              46.7112922668457,
+              46.148372650146484
+            ],
+            "adjacent_rgb_mae": [
+              4.069010257720947,
+              4.119140625,
+              4.67578125,
+              5.86328125,
+              9.188151359558105,
+              12.5,
+              15.057291984558105,
+              5.914713382720947,
+              5.607421875,
+              5.083984375,
+              5.098307132720947,
+              5.314453125,
+              5.464192867279053,
+              6.649088382720947,
+              6.915364742279053
+            ]
+          },
+          "bottom": {
+            "rows_y": [
+              824,
+              825,
+              826,
+              827,
+              828,
+              829,
+              830,
+              831,
+              832,
+              833,
+              834,
+              835,
+              836,
+              837,
+              838,
+              839
+            ],
+            "row_mean_rgb": [
+              [
+                43.162109375,
+                52.728515625,
+                59.359375
+              ],
+              [
+                42.234375,
+                52.2734375,
+                58.48828125
+              ],
+              [
+                40.17578125,
+                50.29296875,
+                56.296875
+              ],
+              [
+                42.83203125,
+                53.123046875,
+                59.212890625
+              ],
+              [
+                42.8671875,
+                53.033203125,
+                59.095703125
+              ],
+              [
+                40.685546875,
+                50.990234375,
+                57.0
+              ],
+              [
+                40.294921875,
+                49.998046875,
+                56.255859375
+              ],
+              [
+                42.333984375,
+                52.2578125,
+                58.29296875
+              ],
+              [
+                43.51171875,
+                53.046875,
+                59.08984375
+              ],
+              [
+                43.90625,
+                53.466796875,
+                59.1875
+              ],
+              [
+                42.23828125,
+                51.2421875,
+                57.083984375
+              ],
+              [
+                41.279296875,
+                50.478515625,
+                55.861328125
+              ],
+              [
+                40.541015625,
+                49.279296875,
+                54.984375
+              ],
+              [
+                41.63671875,
+                50.75,
+                56.15234375
+              ],
+              [
+                41.751953125,
+                50.60546875,
+                56.609375
+              ],
+              [
+                42.70703125,
+                51.892578125,
+                57.6171875
+              ]
+            ],
+            "row_luma_std": [
+              16.008756637573242,
+              13.113884925842285,
+              5.727612018585205,
+              5.39634370803833,
+              5.320446968078613,
+              4.999179840087891,
+              5.045548915863037,
+              6.150954723358154,
+              7.9090800285339355,
+              7.6085052490234375,
+              5.9048590660095215,
+              4.711115837097168,
+              4.258719444274902,
+              4.318634510040283,
+              4.784545421600342,
+              4.854984760284424
+            ],
+            "adjacent_rgb_mae": [
+              3.9140625,
+              5.145833492279053,
+              4.645833492279053,
+              4.1796875,
+              4.227864742279053,
+              3.564453125,
+              4.08984375,
+              3.2233073711395264,
+              3.533203125,
+              3.48046875,
+              3.36328125,
+              2.494140625,
+              2.8411457538604736,
+              2.466796875,
+              2.71875
+            ]
+          }
+        },
+        "spectral_limitation": "Fixed patches include edges; these descriptive values do not prove grain preservation"
+      },
+      "raw_patch_high_frequency_power_ratios_vs_baseline": {
+        "generated_top_water": 1.188344814170058,
+        "raw_known_top_water": 1.0771275042524378,
+        "raw_known_bottom_asphalt": 0.9281480587286897,
+        "generated_bottom_asphalt": 1.2883176939288579,
+        "generated_rail_join": 1.4147349117977979
+      },
+      "raw_known_patch_high_frequency_power_ratios_vs_original_source": {
+        "raw_known_top_water": 1.0763207680907771,
+        "raw_known_bottom_asphalt": 1.0218614820932086
+      },
+      "raw_source_top16_mae_255": 5.6663818359375,
+      "raw_source_bottom16_mae_255": 3.6600749492645264,
+      "raw_source_top32_mae_255": 4.712789058685303,
+      "raw_source_bottom32_mae_255": 3.2232463359832764,
+      "raw_source_inner_mae_255": 3.671501636505127,
+      "raw_source_mae_255": 3.7085659503936768,
+      "composited_boundary_derivative_top_mae_255": 4.40625,
+      "composited_boundary_derivative_bottom_mae_255": 2.1432292461395264,
+      "source_pixels_exact": true,
+      "finite": true,
+      "raw_generated_far_from_collar_change_mae_255": 0.0263943150639534,
+      "raw_png_sha256": "492ef09d0cbb424448529f5f96642c316d4b61ac88c4f40723fdd87e6e6348e5",
+      "composite_png_sha256": "872dd7437042af7d203c359104d6742eb1a8f849dafab8fb6d12f9d8b544a9fd",
+      "arm_total_seconds_through_image_and_state_saves": 63.45189974998357
+    }
+  },
+  "runner_sha256": "b64dc876d0eea0208fccaa53260eebf35c9ae3e7c047580620fb184f2ae628b8",
+  "frozen_original_runner_sha256": "1e9cbf4ebf5e451e5ea53f8006c8d5c7eaaee5db860c91249b0fdf97cf3e0cf6",
+  "input_metadata_sha256": "ac51103696585184b444f74ad5ce1199020dd1f7287e0024b019fa457437b2e0",
+  "checkpoint_memory_benefit_measured_before_this_run": false,
+  "four_update_reference": {
+    "directory": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint4-instrumented-v2",
+    "runner_sha256": "06a58842753de3b17577395fcb5fbb231294f0117b90554697ed15f73e4624d6",
+    "retained_file_sha256": {
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint4-instrumented-v2/projection_metrics.json": "4218395fc52f945742f91bd2548ec363629cb39ddd50faf4d262737626057242",
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint4-instrumented-v2/independent_state_pixel_integrity.json": "d494b92fb448ad3199e70616d3c335bd57b9ed0158f595e2167b81b5589fa9f6",
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint4-instrumented-v2/consistency/latest_iteration_state.npz": "d10ca0be9aab1d634057a57806b8928a797e1a4276f5ffd2a07d8300f952553e",
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint4-instrumented-v2/derivative/latest_iteration_state.npz": "14e6443b85e53937c1b0aa5ecc6f43685f70265a15f789938184f456ff861d59"
+    },
+    "start": "same original latent input and zero Adam state; repeated first four updates, then twelve additional updates",
+    "automatic_resume": false
+  },
+  "physical_temperature_measured": false,
+  "mlx_observed_peak_across_scopes_bytes": 9907764072,
+  "mlx_peak_since_last_arm_reset_bytes": 9907764072,
+  "phase": "complete",
+  "elapsed_seconds": 125.18839299998945,
+  "process_peak_rss_bytes": 1705263104,
+  "load_seconds": 0.21018945900141262,
+  "vae_load_mlx_peak_bytes": 1351208112,
+  "thermal_after_load": {
+    "probe": "pmset -g therm",
+    "returncode": 0,
+    "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+    "stderr": "",
+    "temperature_celsius": null,
+    "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+  },
+  "vae_parameter_bytes": 1350961616,
+  "real_vae_tiler_max_error": 0.0,
+  "original_final_raw_path": "experiments/qwen/projection_inputs/2026-10-05/track3-saved-top32/raw.png",
+  "snapshot_vs_previous_final_max_error_255": 0,
+  "snapshot_vs_previous_final_mae_255": 0.0,
+  "baseline_raw_texture_profiles": {
+    "raw_patch_spectra": {
+      "generated_top_water": {
+        "xyxy": [
+          16,
+          280,
+          192,
+          312
+        ],
+        "mean_rgb": [
+          100.63032531738281,
+          128.14630126953125,
+          143.20384216308594
+        ],
+        "luma_std": 13.829389572143555,
+        "high_frequency_power": 60587.99513495417,
+        "high_frequency_fraction": 0.08671996673567904
+      },
+      "raw_known_top_water": {
+        "xyxy": [
+          16,
+          320,
+          192,
+          352
+        ],
+        "mean_rgb": [
+          107.34872436523438,
+          136.09942626953125,
+          152.86097717285156
+        ],
+        "luma_std": 17.43691062927246,
+        "high_frequency_power": 54994.170941139004,
+        "high_frequency_fraction": 0.08371862044972352
+      },
+      "raw_known_bottom_asphalt": {
+        "xyxy": [
+          16,
+          800,
+          128,
+          832
+        ],
+        "mean_rgb": [
+          37.64536666870117,
+          47.29910659790039,
+          52.36635208129883
+        ],
+        "luma_std": 6.819777965545654,
+        "high_frequency_power": 16391.894354664873,
+        "high_frequency_fraction": 0.13907628101355188
+      },
+      "generated_bottom_asphalt": {
+        "xyxy": [
+          16,
+          832,
+          128,
+          864
+        ],
+        "mean_rgb": [
+          37.34988784790039,
+          47.49497604370117,
+          52.01646041870117
+        ],
+        "luma_std": 5.1100358963012695,
+        "high_frequency_power": 32268.658514471317,
+        "high_frequency_fraction": 0.4194422770861905
+      },
+      "generated_rail_join": {
+        "xyxy": [
+          270,
+          296,
+          380,
+          320
+        ],
+        "mean_rgb": [
+          57.307952880859375,
+          68.33370971679688,
+          68.06780242919922
+        ],
+        "luma_std": 20.314937591552734,
+        "high_frequency_power": 66467.72258428855,
+        "high_frequency_fraction": 0.056971323814008136
+      }
+    },
+    "raw_two_sided_row_profiles": {
+      "top": {
+        "rows_y": [
+          312,
+          313,
+          314,
+          315,
+          316,
+          317,
+          318,
+          319,
+          320,
+          321,
+          322,
+          323,
+          324,
+          325,
+          326,
+          327
+        ],
+        "row_mean_rgb": [
+          [
+            71.923828125,
+            91.767578125,
+            99.0703125
+          ],
+          [
+            71.53125,
+            91.978515625,
+            98.78125
+          ],
+          [
+            69.912109375,
+            90.390625,
+            97.322265625
+          ],
+          [
+            69.349609375,
+            89.95703125,
+            97.33203125
+          ],
+          [
+            68.583984375,
+            89.8125,
+            98.05859375
+          ],
+          [
+            64.232421875,
+            86.33203125,
+            96.78515625
+          ],
+          [
+            65.34765625,
+            87.9609375,
+            100.75
+          ],
+          [
+            78.875,
+            102.2734375,
+            116.94140625
+          ],
+          [
+            71.365234375,
+            95.037109375,
+            109.4453125
+          ],
+          [
+            71.744140625,
+            95.2265625,
+            108.126953125
+          ],
+          [
+            73.302734375,
+            95.798828125,
+            107.802734375
+          ],
+          [
+            72.0703125,
+            94.388671875,
+            104.896484375
+          ],
+          [
+            71.181640625,
+            92.8125,
+            103.2109375
+          ],
+          [
+            74.46484375,
+            95.9609375,
+            104.9453125
+          ],
+          [
+            74.564453125,
+            94.96484375,
+            103.455078125
+          ],
+          [
+            69.548828125,
+            89.240234375,
+            96.03515625
+          ]
+        ],
+        "row_luma_std": [
+          31.154455184936523,
+          30.695255279541016,
+          29.872730255126953,
+          29.214839935302734,
+          29.275293350219727,
+          27.292034149169922,
+          20.865629196166992,
+          32.837257385253906,
+          40.4708366394043,
+          42.10825729370117,
+          43.938697814941406,
+          41.452117919921875,
+          42.70220947265625,
+          45.55874252319336,
+          46.45261001586914,
+          45.050987243652344
+        ],
+        "adjacent_rgb_mae": [
+          3.279296875,
+          3.783203125,
+          3.736328125,
+          3.4596354961395264,
+          5.884114742279053,
+          8.814453125,
+          19.23697853088379,
+          14.37109375,
+          6.645833492279053,
+          7.425130367279053,
+          6.758463382720947,
+          6.294921875,
+          6.969400882720947,
+          7.1640625,
+          8.752604484558105
+        ]
+      },
+      "bottom": {
+        "rows_y": [
+          824,
+          825,
+          826,
+          827,
+          828,
+          829,
+          830,
+          831,
+          832,
+          833,
+          834,
+          835,
+          836,
+          837,
+          838,
+          839
+        ],
+        "row_mean_rgb": [
+          [
+            39.431640625,
+            49.125,
+            55.78515625
+          ],
+          [
+            40.310546875,
+            51.32421875,
+            57.4453125
+          ],
+          [
+            39.794921875,
+            51.619140625,
+            58.064453125
+          ],
+          [
+            45.27734375,
+            58.447265625,
+            65.001953125
+          ],
+          [
+            49.37890625,
+            62.85546875,
+            69.8203125
+          ],
+          [
+            41.759765625,
+            55.453125,
+            62.36328125
+          ],
+          [
+            37.26171875,
+            49.986328125,
+            57.212890625
+          ],
+          [
+            39.744140625,
+            52.5625,
+            59.65625
+          ],
+          [
+            41.46484375,
+            53.900390625,
+            60.880859375
+          ],
+          [
+            41.55859375,
+            53.671875,
+            60.275390625
+          ],
+          [
+            39.6015625,
+            50.5078125,
+            57.509765625
+          ],
+          [
+            39.9921875,
+            50.763671875,
+            56.998046875
+          ],
+          [
+            40.197265625,
+            50.357421875,
+            56.93359375
+          ],
+          [
+            41.462890625,
+            51.91015625,
+            57.75390625
+          ],
+          [
+            40.11328125,
+            50.13671875,
+            56.6484375
+          ],
+          [
+            40.205078125,
+            50.525390625,
+            56.232421875
+          ]
+        ],
+        "row_luma_std": [
+          13.936210632324219,
+          14.258371353149414,
+          10.827607154846191,
+          8.555218696594238,
+          10.307360649108887,
+          8.400728225708008,
+          6.841433048248291,
+          5.6195573806762695,
+          5.955388069152832,
+          6.014474391937256,
+          5.032308578491211,
+          4.7431960105896,
+          4.45240592956543,
+          4.53371000289917,
+          4.944575309753418,
+          4.9331183433532715
+        ],
+        "adjacent_rgb_mae": [
+          4.354166507720947,
+          4.759114742279053,
+          8.982421875,
+          7.71875,
+          8.879557609558105,
+          6.236328125,
+          4.849609375,
+          4.311849117279053,
+          3.9420573711395264,
+          4.016927242279053,
+          2.9798176288604736,
+          2.81640625,
+          3.271484375,
+          3.080078125,
+          3.1256511211395264
+        ]
+      }
+    },
+    "spectral_limitation": "Fixed patches include edges; these descriptive values do not prove grain preservation"
+  },
+  "baseline_decode_mlx_peak_bytes": 8830617008,
+  "baseline_peak_scope": "cumulative process GPU peak including VAE load and baseline decode; before first arm reset",
+  "exact_source_composite_baseline_texture_profiles": {
+    "raw_patch_spectra": {
+      "generated_top_water": {
+        "xyxy": [
+          16,
+          280,
+          192,
+          312
+        ],
+        "mean_rgb": [
+          100.63032531738281,
+          128.14630126953125,
+          143.20384216308594
+        ],
+        "luma_std": 13.829389572143555,
+        "high_frequency_power": 60587.99513495417,
+        "high_frequency_fraction": 0.08671996673567904
+      },
+      "raw_known_top_water": {
+        "xyxy": [
+          16,
+          320,
+          192,
+          352
+        ],
+        "mean_rgb": [
+          112.9362564086914,
+          137.2544403076172,
+          151.71307373046875
+        ],
+        "luma_std": 16.378618240356445,
+        "high_frequency_power": 55035.3907964963,
+        "high_frequency_fraction": 0.09109425725273076
+      },
+      "raw_known_bottom_asphalt": {
+        "xyxy": [
+          16,
+          800,
+          128,
+          832
+        ],
+        "mean_rgb": [
+          39.37472152709961,
+          48.47293472290039,
+          53.44866180419922
+        ],
+        "luma_std": 4.203840732574463,
+        "high_frequency_power": 14888.617675463203,
+        "high_frequency_fraction": 0.322281129009885
+      },
+      "generated_bottom_asphalt": {
+        "xyxy": [
+          16,
+          832,
+          128,
+          864
+        ],
+        "mean_rgb": [
+          37.34988784790039,
+          47.49497604370117,
+          52.01646041870117
+        ],
+        "luma_std": 5.1100358963012695,
+        "high_frequency_power": 32268.658514471317,
+        "high_frequency_fraction": 0.4194422770861905
+      },
+      "generated_rail_join": {
+        "xyxy": [
+          270,
+          296,
+          380,
+          320
+        ],
+        "mean_rgb": [
+          57.307952880859375,
+          68.33370971679688,
+          68.06780242919922
+        ],
+        "luma_std": 20.314937591552734,
+        "high_frequency_power": 66467.72258428855,
+        "high_frequency_fraction": 0.056971323814008136
+      }
+    },
+    "raw_two_sided_row_profiles": {
+      "top": {
+        "rows_y": [
+          312,
+          313,
+          314,
+          315,
+          316,
+          317,
+          318,
+          319,
+          320,
+          321,
+          322,
+          323,
+          324,
+          325,
+          326,
+          327
+        ],
+        "row_mean_rgb": [
+          [
+            71.923828125,
+            91.767578125,
+            99.0703125
+          ],
+          [
+            71.53125,
+            91.978515625,
+            98.78125
+          ],
+          [
+            69.912109375,
+            90.390625,
+            97.322265625
+          ],
+          [
+            69.349609375,
+            89.95703125,
+            97.33203125
+          ],
+          [
+            68.583984375,
+            89.8125,
+            98.05859375
+          ],
+          [
+            64.232421875,
+            86.33203125,
+            96.78515625
+          ],
+          [
+            65.34765625,
+            87.9609375,
+            100.75
+          ],
+          [
+            78.875,
+            102.2734375,
+            116.94140625
+          ],
+          [
+            80.076171875,
+            95.369140625,
+            100.427734375
+          ],
+          [
+            78.810546875,
+            94.076171875,
+            99.1796875
+          ],
+          [
+            77.43359375,
+            92.69921875,
+            97.888671875
+          ],
+          [
+            76.060546875,
+            91.314453125,
+            96.63671875
+          ],
+          [
+            75.73046875,
+            91.021484375,
+            96.42578125
+          ],
+          [
+            76.822265625,
+            92.177734375,
+            97.673828125
+          ],
+          [
+            77.259765625,
+            92.69140625,
+            98.26953125
+          ],
+          [
+            76.017578125,
+            91.5859375,
+            97.1015625
+          ]
+        ],
+        "row_luma_std": [
+          31.154455184936523,
+          30.695255279541016,
+          29.872730255126953,
+          29.214839935302734,
+          29.275293350219727,
+          27.292034149169922,
+          20.865629196166992,
+          32.837257385253906,
+          47.60269546508789,
+          47.086143493652344,
+          45.82392883300781,
+          45.16436004638672,
+          45.829044342041016,
+          46.8422737121582,
+          46.79975509643555,
+          44.76095962524414
+        ],
+        "adjacent_rgb_mae": [
+          3.279296875,
+          3.783203125,
+          3.736328125,
+          3.4596354961395264,
+          5.884114742279053,
+          8.814453125,
+          19.23697853088379,
+          20.52799415588379,
+          4.706380367279053,
+          4.874349117279053,
+          4.926432132720947,
+          5.184244632720947,
+          5.010416507720947,
+          5.5390625,
+          5.899739742279053
+        ]
+      },
+      "bottom": {
+        "rows_y": [
+          824,
+          825,
+          826,
+          827,
+          828,
+          829,
+          830,
+          831,
+          832,
+          833,
+          834,
+          835,
+          836,
+          837,
+          838,
+          839
+        ],
+        "row_mean_rgb": [
+          [
+            43.314453125,
+            52.666015625,
+            59.21875
+          ],
+          [
+            42.857421875,
+            52.21484375,
+            58.72265625
+          ],
+          [
+            40.96484375,
+            50.3203125,
+            56.849609375
+          ],
+          [
+            41.171875,
+            50.5234375,
+            57.041015625
+          ],
+          [
+            41.263671875,
+            50.619140625,
+            57.11328125
+          ],
+          [
+            40.8515625,
+            50.201171875,
+            56.716796875
+          ],
+          [
+            40.919921875,
+            50.275390625,
+            56.75390625
+          ],
+          [
+            42.142578125,
+            51.521484375,
+            57.951171875
+          ],
+          [
+            41.46484375,
+            53.900390625,
+            60.880859375
+          ],
+          [
+            41.55859375,
+            53.671875,
+            60.275390625
+          ],
+          [
+            39.6015625,
+            50.5078125,
+            57.509765625
+          ],
+          [
+            39.9921875,
+            50.763671875,
+            56.998046875
+          ],
+          [
+            40.197265625,
+            50.357421875,
+            56.93359375
+          ],
+          [
+            41.462890625,
+            51.91015625,
+            57.75390625
+          ],
+          [
+            40.11328125,
+            50.13671875,
+            56.6484375
+          ],
+          [
+            40.205078125,
+            50.525390625,
+            56.232421875
+          ]
+        ],
+        "row_luma_std": [
+          14.996515274047852,
+          13.091066360473633,
+          4.603123664855957,
+          4.70273494720459,
+          4.648603916168213,
+          4.27027702331543,
+          4.340389728546143,
+          4.997868537902832,
+          5.955388069152832,
+          6.014474391937256,
+          5.032308578491211,
+          4.7431960105896,
+          4.45240592956543,
+          4.53371000289917,
+          4.944575309753418,
+          4.9331183433532715
+        ],
+        "adjacent_rgb_mae": [
+          2.7180988788604736,
+          4.731770992279053,
+          2.3828125,
+          2.283203125,
+          2.4440104961395264,
+          2.1263020038604736,
+          2.9837238788604736,
+          5.818359375,
+          3.9420573711395264,
+          4.016927242279053,
+          2.9798176288604736,
+          2.81640625,
+          3.271484375,
+          3.080078125,
+          3.1256511211395264
+        ]
+      }
+    },
+    "spectral_limitation": "Fixed patches include edges; these descriptive values do not prove grain preservation"
+  },
+  "baseline_metrics": {
+    "raw_source_top16_mae_255": 8.857380867004395,
+    "raw_source_bottom16_mae_255": 6.986409664154053,
+    "raw_source_top32_mae_255": 6.426981449127197,
+    "raw_source_bottom32_mae_255": 5.164937496185303,
+    "raw_source_inner_mae_255": 3.1448988914489746,
+    "raw_source_mae_255": 3.4762814044952393,
+    "composited_boundary_derivative_top_mae_255": 22.04817771911621,
+    "composited_boundary_derivative_bottom_mae_255": 7.497395992279053
+  },
+  "iteration": 16,
+  "pre_update_loss": 0.003736283630132675,
+  "delta_rms": 0.08585710823535919,
+  "optimization_seconds": 3.6961880830058362,
+  "mlx_peak_since_arm_reset_bytes": 9907764072,
+  "thermal_status": {
+    "probe": "pmset -g therm",
+    "returncode": 0,
+    "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+    "stderr": "",
+    "temperature_celsius": null,
+    "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+  },
+  "state_checkpoint_path": "experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/latest_iteration_state.npz",
+  "state_serialization_seconds": 0.015446374978637323,
+  "iteration_total_seconds": 3.725334750022739,
+  "current_method": "derivative",
+  "four_update_reference_files_unchanged": true,
+  "thermal_at_completion": {
+    "probe": "pmset -g therm",
+    "returncode": 0,
+    "stdout": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+    "stderr": "",
+    "temperature_celsius": null,
+    "temperature_limitation": "OS warning/pressure status only; no physical sensor temperature measured"
+  },
+  "input_npz_and_raw_unchanged": true,
+  "original_jpg_sha256_after": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b"
+}
