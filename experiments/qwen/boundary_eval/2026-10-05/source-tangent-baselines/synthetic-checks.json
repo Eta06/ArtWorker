@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "note": "Synthetic diagnostic control arrays, NOT generated model outputs. No source pixel or saved output changed.",
+  "checks": {
+    "continuous": {
+      "status": "feature-extracted",
+      "metrics": {
+        "near_angle_difference_degrees": -0.1595516649215014,
+        "near_endpoint_signed_dx_px": -0.7579666380892718,
+        "last4_source_tangent_median_signed_dx_px": -0.783590569348604
+      },
+      "invalid_reasons": []
+    },
+    "shift8": {
+      "status": "feature-extracted",
+      "metrics": {
+        "near_angle_difference_degrees": -0.1595516649215014,
+        "near_endpoint_signed_dx_px": 7.242033361910728,
+        "last4_source_tangent_median_signed_dx_px": 7.207272231840562
+      },
+      "invalid_reasons": []
+    },
+    "angle10": {
+      "status": "feature-extracted",
+      "metrics": {
+        "near_angle_difference_degrees": 10.10040389149993,
+        "near_endpoint_signed_dx_px": -0.39541039169756687,
+        "last4_source_tangent_median_signed_dx_px": -2.0978592068761373
+      },
+      "invalid_reasons": []
+    },
+    "missing_join": {
+      "status": "invalid-feature",
+      "metrics": {
+        "near_angle_difference_degrees": null,
+        "near_endpoint_signed_dx_px": null,
+        "last4_source_tangent_median_signed_dx_px": null
+      },
+      "invalid_reasons": [
+        "fewer than80 percent of near rows have a strong metal edge",
+        "fewer than three strong edge rows immediately before source"
+      ]
+    }
+  }
+}
