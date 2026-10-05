@@ -1,0 +1,480 @@
+{
+  "input_manifest": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/inputs.json",
+  "caveat": "Boundary deltas are a crude seam flag, not perceptual quality scores. Exact source-pixel preservation also does not prove coherent outpainting. Compare raw model outputs; label final compositing separately. Timings and memory measurements are supplied by the inference runner, not this tool.",
+  "runs": [
+    {
+      "model": "Mobile-O semantic / raw",
+      "track_id": "track1",
+      "seed": 42,
+      "status": "completed",
+      "image": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/mobile_o/results/track1-seed42-raw.png",
+      "elapsed_seconds": 4.90979574999983,
+      "steps": 20,
+      "guidance": 1.5,
+      "prompt": "Extend this album artwork vertically to fill the blank top and bottom areas. Continue the existing scenery, colors, lighting and textures naturally. Keep the central square artwork unchanged in the same location. Do not add any new text, logos, borders or repeated people.",
+      "model_revision": "92b5ef6a90a770c631153c3c32be0bbe049e2a8d",
+      "method": "image-conditioned instruction expansion; no native mask or source-latent lock; exact source composited after decode",
+      "postprocessing": "raw",
+      "memory_kind": "MPS end allocation (not peak)",
+      "mps_driver_end_bytes": 6639124480,
+      "rss_peak_bytes": 608698368,
+      "output_size": [
+        512,
+        1152
+      ],
+      "source_preservation": {
+        "identical_pixels_fraction": 1.9073486328125e-05,
+        "mean_absolute_rgb_error_0_to_255": 63.15087381998698,
+        "maximum_channel_error_0_to_255": 255
+      },
+      "boundary_heuristic": {
+        "top": {
+          "boundary_adjacent_row_mean_rgb_difference": 3.3704427083333335,
+          "nearby_adjacent_rows_mean_rgb_difference": 3.435546875,
+          "boundary_to_nearby_ratio": 0.9810498389236308
+        },
+        "bottom": {
+          "boundary_adjacent_row_mean_rgb_difference": 1.828125,
+          "nearby_adjacent_rows_mean_rgb_difference": 1.8656684027777777,
+          "boundary_to_nearby_ratio": 0.9798767011748285
+        }
+      },
+      "metrics_status": "measured"
+    },
+    {
+      "model": "Mobile-O semantic / raw",
+      "track_id": "track2",
+      "seed": 42,
+      "status": "completed",
+      "image": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/mobile_o/results/track2-seed42-raw.png",
+      "elapsed_seconds": 4.741126458999133,
+      "steps": 20,
+      "guidance": 1.5,
+      "prompt": "Extend this album artwork vertically to fill the blank top and bottom areas. Continue the existing scenery, colors, lighting and textures naturally. Keep the central square artwork unchanged in the same location. Do not add any new text, logos, borders or repeated people.",
+      "model_revision": "92b5ef6a90a770c631153c3c32be0bbe049e2a8d",
+      "method": "image-conditioned instruction expansion; no native mask or source-latent lock; exact source composited after decode",
+      "postprocessing": "raw",
+      "memory_kind": "MPS end allocation (not peak)",
+      "mps_driver_end_bytes": 6639124480,
+      "rss_peak_bytes": 670318592,
+      "output_size": [
+        512,
+        1152
+      ],
+      "source_preservation": {
+        "identical_pixels_fraction": 0.0,
+        "mean_absolute_rgb_error_0_to_255": 108.80294672648112,
+        "maximum_channel_error_0_to_255": 255
+      },
+      "boundary_heuristic": {
+        "top": {
+          "boundary_adjacent_row_mean_rgb_difference": 6.026692708333333,
+          "nearby_adjacent_rows_mean_rgb_difference": 7.458224826388889,
+          "boundary_to_nearby_ratio": 0.8080599403506219
+        },
+        "bottom": {
+          "boundary_adjacent_row_mean_rgb_difference": 3.3763020833333335,
+          "nearby_adjacent_rows_mean_rgb_difference": 4.677083333333333,
+          "boundary_to_nearby_ratio": 0.7218819599109132
+        }
+      },
+      "metrics_status": "measured"
+    },
+    {
+      "model": "Mobile-O semantic / raw",
+      "track_id": "track3",
+      "seed": 42,
+      "status": "completed",
+      "image": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/mobile_o/results/track3-seed42-raw.png",
+      "elapsed_seconds": 4.994873499999812,
+      "steps": 20,
+      "guidance": 1.5,
+      "prompt": "Extend this album artwork vertically to fill the blank top and bottom areas. Continue the existing scenery, colors, lighting and textures naturally. Keep the central square artwork unchanged in the same location. Do not add any new text, logos, borders or repeated people.",
+      "model_revision": "92b5ef6a90a770c631153c3c32be0bbe049e2a8d",
+      "method": "image-conditioned instruction expansion; no native mask or source-latent lock; exact source composited after decode",
+      "postprocessing": "raw",
+      "memory_kind": "MPS end allocation (not peak)",
+      "mps_driver_end_bytes": 6639124480,
+      "rss_peak_bytes": 733364224,
+      "output_size": [
+        512,
+        1152
+      ],
+      "source_preservation": {
+        "identical_pixels_fraction": 3.814697265625e-06,
+        "mean_absolute_rgb_error_0_to_255": 42.20417149861654,
+        "maximum_channel_error_0_to_255": 238
+      },
+      "boundary_heuristic": {
+        "top": {
+          "boundary_adjacent_row_mean_rgb_difference": 5.25390625,
+          "nearby_adjacent_rows_mean_rgb_difference": 6.236979166666667,
+          "boundary_to_nearby_ratio": 0.8423799582463465
+        },
+        "bottom": {
+          "boundary_adjacent_row_mean_rgb_difference": 5.458984375,
+          "nearby_adjacent_rows_mean_rgb_difference": 5.816189236111111,
+          "boundary_to_nearby_ratio": 0.9385843811798068
+        }
+      },
+      "metrics_status": "measured"
+    },
+    {
+      "model": "Mobile-O latent lock / raw",
+      "track_id": "track1",
+      "seed": 42,
+      "status": "completed",
+      "image": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/mobile_o/results_latent_lock/track1-seed42-raw.png",
+      "elapsed_seconds": 5.79907645899948,
+      "steps": 20,
+      "guidance": 1.5,
+      "prompt": "Extend this album artwork vertically to fill the blank top and bottom areas. Continue the existing scenery, colors, lighting and textures naturally. Keep the central square artwork unchanged in the same location. Do not add any new text, logos, borders or repeated people.",
+      "model_revision": "92b5ef6a90a770c631153c3c32be0bbe049e2a8d",
+      "method": "image-conditioned instruction editing plus experimental training-free known-latent restoration at each next flow sigma; exact source composited after decode",
+      "postprocessing": "raw",
+      "memory_kind": "sampled MPS driver maximum after encoding/steps/decoding; transient peaks may be missed",
+      "mps_driver_end_bytes": 6637158400,
+      "rss_peak_bytes": 545619968,
+      "peak_memory_gb": 6.639255552,
+      "output_size": [
+        512,
+        1152
+      ],
+      "source_preservation": {
+        "identical_pixels_fraction": 0.007686614990234375,
+        "mean_absolute_rgb_error_0_to_255": 7.383825937906901,
+        "maximum_channel_error_0_to_255": 255
+      },
+      "boundary_heuristic": {
+        "top": {
+          "boundary_adjacent_row_mean_rgb_difference": 3.947265625,
+          "nearby_adjacent_rows_mean_rgb_difference": 2.834743923611111,
+          "boundary_to_nearby_ratio": 1.3924593301435406
+        },
+        "bottom": {
+          "boundary_adjacent_row_mean_rgb_difference": 0.5553385416666666,
+          "nearby_adjacent_rows_mean_rgb_difference": 0.5481770833333334,
+          "boundary_to_nearby_ratio": 1.013064133016627
+        }
+      },
+      "metrics_status": "measured"
+    },
+    {
+      "model": "Mobile-O latent lock / raw",
+      "track_id": "track2",
+      "seed": 42,
+      "status": "completed",
+      "image": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/mobile_o/results_latent_lock/track2-seed42-raw.png",
+      "elapsed_seconds": 8.096511375000773,
+      "steps": 20,
+      "guidance": 1.5,
+      "prompt": "Extend this album artwork vertically to fill the blank top and bottom areas. Continue the existing scenery, colors, lighting and textures naturally. Keep the central square artwork unchanged in the same location. Do not add any new text, logos, borders or repeated people.",
+      "model_revision": "92b5ef6a90a770c631153c3c32be0bbe049e2a8d",
+      "method": "image-conditioned instruction editing plus experimental training-free known-latent restoration at each next flow sigma; exact source composited after decode",
+      "postprocessing": "raw",
+      "memory_kind": "sampled MPS driver maximum after encoding/steps/decoding; transient peaks may be missed",
+      "mps_driver_end_bytes": 6624575488,
+      "rss_peak_bytes": 586661888,
+      "peak_memory_gb": 6.653935616,
+      "output_size": [
+        512,
+        1152
+      ],
+      "source_preservation": {
+        "identical_pixels_fraction": 0.004779815673828125,
+        "mean_absolute_rgb_error_0_to_255": 10.85400136311849,
+        "maximum_channel_error_0_to_255": 255
+      },
+      "boundary_heuristic": {
+        "top": {
+          "boundary_adjacent_row_mean_rgb_difference": 4.700520833333333,
+          "nearby_adjacent_rows_mean_rgb_difference": 4.318250868055556,
+          "boundary_to_nearby_ratio": 1.0885242606226597
+        },
+        "bottom": {
+          "boundary_adjacent_row_mean_rgb_difference": 27.961588541666668,
+          "nearby_adjacent_rows_mean_rgb_difference": 12.793402777777777,
+          "boundary_to_nearby_ratio": 2.185625593703352
+        }
+      },
+      "metrics_status": "measured"
+    },
+    {
+      "model": "Mobile-O latent lock / raw",
+      "track_id": "track3",
+      "seed": 42,
+      "status": "completed",
+      "image": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/mobile_o/results_latent_lock/track3-seed42-raw.png",
+      "elapsed_seconds": 8.57163062499967,
+      "steps": 20,
+      "guidance": 1.5,
+      "prompt": "Extend this album artwork vertically to fill the blank top and bottom areas. Continue the existing scenery, colors, lighting and textures naturally. Keep the central square artwork unchanged in the same location. Do not add any new text, logos, borders or repeated people.",
+      "model_revision": "92b5ef6a90a770c631153c3c32be0bbe049e2a8d",
+      "method": "image-conditioned instruction editing plus experimental training-free known-latent restoration at each next flow sigma; exact source composited after decode",
+      "postprocessing": "raw",
+      "memory_kind": "sampled MPS driver maximum after encoding/steps/decoding; transient peaks may be missed",
+      "mps_driver_end_bytes": 6639255552,
+      "rss_peak_bytes": 641531904,
+      "peak_memory_gb": 6.639255552,
+      "output_size": [
+        512,
+        1152
+      ],
+      "source_preservation": {
+        "identical_pixels_fraction": 0.0032806396484375,
+        "mean_absolute_rgb_error_0_to_255": 6.672932942708333,
+        "maximum_channel_error_0_to_255": 173
+      },
+      "boundary_heuristic": {
+        "top": {
+          "boundary_adjacent_row_mean_rgb_difference": 5.348307291666667,
+          "nearby_adjacent_rows_mean_rgb_difference": 6.200086805555556,
+          "boundary_to_nearby_ratio": 0.8626181309065453
+        },
+        "bottom": {
+          "boundary_adjacent_row_mean_rgb_difference": 4.020182291666667,
+          "nearby_adjacent_rows_mean_rgb_difference": 4.357421875,
+          "boundary_to_nearby_ratio": 0.9226057074555506
+        }
+      },
+      "metrics_status": "measured"
+    },
+    {
+      "model": "Mobile-O semantic / composited",
+      "track_id": "track1",
+      "seed": 42,
+      "status": "completed",
+      "image": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/mobile_o/results/track1-seed42-composited.png",
+      "elapsed_seconds": 4.90979574999983,
+      "steps": 20,
+      "guidance": 1.5,
+      "prompt": "Extend this album artwork vertically to fill the blank top and bottom areas. Continue the existing scenery, colors, lighting and textures naturally. Keep the central square artwork unchanged in the same location. Do not add any new text, logos, borders or repeated people.",
+      "model_revision": "92b5ef6a90a770c631153c3c32be0bbe049e2a8d",
+      "method": "image-conditioned instruction expansion; no native mask or source-latent lock; exact source composited after decode",
+      "postprocessing": "composited",
+      "memory_kind": "MPS end allocation (not peak)",
+      "mps_driver_end_bytes": 6639124480,
+      "rss_peak_bytes": 608698368,
+      "output_size": [
+        512,
+        1152
+      ],
+      "source_preservation": {
+        "identical_pixels_fraction": 1.0,
+        "mean_absolute_rgb_error_0_to_255": 0.0,
+        "maximum_channel_error_0_to_255": 0
+      },
+      "boundary_heuristic": {
+        "top": {
+          "boundary_adjacent_row_mean_rgb_difference": 42.594401041666664,
+          "nearby_adjacent_rows_mean_rgb_difference": 1.7098524305555554,
+          "boundary_to_nearby_ratio": 24.911156238101285
+        },
+        "bottom": {
+          "boundary_adjacent_row_mean_rgb_difference": 24.866536458333332,
+          "nearby_adjacent_rows_mean_rgb_difference": 0.8893229166666666,
+          "boundary_to_nearby_ratio": 27.961200585651536
+        }
+      },
+      "metrics_status": "measured"
+    },
+    {
+      "model": "Mobile-O semantic / composited",
+      "track_id": "track2",
+      "seed": 42,
+      "status": "completed",
+      "image": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/mobile_o/results/track2-seed42-composited.png",
+      "elapsed_seconds": 4.741126458999133,
+      "steps": 20,
+      "guidance": 1.5,
+      "prompt": "Extend this album artwork vertically to fill the blank top and bottom areas. Continue the existing scenery, colors, lighting and textures naturally. Keep the central square artwork unchanged in the same location. Do not add any new text, logos, borders or repeated people.",
+      "model_revision": "92b5ef6a90a770c631153c3c32be0bbe049e2a8d",
+      "method": "image-conditioned instruction expansion; no native mask or source-latent lock; exact source composited after decode",
+      "postprocessing": "composited",
+      "memory_kind": "MPS end allocation (not peak)",
+      "mps_driver_end_bytes": 6639124480,
+      "rss_peak_bytes": 670318592,
+      "output_size": [
+        512,
+        1152
+      ],
+      "source_preservation": {
+        "identical_pixels_fraction": 1.0,
+        "mean_absolute_rgb_error_0_to_255": 0.0,
+        "maximum_channel_error_0_to_255": 0
+      },
+      "boundary_heuristic": {
+        "top": {
+          "boundary_adjacent_row_mean_rgb_difference": 60.915364583333336,
+          "nearby_adjacent_rows_mean_rgb_difference": 4.534939236111112,
+          "boundary_to_nearby_ratio": 13.432454419294634
+        },
+        "bottom": {
+          "boundary_adjacent_row_mean_rgb_difference": 101.146484375,
+          "nearby_adjacent_rows_mean_rgb_difference": 7.490559895833333,
+          "boundary_to_nearby_ratio": 13.503194124549129
+        }
+      },
+      "metrics_status": "measured"
+    },
+    {
+      "model": "Mobile-O semantic / composited",
+      "track_id": "track3",
+      "seed": 42,
+      "status": "completed",
+      "image": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/mobile_o/results/track3-seed42-composited.png",
+      "elapsed_seconds": 4.994873499999812,
+      "steps": 20,
+      "guidance": 1.5,
+      "prompt": "Extend this album artwork vertically to fill the blank top and bottom areas. Continue the existing scenery, colors, lighting and textures naturally. Keep the central square artwork unchanged in the same location. Do not add any new text, logos, borders or repeated people.",
+      "model_revision": "92b5ef6a90a770c631153c3c32be0bbe049e2a8d",
+      "method": "image-conditioned instruction expansion; no native mask or source-latent lock; exact source composited after decode",
+      "postprocessing": "composited",
+      "memory_kind": "MPS end allocation (not peak)",
+      "mps_driver_end_bytes": 6639124480,
+      "rss_peak_bytes": 733364224,
+      "output_size": [
+        512,
+        1152
+      ],
+      "source_preservation": {
+        "identical_pixels_fraction": 1.0,
+        "mean_absolute_rgb_error_0_to_255": 0.0,
+        "maximum_channel_error_0_to_255": 0
+      },
+      "boundary_heuristic": {
+        "top": {
+          "boundary_adjacent_row_mean_rgb_difference": 62.303385416666664,
+          "nearby_adjacent_rows_mean_rgb_difference": 5.760199652777778,
+          "boundary_to_nearby_ratio": 10.816185058207436
+        },
+        "bottom": {
+          "boundary_adjacent_row_mean_rgb_difference": 32.51171875,
+          "nearby_adjacent_rows_mean_rgb_difference": 4.225260416666667,
+          "boundary_to_nearby_ratio": 7.694607087827427
+        }
+      },
+      "metrics_status": "measured"
+    },
+    {
+      "model": "Mobile-O latent lock / composited",
+      "track_id": "track1",
+      "seed": 42,
+      "status": "completed",
+      "image": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/mobile_o/results_latent_lock/track1-seed42-composited.png",
+      "elapsed_seconds": 5.79907645899948,
+      "steps": 20,
+      "guidance": 1.5,
+      "prompt": "Extend this album artwork vertically to fill the blank top and bottom areas. Continue the existing scenery, colors, lighting and textures naturally. Keep the central square artwork unchanged in the same location. Do not add any new text, logos, borders or repeated people.",
+      "model_revision": "92b5ef6a90a770c631153c3c32be0bbe049e2a8d",
+      "method": "image-conditioned instruction editing plus experimental training-free known-latent restoration at each next flow sigma; exact source composited after decode",
+      "postprocessing": "composited",
+      "memory_kind": "sampled MPS driver maximum after encoding/steps/decoding; transient peaks may be missed",
+      "mps_driver_end_bytes": 6637158400,
+      "rss_peak_bytes": 545619968,
+      "peak_memory_gb": 6.639255552,
+      "output_size": [
+        512,
+        1152
+      ],
+      "source_preservation": {
+        "identical_pixels_fraction": 1.0,
+        "mean_absolute_rgb_error_0_to_255": 0.0,
+        "maximum_channel_error_0_to_255": 0
+      },
+      "boundary_heuristic": {
+        "top": {
+          "boundary_adjacent_row_mean_rgb_difference": 10.712890625,
+          "nearby_adjacent_rows_mean_rgb_difference": 2.180881076388889,
+          "boundary_to_nearby_ratio": 4.912184685805264
+        },
+        "bottom": {
+          "boundary_adjacent_row_mean_rgb_difference": 3.1783854166666665,
+          "nearby_adjacent_rows_mean_rgb_difference": 0.2987196180555555,
+          "boundary_to_nearby_ratio": 10.640029059208137
+        }
+      },
+      "metrics_status": "measured"
+    },
+    {
+      "model": "Mobile-O latent lock / composited",
+      "track_id": "track2",
+      "seed": 42,
+      "status": "completed",
+      "image": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/mobile_o/results_latent_lock/track2-seed42-composited.png",
+      "elapsed_seconds": 8.096511375000773,
+      "steps": 20,
+      "guidance": 1.5,
+      "prompt": "Extend this album artwork vertically to fill the blank top and bottom areas. Continue the existing scenery, colors, lighting and textures naturally. Keep the central square artwork unchanged in the same location. Do not add any new text, logos, borders or repeated people.",
+      "model_revision": "92b5ef6a90a770c631153c3c32be0bbe049e2a8d",
+      "method": "image-conditioned instruction editing plus experimental training-free known-latent restoration at each next flow sigma; exact source composited after decode",
+      "postprocessing": "composited",
+      "memory_kind": "sampled MPS driver maximum after encoding/steps/decoding; transient peaks may be missed",
+      "mps_driver_end_bytes": 6624575488,
+      "rss_peak_bytes": 586661888,
+      "peak_memory_gb": 6.653935616,
+      "output_size": [
+        512,
+        1152
+      ],
+      "source_preservation": {
+        "identical_pixels_fraction": 1.0,
+        "mean_absolute_rgb_error_0_to_255": 0.0,
+        "maximum_channel_error_0_to_255": 0
+      },
+      "boundary_heuristic": {
+        "top": {
+          "boundary_adjacent_row_mean_rgb_difference": 35.544270833333336,
+          "nearby_adjacent_rows_mean_rgb_difference": 2.5093315972222223,
+          "boundary_to_nearby_ratio": 14.164836115195019
+        },
+        "bottom": {
+          "boundary_adjacent_row_mean_rgb_difference": 44.834635416666664,
+          "nearby_adjacent_rows_mean_rgb_difference": 12.356987847222221,
+          "boundary_to_nearby_ratio": 3.628281905832353
+        }
+      },
+      "metrics_status": "measured"
+    },
+    {
+      "model": "Mobile-O latent lock / composited",
+      "track_id": "track3",
+      "seed": 42,
+      "status": "completed",
+      "image": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/mobile_o/results_latent_lock/track3-seed42-composited.png",
+      "elapsed_seconds": 8.57163062499967,
+      "steps": 20,
+      "guidance": 1.5,
+      "prompt": "Extend this album artwork vertically to fill the blank top and bottom areas. Continue the existing scenery, colors, lighting and textures naturally. Keep the central square artwork unchanged in the same location. Do not add any new text, logos, borders or repeated people.",
+      "model_revision": "92b5ef6a90a770c631153c3c32be0bbe049e2a8d",
+      "method": "image-conditioned instruction editing plus experimental training-free known-latent restoration at each next flow sigma; exact source composited after decode",
+      "postprocessing": "composited",
+      "memory_kind": "sampled MPS driver maximum after encoding/steps/decoding; transient peaks may be missed",
+      "mps_driver_end_bytes": 6639255552,
+      "rss_peak_bytes": 641531904,
+      "peak_memory_gb": 6.639255552,
+      "output_size": [
+        512,
+        1152
+      ],
+      "source_preservation": {
+        "identical_pixels_fraction": 1.0,
+        "mean_absolute_rgb_error_0_to_255": 0.0,
+        "maximum_channel_error_0_to_255": 0
+      },
+      "boundary_heuristic": {
+        "top": {
+          "boundary_adjacent_row_mean_rgb_difference": 18.87890625,
+          "nearby_adjacent_rows_mean_rgb_difference": 6.164713541666667,
+          "boundary_to_nearby_ratio": 3.062414193684655
+        },
+        "bottom": {
+          "boundary_adjacent_row_mean_rgb_difference": 10.599609375,
+          "nearby_adjacent_rows_mean_rgb_difference": 3.584201388888889,
+          "boundary_to_nearby_ratio": 2.9573141196415595
+        }
+      },
+      "metrics_status": "measured"
+    }
+  ]
+}
