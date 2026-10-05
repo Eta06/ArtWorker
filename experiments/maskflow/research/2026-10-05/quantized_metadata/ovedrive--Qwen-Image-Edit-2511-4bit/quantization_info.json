@@ -1,0 +1,6 @@
+{
+  "quantization_method": "mixed_precision_nf4",
+  "description": "First and last transformer blocks kept at bfloat16, middle layers quantized to NF4",
+  "high_precision_layers_count": 30,
+  "note": "Based on city96/Qwen-Image-gguf approach for better quality"
+}
