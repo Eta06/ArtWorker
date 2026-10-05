@@ -1,0 +1,60 @@
+{
+  "track": "track2",
+  "canvas_size": [
+    512,
+    1152
+  ],
+  "source_rect_from_mask": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "source_sha256": "29d6e26983bb95387cfffe1671128ac8121e835f7898d26635e3f06b8a6f55c8",
+  "mask_sha256": "c4386579faf335ed709b14b461c6a843d0e58956e25ddfbe8d88e3a317f6dc70",
+  "original_jpg_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+  "mask_convention": "mask.png: 255=regenerate, 0=known; mask_known_white.png is inverted",
+  "source_midgray_note": "PNG rounds midgray to128. Official codec must mask normalized RGB to exact0 before opaque-alpha VAE encoding.",
+  "mask_only_note": "Missing edge control must be literal zero64 latent, not black RGB VAE encoding.",
+  "purpose": "conditioning input; no outpainted result is modified",
+  "heuristic_not_semantic_detector": true,
+  "settings": {
+    "min_length_px": 64,
+    "max_border_gap_px": 12,
+    "max_extrapolation_euclidean_px": 256,
+    "parallel_angle_degrees": 6,
+    "parallel_normal_separation_px": [
+      2,
+      24
+    ],
+    "canny_thresholds": [
+      80,
+      160
+    ],
+    "line_width": 1,
+    "known_source_edges_preserved_exact": true
+  },
+  "candidate_lines": [],
+  "retained_lines": [],
+  "generated_edge_pixels": 0,
+  "files": {
+    "source_black": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track2/source_black.png",
+    "source_midgray": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track2/source_midgray.png",
+    "canny_known": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track2/canny_known.png",
+    "canny_extrapolated": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track2/canny_extrapolated.png",
+    "extrapolated_only": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track2/extrapolated_only.png",
+    "mask": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track2/mask.png",
+    "mask_known_white": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track2/mask_known_white.png",
+    "diagnostic_overlay": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track2/diagnostic_overlay.png"
+  },
+  "file_sha256": {
+    "source_black": "48f7dad64530cbfb2e1918971f63239e679618cb67c88d255d47e271e845fa6a",
+    "source_midgray": "0dc3babef02e4ddf843445464e80fc225ebf97299c6becec041802bb9d2e17f4",
+    "canny_known": "2e32944abedcbdd5d9491b06c39c3aee943ebbc2a5e8a09c3b1a98658e869510",
+    "canny_extrapolated": "2e32944abedcbdd5d9491b06c39c3aee943ebbc2a5e8a09c3b1a98658e869510",
+    "extrapolated_only": "af11a8a81ee2249dbb5fb32eca9159de6f4ed65796a09f0709b882b1b62a04e3",
+    "mask": "c4386579faf335ed709b14b461c6a843d0e58956e25ddfbe8d88e3a317f6dc70",
+    "mask_known_white": "590db2e79295c7e16a8f4e1ca5801525b1c2852c6027144c4164eac8cc7627d3",
+    "diagnostic_overlay": "0dc3babef02e4ddf843445464e80fc225ebf97299c6becec041802bb9d2e17f4"
+  }
+}
