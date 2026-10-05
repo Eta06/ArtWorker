@@ -1,0 +1,27 @@
+{
+  "command": [
+    "experiments/qwen/.venv/bin/python",
+    "experiments/qwen/run_boundary_suite_v1.py",
+    "--track",
+    "track3",
+    "--seed",
+    "42",
+    "--quantize",
+    "4",
+    "--arms",
+    "edge-context",
+    "square-soft",
+    "edge-soft",
+    "--output",
+    "experiments/qwen/boundary_runs/2026-10-05/track3"
+  ],
+  "cwd": "/Users/emir/Documents/ChatGPT/ArtWorker",
+  "code_sha256": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_boundary_suite_v1.py": "08c6f5f06134359b2424c40f2ef9971c0f1f3fdfab43f1ff351df396cbc5e9f1"
+  },
+  "timeout_seconds": 900.0,
+  "pid": 61539,
+  "status": "success",
+  "exit_code": 0,
+  "elapsed_seconds": 132.0493398749968
+}
