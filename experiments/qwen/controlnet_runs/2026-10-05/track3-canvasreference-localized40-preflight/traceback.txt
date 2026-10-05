@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_canvas_reference_localized_trial.py", line 454, in main
+    suite["canvas_reference_cpu_test"] = canvas_reference_cpu_case(mx, np, Image, reference, source_rgb, rect,
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        reference_tokens, target_tokens, hint_target_np, support,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        baseline_context=matched_contexts.get(args.modes[0]))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_canvas_reference_localized_trial.py", line 121, in canvas_reference_cpu_case
+    tiny_layout = QwenImage21Layout.create(tiny_slots, [(1, 4, 2), (1, 4, 2)], (2, 2, 4))
+  File "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_layout.py", line 46, in create
+    raise ValueError("Reference image tokens must form contiguous blocks.")
+ValueError: Reference image tokens must form contiguous blocks.
