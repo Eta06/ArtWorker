@@ -1,0 +1,60 @@
+{
+  "method": "hermite",
+  "radius_pixels": 64,
+  "smoothing_sigma_x": 4,
+  "normal_slope_estimate_rows": 8,
+  "value_cap_255": 48,
+  "gradient_cap_255_per_pixel": 0.35,
+  "edges": {
+    "top": {
+      "value_abs_p95_255": 37.961181640625,
+      "value_max_255": 47.170143127441406,
+      "gradient_abs_p95_255_per_pixel": 0.3499999940395355,
+      "value_residual_capped_fraction": 0.0,
+      "gradient_residual_capped_fraction": 0.91015625,
+      "correction_max_abs_255": 47.170143127441406,
+      "correction_first_row_mean_rgb": [
+        1.6535990238189697,
+        -6.4795122146606445,
+        -16.149837493896484
+      ],
+      "correction_far_row_max_abs": 0.0,
+      "clipped_pixel_channels_before_uint8": 474
+    },
+    "bottom": {
+      "value_abs_p95_255": 9.015449523925781,
+      "value_max_255": 14.938301086425781,
+      "gradient_abs_p95_255_per_pixel": 0.3499999940395355,
+      "value_residual_capped_fraction": 0.0,
+      "gradient_residual_capped_fraction": 0.6673177083333334,
+      "correction_max_abs_255": 16.576629638671875,
+      "correction_first_row_mean_rgb": [
+        0.4474909007549286,
+        -2.5997273921966553,
+        -3.1394379138946533
+      ],
+      "correction_far_row_max_abs": 0.0,
+      "clipped_pixel_channels_before_uint8": 0
+    }
+  },
+  "processing_seconds": 0.002092833019560203,
+  "source_pixels_exact": true,
+  "far_exterior_pixels_exact": true,
+  "no_geometric_warp": true,
+  "no_line_mask_or_painting": true,
+  "generated_mean_abs_change_255": 1.0856618245442708,
+  "top": {
+    "adjacent_row_rgb_jump_255": 7.664713541666667,
+    "smoothed_first_generated_row_target_mae_255": 1.8286705017089844,
+    "first_two_generated_rows_gradient_target_mae": 18.606843948364258
+  },
+  "bottom": {
+    "adjacent_row_rgb_jump_255": 4.220052083333333,
+    "smoothed_first_generated_row_target_mae_255": 0.7972188591957092,
+    "first_two_generated_rows_gradient_target_mae": 2.133850336074829
+  },
+  "collar_horizontal_gradient_energy_ratio": 1.039486081155696,
+  "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track3-top32-direct/direct-hermite64/composite.png",
+  "composite_sha256": "5e34119f0441f0651d8d23a63dc6a9c5988448a69b0ae2fd2feb4708ac8fb4c9",
+  "artifact_kind": "derived post-generation exact-source composite; not model raw"
+}
