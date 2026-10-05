@@ -1,0 +1,73 @@
+{
+  "_id": "6a3daff2444639d844f1c9ab",
+  "id": "xocialize/qwen-image-edit-2511-mlx-int4",
+  "private": false,
+  "pipeline_tag": "image-to-image",
+  "library_name": "mlx",
+  "tags": [
+    "mlx",
+    "qwen-image-edit",
+    "image-to-image",
+    "quantized",
+    "base_model:Qwen/Qwen-Image-Edit-2511",
+    "base_model:finetune:Qwen/Qwen-Image-Edit-2511",
+    "license:apache-2.0",
+    "region:us"
+  ],
+  "downloads": 0,
+  "likes": 0,
+  "modelId": "xocialize/qwen-image-edit-2511-mlx-int4",
+  "author": "xocialize",
+  "sha": "56c0326b401c2b110c37df93aea73a3c08816e61",
+  "lastModified": "2026-06-25T22:48:39.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "license": "apache-2.0",
+    "base_model": "Qwen/Qwen-Image-Edit-2511",
+    "library_name": "mlx",
+    "tags": [
+      "mlx",
+      "qwen-image-edit",
+      "image-to-image",
+      "quantized"
+    ]
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "a6344aac8c09253b3b630fb776ae94478aa0275b",
+      "size": 1519
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "b85b1fab2ad80c14ca2cfb80031e30f2391e8cd4",
+      "size": 2020
+    },
+    {
+      "rfilename": "qie-2511-dit-int4-mod8.safetensors",
+      "blobId": "7242d8d13e99c3e7617c0c364fb8ba327ae612d7",
+      "size": 14956158139,
+      "lfs": {
+        "sha256": "0593e293b5d612d6d9c4724932833533b8d6bcef8d5544c5f001e220171783f7",
+        "size": 14956158139,
+        "pointerSize": 136
+      }
+    },
+    {
+      "rfilename": "qie-2511-vl7b-int4.safetensors",
+      "blobId": "df902b067a41617742170d80f395b868a8a0b19c",
+      "size": 3977780883,
+      "lfs": {
+        "sha256": "04307c5a6d9983a42b11f64c537b82eb2e0640d3dd01cb3b7a990a93548e3c89",
+        "size": 3977780883,
+        "pointerSize": 135
+      }
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2026-06-25T22:47:14.000Z",
+  "usedStorage": 18933939022
+}
