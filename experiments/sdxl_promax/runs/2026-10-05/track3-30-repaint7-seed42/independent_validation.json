@@ -1,0 +1,530 @@
+{
+  "status": "integrity_passed_visual_failed",
+  "audited_utc": "2026-10-05T04:06:23.533161+00:00",
+  "scope": "CPU NumPy/Pillow/hashlib/Torch RNG only; no GPU,modelinference,weights,downloads or original/code/output edits",
+  "run_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/sdxl_promax/runs/2026-10-05/track3-30-repaint7-seed42",
+  "metrics_sha256": "76d4eb418f6bb408a156d589ce947ea6731448398cee92536ff45f46798dba72",
+  "retained_tensors": {
+    "initial_latents": {
+      "shape": [
+        1,
+        4,
+        144,
+        64
+      ],
+      "stored_dtype": "float32",
+      "original_dtype_recorded": "torch.float16",
+      "finite": true,
+      "array_sha256_float32": "a512bab95a76d08f794c83ad8aa06a76dc403f1c8be9b3aa6c24e497eaff7c16",
+      "file_sha256": "cd4755245d7dce67ab32c4d761acaa05c2d476b05226c47a7f84d6303bcc320f",
+      "shape_matches_record": true,
+      "hash_matches_record": true,
+      "minimum": -42.28125,
+      "maximum": 39.75,
+      "std": 9.69094181060791
+    },
+    "actual_noise": {
+      "shape": [
+        1,
+        4,
+        144,
+        64
+      ],
+      "stored_dtype": "float32",
+      "original_dtype_recorded": "torch.float16",
+      "finite": true,
+      "array_sha256_float32": "84d0897db02d9376ea1f5ca23d4512a05b12df44de265d16030420ad9041579b",
+      "file_sha256": "262d5e3d082693dcec35b0651e5d057fdfe721bee43abf4d370bdacb71e4d942",
+      "shape_matches_record": true,
+      "hash_matches_record": true,
+      "minimum": -4.32421875,
+      "maximum": 4.12109375,
+      "std": 1.007428526878357
+    },
+    "image_latents": {
+      "shape": [
+        1,
+        4,
+        144,
+        64
+      ],
+      "stored_dtype": "float32",
+      "original_dtype_recorded": "torch.float16",
+      "finite": true,
+      "array_sha256_float32": "83d1de76c33403d3b59fe880a8a5da18d975ff3db89175425dc53fd85716c8b6",
+      "file_sha256": "c35a14e5dc6dd443b118b382fa902c28bfd406aa68b116a4fad5e09fd8f054fe",
+      "shape_matches_record": true,
+      "hash_matches_record": true,
+      "minimum": -3.12109375,
+      "maximum": 2.509765625,
+      "std": 1.185300350189209
+    },
+    "normalized_masked_source_input": {
+      "shape": [
+        1,
+        3,
+        1152,
+        512
+      ],
+      "stored_dtype": "float32",
+      "original_dtype_recorded": "torch.float32",
+      "finite": true,
+      "array_sha256_float32": "3f716760cddd4cabded439a7f35ba718df650927470d5fa7fdf55d160f3aa735",
+      "file_sha256": "9393bfdede8a076bf5d4f0b2a1f1651eb35261c50628e4ead3431322e896510b",
+      "shape_matches_record": true,
+      "hash_matches_record": true,
+      "minimum": -1.0,
+      "maximum": 0.8980392217636108,
+      "std": 0.31342941522598267
+    },
+    "mask_latents": {
+      "shape": [
+        2,
+        1,
+        144,
+        64
+      ],
+      "stored_dtype": "float32",
+      "original_dtype_recorded": "torch.float16",
+      "finite": true,
+      "array_sha256_float32": "350b38e43aa13194eb5f62cc0f653cdef52645c66902798c94a164586a33b904",
+      "file_sha256": "a060c074b4868096d5dd3df2c02904c38eea8ebeaa1221ff7ae300f469b4942e",
+      "shape_matches_record": true,
+      "hash_matches_record": true,
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "std": 0.49690401554107666
+    },
+    "masked_source_latents": {
+      "shape": [
+        2,
+        4,
+        144,
+        64
+      ],
+      "stored_dtype": "float32",
+      "original_dtype_recorded": "torch.float16",
+      "finite": true,
+      "array_sha256_float32": "ae828ac4cb4b775087d4013b4bcbfcfae79657681f5d288f5cc53c907c9e0bed",
+      "file_sha256": "b1b52423c68f1ea161615d1b781df4cc55daa6b6c7b7ebafaa08e030f7ca3864",
+      "shape_matches_record": true,
+      "hash_matches_record": true,
+      "minimum": -2.6640625,
+      "maximum": 2.515625,
+      "std": 0.7012481689453125
+    },
+    "prepared_control_rgb": {
+      "shape": [
+        2,
+        3,
+        1152,
+        512
+      ],
+      "stored_dtype": "float32",
+      "original_dtype_recorded": "torch.float16",
+      "finite": true,
+      "array_sha256_float32": "3b42339465266282daa9218fb9a8919c55e8063c04391946bbd94393c051515e",
+      "file_sha256": "569b0c0efed2cc4b5c9d5ab9f6930804b42451d258d6c2964cb3508720bfe05d",
+      "shape_matches_record": true,
+      "hash_matches_record": true,
+      "minimum": 0.0,
+      "maximum": 0.94921875,
+      "std": 0.14628154039382935
+    },
+    "control_type": {
+      "shape": [
+        2,
+        8
+      ],
+      "stored_dtype": "float32",
+      "original_dtype_recorded": "torch.float16",
+      "finite": true,
+      "array_sha256_float32": "2eb2051e0609a111b910e3195444623ec5d290542d1ecaaa93d1ddd6cb0344c8",
+      "file_sha256": "8f25851185679c8ba5df3519067f6237abe3ce5cf568d22093354525dc07606b",
+      "shape_matches_record": true,
+      "hash_matches_record": true,
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "std": 0.33071890473365784
+    },
+    "first_controlnet_input": {
+      "shape": [
+        2,
+        4,
+        144,
+        64
+      ],
+      "stored_dtype": "float32",
+      "original_dtype_recorded": "torch.float16",
+      "finite": true,
+      "array_sha256_float32": "52cae91a27a023f8bcc4a1125fde7f86dfec6a4c8a5ac7a9fe78377c8d388d94",
+      "file_sha256": "ce41f808ba60c0770d24b6086ae6b861498b431771914f086723469777b5e720",
+      "shape_matches_record": true,
+      "hash_matches_record": true,
+      "minimum": -4.40625,
+      "maximum": 4.140625,
+      "std": 1.0099066495895386
+    },
+    "first_unet_input": {
+      "shape": [
+        2,
+        4,
+        144,
+        64
+      ],
+      "stored_dtype": "float32",
+      "original_dtype_recorded": "torch.float16",
+      "finite": true,
+      "array_sha256_float32": "52cae91a27a023f8bcc4a1125fde7f86dfec6a4c8a5ac7a9fe78377c8d388d94",
+      "file_sha256": "ce41f808ba60c0770d24b6086ae6b861498b431771914f086723469777b5e720",
+      "shape_matches_record": true,
+      "hash_matches_record": true,
+      "minimum": -4.40625,
+      "maximum": 4.140625,
+      "std": 1.0099066495895386
+    },
+    "final_latents": {
+      "shape": [
+        1,
+        4,
+        144,
+        64
+      ],
+      "stored_dtype": "float32",
+      "original_dtype_recorded": "torch.float16",
+      "finite": true,
+      "array_sha256_float32": "96940eedaed3e8a5eaab6e3e2fb3d1a457dc825794f07a7ee8f848a75391a636",
+      "file_sha256": "236bb5d61a0c50d12c5b889ee4b33607b7f1032b6c922ff7a83b306a9287942b",
+      "shape_matches_record": true,
+      "hash_matches_record": true,
+      "minimum": -2.89453125,
+      "maximum": 2.509765625,
+      "std": 1.0161348581314087
+    },
+    "raw_decoded_tensor": {
+      "shape": [
+        1,
+        3,
+        1152,
+        512
+      ],
+      "stored_dtype": "float32",
+      "original_dtype_recorded": "torch.float16",
+      "finite": true,
+      "array_sha256_float32": "7088b5628c118bbf8c506a5f40233b700e5a828aedd1e046beb77d570105c0a4",
+      "file_sha256": "96467cd9a4fb26c38deb4d6b707afbe455ae2f28d773a88e26d9f0d8687eb03f",
+      "shape_matches_record": true,
+      "hash_matches_record": true,
+      "minimum": -1.171875,
+      "maximum": 0.8818359375,
+      "std": 0.2370501607656479
+    },
+    "vae_encode_latents0": {
+      "shape": [
+        1,
+        4,
+        144,
+        64
+      ],
+      "stored_dtype": "float32",
+      "original_dtype_recorded": "torch.float16",
+      "finite": true,
+      "array_sha256_float32": "83d1de76c33403d3b59fe880a8a5da18d975ff3db89175425dc53fd85716c8b6",
+      "file_sha256": "c35a14e5dc6dd443b118b382fa902c28bfd406aa68b116a4fad5e09fd8f054fe",
+      "shape_matches_record": true,
+      "hash_matches_record": true,
+      "minimum": -3.12109375,
+      "maximum": 2.509765625,
+      "std": 1.185300350189209
+    },
+    "vae_encode_latents1": {
+      "shape": [
+        1,
+        4,
+        144,
+        64
+      ],
+      "stored_dtype": "float32",
+      "original_dtype_recorded": "torch.float16",
+      "finite": true,
+      "array_sha256_float32": "12143d3501e8b020414180d288bf742374a7d5c078d39d3c3649c6ebe10870e9",
+      "file_sha256": "3e8f5eb00c633ae9a80a6c7cd02692983e21b25346b42ab8d0217af2abc33dd1",
+      "shape_matches_record": true,
+      "hash_matches_record": true,
+      "minimum": -2.6640625,
+      "maximum": 2.515625,
+      "std": 0.7012481689453125
+    }
+  },
+  "RNG": {
+    "draw_shape": [
+      1,
+      4,
+      144,
+      64
+    ],
+    "draw_dtype": "Torch CPU float16",
+    "total_draws": 32,
+    "order": [
+      "source-image VAE posterior",
+      "initial noise",
+      "masked-source VAE posterior",
+      "29 ancestral noise draws"
+    ],
+    "actual_noise_exact_independent_second_draw": true,
+    "actual_noise_sha256_float32": "84d0897db02d9376ea1f5ca23d4512a05b12df44de265d16030420ad9041579b",
+    "state_initial_matches_records": true,
+    "source_posterior_state_after_exact": true,
+    "initial_noise_state_after_exact": true,
+    "masked_posterior_state_after_exact": true,
+    "all29_ancestral_states_exact": true,
+    "state_final_matches_record": true,
+    "final_state_sha256": "5f33531d693a6dc605440feb97f2ae927ee9fbc9b330ff137b45f830620f803b",
+    "ancestral_last_draw_consumes_RNG": true,
+    "sampler_generator_forwarding_recorded_verified": true,
+    "source_semantics": "EulerAncestral upcasts sample, but noise uses model_output.shape/dtype; FP16 CFG model output remains batch1. Last step draws noise even at sigma_up0."
+  },
+  "conditioning": {
+    "task7_8slot_onehot_exact": true,
+    "prepared_controlRGB_exact_original_normalized_then_FP16_for_both_CFGbranches": true,
+    "prepared_controlRGB_unknown_exact0": true,
+    "prepared_controlRGB_range": [
+      0.0,
+      0.94921875
+    ],
+    "masked_source_unknown_normalizedRGB_exact0": true,
+    "latent_mask_native_nearest_exact": true,
+    "first_ControlNet_UNet_input_arrays_equal": true,
+    "first_control_UNet_shape": [
+      2,
+      4,
+      144,
+      64
+    ],
+    "first_CFGlatent_inputs_equal": true,
+    "image_latents_equal_fullsource_VAEencode": true,
+    "masksource_latents_equal_maskedsource_VAEencode": true,
+    "initial_latents_exact_image_plus_sigma_noise": true,
+    "initial_sigma": 9.543585777282715,
+    "final_known_latents_exact_original_image_latents": true,
+    "unknown_latent_value_fraction_equal_original_image": 0.0,
+    "known_latent_rows_halfopen": [
+      40,
+      104
+    ]
+  },
+  "compute_and_native_clamp": {
+    "requested_steps": 30,
+    "strength": 0.9999,
+    "scheduler": "EulerAncestralDiscreteScheduler",
+    "actual_UNet_calls": 29,
+    "actual_ControlNet_calls": 29,
+    "scheduler_step_calls": 29,
+    "UNet_CFGbranch_samples": 58,
+    "ControlNet_CFGbranch_samples": 58,
+    "steps_exact1_to29": true,
+    "UNet_counts_exact1_to29": true,
+    "ControlNet_counts_exact1_to29": true,
+    "log_steps_exact1_to29": true,
+    "all_steps_finite": true,
+    "actual_timesteps_trim_first": true,
+    "step_timesteps_match_actual": true,
+    "all29_native_source_clamps_recorded_verified": true,
+    "first28_known_targets_nextnoise": true,
+    "last_known_target_clean_source": true,
+    "addnoise_observations_init_plus28_nextsteps": true,
+    "scheduler_begin_index": 1,
+    "branch_spatial_site_evaluations_each_model": 534528,
+    "knownclamp_scope": "All29 full post-step equations checked by frozen runner against observed solver/known target/mask; intermediate arrays not retained. Final known latent equality independently checked from savedarrays."
+  },
+  "images": {
+    "raw_size": [
+      512,
+      1152
+    ],
+    "composite_size": [
+      512,
+      1152
+    ],
+    "source_exact": true,
+    "outside_identical_raw": true,
+    "source_input_pixels_exact": true,
+    "mask_exact_expected": true,
+    "raw_sha256": "c016ace72a9b91703e8fe06ee3f18e206f09e4615b6149ed25628d3423c57839",
+    "composite_sha256": "246e38b076a8a387423fcaa946a285d2f846e76de724e84b6f5ca9877cc1819a",
+    "hashes_match_records": true,
+    "input_hashes_match_metrics_preflight": {
+      "source": true,
+      "canvas": true,
+      "mask": true
+    },
+    "controlPNG_hash_matches_record": true,
+    "controlPNG_pixels_hash_matches_record": true,
+    "controlPNG_known_source_exact": true,
+    "controlPNG_unknown_exact0": true,
+    "native_half_decode_postprocess_exact_rawPNG": true
+  },
+  "provenance": {
+    "runner_sha256": "ecdd952376fbf04569f8ebc37c61e1cde00a367c7de15a93e2c00d753623bd20",
+    "runner_matches_expected_launch_metrics": true,
+    "pipeline_sha256": "a4fcc80425c0e40477c6c89ee75e528f24dc0df7aeafd9c904bb8cc08239db8b",
+    "pipeline_matches_record": true,
+    "runtime_ControlNet_sha256": "093ad3610fa3b5af98cc2104a09f1868a9fb3a15b0806d792a3c4264ff7a3d59",
+    "runtime_ControlNet_matches_record": true,
+    "CPUgate_matches_record": true,
+    "manifest_sha256": "51597b03f4c314648b8f59de7b3d203573f75cc10c637b962166983389546911",
+    "manifest_matches_record": true,
+    "scheduler_source_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/dreamlite-venv/lib/python3.12/site-packages/diffusers/schedulers/scheduling_euler_ancestral_discrete.py",
+    "scheduler_source_audit_sha256": "9ac11e9c2851863668e35dc685db89bca406958c9f8eb95a4f04e99896ab78b1",
+    "scheduler_source_hash_scope": "Additional audit snapshot; runner did not record scheduler-source hash.",
+    "strict_component_loading_empty_errors": true,
+    "component_parameter_bytes_recorded": {
+      "unet": 5134927368,
+      "controlnet": 2513229600,
+      "vae": 167307726,
+      "text_encoder": 246120960,
+      "text_encoder_2": 1389319680
+    },
+    "model_repositories": {
+      "controlnet": [
+        "xinsir/controlnet-union-sdxl-1.0",
+        "801a4a3fa3d4c936f4feea95b98607bc6726f80c"
+      ],
+      "base": [
+        "stabilityai/stable-diffusion-xl-base-1.0",
+        "462165984030d82259a11f4367a4eed129e94a7b"
+      ],
+      "vae_fix": [
+        "madebyollin/sdxl-vae-fp16-fix",
+        "207b116dae70ace3637169f1ddd2434b91b3a8cd"
+      ]
+    },
+    "payload_verification_scope": "Runner verified all pinned fresh components; audit checks manifest/source hashes without loading or rereading weight payloads.",
+    "launch_exit_code": 0
+  },
+  "raw_source_MAE_recomputed": {
+    "all": 4.948728084564209,
+    "top16": 6.201944828033447,
+    "bottom16": 4.719482421875,
+    "inner": 4.914595603942871
+  },
+  "generated_RGB_statistics": {
+    "upper": {
+      "meanRGB_0_255": 18.961088053385417,
+      "stdRGB_0_255": 3.0095840866693826,
+      "median_channel_0_255": 19.0,
+      "fraction_allchannels_below32": 0.997686767578125
+    },
+    "lower": {
+      "meanRGB_0_255": 22.34238484700521,
+      "stdRGB_0_255": 9.748969066556825,
+      "median_channel_0_255": 19.0,
+      "fraction_allchannels_below32": 0.877264404296875
+    }
+  },
+  "cost_seconds_recorded": {
+    "elapsed": 45.4384679159848,
+    "pipeline": 36.21151774999453,
+    "denoise_observed": 33.59243558297749,
+    "UNet_sum": 21.906577538960846,
+    "ControlNet_sum": 11.504974249954103,
+    "decode": 0.8420629999891389
+  },
+  "MPS_sampled_peak_bytes_recorded": {
+    "current_allocated_bytes": 9548185600,
+    "driver_allocated_bytes": 14311882752
+  },
+  "RSS_bytes_recorded": 1014497280,
+  "direct_visual_inspection": {
+    "whole_raw_and_composite_viewed": true,
+    "quality_gate": "failed",
+    "upper": [
+      "Almost uniform darkgray rectangle; source rail and water stop at sourceedge."
+    ],
+    "lower": [
+      "Almost uniform darkgray rectangle with narrow extruded horizontal edge/bar beneath artwork; asphalt does not continue."
+    ],
+    "native_source_preservation": "Known latent/source preservation passes, but full exterior generation is unsuccessful.",
+    "no_cosmetic_repair_performed": true,
+    "raw_and_composite_upper_rail_6x_viewed": true,
+    "composite_lower_join_native_viewed": true
+  },
+  "inspection_artifacts": {
+    "upper_rail_join": {
+      "box_xyxy": [
+        224,
+        248,
+        440,
+        392
+      ],
+      "raw_native_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/sdxl_promax/runs/2026-10-05/track3-30-repaint7-seed42/upper_rail_join_raw_native.png",
+      "raw_native_sha256": "56af742117e2b4ee5540f310ce044994c00456852e3a57213014c0e0fa056925",
+      "raw_6x_nearest_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/sdxl_promax/runs/2026-10-05/track3-30-repaint7-seed42/upper_rail_join_raw_6x_nearest.png",
+      "raw_6x_nearest_sha256": "1ed567fde74207338cadb1818fc6e89f45f34e94eef2cbb9d2858e2bb243cc98",
+      "composite_native_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/sdxl_promax/runs/2026-10-05/track3-30-repaint7-seed42/upper_rail_join_composite_native.png",
+      "composite_native_sha256": "bfe816af526ff5b1f5a83f9205ba2e047378c7c6a31c8d012dca2e3b02c085ef",
+      "composite_6x_nearest_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/sdxl_promax/runs/2026-10-05/track3-30-repaint7-seed42/upper_rail_join_composite_6x_nearest.png",
+      "composite_6x_nearest_sha256": "1c7f4cc1946ba92b0b9d75b1dd2783b7254ee59666c64f208fca338a22d0e9a0"
+    },
+    "lower_scene_join": {
+      "box_xyxy": [
+        0,
+        792,
+        512,
+        920
+      ],
+      "raw_native_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/sdxl_promax/runs/2026-10-05/track3-30-repaint7-seed42/lower_scene_join_raw_native.png",
+      "raw_native_sha256": "4d9119b25193aff850c23c75c9d90a2cfabc5d39f6b8d6ba23795b494a88369e",
+      "raw_6x_nearest_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/sdxl_promax/runs/2026-10-05/track3-30-repaint7-seed42/lower_scene_join_raw_6x_nearest.png",
+      "raw_6x_nearest_sha256": "795f38f59fc83032418a30db7140c71fd9df872148a4286541d4404dbbc701b8",
+      "composite_native_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/sdxl_promax/runs/2026-10-05/track3-30-repaint7-seed42/lower_scene_join_composite_native.png",
+      "composite_native_sha256": "fe4fc0e14bf69eaf1aaa976029f063af04c34b90238c6a03a122c664787d3b31",
+      "composite_6x_nearest_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/sdxl_promax/runs/2026-10-05/track3-30-repaint7-seed42/lower_scene_join_composite_6x_nearest.png",
+      "composite_6x_nearest_sha256": "475afcbf534b765b493d0825b9ddf0ae0605d2a48101ce0f32f9eba4490459df"
+    }
+  },
+  "limitations": [
+    "29 native source replacement equations validated by runner observations; only final savedknown latent equality independently recomputed.",
+    "Perstep predictions andcontrol residual arrays not retained; finiteness is asserted by hooks.",
+    "Retained tensors andCPU RNG states independently verified; pretrained VAE not rerun.",
+    "Model payload hashes checked by runner; no audit weights reads.",
+    "MPS memory is sampledallocated/driver, not exhaustive hardware peak.",
+    "Test589824pixels differs from author approximately1024squared reference; no claim of family quality ceiling.",
+    "No progressivecompute or iPhoneperformance proof."
+  ],
+  "active_sigma_and_unknown_mask_audit": {
+    "requested30": true,
+    "strength": 0.9999,
+    "begin": 1,
+    "actualfirstTimestep": 925.0,
+    "fullfirstTimestep": 958.0,
+    "active_sigma1": 9.543585777282715,
+    "full_sigma0": 11.476850509643555,
+    "initial_exact_active_sigma": true,
+    "initial_different_fullsigma0": true,
+    "normalization_denominator": 9.595833778381348,
+    "first_ControlNet_exact_active_sigma_norm": true,
+    "first_UNet_exact_active_sigma_norm": true,
+    "normalization_max_abs_error": 0.0,
+    "unknown_mask_all1": true,
+    "known_mask_all0": true,
+    "final_known_exact": true,
+    "unknown_value_fraction_exact_source": 0.0,
+    "initial_unknown_noise_std": 1.0093238353729248
+  },
+  "source_integrity": {
+    "original_jpg_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+    "original_jpg_matches_registry": true,
+    "source_square_sha256": "9683ce8fa857b2b91accc641b5e9a5f417542e9393f6dbbc20bf86a028e64349",
+    "source_square_pixels_match_registered_original_crop": true,
+    "source512_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+    "source512_pixels_match_LANCZOS_derivation": true,
+    "source_reference_caveat": "Composite equality compares shared512x512 Lanczos reference, not original720x720 pixel dimensions."
+  },
+  "independent_second_auditor": {
+    "provenance_source_RNG": "passed",
+    "all32_CPU_Fp16_draws_verified": true,
+    "all29_ancestral_states_verified": true,
+    "scheduler_source_hash_matches_second_auditor": true
+  }
+}
