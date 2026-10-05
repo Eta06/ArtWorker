@@ -1,0 +1,662 @@
+{
+  "status": "success",
+  "track": "track2",
+  "seed": 42,
+  "runs": {
+    "full": {
+      "model_repo": "Qwen/Qwen-Image-2.1",
+      "model_revision": "790c92633540aa0cb11d9abf19eb46d861714758",
+      "runtime": "mflux native MLX QwenImage21Edit; experimental actual target-token growth",
+      "runtime_git_revision": "25661d8e853996fec9134998b995edf97369bfbd",
+      "adapter_repo": "Viggle/Qwen-Image-2.1-viggle-turbo",
+      "adapter_revision": "bb26a0f38e5fe6c124aaccc9187a87eed5d9ed13",
+      "adapter_file": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/qwen/viggle/Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors",
+      "adapter_rank": 256,
+      "adapter_baked": false,
+      "quantization": 4,
+      "track": "track2",
+      "seed": 42,
+      "steps": 6,
+      "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical music album photograph showing two men in sunglasses against a cyan blue studio wall, one wearing a dark graphic shirt and cap, the other wearing a white shirt. Continue the blue wall and the lower parts of their existing clothing naturally above and below the central artwork, matching the original flash lighting and shadows. Preserve the existing central faces and typography. No additional people, titles, logos or lettering.",
+      "width": 512,
+      "height": 1152,
+      "source_rect_xyxy": [
+        0,
+        320,
+        512,
+        832
+      ],
+      "status": "success",
+      "spatial_mode": "full",
+      "diagnostic_control": true,
+      "shared_canvas_comparable": false,
+      "ablation_suite": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/ablation_metrics.json",
+      "generation_order_within_process": 1,
+      "source_prefix": "actual 512-square source; fixed 1024 latent image tokens",
+      "source_prefix_latent_tokens": 1024,
+      "joint_prefix_tokens": 1196,
+      "source_prefix_sha256": "eb56e7a2759b15b8e83db69a0a9bd2aa285a560bb61cdb4b2da4d0594d23aead",
+      "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "source_encoding_shared_between_arms": true,
+      "fresh_prefix_cache_per_arm": true,
+      "sigmas": [
+        1.0,
+        0.9648136496543884,
+        0.92751544713974,
+        0.8457746505737305,
+        0.6463939547538757,
+        0.3786254823207855,
+        0.0
+      ],
+      "schedule_shift_target_tokens": 2304,
+      "target_tokens_future_absent_from_forward": false,
+      "active_heights_by_step": [
+        1152,
+        1152,
+        1152,
+        1152,
+        1152,
+        1152
+      ],
+      "initializer": "source-edge",
+      "late_activation_initializer": null,
+      "inner_region_denoising": "continues refining at the same global target sigma",
+      "mask_method": "known square-source latent flow bridge restored before/after every step",
+      "trained_spatial_time_schedule": false,
+      "transformer_calls": 6,
+      "preview_definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+      "metal_device": {
+        "device_name": "Apple M4 Max",
+        "max_recommended_working_set_size": 30150672384,
+        "memory_size": 38654705664,
+        "architecture": "applegpu_g16s",
+        "max_buffer_length": 22613000192,
+        "resource_limit": 499000
+      },
+      "mlx_version": "0.32.3",
+      "phases": {
+        "load_seconds": 15.659447833982995,
+        "conditioning_seconds": 2.4469984580064192,
+        "denoising_seconds": 33.78819316896261,
+        "core_loop_wall_seconds": 33.98914208300994,
+        "preview_capture_seconds": 0.19834741798695177,
+        "decode_seconds": 3.7049010829941835,
+        "preview_decode_seconds": 4.912382667011116
+      },
+      "shared_phase_scope": "load and conditioning executed once for entire suite; values attributed to each arm for context",
+      "load_mlx_peak_bytes": 26306185728,
+      "conditioning_mlx_peak_bytes": 11641876712,
+      "step_records": [
+        {
+          "step": 1,
+          "sigma": 1.0,
+          "next_sigma": 0.9648136496543884,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 2304,
+          "input_image_latent_tokens": 3328,
+          "attention_query_tokens": 3500,
+          "attention_key_value_tokens": 3500,
+          "core_step_seconds": 9.881870624987641
+        },
+        {
+          "step": 2,
+          "sigma": 0.9648136496543884,
+          "next_sigma": 0.92751544713974,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3500,
+          "core_step_seconds": 4.64860245899763
+        },
+        {
+          "step": 3,
+          "sigma": 0.92751544713974,
+          "next_sigma": 0.8457746505737305,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3500,
+          "core_step_seconds": 4.867954624991398
+        },
+        {
+          "step": 4,
+          "sigma": 0.8457746505737305,
+          "next_sigma": 0.6463939547538757,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3500,
+          "core_step_seconds": 4.639375833998201
+        },
+        {
+          "step": 5,
+          "sigma": 0.6463939547538757,
+          "next_sigma": 0.3786254823207855,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3500,
+          "core_step_seconds": 4.878327791986521
+        },
+        {
+          "step": 6,
+          "sigma": 0.3786254823207855,
+          "next_sigma": 0.0,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3500,
+          "core_step_seconds": 4.872061834001215
+        }
+      ],
+      "previews": [
+        {
+          "step": 2,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "latent_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/full/previews/step02_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/full/previews/step02_predicted_clean_raw.png",
+          "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/full/previews/step02_predicted_clean_composite.png",
+          "decode_seconds": 1.6324704170110635,
+          "source_pixels_exact": true
+        },
+        {
+          "step": 4,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "latent_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/full/previews/step04_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/full/previews/step04_predicted_clean_raw.png",
+          "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/full/previews/step04_predicted_clean_composite.png",
+          "decode_seconds": 1.6463815839961171,
+          "source_pixels_exact": true
+        },
+        {
+          "step": 6,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "latent_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/full/previews/step06_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/full/previews/step06_predicted_clean_raw.png",
+          "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/full/previews/step06_predicted_clean_composite.png",
+          "decode_seconds": 1.6328272090177052,
+          "source_pixels_exact": true
+        }
+      ],
+      "process_peak_rss_bytes": 7589396480,
+      "final_latents_finite": true,
+      "known_source_latents_exact_at_sigma_zero": true,
+      "denoising_timing_scope": "sum of six active-layout/insertion/transformer/Euler/clean-prediction steps; preview capture and all VAE decoding excluded",
+      "denoising_mlx_peak_bytes": 9662890120,
+      "raw_source_region_mae_255": 5.817984263102214,
+      "raw_source_region_max_error_255": 250,
+      "raw_source_top16_mae_255": 16.930460611979168,
+      "raw_source_bottom16_mae_255": 22.307942708333332,
+      "raw_source_inner_mae_255": 4.897903103298611,
+      "decoded_pixels_finite": true,
+      "decoding_mlx_peak_bytes": 6108427648,
+      "preview_decoding_mlx_peak_bytes": 6108427648,
+      "source_pixels_exact": true,
+      "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/full/raw.png",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/full/composite.png",
+      "elapsed_seconds": 90.12781737500336,
+      "mlx_peak_bytes": 11641876712,
+      "output_sha256": "a70c544dd2b6aec198b6a2de1d8afea11aaa0aea505312f434fe5aaa0241b438",
+      "generation_seconds_excluding_load_previews": 39.94009270996321
+    },
+    "early-frontier": {
+      "model_repo": "Qwen/Qwen-Image-2.1",
+      "model_revision": "790c92633540aa0cb11d9abf19eb46d861714758",
+      "runtime": "mflux native MLX QwenImage21Edit; experimental actual target-token growth",
+      "runtime_git_revision": "25661d8e853996fec9134998b995edf97369bfbd",
+      "adapter_repo": "Viggle/Qwen-Image-2.1-viggle-turbo",
+      "adapter_revision": "bb26a0f38e5fe6c124aaccc9187a87eed5d9ed13",
+      "adapter_file": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/qwen/viggle/Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors",
+      "adapter_rank": 256,
+      "adapter_baked": false,
+      "quantization": 4,
+      "track": "track2",
+      "seed": 42,
+      "steps": 6,
+      "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical music album photograph showing two men in sunglasses against a cyan blue studio wall, one wearing a dark graphic shirt and cap, the other wearing a white shirt. Continue the blue wall and the lower parts of their existing clothing naturally above and below the central artwork, matching the original flash lighting and shadows. Preserve the existing central faces and typography. No additional people, titles, logos or lettering.",
+      "width": 512,
+      "height": 1152,
+      "source_rect_xyxy": [
+        0,
+        320,
+        512,
+        832
+      ],
+      "status": "success",
+      "spatial_mode": "early-frontier",
+      "diagnostic_control": true,
+      "shared_canvas_comparable": false,
+      "ablation_suite": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/ablation_metrics.json",
+      "generation_order_within_process": 2,
+      "source_prefix": "actual 512-square source; fixed 1024 latent image tokens",
+      "source_prefix_latent_tokens": 1024,
+      "joint_prefix_tokens": 1196,
+      "source_prefix_sha256": "eb56e7a2759b15b8e83db69a0a9bd2aa285a560bb61cdb4b2da4d0594d23aead",
+      "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "source_encoding_shared_between_arms": true,
+      "fresh_prefix_cache_per_arm": true,
+      "sigmas": [
+        1.0,
+        0.9648136496543884,
+        0.92751544713974,
+        0.8457746505737305,
+        0.6463939547538757,
+        0.3786254823207855,
+        0.0
+      ],
+      "schedule_shift_target_tokens": 2304,
+      "target_tokens_future_absent_from_forward": true,
+      "active_heights_by_step": [
+        640,
+        896,
+        1152,
+        1152,
+        1152,
+        1152
+      ],
+      "initializer": "predicted-clean-active-frontier",
+      "late_activation_initializer": "(1-sigma)*predicted-clean-active-frontier extrapolation + sigma*same absolute noise; untrained heuristic",
+      "inner_region_denoising": "continues refining at the same global target sigma",
+      "mask_method": "known square-source latent flow bridge restored before/after every step",
+      "trained_spatial_time_schedule": false,
+      "transformer_calls": 6,
+      "preview_definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+      "metal_device": {
+        "device_name": "Apple M4 Max",
+        "max_recommended_working_set_size": 30150672384,
+        "memory_size": 38654705664,
+        "architecture": "applegpu_g16s",
+        "max_buffer_length": 22613000192,
+        "resource_limit": 499000
+      },
+      "mlx_version": "0.32.3",
+      "phases": {
+        "load_seconds": 15.659447833982995,
+        "conditioning_seconds": 2.4469984580064192,
+        "denoising_seconds": 27.525288041011663,
+        "core_loop_wall_seconds": 27.704781040985836,
+        "preview_capture_seconds": 0.17694350102101453,
+        "decode_seconds": 1.6240710409765597,
+        "preview_decode_seconds": 4.496025416010525
+      },
+      "shared_phase_scope": "load and conditioning executed once for entire suite; values attributed to each arm for context",
+      "load_mlx_peak_bytes": 26306185728,
+      "conditioning_mlx_peak_bytes": 11641876712,
+      "step_records": [
+        {
+          "step": 1,
+          "sigma": 1.0,
+          "next_sigma": 0.9648136496543884,
+          "active_height": 640,
+          "active_window_xyxy": [
+            0,
+            256,
+            512,
+            896
+          ],
+          "target_tokens_forwarded": 1280,
+          "future_target_tokens_absent": 1024,
+          "newly_activated_tokens": 1280,
+          "input_image_latent_tokens": 2304,
+          "attention_query_tokens": 2476,
+          "attention_key_value_tokens": 2476,
+          "core_step_seconds": 4.849110125011066
+        },
+        {
+          "step": 2,
+          "sigma": 0.9648136496543884,
+          "next_sigma": 0.92751544713974,
+          "active_height": 896,
+          "active_window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ],
+          "target_tokens_forwarded": 1792,
+          "future_target_tokens_absent": 512,
+          "newly_activated_tokens": 512,
+          "input_image_latent_tokens": 2816,
+          "attention_query_tokens": 1792,
+          "attention_key_value_tokens": 2988,
+          "core_step_seconds": 3.6270140830019955
+        },
+        {
+          "step": 3,
+          "sigma": 0.92751544713974,
+          "next_sigma": 0.8457746505737305,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 512,
+          "input_image_latent_tokens": 3328,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3500,
+          "core_step_seconds": 4.896596332982881
+        },
+        {
+          "step": 4,
+          "sigma": 0.8457746505737305,
+          "next_sigma": 0.6463939547538757,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3500,
+          "core_step_seconds": 4.735662792023504
+        },
+        {
+          "step": 5,
+          "sigma": 0.6463939547538757,
+          "next_sigma": 0.3786254823207855,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3500,
+          "core_step_seconds": 4.698627374978969
+        },
+        {
+          "step": 6,
+          "sigma": 0.3786254823207855,
+          "next_sigma": 0.0,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3500,
+          "core_step_seconds": 4.718277333013248
+        }
+      ],
+      "previews": [
+        {
+          "step": 2,
+          "active_height": 896,
+          "active_window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ],
+          "latent_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/early-frontier/previews/step02_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/early-frontier/previews/step02_predicted_clean_raw.png",
+          "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/early-frontier/previews/step02_predicted_clean_composite.png",
+          "decode_seconds": 1.2184302920068149,
+          "source_pixels_exact": true
+        },
+        {
+          "step": 4,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "latent_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/early-frontier/previews/step04_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/early-frontier/previews/step04_predicted_clean_raw.png",
+          "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/early-frontier/previews/step04_predicted_clean_composite.png",
+          "decode_seconds": 1.633357332990272,
+          "source_pixels_exact": true
+        },
+        {
+          "step": 6,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "latent_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/early-frontier/previews/step06_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/early-frontier/previews/step06_predicted_clean_raw.png",
+          "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/early-frontier/previews/step06_predicted_clean_composite.png",
+          "decode_seconds": 1.6435257499979343,
+          "source_pixels_exact": true
+        }
+      ],
+      "process_peak_rss_bytes": 7589396480,
+      "final_latents_finite": true,
+      "known_source_latents_exact_at_sigma_zero": true,
+      "denoising_timing_scope": "sum of six active-layout/insertion/transformer/Euler/clean-prediction steps; preview capture and all VAE decoding excluded",
+      "denoising_mlx_peak_bytes": 9079511172,
+      "raw_source_region_mae_255": 5.59255854288737,
+      "raw_source_region_max_error_255": 252,
+      "raw_source_top16_mae_255": 11.670857747395834,
+      "raw_source_bottom16_mae_255": 22.289998372395832,
+      "raw_source_inner_mae_255": 4.833367241753472,
+      "decoded_pixels_finite": true,
+      "decoding_mlx_peak_bytes": 6108427648,
+      "preview_decoding_mlx_peak_bytes": 6198293904,
+      "source_pixels_exact": true,
+      "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/early-frontier/raw.png",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/early-frontier/composite.png",
+      "elapsed_seconds": 96.2491555410088,
+      "mlx_peak_bytes": 11641876712,
+      "output_sha256": "a6eca53f75d31def54691325e91ed65976d61904c6e669cf0c4d24c7783ce0aa",
+      "generation_seconds_excluding_load_previews": 31.596357539994642
+    }
+  },
+  "phases": {
+    "load_seconds": 15.659447833982995,
+    "conditioning_seconds": 2.4469984580064192
+  },
+  "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical music album photograph showing two men in sunglasses against a cyan blue studio wall, one wearing a dark graphic shirt and cap, the other wearing a white shirt. Continue the blue wall and the lower parts of their existing clothing naturally above and below the central artwork, matching the original flash lighting and shadows. Preserve the existing central faces and typography. No additional people, titles, logos or lettering.",
+  "mlx_version": "0.32.3",
+  "mode_output_directories": {
+    "full": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/full",
+    "early-frontier": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/quality_runs/2026-10-05/track2/early-frontier"
+  },
+  "metal_device": {
+    "device_name": "Apple M4 Max",
+    "max_recommended_working_set_size": 30150672384,
+    "memory_size": 38654705664,
+    "architecture": "applegpu_g16s",
+    "max_buffer_length": 22613000192,
+    "resource_limit": 499000
+  },
+  "phase": "complete",
+  "elapsed_seconds": 96.24987154098926,
+  "process_peak_rss_bytes": 7589396480,
+  "loaded_component_parameter_bytes": {
+    "transformer": 5507571712,
+    "text_encoder": 4777530024,
+    "vae": 1350961616
+  },
+  "load_mlx_peak_bytes": 26306185728,
+  "conditioning_mlx_peak_bytes": 11641876712,
+  "sigmas": [
+    1.0,
+    0.9648136496543884,
+    0.92751544713974,
+    0.8457746505737305,
+    0.6463939547538757,
+    0.3786254823207855,
+    0.0
+  ],
+  "source_prefix_latent_tokens": 1024,
+  "joint_prefix_tokens": 1196,
+  "full_target_tokens": 2304,
+  "source_prefix_sha256": "eb56e7a2759b15b8e83db69a0a9bd2aa285a560bb61cdb4b2da4d0594d23aead",
+  "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+  "hash_representation": "float32 values converted from the shared inference tensors",
+  "arm_specifications": {
+    "full": {
+      "heights": [
+        1152,
+        1152,
+        1152,
+        1152,
+        1152,
+        1152
+      ],
+      "initializer": "source-edge"
+    },
+    "old-grow": {
+      "heights": [
+        640,
+        640,
+        896,
+        896,
+        1152,
+        1152
+      ],
+      "initializer": "source-edge"
+    },
+    "early-source": {
+      "heights": [
+        640,
+        896,
+        1152,
+        1152,
+        1152,
+        1152
+      ],
+      "initializer": "source-edge"
+    },
+    "early-frontier": {
+      "heights": [
+        640,
+        896,
+        1152,
+        1152,
+        1152,
+        1152
+      ],
+      "initializer": "predicted-clean-active-frontier"
+    }
+  },
+  "preview_steps": [
+    2,
+    4,
+    6
+  ],
+  "current_mode": "early-frontier",
+  "core_seconds": 27.525288041011663,
+  "nfe": 6,
+  "ablation_comparison": {
+    "nfe": {
+      "full": 6,
+      "early-frontier": 6
+    },
+    "target_token_forward_sum": {
+      "full": 13824,
+      "early-frontier": 12288
+    },
+    "core_seconds": {
+      "full": 33.78819316896261,
+      "early-frontier": 27.525288041011663
+    },
+    "source_prefix_matched": true,
+    "noise_prompt_sigmas_matched": true,
+    "timing_limit": "single process and seed; execution order/thermal/kernel warm-up can affect time; previews excluded",
+    "quality_limit": "Both source-edge/frontier late-token initializations are untrained heuristics; no region is claimed finalized early"
+  }
+}
