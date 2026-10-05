@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "device": "CPU NumPy/Pillow only; no model/GPU imports",
+  "input_npz_raw_and_original_jpg_unchanged": true,
+  "exact_baseline_pixels": true,
+  "runner_sha256": "06a58842753de3b17577395fcb5fbb231294f0117b90554697ed15f73e4624d6",
+  "arms": {
+    "consistency": {
+      "iterations": 4,
+      "atomic_state_valid": true,
+      "state_arrays_finite": true,
+      "projected_latents_equal_base_plus_saved_delta": true,
+      "outside_collar_latents_exact": true,
+      "source_pixels_exact": true,
+      "final_exterior_equals_raw": true,
+      "far_pixel_values_exact": false,
+      "far_mae_255": 0.016815185546875,
+      "far_max_change_255": 1,
+      "far_changed_channel_fraction": 0.016815185546875,
+      "max_abs_latent_delta": 0.0600770004093647,
+      "saved_spectral_and_row_metrics_reproduced": true,
+      "raw_png_sha256": "b609e763d91ba7bc4043b618eb416385fb61239df4dc4aa9089e8ebddfe2ae74",
+      "composite_png_sha256": "74ad1c53fbc85ca4b63f8625bbe74351e4bf2003111f521d6cf593c2431f6b57"
+    },
+    "derivative": {
+      "iterations": 4,
+      "atomic_state_valid": true,
+      "state_arrays_finite": true,
+      "projected_latents_equal_base_plus_saved_delta": true,
+      "outside_collar_latents_exact": true,
+      "source_pixels_exact": true,
+      "final_exterior_equals_raw": true,
+      "far_pixel_values_exact": false,
+      "far_mae_255": 0.0140380859375,
+      "far_max_change_255": 1,
+      "far_changed_channel_fraction": 0.0140380859375,
+      "max_abs_latent_delta": 0.06014687940478325,
+      "saved_spectral_and_row_metrics_reproduced": true,
+      "raw_png_sha256": "1f07e9c53f8ba2c6366d72a03e8154e71fb4000babc81a5ef22d44cb6870798c",
+      "composite_png_sha256": "31f9d073c769ef29fe53dca9473454f59fa35a938be9b81d60b675db760d4a59"
+    }
+  },
+  "mlx_observed_peak_across_scopes_bytes": 9905994600,
+  "quality_verdict": "not established by integrity checks",
+  "matched_checkpoint_off_control_run_performed": false,
+  "weights_trained": false,
+  "script_sha256": "5e2909c50a49daeab242f8b69b233a87d9cda3a7cd254f46e1a9847149fd9cf2"
+}
