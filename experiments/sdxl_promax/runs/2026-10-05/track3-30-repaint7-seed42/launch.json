@@ -1,0 +1,27 @@
+{
+  "command": [
+    ".build/dreamlite-venv/bin/python",
+    "experiments/sdxl_promax/run_promax_trial.py",
+    "--track",
+    "track3",
+    "--steps",
+    "30",
+    "--guidance",
+    "5",
+    "--strength",
+    "0.9999",
+    "--seed",
+    "42",
+    "--output",
+    "experiments/sdxl_promax/runs/2026-10-05/track3-30-repaint7-seed42"
+  ],
+  "cwd": "/Users/emir/Documents/ChatGPT/ArtWorker",
+  "code_sha256": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/sdxl_promax/run_promax_trial.py": "ecdd952376fbf04569f8ebc37c61e1cde00a367c7de15a93e2c00d753623bd20"
+  },
+  "timeout_seconds": 900.0,
+  "pid": 43722,
+  "status": "success",
+  "exit_code": 0,
+  "elapsed_seconds": 45.99319591600215
+}
