@@ -1,0 +1,40 @@
+{
+  "status": "ready for root bounded serialized GPU; CPU preflight and independent 40-check audit passed",
+  "runner_sha256": "02bc8b36c2cfa415886b950162c9228f29f26a07f89cabc0a120b2b211122f44",
+  "command_argv": [
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/.venv/bin/python",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/launch_bounded.py",
+    "--timeout",
+    "800",
+    "--manifest",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-local-context50-footer-conditioned-seed42/launch.json",
+    "--log",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-local-context50-footer-conditioned-seed42/process.log",
+    "--",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/.venv/bin/python",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/run_footer_conditioning_trial.py",
+    "--output",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-local-context50-footer-conditioned-seed42",
+    "--max-seconds",
+    "700"
+  ],
+  "planned_nfe": 50,
+  "planned_target_token_forwards": 44800,
+  "manual_roi_source_xyxy": [
+    238,
+    470,
+    275,
+    509
+  ],
+  "donor_source_xyxy": [
+    191,
+    470,
+    228,
+    509
+  ],
+  "CPU_preflight": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/footer_probe/preflight/preflight.json",
+  "GPU_model_loaded": false,
+  "quality_acceptance": false,
+  "independent_audit_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/footer_probe/independent_probe_ready_audit.json",
+  "independent_audit_sha256": "fa6ddc1f860c9f2911e1a314769a5d83756af97719a4e091237a70ea00d04545"
+}
