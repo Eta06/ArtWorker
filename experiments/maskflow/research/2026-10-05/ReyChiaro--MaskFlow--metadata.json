@@ -1,0 +1,177 @@
+{
+  "_id": "6a743f5768e8bc3c6418a760",
+  "id": "ReyChiaro/MaskFlow",
+  "private": false,
+  "pipeline_tag": "image-to-image",
+  "library_name": "diffusers",
+  "tags": [
+    "diffusers",
+    "image-editing",
+    "regional-image-editing",
+    "mask-guided-image-editing",
+    "qwen-image",
+    "lora",
+    "image-to-image",
+    "dataset:ReyChiaro/MaskEdit-10k",
+    "arxiv:2608.06929",
+    "base_model:Qwen/Qwen-Image-Edit-2511",
+    "base_model:adapter:Qwen/Qwen-Image-Edit-2511",
+    "license:mit",
+    "region:us"
+  ],
+  "downloads": 603,
+  "likes": 3,
+  "modelId": "ReyChiaro/MaskFlow",
+  "author": "ReyChiaro",
+  "sha": "f18f0828ab6a40a7f3456feace7a33bebe8c511e",
+  "lastModified": "2026-09-28T04:46:21.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {},
+  "cardData": {
+    "license": "mit",
+    "library_name": "diffusers",
+    "pipeline_tag": "image-to-image",
+    "base_model": "Qwen/Qwen-Image-Edit-2511",
+    "datasets": [
+      "ReyChiaro/MaskEdit-10k"
+    ],
+    "tags": [
+      "image-editing",
+      "regional-image-editing",
+      "mask-guided-image-editing",
+      "qwen-image",
+      "lora",
+      "diffusers"
+    ],
+    "inference": false
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "5bccba36414ff2542e4d8bed00d6618d77e8b2f1",
+      "size": 197
+    },
+    {
+      "rfilename": "LICENSE",
+      "blobId": "9f31b59c48669aaa35272322e449fdc33e425265",
+      "size": 1062
+    },
+    {
+      "rfilename": "MANIFEST.json",
+      "blobId": "18fda3afc3a87a6dae0531d80bdd334cdf06074e",
+      "size": 3303
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "8b212d8b1813b282fcc1ea3352ef03b04808976d",
+      "size": 8663
+    },
+    {
+      "rfilename": "assets/readme/infographics-replacement.jpg",
+      "blobId": "f3aaa0cd5a6be0bbbb5374c07e5d7d8508f73e9b",
+      "size": 1112512,
+      "lfs": {
+        "sha256": "4fd4d43673928fb4ddb41322d3bca1319ca24e34d4b7b1e6535c2f6296a8ea34",
+        "size": 1112512,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "assets/readme/scene-removal.jpg",
+      "blobId": "a7135d40f622d469966bbf89101c73a720151b79",
+      "size": 1701521,
+      "lfs": {
+        "sha256": "ec00effac1b88da8214fcf7e6d61fbbecaef20de91812fe217f1b6bd94709847",
+        "size": 1701521,
+        "pointerSize": 132
+      }
+    },
+    {
+      "rfilename": "latest-I.safetensors",
+      "blobId": "6ee0c20df9b15bfad20bfdec6c200e0e1b85596b",
+      "size": 2453820032,
+      "lfs": {
+        "sha256": "904933fd15148685a6bfcd962f6295b1ec148104c4afe019273e27603ef5d1a3",
+        "size": 2453820032,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "latest.safetensors",
+      "blobId": "0f0f81d7e122171ea1c243ac13bdd3b6621dc1b6",
+      "size": 2453820032,
+      "lfs": {
+        "sha256": "773e815a209ebf948dbe0cf76492dd658cc16030f8119471cc553edb208de7b0",
+        "size": 2453820032,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "maskflow-S-tcfg4-step16.safetensors",
+      "blobId": "8ce053d48b846b6c268d9b8bef7d3ffb3567b8f5",
+      "size": 1510070656,
+      "lfs": {
+        "sha256": "e9292a27cb68b8021d84cea8731ef656f2dcf0a8c66f57a577e7591dd03f0b10",
+        "size": 1510070656,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "maskflow-S-tcfg4-step8.safetensors",
+      "blobId": "707096a0196a1107150f0259855783468e88e66a",
+      "size": 1510070656,
+      "lfs": {
+        "sha256": "109580b294c3993984303fa39cb1dc77dfc90fc892075e90d85d1afd079a49e7",
+        "size": 1510070656,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "maskflow-S.safetensors",
+      "blobId": "828663b393bba67cab68efa5b7794d6db74ae189",
+      "size": 1510070696,
+      "lfs": {
+        "sha256": "abde09d33238e6b2133a4a7dd86b9830ef93a8d97978e5ba437d60675c75dafd",
+        "size": 1510070696,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "maskflow-SEC-tcfg4-step16.safetensors",
+      "blobId": "ef948d171e97fcb713561fa311f1e17480046eda",
+      "size": 1510070656,
+      "lfs": {
+        "sha256": "4af5c87f43a892e5ac07c080e4bc67b3ee88e576371e6255c1132902ebf4646f",
+        "size": 1510070656,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "maskflow-SEC-tcfg4-step8.safetensors",
+      "blobId": "c33746473f15d4526a4341aed669f9fdafd0ab7e",
+      "size": 1510070656,
+      "lfs": {
+        "sha256": "157b9f869457b790160099cf3c5d4fbe44d5c46739a3ae49b1fb7abeda5fda1c",
+        "size": 1510070656,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "maskflow-SEC.safetensors",
+      "blobId": "72c8cd373b91ba4e35bcae53b0635225473bf6bc",
+      "size": 1510070656,
+      "lfs": {
+        "sha256": "972a2e54547474aaf3cb284f17395445bfba427b56da22b1efbbeea6dbc5fcdf",
+        "size": 1510070656,
+        "pointerSize": 135
+      }
+    }
+  ],
+  "spaces": [
+    "hugging-apps/maskflow-regional-image-editing"
+  ],
+  "createdAt": "2026-08-06T08:01:27.000Z",
+  "usedStorage": 13970878073
+}
