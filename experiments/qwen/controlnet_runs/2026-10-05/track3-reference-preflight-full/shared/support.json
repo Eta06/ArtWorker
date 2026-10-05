@@ -1,0 +1,7 @@
+{
+  "experimental_sparse_control": false,
+  "supported_target_tokens": 2304,
+  "total_target_tokens": 2304,
+  "support_tokens_bool_sha256": "e91c12886f46fa53bfa4e01c9863126831e4548a4e90d8fd835d6e1406d59c79",
+  "support_png_sha256": "08732055ce7d77d90df89cc922e766c4b79668f46330619a4db3f082e790a7f7"
+}
