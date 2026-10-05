@@ -1,0 +1,127 @@
+{
+  "scope": "Exact same-stage saved-array and actual final pixel comparison; does not infer image quality or attribute numerical differences to caching",
+  "same_stage": {
+    "2": {
+      "latent": {
+        "exact": false,
+        "max_abs": 0.078125,
+        "mean_abs": 0.0018374769736380716,
+        "nonzero_value_fraction": 0.245849609375
+      },
+      "raw_pixels": {
+        "exact": false,
+        "max_abs": 10.0,
+        "mean_abs": 0.14379810151599703,
+        "nonzero_value_fraction": 0.13666861397879465
+      },
+      "composite_pixels": {
+        "exact": false,
+        "max_abs": 10.0,
+        "mean_abs": 0.13737923758370535,
+        "nonzero_value_fraction": 0.13028680710565477
+      }
+    },
+    "4": {
+      "latent": {
+        "exact": false,
+        "max_abs": 0.10546875,
+        "mean_abs": 0.002053379404565526,
+        "nonzero_value_fraction": 0.3052978515625
+      },
+      "raw_pixels": {
+        "exact": false,
+        "max_abs": 11.0,
+        "mean_abs": 0.14574573658130788,
+        "nonzero_value_fraction": 0.14069338198061343
+      },
+      "composite_pixels": {
+        "exact": false,
+        "max_abs": 11.0,
+        "mean_abs": 0.14201411494502314,
+        "nonzero_value_fraction": 0.1369758888527199
+      }
+    },
+    "6": {
+      "latent": {
+        "exact": false,
+        "max_abs": 0.0625,
+        "mean_abs": 0.0020019631902970206,
+        "nonzero_value_fraction": 0.3573404947916667
+      },
+      "raw_pixels": {
+        "exact": false,
+        "max_abs": 11.0,
+        "mean_abs": 0.14903711389612267,
+        "nonzero_value_fraction": 0.1437694408275463
+      },
+      "composite_pixels": {
+        "exact": false,
+        "max_abs": 11.0,
+        "mean_abs": 0.14554906774450233,
+        "nonzero_value_fraction": 0.14032717104311343
+      }
+    }
+  },
+  "each_arm_final_vs_predicted_clean_step6": {
+    "scale0": {
+      "latent": {
+        "exact": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "nonzero_value_fraction": 0.0
+      },
+      "raw_pixels": {
+        "exact": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "nonzero_value_fraction": 0.0
+      }
+    },
+    "scale0.5": {
+      "latent": {
+        "exact": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "nonzero_value_fraction": 0.0
+      },
+      "raw_pixels": {
+        "exact": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "nonzero_value_fraction": 0.0
+      }
+    },
+    "scale1": {
+      "latent": {
+        "exact": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "nonzero_value_fraction": 0.0
+      },
+      "raw_pixels": {
+        "exact": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "nonzero_value_fraction": 0.0
+      }
+    }
+  },
+  "actual_final_pixels": {
+    "raw": {
+      "exact": false,
+      "max_abs": 11.0,
+      "mean_abs": 0.14903711389612267,
+      "nonzero_value_fraction": 0.1437694408275463
+    },
+    "composite": {
+      "exact": false,
+      "max_abs": 11.0,
+      "mean_abs": 0.14554906774450233,
+      "nonzero_value_fraction": 0.14032717104311343
+    }
+  },
+  "old_final_vs_step6_predicted_clean_pixels": {
+    "raw": true,
+    "composite": true
+  }
+}
