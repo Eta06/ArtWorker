@@ -1,0 +1,50 @@
+diff --git a/Sources/Flux2Core/Configuration/MemoryConfig.swift b/Sources/Flux2Core/Configuration/MemoryConfig.swift
+index b9774f0..1610114 100644
+--- a/Sources/Flux2Core/Configuration/MemoryConfig.swift
++++ b/Sources/Flux2Core/Configuration/MemoryConfig.swift
+@@ -198,19 +198,19 @@ public struct MemoryConfig {
+                 return PhaseLimits(textEncoding: 2 * GB, denoising: 4 * GB, vaeDecoding: 2 * GB)
+ 
+             // Klein 4B (smaller, more memory efficient)
+-            case (.klein4B, .conservative):
++            case (.klein4B, .conservative), (.klein4BBase, .conservative):
+                 return PhaseLimits(textEncoding: 256 * MB, denoising: 512 * MB, vaeDecoding: 256 * MB)
+-            case (.klein4B, .balanced):
++            case (.klein4B, .balanced), (.klein4BBase, .balanced):
+                 return PhaseLimits(textEncoding: 512 * MB, denoising: 1 * GB, vaeDecoding: 512 * MB)
+-            case (.klein4B, .performance):
++            case (.klein4B, .performance), (.klein4BBase, .performance):
+                 return PhaseLimits(textEncoding: 1 * GB, denoising: 2 * GB, vaeDecoding: 1 * GB)
+ 
+             // Klein 9B (medium size)
+-            case (.klein9B, .conservative):
++            case (.klein9B, .conservative), (.klein9BBase, .conservative), (.klein9BKV, .conservative):
+                 return PhaseLimits(textEncoding: 512 * MB, denoising: 1 * GB, vaeDecoding: 512 * MB)
+-            case (.klein9B, .balanced):
++            case (.klein9B, .balanced), (.klein9BBase, .balanced), (.klein9BKV, .balanced):
+                 return PhaseLimits(textEncoding: 1 * GB, denoising: 2 * GB, vaeDecoding: 1 * GB)
+-            case (.klein9B, .performance):
++            case (.klein9B, .performance), (.klein9BBase, .performance), (.klein9BKV, .performance):
+                 return PhaseLimits(textEncoding: 2 * GB, denoising: 3 * GB, vaeDecoding: 2 * GB)
+ 
+             default:
+diff --git a/Sources/Flux2Core/Pipeline/Flux2Pipeline.swift b/Sources/Flux2Core/Pipeline/Flux2Pipeline.swift
+index fd8320d..f110989 100644
+--- a/Sources/Flux2Core/Pipeline/Flux2Pipeline.swift
++++ b/Sources/Flux2Core/Pipeline/Flux2Pipeline.swift
+@@ -1868,6 +1868,15 @@ public class Flux2Pipeline: @unchecked Sendable {
+ 
+             profiler.end("6. Denoising Loop")
+ 
++            // ArtWorker opt-in: serialize transformer and decoder residency.
++            // This experiment uses a baked adapter; resident unbaked hosts keep
++            // upstream behavior unless this environment switch is requested.
++            if ProcessInfo.processInfo.environment["ARTWORKER_RELEASE_TRANSFORMER_BEFORE_DECODE"] == "1" {
++                unloadTransformer()
++                memoryManager.fullCleanup()
++                MemoryConfig.applyCacheLimit(bytes: phaseLimits.vaeDecoding)
++                Flux2Debug.log("ArtWorker: transformer released before final VAE decode")
++            }
+             // Decode final OUTPUT latents
+             profiler.start("7. VAE Decode")
+             var finalPatchified = LatentUtils.unpackSequenceToPatchified(
