@@ -1,0 +1,425 @@
+{
+  "status": "preflight_files_ready",
+  "track": "track3",
+  "requested_steps": 20,
+  "guidance": 8.0,
+  "strength": 1.0,
+  "seed": 42,
+  "model_repo": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
+  "model_revision": "115134f363124c53c7d878647567d04daf26e41e",
+  "model_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/sdxl-inpaint-fp16",
+  "runner_sha256": "9dce19ce14c3ec0f9bd1e711b440e827b92f9b6b6ddee9361622fca57d05c508",
+  "phases": {},
+  "step_metrics": [],
+  "model_weights_loaded": false,
+  "offline": true,
+  "compute_mode": "native full-canvas nine-channel inpainting",
+  "growing_compute": false,
+  "known_bridge": false,
+  "padding_mask_crop": null,
+  "watermark": false,
+  "negative_prompt": null,
+  "adapters": [],
+  "research_use_only": true,
+  "model_license": "CreativeML Open RAIL++-M",
+  "unet_calls": 0,
+  "cfg_sample_branch_evaluations": 0,
+  "variant": "native strength-one pure-noise initialization probe",
+  "baseline_runner": {
+    "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/sdxl_inpaint/run_sdxl_trial.py",
+    "sha256": "2a636b4c34cc1f2c714569dc1f2b5e48f45382dc79951ebdcbb675d3461261f0"
+  },
+  "baseline_strength": 0.99,
+  "rng_path_difference_from_strength099": {
+    "strength1": [
+      "initial noise",
+      "masked-source VAE posterior"
+    ],
+    "strength099": [
+      "full initial-image VAE posterior",
+      "initial noise",
+      "masked-source VAE posterior"
+    ],
+    "initial_noise_matched_by_same_seed": false
+  },
+  "torch_version": "2.14.0",
+  "diffusers_version": "0.39.0",
+  "python_version": "3.12.10 (v3.12.10:0cc81280367, Apr  8 2025, 08:46:59) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "pipeline_source": {
+    "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/dreamlite-venv/lib/python3.12/site-packages/diffusers/pipelines/stable_diffusion_xl/pipeline_stable_diffusion_xl_inpaint.py",
+    "sha256": "bd10b04405fdecce682c6b9ccbf52c1e97d4a496face7152ce566d6d4e3fed73"
+  },
+  "width": 512,
+  "height": 1152,
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "input_files": {
+    "source": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track3/source_512.png",
+      "sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157"
+    },
+    "canvas": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track3/canvas.png",
+      "sha256": "448c04c5be9ed18667008c671d302a09a137265e58003644e0516444301b3bd7"
+    },
+    "mask": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track3/mask.png",
+      "sha256": "c4386579faf335ed709b14b461c6a843d0e58956e25ddfbe8d88e3a317f6dc70"
+    }
+  },
+  "source_input_pixels_exact": true,
+  "mask_convention": "white regenerates, black preserves",
+  "initial_canvas_unknown_rgb_values_0_255": [
+    [
+      0,
+      0,
+      0
+    ]
+  ],
+  "masked_source_unknown_normalized_rgb": 0.0,
+  "native_initialization": "strength1 uses sampled noise times init_noise_sigma; complete initial-canvas VAE encoding is skipped",
+  "cross_model_comparison": {
+    "shared": "source pixels, regeneration mask and canvas geometry",
+    "full_canvas_bytes_matched_with_flux_fill": false,
+    "initial_noise_matched_with_flux_fill": false,
+    "flux_fill_initial_canvas_unknown_rgb": [
+      128,
+      128,
+      128
+    ],
+    "note": "This strength1 probe skips complete initial-canvas encoding and separately encodes normalized-zero exterior masked source"
+  },
+  "checkpoint_manifest": {
+    "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/sdxl-inpaint-fp16.manifest.json",
+    "sha256": "8d8d4d1834a4c3b7137e46d66e015cfd348fa77ea678f830974968272ce50f2c",
+    "status": "verified",
+    "repo": "diffusers/stable-diffusion-xl-1.0-inpainting-0.1",
+    "revision": "115134f363124c53c7d878647567d04daf26e41e",
+    "payload_hashes_checked": false,
+    "files": [
+      {
+        "path": "model_index.json",
+        "expected_bytes": 690,
+        "exists": true
+      },
+      {
+        "path": "scheduler/scheduler_config.json",
+        "expected_bytes": 479,
+        "exists": true
+      },
+      {
+        "path": "text_encoder/config.json",
+        "expected_bytes": 746,
+        "exists": true
+      },
+      {
+        "path": "text_encoder/model.fp16.safetensors",
+        "expected_bytes": 246144867,
+        "exists": true
+      },
+      {
+        "path": "text_encoder_2/config.json",
+        "expected_bytes": 758,
+        "exists": true
+      },
+      {
+        "path": "text_encoder_2/model.fp16.safetensors",
+        "expected_bytes": 1389382884,
+        "exists": true
+      },
+      {
+        "path": "tokenizer/merges.txt",
+        "expected_bytes": 524619,
+        "exists": true
+      },
+      {
+        "path": "tokenizer/special_tokens_map.json",
+        "expected_bytes": 472,
+        "exists": true
+      },
+      {
+        "path": "tokenizer/tokenizer_config.json",
+        "expected_bytes": 737,
+        "exists": true
+      },
+      {
+        "path": "tokenizer/vocab.json",
+        "expected_bytes": 1059962,
+        "exists": true
+      },
+      {
+        "path": "tokenizer_2/merges.txt",
+        "expected_bytes": 524619,
+        "exists": true
+      },
+      {
+        "path": "tokenizer_2/special_tokens_map.json",
+        "expected_bytes": 460,
+        "exists": true
+      },
+      {
+        "path": "tokenizer_2/tokenizer_config.json",
+        "expected_bytes": 725,
+        "exists": true
+      },
+      {
+        "path": "tokenizer_2/vocab.json",
+        "expected_bytes": 1059962,
+        "exists": true
+      },
+      {
+        "path": "unet/config.json",
+        "expected_bytes": 1932,
+        "exists": true
+      },
+      {
+        "path": "unet/diffusion_pytorch_model.fp16.safetensors",
+        "expected_bytes": 5135178560,
+        "exists": true
+      },
+      {
+        "path": "vae/config.json",
+        "expected_bytes": 659,
+        "exists": true
+      },
+      {
+        "path": "vae/diffusion_pytorch_model.fp16.safetensors",
+        "expected_bytes": 167335338,
+        "exists": true
+      }
+    ],
+    "issues": [],
+    "verified": true
+  },
+  "prompt": "Continuous muted lake water, low green roadside shrubs and a thin metal guardrail extending through the upper area. Uninterrupted dark coarse asphalt continuing through the lower area. Matching twilight illumination, photographic grain and high-angle perspective across the whole scene.",
+  "prompt_sha256": "6acce49026289b9a632093b68242b0d33fbe8bb136fa19475553b3dbe8c60cee",
+  "cpu_preflight": {
+    "status": "passed",
+    "device": "cpu",
+    "runtime": {
+      "torch": "2.14.0",
+      "diffusers": "0.39.0"
+    },
+    "pretrained_weights_loaded": false,
+    "full_pipeline_loaded": false,
+    "downloads_required": false,
+    "checks": [
+      "white_unknown_black_known_threshold_128",
+      "512x1152_exact_center_source_and_unknown_normalized_zero",
+      "native_nearest_mask_resize_and_noisy4_mask1_masked_source4",
+      "nonuniform_nearest_sampling_and_four_channel_latent_bypass",
+      "native_twenty_requested_strength_099_nineteen_actual_order_one_steps",
+      "tiny_random_sdxl_unet_cfg_two_branches_one_batched_cpu_call"
+    ],
+    "geometry": {
+      "width": 512,
+      "height": 1152,
+      "source_box": [
+        0,
+        320,
+        512,
+        832
+      ],
+      "source_box_convention": "half-open [left, top, right, bottom]",
+      "source_pixels_exact": true,
+      "known_normalized_rgb_max_abs_error": 0.0,
+      "unknown_normalized_rgb": 0.0,
+      "normalized_black_rgb": -1.0,
+      "known_pixels": 262144,
+      "unknown_pixels": 327680,
+      "latent_mask_shape": [
+        1,
+        1,
+        144,
+        64
+      ],
+      "latent_source_shape": [
+        1,
+        4,
+        144,
+        64
+      ],
+      "input_channels": {
+        "noisy": 4,
+        "mask": 1,
+        "masked_source": 4,
+        "total": 9
+      },
+      "input_shape_without_cfg": [
+        1,
+        9,
+        144,
+        64
+      ],
+      "input_shape_with_cfg": [
+        2,
+        9,
+        144,
+        64
+      ]
+    },
+    "timestep_trim": {
+      "requested_steps": 20,
+      "strength": 0.99,
+      "scheduler_order": 1,
+      "begin_index": 1,
+      "actual_steps": 19,
+      "actual_unet_calls": 19,
+      "cfg_branch_samples_for_one_image": 38,
+      "count_rule": "Count actual loop calls from len(timesteps), not requested steps.",
+      "strength_099_initialization": "Native pipeline adds noise to encoded full init_image; not pure-noise init."
+    },
+    "tiny_random_unet": {
+      "random_weights_only": true,
+      "parameter_count": 207636,
+      "sdxl_addition_embed_type": "text_time",
+      "input_shape": [
+        2,
+        9,
+        8,
+        8
+      ],
+      "output_shape": [
+        2,
+        4,
+        8,
+        8
+      ],
+      "guided_shape": [
+        1,
+        4,
+        8,
+        8
+      ],
+      "unet_calls": 1,
+      "branch_samples": 2,
+      "guidance_scale": 5.0,
+      "only_noisy_channels_scaled": true,
+      "device": "cpu"
+    },
+    "scope": "conditioning and forward-contract checks only; no pretrained inference or output-quality claim"
+  },
+  "cpu_gate_sha256": "011c9ee46b6c9721a0b08cf71b0112f6a967a36c9167cbdc337b93e3985eea9e",
+  "strength1_cpu_preflight": {
+    "status": "passed",
+    "device": "cpu",
+    "runtime": {
+      "torch": "2.14.0",
+      "diffusers": "0.39.0"
+    },
+    "pretrained_weights_loaded": false,
+    "full_pipeline_loaded": false,
+    "downloads_required": false,
+    "strength": 1.0,
+    "initialization": "native pure noise multiplied by init_noise_sigma",
+    "scheduler": {
+      "class": "EulerDiscreteScheduler",
+      "order": 1,
+      "config_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/sdxl-inpaint-fp16/scheduler/scheduler_config.json",
+      "config_sha256": "a8e9a8517e8739938ea85819012bad195d41ccb3e11e2501cf196da64099b1f6",
+      "init_noise_sigma": 11.073580741882324,
+      "requested_steps": 20,
+      "actual_steps": 20,
+      "timesteps": [
+        951.0,
+        901.0,
+        851.0,
+        801.0,
+        751.0,
+        701.0,
+        651.0,
+        601.0,
+        551.0,
+        501.0,
+        451.0,
+        401.0,
+        351.0,
+        301.0,
+        251.0,
+        201.0,
+        151.0,
+        101.0,
+        51.0,
+        1.0
+      ],
+      "sigmas": [
+        11.028335571289062,
+        8.390686988830566,
+        6.506400108337402,
+        5.134433269500732,
+        4.116698265075684,
+        3.3477649688720703,
+        2.756196975708008,
+        2.2928547859191895,
+        1.9234442710876465,
+        1.6236929893493652,
+        1.376179575920105,
+        1.1682164669036865,
+        0.9904093146324158,
+        0.8356532454490662,
+        0.6983985900878906,
+        0.5740507245063782,
+        0.4583331346511841,
+        0.3461872935295105,
+        0.22814729809761047,
+        0.04131447896361351,
+        0.0
+      ],
+      "begin_index": 0,
+      "expected_unet_calls": 20,
+      "expected_cfg_branch_samples_for_one_image": 40
+    },
+    "checks": [
+      {
+        "dtype": "torch.float32",
+        "shape": [
+          1,
+          4,
+          144,
+          64
+        ],
+        "seed": 42,
+        "native_noise_exact_independent_torch_randn": true,
+        "initial_latents_exact_noise_times_init_sigma": true,
+        "generator_advancement_exact": true,
+        "generator_state_before_sha256": "5feb54a46230d321d888e9b43cf5a57492665f199e4377408d79ee460e36679c",
+        "generator_state_after_sha256": "61a544f032fb05ac047edfc86414ea308905f89636ba8bdb8e261fca304b6be8",
+        "noise_sha256_float32": "b8ed5e50fcaa79eb759f8312f6e3b4d70b19d32a6247c7bb899fe84e2d495490",
+        "initial_latents_sha256_float32": "db3872f086c2f3b925a39829eb8c8b5cb4293d152fc397340b648f4bb121884e",
+        "full_init_image_vae_encode_calls": 0,
+        "scheduler_add_noise_calls": 0
+      },
+      {
+        "dtype": "torch.float16",
+        "shape": [
+          1,
+          4,
+          144,
+          64
+        ],
+        "seed": 42,
+        "native_noise_exact_independent_torch_randn": true,
+        "initial_latents_exact_noise_times_init_sigma": true,
+        "generator_advancement_exact": true,
+        "generator_state_before_sha256": "5feb54a46230d321d888e9b43cf5a57492665f199e4377408d79ee460e36679c",
+        "generator_state_after_sha256": "61a544f032fb05ac047edfc86414ea308905f89636ba8bdb8e261fca304b6be8",
+        "noise_sha256_float32": "0b77214495cb763414bc7e7585e2c0a552f91869f9dcf1cef00a282bdf005211",
+        "initial_latents_sha256_float32": "8d9a88851217913d20835e3b8b2035393275e437f9183a6acd6654eff8def7a6",
+        "full_init_image_vae_encode_calls": 0,
+        "scheduler_add_noise_calls": 0
+      }
+    ],
+    "full_init_image_vae_encode_calls": 0,
+    "scheduler_add_noise_calls": 0,
+    "scope": "pure-noise initialization and schedule only; masked-source encoding remains part of real inpainting"
+  },
+  "strength1_cpu_gate_sha256": "882a74fc9b5cbe913d4913e4586754eab6fa3531cf246d4c4a82614a0c839c94",
+  "cpu_gate_scope": "Inherited source/mask and strength099 tests run separately; strength1 gate verifies this probe initialization and20 untrimmed timesteps",
+  "device": "CPU",
+  "elapsed_seconds": 2.0184053339762613,
+  "process_peak_rss_bytes": 553500672
+}
