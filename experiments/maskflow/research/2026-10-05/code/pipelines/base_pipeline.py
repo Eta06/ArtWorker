@@ -1,0 +1,281 @@
+import dataclasses
+import importlib
+from typing import Any, Iterable
+
+import torch
+from diffusers.loaders.peft import PeftAdapterMixin
+from diffusers.models.modeling_utils import ModelMixin
+from diffusers.pipelines.pipeline_utils import DiffusionPipeline
+from diffusers.schedulers.scheduling_utils import SchedulerMixin
+from loguru import logger
+from PIL import Image
+from torch.distributed.fsdp import MixedPrecisionPolicy, fully_shard
+
+from pipelines.utils import get_nested_attr
+from pipelines.model_loading import ModelLoader, ModelTransform
+from trainer.parallel.fsdp_strategy import FSDPStrategy
+from trainer.parallel.handler import parallel_handler
+from utils.summary import summarize_model
+
+
+@dataclasses.dataclass
+class PreprocessOutput:
+    prompt: str | list[str] | None = None
+    negative_prompt: str | list[str] | None = None
+    vlm_conditions: list[torch.Tensor] | dict[str, torch.Tensor] | None = None
+    dit_conditions: list[torch.Tensor] | dict[str, torch.Tensor] | None = None
+    target: torch.Tensor | None = None
+    height: int | None = None
+    width: int | None = None
+
+
+@dataclasses.dataclass
+class ForwardOutput:
+    prompt_embeds: torch.Tensor | None = None
+    prompt_embeds_mask: torch.Tensor | None = None
+
+    height: int | None = None
+    width: int | None = None
+
+    noise: torch.Tensor | None = None
+    noised_target: torch.Tensor | None = None
+    timesteps: torch.Tensor | None = None
+    sigmas: torch.Tensor | None = None
+    ground_truth: torch.Tensor | None = None
+    conditions: list[torch.Tensor] | None = None
+    negative_prompt_embeds: torch.Tensor | None = None
+    negative_prompt_embeds_mask: torch.Tensor | None = None
+
+
+@dataclasses.dataclass
+class BasePipeline:
+    r"""
+    Base pipeline for diffusers for training and evaluation.
+    Usually includes following components:
+
+    - vae
+    - text_pipeline
+        - text_encoder
+        - processor
+        - tokenizer
+    - transformer (can be replaced by unet)
+    - scheduler
+
+    To enable FSDP, fsdp_configs should be provided (compulsory)
+    and the method setup_fsdp_modules (optional).
+    - fsdp_configs: a dict of following format
+
+        module_name:               # the path attribute to the module required to be wrapped
+            iterable: true/false   # whether the module is iterable
+            **other_kwargs         # other kwargs that will be passed into
+                                   # `torch.distributed.fsdp.fully_shard`
+
+    - setup_fsdp_modules: a method to wrap modules iteratively
+        By default, the BasePipline implements it with the above component names, override is
+        required if there is a different component name.
+
+    """
+
+    vae: ModelMixin = dataclasses.field(init=None)
+    text_pipeline: DiffusionPipeline = dataclasses.field(init=None)
+    transformer: ModelMixin | PeftAdapterMixin = dataclasses.field(init=None)
+    scheduler: SchedulerMixin = dataclasses.field(init=None)
+    fsdp_configs: dict | None = None
+    fsdp_modules: list | None = None
+
+    _fsdp_module_configs: list[dict] | None = None
+    _model_loaders: dict[torch.nn.Module, ModelLoader] = dataclasses.field(init=False, default_factory=dict)
+
+    def initialize_pipeline(self, pipeline_class: type[DiffusionPipeline]) -> None:
+        """Build every neural component on meta using the native pipeline metadata."""
+        config = pipeline_class.load_config(self.pretrained_model)
+        components: dict[str, torch.nn.Module] = {}
+        for name, entry in config.items():
+            if name.startswith("_") or not isinstance(entry, (list, tuple)) or entry[0] is None:
+                continue
+            model_class = getattr(importlib.import_module(entry[0]), entry[1])
+            if issubclass(model_class, torch.nn.Module):
+                loader = ModelLoader(model_class, self.pretrained_model, name, self.dtype)
+                components[name] = loader.build()
+                self._model_loaders[components[name]] = loader
+        # Supplying all neural components prevents from_pretrained from loading their weights.
+        self.text_pipeline = pipeline_class.from_pretrained(
+            self.pretrained_model, **components, torch_dtype=self.dtype
+        )
+        self.vae = components["vae"]
+        self.transformer = components["transformer"]
+        self.text_pipeline.register_modules(transformer=None)
+        self.image_processor = self.text_pipeline.image_processor
+
+    def create_transformer(self) -> torch.nn.Module:
+        """Build an additional empty transformer for trainers with multiple roles."""
+        source = self._model_loaders[self.transformer]
+        loader = dataclasses.replace(source, transforms=[])
+        transformer = loader.build()
+        self._model_loaders[transformer] = loader
+        return transformer
+
+    def configure_model(
+        self, model: torch.nn.Module, transform: ModelTransform, *, update_structure: bool = True
+    ) -> None:
+        """Record a CPU weight operation; apply structural changes before sharding.
+
+        Adapter insertion changes structure; merging an existing adapter only
+        changes weights and is deferred until the CPU checkpoint is available.
+        """
+        if update_structure:
+            transform(model)
+        self._model_loaders[model].transforms.append(transform)
+
+    def load_pretrained_weights(self, *, broadcast: bool = False) -> None:
+        """Load after placement; training broadcasts, independent inference ranks do not."""
+        for model, loader in self._model_loaders.items():
+            loader.load(model, self.device, broadcast=broadcast)
+
+    @property
+    def summary(self) -> dict[str, dict[str, int | float]]:
+        return {
+            "text_encoder": summarize_model(self.text_pipeline.text_encoder),
+            "transformer": summarize_model(self.transformer),
+            "vae": summarize_model(self.vae),
+        }
+
+    @property
+    def fsdp_module_configs(self) -> list[dict[str, Any]]:
+        if self._fsdp_module_configs is None:
+            self._fsdp_module_configs = []
+            if self.fsdp_configs is not None:
+                module_configs = []
+                for module_name, raw_configs in self.fsdp_configs.items():
+                    module = get_nested_attr(self, module_name)
+                    configs = dict(raw_configs)
+                    is_iterable = configs.pop("iterable", isinstance(module, Iterable))
+                    if is_iterable:
+                        for i, m in enumerate(module):
+                            module_configs.append({"name": f"{module_name}.{i}", "module": m, "configs": configs})
+                    else:
+                        module_configs.append({"name": module_name, "module": module, "configs": configs})
+                self._fsdp_module_configs = module_configs
+        return self._fsdp_module_configs
+
+    @property
+    def trainable_params(self) -> list[torch.Tensor]:
+        r"""
+        Return the trainable params list of tensors.
+        """
+        params = []
+        for m in [self.vae, getattr(self.text_pipeline, "text_encoder", None), self.transformer]:
+            if m is None:
+                continue
+            for p in m.parameters():
+                if p.requires_grad:
+                    params.append(p)
+        return params
+
+    def setup_fsdp_modules(self, fsdp_strategy: FSDPStrategy, device: torch.device, dtype: torch.dtype) -> "BasePipeline":
+        """Define parameter placement on empty models; weights are loaded separately."""
+        mp_policy = MixedPrecisionPolicy(
+            param_dtype=dtype,
+            reduce_dtype=torch.float32,
+            cast_forward_inputs=False,
+        )
+        mesh = parallel_handler.get_device_mesh(fsdp_strategy)
+
+        if FSDPStrategy.is_no_shard(fsdp_strategy):
+            # Whole modules will be loaded into each device.
+            if self.fsdp_configs is not None:
+                logger.warning(f"FSDPStrategy is {fsdp_strategy}, fsdp_configs will be ignored.")
+
+            self.fsdp_modules = [self.transformer, self.text_pipeline.text_encoder]
+
+        elif FSDPStrategy.is_full_shard(fsdp_strategy):
+            assert self.fsdp_configs is not None, f"FSDPStrategy is {fsdp_strategy}, but fsdp_configs are not given."
+            if "transformer" in self.fsdp_configs:
+                self._register_fsdp_view_output_clone(self.transformer)
+
+            for module_configs in self.fsdp_module_configs:
+                # module_name = module_configs["module_name"]
+                module = module_configs["module"]
+                configs = module_configs["configs"]
+                fsdp_kwargs = dict(mesh=mesh, mp_policy=mp_policy, **configs)
+                # In-place
+                fully_shard(module, **fsdp_kwargs)
+
+            self.fsdp_modules = [self.transformer, self.text_pipeline.text_encoder]
+
+        else:
+            logger.warning(f"Unsupported FSDPStrategy: {fsdp_strategy}.")
+        return self
+
+    @staticmethod
+    def _clone_view_output(module, args, output):
+        r"""Give FSDP2 an owning tensor when a model returns a tensor view."""
+        if isinstance(output, torch.Tensor):
+            return output.clone() if output._base is not None else output
+        if isinstance(output, tuple):
+            return tuple(
+                item.clone() if isinstance(item, torch.Tensor) and item._base is not None else item for item in output
+            )
+        return output
+
+    def _register_fsdp_view_output_clone(self, transformer: torch.nn.Module):
+        if hasattr(transformer, "_maskflow_fsdp_view_output_clone_handle"):
+            return
+        handle = transformer.register_forward_hook(self._clone_view_output)
+        transformer._maskflow_fsdp_view_output_clone_handle = handle
+
+    def setup_additional_transformer(
+        self,
+        transformer: torch.nn.Module,
+        fsdp_strategy: FSDPStrategy,
+        device: torch.device,
+        dtype: torch.dtype,
+    ) -> torch.nn.Module:
+        r"""Apply the pipeline's transformer placement policy to another transformer."""
+        if FSDPStrategy.is_no_shard(fsdp_strategy):
+            return transformer
+
+        if not FSDPStrategy.is_full_shard(fsdp_strategy):
+            logger.warning(f"Unsupported FSDPStrategy: {fsdp_strategy}.")
+            return transformer
+
+        mp_policy = MixedPrecisionPolicy(
+            param_dtype=dtype,
+            reduce_dtype=torch.float32,
+            cast_forward_inputs=False,
+        )
+        mesh = parallel_handler.get_device_mesh(fsdp_strategy)
+        if "transformer" in self.fsdp_configs:
+            self._register_fsdp_view_output_clone(transformer)
+        for module_name, raw_configs in self.fsdp_configs.items():
+            if module_name != "transformer" and not module_name.startswith("transformer."):
+                continue
+
+            configs = dict(raw_configs)
+            is_iterable = configs.pop("iterable", False)
+            relative_name = module_name.removeprefix("transformer.")
+            module = transformer if module_name == "transformer" else get_nested_attr(transformer, relative_name)
+            modules = module if is_iterable else [module]
+            for submodule in modules:
+                fully_shard(submodule, mesh=mesh, mp_policy=mp_policy, **configs)
+        return transformer
+
+    def forward_step(self, batch, **kwargs):
+        r"""
+        Training forward with batched samples.
+        """
+        pass
+
+    @torch.inference_mode()
+    def eval_step(self, batch, num_inference_steps: int, **kwargs):
+        r"""
+        Evaluation forward with batched samples, usually used as batched evaluation on benchmarks or testsets.
+        """
+        pass
+
+    @torch.inference_mode()
+    def generate(self, prompt: str | None = None, negative_prompt: str | None = None, **kwargs) -> torch.Tensor:
+        r"""
+        One step inference for single sample or server deploy.
+        """
+        pass
