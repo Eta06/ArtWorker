@@ -1,0 +1,46 @@
+{
+  "experimental_localized_hints": true,
+  "shape": "cosine",
+  "radius_pixels": 64,
+  "distance_metric": "exact Euclidean L2 pixel distance",
+  "geometry_source": "same saved input guide plus declared source top32; no output-derived geometry",
+  "cosine_formula": "0.5*(1+cos(pi*distance/radius)) for distance<radius; otherwise0",
+  "source_roi_always_zero": false,
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "unknown_guide_pixels": 2031,
+  "positive_hint_pixels": 44248,
+  "positive_hint_target_tokens": 161,
+  "total_target_tokens": 2304,
+  "target_hint_weight_sum": 118.75653076171875,
+  "packed_shape": [
+    1,
+    2304,
+    1
+  ],
+  "nearest_coordinates": "floor(output_index*input_size/output_size), raster y-major",
+  "guide_rgb_uint8_sha256": "fd9b20c7d94a7dbe57d769424cafbb43046e27d49145307739dd59bf55cd3fbd",
+  "pixel_weights_float32_sha256": "906cbb6c5844639ed008170930d6e3694501e6511455b2c3bea2691f5e25fbbe",
+  "target_weights_float32_sha256": "cdb3823495b18c315aa0dcd283733e44c13b9dfd6e0e34056e96fdf4ccaf909e",
+  "full_joint_computation": true,
+  "sparse_compute": false,
+  "guide_file_sha256": "de298a2574b9155b409cc221f5c4ba399f4f809a1ce1a4038691906993b171e3",
+  "display_png_sha256": "e850d259a59654f717aedd61bac18b599c1c3b6fc6def3a35ac14d28c6bbc7ab",
+  "effective_dtype": "mlx.core.bfloat16",
+  "effective_target_weights_float32_sha256": "84901f9b4dd136b17567a166497d8e626feafde638ad4d964016ae94881aee4b",
+  "effective_joint_weights_float32_sha256": "576846568b80421ea5f0d40929b66dc03e6f8d481d931ffb3221ac4a82486cd8",
+  "joint_prefix_zero": true,
+  "gate_applied_after_all16_hints": true,
+  "known_collar_top32_only": true,
+  "effective_target_hint_weight_sum": 118.75911712646484,
+  "pixel_weights_metadata_scope": "saved unknown cosine64 unchanged plus declared source top32 collar",
+  "unknown_field_saved_effective_exact": true,
+  "top32_hint_absolute_ids": [
+    640,
+    704
+  ]
+}
