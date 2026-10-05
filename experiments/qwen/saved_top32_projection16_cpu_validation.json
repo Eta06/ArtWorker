@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "device": "CPU NumPy/Pillow only; no model weights or GPU",
+  "original_mathematical_function_ast_exact": [
+    "validate_input_metadata",
+    "original_raw_path",
+    "checkpointed_vae_decode",
+    "differentiable_tiled_decode",
+    "cpu_smoke",
+    "rgb_image",
+    "crop_metrics",
+    "boundary_decodes",
+    "objective"
+  ],
+  "input_npz_and_raw_files_exact": true,
+  "all_array_values_and_dtypes_exact": true,
+  "bounded_steps": 16,
+  "methods": "consistency,derivative",
+  "decoder_checkpoint_enabled": true,
+  "constant_image_high_frequency_zero": true,
+  "metric_power_scaling_tests": [
+    {
+      "patch": "generated_top_water",
+      "double_amplitude_power_ratio": 4.0,
+      "constant_offset_power_ratio": 1.0
+    },
+    {
+      "patch": "raw_known_top_water",
+      "double_amplitude_power_ratio": 4.0,
+      "constant_offset_power_ratio": 1.0
+    },
+    {
+      "patch": "raw_known_bottom_asphalt",
+      "double_amplitude_power_ratio": 4.0,
+      "constant_offset_power_ratio": 1.0
+    },
+    {
+      "patch": "generated_bottom_asphalt",
+      "double_amplitude_power_ratio": 4.0,
+      "constant_offset_power_ratio": 1.0
+    },
+    {
+      "patch": "generated_rail_join",
+      "double_amplitude_power_ratio": 4.0,
+      "constant_offset_power_ratio": 1.0
+    }
+  ],
+  "actual_raw_metric_repeat_exact": true,
+  "physical_temperature_measured": false,
+  "checkpoint_memory_benefit_measured": false,
+  "model_weights_trained": false,
+  "source_code_sha256": {
+    "run_saved_top32_checkpoint_projection16.py": "b64dc876d0eea0208fccaa53260eebf35c9ae3e7c047580620fb184f2ae628b8",
+    "run_saved_top32_checkpoint_projection.py": "06a58842753de3b17577395fcb5fbb231294f0117b90554697ed15f73e4624d6",
+    "prepare_saved_top32_projection_input.py": "2c36caa7711a661a71da1787b879e248dff27f93739a11699dc2b8a6c4544ee3"
+  },
+  "preflight_sha256": "0c32d92e85d1814c67c807a66d4e99b4ce9272c5430825afb37d473096d461b8",
+  "input_metadata_sha256": "ac51103696585184b444f74ad5ce1199020dd1f7287e0024b019fa457437b2e0",
+  "script_sha256": "d03e876fa61283e2068c97aafefb361fc795c9d505b2874095a540c296f26f03"
+}
