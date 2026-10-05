@@ -1,0 +1,10 @@
+{
+  "repo": "Viggle/Qwen-Image-2.1-viggle-turbo",
+  "revision": "009a44a895ef85f7e643c80fdca9543795248867",
+  "license": "qwen-research",
+  "file": "Qwen-Image-2.1-viggle-turbo-v0.3-6step-lora-r128.safetensors",
+  "bytes": 679604800,
+  "expected_sha256": "0c98591700346f9777051d4e6fa29aa94519abec0d85b1f1f672a2a3db8c94b3",
+  "actual_sha256": "0c98591700346f9777051d4e6fa29aa94519abec0d85b1f1f672a2a3db8c94b3",
+  "verified": true
+}
