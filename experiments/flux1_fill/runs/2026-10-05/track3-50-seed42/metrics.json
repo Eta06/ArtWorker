@@ -1,0 +1,975 @@
+{
+  "status": "success",
+  "track": "track3",
+  "seed": 42,
+  "steps": 50,
+  "guidance": 30.0,
+  "runner_sha256": "e63fac021c3e3849baeac7aeb5f41ae44c27a3cbda38a12520963c8955d8b6b3",
+  "phases": {
+    "checkpoint_hash_verification": {
+      "seconds": 3.335771708021639
+    },
+    "model_load": {
+      "seconds": 1.2675596670014784,
+      "mlx_peak_bytes": 9616159422
+    },
+    "prompt_encode": {
+      "seconds": 1.0258925420057494,
+      "mlx_peak_bytes": 11092178102
+    },
+    "source_conditioning": {
+      "seconds": 0.44116937500075437,
+      "mlx_peak_bytes": 10085674952
+    },
+    "denoise": {
+      "seconds": 339.5151874999865,
+      "mlx_peak_bytes": 8352201230
+    },
+    "raw_decode": {
+      "seconds": 0.7014595410146285,
+      "mlx_peak_bytes": 7115017648
+    }
+  },
+  "step_metrics": [
+    {
+      "step": 1,
+      "seconds": 5.212501250003697,
+      "sigma": 1.0,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8351611392
+    },
+    {
+      "step": 2,
+      "seconds": 5.582074375008233,
+      "sigma": 0.9913240671157837,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352184846
+    },
+    {
+      "step": 3,
+      "seconds": 5.790268541983096,
+      "sigma": 0.9824452996253967,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352184846
+    },
+    {
+      "step": 4,
+      "seconds": 5.980531665991293,
+      "sigma": 0.9733563661575317,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352184846
+    },
+    {
+      "step": 5,
+      "seconds": 6.03802049998194,
+      "sigma": 0.9640499949455261,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352184846
+    },
+    {
+      "step": 6,
+      "seconds": 6.035170749993995,
+      "sigma": 0.9545180201530457,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352184846
+    },
+    {
+      "step": 7,
+      "seconds": 6.203234084008727,
+      "sigma": 0.9447523951530457,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352184846
+    },
+    {
+      "step": 8,
+      "seconds": 6.119529499992495,
+      "sigma": 0.9347440600395203,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352184846
+    },
+    {
+      "step": 9,
+      "seconds": 6.24770570898545,
+      "sigma": 0.9244842529296875,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352184846
+    },
+    {
+      "step": 10,
+      "seconds": 6.308044709003298,
+      "sigma": 0.9139630794525146,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352184846
+    },
+    {
+      "step": 11,
+      "seconds": 6.333036625001114,
+      "sigma": 0.903170645236969,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352184846
+    },
+    {
+      "step": 12,
+      "seconds": 6.369310625013895,
+      "sigma": 0.8920961022377014,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352184846
+    },
+    {
+      "step": 13,
+      "seconds": 6.35702945801313,
+      "sigma": 0.8807284235954285,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 14,
+      "seconds": 6.305461375013692,
+      "sigma": 0.8690557479858398,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 15,
+      "seconds": 6.291766749985982,
+      "sigma": 0.8570655584335327,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 16,
+      "seconds": 6.244371916982345,
+      "sigma": 0.844744861125946,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 17,
+      "seconds": 6.160850958985975,
+      "sigma": 0.8320796489715576,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 18,
+      "seconds": 6.1195136250171345,
+      "sigma": 0.819055438041687,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 19,
+      "seconds": 6.034638165991055,
+      "sigma": 0.8056566119194031,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 20,
+      "seconds": 5.93630829200265,
+      "sigma": 0.7918668389320374,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 21,
+      "seconds": 6.286534999992,
+      "sigma": 0.7776686549186707,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 22,
+      "seconds": 6.112225790973753,
+      "sigma": 0.7630437612533569,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 23,
+      "seconds": 6.147187415976077,
+      "sigma": 0.7479726672172546,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 24,
+      "seconds": 6.632581541984109,
+      "sigma": 0.7324344515800476,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 25,
+      "seconds": 6.417440749995876,
+      "sigma": 0.7164071798324585,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 26,
+      "seconds": 6.624186542001553,
+      "sigma": 0.6998674273490906,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 27,
+      "seconds": 7.0210130409977864,
+      "sigma": 0.6827901601791382,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 28,
+      "seconds": 7.541708332981216,
+      "sigma": 0.6651487350463867,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 29,
+      "seconds": 7.4456667080230545,
+      "sigma": 0.6469146013259888,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 30,
+      "seconds": 7.557195375004085,
+      "sigma": 0.6280577182769775,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 31,
+      "seconds": 7.795281124999747,
+      "sigma": 0.6085453033447266,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 32,
+      "seconds": 8.233076750009786,
+      "sigma": 0.5883427262306213,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 33,
+      "seconds": 8.09214241601876,
+      "sigma": 0.5674126744270325,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 34,
+      "seconds": 8.10891220800113,
+      "sigma": 0.5457151532173157,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 35,
+      "seconds": 7.885423083993373,
+      "sigma": 0.5232069492340088,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 36,
+      "seconds": 7.623003582993988,
+      "sigma": 0.49984219670295715,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 37,
+      "seconds": 7.478434666991234,
+      "sigma": 0.4755707085132599,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 38,
+      "seconds": 7.6216028750059195,
+      "sigma": 0.45033881068229675,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 39,
+      "seconds": 7.468615124991629,
+      "sigma": 0.4240882694721222,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 40,
+      "seconds": 7.653762957983417,
+      "sigma": 0.3967561721801758,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 41,
+      "seconds": 7.399334290996194,
+      "sigma": 0.36827418208122253,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 42,
+      "seconds": 7.314876624994213,
+      "sigma": 0.3385682702064514,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 43,
+      "seconds": 7.335005832981551,
+      "sigma": 0.3075578808784485,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 44,
+      "seconds": 7.556119959015632,
+      "sigma": 0.2751550078392029,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 45,
+      "seconds": 7.136478917003842,
+      "sigma": 0.2412637621164322,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201216
+    },
+    {
+      "step": 46,
+      "seconds": 7.153774332982721,
+      "sigma": 0.20577919483184814,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201230
+    },
+    {
+      "step": 47,
+      "seconds": 7.180906458001118,
+      "sigma": 0.1685861498117447,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201230
+    },
+    {
+      "step": 48,
+      "seconds": 6.99811420799233,
+      "sigma": 0.12955838441848755,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201230
+    },
+    {
+      "step": 49,
+      "seconds": 6.984911000006832,
+      "sigma": 0.08855661749839783,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201230
+    },
+    {
+      "step": 50,
+      "seconds": 7.00659249999444,
+      "sigma": 0.045427169650793076,
+      "finite": true,
+      "target_tokens": 2304,
+      "mlx_peak_bytes": 8352201230
+    }
+  ],
+  "model_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4",
+  "official_model_repo": "black-forest-labs/FLUX.1-Fill-dev",
+  "official_example": "50 steps, guidance 30, max sequence length 512",
+  "compute_mode": "native full canvas every step",
+  "growing_compute": false,
+  "known_bridge": false,
+  "negative_branch": false,
+  "adapters": [],
+  "offline_environment": true,
+  "model_weights_loaded": true,
+  "research_use_only": true,
+  "inherited_model_license": "flux-1-dev-non-commercial-license",
+  "width": 512,
+  "height": 1152,
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "source_512_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track3/source_512.png",
+  "source_512_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+  "source_pixels_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+  "canvas_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-seed42/input_canvas.png",
+  "canvas_sha256": "f1e4d8556cff94477a1d757bcbb5ee531e41edc0255bb34eed3f03aaa76432e1",
+  "mask_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-seed42/input_mask.png",
+  "mask_sha256": "c4386579faf335ed709b14b461c6a843d0e58956e25ddfbe8d88e3a317f6dc70",
+  "mask_convention": "white 255 regenerates; black 0 preserves",
+  "unknown_input_normalized_rgb": "exact zero after image * (1-mask)",
+  "known_source_input_pixels_exact": true,
+  "checkpoint_inventory": {
+    "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4",
+    "complete": true,
+    "components": {
+      "transformer": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4/transformer/0.safetensors",
+          "bytes": 2130179793,
+          "expected_bytes": 2130179793,
+          "header_sha256": "4491b76dc9240fde2790342ff2d13ab01c1be8f8cdf2cddc2550ae9e21e1beb0",
+          "tensor_count": 692,
+          "metadata": {
+            "mflux_version": "0.19.1",
+            "quantization_level": "4"
+          },
+          "x_embedder": {
+            "x_embedder.bias": {
+              "data_offsets": [
+                680924928,
+                680931072
+              ],
+              "dtype": "BF16",
+              "shape": [
+                3072
+              ]
+            },
+            "x_embedder.biases": {
+              "data_offsets": [
+                335882240,
+                335919104
+              ],
+              "dtype": "BF16",
+              "shape": [
+                3072,
+                6
+              ]
+            },
+            "x_embedder.scales": {
+              "data_offsets": [
+                841689600,
+                841726464
+              ],
+              "dtype": "BF16",
+              "shape": [
+                3072,
+                6
+              ]
+            },
+            "x_embedder.weight": {
+              "data_offsets": [
+                847624704,
+                848214528
+              ],
+              "dtype": "U32",
+              "shape": [
+                3072,
+                48
+              ]
+            }
+          }
+        },
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4/transformer/1.safetensors",
+          "bytes": 2141393739,
+          "expected_bytes": 2141393739,
+          "header_sha256": "951cb0f70eb9665861cf37325350f6b5639d9a29de790555f7d7f49681e9e486",
+          "tensor_count": 684,
+          "metadata": {
+            "mflux_version": "0.19.1",
+            "quantization_level": "4"
+          },
+          "x_embedder": {}
+        },
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4/transformer/2.safetensors",
+          "bytes": 2130572511,
+          "expected_bytes": 2130572511,
+          "header_sha256": "f10ab26101a6a779d8ad34fdcc54b832a0a6e218966ca479ce4bd92061c45f32",
+          "tensor_count": 698,
+          "metadata": {
+            "mflux_version": "0.19.1",
+            "quantization_level": "4"
+          },
+          "x_embedder": {}
+        },
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4/transformer/3.safetensors",
+          "bytes": 297627818,
+          "expected_bytes": 297627818,
+          "header_sha256": "d034dad996cd0c1292fa9e87723b2e8d3b02041fc287cba8461cf8269f2ad16c",
+          "tensor_count": 93,
+          "metadata": {
+            "mflux_version": "0.19.1",
+            "quantization_level": "4"
+          },
+          "x_embedder": {}
+        }
+      ],
+      "vae": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4/vae/0.safetensors",
+          "bytes": 164654179,
+          "expected_bytes": 164654179,
+          "header_sha256": "e71b7e6215d25215c1becf29b1081f7b1b1854fa96be6801d2ef920e9720e3a2",
+          "tensor_count": 260,
+          "metadata": {
+            "mflux_version": "0.19.1",
+            "quantization_level": "4"
+          },
+          "x_embedder": {}
+        }
+      ],
+      "text_encoder": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4/text_encoder/0.safetensors",
+          "bytes": 69436741,
+          "expected_bytes": 69436741,
+          "header_sha256": "d23f77c7f7e9dcc96dc95178b1d9b5d0d542256ae96dd1dc9196fba14d89182f",
+          "tensor_count": 344,
+          "metadata": {
+            "mflux_version": "0.19.1",
+            "quantization_level": "4"
+          },
+          "x_embedder": {}
+        }
+      ],
+      "text_encoder_2": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4/text_encoder_2/0.safetensors",
+          "bytes": 2145878333,
+          "expected_bytes": 2145878333,
+          "header_sha256": "4af247efc7607e9f602727c5b49113227686bd78eb211415ffced30bb1fdf50f",
+          "tensor_count": 500,
+          "metadata": {
+            "mflux_version": "0.19.1",
+            "quantization_level": "4"
+          },
+          "x_embedder": {}
+        },
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4/text_encoder_2/1.safetensors",
+          "bytes": 533312140,
+          "expected_bytes": 533312140,
+          "header_sha256": "607bc260c339d071186ff3bdc1a2e84db353bc57d07fb1ba7902f2e16f19532d",
+          "tensor_count": 128,
+          "metadata": {
+            "mflux_version": "0.19.1",
+            "quantization_level": "4"
+          },
+          "x_embedder": {}
+        }
+      ]
+    },
+    "missing": [],
+    "total_weight_bytes": 9613055254
+  },
+  "checkpoint_manifest": {
+    "status": "verified",
+    "verified": true,
+    "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4.manifest.json",
+    "manifest_sha256": "4ab6a92ff25240f79c1d8dec341abbd9b8edb26ead6805d4c15c8d3eb9c1a8eb",
+    "repo": "mflux-community/flux-1-dev-fill-mflux-q4",
+    "revision": "eebfbaa12c95107169452c7d22622e04771192a3",
+    "payload_hashes_checked": true,
+    "issues": [],
+    "files": [
+      {
+        "path": ".gitattributes",
+        "expected_bytes": 1519,
+        "expected_lfs_sha256": null,
+        "exists": true,
+        "git_blob_sha1": "a6344aac8c09253b3b630fb776ae94478aa0275b"
+      },
+      {
+        "path": "README.md",
+        "expected_bytes": 3178,
+        "expected_lfs_sha256": null,
+        "exists": true,
+        "git_blob_sha1": "32ae4bf392c208002e5861a5feca5c62075c2eb5"
+      },
+      {
+        "path": "manifest.json",
+        "expected_bytes": 78,
+        "expected_lfs_sha256": null,
+        "exists": true,
+        "git_blob_sha1": "1df6ce6a0231d7332c936bd2347b6f0f8d70140c"
+      },
+      {
+        "path": "text_encoder/0.safetensors",
+        "expected_bytes": 69436741,
+        "expected_lfs_sha256": "e7e95ac9350962fd99aa45abbadb5ccc6180b157db81dd5ec7552daab4c19b8a",
+        "exists": true,
+        "sha256": "e7e95ac9350962fd99aa45abbadb5ccc6180b157db81dd5ec7552daab4c19b8a"
+      },
+      {
+        "path": "text_encoder/model.safetensors.index.json",
+        "expected_bytes": 25037,
+        "expected_lfs_sha256": null,
+        "exists": true,
+        "git_blob_sha1": "838b543b55e26a4d9007881ab07d7c071ce99a51"
+      },
+      {
+        "path": "text_encoder_2/0.safetensors",
+        "expected_bytes": 2145878333,
+        "expected_lfs_sha256": "29c6a91691b7658e8ec72166831b3cf2b6a99af6ed6f1955d19bbc570c788caa",
+        "exists": true,
+        "sha256": "29c6a91691b7658e8ec72166831b3cf2b6a99af6ed6f1955d19bbc570c788caa"
+      },
+      {
+        "path": "text_encoder_2/1.safetensors",
+        "expected_bytes": 533312140,
+        "expected_lfs_sha256": "5068efe59422a70404ce892d364013bf3bd0c54fd25d43a7c4e52118d5d1b3a2",
+        "exists": true,
+        "sha256": "5068efe59422a70404ce892d364013bf3bd0c54fd25d43a7c4e52118d5d1b3a2"
+      },
+      {
+        "path": "text_encoder_2/model.safetensors.index.json",
+        "expected_bytes": 44072,
+        "expected_lfs_sha256": null,
+        "exists": true,
+        "git_blob_sha1": "65e25b1f985fed1f17b2a082faf9e024c1248f33"
+      },
+      {
+        "path": "tokenizer/tokenizer.json",
+        "expected_bytes": 3642073,
+        "expected_lfs_sha256": null,
+        "exists": true,
+        "git_blob_sha1": "bd1e367764006ad6a2249b1dcc0b20879c7c211f"
+      },
+      {
+        "path": "tokenizer/tokenizer_config.json",
+        "expected_bytes": 389,
+        "expected_lfs_sha256": null,
+        "exists": true,
+        "git_blob_sha1": "c1f988bd1cea46dc75743f39597775d1ffd8520c"
+      },
+      {
+        "path": "tokenizer_2/tokenizer.json",
+        "expected_bytes": 2424069,
+        "expected_lfs_sha256": null,
+        "exists": true,
+        "git_blob_sha1": "7093f0b3e6e8c7cc8a69b6b72d1cf2824803ae88"
+      },
+      {
+        "path": "tokenizer_2/tokenizer_config.json",
+        "expected_bytes": 2465,
+        "expected_lfs_sha256": null,
+        "exists": true,
+        "git_blob_sha1": "b4a9818a9877101e43af9dbb85f27c5973bd4f49"
+      },
+      {
+        "path": "transformer/0.safetensors",
+        "expected_bytes": 2130179793,
+        "expected_lfs_sha256": "f2e699c7967523d7adf9e72d01acb2cb4cef7be9e90bca8adfb19600a41868e6",
+        "exists": true,
+        "sha256": "f2e699c7967523d7adf9e72d01acb2cb4cef7be9e90bca8adfb19600a41868e6"
+      },
+      {
+        "path": "transformer/1.safetensors",
+        "expected_bytes": 2141393739,
+        "expected_lfs_sha256": "a6e6dd21d2117774924b1b97120c03af6930efc90a994f8a19bd9e66db45b791",
+        "exists": true,
+        "sha256": "a6e6dd21d2117774924b1b97120c03af6930efc90a994f8a19bd9e66db45b791"
+      },
+      {
+        "path": "transformer/2.safetensors",
+        "expected_bytes": 2130572511,
+        "expected_lfs_sha256": "1928844f7b403f57056b0669ee0e931f443bc0f7e460cbe6f18dbd403f470066",
+        "exists": true,
+        "sha256": "1928844f7b403f57056b0669ee0e931f443bc0f7e460cbe6f18dbd403f470066"
+      },
+      {
+        "path": "transformer/3.safetensors",
+        "expected_bytes": 297627818,
+        "expected_lfs_sha256": "f320b6ec96ba0b47c16c40cc389c582fb37c932dfdc977bbae686ca51730300b",
+        "exists": true,
+        "sha256": "f320b6ec96ba0b47c16c40cc389c582fb37c932dfdc977bbae686ca51730300b"
+      },
+      {
+        "path": "transformer/model.safetensors.index.json",
+        "expected_bytes": 146869,
+        "expected_lfs_sha256": null,
+        "exists": true,
+        "git_blob_sha1": "6ece16816102da38cca8f2d47a19eb4151a36ad2"
+      },
+      {
+        "path": "vae/0.safetensors",
+        "expected_bytes": 164654179,
+        "expected_lfs_sha256": "51b57214f680a07b31863ed489fb8441ded062ce667bb0eacafe65e6e7c4f20f",
+        "exists": true,
+        "sha256": "51b57214f680a07b31863ed489fb8441ded062ce667bb0eacafe65e6e7c4f20f"
+      },
+      {
+        "path": "vae/model.safetensors.index.json",
+        "expected_bytes": 17386,
+        "expected_lfs_sha256": null,
+        "exists": true,
+        "git_blob_sha1": "a6af115cb41804948ca82466b6877b2b3f7ab7ca"
+      }
+    ]
+  },
+  "prompt": "A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+  "prompt_sha256": "5b790c165cc0e856edff41f01b267a666ad5394779b240a2d635083ccba80dae",
+  "target_tokens_per_forward": 2304,
+  "planned_nfe": 50,
+  "planned_target_token_forwards": 115200,
+  "conditioning_channels": {
+    "noise": 64,
+    "masked_source": 64,
+    "pixel_mask": 256,
+    "total": 384
+  },
+  "conditioning_cpu_preflight": {
+    "status": "passed",
+    "device": "cpu",
+    "weights_loaded": false,
+    "downloads_required": false,
+    "checks": [
+      "white_unknown_black_known_and_threshold_128",
+      "latent_pack_unpack_4d_and_singleton_5d",
+      "all_8x8_pixel_channels_then_2x2_latent_patches",
+      "native_loading_resizing_masked_rgb_and_static_concat",
+      "512x1152_source_box_exact_resized_rgb_and_unknown_normalized_zero",
+      "missing_input_empty_conditioning_without_encode"
+    ],
+    "geometry": {
+      "width": 512,
+      "height": 1152,
+      "source_box": [
+        0,
+        320,
+        512,
+        832
+      ],
+      "source_box_convention": "half-open [left, top, right, bottom]",
+      "source_pixels_exact": true,
+      "known_pixels": 262144,
+      "unknown_pixels": 327680,
+      "known_token_rows": [
+        20,
+        52
+      ],
+      "known_normalized_rgb_max_abs_error": 0.0,
+      "unknown_normalized_rgb": 0.0,
+      "normalized_black_rgb": -1.0,
+      "mock_vae_shape": [
+        1,
+        16,
+        1,
+        144,
+        64
+      ],
+      "static_shape": [
+        1,
+        2304,
+        320
+      ],
+      "masked_source_channels": 64,
+      "mask_channels": 256,
+      "transformer_input_shape": [
+        1,
+        2304,
+        384
+      ]
+    },
+    "scope": "conditioning parity only; no inference or generated-image quality test"
+  },
+  "phase": "complete",
+  "elapsed_seconds": 347.4071647080127,
+  "process_peak_rss_bytes": 9226731520,
+  "runtime_source_sha256": {
+    "native_fill": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/flux/variants/fill/flux_fill.py",
+      "sha256": "3012abf8a9541aa8600eae80bf2d8bdd6167cddd79030a6190d1df680050fe41"
+    },
+    "mask_util": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/flux/variants/fill/mask_util.py",
+      "sha256": "b6f20892105b71e1ff64f325c2a3448d534f379ef95e44bec33d9224f5d5a7e9"
+    },
+    "config": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/common/config/config.py",
+      "sha256": "19a862b4414ea082a45c8142ca8932fce483121426b6efd562999eca64ff307d"
+    },
+    "latent_creator": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/flux/latent_creator/flux_latent_creator.py",
+      "sha256": "897505135f1d411b8af4967f0b8327ca5b91f8e2b1b9ec503e3fc2ce9f270d5c"
+    }
+  },
+  "cpu_gate_sha256": "09face4707f493125d7b03a4aed508b96bceecfe783e697cfc449508a2810d93",
+  "metal_device": {
+    "device_name": "Apple M4 Max",
+    "max_recommended_working_set_size": 30150672384,
+    "memory_size": 38654705664,
+    "architecture": "applegpu_g16s",
+    "max_buffer_length": 22613000192,
+    "resource_limit": 499000
+  },
+  "mlx_version": "0.32.3",
+  "stored_quantization": 4,
+  "block_counts": {
+    "joint": 19,
+    "single": 38
+  },
+  "component_parameter_bytes": {
+    "transformer": 6699518080,
+    "vae": 164624710,
+    "t5_text_encoder": 2679114752,
+    "clip_text_encoder": 69395952
+  },
+  "mlx_peak_bytes": 11092178102,
+  "text_tokens_per_forward": 512,
+  "joint_query_tokens_per_forward": 2816,
+  "text_encoders_deleted_after_encoding": true,
+  "static_conditioning_shape": [
+    1,
+    2304,
+    320
+  ],
+  "static_conditioning_finite": true,
+  "static_conditioning_sha256_float32": "c718c85772b48fc10d768d82064ba998ad40d51fd0de1dd7263702b1736c2edf",
+  "initial_noise_shape": [
+    1,
+    2304,
+    64
+  ],
+  "initial_noise_dtype": "mlx.core.float32",
+  "initial_noise_finite": true,
+  "initial_noise_sha256_float32": "9b0f130d9dee403294a1429d7552add46da89cbb424e620aa3d8cbd80d549a1c",
+  "scheduler_sigmas": [
+    1.0,
+    0.9913240671157837,
+    0.9824452996253967,
+    0.9733563661575317,
+    0.9640499949455261,
+    0.9545180201530457,
+    0.9447523951530457,
+    0.9347440600395203,
+    0.9244842529296875,
+    0.9139630794525146,
+    0.903170645236969,
+    0.8920961022377014,
+    0.8807284235954285,
+    0.8690557479858398,
+    0.8570655584335327,
+    0.844744861125946,
+    0.8320796489715576,
+    0.819055438041687,
+    0.8056566119194031,
+    0.7918668389320374,
+    0.7776686549186707,
+    0.7630437612533569,
+    0.7479726672172546,
+    0.7324344515800476,
+    0.7164071798324585,
+    0.6998674273490906,
+    0.6827901601791382,
+    0.6651487350463867,
+    0.6469146013259888,
+    0.6280577182769775,
+    0.6085453033447266,
+    0.5883427262306213,
+    0.5674126744270325,
+    0.5457151532173157,
+    0.5232069492340088,
+    0.49984219670295715,
+    0.4755707085132599,
+    0.45033881068229675,
+    0.4240882694721222,
+    0.3967561721801758,
+    0.36827418208122253,
+    0.3385682702064514,
+    0.3075578808784485,
+    0.2751550078392029,
+    0.2412637621164322,
+    0.20577919483184814,
+    0.1685861498117447,
+    0.12955838441848755,
+    0.08855661749839783,
+    0.045427169650793076,
+    0.0
+  ],
+  "scheduler": "native MFLUX LinearScheduler with FLUX resolution shift",
+  "nfe": 50,
+  "target_token_forwards": 115200,
+  "joint_block_forwards": 950,
+  "single_block_forwards": 1900,
+  "completed_steps": 50,
+  "final_latents_shape": [
+    1,
+    2304,
+    64
+  ],
+  "final_latents_dtype": "mlx.core.float32",
+  "final_latents_finite": true,
+  "final_latents_sha256_float32": "90278c1ecd6049202d7d5a0ec80dd4149d389f366fcea4f52a1363ab188f12fd",
+  "transformer_released_before_decode": true,
+  "decoded_finite": true,
+  "raw_source_mae_0_255": {
+    "all": 6.791121006011963,
+    "top16": 7.033731937408447,
+    "bottom16": 6.559122562408447,
+    "inner": 6.790767192840576
+  },
+  "source_exact_after_compositor": true,
+  "generated_region_exact_raw_after_compositor": true,
+  "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-seed42/raw.png",
+  "raw_sha256": "dc83ca70b69957f59e2a020d6fb6a33aaf0a23e0b24e64ad9c6e4f51471e7e15",
+  "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-seed42/composite.png",
+  "composite_sha256": "c1ff9ddbff04f16c1878b1622e28ecc381bd8a413658617b7cb71fc1413b59d7",
+  "visual_quality": "requires direct inspection; execution success is not quality acceptance"
+}
