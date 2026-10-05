@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "device": "CPU NumPy/Pillow only",
+  "gpu_work": false,
+  "models_loaded": false,
+  "original_final_npz": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-saved-top32-outpaint/tangent-canny/top32/final_latents.npz",
+  "copied_final_npz": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_inputs/2026-10-05/track3-saved-top32/final_latents.npz",
+  "original_npz_file_sha256": "16702e506bcf97665c5147a64d0933a835929aaf2a26103794a013791c79697c",
+  "copied_npz_file_sha256": "16702e506bcf97665c5147a64d0933a835929aaf2a26103794a013791c79697c",
+  "all_npz_arrays_and_dtypes_bitwise_unchanged": true,
+  "array_metadata": {
+    "latents": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "4b93351925d6ad9f80231d892e5efe8294bb4ee7fa62dcb153e34e53eaa5acbf"
+    },
+    "final_canvas_ids": {
+      "shape": [
+        2304
+      ],
+      "dtype": "int32",
+      "sha256": "eebe4a6aa3412ddf394f671ecf58e01afad5aad28303dc9d7018cf64eab2609a"
+    },
+    "source_rect_xyxy": {
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "sha256": "c4d2358e7e89c1f1c8a7bd0bbfb10881fdbc03109331b5d0e5e0b31981781d13"
+    },
+    "sigmas": {
+      "shape": [
+        41
+      ],
+      "dtype": "float32",
+      "sha256": "e19e0539429db154147e06cc716323ed064ac2801d0d708117d67aeb20ca92b9"
+    },
+    "source_prefix_latents": {
+      "shape": [
+        1,
+        1024,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01"
+    }
+  },
+  "original_raw_png": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-saved-top32-outpaint/tangent-canny/top32/raw.png",
+  "original_raw_file_sha256": "adf4a1e7fe993bf6163639c1c5a3a5a34e715d3bad11284393c053aebf29c8c1",
+  "copied_raw_file_sha256": "adf4a1e7fe993bf6163639c1c5a3a5a34e715d3bad11284393c053aebf29c8c1",
+  "copied_raw_pixels_sha256": "a1d915b784e68511f112d445efdbd2884aa84821e4462050600cbc3dca70cd19",
+  "original_source_pixels_exact": true,
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "source_512_file_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+  "source_pixels_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+  "original_jpg_file_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+  "completed_run_metrics_sha256": "cef97e2e7585b56e9c091f9ed69a8e77051247b837a4f44a236e1f4a4d139b1e",
+  "independent_completed_run_integrity_sha256": "34ff1ae3f51505ebf4fd5b2adad1cc1211e5d138b3699e52ff348fd7fa962860",
+  "weights_trained": false,
+  "projection_run_performed": false,
+  "purpose": "Exact saved-top32 projection input; separate source/provenance metadata only, no altered latent or image values",
+  "script_sha256": "2c36caa7711a661a71da1787b879e248dff27f93739a11699dc2b8a6c4544ee3"
+}
