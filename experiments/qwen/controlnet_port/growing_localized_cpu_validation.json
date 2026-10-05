@@ -1,0 +1,245 @@
+{
+  "status": "passed",
+  "device": "CPU only",
+  "dtype": "float32",
+  "real_models_loaded": false,
+  "checkpoint_weights_used": false,
+  "adapter_weights_used": false,
+  "downloads": false,
+  "scope": "Six-step absolute growth/control/edge bridge mechanics with32 tiny base blocks and16 control blocks; no Turbo/control checkpoint parity or image-quality proof.",
+  "gathers": {
+    "status": "passed",
+    "steps": [
+      {
+        "active_height": 640,
+        "absolute_rows": [
+          16,
+          56
+        ],
+        "target_tokens": 1280,
+        "future_tokens_absent": 1024
+      },
+      {
+        "active_height": 896,
+        "absolute_rows": [
+          8,
+          64
+        ],
+        "target_tokens": 1792,
+        "future_tokens_absent": 512
+      },
+      {
+        "active_height": 1152,
+        "absolute_rows": [
+          0,
+          72
+        ],
+        "target_tokens": 2304,
+        "future_tokens_absent": 0
+      },
+      {
+        "active_height": 1152,
+        "absolute_rows": [
+          0,
+          72
+        ],
+        "target_tokens": 2304,
+        "future_tokens_absent": 0
+      },
+      {
+        "active_height": 1152,
+        "absolute_rows": [
+          0,
+          72
+        ],
+        "target_tokens": 2304,
+        "future_tokens_absent": 0
+      },
+      {
+        "active_height": 1152,
+        "absolute_rows": [
+          0,
+          72
+        ],
+        "target_tokens": 2304,
+        "future_tokens_absent": 0
+      }
+    ],
+    "target_token_forward_sum": 12288,
+    "reference_image_token_forward_sum": 6144,
+    "literal_zero129_reference_padding": true,
+    "context_and_hint_same_absolute_ids_exact": true,
+    "full_canvas_rope_gather_exact": true,
+    "inactive_tokens_absent_from_control_and_base_inputs": true
+  },
+  "trajectories": [
+    {
+      "status": "passed",
+      "padded_prompt": false,
+      "base_blocks": 32,
+      "control_blocks": 16,
+      "steps": 6,
+      "active_heights": [
+        128,
+        160,
+        192,
+        192,
+        192,
+        192
+      ],
+      "scale_zero_paired_trajectory_exact": true,
+      "insertions_velocities_bridges_clean_exact_vs_uncached_base": true,
+      "sigma_zero_edge_known_target_exact": true,
+      "source_prefix_and_control_context_unmodified": true,
+      "future_target_tokens_absent_both_chains": true,
+      "scale_zero_extra_branch_blocks": 96,
+      "target_token_forward_sum": 2112,
+      "nonzero_control_final_effect_max_abs": 1.312273383140564,
+      "cached_trained_checkpoint_comparison": "unverified; random CPU mechanics compare uncached baseline"
+    },
+    {
+      "status": "passed",
+      "padded_prompt": true,
+      "base_blocks": 32,
+      "control_blocks": 16,
+      "steps": 6,
+      "active_heights": [
+        128,
+        160,
+        192,
+        192,
+        192,
+        192
+      ],
+      "scale_zero_paired_trajectory_exact": true,
+      "insertions_velocities_bridges_clean_exact_vs_uncached_base": true,
+      "sigma_zero_edge_known_target_exact": true,
+      "source_prefix_and_control_context_unmodified": true,
+      "future_target_tokens_absent_both_chains": true,
+      "scale_zero_extra_branch_blocks": 96,
+      "target_token_forward_sum": 2112,
+      "nonzero_control_final_effect_max_abs": 1.350836992263794,
+      "cached_trained_checkpoint_comparison": "unverified; random CPU mechanics compare uncached baseline"
+    }
+  ],
+  "old_geometry_smokes": {
+    "layout": {
+      "device": "CPU",
+      "model_weights_loaded": false,
+      "checks": [
+        {
+          "height": 640,
+          "target_tokens": 1280,
+          "prefix_length": 1041,
+          "window_xyxy": [
+            0,
+            256,
+            512,
+            896
+          ]
+        },
+        {
+          "height": 896,
+          "target_tokens": 1792,
+          "prefix_length": 1041,
+          "window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ]
+        },
+        {
+          "height": 1152,
+          "target_tokens": 2304,
+          "prefix_length": 1041,
+          "window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ]
+        }
+      ],
+      "status": "passed"
+    },
+    "insertion": {
+      "status": "passed",
+      "device": "CPU",
+      "model_weights_loaded": false,
+      "checks": [
+        {
+          "initializer": "source-edge",
+          "previous_tokens_exact": true,
+          "new_absolute_noise_matched": true,
+          "new_frontier_mapping_exact": true,
+          "inserted_tokens": 512
+        },
+        {
+          "initializer": "frontier",
+          "previous_tokens_exact": true,
+          "new_absolute_noise_matched": true,
+          "new_frontier_mapping_exact": true,
+          "inserted_tokens": 512
+        }
+      ]
+    },
+    "geometry": {
+      "status": "passed",
+      "device": "CPU",
+      "model_weights_loaded": false,
+      "source_rgba_unchanged": true,
+      "opaque_alpha_constant": true,
+      "center_crop_rows_exact": [
+        20,
+        52
+      ],
+      "changed_known_target_keeps_prefix_exact": true
+    }
+  },
+  "source_code_sha256": {
+    "control.py": "f4017d5989b5a97db5783cc6f100938ffa1f8a17de92587a1608db5418dd9d2a",
+    "conditioning.py": "a1526bdd8704de2b086ceafdd33ac57fa18b0aa6ad096f7c01525d4a772e7dfb",
+    "reference_control.py": "ff8f404714defaf2909e82770cd5ec62811ffcca5b627ee5763efef3b92d09d9",
+    "localized_reference_control.py": "2aa4dee1c5b4d64d119d58b8943f5d224b3119fc0ae8054c9d4b85d069fbd722",
+    "growing_localized_control.py": "70a830a9d0139226fbdd2df7c5bc42db30c1e12b6b241950b540c5740b54eac8",
+    "sparse_conditioning.py": "458a8eda69b31600365360822a25369bf479ba86246fdb110b07a546fbb12b0f",
+    "test_reference_control_cpu.py": "d3b6f628b0699eadd9526db4157985d9a7e2f673730e4c179d887a1af0d2bbfa"
+  },
+  "old_geometry_runner_sha256": "68c169700228af7a219caf66fb5526dbd2bf3684c92ca14a56c53d1767ab215f",
+  "runtime_dependency_hashes": {
+    "qwen21_attention": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_attention.py",
+      "sha256": "e992e21c193cb2cd9f2225e8afb67af2424a770b853d3e065ff60c5b95581e83"
+    },
+    "qwen21_transformer_block": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_transformer_block.py",
+      "sha256": "60ed91c00e12066417636ea54f5e225198586af0e5e88ccc76dfe209d285b3de"
+    },
+    "qwen21_layout": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_layout.py",
+      "sha256": "37bd0839fa8a215d2d25aec4e8f65f0e05c279ad1f1eab15e1af041368c0be44"
+    },
+    "qwen21_transformer": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_transformer.py",
+      "sha256": "8ee62ba80495fb36e8cf885b8b463bc7353cbfe2eb90b377d46283c539686735"
+    },
+    "qwen21_norm_out": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_norm_out.py",
+      "sha256": "f403e5f7f63e297869190fdfe1155a6aabb2a13df480fca0ebf3af733adc911d"
+    },
+    "qwen21_text_projection": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_text_projection.py",
+      "sha256": "aca4d4c74c5450fa0238b4650984f478e5f59a5ecf25ddffe60a0a31514ca1aa"
+    },
+    "qwen21_time_text_embed": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_time_text_embed.py",
+      "sha256": "c051d7f82f285a9dd4be2c361e50afa51b1de13774d46b3a42037b3637ced348"
+    },
+    "qwen21_rope": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_rope.py",
+      "sha256": "395f5c7281a77abb91fd1d40145a139b6b31d3af4112d7e6857efc2224fed1e6"
+    }
+  },
+  "script_sha256": "cadde338f713ea9399513da4911aa5f4ded2266500a021de03b24e2c7d3b6a98"
+}
