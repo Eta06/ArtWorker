@@ -1,0 +1,3468 @@
+{
+  "status": "passed",
+  "device": "CPU only",
+  "dtype": "float32",
+  "torch_version": "2.14.0",
+  "diffusers_version": "0.39.0",
+  "checkpoint_weights_used": false,
+  "original_module_modified": false,
+  "original_source": {
+    "url": "https://raw.githubusercontent.com/xinsir6/ControlNetPlus/b48420576eac63c04388cb65fb74513cbd17405a/models/controlnet_union.py",
+    "revision": "b48420576eac63c04388cb65fb74513cbd17405a",
+    "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/sdxl_promax/parity/original_controlnet_union_b4842057.py",
+    "sha256": "26e2540b0c3ebde1a77dfbb95ca2e61504c10bed0f101703552e1d76a05832ca"
+  },
+  "native_source": {
+    "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/dreamlite-venv/lib/python3.12/site-packages/diffusers/models/controlnets/controlnet_union.py",
+    "sha256": "093ad3610fa3b5af98cc2104a09f1868a9fb3a15b0806d792a3c4264ff7a3d59"
+  },
+  "test_sha256": "c2cc19c0f0809d5debf1c7393f03d060f416ac14110a87c821695b5fb384eb44",
+  "models": {
+    "shared_config": {
+      "in_channels": 4,
+      "conditioning_channels": 3,
+      "down_block_types": [
+        "CrossAttnDownBlock2D"
+      ],
+      "block_out_channels": [
+        320
+      ],
+      "layers_per_block": 1,
+      "norm_num_groups": 32,
+      "cross_attention_dim": 16,
+      "attention_head_dim": 8,
+      "transformer_layers_per_block": 1,
+      "conditioning_embedding_out_channels": [
+        16,
+        32,
+        96,
+        256
+      ],
+      "addition_embed_type": "text_time",
+      "addition_time_embed_dim": 4,
+      "projection_class_embeddings_input_dim": 32,
+      "num_control_type": 8,
+      "controlnet_conditioning_channel_order": "rgb"
+    },
+    "original_parameter_count": 19054160,
+    "native_parameter_count": 19054160,
+    "state_tensor_count": 133,
+    "strict_keys_shapes_dtypes_and_order_match": true,
+    "all_state_values_exact_after_strict_load": true,
+    "state_key_value_sha256": "49aa272578df49ab0f5232626515da1af1359643151a0fd157d9d481e3c7eadd",
+    "state_keys": [
+      "task_embedding",
+      "conv_in.weight",
+      "conv_in.bias",
+      "time_embedding.linear_1.weight",
+      "time_embedding.linear_1.bias",
+      "time_embedding.linear_2.weight",
+      "time_embedding.linear_2.bias",
+      "add_embedding.linear_1.weight",
+      "add_embedding.linear_1.bias",
+      "add_embedding.linear_2.weight",
+      "add_embedding.linear_2.bias",
+      "controlnet_cond_embedding.conv_in.weight",
+      "controlnet_cond_embedding.conv_in.bias",
+      "controlnet_cond_embedding.blocks.0.weight",
+      "controlnet_cond_embedding.blocks.0.bias",
+      "controlnet_cond_embedding.blocks.1.weight",
+      "controlnet_cond_embedding.blocks.1.bias",
+      "controlnet_cond_embedding.blocks.2.weight",
+      "controlnet_cond_embedding.blocks.2.bias",
+      "controlnet_cond_embedding.blocks.3.weight",
+      "controlnet_cond_embedding.blocks.3.bias",
+      "controlnet_cond_embedding.blocks.4.weight",
+      "controlnet_cond_embedding.blocks.4.bias",
+      "controlnet_cond_embedding.blocks.5.weight",
+      "controlnet_cond_embedding.blocks.5.bias",
+      "controlnet_cond_embedding.conv_out.weight",
+      "controlnet_cond_embedding.conv_out.bias",
+      "transformer_layes.0.attn.in_proj_weight",
+      "transformer_layes.0.attn.in_proj_bias",
+      "transformer_layes.0.attn.out_proj.weight",
+      "transformer_layes.0.attn.out_proj.bias",
+      "transformer_layes.0.ln_1.weight",
+      "transformer_layes.0.ln_1.bias",
+      "transformer_layes.0.mlp.c_fc.weight",
+      "transformer_layes.0.mlp.c_fc.bias",
+      "transformer_layes.0.mlp.c_proj.weight",
+      "transformer_layes.0.mlp.c_proj.bias",
+      "transformer_layes.0.ln_2.weight",
+      "transformer_layes.0.ln_2.bias",
+      "spatial_ch_projs.weight",
+      "spatial_ch_projs.bias",
+      "control_add_embedding.linear_1.weight",
+      "control_add_embedding.linear_1.bias",
+      "control_add_embedding.linear_2.weight",
+      "control_add_embedding.linear_2.bias",
+      "down_blocks.0.attentions.0.norm.weight",
+      "down_blocks.0.attentions.0.norm.bias",
+      "down_blocks.0.attentions.0.proj_in.weight",
+      "down_blocks.0.attentions.0.proj_in.bias",
+      "down_blocks.0.attentions.0.transformer_blocks.0.norm1.weight",
+      "down_blocks.0.attentions.0.transformer_blocks.0.norm1.bias",
+      "down_blocks.0.attentions.0.transformer_blocks.0.attn1.to_q.weight",
+      "down_blocks.0.attentions.0.transformer_blocks.0.attn1.to_k.weight",
+      "down_blocks.0.attentions.0.transformer_blocks.0.attn1.to_v.weight",
+      "down_blocks.0.attentions.0.transformer_blocks.0.attn1.to_out.0.weight",
+      "down_blocks.0.attentions.0.transformer_blocks.0.attn1.to_out.0.bias",
+      "down_blocks.0.attentions.0.transformer_blocks.0.norm2.weight",
+      "down_blocks.0.attentions.0.transformer_blocks.0.norm2.bias",
+      "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_q.weight",
+      "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_k.weight",
+      "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+      "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_out.0.weight",
+      "down_blocks.0.attentions.0.transformer_blocks.0.attn2.to_out.0.bias",
+      "down_blocks.0.attentions.0.transformer_blocks.0.norm3.weight",
+      "down_blocks.0.attentions.0.transformer_blocks.0.norm3.bias",
+      "down_blocks.0.attentions.0.transformer_blocks.0.ff.net.0.proj.weight",
+      "down_blocks.0.attentions.0.transformer_blocks.0.ff.net.0.proj.bias",
+      "down_blocks.0.attentions.0.transformer_blocks.0.ff.net.2.weight",
+      "down_blocks.0.attentions.0.transformer_blocks.0.ff.net.2.bias",
+      "down_blocks.0.attentions.0.proj_out.weight",
+      "down_blocks.0.attentions.0.proj_out.bias",
+      "down_blocks.0.resnets.0.norm1.weight",
+      "down_blocks.0.resnets.0.norm1.bias",
+      "down_blocks.0.resnets.0.conv1.weight",
+      "down_blocks.0.resnets.0.conv1.bias",
+      "down_blocks.0.resnets.0.time_emb_proj.weight",
+      "down_blocks.0.resnets.0.time_emb_proj.bias",
+      "down_blocks.0.resnets.0.norm2.weight",
+      "down_blocks.0.resnets.0.norm2.bias",
+      "down_blocks.0.resnets.0.conv2.weight",
+      "down_blocks.0.resnets.0.conv2.bias",
+      "controlnet_down_blocks.0.weight",
+      "controlnet_down_blocks.0.bias",
+      "controlnet_down_blocks.1.weight",
+      "controlnet_down_blocks.1.bias",
+      "controlnet_mid_block.weight",
+      "controlnet_mid_block.bias",
+      "mid_block.attentions.0.norm.weight",
+      "mid_block.attentions.0.norm.bias",
+      "mid_block.attentions.0.proj_in.weight",
+      "mid_block.attentions.0.proj_in.bias",
+      "mid_block.attentions.0.transformer_blocks.0.norm1.weight",
+      "mid_block.attentions.0.transformer_blocks.0.norm1.bias",
+      "mid_block.attentions.0.transformer_blocks.0.attn1.to_q.weight",
+      "mid_block.attentions.0.transformer_blocks.0.attn1.to_k.weight",
+      "mid_block.attentions.0.transformer_blocks.0.attn1.to_v.weight",
+      "mid_block.attentions.0.transformer_blocks.0.attn1.to_out.0.weight",
+      "mid_block.attentions.0.transformer_blocks.0.attn1.to_out.0.bias",
+      "mid_block.attentions.0.transformer_blocks.0.norm2.weight",
+      "mid_block.attentions.0.transformer_blocks.0.norm2.bias",
+      "mid_block.attentions.0.transformer_blocks.0.attn2.to_q.weight",
+      "mid_block.attentions.0.transformer_blocks.0.attn2.to_k.weight",
+      "mid_block.attentions.0.transformer_blocks.0.attn2.to_v.weight",
+      "mid_block.attentions.0.transformer_blocks.0.attn2.to_out.0.weight",
+      "mid_block.attentions.0.transformer_blocks.0.attn2.to_out.0.bias",
+      "mid_block.attentions.0.transformer_blocks.0.norm3.weight",
+      "mid_block.attentions.0.transformer_blocks.0.norm3.bias",
+      "mid_block.attentions.0.transformer_blocks.0.ff.net.0.proj.weight",
+      "mid_block.attentions.0.transformer_blocks.0.ff.net.0.proj.bias",
+      "mid_block.attentions.0.transformer_blocks.0.ff.net.2.weight",
+      "mid_block.attentions.0.transformer_blocks.0.ff.net.2.bias",
+      "mid_block.attentions.0.proj_out.weight",
+      "mid_block.attentions.0.proj_out.bias",
+      "mid_block.resnets.0.norm1.weight",
+      "mid_block.resnets.0.norm1.bias",
+      "mid_block.resnets.0.conv1.weight",
+      "mid_block.resnets.0.conv1.bias",
+      "mid_block.resnets.0.time_emb_proj.weight",
+      "mid_block.resnets.0.time_emb_proj.bias",
+      "mid_block.resnets.0.norm2.weight",
+      "mid_block.resnets.0.norm2.bias",
+      "mid_block.resnets.0.conv2.weight",
+      "mid_block.resnets.0.conv2.bias",
+      "mid_block.resnets.1.norm1.weight",
+      "mid_block.resnets.1.norm1.bias",
+      "mid_block.resnets.1.conv1.weight",
+      "mid_block.resnets.1.conv1.bias",
+      "mid_block.resnets.1.time_emb_proj.weight",
+      "mid_block.resnets.1.time_emb_proj.bias",
+      "mid_block.resnets.1.norm2.weight",
+      "mid_block.resnets.1.norm2.bias",
+      "mid_block.resnets.1.conv2.weight",
+      "mid_block.resnets.1.conv2.bias"
+    ],
+    "task_attention_batch_first": false,
+    "task_attention_dim": 320,
+    "task_attention_heads": 8,
+    "nonzero_synthetic_cond_projection_fuser_and_residual_heads": true
+  },
+  "cases": [
+    {
+      "batch": 2,
+      "control_indices": [
+        7
+      ],
+      "conditioning_scale": 1.0,
+      "guess_mode": false,
+      "control_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "task_attention_actual_input_shape": [
+        2,
+        2,
+        320
+      ],
+      "control_rgb_range": [
+        0.0,
+        0.949999988079071
+      ],
+      "residuals": [
+        {
+          "shape": [
+            2,
+            320,
+            4,
+            4
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "expected_abs_max": 3.887083053588867,
+          "actual_abs_max": 3.887083053588867
+        },
+        {
+          "shape": [
+            2,
+            320,
+            4,
+            4
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "expected_abs_max": 4.06696891784668,
+          "actual_abs_max": 4.06696891784668
+        }
+      ],
+      "mid_residual": {
+        "shape": [
+          2,
+          320,
+          4,
+          4
+        ],
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "expected_abs_max": 3.6077170372009277,
+        "actual_abs_max": 3.6077170372009277
+      },
+      "stage_comparisons": {
+        "time_proj": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 500.0,
+            "actual_abs_max": 500.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.9999982118606567,
+            "actual_abs_max": 0.9999982118606567
+          }
+        ],
+        "time_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.9999982118606567,
+            "actual_abs_max": 0.9999982118606567
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.42939573526382446,
+            "actual_abs_max": 0.42939573526382446
+          }
+        ],
+        "add_time_proj": [
+          {
+            "kind": "inputs",
+            "shape": [
+              12
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1152.0,
+            "actual_abs_max": 1152.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              12,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          }
+        ],
+        "add_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.635072946548462,
+            "actual_abs_max": 1.635072946548462
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.4827120304107666,
+            "actual_abs_max": 0.4827120304107666
+          }
+        ],
+        "control_type_proj": [
+          {
+            "kind": "inputs",
+            "shape": [
+              16
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              16,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          }
+        ],
+        "control_add_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.47646692395210266,
+            "actual_abs_max": 0.47646692395210266
+          }
+        ],
+        "conv_in": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              4,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 2.915449857711792,
+            "actual_abs_max": 2.915449857711792
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.9288303852081299,
+            "actual_abs_max": 1.9288303852081299
+          }
+        ],
+        "controlnet_cond_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              3,
+              32,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.949999988079071,
+            "actual_abs_max": 0.949999988079071
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.07416251301765442,
+            "actual_abs_max": 0.07416251301765442
+          }
+        ],
+        "transformer_layes.0.attn": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.5131585597991943,
+            "actual_abs_max": 3.5131585597991943
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.5131585597991943,
+            "actual_abs_max": 3.5131585597991943
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.5131585597991943,
+            "actual_abs_max": 3.5131585597991943
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.4315470457077026,
+            "actual_abs_max": 1.4315470457077026
+          }
+        ],
+        "transformer_layes.0": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 60.542457580566406,
+            "actual_abs_max": 60.542457580566406
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 60.5963134765625,
+            "actual_abs_max": 60.5963134765625
+          }
+        ],
+        "spatial_ch_projs": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 60.5963134765625,
+            "actual_abs_max": 60.5963134765625
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 17.636035919189453,
+            "actual_abs_max": 17.636035919189453
+          }
+        ],
+        "down_blocks.0": [
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.285938262939453,
+            "actual_abs_max": 19.285938262939453
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.285938262939453,
+            "actual_abs_max": 19.285938262939453
+          }
+        ],
+        "mid_block": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.285938262939453,
+            "actual_abs_max": 19.285938262939453
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.810562014579773,
+            "actual_abs_max": 0.810562014579773
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.76605796813965,
+            "actual_abs_max": 19.76605796813965
+          }
+        ],
+        "controlnet_down_blocks.0": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 18.505970001220703,
+            "actual_abs_max": 18.505970001220703
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.887083053588867,
+            "actual_abs_max": 3.887083053588867
+          }
+        ],
+        "controlnet_down_blocks.1": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.285938262939453,
+            "actual_abs_max": 19.285938262939453
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 4.06696891784668,
+            "actual_abs_max": 4.06696891784668
+          }
+        ],
+        "controlnet_mid_block": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.76605796813965,
+            "actual_abs_max": 19.76605796813965
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.6077170372009277,
+            "actual_abs_max": 3.6077170372009277
+          }
+        ]
+      },
+      "max_abs_error": 0.0
+    },
+    {
+      "batch": 1,
+      "control_indices": [
+        7
+      ],
+      "conditioning_scale": 1.0,
+      "guess_mode": false,
+      "control_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "task_attention_actual_input_shape": [
+        1,
+        2,
+        320
+      ],
+      "control_rgb_range": [
+        0.0,
+        0.949999988079071
+      ],
+      "residuals": [
+        {
+          "shape": [
+            1,
+            320,
+            4,
+            4
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "expected_abs_max": 3.8083889484405518,
+          "actual_abs_max": 3.8083889484405518
+        },
+        {
+          "shape": [
+            1,
+            320,
+            4,
+            4
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "expected_abs_max": 4.06696891784668,
+          "actual_abs_max": 4.06696891784668
+        }
+      ],
+      "mid_residual": {
+        "shape": [
+          1,
+          320,
+          4,
+          4
+        ],
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "expected_abs_max": 3.584750175476074,
+        "actual_abs_max": 3.584750175476074
+      },
+      "stage_comparisons": {
+        "time_proj": [
+          {
+            "kind": "inputs",
+            "shape": [
+              1
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 500.0,
+            "actual_abs_max": 500.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              1,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.9999982118606567,
+            "actual_abs_max": 0.9999982118606567
+          }
+        ],
+        "time_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              1,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.9999982118606567,
+            "actual_abs_max": 0.9999982118606567
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              1,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.4293958246707916,
+            "actual_abs_max": 0.4293958246707916
+          }
+        ],
+        "add_time_proj": [
+          {
+            "kind": "inputs",
+            "shape": [
+              6
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1152.0,
+            "actual_abs_max": 1152.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              6,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          }
+        ],
+        "add_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              1,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.611626386642456,
+            "actual_abs_max": 1.611626386642456
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              1,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.4827122390270233,
+            "actual_abs_max": 0.4827122390270233
+          }
+        ],
+        "control_type_proj": [
+          {
+            "kind": "inputs",
+            "shape": [
+              8
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              8,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          }
+        ],
+        "control_add_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              1,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              1,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.4764667749404907,
+            "actual_abs_max": 0.4764667749404907
+          }
+        ],
+        "conv_in": [
+          {
+            "kind": "inputs",
+            "shape": [
+              1,
+              4,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.9913434982299805,
+            "actual_abs_max": 1.9913434982299805
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              1,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.9124467372894287,
+            "actual_abs_max": 1.9124467372894287
+          }
+        ],
+        "controlnet_cond_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              1,
+              3,
+              32,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.949999988079071,
+            "actual_abs_max": 0.949999988079071
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              1,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.07416233420372009,
+            "actual_abs_max": 0.07416233420372009
+          }
+        ],
+        "transformer_layes.0.attn": [
+          {
+            "kind": "inputs",
+            "shape": [
+              1,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.5131585597991943,
+            "actual_abs_max": 3.5131585597991943
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              1,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.5131585597991943,
+            "actual_abs_max": 3.5131585597991943
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              1,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.5131585597991943,
+            "actual_abs_max": 3.5131585597991943
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              1,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.4315471649169922,
+            "actual_abs_max": 1.4315471649169922
+          }
+        ],
+        "transformer_layes.0": [
+          {
+            "kind": "inputs",
+            "shape": [
+              1,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 60.542457580566406,
+            "actual_abs_max": 60.542457580566406
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              1,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 60.5963134765625,
+            "actual_abs_max": 60.5963134765625
+          }
+        ],
+        "spatial_ch_projs": [
+          {
+            "kind": "inputs",
+            "shape": [
+              1,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 60.5963134765625,
+            "actual_abs_max": 60.5963134765625
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              1,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 17.636035919189453,
+            "actual_abs_max": 17.636035919189453
+          }
+        ],
+        "down_blocks.0": [
+          {
+            "kind": "outputs",
+            "shape": [
+              1,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.285938262939453,
+            "actual_abs_max": 19.285938262939453
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              1,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.285938262939453,
+            "actual_abs_max": 19.285938262939453
+          }
+        ],
+        "mid_block": [
+          {
+            "kind": "inputs",
+            "shape": [
+              1,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.285938262939453,
+            "actual_abs_max": 19.285938262939453
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              1,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.8105624914169312,
+            "actual_abs_max": 0.8105624914169312
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              1,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.53531265258789,
+            "actual_abs_max": 19.53531265258789
+          }
+        ],
+        "controlnet_down_blocks.0": [
+          {
+            "kind": "inputs",
+            "shape": [
+              1,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 18.486988067626953,
+            "actual_abs_max": 18.486988067626953
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              1,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.8083889484405518,
+            "actual_abs_max": 3.8083889484405518
+          }
+        ],
+        "controlnet_down_blocks.1": [
+          {
+            "kind": "inputs",
+            "shape": [
+              1,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.285938262939453,
+            "actual_abs_max": 19.285938262939453
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              1,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 4.06696891784668,
+            "actual_abs_max": 4.06696891784668
+          }
+        ],
+        "controlnet_mid_block": [
+          {
+            "kind": "inputs",
+            "shape": [
+              1,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.53531265258789,
+            "actual_abs_max": 19.53531265258789
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              1,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.584750175476074,
+            "actual_abs_max": 3.584750175476074
+          }
+        ]
+      },
+      "max_abs_error": 0.0
+    },
+    {
+      "batch": 2,
+      "control_indices": [
+        3
+      ],
+      "conditioning_scale": 1.0,
+      "guess_mode": false,
+      "control_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "task_attention_actual_input_shape": [
+        2,
+        2,
+        320
+      ],
+      "control_rgb_range": [
+        0.0,
+        0.9230769276618958
+      ],
+      "residuals": [
+        {
+          "shape": [
+            2,
+            320,
+            4,
+            4
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "expected_abs_max": 3.6179912090301514,
+          "actual_abs_max": 3.6179912090301514
+        },
+        {
+          "shape": [
+            2,
+            320,
+            4,
+            4
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "expected_abs_max": 3.2626726627349854,
+          "actual_abs_max": 3.2626726627349854
+        }
+      ],
+      "mid_residual": {
+        "shape": [
+          2,
+          320,
+          4,
+          4
+        ],
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "expected_abs_max": 3.565908193588257,
+        "actual_abs_max": 3.565908193588257
+      },
+      "stage_comparisons": {
+        "time_proj": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 500.0,
+            "actual_abs_max": 500.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.9999982118606567,
+            "actual_abs_max": 0.9999982118606567
+          }
+        ],
+        "time_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.9999982118606567,
+            "actual_abs_max": 0.9999982118606567
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.42939573526382446,
+            "actual_abs_max": 0.42939573526382446
+          }
+        ],
+        "add_time_proj": [
+          {
+            "kind": "inputs",
+            "shape": [
+              12
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1152.0,
+            "actual_abs_max": 1152.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              12,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          }
+        ],
+        "add_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.635072946548462,
+            "actual_abs_max": 1.635072946548462
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.4827120304107666,
+            "actual_abs_max": 0.4827120304107666
+          }
+        ],
+        "control_type_proj": [
+          {
+            "kind": "inputs",
+            "shape": [
+              16
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              16,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          }
+        ],
+        "control_add_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.46076080203056335,
+            "actual_abs_max": 0.46076080203056335
+          }
+        ],
+        "conv_in": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              4,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 2.915449857711792,
+            "actual_abs_max": 2.915449857711792
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.9288303852081299,
+            "actual_abs_max": 1.9288303852081299
+          }
+        ],
+        "controlnet_cond_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              3,
+              32,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.9230769276618958,
+            "actual_abs_max": 0.9230769276618958
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.07416504621505737,
+            "actual_abs_max": 0.07416504621505737
+          }
+        ],
+        "transformer_layes.0.attn": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.126699686050415,
+            "actual_abs_max": 3.126699686050415
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.126699686050415,
+            "actual_abs_max": 3.126699686050415
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.126699686050415,
+            "actual_abs_max": 3.126699686050415
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.234772801399231,
+            "actual_abs_max": 1.234772801399231
+          }
+        ],
+        "transformer_layes.0": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 51.80434036254883,
+            "actual_abs_max": 51.80434036254883
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 51.42200469970703,
+            "actual_abs_max": 51.42200469970703
+          }
+        ],
+        "spatial_ch_projs": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 51.42200469970703,
+            "actual_abs_max": 51.42200469970703
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 15.861263275146484,
+            "actual_abs_max": 15.861263275146484
+          }
+        ],
+        "down_blocks.0": [
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 16.80035400390625,
+            "actual_abs_max": 16.80035400390625
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 16.80035400390625,
+            "actual_abs_max": 16.80035400390625
+          }
+        ],
+        "mid_block": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 16.80035400390625,
+            "actual_abs_max": 16.80035400390625
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.7856010794639587,
+            "actual_abs_max": 0.7856010794639587
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 17.084672927856445,
+            "actual_abs_max": 17.084672927856445
+          }
+        ],
+        "controlnet_down_blocks.0": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 16.907285690307617,
+            "actual_abs_max": 16.907285690307617
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.6179912090301514,
+            "actual_abs_max": 3.6179912090301514
+          }
+        ],
+        "controlnet_down_blocks.1": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 16.80035400390625,
+            "actual_abs_max": 16.80035400390625
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.2626726627349854,
+            "actual_abs_max": 3.2626726627349854
+          }
+        ],
+        "controlnet_mid_block": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 17.084672927856445,
+            "actual_abs_max": 17.084672927856445
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.565908193588257,
+            "actual_abs_max": 3.565908193588257
+          }
+        ]
+      },
+      "max_abs_error": 0.0
+    },
+    {
+      "batch": 2,
+      "control_indices": [
+        7
+      ],
+      "conditioning_scale": 0.35,
+      "guess_mode": false,
+      "control_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "task_attention_actual_input_shape": [
+        2,
+        2,
+        320
+      ],
+      "control_rgb_range": [
+        0.0,
+        0.949999988079071
+      ],
+      "residuals": [
+        {
+          "shape": [
+            2,
+            320,
+            4,
+            4
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "expected_abs_max": 1.3604789972305298,
+          "actual_abs_max": 1.3604789972305298
+        },
+        {
+          "shape": [
+            2,
+            320,
+            4,
+            4
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "expected_abs_max": 1.4234391450881958,
+          "actual_abs_max": 1.4234391450881958
+        }
+      ],
+      "mid_residual": {
+        "shape": [
+          2,
+          320,
+          4,
+          4
+        ],
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "expected_abs_max": 1.2627009153366089,
+        "actual_abs_max": 1.2627009153366089
+      },
+      "stage_comparisons": {
+        "time_proj": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 500.0,
+            "actual_abs_max": 500.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.9999982118606567,
+            "actual_abs_max": 0.9999982118606567
+          }
+        ],
+        "time_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.9999982118606567,
+            "actual_abs_max": 0.9999982118606567
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.42939573526382446,
+            "actual_abs_max": 0.42939573526382446
+          }
+        ],
+        "add_time_proj": [
+          {
+            "kind": "inputs",
+            "shape": [
+              12
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1152.0,
+            "actual_abs_max": 1152.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              12,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          }
+        ],
+        "add_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.635072946548462,
+            "actual_abs_max": 1.635072946548462
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.4827120304107666,
+            "actual_abs_max": 0.4827120304107666
+          }
+        ],
+        "control_type_proj": [
+          {
+            "kind": "inputs",
+            "shape": [
+              16
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              16,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          }
+        ],
+        "control_add_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.47646692395210266,
+            "actual_abs_max": 0.47646692395210266
+          }
+        ],
+        "conv_in": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              4,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 2.915449857711792,
+            "actual_abs_max": 2.915449857711792
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.9288303852081299,
+            "actual_abs_max": 1.9288303852081299
+          }
+        ],
+        "controlnet_cond_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              3,
+              32,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.949999988079071,
+            "actual_abs_max": 0.949999988079071
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.07416251301765442,
+            "actual_abs_max": 0.07416251301765442
+          }
+        ],
+        "transformer_layes.0.attn": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.5131585597991943,
+            "actual_abs_max": 3.5131585597991943
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.5131585597991943,
+            "actual_abs_max": 3.5131585597991943
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.5131585597991943,
+            "actual_abs_max": 3.5131585597991943
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.4315470457077026,
+            "actual_abs_max": 1.4315470457077026
+          }
+        ],
+        "transformer_layes.0": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 60.542457580566406,
+            "actual_abs_max": 60.542457580566406
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 60.5963134765625,
+            "actual_abs_max": 60.5963134765625
+          }
+        ],
+        "spatial_ch_projs": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 60.5963134765625,
+            "actual_abs_max": 60.5963134765625
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 17.636035919189453,
+            "actual_abs_max": 17.636035919189453
+          }
+        ],
+        "down_blocks.0": [
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.285938262939453,
+            "actual_abs_max": 19.285938262939453
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.285938262939453,
+            "actual_abs_max": 19.285938262939453
+          }
+        ],
+        "mid_block": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.285938262939453,
+            "actual_abs_max": 19.285938262939453
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.810562014579773,
+            "actual_abs_max": 0.810562014579773
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.76605796813965,
+            "actual_abs_max": 19.76605796813965
+          }
+        ],
+        "controlnet_down_blocks.0": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 18.505970001220703,
+            "actual_abs_max": 18.505970001220703
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.887083053588867,
+            "actual_abs_max": 3.887083053588867
+          }
+        ],
+        "controlnet_down_blocks.1": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.285938262939453,
+            "actual_abs_max": 19.285938262939453
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 4.06696891784668,
+            "actual_abs_max": 4.06696891784668
+          }
+        ],
+        "controlnet_mid_block": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.76605796813965,
+            "actual_abs_max": 19.76605796813965
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.6077170372009277,
+            "actual_abs_max": 3.6077170372009277
+          }
+        ]
+      },
+      "max_abs_error": 0.0
+    },
+    {
+      "batch": 2,
+      "control_indices": [
+        7
+      ],
+      "conditioning_scale": 0.7,
+      "guess_mode": true,
+      "control_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "task_attention_actual_input_shape": [
+        2,
+        2,
+        320
+      ],
+      "control_rgb_range": [
+        0.0,
+        0.949999988079071
+      ],
+      "residuals": [
+        {
+          "shape": [
+            2,
+            320,
+            4,
+            4
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "expected_abs_max": 0.27209582924842834,
+          "actual_abs_max": 0.27209582924842834
+        },
+        {
+          "shape": [
+            2,
+            320,
+            4,
+            4
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "expected_abs_max": 0.9002619385719299,
+          "actual_abs_max": 0.9002619385719299
+        }
+      ],
+      "mid_residual": {
+        "shape": [
+          2,
+          320,
+          4,
+          4
+        ],
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "expected_abs_max": 2.5254018306732178,
+        "actual_abs_max": 2.5254018306732178
+      },
+      "stage_comparisons": {
+        "time_proj": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 500.0,
+            "actual_abs_max": 500.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.9999982118606567,
+            "actual_abs_max": 0.9999982118606567
+          }
+        ],
+        "time_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.9999982118606567,
+            "actual_abs_max": 0.9999982118606567
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.42939573526382446,
+            "actual_abs_max": 0.42939573526382446
+          }
+        ],
+        "add_time_proj": [
+          {
+            "kind": "inputs",
+            "shape": [
+              12
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1152.0,
+            "actual_abs_max": 1152.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              12,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          }
+        ],
+        "add_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.635072946548462,
+            "actual_abs_max": 1.635072946548462
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.4827120304107666,
+            "actual_abs_max": 0.4827120304107666
+          }
+        ],
+        "control_type_proj": [
+          {
+            "kind": "inputs",
+            "shape": [
+              16
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              16,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          }
+        ],
+        "control_add_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.47646692395210266,
+            "actual_abs_max": 0.47646692395210266
+          }
+        ],
+        "conv_in": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              4,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 2.915449857711792,
+            "actual_abs_max": 2.915449857711792
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.9288303852081299,
+            "actual_abs_max": 1.9288303852081299
+          }
+        ],
+        "controlnet_cond_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              3,
+              32,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.949999988079071,
+            "actual_abs_max": 0.949999988079071
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.07416251301765442,
+            "actual_abs_max": 0.07416251301765442
+          }
+        ],
+        "transformer_layes.0.attn": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.5131585597991943,
+            "actual_abs_max": 3.5131585597991943
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.5131585597991943,
+            "actual_abs_max": 3.5131585597991943
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.5131585597991943,
+            "actual_abs_max": 3.5131585597991943
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.4315470457077026,
+            "actual_abs_max": 1.4315470457077026
+          }
+        ],
+        "transformer_layes.0": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 60.542457580566406,
+            "actual_abs_max": 60.542457580566406
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 60.5963134765625,
+            "actual_abs_max": 60.5963134765625
+          }
+        ],
+        "spatial_ch_projs": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 60.5963134765625,
+            "actual_abs_max": 60.5963134765625
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 17.636035919189453,
+            "actual_abs_max": 17.636035919189453
+          }
+        ],
+        "down_blocks.0": [
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.285938262939453,
+            "actual_abs_max": 19.285938262939453
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.285938262939453,
+            "actual_abs_max": 19.285938262939453
+          }
+        ],
+        "mid_block": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.285938262939453,
+            "actual_abs_max": 19.285938262939453
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.810562014579773,
+            "actual_abs_max": 0.810562014579773
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.76605796813965,
+            "actual_abs_max": 19.76605796813965
+          }
+        ],
+        "controlnet_down_blocks.0": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 18.505970001220703,
+            "actual_abs_max": 18.505970001220703
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.887083053588867,
+            "actual_abs_max": 3.887083053588867
+          }
+        ],
+        "controlnet_down_blocks.1": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.285938262939453,
+            "actual_abs_max": 19.285938262939453
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 4.06696891784668,
+            "actual_abs_max": 4.06696891784668
+          }
+        ],
+        "controlnet_mid_block": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 19.76605796813965,
+            "actual_abs_max": 19.76605796813965
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.6077170372009277,
+            "actual_abs_max": 3.6077170372009277
+          }
+        ]
+      },
+      "max_abs_error": 0.0
+    },
+    {
+      "batch": 2,
+      "control_indices": [
+        3,
+        7
+      ],
+      "conditioning_scale": 1.0,
+      "guess_mode": false,
+      "control_type": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "task_attention_actual_input_shape": [
+        2,
+        3,
+        320
+      ],
+      "control_rgb_range": [
+        0.0,
+        0.949999988079071
+      ],
+      "residuals": [
+        {
+          "shape": [
+            2,
+            320,
+            4,
+            4
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "expected_abs_max": 5.367260932922363,
+          "actual_abs_max": 5.367260932922363
+        },
+        {
+          "shape": [
+            2,
+            320,
+            4,
+            4
+          ],
+          "max_abs": 0.0,
+          "mean_abs": 0.0,
+          "expected_abs_max": 6.56898832321167,
+          "actual_abs_max": 6.56898832321167
+        }
+      ],
+      "mid_residual": {
+        "shape": [
+          2,
+          320,
+          4,
+          4
+        ],
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "expected_abs_max": 5.204687595367432,
+        "actual_abs_max": 5.204687595367432
+      },
+      "stage_comparisons": {
+        "time_proj": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 500.0,
+            "actual_abs_max": 500.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.9999982118606567,
+            "actual_abs_max": 0.9999982118606567
+          }
+        ],
+        "time_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.9999982118606567,
+            "actual_abs_max": 0.9999982118606567
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.42939573526382446,
+            "actual_abs_max": 0.42939573526382446
+          }
+        ],
+        "add_time_proj": [
+          {
+            "kind": "inputs",
+            "shape": [
+              12
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1152.0,
+            "actual_abs_max": 1152.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              12,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          }
+        ],
+        "add_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.635072946548462,
+            "actual_abs_max": 1.635072946548462
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.4827120304107666,
+            "actual_abs_max": 0.4827120304107666
+          }
+        ],
+        "control_type_proj": [
+          {
+            "kind": "inputs",
+            "shape": [
+              16
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              16,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          }
+        ],
+        "control_add_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.0,
+            "actual_abs_max": 1.0
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.4633919894695282,
+            "actual_abs_max": 0.4633919894695282
+          }
+        ],
+        "conv_in": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              4,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 2.915449857711792,
+            "actual_abs_max": 2.915449857711792
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.9288303852081299,
+            "actual_abs_max": 1.9288303852081299
+          }
+        ],
+        "controlnet_cond_embedding": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              3,
+              32,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.9230769276618958,
+            "actual_abs_max": 0.9230769276618958
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.07416504621505737,
+            "actual_abs_max": 0.07416504621505737
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              3,
+              32,
+              32
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.949999988079071,
+            "actual_abs_max": 0.949999988079071
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.07416251301765442,
+            "actual_abs_max": 0.07416251301765442
+          }
+        ],
+        "transformer_layes.0.attn": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              3,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.5131585597991943,
+            "actual_abs_max": 3.5131585597991943
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              3,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.5131585597991943,
+            "actual_abs_max": 3.5131585597991943
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              3,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 3.5131585597991943,
+            "actual_abs_max": 3.5131585597991943
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              3,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 1.4315470457077026,
+            "actual_abs_max": 1.4315470457077026
+          }
+        ],
+        "transformer_layes.0": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              3,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 60.542457580566406,
+            "actual_abs_max": 60.542457580566406
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              3,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 60.5963134765625,
+            "actual_abs_max": 60.5963134765625
+          }
+        ],
+        "spatial_ch_projs": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 51.42200469970703,
+            "actual_abs_max": 51.42200469970703
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 15.861263275146484,
+            "actual_abs_max": 15.861263275146484
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 60.5963134765625,
+            "actual_abs_max": 60.5963134765625
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 17.636035919189453,
+            "actual_abs_max": 17.636035919189453
+          }
+        ],
+        "down_blocks.0": [
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 24.851831436157227,
+            "actual_abs_max": 24.851831436157227
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 24.851831436157227,
+            "actual_abs_max": 24.851831436157227
+          }
+        ],
+        "mid_block": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 24.851831436157227,
+            "actual_abs_max": 24.851831436157227
+          },
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              1280
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 0.820340096950531,
+            "actual_abs_max": 0.820340096950531
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 25.44146728515625,
+            "actual_abs_max": 25.44146728515625
+          }
+        ],
+        "controlnet_down_blocks.0": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 24.16005516052246,
+            "actual_abs_max": 24.16005516052246
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 5.367260932922363,
+            "actual_abs_max": 5.367260932922363
+          }
+        ],
+        "controlnet_down_blocks.1": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 24.851831436157227,
+            "actual_abs_max": 24.851831436157227
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 6.56898832321167,
+            "actual_abs_max": 6.56898832321167
+          }
+        ],
+        "controlnet_mid_block": [
+          {
+            "kind": "inputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 25.44146728515625,
+            "actual_abs_max": 25.44146728515625
+          },
+          {
+            "kind": "outputs",
+            "shape": [
+              2,
+              320,
+              4,
+              4
+            ],
+            "max_abs": 0.0,
+            "mean_abs": 0.0,
+            "expected_abs_max": 5.204687595367432,
+            "actual_abs_max": 5.204687595367432
+          }
+        ]
+      },
+      "max_abs_error": 0.0
+    }
+  ],
+  "task_attention_axis_oracle": {
+    "explicit_qkv_softmax": {
+      "shape": [
+        2,
+        3,
+        320
+      ],
+      "max_abs": 1.9371509552001953e-07,
+      "mean_abs": 3.520325009276348e-08,
+      "expected_abs_max": 1.1574844121932983,
+      "actual_abs_max": 1.1574844121932983
+    },
+    "original_axes_preserved": true,
+    "actual_sequence_axis": "input dimension0 (CFG sample batch)",
+    "actual_mha_batch_axis": "input dimension1 (control/task slots)",
+    "batch_first_or_transpose_changes_output_max_abs": 1.2096065282821655,
+    "author_semantics_not_reinterpreted": true
+  },
+  "task3_vs_task7_output_delta_max_abs": 4.448439598083496,
+  "batch2_first_vs_batch1_output_delta_max_abs": 2.384185791015625e-06,
+  "single_control_output_scaling": [
+    {
+      "shape": [
+        2,
+        320,
+        4,
+        4
+      ],
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "expected_abs_max": 1.3604789972305298,
+      "actual_abs_max": 1.3604789972305298
+    },
+    {
+      "shape": [
+        2,
+        320,
+        4,
+        4
+      ],
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "expected_abs_max": 1.4234391450881958,
+      "actual_abs_max": 1.4234391450881958
+    },
+    {
+      "shape": [
+        2,
+        320,
+        4,
+        4
+      ],
+      "max_abs": 0.0,
+      "mean_abs": 0.0,
+      "expected_abs_max": 1.2627009153366089,
+      "actual_abs_max": 1.2627009153366089
+    }
+  ],
+  "max_abs_error": 1.9371509552001953e-07,
+  "threshold": 2e-05,
+  "scope_limits": [
+    "Shallow one320-channel downblock+midblock, tiny4x4latent/32x32RGB; real full-depth checkpoint not loaded.",
+    "Original author module imports common UNet/attention/embedding primitives from current installed Diffusers0.39.0; historical dependency-version drift is not tested.",
+    "Float32 CPU only; real MPS/halfprecision kernel behavior and dark generated-image cause remain unverified.",
+    "Multicontrol parity only equal scale1 with original ascending task order; heterogeneous native multicontrol scaling differs from original API and is not claimed."
+  ]
+}
