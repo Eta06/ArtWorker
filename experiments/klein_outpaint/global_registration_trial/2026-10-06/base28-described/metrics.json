@@ -1,0 +1,133 @@
+{
+  "raw_sha256": "46a23d0c963ae565061e8797190b78bb29e8b16a7013114204fd4961f1c34aa1",
+  "source_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+  "seconds": 0.42131283300022915,
+  "method": "global ECC registration from known square; reflected border; optional harmonic color collar",
+  "source_exact_all_composites": true,
+  "visual_quality_accepted": false,
+  "arms": {
+    "translation": {
+      "status": "completed",
+      "ecc": 0.9473667747907273,
+      "matrix_output_to_raw": [
+        [
+          1.0,
+          0.0,
+          0.01699252799153328
+        ],
+        [
+          0.0,
+          1.0,
+          -0.518890380859375
+        ]
+      ],
+      "source_before_mae_255": 16.31915537516276,
+      "source_after_mae_255": 15.446019490559896,
+      "reflected_border_fraction": 0.0008680555555555555,
+      "max_corner_shift_px": 0.519168540414315,
+      "color_transfer": {
+        "top": {
+          "residual_mean_rgb": [
+            -2.998685598373413,
+            -15.583162307739258,
+            -5.759847640991211
+          ],
+          "residual_abs_p95_255": 40.0,
+          "residual_max_255": 40.0
+        },
+        "bottom": {
+          "residual_mean_rgb": [
+            16.369140625,
+            3.2254459857940674,
+            3.5322792530059814
+          ],
+          "residual_abs_p95_255": 21.698406219482422,
+          "residual_max_255": 29.714866638183594
+        }
+      },
+      "visual_quality_accepted": false
+    },
+    "rigid": {
+      "status": "completed",
+      "ecc": 0.9461002279132915,
+      "matrix_output_to_raw": [
+        [
+          0.9999992251396179,
+          0.0012236954644322395,
+          -0.7556823492050171
+        ],
+        [
+          -0.0012236954644322395,
+          0.9999992251396179,
+          -0.1527099609375
+        ]
+      ],
+      "source_before_mae_255": 16.31915537516276,
+      "source_after_mae_255": 15.333510080973307,
+      "reflected_border_fraction": 0.0009528266059027778,
+      "max_corner_shift_px": 1.0848810729793295,
+      "color_transfer": {
+        "top": {
+          "residual_mean_rgb": [
+            -2.9379312992095947,
+            -15.56727409362793,
+            -5.736621856689453
+          ],
+          "residual_abs_p95_255": 40.0,
+          "residual_max_255": 40.0
+        },
+        "bottom": {
+          "residual_mean_rgb": [
+            16.325647354125977,
+            3.1612977981567383,
+            3.506499767303467
+          ],
+          "residual_abs_p95_255": 21.624286651611328,
+          "residual_max_255": 30.066665649414062
+        }
+      },
+      "visual_quality_accepted": false
+    },
+    "affine": {
+      "status": "completed",
+      "ecc": 0.9481370188493002,
+      "matrix_output_to_raw": [
+        [
+          0.998449981212616,
+          0.0011548034381121397,
+          -0.18062448501586914
+        ],
+        [
+          -0.0014702478656545281,
+          1.002159833908081,
+          -1.217254638671875
+        ]
+      ],
+      "source_before_mae_255": 16.31915537516276,
+      "source_after_mae_255": 15.404635111490885,
+      "reflected_border_fraction": 0.0022735595703125,
+      "max_corner_shift_px": 2.195747832259397,
+      "color_transfer": {
+        "top": {
+          "residual_mean_rgb": [
+            -3.192868232727051,
+            -15.847280502319336,
+            -5.946523666381836
+          ],
+          "residual_abs_p95_255": 40.0,
+          "residual_max_255": 40.0
+        },
+        "bottom": {
+          "residual_mean_rgb": [
+            16.547496795654297,
+            3.2802534103393555,
+            3.610799551010132
+          ],
+          "residual_abs_p95_255": 22.022377014160156,
+          "residual_max_255": 29.82538604736328
+        }
+      },
+      "visual_quality_accepted": false
+    }
+  }
+}
