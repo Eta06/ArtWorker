@@ -1,0 +1,587 @@
+{
+  "source_crop_xyxy": [
+    0,
+    0,
+    512,
+    128
+  ],
+  "known_patch_rect_xyxy": [
+    0,
+    320,
+    512,
+    448
+  ],
+  "generated_patch_rect_xyxy": [
+    0,
+    0,
+    512,
+    320
+  ],
+  "generated_final_rect_xyxy": [
+    0,
+    0,
+    512,
+    320
+  ],
+  "patch_size": [
+    512,
+    448
+  ],
+  "target_tokens": 896,
+  "known_pixels": 65536,
+  "unknown_pixels": 163840,
+  "known_tokens": 256,
+  "unknown_tokens": 640,
+  "mask_convention": "white255 regenerates; black0 preserves",
+  "source_strip_uint8_sha256": "cc7bae39aef984eb46923247e21ba582523badc4b1af30ac6caceba9d849beba",
+  "canvas_uint8_sha256": "21b30db9923a0a64ecbc3571c6b7cba687911c50cb29c3e22392807b4560c235",
+  "mask_uint8_sha256": "bed69e66a4817e7328f9e04c2cf63ad09360b98467580a524bbb07a5b14a1156",
+  "source_strip_byte_exact": true,
+  "no_rotation_flip_or_resize": true,
+  "canvas_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-local-context50-seed42/upper/input_canvas.png",
+  "mask_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-local-context50-seed42/upper/input_mask.png",
+  "source_strip_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-local-context50-seed42/upper/source_strip.png",
+  "canvas_sha256": "ff203880bbaad90f66658539e3e809fa407b61075ecb4afe3ff81fe22da220de",
+  "mask_sha256": "cfe04cf720dfbe7bd108256efa8f54875c829232b79b349a5cd311a7ea6f4638",
+  "strip_file_sha256": "af9a2e00a03f5a761425e156ea2d6d002f963f65ba4b7a27ebd6b860f427292b",
+  "prompt": "Continue the adjacent lakeside background upward into the masked region: continuous lake water, low shrubs and a thin metal guardrail, seen from the same high camera angle. Muted twilight colors and coarse film grain. One continuous texture and perspective.",
+  "prompt_sha256": "cbcd7402541fee5bde09198a3ecfe77e44450909ef13282087b9488742337078",
+  "status": "success",
+  "nfe": 50,
+  "target_token_forwards": 44800,
+  "joint_block_forwards": 950,
+  "single_block_forwards": 1900,
+  "step_metrics": [
+    {
+      "step": 1,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 1.0,
+      "seconds": 2.342669332982041,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 2,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.989014744758606,
+      "seconds": 2.3285828750231303,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 3,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.9778255224227905,
+      "seconds": 2.462479624984553,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 4,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.9664264917373657,
+      "seconds": 2.6268113749974873,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 5,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.9548118114471436,
+      "seconds": 2.83769983399543,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 6,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.9429754018783569,
+      "seconds": 2.9668179169821087,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 7,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.9309107065200806,
+      "seconds": 2.8238760830136016,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 8,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.9186110496520996,
+      "seconds": 2.732763917010743,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 9,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.9060695767402649,
+      "seconds": 2.705813125008717,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 10,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.8932790160179138,
+      "seconds": 2.859523499995703,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 11,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.8802317976951599,
+      "seconds": 2.82153158300207,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 12,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.8669204115867615,
+      "seconds": 2.8164312089793384,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 13,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.85333651304245,
+      "seconds": 2.930768958001863,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 14,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.8394715785980225,
+      "seconds": 2.8478801250166725,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 15,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.8253170251846313,
+      "seconds": 2.796437250013696,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 16,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.8108636140823364,
+      "seconds": 2.8606854169920553,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 17,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.7961015701293945,
+      "seconds": 2.931998415995622,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 18,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.7810211777687073,
+      "seconds": 3.0174802079855,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 19,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.7656119465827942,
+      "seconds": 2.927039166999748,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 20,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.7498629689216614,
+      "seconds": 2.952984999981709,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 21,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.7337628602981567,
+      "seconds": 2.976437375007663,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 22,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.71729975938797,
+      "seconds": 2.974477334006224,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 23,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.7004612684249878,
+      "seconds": 2.955517582973698,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 24,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.6832343339920044,
+      "seconds": 2.98542445799103,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 25,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.6656055450439453,
+      "seconds": 2.972947792004561,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 26,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.6475604772567749,
+      "seconds": 2.964754082990112,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 27,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.6290843486785889,
+      "seconds": 2.9382235829834826,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 28,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.6101614832878113,
+      "seconds": 2.9711965000024065,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 29,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.590775191783905,
+      "seconds": 2.9493228329811245,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 30,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.570908784866333,
+      "seconds": 2.964866708003683,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 31,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.5505437850952148,
+      "seconds": 2.9384767910232767,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 32,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.5296613574028015,
+      "seconds": 2.91904420798528,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 33,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.5082415342330933,
+      "seconds": 3.0464844579983037,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 34,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.4862632751464844,
+      "seconds": 2.9257946249854285,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 35,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.46370425820350647,
+      "seconds": 2.8751104999973904,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 36,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.44054150581359863,
+      "seconds": 2.925644833012484,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 37,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.4167502820491791,
+      "seconds": 2.995280584000284,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 38,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.39230456948280334,
+      "seconds": 2.8308059589762706,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 39,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.3671771287918091,
+      "seconds": 2.8727805000089575,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 40,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.34133896231651306,
+      "seconds": 2.8576877909945324,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 41,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.3147594630718231,
+      "seconds": 2.953763291996438,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 42,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.287406325340271,
+      "seconds": 2.749818541982677,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 43,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.2592453062534332,
+      "seconds": 2.8380780419975054,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 44,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.23023997247219086,
+      "seconds": 2.8226729170128237,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 45,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.20035186409950256,
+      "seconds": 2.9221772919991054,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 46,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.16953997313976288,
+      "seconds": 2.853749667003285,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 47,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.13776077330112457,
+      "seconds": 2.9304497920093127,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 48,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.10496815294027328,
+      "seconds": 3.0122695829777513,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 49,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.0711127445101738,
+      "seconds": 2.949884292000206,
+      "prediction_finite": true,
+      "target_finite": true
+    },
+    {
+      "step": 50,
+      "target_tokens": 896,
+      "input_channels": 384,
+      "sigma": 0.03614204376935959,
+      "seconds": 2.9775174999958836,
+      "prediction_finite": true,
+      "target_finite": true
+    }
+  ],
+  "phases": {
+    "prompt_encode_seconds": 0.720386833010707,
+    "source_conditioning_seconds": 0.2317718749982305,
+    "denoise_seconds": 143.49362695901073,
+    "raw_decode_seconds": 0.2649547910259571
+  },
+  "prompt_tokens": 512,
+  "static_shape": [
+    1,
+    896,
+    320
+  ],
+  "static_sha256_float32": "ea0339ed3ab807006438c3b3fc82384b5d05cf0711bd853d64c8a4b5aa515174",
+  "initial_noise_dtype": "mlx.core.float32",
+  "initial_noise_sha256_float32": "16fc82b582ee21ea099aed9e3ce9f9ffd236c7834a6a00664c310d7d7afde940",
+  "scheduler_sigmas": [
+    1.0,
+    0.989014744758606,
+    0.9778255224227905,
+    0.9664264917373657,
+    0.9548118114471436,
+    0.9429754018783569,
+    0.9309107065200806,
+    0.9186110496520996,
+    0.9060695767402649,
+    0.8932790160179138,
+    0.8802317976951599,
+    0.8669204115867615,
+    0.85333651304245,
+    0.8394715785980225,
+    0.8253170251846313,
+    0.8108636140823364,
+    0.7961015701293945,
+    0.7810211777687073,
+    0.7656119465827942,
+    0.7498629689216614,
+    0.7337628602981567,
+    0.71729975938797,
+    0.7004612684249878,
+    0.6832343339920044,
+    0.6656055450439453,
+    0.6475604772567749,
+    0.6290843486785889,
+    0.6101614832878113,
+    0.590775191783905,
+    0.570908784866333,
+    0.5505437850952148,
+    0.5296613574028015,
+    0.5082415342330933,
+    0.4862632751464844,
+    0.46370425820350647,
+    0.44054150581359863,
+    0.4167502820491791,
+    0.39230456948280334,
+    0.3671771287918091,
+    0.34133896231651306,
+    0.3147594630718231,
+    0.287406325340271,
+    0.2592453062534332,
+    0.23023997247219086,
+    0.20035186409950256,
+    0.16953997313976288,
+    0.13776077330112457,
+    0.10496815294027328,
+    0.0711127445101738,
+    0.03614204376935959,
+    0.0
+  ],
+  "denoising_mlx_peak_bytes": 8535048040,
+  "final_latents_sha256_float32": "28e2f10904291657235fbf38cbfdd8796578f8d56399cbf974218b526e24a384",
+  "final_latents_shape": [
+    1,
+    896,
+    64
+  ],
+  "final_latents_dtype": "mlx.core.float32",
+  "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-local-context50-seed42/upper/raw.png",
+  "raw_sha256": "48a5653386db98588ca69f104fd802e0014f1b13e275cd51688ac23b989add41",
+  "raw_known_source_mae_0_255": 9.882553100585938,
+  "raw_known_source_max_error_0_255": 99.0,
+  "raw_crop_saved_before_any_source_hardpaste": true
+}
