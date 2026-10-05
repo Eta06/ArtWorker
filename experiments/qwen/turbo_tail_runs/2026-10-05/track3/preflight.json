@@ -1,0 +1,207 @@
+{
+  "status": "preflight_passed",
+  "track": "track3",
+  "seed": 42,
+  "arms": [
+    "v021-six",
+    "v03-six",
+    "v03-nine-base-tail"
+  ],
+  "runs": {},
+  "phases": {},
+  "runner_sha256": "afefc6c531c1be2aeae2ec5052bfaccfd4899a30521111b13640e03f468b63b7",
+  "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+  "mlx_version": "0.32.3",
+  "missing_files": [],
+  "raw_nodes_by_arm": {
+    "v021-six": [
+      1.0,
+      0.9375,
+      0.875,
+      0.75,
+      0.5,
+      0.25
+    ],
+    "v03-six": [
+      1.0,
+      0.9375,
+      0.875,
+      0.75,
+      0.5,
+      0.25
+    ],
+    "v03-nine-base-tail": [
+      1.0,
+      0.9583,
+      0.9167,
+      0.875,
+      0.75,
+      0.5,
+      0.25,
+      0.16666666666666666,
+      0.08333333333333333
+    ]
+  },
+  "layout_smoke": {
+    "device": "CPU",
+    "model_weights_loaded": false,
+    "checks": [
+      {
+        "height": 640,
+        "target_tokens": 1280,
+        "prefix_length": 1041,
+        "window_xyxy": [
+          0,
+          256,
+          512,
+          896
+        ]
+      },
+      {
+        "height": 896,
+        "target_tokens": 1792,
+        "prefix_length": 1041,
+        "window_xyxy": [
+          0,
+          128,
+          512,
+          1024
+        ]
+      },
+      {
+        "height": 1152,
+        "target_tokens": 2304,
+        "prefix_length": 1041,
+        "window_xyxy": [
+          0,
+          0,
+          512,
+          1152
+        ]
+      }
+    ],
+    "status": "passed"
+  },
+  "insertion_smoke": {
+    "status": "passed",
+    "device": "CPU",
+    "model_weights_loaded": false,
+    "checks": [
+      {
+        "initializer": "source-edge",
+        "previous_tokens_exact": true,
+        "new_absolute_noise_matched": true,
+        "new_frontier_mapping_exact": true,
+        "inserted_tokens": 512
+      },
+      {
+        "initializer": "frontier",
+        "previous_tokens_exact": true,
+        "new_absolute_noise_matched": true,
+        "new_frontier_mapping_exact": true,
+        "inserted_tokens": 512
+      }
+    ]
+  },
+  "geometry_smoke": {
+    "status": "passed",
+    "device": "CPU",
+    "model_weights_loaded": false,
+    "source_rgba_unchanged": true,
+    "opaque_alpha_constant": true,
+    "center_crop_rows_exact": [
+      20,
+      52
+    ],
+    "changed_known_target_keeps_prefix_exact": true
+  },
+  "tail_scale_cache_smoke": {
+    "status": "passed",
+    "device": "CPU",
+    "checkpoint_weights_loaded": false,
+    "actual_zero_scale_equals_base": true,
+    "base_object_unwrap_exact": true,
+    "actual_loader_two_swaps_without_fusion": true,
+    "scale_event": {
+      "module_count": 1,
+      "previous_scales": [
+        1.0
+      ],
+      "new_scale": 0.0
+    },
+    "cache_events": [
+      {
+        "step": 1,
+        "scale": 1.0,
+        "cache_mode": "extract"
+      },
+      {
+        "step": 2,
+        "scale": 1.0,
+        "cache_mode": "reuse"
+      },
+      {
+        "step": 3,
+        "scale": 1.0,
+        "cache_mode": "reuse"
+      },
+      {
+        "step": 4,
+        "scale": 1.0,
+        "cache_mode": "reuse"
+      },
+      {
+        "step": 5,
+        "scale": 1.0,
+        "cache_mode": "reuse"
+      },
+      {
+        "step": 6,
+        "scale": 1.0,
+        "cache_mode": "reuse"
+      },
+      {
+        "step": 7,
+        "scale": 1.0,
+        "cache_mode": "reuse"
+      },
+      {
+        "step": 8,
+        "scale": 0.0,
+        "cache_mode": "extract"
+      },
+      {
+        "step": 9,
+        "scale": 0.0,
+        "cache_mode": "reuse"
+      }
+    ],
+    "cache_extract_steps": [
+      1,
+      8
+    ],
+    "nodes_six": [
+      1.0,
+      0.9375,
+      0.875,
+      0.75,
+      0.5,
+      0.25
+    ],
+    "nodes_nine": [
+      1.0,
+      0.9583,
+      0.9167,
+      0.875,
+      0.75,
+      0.5,
+      0.25,
+      0.16666666666666666,
+      0.08333333333333333
+    ]
+  },
+  "model_weights_loaded": false,
+  "device": "CPU",
+  "elapsed_seconds": 1.5022026670048945,
+  "process_peak_rss_bytes": 363069440
+}
