@@ -1,0 +1,99 @@
+{
+  "status": "passed",
+  "device": "CPU NumPy only",
+  "methods": {
+    "consistency": {
+      "arrays": {
+        "delta": {
+          "shape": [
+            1,
+            64,
+            1,
+            72,
+            32
+          ],
+          "dtype": "float32",
+          "sha256": "1e76c7e17ffe31a0cbddeb62aa1e8d6f49bb67c2e981f96b4645e0412e0792aa",
+          "max_abs_error": 0.0,
+          "bytes_exact": true
+        },
+        "moment": {
+          "shape": [
+            1,
+            64,
+            1,
+            72,
+            32
+          ],
+          "dtype": "float32",
+          "sha256": "6d6e21f02c07b2cbf5dc2606dc3182421eebf87fda684512e9fbe126c8e1101e",
+          "max_abs_error": 0.0,
+          "bytes_exact": true
+        },
+        "variance": {
+          "shape": [
+            1,
+            64,
+            1,
+            72,
+            32
+          ],
+          "dtype": "float32",
+          "sha256": "aa197272d9c8b4f730c6cc8328132f4cea2f89144f69a0298d3f24d46e6946c1",
+          "max_abs_error": 0.0,
+          "bytes_exact": true
+        }
+      },
+      "preserved_iteration04_npz": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/consistency/iteration04_state.npz",
+      "reference_npz": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint4-instrumented-v2/consistency/latest_iteration_state.npz",
+      "scope": "array bytes; NPZ metadata intentionally differs by runner/depth"
+    },
+    "derivative": {
+      "arrays": {
+        "delta": {
+          "shape": [
+            1,
+            64,
+            1,
+            72,
+            32
+          ],
+          "dtype": "float32",
+          "sha256": "ced8e82c724f77de68fe103c85f270195649ed869c5f165c12333f2b28abee9c",
+          "max_abs_error": 0.0,
+          "bytes_exact": true
+        },
+        "moment": {
+          "shape": [
+            1,
+            64,
+            1,
+            72,
+            32
+          ],
+          "dtype": "float32",
+          "sha256": "6fc05e9a5d59da7b7872561197673a993952dc094a96d7fbe1ab63a175d74e5b",
+          "max_abs_error": 0.0,
+          "bytes_exact": true
+        },
+        "variance": {
+          "shape": [
+            1,
+            64,
+            1,
+            72,
+            32
+          ],
+          "dtype": "float32",
+          "sha256": "62e3a654395646bb94133ad370e03b142f8d6c7b27e7909301a83ae7e2afad44",
+          "max_abs_error": 0.0,
+          "bytes_exact": true
+        }
+      },
+      "preserved_iteration04_npz": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint16-instrumented/derivative/iteration04_state.npz",
+      "reference_npz": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/projection_runs/2026-10-05/track3-saved-top32-checkpoint4-instrumented-v2/derivative/latest_iteration_state.npz",
+      "scope": "array bytes; NPZ metadata intentionally differs by runner/depth"
+    }
+  },
+  "reference_four_files_unchanged": true
+}
