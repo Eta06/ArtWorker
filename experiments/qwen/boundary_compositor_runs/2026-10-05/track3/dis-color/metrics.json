@@ -1,0 +1,64 @@
+{
+  "optical_flow": "dis",
+  "flow_tangent_extrapolation": false,
+  "harmonic_color": true,
+  "strip_pixels": 96,
+  "color_sigma_x": 6,
+  "residual_cap_255": 24,
+  "registration": {
+    "algorithm": "dis",
+    "cap_pixels": 6,
+    "source_before_mae_255": 3.4519666035970054,
+    "source_after_mae_255": 3.3682708740234375,
+    "source_top16_after_mae_255": 8.239339192708334,
+    "source_bottom16_after_mae_255": 4.6124267578125,
+    "flow_magnitude_p50": 0.0594286248087883,
+    "flow_magnitude_p95": 0.35897907614707947,
+    "flow_magnitude_max_before_cap": 1.7785340547561646
+  },
+  "exterior_flow": {
+    "top": {
+      "boundary_mean_dx": 0.00960616022348404,
+      "boundary_mean_dy": -0.19872894883155823,
+      "boundary_max_displacement": 1.7518121004104614
+    },
+    "bottom": {
+      "boundary_mean_dx": 0.10944713652133942,
+      "boundary_mean_dy": 0.03206567093729973,
+      "boundary_max_displacement": 0.6740412712097168
+    }
+  },
+  "color_residual": {
+    "top": {
+      "residual_mean_rgb": [
+        9.684267044067383,
+        9.406085968017578,
+        5.830003261566162
+      ],
+      "residual_abs_p95_255": 24.0,
+      "residual_max_255": 24.0
+    },
+    "bottom": {
+      "residual_mean_rgb": [
+        1.1819669008255005,
+        1.4685405492782593,
+        4.41995096206665
+      ],
+      "residual_abs_p95_255": 7.478267192840576,
+      "residual_max_255": 9.742023468017578
+    }
+  },
+  "processing_seconds": 0.008007750002434477,
+  "source_pixels_exact": true,
+  "untouched_outer_pixels_exact": true,
+  "generated_changed_pixel_fraction": 0.2669677734375,
+  "generated_mean_abs_change_255": 1.0528350830078126,
+  "top_join_mean_abs_adjacent_row_jump_255": 8.845703125,
+  "bottom_join_mean_abs_adjacent_row_jump_255": 4.638671875,
+  "collar_horizontal_gradient_energy_ratio": 0.7971495695267895,
+  "rgb_clipped_low_fraction_in_generated": 0.0,
+  "rgb_clipped_high_fraction_in_generated": 0.0,
+  "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality.",
+  "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track3/dis-color/composite.png",
+  "composite_sha256": "2753c7534da006c086a5380ef046d6bc725680c7f583dc65e82e3cc1c7d4d2e9"
+}
