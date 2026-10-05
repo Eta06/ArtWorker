@@ -1,0 +1,15 @@
+{
+  "scope": "CPU-created paired review artifacts; original model output pixels unchanged",
+  "files": {
+    "REPORT.md": "6ba28975fd6b75073872f5b196c11a430e157c5ec43d0ca36eb2a296e3e1ce65",
+    "REVIEW.md": "2793ac1ac2840cf27e0c5eee499895045e4ac81af55d7bfa8eaad24a7f705b2a",
+    "bottom-border-raw-composite.png": "8ff97fd42b74528e7bddd1332fc15fdbd9d80fd2d3eac33dca7006ee6df5964a",
+    "full-composite-comparison.png": "109b88db4e0cc952939f5e7df7d9fcd530e59c336391553a4fe5c50aa6df85df",
+    "full-raw-comparison.png": "118c7823d9c7aebb336ea6ca304279b30a3a28240b717e93e961b37909d45d8e",
+    "metrics.json": "2e41e98be828b18fc8096e9d1c0974c31e61a7a5f7220c64feb967480abb6bd6",
+    "rail-raw-composite.png": "e0664666d606594aa13ed8e152d5ec73caa503832c356ec7622ee71819d6000c",
+    "source-tangent-selected-features.png": "fde0a7fa9dd745ece667bfd83dd9cf11edaa4cc1875ca76f8aadd19e6321dfcd",
+    "source-tangent-untouched-crops.png": "ff4cc98ed267e6980470d67d4a1bfa06115111ac7129958d046d059e1bc2ae9b",
+    "upper-border-raw-composite.png": "133be089831b8b239aa89a8287a3b6dae8ff84100f3e79cd147365f3dff4b773"
+  }
+}
