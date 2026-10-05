@@ -1,0 +1,223 @@
+{
+  "status": "passed",
+  "kind": "CPU compositor artifact integrity only; no quality promotion",
+  "inputs_unchanged": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/tangent-canny/localized-hints/raw.png": true,
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track3/source_512.png": true,
+    "/Users/emir/Documents/ChatGPT/ArtWorker/Player/Resources/track3.jpg": true
+  },
+  "variants": {
+    "color": {
+      "shape": true,
+      "file_hash": true,
+      "source_exact": true,
+      "far_exterior_exact_to_raw": true
+    },
+    "dis-flow": {
+      "shape": true,
+      "file_hash": true,
+      "source_exact": true,
+      "far_exterior_exact_to_raw": true
+    },
+    "dis-color": {
+      "shape": true,
+      "file_hash": true,
+      "source_exact": true,
+      "far_exterior_exact_to_raw": true
+    },
+    "dis-tangent-color": {
+      "shape": true,
+      "file_hash": true,
+      "source_exact": true,
+      "far_exterior_exact_to_raw": true
+    },
+    "farneback-color": {
+      "shape": true,
+      "file_hash": true,
+      "source_exact": true,
+      "far_exterior_exact_to_raw": true
+    },
+    "baseline": {
+      "shape": true,
+      "file_hash": true,
+      "source_exact": true,
+      "far_exterior_exact_to_raw": true
+    }
+  },
+  "pixel_stats": {
+    "color": {
+      "source_pixels_exact": true,
+      "source_mae_255": 0.0,
+      "source_top16_mae_255": 0.0,
+      "source_bottom16_mae_255": 0.0,
+      "source_inner_mae_255": 0.0,
+      "boundaries": {
+        "top": {
+          "luminance_adjacent_row_mae_255": 11.047574999999998,
+          "luminance_adjacent_row_p90_255": 23.40192000000001,
+          "nearby_row_change_mae_255": 6.359264098011363,
+          "join_to_nearby_change_ratio": 1.73724110679013,
+          "x_texture_gradient_above_mean_255": 4.116392832681017,
+          "x_texture_gradient_below_mean_255": 3.979717049902152,
+          "above_luminance_mean_255": 78.93869536132812,
+          "below_luminance_mean_255": 88.79794060058593
+        },
+        "bottom": {
+          "luminance_adjacent_row_mae_255": 5.318334375,
+          "luminance_adjacent_row_p90_255": 10.787399999999998,
+          "nearby_row_change_mae_255": 3.3316150568181815,
+          "join_to_nearby_change_ratio": 1.5963231898943364,
+          "x_texture_gradient_above_mean_255": 3.614871648727984,
+          "x_texture_gradient_below_mean_255": 3.7732663649706453,
+          "above_luminance_mean_255": 50.61076872558593,
+          "below_luminance_mean_255": 47.01351264648437
+        }
+      }
+    },
+    "dis-flow": {
+      "source_pixels_exact": true,
+      "source_mae_255": 0.0,
+      "source_top16_mae_255": 0.0,
+      "source_bottom16_mae_255": 0.0,
+      "source_inner_mae_255": 0.0,
+      "boundaries": {
+        "top": {
+          "luminance_adjacent_row_mae_255": 17.6898984375,
+          "luminance_adjacent_row_p90_255": 37.28876000000001,
+          "nearby_row_change_mae_255": 6.424273277698864,
+          "join_to_nearby_change_ratio": 2.7536030415935877,
+          "x_texture_gradient_above_mean_255": 4.050393444227006,
+          "x_texture_gradient_below_mean_255": 3.979717049902152,
+          "above_luminance_mean_255": 79.04526030273436,
+          "below_luminance_mean_255": 88.79794060058593
+        },
+        "bottom": {
+          "luminance_adjacent_row_mae_255": 5.58808515625,
+          "luminance_adjacent_row_p90_255": 12.293599999999996,
+          "nearby_row_change_mae_255": 3.1100442649147726,
+          "join_to_nearby_change_ratio": 1.7967863735222867,
+          "x_texture_gradient_above_mean_255": 3.614871648727984,
+          "x_texture_gradient_below_mean_255": 3.300213258317025,
+          "above_luminance_mean_255": 50.61076872558593,
+          "below_luminance_mean_255": 47.89314970703125
+        }
+      }
+    },
+    "dis-color": {
+      "source_pixels_exact": true,
+      "source_mae_255": 0.0,
+      "source_top16_mae_255": 0.0,
+      "source_bottom16_mae_255": 0.0,
+      "source_inner_mae_255": 0.0,
+      "boundaries": {
+        "top": {
+          "luminance_adjacent_row_mae_255": 14.70380234375,
+          "luminance_adjacent_row_p90_255": 30.3622,
+          "nearby_row_change_mae_255": 6.423712215909092,
+          "join_to_nearby_change_ratio": 2.288988337200766,
+          "x_texture_gradient_above_mean_255": 4.053042832681017,
+          "x_texture_gradient_below_mean_255": 3.979717049902152,
+          "above_luminance_mean_255": 79.81940336914062,
+          "below_luminance_mean_255": 88.79794060058593
+        },
+        "bottom": {
+          "luminance_adjacent_row_mae_255": 5.520286328125,
+          "luminance_adjacent_row_p90_255": 11.70798,
+          "nearby_row_change_mae_255": 3.105686647727273,
+          "join_to_nearby_change_ratio": 1.7774769171141973,
+          "x_texture_gradient_above_mean_255": 3.614871648727984,
+          "x_texture_gradient_below_mean_255": 3.301400562622309,
+          "above_luminance_mean_255": 50.61076872558593,
+          "below_luminance_mean_255": 46.37713481445312
+        }
+      }
+    },
+    "dis-tangent-color": {
+      "source_pixels_exact": true,
+      "source_mae_255": 0.0,
+      "source_top16_mae_255": 0.0,
+      "source_bottom16_mae_255": 0.0,
+      "source_inner_mae_255": 0.0,
+      "boundaries": {
+        "top": {
+          "luminance_adjacent_row_mae_255": 14.968787500000001,
+          "luminance_adjacent_row_p90_255": 30.78418,
+          "nearby_row_change_mae_255": 6.403552734375,
+          "join_to_nearby_change_ratio": 2.337575424286872,
+          "x_texture_gradient_above_mean_255": 4.058911986301369,
+          "x_texture_gradient_below_mean_255": 3.979717049902152,
+          "above_luminance_mean_255": 79.82108889160156,
+          "below_luminance_mean_255": 88.79794060058593
+        },
+        "bottom": {
+          "luminance_adjacent_row_mae_255": 5.52626328125,
+          "luminance_adjacent_row_p90_255": 11.567580000000005,
+          "nearby_row_change_mae_255": 3.102080007102273,
+          "join_to_nearby_change_ratio": 1.781470261436685,
+          "x_texture_gradient_above_mean_255": 3.614871648727984,
+          "x_texture_gradient_below_mean_255": 3.3100881604696673,
+          "above_luminance_mean_255": 50.61076872558593,
+          "below_luminance_mean_255": 46.36894716796875
+        }
+      }
+    },
+    "farneback-color": {
+      "source_pixels_exact": true,
+      "source_mae_255": 0.0,
+      "source_top16_mae_255": 0.0,
+      "source_bottom16_mae_255": 0.0,
+      "source_inner_mae_255": 0.0,
+      "boundaries": {
+        "top": {
+          "luminance_adjacent_row_mae_255": 11.641749609375001,
+          "luminance_adjacent_row_p90_255": 24.50088,
+          "nearby_row_change_mae_255": 6.339912943892045,
+          "join_to_nearby_change_ratio": 1.8362633229200434,
+          "x_texture_gradient_above_mean_255": 4.025070523483366,
+          "x_texture_gradient_below_mean_255": 3.979717049902152,
+          "above_luminance_mean_255": 79.00331770019531,
+          "below_luminance_mean_255": 88.79794060058593
+        },
+        "bottom": {
+          "luminance_adjacent_row_mae_255": 5.185191796875,
+          "luminance_adjacent_row_p90_255": 10.574799999999996,
+          "nearby_row_change_mae_255": 3.1768425426136364,
+          "join_to_nearby_change_ratio": 1.6321840718643439,
+          "x_texture_gradient_above_mean_255": 3.614871648727984,
+          "x_texture_gradient_below_mean_255": 3.5070257827788645,
+          "above_luminance_mean_255": 50.61076872558593,
+          "below_luminance_mean_255": 46.55360991210937
+        }
+      }
+    },
+    "baseline": {
+      "source_pixels_exact": true,
+      "source_mae_255": 0.0,
+      "source_top16_mae_255": 0.0,
+      "source_bottom16_mae_255": 0.0,
+      "source_inner_mae_255": 0.0,
+      "boundaries": {
+        "top": {
+          "luminance_adjacent_row_mae_255": 15.08445078125,
+          "luminance_adjacent_row_p90_255": 29.584439999999994,
+          "nearby_row_change_mae_255": 6.357572088068181,
+          "join_to_nearby_change_ratio": 2.372674752608834,
+          "x_texture_gradient_above_mean_255": 4.10269319960861,
+          "x_texture_gradient_below_mean_255": 3.979717049902152,
+          "above_luminance_mean_255": 78.89414768066406,
+          "below_luminance_mean_255": 88.79794060058593
+        },
+        "bottom": {
+          "luminance_adjacent_row_mae_255": 5.552616796875,
+          "luminance_adjacent_row_p90_255": 11.643540000000003,
+          "nearby_row_change_mae_255": 3.3309181995738637,
+          "join_to_nearby_change_ratio": 1.666992842269548,
+          "x_texture_gradient_above_mean_255": 3.614871648727984,
+          "x_texture_gradient_below_mean_255": 3.7688364726027395,
+          "above_luminance_mean_255": 50.61076872558593,
+          "below_luminance_mean_255": 47.884886718749996
+        }
+      }
+    }
+  }
+}
