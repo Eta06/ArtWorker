@@ -1,0 +1,98 @@
+{
+  "status": "passed CPU independent readiness; runtime prompt and Metal schedule gates pending",
+  "scope": "Independent read-only CPU assertions; actual before/after/ROI pixels directly inspected; zero model weights/GPU",
+  "script_sha256": {
+    "run_footer_conditioning_trial.py": "02bc8b36c2cfa415886b950162c9228f29f26a07f89cabc0a120b2b211122f44",
+    "footer_conditioning_inputs.py": "0ebf9162b920373395170f2dfaf63a33374832dea1058c26d87036e9dd789d8b",
+    "test_footer_conditioning_cpu.py": "45dedc07b19f76da0fd256e216d0399d9eb471aeca455c8576263ac8dd308f3a"
+  },
+  "baseline_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-local-context50-seed42",
+  "preflight_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/footer_probe/preflight",
+  "manual_roi": {
+    "source_xyxy": [
+      238,
+      470,
+      275,
+      509
+    ],
+    "donor_source_xyxy": [
+      191,
+      470,
+      228,
+      509
+    ],
+    "patch_xyxy": [
+      238,
+      86,
+      275,
+      125
+    ],
+    "roi_pixels": 1443,
+    "actual_changed_pixels": 1443,
+    "donor_offset_pixels": 47,
+    "manual_selection_not_generic_detector": true
+  },
+  "checks": {
+    "source_and_donor_bounds": true,
+    "roi_donor_equal_dimensions": true,
+    "same_rows_donor_exactly47left": true,
+    "patch_to_source_mapping": true,
+    "roi_entirely_known_128rows": true,
+    "saved_roi_is_declared_rectangle": true,
+    "preflight_before_exact_saved_canvas": true,
+    "actual_after_exact_declared_donor_clone": true,
+    "actual_rgb_diff_only_roi": true,
+    "actual_edit_nonempty": true,
+    "unknown_canvas_and_last3knownrows_exact": true,
+    "source_512_hash_matches_old_suite": true,
+    "saved_original_source_pixels_exact": true,
+    "generation_mask_file_exact": true,
+    "generation_mask_known0_unknown255": true,
+    "native_normalized_input_shape": true,
+    "native_normalized_changed_only_roi": true,
+    "native_normalized_unknown_exact0": true,
+    "native_packed_mask_saved_exact": true,
+    "ordered_native_loop_core_AST_exact": true,
+    "saved_noise_dtype_shape_hash": true,
+    "CPU_noise_restore_exact": true,
+    "stub_operands_0": true,
+    "native_step_independent_constant_velocity_0": true,
+    "stub_operands_17": true,
+    "native_step_independent_constant_velocity_17": true,
+    "stub_operands_49": true,
+    "native_step_independent_constant_velocity_49": true,
+    "exactly_one_transformer_call_per_step": true,
+    "whole_assembly_random_fixture_exact": true,
+    "assembly_inputs_unmodified": true,
+    "fresh_native_prompt_encode_gate_present": true,
+    "GPU_schedule_exact_gate_present": true,
+    "saved_noise_replay_no_new_draw": true,
+    "source_static_reencoded_native_fullcanvas": true,
+    "source_exact_reused_upper_new_raw_metadata_declared": true,
+    "CPU_preflight_marks_runtime_checks_pending": true,
+    "pinned_checkpoint_no_lora": true,
+    "fixed_steps_resolution_guidance": true,
+    "all_recorded_baseline_files_unchanged": true
+  },
+  "check_count": 40,
+  "defects": [],
+  "blocking_defect_found": false,
+  "visually_inspected": [
+    "footer_before_6x.png",
+    "footer_after_6x.png",
+    "footer_roi_6x.png"
+  ],
+  "visual_observation": "The original white GHG footer is removed from the copied conditioning canvas, replaced by same-row asphalt. The ROI covers the visible footer. This edited conditioning is not the displayed source.",
+  "pending_runtime_gates": [
+    "Exact fresh native prompt float32 values against both saved prompt arrays, using actual native dtypes.",
+    "Exact Metal51-sigma values against saved baseline.",
+    "Same native256 mask channels after actual checkpoint VAE conditioning; source64 differences are allowed beyond ROI.",
+    "Actual inference output visual quality and baseline/source hash recheck at completion."
+  ],
+  "limitations": [
+    "No actual model inference was run; no output quality or matching inference trajectory claim.",
+    "Full composite upper320 is reused from baseline; only lower50 steps are newly computed.",
+    "The footer ROI is manually selected, and the donor clone is a diagnostic conditioning intervention. It is not a general footer-removal system."
+  ],
+  "cpu_schedule_max_abs_from_saved": 5.960464477539063e-08
+}
