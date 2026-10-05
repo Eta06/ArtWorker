@@ -1,0 +1,27 @@
+{
+  "command": [
+    "experiments/qwen/.venv/bin/python",
+    "experiments/qwen/controlnet_port/run_growing_localized_control_trial.py",
+    "--track",
+    "track3",
+    "--control-scales",
+    "0",
+    "0.5",
+    "1",
+    "--modes",
+    "tangent-canny",
+    "--structural-support",
+    "tangent",
+    "--output",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6"
+  ],
+  "cwd": "/Users/emir/Documents/ChatGPT/ArtWorker",
+  "code_sha256": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_growing_localized_control_trial.py": "6158d3812e811af840df0e5bdb300c5191b3e743b2572013bbdfdf75c39ea965"
+  },
+  "timeout_seconds": 1200.0,
+  "pid": 99285,
+  "status": "success",
+  "exit_code": 0,
+  "elapsed_seconds": 211.1848900830082
+}
