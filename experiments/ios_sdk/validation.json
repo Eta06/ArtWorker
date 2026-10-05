@@ -1,0 +1,19 @@
+{
+  "date_utc": "2026-09-30T00:47:04.577376+00:00",
+  "status": "build_succeeded",
+  "xcode": "Xcode 27.0\nBuild version 27A266a",
+  "destination": "generic/platform=iOS Simulator",
+  "sdk": "iOS Simulator 27.0",
+  "architectures": {
+    "arm64": {
+      "compiled_after_source_edit": true
+    },
+    "x86_64": {
+      "compiled_after_source_edit": true
+    }
+  },
+  "sdk_revision": "8868a9685d9c299816f43ef53efd455ffca437f0",
+  "upstream_revision": "d473a2f148b3e7dc9b90d0b7cfccc5cda999eb66",
+  "source_sha256": "818121dc90c52b1b75eaee4e32988d64fcab60d0b1a90fae655fbc91bcf87b43",
+  "scope": "Compile only. No model weights, inference, or physical-device benchmark."
+}
