@@ -1,0 +1,151 @@
+{
+  "runs": [
+    {
+      "trial": "qwen21-base-40step-q4",
+      "track": "track1",
+      "metrics_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-base-40step-q4/track1/metrics.json",
+      "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-base-40step-q4/track1/raw.png",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-base-40step-q4/track1/composite.png",
+      "elapsed_seconds": 405.6409296670008,
+      "source_pixels_exact": true,
+      "pipeline": "Flow Euler per-step known-latent preservation; not LanPaint",
+      "quantization_bits": 4,
+      "adapter_rank": null,
+      "known_padding": "gray"
+    },
+    {
+      "trial": "qwen21-base-40step-q4",
+      "track": "track2",
+      "metrics_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-base-40step-q4/track2/metrics.json",
+      "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-base-40step-q4/track2/raw.png",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-base-40step-q4/track2/composite.png",
+      "elapsed_seconds": 192.2909284999987,
+      "source_pixels_exact": true,
+      "pipeline": "Flow Euler per-step known-latent preservation; not LanPaint",
+      "quantization_bits": 4,
+      "adapter_rank": null,
+      "known_padding": "gray"
+    },
+    {
+      "trial": "qwen21-base-40step-q4",
+      "track": "track3",
+      "metrics_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-base-40step-q4/track3/metrics.json",
+      "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-base-40step-q4/track3/raw.png",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-base-40step-q4/track3/composite.png",
+      "elapsed_seconds": 334.9152479580007,
+      "source_pixels_exact": true,
+      "pipeline": "Flow Euler per-step known-latent preservation; not LanPaint",
+      "quantization_bits": 4,
+      "adapter_rank": null,
+      "known_padding": "gray"
+    },
+    {
+      "trial": "qwen21-viggle-v021-r128-6step-q4",
+      "track": "track1",
+      "metrics_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r128-6step-q4/track1/metrics.json",
+      "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r128-6step-q4/track1/raw.png",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r128-6step-q4/track1/composite.png",
+      "elapsed_seconds": 69.2741267500005,
+      "source_pixels_exact": true,
+      "pipeline": "Flow Euler per-step known-latent preservation; not LanPaint",
+      "quantization_bits": 4,
+      "adapter_rank": 128,
+      "known_padding": "gray"
+    },
+    {
+      "trial": "qwen21-viggle-v021-r128-6step-q4",
+      "track": "track2",
+      "metrics_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r128-6step-q4/track2/metrics.json",
+      "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r128-6step-q4/track2/raw.png",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r128-6step-q4/track2/composite.png",
+      "elapsed_seconds": 54.6624269999993,
+      "source_pixels_exact": true,
+      "pipeline": "Flow Euler per-step known-latent preservation; not LanPaint",
+      "quantization_bits": 4,
+      "adapter_rank": 128,
+      "known_padding": "gray"
+    },
+    {
+      "trial": "qwen21-viggle-v021-r128-6step-q4",
+      "track": "track3",
+      "metrics_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r128-6step-q4/track3/metrics.json",
+      "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r128-6step-q4/track3/raw.png",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r128-6step-q4/track3/composite.png",
+      "elapsed_seconds": 52.72794408399932,
+      "source_pixels_exact": true,
+      "pipeline": "Flow Euler per-step known-latent preservation; not LanPaint",
+      "quantization_bits": 4,
+      "adapter_rank": 128,
+      "known_padding": "gray"
+    },
+    {
+      "trial": "qwen21-viggle-v021-r256-6step-knownedge-q4",
+      "track": "track3",
+      "metrics_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r256-6step-knownedge-q4/track3/metrics.json",
+      "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r256-6step-knownedge-q4/track3/raw.png",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r256-6step-knownedge-q4/track3/composite.png",
+      "elapsed_seconds": 46.143267583000124,
+      "source_pixels_exact": true,
+      "pipeline": "Flow Euler per-step known-latent preservation; not LanPaint",
+      "quantization_bits": 4,
+      "adapter_rank": 256,
+      "known_padding": "edge"
+    },
+    {
+      "trial": "qwen21-viggle-v021-r256-6step-q4",
+      "track": "track2",
+      "metrics_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r256-6step-q4/track2/metrics.json",
+      "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r256-6step-q4/track2/raw.png",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r256-6step-q4/track2/composite.png",
+      "elapsed_seconds": 45.17351629100085,
+      "source_pixels_exact": true,
+      "pipeline": "Flow Euler per-step known-latent preservation; not LanPaint",
+      "quantization_bits": 4,
+      "adapter_rank": 256,
+      "known_padding": "gray"
+    },
+    {
+      "trial": "qwen21-viggle-v021-r256-6step-q4",
+      "track": "track3",
+      "metrics_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r256-6step-q4/track3/metrics.json",
+      "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r256-6step-q4/track3/raw.png",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-viggle-v021-r256-6step-q4/track3/composite.png",
+      "elapsed_seconds": 48.230032208999546,
+      "source_pixels_exact": true,
+      "pipeline": "Flow Euler per-step known-latent preservation; not LanPaint",
+      "quantization_bits": 4,
+      "adapter_rank": 256,
+      "known_padding": "gray"
+    }
+  ],
+  "completed_runs": 9,
+  "diagnostic_runs": [
+    {
+      "trial": "qwen21-spatial-r256-full-q4",
+      "track": "track3",
+      "metrics_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-full-q4/track3/metrics.json",
+      "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-full-q4/track3/raw.png",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-full-q4/track3/composite.png",
+      "elapsed_seconds": 71.08131308300108,
+      "source_pixels_exact": true,
+      "pipeline": "known square-source latent flow bridge restored before/after every step",
+      "quantization_bits": 4,
+      "adapter_rank": 256,
+      "known_padding": "gray"
+    },
+    {
+      "trial": "qwen21-spatial-r256-grow-q4",
+      "track": "track3",
+      "metrics_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-grow-q4/track3/metrics.json",
+      "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-grow-q4/track3/raw.png",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-grow-q4/track3/composite.png",
+      "elapsed_seconds": 76.34678837499996,
+      "source_pixels_exact": true,
+      "pipeline": "known square-source latent flow bridge restored before/after every step",
+      "quantization_bits": 4,
+      "adapter_rank": 256,
+      "known_padding": "gray"
+    }
+  ],
+  "completed_diagnostic_runs": 2
+}
