@@ -1,0 +1,45 @@
+{
+  "optical_flow": "dis",
+  "flow_tangent_extrapolation": false,
+  "harmonic_color": false,
+  "strip_pixels": 96,
+  "warp_interpolation": "linear",
+  "color_sigma_x": 6,
+  "residual_cap_255": 24,
+  "registration": {
+    "algorithm": "dis",
+    "cap_pixels": 24.0,
+    "source_before_mae_255": 3.7639757792154946,
+    "source_after_mae_255": 3.6067352294921875,
+    "source_top16_after_mae_255": 5.356730143229167,
+    "source_bottom16_after_mae_255": 3.0430501302083335,
+    "flow_magnitude_p50": 0.08885453641414642,
+    "flow_magnitude_p95": 0.2905797064304352,
+    "flow_magnitude_max_before_cap": 1.0505857467651367
+  },
+  "exterior_flow": {
+    "top": {
+      "boundary_mean_dx": -0.03641875088214874,
+      "boundary_mean_dy": 0.05477802827954292,
+      "boundary_max_displacement": 0.5745887160301208
+    },
+    "bottom": {
+      "boundary_mean_dx": -0.007000390440225601,
+      "boundary_mean_dy": -0.09546791017055511,
+      "boundary_max_displacement": 0.4826236665248871
+    }
+  },
+  "processing_seconds": 0.031148583000685903,
+  "source_pixels_exact": true,
+  "untouched_outer_pixels_exact": true,
+  "generated_changed_pixel_fraction": 0.084002685546875,
+  "generated_mean_abs_change_255": 0.1001678466796875,
+  "top_join_mean_abs_adjacent_row_jump_255": 9.171875,
+  "bottom_join_mean_abs_adjacent_row_jump_255": 4.578776041666667,
+  "collar_horizontal_gradient_energy_ratio": 0.9422611638494837,
+  "rgb_clipped_low_fraction_in_generated": 0.0,
+  "rgb_clipped_high_fraction_in_generated": 0.0,
+  "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality.",
+  "composite_path": "experiments/klein_outpaint/compositor_trial/2026-10-06/base28-generic-baked/dis-flow/composite.png",
+  "composite_sha256": "dda643a43b2d3ecb5fa04a0b4d7e5f9dd8b4916e75006f29136ca008f651dc06"
+}
