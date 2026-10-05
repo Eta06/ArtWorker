@@ -1,0 +1,313 @@
+{
+  "status": "preflight_files_incomplete",
+  "track": "track3",
+  "seed": 42,
+  "steps": 50,
+  "guidance": 30.0,
+  "runner_sha256": "e63fac021c3e3849baeac7aeb5f41ae44c27a3cbda38a12520963c8955d8b6b3",
+  "phases": {},
+  "step_metrics": [],
+  "model_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4",
+  "official_model_repo": "black-forest-labs/FLUX.1-Fill-dev",
+  "official_example": "50 steps, guidance 30, max sequence length 512",
+  "compute_mode": "native full canvas every step",
+  "growing_compute": false,
+  "known_bridge": false,
+  "negative_branch": false,
+  "adapters": [],
+  "offline_environment": true,
+  "model_weights_loaded": false,
+  "research_use_only": true,
+  "inherited_model_license": "flux-1-dev-non-commercial-license",
+  "width": 512,
+  "height": 1152,
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "source_512_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track3/source_512.png",
+  "source_512_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+  "source_pixels_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+  "canvas_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/preflight/track3/input_canvas.png",
+  "canvas_sha256": "f1e4d8556cff94477a1d757bcbb5ee531e41edc0255bb34eed3f03aaa76432e1",
+  "mask_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/preflight/track3/input_mask.png",
+  "mask_sha256": "c4386579faf335ed709b14b461c6a843d0e58956e25ddfbe8d88e3a317f6dc70",
+  "mask_convention": "white 255 regenerates; black 0 preserves",
+  "unknown_input_normalized_rgb": "exact zero after image * (1-mask)",
+  "known_source_input_pixels_exact": true,
+  "checkpoint_inventory": {
+    "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4",
+    "complete": false,
+    "components": {
+      "transformer": [],
+      "vae": [],
+      "text_encoder": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4/text_encoder/0.safetensors",
+          "bytes": 69436741,
+          "expected_bytes": 69436741,
+          "header_sha256": "d23f77c7f7e9dcc96dc95178b1d9b5d0d542256ae96dd1dc9196fba14d89182f",
+          "tensor_count": 344,
+          "metadata": {
+            "mflux_version": "0.19.1",
+            "quantization_level": "4"
+          },
+          "x_embedder": {}
+        }
+      ],
+      "text_encoder_2": [
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4/text_encoder_2/0.safetensors",
+          "bytes": 2145878333,
+          "expected_bytes": 2145878333,
+          "header_sha256": "4af247efc7607e9f602727c5b49113227686bd78eb211415ffced30bb1fdf50f",
+          "tensor_count": 500,
+          "metadata": {
+            "mflux_version": "0.19.1",
+            "quantization_level": "4"
+          },
+          "x_embedder": {}
+        },
+        {
+          "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4/text_encoder_2/1.safetensors",
+          "bytes": 533312140,
+          "expected_bytes": 533312140,
+          "header_sha256": "607bc260c339d071186ff3bdc1a2e84db353bc57d07fb1ba7902f2e16f19532d",
+          "tensor_count": 128,
+          "metadata": {
+            "mflux_version": "0.19.1",
+            "quantization_level": "4"
+          },
+          "x_embedder": {}
+        }
+      ]
+    },
+    "missing": [
+      "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4/transformer/*.safetensors",
+      "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4/vae/*.safetensors"
+    ],
+    "total_weight_bytes": 2748627214
+  },
+  "checkpoint_manifest": {
+    "status": "downloading",
+    "verified": false,
+    "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4.manifest.json",
+    "manifest_sha256": "3774bd891cdc74a8a94f491f2c251f53edbce82bd388a0e4ae2261546309f8ef",
+    "repo": "mflux-community/flux-1-dev-fill-mflux-q4",
+    "revision": "eebfbaa12c95107169452c7d22622e04771192a3",
+    "payload_hashes_checked": false,
+    "issues": [
+      "Downloader manifest is not yet verified",
+      "Missing or incomplete manifest file: transformer/0.safetensors",
+      "Missing or incomplete manifest file: transformer/1.safetensors",
+      "Missing or incomplete manifest file: transformer/2.safetensors",
+      "Missing or incomplete manifest file: transformer/3.safetensors",
+      "Missing or incomplete manifest file: transformer/model.safetensors.index.json",
+      "Missing or incomplete manifest file: vae/0.safetensors",
+      "Missing or incomplete manifest file: vae/model.safetensors.index.json"
+    ],
+    "files": [
+      {
+        "path": ".gitattributes",
+        "expected_bytes": 1519,
+        "expected_lfs_sha256": null,
+        "exists": true
+      },
+      {
+        "path": "README.md",
+        "expected_bytes": 3178,
+        "expected_lfs_sha256": null,
+        "exists": true
+      },
+      {
+        "path": "manifest.json",
+        "expected_bytes": 78,
+        "expected_lfs_sha256": null,
+        "exists": true
+      },
+      {
+        "path": "text_encoder/0.safetensors",
+        "expected_bytes": 69436741,
+        "expected_lfs_sha256": "e7e95ac9350962fd99aa45abbadb5ccc6180b157db81dd5ec7552daab4c19b8a",
+        "exists": true
+      },
+      {
+        "path": "text_encoder/model.safetensors.index.json",
+        "expected_bytes": 25037,
+        "expected_lfs_sha256": null,
+        "exists": true
+      },
+      {
+        "path": "text_encoder_2/0.safetensors",
+        "expected_bytes": 2145878333,
+        "expected_lfs_sha256": "29c6a91691b7658e8ec72166831b3cf2b6a99af6ed6f1955d19bbc570c788caa",
+        "exists": true
+      },
+      {
+        "path": "text_encoder_2/1.safetensors",
+        "expected_bytes": 533312140,
+        "expected_lfs_sha256": "5068efe59422a70404ce892d364013bf3bd0c54fd25d43a7c4e52118d5d1b3a2",
+        "exists": true
+      },
+      {
+        "path": "text_encoder_2/model.safetensors.index.json",
+        "expected_bytes": 44072,
+        "expected_lfs_sha256": null,
+        "exists": true
+      },
+      {
+        "path": "tokenizer/tokenizer.json",
+        "expected_bytes": 3642073,
+        "expected_lfs_sha256": null,
+        "exists": true
+      },
+      {
+        "path": "tokenizer/tokenizer_config.json",
+        "expected_bytes": 389,
+        "expected_lfs_sha256": null,
+        "exists": true
+      },
+      {
+        "path": "tokenizer_2/tokenizer.json",
+        "expected_bytes": 2424069,
+        "expected_lfs_sha256": null,
+        "exists": true
+      },
+      {
+        "path": "tokenizer_2/tokenizer_config.json",
+        "expected_bytes": 2465,
+        "expected_lfs_sha256": null,
+        "exists": true
+      },
+      {
+        "path": "transformer/0.safetensors",
+        "expected_bytes": 2130179793,
+        "expected_lfs_sha256": "f2e699c7967523d7adf9e72d01acb2cb4cef7be9e90bca8adfb19600a41868e6",
+        "exists": false
+      },
+      {
+        "path": "transformer/1.safetensors",
+        "expected_bytes": 2141393739,
+        "expected_lfs_sha256": "a6e6dd21d2117774924b1b97120c03af6930efc90a994f8a19bd9e66db45b791",
+        "exists": false
+      },
+      {
+        "path": "transformer/2.safetensors",
+        "expected_bytes": 2130572511,
+        "expected_lfs_sha256": "1928844f7b403f57056b0669ee0e931f443bc0f7e460cbe6f18dbd403f470066",
+        "exists": false
+      },
+      {
+        "path": "transformer/3.safetensors",
+        "expected_bytes": 297627818,
+        "expected_lfs_sha256": "f320b6ec96ba0b47c16c40cc389c582fb37c932dfdc977bbae686ca51730300b",
+        "exists": false
+      },
+      {
+        "path": "transformer/model.safetensors.index.json",
+        "expected_bytes": 146869,
+        "expected_lfs_sha256": null,
+        "exists": false
+      },
+      {
+        "path": "vae/0.safetensors",
+        "expected_bytes": 164654179,
+        "expected_lfs_sha256": "51b57214f680a07b31863ed489fb8441ded062ce667bb0eacafe65e6e7c4f20f",
+        "exists": false
+      },
+      {
+        "path": "vae/model.safetensors.index.json",
+        "expected_bytes": 17386,
+        "expected_lfs_sha256": null,
+        "exists": false
+      }
+    ]
+  },
+  "prompt": "A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+  "prompt_sha256": "5b790c165cc0e856edff41f01b267a666ad5394779b240a2d635083ccba80dae",
+  "target_tokens_per_forward": 2304,
+  "planned_nfe": 50,
+  "planned_target_token_forwards": 115200,
+  "conditioning_channels": {
+    "noise": 64,
+    "masked_source": 64,
+    "pixel_mask": 256,
+    "total": 384
+  },
+  "conditioning_cpu_preflight": {
+    "status": "passed",
+    "device": "cpu",
+    "weights_loaded": false,
+    "downloads_required": false,
+    "checks": [
+      "white_unknown_black_known_and_threshold_128",
+      "latent_pack_unpack_4d_and_singleton_5d",
+      "all_8x8_pixel_channels_then_2x2_latent_patches",
+      "native_loading_resizing_masked_rgb_and_static_concat",
+      "512x1152_source_box_exact_resized_rgb_and_unknown_normalized_zero",
+      "missing_input_empty_conditioning_without_encode"
+    ],
+    "geometry": {
+      "width": 512,
+      "height": 1152,
+      "source_box": [
+        0,
+        320,
+        512,
+        832
+      ],
+      "source_box_convention": "half-open [left, top, right, bottom]",
+      "source_pixels_exact": true,
+      "known_pixels": 262144,
+      "unknown_pixels": 327680,
+      "known_token_rows": [
+        20,
+        52
+      ],
+      "known_normalized_rgb_max_abs_error": 0.0,
+      "unknown_normalized_rgb": 0.0,
+      "normalized_black_rgb": -1.0,
+      "mock_vae_shape": [
+        1,
+        16,
+        1,
+        144,
+        64
+      ],
+      "static_shape": [
+        1,
+        2304,
+        320
+      ],
+      "masked_source_channels": 64,
+      "mask_channels": 256,
+      "transformer_input_shape": [
+        1,
+        2304,
+        384
+      ]
+    },
+    "scope": "conditioning parity only; no inference or generated-image quality test"
+  },
+  "tokenizer_preflight": {
+    "clip": {
+      "max_length": 77,
+      "token_shape": [
+        1,
+        77
+      ]
+    },
+    "t5": {
+      "max_length": 512,
+      "token_shape": [
+        1,
+        512
+      ]
+    }
+  },
+  "device": "CPU",
+  "elapsed_seconds": 2.055383458005963,
+  "process_peak_rss_bytes": 478756864
+}
