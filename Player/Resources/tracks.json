@@ -1,0 +1,26 @@
+[
+  {
+    "id": "track1",
+    "title": "Un Día (One Day)",
+    "artist": "J. Balvin, Dua Lipa, Bad Bunny, Tainy",
+    "album": "Future Nostalgia",
+    "duration": 231.815375,
+    "hasCover": true
+  },
+  {
+    "id": "track2",
+    "title": "karambol",
+    "artist": "Murda, Motive",
+    "album": "karambol",
+    "duration": 207.214313,
+    "hasCover": true
+  },
+  {
+    "id": "track3",
+    "title": "Aklın Hep Bende",
+    "artist": "UZI, Motive, FT Kings",
+    "album": "Kan II",
+    "duration": 195.917917,
+    "hasCover": true
+  }
+]
