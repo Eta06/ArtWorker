@@ -1,0 +1,40 @@
+// !$*UTF8*$!
+{ archiveVersion = 1; classes = {}; objectVersion = 56; objects = {
+670EA0DA4AAF4415AFEF7DED = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SlimSlider.swift"; sourceTree = "<group>"; };
+8E5DE2B7292E41608D79017C = { isa = PBXBuildFile; fileRef = 670EA0DA4AAF4415AFEF7DED; };
+E818D95C911449009E4F3E9E = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArtWorkerApp.swift"; sourceTree = "<group>"; };
+1D1226AD9E824205868FB8AD = { isa = PBXBuildFile; fileRef = E818D95C911449009E4F3E9E; };
+0A6F7C7F16C64B249E22F923 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MusicPlayer.swift"; sourceTree = "<group>"; };
+572CE14D06794583BC1002F0 = { isa = PBXBuildFile; fileRef = 0A6F7C7F16C64B249E22F923; };
+CDBDB51419BD401DBA7E2632 = { isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerView.swift"; sourceTree = "<group>"; };
+EF655626068444418FBABD89 = { isa = PBXBuildFile; fileRef = CDBDB51419BD401DBA7E2632; };
+E62FDCD9683745EF97D7E7E3 = { isa = PBXFileReference; lastKnownFileType = text.json; path = "Resources/tracks.json"; sourceTree = "<group>"; };
+22D4AE8DB44F4DE1AF0B64C0 = { isa = PBXBuildFile; fileRef = E62FDCD9683745EF97D7E7E3; };
+8A489CFDA67343BDA1D74677 = { isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Resources/track1.mp3"; sourceTree = "<group>"; };
+4773A5F6BFE14F53AB39E268 = { isa = PBXBuildFile; fileRef = 8A489CFDA67343BDA1D74677; };
+0105107E73DC4491A3320A3D = { isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Resources/track1.jpg"; sourceTree = "<group>"; };
+96E0CA9B870F447BAC426E77 = { isa = PBXBuildFile; fileRef = 0105107E73DC4491A3320A3D; };
+EC6E3E21B7524CCE9816BAEE = { isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Resources/track2.mp3"; sourceTree = "<group>"; };
+25BC741BC4114C83925A4742 = { isa = PBXBuildFile; fileRef = EC6E3E21B7524CCE9816BAEE; };
+91B51BA85C864238B76D9DA4 = { isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Resources/track2.jpg"; sourceTree = "<group>"; };
+7CEC6B59D5FB42A697173DEC = { isa = PBXBuildFile; fileRef = 91B51BA85C864238B76D9DA4; };
+0B1A36C1680E42B8907EBF2E = { isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Resources/track3.mp3"; sourceTree = "<group>"; };
+F32FF0EA60914833AAD5F3BC = { isa = PBXBuildFile; fileRef = 0B1A36C1680E42B8907EBF2E; };
+C02B07B0E97F4418BA5CAD08 = { isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Resources/track3.jpg"; sourceTree = "<group>"; };
+7793290A921746D1B102589B = { isa = PBXBuildFile; fileRef = C02B07B0E97F4418BA5CAD08; };
+FEAD60A6B92A460997861223 = { isa = PBXFileReference; explicitFileType = wrapper.application; path = ArtWorker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+18D1536AF6E24122A69C1D92 = { isa = PBXGroup; children = (670EA0DA4AAF4415AFEF7DED,E818D95C911449009E4F3E9E,0A6F7C7F16C64B249E22F923,CDBDB51419BD401DBA7E2632,E62FDCD9683745EF97D7E7E3,8A489CFDA67343BDA1D74677,0105107E73DC4491A3320A3D,EC6E3E21B7524CCE9816BAEE,91B51BA85C864238B76D9DA4,0B1A36C1680E42B8907EBF2E,C02B07B0E97F4418BA5CAD08); path = Player; sourceTree = "<group>"; };
+95B07944D69040B48E8BE37A = { isa = PBXGroup; children = (FEAD60A6B92A460997861223); name = Products; sourceTree = "<group>"; };
+30A47B3561C34157AEEC80BD = { isa = PBXGroup; children = (18D1536AF6E24122A69C1D92,95B07944D69040B48E8BE37A); sourceTree = "<group>"; };
+3026DCAD11DE405996F244F6 = { isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (8E5DE2B7292E41608D79017C,1D1226AD9E824205868FB8AD,572CE14D06794583BC1002F0,EF655626068444418FBABD89); runOnlyForDeploymentPostprocessing = 0; };
+4C6EC9BAAAF447AD89813BD1 = { isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (22D4AE8DB44F4DE1AF0B64C0,4773A5F6BFE14F53AB39E268,96E0CA9B870F447BAC426E77,25BC741BC4114C83925A4742,7CEC6B59D5FB42A697173DEC,F32FF0EA60914833AAD5F3BC,7793290A921746D1B102589B); runOnlyForDeploymentPostprocessing = 0; };
+6EC292845A524901BF01E31D = { isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+B4A68D406A394321AE46FB9A = { isa = XCBuildConfiguration; name = Debug; buildSettings = { SDKROOT = iphoneos; IPHONEOS_DEPLOYMENT_TARGET = 17.0; CLANG_ENABLE_MODULES = YES; SWIFT_VERSION = 5.0; }; };
+FFA78E11CFF04F328C0F2012 = { isa = XCBuildConfiguration; name = Debug; buildSettings = { PRODUCT_BUNDLE_IDENTIFIER = com.emir.artworker.player; PRODUCT_NAME = ArtWorker; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; INFOPLIST_KEY_UILaunchScreen_Generation = YES; INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent; INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait; TARGETED_DEVICE_FAMILY = 1; SWIFT_VERSION = 5.0; CODE_SIGN_STYLE = Automatic; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; }; };
+6A2E334306A347C88EF0FDEC = { isa = XCBuildConfiguration; name = Release; buildSettings = { SDKROOT = iphoneos; IPHONEOS_DEPLOYMENT_TARGET = 17.0; CLANG_ENABLE_MODULES = YES; SWIFT_VERSION = 5.0; }; };
+83B1F1666C0A49D3B89AA92C = { isa = XCBuildConfiguration; name = Release; buildSettings = { PRODUCT_BUNDLE_IDENTIFIER = com.emir.artworker.player; PRODUCT_NAME = ArtWorker; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; INFOPLIST_KEY_UILaunchScreen_Generation = YES; INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent; INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait; TARGETED_DEVICE_FAMILY = 1; SWIFT_VERSION = 5.0; CODE_SIGN_STYLE = Automatic; SWIFT_OPTIMIZATION_LEVEL = "-O"; }; };
+9DEEF785B531476697FAB837 = { isa = XCConfigurationList; buildConfigurations = (B4A68D406A394321AE46FB9A,6A2E334306A347C88EF0FDEC); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+0C1BA0E54CD249C197E771A8 = { isa = XCConfigurationList; buildConfigurations = (FFA78E11CFF04F328C0F2012,83B1F1666C0A49D3B89AA92C); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+57E4DCDE72D64A62BE56C358 = { isa = PBXNativeTarget; buildConfigurationList = 0C1BA0E54CD249C197E771A8; buildPhases = (3026DCAD11DE405996F244F6,6EC292845A524901BF01E31D,4C6EC9BAAAF447AD89813BD1); buildRules = (); dependencies = (); name = ArtWorker; productName = ArtWorker; productReference = FEAD60A6B92A460997861223; productType = "com.apple.product-type.application"; };
+C1F2513147A44B0BBB2CF2BC = { isa = PBXProject; attributes = { LastUpgradeCheck = 2700; }; buildConfigurationList = 9DEEF785B531476697FAB837; compatibilityVersion = "Xcode 14.0"; developmentRegion = en; knownRegions = (en,Base); mainGroup = 30A47B3561C34157AEEC80BD; productRefGroup = 95B07944D69040B48E8BE37A; projectDirPath = ""; projectRoot = ""; targets = (57E4DCDE72D64A62BE56C358); };
+}; rootObject = C1F2513147A44B0BBB2CF2BC; }
