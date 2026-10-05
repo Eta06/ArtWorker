@@ -1,0 +1,318 @@
+{
+  "status": "passed",
+  "device": "CPU",
+  "full_model_weights_loaded": false,
+  "elapsed_seconds": 0.5969273750088178,
+  "runtime_revision": "99fb94dd3eaa9dd1931cd3cd8eae1ae3e20f2ef3",
+  "versions": {
+    "torch": "2.14.0",
+    "torchvision": "0.29.1",
+    "transformers": "5.17.0",
+    "diffusers": "0.37.1",
+    "mlx": "0.32.3",
+    "mlx-gen": "0.38.0",
+    "numpy": "2.5.3",
+    "Pillow": "12.3.0"
+  },
+  "processor_config": {
+    "url": "https://huggingface.co/Qwen/Qwen-Image-Edit-2511/resolve/6f3ccc0b56e431dc6a0c2b2039706d7d26f22cb9/processor/preprocessor_config.json",
+    "sha256": "e98b81513c5d03209ac71194b3cd5303b90956097ffdb9e2aa64d6d1a13ae74e",
+    "pinned_payload_bytes": 826,
+    "fast_tensor_rescale_preserved": true
+  },
+  "source_sha256": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/test_conditioning_cpu.py": "6d34409bd3df573a84c8d3a4f5ca854176f3aefa38c22416e764127ae75ae8a8",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_conditioning.py": "b54fe713bc23dfb8b0425ff949f737d71536605db9ffe0fa509437b9c9d6ae51",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_math.py": "ac0c6aff57fa0df022c6a71c293d6a5e97799af64d9accc4efa94a405c82ab90",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_vae.py": "adbaa334b20dc5cc24850f26b46095ca22792339fd5fc541c828e5b6639fd3b9",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/research/2026-10-05/code/pipelines/qwenimage/qwenimage_maskflow.py": "29c8a4418fac59c33b8d73896227214e8e61ba059576c39ef08a4d6a3eb125db",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/research/2026-10-05/code/pipelines/qwenimage/qwenimage_edit_plus.py": "4fdd30e13da5d16b603ea90f94bede5dbcf35bbd7901e9c8d8c26fd36a119c18",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/research/2026-10-05/code/data_module/utils.py": "f8e6aa8c68d1ca1bf66b85d1c2cdcff937260c0562f6ea51bcafb0d483a89574",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/diffusers/pipelines/qwenimage/pipeline_qwenimage_edit_plus.py": "9ff51e3411cf0ca2b088da4622693c1b1cc0d691b5229727c68ef26df50d5629",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/.venv/lib/python3.13/site-packages/transformers/models/qwen2_vl/image_processing_qwen2_vl.py": "4e1da45f9e7e157ca08aa88243fcc1495ea6a333e40e0c5035ef17ef2747a97d",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_vision_language_encoder.py": "9841ae256bff249788e7d0a772db88c9e31d52862df7fdc376ee22399b353275",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_text_encoder/qwen_encoder.py": "5c3e00284033740fc0e79585a4fc3de3f4ddb0e45d6e097f3ebaf3ddba504489",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runtime/mlx-gen/src/mflux/models/qwen/model/qwen_vae/qwen_vae.py": "0d5151f0871907c7c625a196191f7896ddd5ed68c31c1c071aa44477b8a8e7e0",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/tokenizer/tokenizer.json": "444a80c37c7f34f485c050cf374595a0cb7d88735459cf0505fd204453c33178",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/models/qwen-image-edit-2511-4bit/tokenizer/tokenizer_config.json": "ebf4e7d1ac441e3d84a44228a1a7392977b375a34c8fbc8b87c68e6a832e98ba"
+  },
+  "native_conditioning": {
+    "processor_config_sha256": "e98b81513c5d03209ac71194b3cd5303b90956097ffdb9e2aa64d6d1a13ae74e",
+    "processor_config_url": "https://huggingface.co/Qwen/Qwen-Image-Edit-2511/resolve/6f3ccc0b56e431dc6a0c2b2039706d7d26f22cb9/processor/preprocessor_config.json",
+    "condition_order": [
+      "source",
+      "mask"
+    ],
+    "negative_empty_encoded_independently": true,
+    "branches": {
+      "pm": {
+        "prompt_sha256": "86154d8ba1cc816655357d14287ee6e12f1590cf2266e521ce0da613d83eb223",
+        "formatted_prompt_sha256": "59de472b1a9bfb7991488ff755c40cd731a8802afacbc247c0128b86f105134b",
+        "input_shape_bchw": [
+          1,
+          3,
+          576,
+          256
+        ],
+        "processor_grid_thw": [
+          [
+            1,
+            42,
+            18
+          ],
+          [
+            1,
+            42,
+            18
+          ]
+        ],
+        "processor_pixel_shape": [
+          1512,
+          1176
+        ],
+        "pixel_values_sha256_float32": "1dd4521c8fe2d1ed453afeb51a6bbbffd621e2436ef3e9c75d370e31a0bfc59c",
+        "input_ids_sha256_int64": "6b2c0d7e32f913633ec520375c4e9070bb9d73245d418a481d742437794abb2e",
+        "input_token_count": 620,
+        "embedding_token_count": 556,
+        "merged_vision_tokens_per_image": [
+          189,
+          189
+        ],
+        "template_drop_index": 64,
+        "padding": "actual per-branch length; no forced 1024",
+        "truncation": false,
+        "pixel_processing": "upstream BF16 [0,1] tensor -> FastTorch resize/1-255 rescale/CLIP normalization",
+        "softmask_png_quantization": false,
+        "embedding_shape": [
+          1,
+          556,
+          4
+        ],
+        "embedding_dtype": "mlx.core.bfloat16"
+      },
+      "nm": {
+        "prompt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "formatted_prompt_sha256": "60c2c3396a413600a32042efb8525d3187140e5fd40ed78522d4d6de1eeb7238",
+        "input_shape_bchw": [
+          1,
+          3,
+          576,
+          256
+        ],
+        "processor_grid_thw": [
+          [
+            1,
+            42,
+            18
+          ],
+          [
+            1,
+            42,
+            18
+          ]
+        ],
+        "processor_pixel_shape": [
+          1512,
+          1176
+        ],
+        "pixel_values_sha256_float32": "1dd4521c8fe2d1ed453afeb51a6bbbffd621e2436ef3e9c75d370e31a0bfc59c",
+        "input_ids_sha256_int64": "bb71310a3e9773dfb93fdb2388afc543582f79ac8fb9a2c7ccb05a8bd8942aec",
+        "input_token_count": 461,
+        "embedding_token_count": 397,
+        "merged_vision_tokens_per_image": [
+          189,
+          189
+        ],
+        "template_drop_index": 64,
+        "padding": "actual per-branch length; no forced 1024",
+        "truncation": false,
+        "pixel_processing": "upstream BF16 [0,1] tensor -> FastTorch resize/1-255 rescale/CLIP normalization",
+        "softmask_png_quantization": false,
+        "embedding_shape": [
+          1,
+          397,
+          4
+        ],
+        "embedding_dtype": "mlx.core.bfloat16"
+      }
+    }
+  },
+  "tests": {
+    "fallback_source": {
+      "shape": [
+        1,
+        3,
+        576,
+        256
+      ],
+      "max_abs_error": 0.0,
+      "exact": true
+    },
+    "fallback_mask": {
+      "shape": [
+        1,
+        3,
+        576,
+        256
+      ],
+      "max_abs_error": 0.0,
+      "exact": true
+    },
+    "pm_hidden_and_trim": {
+      "shape": [
+        1,
+        556,
+        4
+      ],
+      "max_abs_error": 0.0,
+      "exact": true
+    },
+    "pm_attention_mask": {
+      "shape": [
+        1,
+        556
+      ],
+      "max_abs_error": 0.0,
+      "exact": true
+    },
+    "nm_hidden_and_trim": {
+      "shape": [
+        1,
+        397,
+        4
+      ],
+      "max_abs_error": 0.0,
+      "exact": true
+    },
+    "nm_attention_mask": {
+      "shape": [
+        1,
+        397
+      ],
+      "max_abs_error": 0.0,
+      "exact": true
+    },
+    "empty_negative_independent": {
+      "calls": 2,
+      "input_ids_differ": true
+    },
+    "no_forced_1024_truncation": {
+      "embedding_token_count": 2198,
+      "oracle_parameter_unused": "max_sequence_length is unused in Diffusers0.37.1 encode_prompt"
+    },
+    "png_path_changes_vlm": {
+      "max_abs_difference": 3.8119730949401855,
+      "mean_abs_difference": 1.2845873832702637,
+      "same_grid": true,
+      "png_path_used_by_port": false
+    },
+    "softmask_png_quantization_alone": {
+      "mask_value_max_abs_difference_before_bf16_cast": 0.0017922520637512207,
+      "processor_pixel_max_abs_difference_same_fast_backend": 2.9325485229492188e-05,
+      "processor_pixel_mean_abs_difference_same_fast_backend": 8.258149364337442e-08,
+      "exact_equivalence": false,
+      "png_path_used_by_port": false
+    },
+    "native_softmask_inside_original_boundary": {
+      "affected_source_rows_at_top": 24,
+      "affected_source_rows_at_bottom": 24,
+      "native_zero_mask_source_rows": 464,
+      "hard_source_paste_is_separate": true
+    },
+    "vae_bf16_affine_normalize": {
+      "shape": [
+        1,
+        16,
+        1,
+        4,
+        6
+      ],
+      "max_abs_error": 0.0,
+      "exact": true
+    },
+    "vae_bf16_affine_denormalize": {
+      "shape": [
+        1,
+        16,
+        1,
+        4,
+        6
+      ],
+      "max_abs_error": 0.0,
+      "exact": true
+    },
+    "vae_argmax_first16": {
+      "shape": [
+        1,
+        16,
+        1,
+        4,
+        6
+      ],
+      "max_abs_error": 0.0,
+      "exact": true
+    },
+    "vae_decode_raw_affine": {
+      "shape": [
+        1,
+        16,
+        1,
+        4,
+        6
+      ],
+      "max_abs_error": 0.0,
+      "exact": true
+    },
+    "stock_vae_affine_requires_override": {
+      "stock_dtype": "mlx.core.float32",
+      "official_dtype": "torch.bfloat16",
+      "max_abs_difference": 0.00763094425201416,
+      "port_override_exact": true
+    },
+    "visual_input_bf16_and_exact_split": {
+      "official_visual_input_dtype": "torch.bfloat16",
+      "port_visual_input_dtype": "mlx.core.bfloat16",
+      "stock_visual_input_dtype": "mlx.core.float32",
+      "split_sizes": [
+        4,
+        12,
+        5
+      ],
+      "split_checks": [
+        {
+          "shape": [
+            4,
+            4
+          ],
+          "max_abs_error": 0.0,
+          "exact": true
+        },
+        {
+          "shape": [
+            12,
+            4
+          ],
+          "max_abs_error": 0.0,
+          "exact": true
+        },
+        {
+          "shape": [
+            5,
+            4
+          ],
+          "max_abs_error": 0.0,
+          "exact": true
+        }
+      ],
+      "existing_encoder_identity_and_weights_preserved": true,
+      "official_get_image_features_sha256": "b3a60eb600bee01fcb9f02a0381eed28d0d36bac3fe75f79c0cec2f637f69e19",
+      "no_model_weights_or_large_allocation": true
+    }
+  },
+  "limitations": [
+    "No pretrained VL/VAE forward or quantized-weight quality parity has been run.",
+    "Tests cover actual tokenizer/processor, official prompt trimming, independent empty negative branch and BF16 affine only.",
+    "The official fast processor divides already [0,1] BF16 images by255; this implementation preserves that upstream recipe rather than correcting it.",
+    "Native processed mask permits24pixels inside the source boundary; hard source paste is a separate output operation."
+  ]
+}
