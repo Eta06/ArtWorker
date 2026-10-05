@@ -1,0 +1,42 @@
+{
+  "optical_flow": null,
+  "flow_tangent_extrapolation": false,
+  "harmonic_color": true,
+  "strip_pixels": 96,
+  "warp_interpolation": "linear",
+  "color_sigma_x": 6,
+  "residual_cap_255": 24,
+  "color_residual": {
+    "top": {
+      "residual_mean_rgb": [
+        -1.6187357902526855,
+        -3.738260507583618,
+        -3.339076280593872
+      ],
+      "residual_abs_p95_255": 11.522917747497559,
+      "residual_max_255": 13.029194831848145
+    },
+    "bottom": {
+      "residual_mean_rgb": [
+        1.8214240074157715,
+        0.09796367585659027,
+        -1.1068644523620605
+      ],
+      "residual_abs_p95_255": 4.262707233428955,
+      "residual_max_255": 6.248877048492432
+    }
+  },
+  "processing_seconds": 0.005567458000768966,
+  "source_pixels_exact": true,
+  "untouched_outer_pixels_exact": true,
+  "generated_changed_pixel_fraction": 0.2296722412109375,
+  "generated_mean_abs_change_255": 0.3718638102213542,
+  "top_join_mean_abs_adjacent_row_jump_255": 6.682942708333333,
+  "bottom_join_mean_abs_adjacent_row_jump_255": 4.157552083333333,
+  "collar_horizontal_gradient_energy_ratio": 0.9992427047390006,
+  "rgb_clipped_low_fraction_in_generated": 0.0,
+  "rgb_clipped_high_fraction_in_generated": 0.0,
+  "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality.",
+  "composite_path": "experiments/klein_outpaint/compositor_trial/2026-10-06/base28-generic-baked/color/composite.png",
+  "composite_sha256": "49e6f7b8849619c7f1e9a104dfda867e47255bf04e593ce317f97d4ed85579d1"
+}
