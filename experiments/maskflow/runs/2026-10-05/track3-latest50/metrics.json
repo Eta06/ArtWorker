@@ -1,0 +1,1815 @@
+{
+  "source_file": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track3/source_512.png",
+  "source_file_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+  "source_rgb_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+  "canvas_rgb_sha256": "f973a29047a3de18fdf39153199ce2fce4fdc6daf4720190c5eecbb2e8211362",
+  "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+  "prompt_sha256": "86154d8ba1cc816655357d14287ee6e12f1590cf2266e521ce0da613d83eb223",
+  "seed": 42,
+  "noise_backend": "Torch CPU BF16 fresh2511 grid; no 2.1 noise reuse",
+  "width": 512,
+  "height": 1152,
+  "known_box_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "unknown_fill": "black",
+  "steps": 50,
+  "text_cfg": 4.0,
+  "mask_cfg": 1.0,
+  "rescale_cfg": true,
+  "transformer_forwards": 100,
+  "vae_channels": 16,
+  "vae_downsample": 8,
+  "packed_tokens_per_image": 2304,
+  "joint_image_tokens": 6912,
+  "condition_order": [
+    "target",
+    "source",
+    "processed_mask_VAE"
+  ],
+  "native_blend_policy": "Official processed soft mask; known square boundary can change",
+  "hard_paste_policy": "Separate PNG preserving complete original512 square exactly",
+  "inside_source_soft_rows": [
+    320,
+    321,
+    322,
+    323,
+    324,
+    325,
+    326,
+    327,
+    328,
+    329,
+    330,
+    331,
+    332,
+    333,
+    334,
+    335,
+    336,
+    337,
+    338,
+    339,
+    340,
+    341,
+    342,
+    343,
+    808,
+    809,
+    810,
+    811,
+    812,
+    813,
+    814,
+    815,
+    816,
+    817,
+    818,
+    819,
+    820,
+    821,
+    822,
+    823,
+    824,
+    825,
+    826,
+    827,
+    828,
+    829,
+    830,
+    831
+  ],
+  "maximum_inside_boundary_softness_pixels": 24,
+  "last_nonzero_sigma": 0.035964544862508774,
+  "mu": 0.6032258064516128,
+  "sigmas": [
+    1.0,
+    0.9889590740203857,
+    0.9777144193649292,
+    0.9662604331970215,
+    0.9545910358428955,
+    0.9427001476287842,
+    0.9305815100669861,
+    0.9182283878326416,
+    0.9056340456008911,
+    0.8927911520004272,
+    0.8796923160552979,
+    0.866330087184906,
+    0.8526961207389832,
+    0.8387821316719055,
+    0.8245794773101807,
+    0.810079038143158,
+    0.7952712774276733,
+    0.7801464200019836,
+    0.7646941542625427,
+    0.748903751373291,
+    0.7327638864517212,
+    0.716262936592102,
+    0.6993885636329651,
+    0.6821280121803284,
+    0.6644678115844727,
+    0.6463939547538757,
+    0.6278917193412781,
+    0.6089457869529724,
+    0.5895399451255798,
+    0.5696571469306946,
+    0.5492796301841736,
+    0.5283887982368469,
+    0.5069649815559387,
+    0.48498740792274475,
+    0.46243441104888916,
+    0.4392831325531006,
+    0.41550934314727783,
+    0.3910876214504242,
+    0.36599114537239075,
+    0.3401915729045868,
+    0.3136589229106903,
+    0.2863614857196808,
+    0.2582656741142273,
+    0.22933602333068848,
+    0.1995348036289215,
+    0.1688220500946045,
+    0.13715526461601257,
+    0.1044892892241478,
+    0.07077611982822418,
+    0.035964544862508774,
+    0.0
+  ],
+  "official_revision": "3125f1ecd72f5a4e068c5a1954e9d6a8df38d443",
+  "runtime_revision": "99fb94dd3eaa9dd1931cd3cd8eae1ae3e20f2ef3",
+  "conditioning_geometry": {
+    "vlm_height": 576,
+    "vlm_width": 256,
+    "vae_condition_order": [
+      "source",
+      "mask"
+    ],
+    "vlm_condition_order": [
+      "source",
+      "mask"
+    ],
+    "vae_sample_mode": "argmax",
+    "transformer_conditioning": "token concatenation: target, source, mask",
+    "packed_dimension": 64,
+    "controlnet_context_channels": null
+  },
+  "estimated_static_after_vl_release_gib": 14.815,
+  "peak_memory_unmeasured": true,
+  "port_sha256": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/run_maskflow_trial.py": "50a6d9804f6b95094d903752d14dd6126d9d1e5ecc1bfc73c492fb1151c8aa75",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_math.py": "ac0c6aff57fa0df022c6a71c293d6a5e97799af64d9accc4efa94a405c82ab90",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_transformer.py": "374b32ea26ed0e8f46bf854d56412f19b1d425c802d9d845866cc9da2d302746",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_adapter.py": "802cec2b7ec4a1e797ba4b4587a1ffe371aec45c1a40cf6e4aa4db27947ef402",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_conditioning.py": "b54fe713bc23dfb8b0425ff949f737d71536605db9ffe0fa509437b9c9d6ae51",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_loading.py": "a36b0a084fe62498c31510fd6284d70a64dadbb8c8e9ba6b44af1a72dc3d17d7",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_vae.py": "adbaa334b20dc5cc24850f26b46095ca22792339fd5fc541c828e5b6639fd3b9",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/port/maskflow_checkpoint.py": "da241ff2d3f7d306eb1d23abe761506a3cb84f8e532c37803d2403399f8320da"
+  },
+  "cpu_gates": {
+    "math_cpu_validation.json": "72c99bbd398e41218a4d467eaa7bf07ccb7a7fe9d115ae227fdea082a3606306",
+    "transformer_cpu_validation.json": "ee54dfdc4c8255b1d52bdaece6889dd1110c8597b825e4f3b0e1e4a9dc3b860a",
+    "adapter_cpu_validation.json": "b36c1fac33275313e79012277636be5fc735da3fe9b09143a1d6f082ab14f96b",
+    "conditioning_cpu_validation.json": "e90181223fd882d0db99d0aa66cb5f12d5394a64a007d5ee22765c38415a5848",
+    "loading_cpu_validation.json": "cdb0116f560fc4219e92914fb8df6e67598cc6e5103ba1361c2550f301d492f8",
+    "checkpoint_cpu_validation.json": "6964bc99a68664249db6c67943d6da88bf63f983bbfdd327a6ea43ed729b2143",
+    "runner_cpu_validation.json": "f3e9cf19c61d7fd31ff6d950f38c4219fb6b6412cd04aecddd2c60ecf072b825"
+  },
+  "downloads": {
+    "manifest_sha256": "bba9861e94cf8f22ad896da2e5ac8dd80dcc27528d2d9ce2f5d6525599eed047",
+    "verified_files": 21
+  },
+  "memory_limit_gib": 26.0,
+  "cache_limit_gib": 1.0,
+  "memory_stages": [
+    {
+      "phase": "before_model_loading",
+      "timestamp": 1791173271.737756,
+      "pid": 50694,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "synchronized": true,
+      "mlx_active_memory_bytes": 128,
+      "mlx_peak_memory_bytes": 128,
+      "mlx_cache_memory_bytes": 0,
+      "process_rss_bytes": 384008192,
+      "process_peak_rss_bytes": 384008192,
+      "darwin_physical_footprint_bytes": 325584048,
+      "errors": {},
+      "darwin_peak_physical_footprint_bytes": 325584048
+    },
+    {
+      "phase": "vl_loaded",
+      "timestamp": 1791173273.924871,
+      "pid": 50694,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "synchronized": true,
+      "mlx_active_memory_bytes": 4837115352,
+      "mlx_peak_memory_bytes": 4837125904,
+      "mlx_cache_memory_bytes": 0,
+      "process_rss_bytes": 2354659328,
+      "process_peak_rss_bytes": 3958456320,
+      "darwin_physical_footprint_bytes": 5426926392,
+      "errors": {},
+      "darwin_peak_physical_footprint_bytes": 5459415864
+    },
+    {
+      "phase": "vl_released_after_both_cfg_conditions",
+      "timestamp": 1791173278.2340999,
+      "pid": 50694,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "synchronized": true,
+      "mlx_active_memory_bytes": 7770770,
+      "mlx_peak_memory_bytes": 5694790242,
+      "mlx_cache_memory_bytes": 0,
+      "process_rss_bytes": 375160832,
+      "process_peak_rss_bytes": 3958456320,
+      "darwin_physical_footprint_bytes": 849102864,
+      "errors": {},
+      "darwin_peak_physical_footprint_bytes": 7585846744
+    },
+    {
+      "phase": "conditions_encoded_before_dit",
+      "timestamp": 1791173279.391179,
+      "pid": 50694,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "synchronized": true,
+      "mlx_active_memory_bytes": 266300664,
+      "mlx_peak_memory_bytes": 5694790242,
+      "mlx_cache_memory_bytes": 1002930206,
+      "process_rss_bytes": 654000128,
+      "process_peak_rss_bytes": 3958456320,
+      "darwin_physical_footprint_bytes": 1816791272,
+      "errors": {},
+      "darwin_peak_physical_footprint_bytes": 7585846744
+    },
+    {
+      "phase": "teacher_and_adapter_loaded_vl_absent",
+      "timestamp": 1791173283.434397,
+      "pid": 50694,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "synchronized": true,
+      "mlx_active_memory_bytes": 15921260920,
+      "mlx_peak_memory_bytes": 15921260920,
+      "mlx_cache_memory_bytes": 0,
+      "process_rss_bytes": 632111104,
+      "process_peak_rss_bytes": 4869619712,
+      "darwin_physical_footprint_bytes": 16355553832,
+      "errors": {},
+      "darwin_peak_physical_footprint_bytes": 16355553832
+    },
+    {
+      "phase": "step_01",
+      "timestamp": 1791173318.0352929,
+      "pid": 50694,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "synchronized": true,
+      "mlx_active_memory_bytes": 15925390302,
+      "mlx_peak_memory_bytes": 17262949002,
+      "mlx_cache_memory_bytes": 1074837684,
+      "process_rss_bytes": 477462528,
+      "process_peak_rss_bytes": 4869619712,
+      "darwin_physical_footprint_bytes": 17592496776,
+      "errors": {},
+      "darwin_peak_physical_footprint_bytes": 18427933272
+    },
+    {
+      "phase": "step_05",
+      "timestamp": 1791173469.057908,
+      "pid": 50694,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "synchronized": true,
+      "mlx_active_memory_bytes": 15925390302,
+      "mlx_peak_memory_bytes": 17263246218,
+      "mlx_cache_memory_bytes": 1076181064,
+      "process_rss_bytes": 195002368,
+      "process_peak_rss_bytes": 4869619712,
+      "darwin_physical_footprint_bytes": 17610994312,
+      "errors": {},
+      "darwin_peak_physical_footprint_bytes": 18456326792
+    },
+    {
+      "phase": "step_10",
+      "timestamp": 1791173662.250636,
+      "pid": 50694,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "synchronized": true,
+      "mlx_active_memory_bytes": 15925390302,
+      "mlx_peak_memory_bytes": 17263246218,
+      "mlx_cache_memory_bytes": 1076181064,
+      "process_rss_bytes": 185122816,
+      "process_peak_rss_bytes": 4869619712,
+      "darwin_physical_footprint_bytes": 17623560864,
+      "errors": {},
+      "darwin_peak_physical_footprint_bytes": 18479805088
+    },
+    {
+      "phase": "step_15",
+      "timestamp": 1791173848.31518,
+      "pid": 50694,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "synchronized": true,
+      "mlx_active_memory_bytes": 15925390302,
+      "mlx_peak_memory_bytes": 17263246270,
+      "mlx_cache_memory_bytes": 1076181064,
+      "process_rss_bytes": 193789952,
+      "process_peak_rss_bytes": 4869619712,
+      "darwin_physical_footprint_bytes": 17631916752,
+      "errors": {},
+      "darwin_peak_physical_footprint_bytes": 18570310256
+    },
+    {
+      "phase": "step_20",
+      "timestamp": 1791174033.95604,
+      "pid": 50694,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "synchronized": true,
+      "mlx_active_memory_bytes": 15925390302,
+      "mlx_peak_memory_bytes": 17263246270,
+      "mlx_cache_memory_bytes": 1075886152,
+      "process_rss_bytes": 193888256,
+      "process_peak_rss_bytes": 4869619712,
+      "darwin_physical_footprint_bytes": 17639977632,
+      "errors": {},
+      "darwin_peak_physical_footprint_bytes": 18570310256
+    },
+    {
+      "phase": "step_25",
+      "timestamp": 1791174219.749263,
+      "pid": 50694,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "synchronized": true,
+      "mlx_active_memory_bytes": 15925390302,
+      "mlx_peak_memory_bytes": 17263249186,
+      "mlx_cache_memory_bytes": 1076181064,
+      "process_rss_bytes": 178978816,
+      "process_peak_rss_bytes": 4869619712,
+      "darwin_physical_footprint_bytes": 17648595592,
+      "errors": {},
+      "darwin_peak_physical_footprint_bytes": 18570310256
+    },
+    {
+      "phase": "step_30",
+      "timestamp": 1791174405.527297,
+      "pid": 50694,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "synchronized": true,
+      "mlx_active_memory_bytes": 15925390302,
+      "mlx_peak_memory_bytes": 17263249186,
+      "mlx_cache_memory_bytes": 1076181064,
+      "process_rss_bytes": 179994624,
+      "process_peak_rss_bytes": 4869619712,
+      "darwin_physical_footprint_bytes": 17656967864,
+      "errors": {},
+      "darwin_peak_physical_footprint_bytes": 18570310256
+    },
+    {
+      "phase": "step_35",
+      "timestamp": 1791174591.893398,
+      "pid": 50694,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "synchronized": true,
+      "mlx_active_memory_bytes": 15925390302,
+      "mlx_peak_memory_bytes": 17263249238,
+      "mlx_cache_memory_bytes": 1075886152,
+      "process_rss_bytes": 187514880,
+      "process_peak_rss_bytes": 4869619712,
+      "darwin_physical_footprint_bytes": 17665012408,
+      "errors": {},
+      "darwin_peak_physical_footprint_bytes": 18570310256
+    },
+    {
+      "phase": "step_40",
+      "timestamp": 1791174776.8758988,
+      "pid": 50694,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "synchronized": true,
+      "mlx_active_memory_bytes": 15925390302,
+      "mlx_peak_memory_bytes": 17263249238,
+      "mlx_cache_memory_bytes": 1076181064,
+      "process_rss_bytes": 196018176,
+      "process_peak_rss_bytes": 4869619712,
+      "darwin_physical_footprint_bytes": 17673646776,
+      "errors": {},
+      "darwin_peak_physical_footprint_bytes": 18572391048
+    },
+    {
+      "phase": "step_45",
+      "timestamp": 1791174963.127625,
+      "pid": 50694,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "synchronized": true,
+      "mlx_active_memory_bytes": 15925390302,
+      "mlx_peak_memory_bytes": 17263249238,
+      "mlx_cache_memory_bytes": 1074051148,
+      "process_rss_bytes": 180371456,
+      "process_peak_rss_bytes": 4869619712,
+      "darwin_physical_footprint_bytes": 17679823472,
+      "errors": {},
+      "darwin_peak_physical_footprint_bytes": 18572391048
+    },
+    {
+      "phase": "step_50",
+      "timestamp": 1791175150.175332,
+      "pid": 50694,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "synchronized": true,
+      "mlx_active_memory_bytes": 15925390302,
+      "mlx_peak_memory_bytes": 17263249238,
+      "mlx_cache_memory_bytes": 1076181064,
+      "process_rss_bytes": 176881664,
+      "process_peak_rss_bytes": 4869619712,
+      "darwin_physical_footprint_bytes": 17690292872,
+      "errors": {},
+      "darwin_peak_physical_footprint_bytes": 18572391048
+    },
+    {
+      "phase": "dit_released_before_vae_decode",
+      "timestamp": 1791175150.641025,
+      "pid": 50694,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "synchronized": true,
+      "mlx_active_memory_bytes": 258973018,
+      "mlx_peak_memory_bytes": 17263249238,
+      "mlx_cache_memory_bytes": 0,
+      "process_rss_bytes": 356368384,
+      "process_peak_rss_bytes": 4869619712,
+      "darwin_physical_footprint_bytes": 1861175720,
+      "errors": {},
+      "darwin_peak_physical_footprint_bytes": 18572391048
+    },
+    {
+      "phase": "complete",
+      "timestamp": 1791175151.959624,
+      "pid": 50694,
+      "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+      "synchronized": true,
+      "mlx_active_memory_bytes": 276667738,
+      "mlx_peak_memory_bytes": 17263249238,
+      "mlx_cache_memory_bytes": 1009942916,
+      "process_rss_bytes": 419266560,
+      "process_peak_rss_bytes": 4869619712,
+      "darwin_physical_footprint_bytes": 1975617936,
+      "errors": {},
+      "darwin_peak_physical_footprint_bytes": 18572391048
+    }
+  ],
+  "components": [
+    {
+      "component": "text_encoder",
+      "shards": 3,
+      "tensor_count": 1412,
+      "strict_tensor_coverage": true,
+      "base_values_requantized": false,
+      "load_seconds": 0.880159000022104,
+      "vae_rms_broadcast_reshapes": []
+    },
+    {
+      "component": "vae",
+      "shards": 1,
+      "tensor_count": 192,
+      "strict_tensor_coverage": true,
+      "base_values_requantized": false,
+      "load_seconds": 0.07062870799563825,
+      "vae_rms_broadcast_reshapes": [
+        {
+          "tensor": "encoder.mid_block.resnets.1.norm2.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.mid_block.resnets.1.norm1.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.mid_block.resnets.0.norm1.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.mid_block.attentions.0.norm.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.down_blocks.3.resnets.1.norm2.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.down_blocks.3.resnets.1.norm1.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.down_blocks.2.resnets.1.norm1.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.down_blocks.2.resnets.0.norm2.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.down_blocks.2.resnets.0.norm1.weight",
+          "from": [
+            192
+          ],
+          "to": [
+            192,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.mid_block.resnets.0.norm2.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.down_blocks.1.resnets.1.norm2.weight",
+          "from": [
+            192
+          ],
+          "to": [
+            192,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.down_blocks.1.resnets.1.norm1.weight",
+          "from": [
+            192
+          ],
+          "to": [
+            192,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.down_blocks.1.resnets.0.norm1.weight",
+          "from": [
+            96
+          ],
+          "to": [
+            96,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.down_blocks.0.resnets.1.norm2.weight",
+          "from": [
+            96
+          ],
+          "to": [
+            96,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.down_blocks.0.resnets.1.norm1.weight",
+          "from": [
+            96
+          ],
+          "to": [
+            96,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.down_blocks.0.resnets.0.norm2.weight",
+          "from": [
+            96
+          ],
+          "to": [
+            96,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.down_blocks.0.resnets.0.norm1.weight",
+          "from": [
+            96
+          ],
+          "to": [
+            96,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block3.resnets.2.norm1.weight",
+          "from": [
+            96
+          ],
+          "to": [
+            96,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.norm_out.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block3.resnets.1.norm1.weight",
+          "from": [
+            96
+          ],
+          "to": [
+            96,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.down_blocks.3.resnets.0.norm1.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block2.resnets.1.norm2.weight",
+          "from": [
+            192
+          ],
+          "to": [
+            192,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block3.resnets.0.norm1.weight",
+          "from": [
+            96
+          ],
+          "to": [
+            96,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.down_blocks.3.resnets.0.norm2.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block2.resnets.2.norm2.weight",
+          "from": [
+            192
+          ],
+          "to": [
+            192,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block2.resnets.2.norm1.weight",
+          "from": [
+            192
+          ],
+          "to": [
+            192,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block2.resnets.0.norm2.weight",
+          "from": [
+            192
+          ],
+          "to": [
+            192,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block2.resnets.1.norm1.weight",
+          "from": [
+            192
+          ],
+          "to": [
+            192,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block2.resnets.0.norm1.weight",
+          "from": [
+            192
+          ],
+          "to": [
+            192,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block0.resnets.0.norm1.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.down_blocks.1.resnets.0.norm2.weight",
+          "from": [
+            192
+          ],
+          "to": [
+            192,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block1.resnets.2.norm1.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "encoder.down_blocks.2.resnets.1.norm2.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block1.resnets.1.norm1.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block0.resnets.0.norm2.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block3.resnets.0.norm2.weight",
+          "from": [
+            96
+          ],
+          "to": [
+            96,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block1.resnets.0.norm1.weight",
+          "from": [
+            192
+          ],
+          "to": [
+            192,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.mid_block.resnets.1.norm2.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block0.resnets.2.norm1.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.mid_block.resnets.0.norm1.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block0.resnets.1.norm2.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block1.resnets.0.norm2.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block1.resnets.2.norm2.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block0.resnets.1.norm1.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block3.resnets.2.norm2.weight",
+          "from": [
+            96
+          ],
+          "to": [
+            96,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.mid_block.resnets.0.norm2.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.mid_block.resnets.1.norm1.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block1.resnets.1.norm2.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block3.resnets.1.norm2.weight",
+          "from": [
+            96
+          ],
+          "to": [
+            96,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.up_block0.resnets.2.norm2.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.norm_out.weight",
+          "from": [
+            96
+          ],
+          "to": [
+            96,
+            1,
+            1,
+            1
+          ],
+          "values_changed": false
+        },
+        {
+          "tensor": "decoder.mid_block.attentions.0.norm.weight",
+          "from": [
+            384
+          ],
+          "to": [
+            384,
+            1,
+            1
+          ],
+          "values_changed": false
+        }
+      ]
+    },
+    {
+      "component": "transformer",
+      "shards": 7,
+      "tensor_count": 3625,
+      "strict_tensor_coverage": true,
+      "base_values_requantized": false,
+      "load_seconds": 2.8788728750078008,
+      "vae_rms_broadcast_reshapes": []
+    }
+  ],
+  "step_records": [
+    {
+      "step": 1,
+      "seconds": 34.5514682920184,
+      "forward_seconds": {
+        "pm": 17.26739616598934,
+        "nm": 17.234966874995735
+      },
+      "mlx_active_bytes": 15930108894,
+      "mlx_peak_bytes": 17262949002
+    },
+    {
+      "step": 2,
+      "seconds": 35.702476750011556,
+      "forward_seconds": {
+        "pm": 17.93423920799978,
+        "nm": 17.757585125014884
+      },
+      "mlx_active_bytes": 15960910970,
+      "mlx_peak_bytes": 17263246218
+    },
+    {
+      "step": 3,
+      "seconds": 36.27933037499315,
+      "forward_seconds": {
+        "pm": 18.36096545800683,
+        "nm": 17.905717667017598
+      },
+      "mlx_active_bytes": 15957077098,
+      "mlx_peak_bytes": 17263246218
+    },
+    {
+      "step": 4,
+      "seconds": 36.71384074998787,
+      "forward_seconds": {
+        "pm": 18.201510874991072,
+        "nm": 18.50087991700275
+      },
+      "mlx_active_bytes": 15930698718,
+      "mlx_peak_bytes": 17263246218
+    },
+    {
+      "step": 5,
+      "seconds": 42.28005216701422,
+      "forward_seconds": {
+        "pm": 20.74595212499844,
+        "nm": 21.521261499990942
+      },
+      "mlx_active_bytes": 15960910970,
+      "mlx_peak_bytes": 17263246218
+    },
+    {
+      "step": 6,
+      "seconds": 40.155254082987085,
+      "forward_seconds": {
+        "pm": 20.572396332980134,
+        "nm": 19.571074167004554
+      },
+      "mlx_active_bytes": 15943085106,
+      "mlx_peak_bytes": 17263246218
+    },
+    {
+      "step": 7,
+      "seconds": 39.20103979099076,
+      "forward_seconds": {
+        "pm": 20.043574167008046,
+        "nm": 19.1465027089871
+      },
+      "mlx_active_bytes": 15933942754,
+      "mlx_peak_bytes": 17263246218
+    },
+    {
+      "step": 8,
+      "seconds": 38.45250800001668,
+      "forward_seconds": {
+        "pm": 19.526848417008296,
+        "nm": 18.91494375001639
+      },
+      "mlx_active_bytes": 15933942754,
+      "mlx_peak_bytes": 17263246218
+    },
+    {
+      "step": 9,
+      "seconds": 38.06012558299699,
+      "forward_seconds": {
+        "pm": 19.51036916600424,
+        "nm": 18.53874583300785
+      },
+      "mlx_active_bytes": 15944559670,
+      "mlx_peak_bytes": 17263246218
+    },
+    {
+      "step": 10,
+      "seconds": 37.28206691599917,
+      "forward_seconds": {
+        "pm": 18.908013290987583,
+        "nm": 18.36420637500123
+      },
+      "mlx_active_bytes": 15933942754,
+      "mlx_peak_bytes": 17263246218
+    },
+    {
+      "step": 11,
+      "seconds": 37.20595070900163,
+      "forward_seconds": {
+        "pm": 18.875357332988642,
+        "nm": 18.319153749995166
+      },
+      "mlx_active_bytes": 15933942754,
+      "mlx_peak_bytes": 17263246218
+    },
+    {
+      "step": 12,
+      "seconds": 37.03398054200807,
+      "forward_seconds": {
+        "pm": 18.76819129200885,
+        "nm": 18.254681125021307
+      },
+      "mlx_active_bytes": 15943085106,
+      "mlx_peak_bytes": 17263246270
+    },
+    {
+      "step": 13,
+      "seconds": 37.1216417090036,
+      "forward_seconds": {
+        "pm": 18.839142541983165,
+        "nm": 18.271626375004416
+      },
+      "mlx_active_bytes": 15940135978,
+      "mlx_peak_bytes": 17263246270
+    },
+    {
+      "step": 14,
+      "seconds": 37.16951066598995,
+      "forward_seconds": {
+        "pm": 18.855203749990324,
+        "nm": 18.303696290997323
+      },
+      "mlx_active_bytes": 15930403806,
+      "mlx_peak_bytes": 17263246270
+    },
+    {
+      "step": 15,
+      "seconds": 37.493402457999764,
+      "forward_seconds": {
+        "pm": 18.84197424998274,
+        "nm": 18.6412624999939
+      },
+      "mlx_active_bytes": 15933942754,
+      "mlx_peak_bytes": 17263246270
+    },
+    {
+      "step": 16,
+      "seconds": 37.13351829201565,
+      "forward_seconds": {
+        "pm": 18.789171625016024,
+        "nm": 18.333788791991537
+      },
+      "mlx_active_bytes": 15943085106,
+      "mlx_peak_bytes": 17263246270
+    },
+    {
+      "step": 17,
+      "seconds": 37.04744812499848,
+      "forward_seconds": {
+        "pm": 18.735914374992717,
+        "nm": 18.30045858299127
+      },
+      "mlx_active_bytes": 15933942754,
+      "mlx_peak_bytes": 17263246270
+    },
+    {
+      "step": 18,
+      "seconds": 37.34278574999189,
+      "forward_seconds": {
+        "pm": 19.144816167012323,
+        "nm": 18.18713629199192
+      },
+      "mlx_active_bytes": 15944559670,
+      "mlx_peak_bytes": 17263246270
+    },
+    {
+      "step": 19,
+      "seconds": 37.12382666699705,
+      "forward_seconds": {
+        "pm": 18.8209906250122,
+        "nm": 18.29195279200212
+      },
+      "mlx_active_bytes": 15933942754,
+      "mlx_peak_bytes": 17263246270
+    },
+    {
+      "step": 20,
+      "seconds": 36.954753416997846,
+      "forward_seconds": {
+        "pm": 18.709298292000312,
+        "nm": 18.23553616699064
+      },
+      "mlx_active_bytes": 15941315634,
+      "mlx_peak_bytes": 17263246270
+    },
+    {
+      "step": 21,
+      "seconds": 37.05202037500567,
+      "forward_seconds": {
+        "pm": 18.789787874993635,
+        "nm": 18.252210500009824
+      },
+      "mlx_active_bytes": 15933942754,
+      "mlx_peak_bytes": 17263246270
+    },
+    {
+      "step": 22,
+      "seconds": 37.37924662500154,
+      "forward_seconds": {
+        "pm": 18.863977375003742,
+        "nm": 18.504306416987674
+      },
+      "mlx_active_bytes": 15930403806,
+      "mlx_peak_bytes": 17263249186
+    },
+    {
+      "step": 23,
+      "seconds": 36.937274374999106,
+      "forward_seconds": {
+        "pm": 18.760237207985483,
+        "nm": 18.167262667004252
+      },
+      "mlx_active_bytes": 15942495282,
+      "mlx_peak_bytes": 17263249186
+    },
+    {
+      "step": 24,
+      "seconds": 37.42764308300684,
+      "forward_seconds": {
+        "pm": 19.12619033298688,
+        "nm": 18.29053870899952
+      },
+      "mlx_active_bytes": 15943085106,
+      "mlx_peak_bytes": 17263249186
+    },
+    {
+      "step": 25,
+      "seconds": 36.95777712500421,
+      "forward_seconds": {
+        "pm": 18.686145624989877,
+        "nm": 18.261602707993006
+      },
+      "mlx_active_bytes": 15933942754,
+      "mlx_peak_bytes": 17263249186
+    },
+    {
+      "step": 26,
+      "seconds": 36.885071833996335,
+      "forward_seconds": {
+        "pm": 18.72466274999897,
+        "nm": 18.14969087499776
+      },
+      "mlx_active_bytes": 15933942754,
+      "mlx_peak_bytes": 17263249186
+    },
+    {
+      "step": 27,
+      "seconds": 37.05638437499874,
+      "forward_seconds": {
+        "pm": 18.71801908299676,
+        "nm": 18.327351457992336
+      },
+      "mlx_active_bytes": 15941905458,
+      "mlx_peak_bytes": 17263249186
+    },
+    {
+      "step": 28,
+      "seconds": 37.429091124999104,
+      "forward_seconds": {
+        "pm": 18.84078991599381,
+        "nm": 18.577950834005605
+      },
+      "mlx_active_bytes": 15943085106,
+      "mlx_peak_bytes": 17263249186
+    },
+    {
+      "step": 29,
+      "seconds": 37.32378254199284,
+      "forward_seconds": {
+        "pm": 18.669503875018563,
+        "nm": 18.64332000000286
+      },
+      "mlx_active_bytes": 15933942754,
+      "mlx_peak_bytes": 17263249186
+    },
+    {
+      "step": 30,
+      "seconds": 37.04466129199136,
+      "forward_seconds": {
+        "pm": 18.815808084007585,
+        "nm": 18.2176733330125
+      },
+      "mlx_active_bytes": 15943085106,
+      "mlx_peak_bytes": 17263249186
+    },
+    {
+      "step": 31,
+      "seconds": 37.10526604199549,
+      "forward_seconds": {
+        "pm": 18.736829166999087,
+        "nm": 18.352376875001937
+      },
+      "mlx_active_bytes": 15933942754,
+      "mlx_peak_bytes": 17263249186
+    },
+    {
+      "step": 32,
+      "seconds": 37.282413875014754,
+      "forward_seconds": {
+        "pm": 18.75613629099098,
+        "nm": 18.51543158298591
+      },
+      "mlx_active_bytes": 15943085106,
+      "mlx_peak_bytes": 17263249238
+    },
+    {
+      "step": 33,
+      "seconds": 38.02771366701927,
+      "forward_seconds": {
+        "pm": 19.76646174999769,
+        "nm": 18.25060337499599
+      },
+      "mlx_active_bytes": 15933942754,
+      "mlx_peak_bytes": 17263249238
+    },
+    {
+      "step": 34,
+      "seconds": 37.03529800000251,
+      "forward_seconds": {
+        "pm": 18.747155290999217,
+        "nm": 18.277030625002226
+      },
+      "mlx_active_bytes": 15940135974,
+      "mlx_peak_bytes": 17263249238
+    },
+    {
+      "step": 35,
+      "seconds": 36.87337200000184,
+      "forward_seconds": {
+        "pm": 18.668281249993015,
+        "nm": 18.194933999999193
+      },
+      "mlx_active_bytes": 15933942754,
+      "mlx_peak_bytes": 17263249238
+    },
+    {
+      "step": 36,
+      "seconds": 36.92727758400724,
+      "forward_seconds": {
+        "pm": 18.72779737500241,
+        "nm": 18.189050707995193
+      },
+      "mlx_active_bytes": 15943085106,
+      "mlx_peak_bytes": 17263249238
+    },
+    {
+      "step": 37,
+      "seconds": 37.075926292018266,
+      "forward_seconds": {
+        "pm": 18.911543041002005,
+        "nm": 18.153642958001
+      },
+      "mlx_active_bytes": 15943085106,
+      "mlx_peak_bytes": 17263249238
+    },
+    {
+      "step": 38,
+      "seconds": 36.936165250022896,
+      "forward_seconds": {
+        "pm": 18.747265666985186,
+        "nm": 18.177962207992096
+      },
+      "mlx_active_bytes": 15943085106,
+      "mlx_peak_bytes": 17263249238
+    },
+    {
+      "step": 39,
+      "seconds": 37.073304041987285,
+      "forward_seconds": {
+        "pm": 18.823742874985328,
+        "nm": 18.238871792011196
+      },
+      "mlx_active_bytes": 15940135978,
+      "mlx_peak_bytes": 17263249238
+    },
+    {
+      "step": 40,
+      "seconds": 36.93111995898653,
+      "forward_seconds": {
+        "pm": 18.77013854199322,
+        "nm": 18.14999162501772
+      },
+      "mlx_active_bytes": 15943085106,
+      "mlx_peak_bytes": 17263249238
+    },
+    {
+      "step": 41,
+      "seconds": 37.223489999974845,
+      "forward_seconds": {
+        "pm": 18.69382787498762,
+        "nm": 18.518958917004056
+      },
+      "mlx_active_bytes": 15943085106,
+      "mlx_peak_bytes": 17263249238
+    },
+    {
+      "step": 42,
+      "seconds": 36.95872362499358,
+      "forward_seconds": {
+        "pm": 18.710184583003866,
+        "nm": 18.23807904100977
+      },
+      "mlx_active_bytes": 15943085106,
+      "mlx_peak_bytes": 17263249238
+    },
+    {
+      "step": 43,
+      "seconds": 37.12828229198931,
+      "forward_seconds": {
+        "pm": 18.922559917002218,
+        "nm": 18.19263299999875
+      },
+      "mlx_active_bytes": 15933352930,
+      "mlx_peak_bytes": 17263249238
+    },
+    {
+      "step": 44,
+      "seconds": 37.24585254199337,
+      "forward_seconds": {
+        "pm": 18.940674541023327,
+        "nm": 18.29463137499988
+      },
+      "mlx_active_bytes": 15930993630,
+      "mlx_peak_bytes": 17263249238
+    },
+    {
+      "step": 45,
+      "seconds": 37.65228179199039,
+      "forward_seconds": {
+        "pm": 19.046115667006234,
+        "nm": 18.595103458006633
+      },
+      "mlx_active_bytes": 15949638730,
+      "mlx_peak_bytes": 17263249238
+    },
+    {
+      "step": 46,
+      "seconds": 37.96596341699478,
+      "forward_seconds": {
+        "pm": 18.996993957989616,
+        "nm": 18.95692437500111
+      },
+      "mlx_active_bytes": 15949638730,
+      "mlx_peak_bytes": 17263249238
+    },
+    {
+      "step": 47,
+      "seconds": 37.36908191701514,
+      "forward_seconds": {
+        "pm": 19.200878625008045,
+        "nm": 18.15687908299151
+      },
+      "mlx_active_bytes": 15943085106,
+      "mlx_peak_bytes": 17263249238
+    },
+    {
+      "step": 48,
+      "seconds": 37.12485429199296,
+      "forward_seconds": {
+        "pm": 18.84551654200186,
+        "nm": 18.268438957980834
+      },
+      "mlx_active_bytes": 15940135978,
+      "mlx_peak_bytes": 17263249238
+    },
+    {
+      "step": 49,
+      "seconds": 36.880804750020616,
+      "forward_seconds": {
+        "pm": 18.769360040983884,
+        "nm": 18.101653332996648
+      },
+      "mlx_active_bytes": 15941315634,
+      "mlx_peak_bytes": 17263249238
+    },
+    {
+      "step": 50,
+      "seconds": 37.66121000002022,
+      "forward_seconds": {
+        "pm": 19.051645125000505,
+        "nm": 18.598863999999594
+      },
+      "mlx_active_bytes": 15940135978,
+      "mlx_peak_bytes": 17263249238
+    }
+  ],
+  "status": "complete",
+  "resume_receipt": null,
+  "vlm": {
+    "processor_config_sha256": "e98b81513c5d03209ac71194b3cd5303b90956097ffdb9e2aa64d6d1a13ae74e",
+    "processor_config_url": "https://huggingface.co/Qwen/Qwen-Image-Edit-2511/resolve/6f3ccc0b56e431dc6a0c2b2039706d7d26f22cb9/processor/preprocessor_config.json",
+    "condition_order": [
+      "source",
+      "mask"
+    ],
+    "negative_empty_encoded_independently": true,
+    "branches": {
+      "pm": {
+        "prompt_sha256": "86154d8ba1cc816655357d14287ee6e12f1590cf2266e521ce0da613d83eb223",
+        "formatted_prompt_sha256": "59de472b1a9bfb7991488ff755c40cd731a8802afacbc247c0128b86f105134b",
+        "input_shape_bchw": [
+          1,
+          3,
+          576,
+          256
+        ],
+        "processor_grid_thw": [
+          [
+            1,
+            42,
+            18
+          ],
+          [
+            1,
+            42,
+            18
+          ]
+        ],
+        "processor_pixel_shape": [
+          1512,
+          1176
+        ],
+        "pixel_values_sha256_float32": "1dd4521c8fe2d1ed453afeb51a6bbbffd621e2436ef3e9c75d370e31a0bfc59c",
+        "input_ids_sha256_int64": "6b2c0d7e32f913633ec520375c4e9070bb9d73245d418a481d742437794abb2e",
+        "input_token_count": 620,
+        "embedding_token_count": 556,
+        "merged_vision_tokens_per_image": [
+          189,
+          189
+        ],
+        "template_drop_index": 64,
+        "padding": "actual per-branch length; no forced 1024",
+        "truncation": false,
+        "pixel_processing": "upstream BF16 [0,1] tensor -> FastTorch resize/1-255 rescale/CLIP normalization",
+        "softmask_png_quantization": false,
+        "embedding_shape": [
+          1,
+          556,
+          3584
+        ],
+        "embedding_dtype": "mlx.core.bfloat16"
+      },
+      "nm": {
+        "prompt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "formatted_prompt_sha256": "60c2c3396a413600a32042efb8525d3187140e5fd40ed78522d4d6de1eeb7238",
+        "input_shape_bchw": [
+          1,
+          3,
+          576,
+          256
+        ],
+        "processor_grid_thw": [
+          [
+            1,
+            42,
+            18
+          ],
+          [
+            1,
+            42,
+            18
+          ]
+        ],
+        "processor_pixel_shape": [
+          1512,
+          1176
+        ],
+        "pixel_values_sha256_float32": "1dd4521c8fe2d1ed453afeb51a6bbbffd621e2436ef3e9c75d370e31a0bfc59c",
+        "input_ids_sha256_int64": "bb71310a3e9773dfb93fdb2388afc543582f79ac8fb9a2c7ccb05a8bd8942aec",
+        "input_token_count": 461,
+        "embedding_token_count": 397,
+        "merged_vision_tokens_per_image": [
+          189,
+          189
+        ],
+        "template_drop_index": 64,
+        "padding": "actual per-branch length; no forced 1024",
+        "truncation": false,
+        "pixel_processing": "upstream BF16 [0,1] tensor -> FastTorch resize/1-255 rescale/CLIP normalization",
+        "softmask_png_quantization": false,
+        "embedding_shape": [
+          1,
+          397,
+          3584
+        ],
+        "embedding_dtype": "mlx.core.bfloat16"
+      }
+    }
+  },
+  "conditioning_seconds": 4.162330166989705,
+  "vae_condition_seconds": {
+    "source": 0.5987080420018174,
+    "mask": 0.4483171250030864
+  },
+  "initial_noise_sha256": "6aaab1a8871a86c8db39a6b6566e2e3a2e89ae9778a65e60f5d6db8dde0ade08",
+  "checkpoint": {
+    "receipt": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runs/2026-10-05/track3-latest50/checkpoint.json",
+    "state_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/maskflow/runs/2026-10-05/track3-latest50/state-step50-9d7a5e77.safetensors",
+    "completed_steps": 50,
+    "state_sha256": "68d1e8f71dc392d6ec591186dea912ba934e9785a1f0e3ee34ae42153cce3345"
+  },
+  "adapter": {
+    "status": "applied_unbaked",
+    "targets": 600,
+    "matched_keys": 1200,
+    "scale": 1.0,
+    "effective_scale": 1.0,
+    "spec": {
+      "rank": 256,
+      "alpha": 256.0,
+      "alpha_over_rank": 1.0,
+      "use_rslora": false,
+      "use_dora": false
+    },
+    "checkpoint_rewritten": false
+  },
+  "completed_steps": 50,
+  "loop_seconds_so_far": 1866.6851485829975,
+  "loop_seconds": 1866.730585207988,
+  "processed_mask_zero_latents_exact": true,
+  "total_seconds": 1880.2175962079782,
+  "source_exact_composite": true,
+  "native_original_square_exact": false,
+  "output_sha256": {
+    "raw_decoded.png": "3aef0e61a2ac19e4bea0e1d96625bc825bea2bff2e31e8ad6cb728b911539be0",
+    "native_softblend.png": "3c9a29f75c7578bc639a54dae3d2a260786e61767cbf277fa0e94fdd6a3b057f",
+    "composite.png": "fbd6c44a0ecd5eeca400751187ff01972032a739c162f0b7749acb37c4dd2e9e",
+    "processed_mask.png": "d5347a53156360e42fe392f9ec24a8880efad4e7d1d0cb1f9ba660becb9fe072"
+  },
+  "dependency_versions": {
+    "mlx-gen": "0.38.0",
+    "mlx": "0.32.3",
+    "torch": "2.14.0",
+    "diffusers": "0.37.1",
+    "transformers": "5.17.0",
+    "numpy": "2.5.3"
+  }
+}
