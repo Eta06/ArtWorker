@@ -1,0 +1,64 @@
+{
+  "optical_flow": "dis",
+  "flow_tangent_extrapolation": false,
+  "harmonic_color": true,
+  "strip_pixels": 96,
+  "color_sigma_x": 6,
+  "residual_cap_255": 24,
+  "registration": {
+    "algorithm": "dis",
+    "cap_pixels": 6,
+    "source_before_mae_255": 3.1689974466959634,
+    "source_after_mae_255": 3.1493873596191406,
+    "source_top16_after_mae_255": 0.8661702473958334,
+    "source_bottom16_after_mae_255": 1.1987711588541667,
+    "flow_magnitude_p50": 0.0414852648973465,
+    "flow_magnitude_p95": 0.5345717668533325,
+    "flow_magnitude_max_before_cap": 2.885493516921997
+  },
+  "exterior_flow": {
+    "top": {
+      "boundary_mean_dx": -0.4503042697906494,
+      "boundary_mean_dy": 0.2357444316148758,
+      "boundary_max_displacement": 2.87265944480896
+    },
+    "bottom": {
+      "boundary_mean_dx": -0.1020275205373764,
+      "boundary_mean_dy": -0.21848025918006897,
+      "boundary_max_displacement": 2.8405237197875977
+    }
+  },
+  "color_residual": {
+    "top": {
+      "residual_mean_rgb": [
+        1.291516900062561,
+        0.10563226789236069,
+        -0.3801267445087433
+      ],
+      "residual_abs_p95_255": 2.2825584411621094,
+      "residual_max_255": 3.6079161167144775
+    },
+    "bottom": {
+      "residual_mean_rgb": [
+        0.3434596061706543,
+        0.3040216565132141,
+        -1.093995451927185
+      ],
+      "residual_abs_p95_255": 1.7295252084732056,
+      "residual_max_255": 2.3474223613739014
+    }
+  },
+  "processing_seconds": 0.007529082999099046,
+  "source_pixels_exact": true,
+  "untouched_outer_pixels_exact": true,
+  "generated_changed_pixel_fraction": 0.15870361328125,
+  "generated_mean_abs_change_255": 0.08813578287760417,
+  "top_join_mean_abs_adjacent_row_jump_255": 2.9739583333333335,
+  "bottom_join_mean_abs_adjacent_row_jump_255": 3.7135416666666665,
+  "collar_horizontal_gradient_energy_ratio": 1.0409185803757828,
+  "rgb_clipped_low_fraction_in_generated": 0.5995819091796875,
+  "rgb_clipped_high_fraction_in_generated": 0.0,
+  "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality.",
+  "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track1/dis-color/composite.png",
+  "composite_sha256": "61a70612131423f1f34039165f19d7797d397a8afd6edf84d489da205dcaa3f0"
+}
