@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "device": "CPU NumPy/Pillow only; no model/GPU imports",
+  "input_npz_raw_and_original_jpg_unchanged": true,
+  "exact_baseline_pixels": true,
+  "runner_sha256": "b64dc876d0eea0208fccaa53260eebf35c9ae3e7c047580620fb184f2ae628b8",
+  "arms": {
+    "consistency": {
+      "iterations": 16,
+      "atomic_state_valid": true,
+      "state_arrays_finite": true,
+      "projected_latents_equal_base_plus_saved_delta": true,
+      "outside_collar_latents_exact": true,
+      "source_pixels_exact": true,
+      "final_exterior_equals_raw": true,
+      "far_pixel_values_exact": false,
+      "far_mae_255": 0.03167894151475695,
+      "far_max_change_255": 3,
+      "far_changed_channel_fraction": 0.031670464409722224,
+      "max_abs_latent_delta": 0.20000000298023224,
+      "saved_spectral_and_row_metrics_reproduced": true,
+      "raw_png_sha256": "1243e734eb56f8d1897d089fc6ef605834459ee207148b364d3f05db764ae921",
+      "composite_png_sha256": "2604d11f96b2f619b6e0ed63f876250dd0274092dd6c85e065466004f45cfa90"
+    },
+    "derivative": {
+      "iterations": 16,
+      "atomic_state_valid": true,
+      "state_arrays_finite": true,
+      "projected_latents_equal_base_plus_saved_delta": true,
+      "outside_collar_latents_exact": true,
+      "source_pixels_exact": true,
+      "final_exterior_equals_raw": true,
+      "far_pixel_values_exact": false,
+      "far_mae_255": 0.026394314236111112,
+      "far_max_change_255": 2,
+      "far_changed_channel_fraction": 0.026390923394097224,
+      "max_abs_latent_delta": 0.20000000298023224,
+      "saved_spectral_and_row_metrics_reproduced": true,
+      "raw_png_sha256": "492ef09d0cbb424448529f5f96642c316d4b61ac88c4f40723fdd87e6e6348e5",
+      "composite_png_sha256": "872dd7437042af7d203c359104d6742eb1a8f849dafab8fb6d12f9d8b544a9fd"
+    }
+  },
+  "mlx_observed_peak_across_scopes_bytes": 9907764072,
+  "quality_verdict": "not established by integrity checks",
+  "matched_checkpoint_off_control_run_performed": false,
+  "weights_trained": false,
+  "script_sha256": "5e2909c50a49daeab242f8b69b233a87d9cda3a7cd254f46e1a9847149fd9cf2"
+}
