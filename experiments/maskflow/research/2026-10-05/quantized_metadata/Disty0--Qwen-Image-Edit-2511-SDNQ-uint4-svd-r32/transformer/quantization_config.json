@@ -1,0 +1,32 @@
+{
+  "add_skip_keys": false,
+  "dequantize_fp32": false,
+  "group_size": 0,
+  "is_integer": true,
+  "is_training": false,
+  "modules_dtype_dict": {},
+  "modules_to_not_convert": [
+    "norm_out",
+    "txt_in",
+    "proj_out",
+    "transformer_blocks.0.img_mod.1.weight",
+    "time_text_embed",
+    "img_in"
+  ],
+  "non_blocking": false,
+  "quant_conv": false,
+  "quant_method": "sdnq",
+  "quantization_device": null,
+  "quantized_matmul_dtype": null,
+  "return_device": null,
+  "sdnq_version": "0.1.3",
+  "svd_rank": 32,
+  "svd_steps": 8,
+  "use_grad_ckpt": true,
+  "use_quantized_matmul": false,
+  "use_quantized_matmul_conv": false,
+  "use_static_quantization": true,
+  "use_stochastic_rounding": false,
+  "use_svd": true,
+  "weights_dtype": "uint4"
+}
