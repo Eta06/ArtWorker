@@ -1,0 +1,4523 @@
+{
+  "status": "passed",
+  "device": "CPU NumPy/Pillow only; no MLX imported",
+  "trial_directory": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step",
+  "baseline_directory": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6",
+  "launch_status_read_first": {
+    "command": [
+      "experiments/qwen/.venv/bin/python",
+      "experiments/qwen/controlnet_port/run_growing_top32_control_trial.py",
+      "--track",
+      "track3",
+      "--steps",
+      "6",
+      "--control-scales",
+      "0.5",
+      "1",
+      "--max-seconds",
+      "900",
+      "--output",
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step"
+    ],
+    "cwd": "/Users/emir/Documents/ChatGPT/ArtWorker",
+    "code_sha256": {
+      "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_growing_top32_control_trial.py": "b4bda970127bc300d81cf44c9ced8ac1194866655f0cc6cea51f6dae37ee2f86"
+    },
+    "timeout_seconds": 1000.0,
+    "pid": 28960,
+    "status": "success",
+    "exit_code": 0,
+    "elapsed_seconds": 146.51638354099123
+  },
+  "checks": [
+    {
+      "name": "launch exited successfully",
+      "passed": true
+    },
+    {
+      "name": "suite completed successfully",
+      "passed": true
+    },
+    {
+      "name": "launch terminal log ends in success",
+      "passed": true
+    },
+    {
+      "name": "launch log contains exactly twelve denoiser calls",
+      "passed": true
+    },
+    {
+      "name": "exactly two requested completed arms",
+      "passed": true
+    },
+    {
+      "name": "bounded elapsed time",
+      "passed": true,
+      "detail": 145.6635384169931
+    },
+    {
+      "name": "saved baseline reused without rerun",
+      "passed": true
+    },
+    {
+      "name": "no new inference encodes or RNG draws",
+      "passed": true
+    },
+    {
+      "name": "payload revalidation limitation declared",
+      "passed": true
+    },
+    {
+      "name": "current frozen runner hash",
+      "passed": true
+    },
+    {
+      "name": "launch runner hash agrees",
+      "passed": true
+    },
+    {
+      "name": "current helper/script hash run_growing_localized_control_trial.py",
+      "passed": true
+    },
+    {
+      "name": "current helper/script hash growing_localized_control.py",
+      "passed": true
+    },
+    {
+      "name": "current helper/script hash localized_reference_control.py",
+      "passed": true
+    },
+    {
+      "name": "current helper/script hash reference_control.py",
+      "passed": true
+    },
+    {
+      "name": "current helper/script hash control.py",
+      "passed": true
+    },
+    {
+      "name": "current helper/script hash conditioning.py",
+      "passed": true
+    },
+    {
+      "name": "current helper/script hash growing_known_collar_saved_inputs.py",
+      "passed": true
+    },
+    {
+      "name": "current helper/script hash test_growing_known_collar_cpu.py",
+      "passed": true
+    },
+    {
+      "name": "current runtime hash qwen21_attention",
+      "passed": true
+    },
+    {
+      "name": "current runtime hash qwen21_transformer_block",
+      "passed": true
+    },
+    {
+      "name": "current runtime hash qwen21_layout",
+      "passed": true
+    },
+    {
+      "name": "current runtime hash qwen21_transformer",
+      "passed": true
+    },
+    {
+      "name": "current runtime hash qwen21_norm_out",
+      "passed": true
+    },
+    {
+      "name": "current runtime hash qwen21_text_projection",
+      "passed": true
+    },
+    {
+      "name": "current runtime hash qwen21_time_text_embed",
+      "passed": true
+    },
+    {
+      "name": "current runtime hash qwen21_rope",
+      "passed": true
+    },
+    {
+      "name": "runtime equals retained baseline",
+      "passed": true
+    },
+    {
+      "name": "passed CPU gate hash current",
+      "passed": true
+    },
+    {
+      "name": "CPU gate helper_sha256 current",
+      "passed": true
+    },
+    {
+      "name": "CPU gate script_sha256 current",
+      "passed": true
+    },
+    {
+      "name": "CPU gate frozen_growing_helper_sha256 current",
+      "passed": true
+    },
+    {
+      "name": "CPU gate frozen_localized_helper_sha256 current",
+      "passed": true
+    },
+    {
+      "name": "CPU gate runtime hashes current",
+      "passed": true
+    },
+    {
+      "name": "retained twenty sampling statements AST exact",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact width",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact height",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact source_rect_xyxy",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact prompt",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact prompt_style",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact source_512_path",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact source_512_sha256",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact source_uint8_sha256",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact source_rgba_uint8_sha256",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact model_repo",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact model_revision",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact base_quantization",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact control_quantization",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact cfg",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact adapter",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact adapter_revision",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact adapter_rank",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact adapter_scale",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact adapter_baked",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact active_heights",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact known_target_encoding_context",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact known_target_and_control_source_codec_contexts_distinct",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact compute_mode",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact growing_compute",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact prefix_cache_enabled",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact base_prefix_cache_enabled",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact control_prefix_cache_enabled",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact old_cached_implementation_approximation",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact scheduler_resolution_basis",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact sigmas",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact noise_sha256",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact edge_known_target_sha256",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact map_paths",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact map_sha256",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact guide_path",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact structural_modes",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact structural_support",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact structural_support_metadata",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact hint_shape",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact hint_radius_pixels",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact known_bridge_extension",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact base_manifest_sha256",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact base_config_sha256",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact checkpoint_header",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact control_revision",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact upstream_revision",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact reference_encoding",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact control_conditioning",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact source_conditioning",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact reference_control_rows",
+      "passed": true
+    },
+    {
+      "name": "retained recipe exact layout",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_attention.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_layout.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_norm_out.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_rope.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_text_projection.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_time_text_embed.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_transformer.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_transformer_block.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/.build/models/qwen/base/scheduler/scheduler_config.json",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/.build/models/qwen/base/text_encoder/config.json",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/.build/models/qwen/base/transformer/config.json",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/.build/models/qwen/base/vae/config.json",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/Player/Resources/track3.jpg",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/inputs.json",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track3/source_512.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux2/prompts.json",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/base-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track3/canny_extrapolated.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track3/extrapolated_only.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/conditioning.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/control.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/cpu_parity.json",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/growing_localized_control.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/growing_localized_cpu_validation.json",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/known_collar_reference_control.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/known_collar_saved_baseline.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/localized_cpu_validation.json",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/localized_reference_control.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/reference_control.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/reference_cpu_validation.json",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_growing_localized_control_trial.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/sparse_conditioning.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/test_growing_localized_cpu.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/test_localized_reference_cpu.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/test_reference_control_cpu.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/growing_localized_metrics.json",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/edge_known_target.npz",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/effective_hint_weights.npz",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/hint_pixel_weights_float32.npy",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/hint_target_weights_float32.npy",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/hint_weights.json",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/hint_weights.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/reference_conditioning.npz",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/support.json",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/support.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/support_tokens.npy",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/tangent-canny_contexts.npz",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/target_noise.npz",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/source_rgba.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/composite.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/final_latents.npz",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step02_predicted_clean.npz",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step02_predicted_clean_composite.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step02_predicted_clean_raw.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step04_predicted_clean.npz",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step04_predicted_clean_composite.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step04_predicted_clean_raw.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step06_predicted_clean.npz",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step06_predicted_clean_composite.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step06_predicted_clean_raw.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/raw.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/composite.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/final_latents.npz",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step02_predicted_clean.npz",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step02_predicted_clean_composite.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step02_predicted_clean_raw.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step04_predicted_clean.npz",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step04_predicted_clean_composite.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step04_predicted_clean_raw.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step06_predicted_clean.npz",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step06_predicted_clean_composite.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step06_predicted_clean_raw.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/raw.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/composite.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/final_latents.npz",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/metrics.json",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step02_predicted_clean.npz",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step02_predicted_clean_composite.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step02_predicted_clean_raw.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step04_predicted_clean.npz",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step04_predicted_clean_composite.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step04_predicted_clean_raw.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step06_predicted_clean.npz",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step06_predicted_clean_composite.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step06_predicted_clean_raw.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/raw.png",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_geometry_trial.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_spatial_ablation.py",
+      "passed": true
+    },
+    {
+      "name": "retained historical file unchanged /Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/viggle-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "retained claim set has 91 files",
+      "passed": true
+    },
+    {
+      "name": "original JPEG unchanged",
+      "passed": true
+    },
+    {
+      "name": "current source PNG unchanged",
+      "passed": true
+    },
+    {
+      "name": "source is 512 square",
+      "passed": true
+    },
+    {
+      "name": "RGB source pixel hash",
+      "passed": true
+    },
+    {
+      "name": "RGBA source pixel hash and opaque alpha",
+      "passed": true
+    },
+    {
+      "name": "saved trial source pixels exact",
+      "passed": true
+    },
+    {
+      "name": "current control map hash tangent-canny",
+      "passed": true
+    },
+    {
+      "name": "current guide file hash",
+      "passed": true
+    },
+    {
+      "name": "shared recorded container hash effective_hint_weights.npz",
+      "passed": true
+    },
+    {
+      "name": "shared recorded container hash support.png",
+      "passed": true
+    },
+    {
+      "name": "shared recorded container hash reference_conditioning.npz",
+      "passed": true
+    },
+    {
+      "name": "shared recorded container hash target_noise.npz",
+      "passed": true
+    },
+    {
+      "name": "shared recorded container hash hint_target_weights_float32.npy",
+      "passed": true
+    },
+    {
+      "name": "shared recorded container hash tangent-canny_contexts.npz",
+      "passed": true
+    },
+    {
+      "name": "shared recorded container hash hint_weights.json",
+      "passed": true
+    },
+    {
+      "name": "shared recorded container hash edge_known_target.npz",
+      "passed": true
+    },
+    {
+      "name": "shared recorded container hash hint_pixel_weights_float32.npy",
+      "passed": true
+    },
+    {
+      "name": "shared recorded container hash support.json",
+      "passed": true
+    },
+    {
+      "name": "shared recorded container hash support_tokens.npy",
+      "passed": true
+    },
+    {
+      "name": "shared recorded container hash hint_weights.png",
+      "passed": true
+    },
+    {
+      "name": "shared tensor keys preserved reference_conditioning.npz",
+      "passed": true
+    },
+    {
+      "name": "saved actual tensor exact reference_conditioning.npz:source_latents",
+      "passed": true
+    },
+    {
+      "name": "shared tensor finite reference_conditioning.npz:source_latents",
+      "passed": true
+    },
+    {
+      "name": "saved BF16 roundtrip exact reference_conditioning.npz:source_latents",
+      "passed": true
+    },
+    {
+      "name": "saved actual tensor exact reference_conditioning.npz:prompt_embeds",
+      "passed": true
+    },
+    {
+      "name": "shared tensor finite reference_conditioning.npz:prompt_embeds",
+      "passed": true
+    },
+    {
+      "name": "saved BF16 roundtrip exact reference_conditioning.npz:prompt_embeds",
+      "passed": true
+    },
+    {
+      "name": "saved actual tensor exact reference_conditioning.npz:image_slots",
+      "passed": true
+    },
+    {
+      "name": "shared tensor finite reference_conditioning.npz:image_slots",
+      "passed": true
+    },
+    {
+      "name": "shared tensor keys preserved edge_known_target.npz",
+      "passed": true
+    },
+    {
+      "name": "saved actual tensor exact edge_known_target.npz:known",
+      "passed": true
+    },
+    {
+      "name": "shared tensor finite edge_known_target.npz:known",
+      "passed": true
+    },
+    {
+      "name": "saved BF16 roundtrip exact edge_known_target.npz:known",
+      "passed": true
+    },
+    {
+      "name": "saved actual tensor exact edge_known_target.npz:edge_guess",
+      "passed": true
+    },
+    {
+      "name": "shared tensor finite edge_known_target.npz:edge_guess",
+      "passed": true
+    },
+    {
+      "name": "saved BF16 roundtrip exact edge_known_target.npz:edge_guess",
+      "passed": true
+    },
+    {
+      "name": "shared tensor keys preserved target_noise.npz",
+      "passed": true
+    },
+    {
+      "name": "saved actual tensor exact target_noise.npz:noise",
+      "passed": true
+    },
+    {
+      "name": "shared tensor finite target_noise.npz:noise",
+      "passed": true
+    },
+    {
+      "name": "saved BF16 roundtrip exact target_noise.npz:noise",
+      "passed": true
+    },
+    {
+      "name": "shared tensor keys preserved tangent-canny_contexts.npz",
+      "passed": true
+    },
+    {
+      "name": "saved actual tensor exact tangent-canny_contexts.npz:target_context",
+      "passed": true
+    },
+    {
+      "name": "shared tensor finite tangent-canny_contexts.npz:target_context",
+      "passed": true
+    },
+    {
+      "name": "saved BF16 roundtrip exact tangent-canny_contexts.npz:target_context",
+      "passed": true
+    },
+    {
+      "name": "saved actual tensor exact tangent-canny_contexts.npz:padded_image_context",
+      "passed": true
+    },
+    {
+      "name": "shared tensor finite tangent-canny_contexts.npz:padded_image_context",
+      "passed": true
+    },
+    {
+      "name": "saved BF16 roundtrip exact tangent-canny_contexts.npz:padded_image_context",
+      "passed": true
+    },
+    {
+      "name": "saved actual tensor exact tangent-canny_contexts.npz:structural_support",
+      "passed": true
+    },
+    {
+      "name": "shared tensor finite tangent-canny_contexts.npz:structural_support",
+      "passed": true
+    },
+    {
+      "name": "actual saved shape source_latents",
+      "passed": true
+    },
+    {
+      "name": "actual saved shape prompt_embeds",
+      "passed": true
+    },
+    {
+      "name": "actual saved shape image_slots",
+      "passed": true
+    },
+    {
+      "name": "actual saved shape context129",
+      "passed": true
+    },
+    {
+      "name": "actual saved shape padded_context129",
+      "passed": true
+    },
+    {
+      "name": "actual saved shape support",
+      "passed": true
+    },
+    {
+      "name": "actual saved shape edge_known",
+      "passed": true
+    },
+    {
+      "name": "actual saved shape edge_guess",
+      "passed": true
+    },
+    {
+      "name": "actual saved shape noise",
+      "passed": true
+    },
+    {
+      "name": "source-prefix array hash",
+      "passed": true
+    },
+    {
+      "name": "prompt embeddings array hash",
+      "passed": true
+    },
+    {
+      "name": "vision slot array hash and 256 slots",
+      "passed": true
+    },
+    {
+      "name": "derived fixed prefix length",
+      "passed": true
+    },
+    {
+      "name": "noise array hash",
+      "passed": true
+    },
+    {
+      "name": "edge-known array hash",
+      "passed": true
+    },
+    {
+      "name": "edge-known codec differs from masked-source129 codec",
+      "passed": true
+    },
+    {
+      "name": "edge guess clips original known codec raster rows",
+      "passed": true
+    },
+    {
+      "name": "known mask exact rows20:52",
+      "passed": true
+    },
+    {
+      "name": "reference image context has literal zero129",
+      "passed": true
+    },
+    {
+      "name": "mask/source65 conditioning unchanged",
+      "passed": true
+    },
+    {
+      "name": "structural64 conditioning unchanged",
+      "passed": true
+    },
+    {
+      "name": "unsupported structural64 literal zero",
+      "passed": true
+    },
+    {
+      "name": "support boolean and known source retained",
+      "passed": true
+    },
+    {
+      "name": "support .npy equals native saved support",
+      "passed": true
+    },
+    {
+      "name": "support PNG unchanged",
+      "passed": true
+    },
+    {
+      "name": "hint shape target_weights",
+      "passed": true
+    },
+    {
+      "name": "only hint IDs640:704 changed target_weights",
+      "passed": true
+    },
+    {
+      "name": "top32 scalar one target_weights",
+      "passed": true
+    },
+    {
+      "name": "all other known hints zero target_weights",
+      "passed": true
+    },
+    {
+      "name": "unknown hints exact saved values target_weights",
+      "passed": true
+    },
+    {
+      "name": "hint shape requested_target_weights",
+      "passed": true
+    },
+    {
+      "name": "only hint IDs640:704 changed requested_target_weights",
+      "passed": true
+    },
+    {
+      "name": "top32 scalar one requested_target_weights",
+      "passed": true
+    },
+    {
+      "name": "all other known hints zero requested_target_weights",
+      "passed": true
+    },
+    {
+      "name": "unknown hints exact saved values requested_target_weights",
+      "passed": true
+    },
+    {
+      "name": "saved old effective hint exact",
+      "passed": true
+    },
+    {
+      "name": "effective hint matches requested BF16 rounding",
+      "passed": true
+    },
+    {
+      "name": "full prefix hint weights literal zero",
+      "passed": true
+    },
+    {
+      "name": "joint target weights aligned",
+      "passed": true
+    },
+    {
+      "name": "effective target hint array hash",
+      "passed": true
+    },
+    {
+      "name": "requested target hint array hash",
+      "passed": true
+    },
+    {
+      "name": "joint hint array hash",
+      "passed": true
+    },
+    {
+      "name": "only source top32 pixel weights changed",
+      "passed": true
+    },
+    {
+      "name": "pixel nearest sample reproduces requested weights",
+      "passed": true
+    },
+    {
+      "name": "target .npy equals requested saved weights",
+      "passed": true
+    },
+    {
+      "name": "pixel hint array hash",
+      "passed": true
+    },
+    {
+      "name": "positive hint tokens equals97+64",
+      "passed": true
+    },
+    {
+      "name": "original target2304 shifted six sigmas exact",
+      "passed": true
+    },
+    {
+      "name": "retained sixteen-array historical hash source_latents",
+      "passed": true
+    },
+    {
+      "name": "retained sixteen-array historical hash prompt_embeds",
+      "passed": true
+    },
+    {
+      "name": "retained sixteen-array historical hash image_slots",
+      "passed": true
+    },
+    {
+      "name": "retained sixteen-array historical hash target_context",
+      "passed": true
+    },
+    {
+      "name": "retained sixteen-array historical hash padded_image_context",
+      "passed": true
+    },
+    {
+      "name": "retained sixteen-array historical hash support",
+      "passed": true
+    },
+    {
+      "name": "retained sixteen-array historical hash noise",
+      "passed": true
+    },
+    {
+      "name": "retained sixteen-array historical hash edge_known_target",
+      "passed": true
+    },
+    {
+      "name": "retained sixteen-array historical hash edge_guess",
+      "passed": true
+    },
+    {
+      "name": "retained sixteen-array historical hash old_effective_target_hint",
+      "passed": true
+    },
+    {
+      "name": "retained sixteen-array historical hash old_effective_joint_hint",
+      "passed": true
+    },
+    {
+      "name": "retained sixteen-array historical hash old_requested_target_hint",
+      "passed": true
+    },
+    {
+      "name": "retained sixteen-array historical hash requested_top32_hint",
+      "passed": true
+    },
+    {
+      "name": "retained sixteen-array historical hash expected_effective_top32_hint",
+      "passed": true
+    },
+    {
+      "name": "retained sixteen-array historical hash expected_effective_top32_joint_hint",
+      "passed": true
+    },
+    {
+      "name": "retained sixteen-array historical hash sigmas",
+      "passed": true
+    },
+    {
+      "name": "per-arm metrics exact suite tangent-canny/scale0.5",
+      "passed": true
+    },
+    {
+      "name": "per-arm completed tangent-canny/scale0.5",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale0.5:steps",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale0.5:seed",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale0.5:cfg",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale0.5:base_block_calls",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale0.5:control_block_calls",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale0.5:transformer_calls",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale0.5:target_token_forward_sum",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale0.5:reference_image_token_forward_sum",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale0.5:joint_query_token_forward_sum",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale0.5:active_heights",
+      "passed": true
+    },
+    {
+      "name": "per-arm original input exact tangent-canny/scale0.5:source_prefix_sha256",
+      "passed": true
+    },
+    {
+      "name": "per-arm original input exact tangent-canny/scale0.5:noise_sha256",
+      "passed": true
+    },
+    {
+      "name": "per-arm original input exact tangent-canny/scale0.5:known_target_sha256",
+      "passed": true
+    },
+    {
+      "name": "per-arm original input exact tangent-canny/scale0.5:sigmas",
+      "passed": true
+    },
+    {
+      "name": "per-arm original input exact tangent-canny/scale0.5:prompt",
+      "passed": true
+    },
+    {
+      "name": "per-arm caches disabled tangent-canny/scale0.5",
+      "passed": true
+    },
+    {
+      "name": "per-arm source-prefix observed checks declared tangent-canny/scale0.5",
+      "passed": true
+    },
+    {
+      "name": "per-arm six actual step records tangent-canny/scale0.5",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:step",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:next_sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:active_height",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:active_window_xyxy",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:target_tokens_forwarded",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:future_target_tokens_absent",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:newly_activated_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:input_image_latent_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:control_image_rows",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:base_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:control_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:prefix_recomputed_both_chains",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:base_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:control_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:known_source_hint_zero_outside_top32",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:top32_hint_scalar_one_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:top32_hint_absolute_ids",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:source_prefix_input_exact",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:active_context_sha256",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:1:active_hint_weights_sha256",
+      "passed": true
+    },
+    {
+      "name": "step launch log exact observed row tangent-canny/scale0.5:1",
+      "passed": true
+    },
+    {
+      "name": "step active known hint invariants tangent-canny/scale0.5:1",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:step",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:next_sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:active_height",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:active_window_xyxy",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:target_tokens_forwarded",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:future_target_tokens_absent",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:newly_activated_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:input_image_latent_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:control_image_rows",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:base_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:control_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:prefix_recomputed_both_chains",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:base_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:control_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:known_source_hint_zero_outside_top32",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:top32_hint_scalar_one_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:top32_hint_absolute_ids",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:source_prefix_input_exact",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:active_context_sha256",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:2:active_hint_weights_sha256",
+      "passed": true
+    },
+    {
+      "name": "step launch log exact observed row tangent-canny/scale0.5:2",
+      "passed": true
+    },
+    {
+      "name": "step active known hint invariants tangent-canny/scale0.5:2",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:step",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:next_sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:active_height",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:active_window_xyxy",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:target_tokens_forwarded",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:future_target_tokens_absent",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:newly_activated_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:input_image_latent_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:control_image_rows",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:base_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:control_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:prefix_recomputed_both_chains",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:base_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:control_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:known_source_hint_zero_outside_top32",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:top32_hint_scalar_one_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:top32_hint_absolute_ids",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:source_prefix_input_exact",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:active_context_sha256",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:3:active_hint_weights_sha256",
+      "passed": true
+    },
+    {
+      "name": "step launch log exact observed row tangent-canny/scale0.5:3",
+      "passed": true
+    },
+    {
+      "name": "step active known hint invariants tangent-canny/scale0.5:3",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:step",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:next_sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:active_height",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:active_window_xyxy",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:target_tokens_forwarded",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:future_target_tokens_absent",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:newly_activated_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:input_image_latent_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:control_image_rows",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:base_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:control_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:prefix_recomputed_both_chains",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:base_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:control_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:known_source_hint_zero_outside_top32",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:top32_hint_scalar_one_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:top32_hint_absolute_ids",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:source_prefix_input_exact",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:active_context_sha256",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:4:active_hint_weights_sha256",
+      "passed": true
+    },
+    {
+      "name": "step launch log exact observed row tangent-canny/scale0.5:4",
+      "passed": true
+    },
+    {
+      "name": "step active known hint invariants tangent-canny/scale0.5:4",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:step",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:next_sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:active_height",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:active_window_xyxy",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:target_tokens_forwarded",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:future_target_tokens_absent",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:newly_activated_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:input_image_latent_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:control_image_rows",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:base_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:control_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:prefix_recomputed_both_chains",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:base_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:control_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:known_source_hint_zero_outside_top32",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:top32_hint_scalar_one_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:top32_hint_absolute_ids",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:source_prefix_input_exact",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:active_context_sha256",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:5:active_hint_weights_sha256",
+      "passed": true
+    },
+    {
+      "name": "step launch log exact observed row tangent-canny/scale0.5:5",
+      "passed": true
+    },
+    {
+      "name": "step active known hint invariants tangent-canny/scale0.5:5",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:step",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:next_sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:active_height",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:active_window_xyxy",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:target_tokens_forwarded",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:future_target_tokens_absent",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:newly_activated_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:input_image_latent_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:control_image_rows",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:base_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:control_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:prefix_recomputed_both_chains",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:base_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:control_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:known_source_hint_zero_outside_top32",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:top32_hint_scalar_one_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:top32_hint_absolute_ids",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:source_prefix_input_exact",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:active_context_sha256",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale0.5:6:active_hint_weights_sha256",
+      "passed": true
+    },
+    {
+      "name": "step launch log exact observed row tangent-canny/scale0.5:6",
+      "passed": true
+    },
+    {
+      "name": "step active known hint invariants tangent-canny/scale0.5:6",
+      "passed": true
+    },
+    {
+      "name": "final tensor shape/finite tangent-canny/scale0.5",
+      "passed": true
+    },
+    {
+      "name": "final latent array hash tangent-canny/scale0.5",
+      "passed": true
+    },
+    {
+      "name": "final known target codec exact at sigma0 tangent-canny/scale0.5",
+      "passed": true
+    },
+    {
+      "name": "final known target restoration declaration tangent-canny/scale0.5",
+      "passed": true
+    },
+    {
+      "name": "same-scale numerical difference reproduced tangent-canny/scale0.5:final_latents_exact",
+      "passed": true
+    },
+    {
+      "name": "same-scale numerical difference reproduced tangent-canny/scale0.5:max_abs",
+      "passed": true
+    },
+    {
+      "name": "same-scale numerical difference reproduced tangent-canny/scale0.5:mean_abs",
+      "passed": true
+    },
+    {
+      "name": "same-scale baseline final hash tangent-canny/scale0.5",
+      "passed": true
+    },
+    {
+      "name": "same-scale baseline not rerun tangent-canny/scale0.5",
+      "passed": true
+    },
+    {
+      "name": "raw/composite geometry tangent-canny/scale0.5",
+      "passed": true
+    },
+    {
+      "name": "raw/composite container hashes tangent-canny/scale0.5",
+      "passed": true
+    },
+    {
+      "name": "final hardpaste source byte exact tangent-canny/scale0.5",
+      "passed": true
+    },
+    {
+      "name": "final exterior raw pixels preserved tangent-canny/scale0.5",
+      "passed": true
+    },
+    {
+      "name": "raw source reconstruction metric tangent-canny/scale0.5:raw_source_top16_mae_255",
+      "passed": true
+    },
+    {
+      "name": "raw source reconstruction metric tangent-canny/scale0.5:raw_source_bottom16_mae_255",
+      "passed": true
+    },
+    {
+      "name": "raw source reconstruction metric tangent-canny/scale0.5:raw_source_inner_mae_255",
+      "passed": true
+    },
+    {
+      "name": "raw source reconstruction metric tangent-canny/scale0.5:raw_source_mae_255",
+      "passed": true
+    },
+    {
+      "name": "retained baseline raw hash tangent-canny/scale0.5",
+      "passed": true
+    },
+    {
+      "name": "retained baseline composite hash tangent-canny/scale0.5",
+      "passed": true
+    },
+    {
+      "name": "previews exactly steps2/4/6 tangent-canny/scale0.5",
+      "passed": true
+    },
+    {
+      "name": "genuine preview position/sigma tangent-canny/scale0.5:2:final_canvas_ids",
+      "passed": true
+    },
+    {
+      "name": "genuine preview position/sigma tangent-canny/scale0.5:2:window_xyxy",
+      "passed": true
+    },
+    {
+      "name": "genuine preview position/sigma tangent-canny/scale0.5:2:sigma",
+      "passed": true
+    },
+    {
+      "name": "genuine preview active latent shape tangent-canny/scale0.5:2",
+      "passed": true
+    },
+    {
+      "name": "preview known codec restored tangent-canny/scale0.5:2",
+      "passed": true
+    },
+    {
+      "name": "preview metadata actual path/window tangent-canny/scale0.5:2",
+      "passed": true
+    },
+    {
+      "name": "preview raw/composite active image size tangent-canny/scale0.5:2",
+      "passed": true
+    },
+    {
+      "name": "preview raw/composite recorded hash tangent-canny/scale0.5:2",
+      "passed": true
+    },
+    {
+      "name": "preview source hardpaste exact tangent-canny/scale0.5:2",
+      "passed": true
+    },
+    {
+      "name": "preview exterior raw pixels preserved tangent-canny/scale0.5:2",
+      "passed": true
+    },
+    {
+      "name": "preview definition honest tangent-canny/scale0.5:2",
+      "passed": true
+    },
+    {
+      "name": "genuine preview position/sigma tangent-canny/scale0.5:4:final_canvas_ids",
+      "passed": true
+    },
+    {
+      "name": "genuine preview position/sigma tangent-canny/scale0.5:4:window_xyxy",
+      "passed": true
+    },
+    {
+      "name": "genuine preview position/sigma tangent-canny/scale0.5:4:sigma",
+      "passed": true
+    },
+    {
+      "name": "genuine preview active latent shape tangent-canny/scale0.5:4",
+      "passed": true
+    },
+    {
+      "name": "preview known codec restored tangent-canny/scale0.5:4",
+      "passed": true
+    },
+    {
+      "name": "preview metadata actual path/window tangent-canny/scale0.5:4",
+      "passed": true
+    },
+    {
+      "name": "preview raw/composite active image size tangent-canny/scale0.5:4",
+      "passed": true
+    },
+    {
+      "name": "preview raw/composite recorded hash tangent-canny/scale0.5:4",
+      "passed": true
+    },
+    {
+      "name": "preview source hardpaste exact tangent-canny/scale0.5:4",
+      "passed": true
+    },
+    {
+      "name": "preview exterior raw pixels preserved tangent-canny/scale0.5:4",
+      "passed": true
+    },
+    {
+      "name": "preview definition honest tangent-canny/scale0.5:4",
+      "passed": true
+    },
+    {
+      "name": "genuine preview position/sigma tangent-canny/scale0.5:6:final_canvas_ids",
+      "passed": true
+    },
+    {
+      "name": "genuine preview position/sigma tangent-canny/scale0.5:6:window_xyxy",
+      "passed": true
+    },
+    {
+      "name": "genuine preview position/sigma tangent-canny/scale0.5:6:sigma",
+      "passed": true
+    },
+    {
+      "name": "genuine preview active latent shape tangent-canny/scale0.5:6",
+      "passed": true
+    },
+    {
+      "name": "preview known codec restored tangent-canny/scale0.5:6",
+      "passed": true
+    },
+    {
+      "name": "preview metadata actual path/window tangent-canny/scale0.5:6",
+      "passed": true
+    },
+    {
+      "name": "preview raw/composite active image size tangent-canny/scale0.5:6",
+      "passed": true
+    },
+    {
+      "name": "preview raw/composite recorded hash tangent-canny/scale0.5:6",
+      "passed": true
+    },
+    {
+      "name": "preview source hardpaste exact tangent-canny/scale0.5:6",
+      "passed": true
+    },
+    {
+      "name": "preview exterior raw pixels preserved tangent-canny/scale0.5:6",
+      "passed": true
+    },
+    {
+      "name": "preview definition honest tangent-canny/scale0.5:6",
+      "passed": true
+    },
+    {
+      "name": "per-arm metrics exact suite tangent-canny/scale1",
+      "passed": true
+    },
+    {
+      "name": "per-arm completed tangent-canny/scale1",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale1:steps",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale1:seed",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale1:cfg",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale1:base_block_calls",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale1:control_block_calls",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale1:transformer_calls",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale1:target_token_forward_sum",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale1:reference_image_token_forward_sum",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale1:joint_query_token_forward_sum",
+      "passed": true
+    },
+    {
+      "name": "per-arm protocol/count tangent-canny/scale1:active_heights",
+      "passed": true
+    },
+    {
+      "name": "per-arm original input exact tangent-canny/scale1:source_prefix_sha256",
+      "passed": true
+    },
+    {
+      "name": "per-arm original input exact tangent-canny/scale1:noise_sha256",
+      "passed": true
+    },
+    {
+      "name": "per-arm original input exact tangent-canny/scale1:known_target_sha256",
+      "passed": true
+    },
+    {
+      "name": "per-arm original input exact tangent-canny/scale1:sigmas",
+      "passed": true
+    },
+    {
+      "name": "per-arm original input exact tangent-canny/scale1:prompt",
+      "passed": true
+    },
+    {
+      "name": "per-arm caches disabled tangent-canny/scale1",
+      "passed": true
+    },
+    {
+      "name": "per-arm source-prefix observed checks declared tangent-canny/scale1",
+      "passed": true
+    },
+    {
+      "name": "per-arm six actual step records tangent-canny/scale1",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:step",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:next_sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:active_height",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:active_window_xyxy",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:target_tokens_forwarded",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:future_target_tokens_absent",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:newly_activated_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:input_image_latent_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:control_image_rows",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:base_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:control_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:prefix_recomputed_both_chains",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:base_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:control_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:known_source_hint_zero_outside_top32",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:top32_hint_scalar_one_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:top32_hint_absolute_ids",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:source_prefix_input_exact",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:active_context_sha256",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:1:active_hint_weights_sha256",
+      "passed": true
+    },
+    {
+      "name": "step launch log exact observed row tangent-canny/scale1:1",
+      "passed": true
+    },
+    {
+      "name": "step active known hint invariants tangent-canny/scale1:1",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:step",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:next_sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:active_height",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:active_window_xyxy",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:target_tokens_forwarded",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:future_target_tokens_absent",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:newly_activated_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:input_image_latent_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:control_image_rows",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:base_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:control_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:prefix_recomputed_both_chains",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:base_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:control_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:known_source_hint_zero_outside_top32",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:top32_hint_scalar_one_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:top32_hint_absolute_ids",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:source_prefix_input_exact",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:active_context_sha256",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:2:active_hint_weights_sha256",
+      "passed": true
+    },
+    {
+      "name": "step launch log exact observed row tangent-canny/scale1:2",
+      "passed": true
+    },
+    {
+      "name": "step active known hint invariants tangent-canny/scale1:2",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:step",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:next_sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:active_height",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:active_window_xyxy",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:target_tokens_forwarded",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:future_target_tokens_absent",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:newly_activated_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:input_image_latent_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:control_image_rows",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:base_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:control_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:prefix_recomputed_both_chains",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:base_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:control_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:known_source_hint_zero_outside_top32",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:top32_hint_scalar_one_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:top32_hint_absolute_ids",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:source_prefix_input_exact",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:active_context_sha256",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:3:active_hint_weights_sha256",
+      "passed": true
+    },
+    {
+      "name": "step launch log exact observed row tangent-canny/scale1:3",
+      "passed": true
+    },
+    {
+      "name": "step active known hint invariants tangent-canny/scale1:3",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:step",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:next_sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:active_height",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:active_window_xyxy",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:target_tokens_forwarded",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:future_target_tokens_absent",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:newly_activated_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:input_image_latent_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:control_image_rows",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:base_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:control_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:prefix_recomputed_both_chains",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:base_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:control_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:known_source_hint_zero_outside_top32",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:top32_hint_scalar_one_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:top32_hint_absolute_ids",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:source_prefix_input_exact",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:active_context_sha256",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:4:active_hint_weights_sha256",
+      "passed": true
+    },
+    {
+      "name": "step launch log exact observed row tangent-canny/scale1:4",
+      "passed": true
+    },
+    {
+      "name": "step active known hint invariants tangent-canny/scale1:4",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:step",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:next_sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:active_height",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:active_window_xyxy",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:target_tokens_forwarded",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:future_target_tokens_absent",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:newly_activated_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:input_image_latent_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:control_image_rows",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:base_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:control_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:prefix_recomputed_both_chains",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:base_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:control_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:known_source_hint_zero_outside_top32",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:top32_hint_scalar_one_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:top32_hint_absolute_ids",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:source_prefix_input_exact",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:active_context_sha256",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:5:active_hint_weights_sha256",
+      "passed": true
+    },
+    {
+      "name": "step launch log exact observed row tangent-canny/scale1:5",
+      "passed": true
+    },
+    {
+      "name": "step active known hint invariants tangent-canny/scale1:5",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:step",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:next_sigma",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:active_height",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:active_window_xyxy",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:target_tokens_forwarded",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:future_target_tokens_absent",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:newly_activated_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:input_image_latent_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:control_image_rows",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:base_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:control_joint_query_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:prefix_recomputed_both_chains",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:base_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:control_blocks",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:known_source_hint_zero_outside_top32",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:top32_hint_scalar_one_tokens",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:top32_hint_absolute_ids",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:source_prefix_input_exact",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:active_context_sha256",
+      "passed": true
+    },
+    {
+      "name": "step actual gather/layout/count tangent-canny/scale1:6:active_hint_weights_sha256",
+      "passed": true
+    },
+    {
+      "name": "step launch log exact observed row tangent-canny/scale1:6",
+      "passed": true
+    },
+    {
+      "name": "step active known hint invariants tangent-canny/scale1:6",
+      "passed": true
+    },
+    {
+      "name": "final tensor shape/finite tangent-canny/scale1",
+      "passed": true
+    },
+    {
+      "name": "final latent array hash tangent-canny/scale1",
+      "passed": true
+    },
+    {
+      "name": "final known target codec exact at sigma0 tangent-canny/scale1",
+      "passed": true
+    },
+    {
+      "name": "final known target restoration declaration tangent-canny/scale1",
+      "passed": true
+    },
+    {
+      "name": "same-scale numerical difference reproduced tangent-canny/scale1:final_latents_exact",
+      "passed": true
+    },
+    {
+      "name": "same-scale numerical difference reproduced tangent-canny/scale1:max_abs",
+      "passed": true
+    },
+    {
+      "name": "same-scale numerical difference reproduced tangent-canny/scale1:mean_abs",
+      "passed": true
+    },
+    {
+      "name": "same-scale baseline final hash tangent-canny/scale1",
+      "passed": true
+    },
+    {
+      "name": "same-scale baseline not rerun tangent-canny/scale1",
+      "passed": true
+    },
+    {
+      "name": "raw/composite geometry tangent-canny/scale1",
+      "passed": true
+    },
+    {
+      "name": "raw/composite container hashes tangent-canny/scale1",
+      "passed": true
+    },
+    {
+      "name": "final hardpaste source byte exact tangent-canny/scale1",
+      "passed": true
+    },
+    {
+      "name": "final exterior raw pixels preserved tangent-canny/scale1",
+      "passed": true
+    },
+    {
+      "name": "raw source reconstruction metric tangent-canny/scale1:raw_source_top16_mae_255",
+      "passed": true
+    },
+    {
+      "name": "raw source reconstruction metric tangent-canny/scale1:raw_source_bottom16_mae_255",
+      "passed": true
+    },
+    {
+      "name": "raw source reconstruction metric tangent-canny/scale1:raw_source_inner_mae_255",
+      "passed": true
+    },
+    {
+      "name": "raw source reconstruction metric tangent-canny/scale1:raw_source_mae_255",
+      "passed": true
+    },
+    {
+      "name": "retained baseline raw hash tangent-canny/scale1",
+      "passed": true
+    },
+    {
+      "name": "retained baseline composite hash tangent-canny/scale1",
+      "passed": true
+    },
+    {
+      "name": "previews exactly steps2/4/6 tangent-canny/scale1",
+      "passed": true
+    },
+    {
+      "name": "genuine preview position/sigma tangent-canny/scale1:2:final_canvas_ids",
+      "passed": true
+    },
+    {
+      "name": "genuine preview position/sigma tangent-canny/scale1:2:window_xyxy",
+      "passed": true
+    },
+    {
+      "name": "genuine preview position/sigma tangent-canny/scale1:2:sigma",
+      "passed": true
+    },
+    {
+      "name": "genuine preview active latent shape tangent-canny/scale1:2",
+      "passed": true
+    },
+    {
+      "name": "preview known codec restored tangent-canny/scale1:2",
+      "passed": true
+    },
+    {
+      "name": "preview metadata actual path/window tangent-canny/scale1:2",
+      "passed": true
+    },
+    {
+      "name": "preview raw/composite active image size tangent-canny/scale1:2",
+      "passed": true
+    },
+    {
+      "name": "preview raw/composite recorded hash tangent-canny/scale1:2",
+      "passed": true
+    },
+    {
+      "name": "preview source hardpaste exact tangent-canny/scale1:2",
+      "passed": true
+    },
+    {
+      "name": "preview exterior raw pixels preserved tangent-canny/scale1:2",
+      "passed": true
+    },
+    {
+      "name": "preview definition honest tangent-canny/scale1:2",
+      "passed": true
+    },
+    {
+      "name": "genuine preview position/sigma tangent-canny/scale1:4:final_canvas_ids",
+      "passed": true
+    },
+    {
+      "name": "genuine preview position/sigma tangent-canny/scale1:4:window_xyxy",
+      "passed": true
+    },
+    {
+      "name": "genuine preview position/sigma tangent-canny/scale1:4:sigma",
+      "passed": true
+    },
+    {
+      "name": "genuine preview active latent shape tangent-canny/scale1:4",
+      "passed": true
+    },
+    {
+      "name": "preview known codec restored tangent-canny/scale1:4",
+      "passed": true
+    },
+    {
+      "name": "preview metadata actual path/window tangent-canny/scale1:4",
+      "passed": true
+    },
+    {
+      "name": "preview raw/composite active image size tangent-canny/scale1:4",
+      "passed": true
+    },
+    {
+      "name": "preview raw/composite recorded hash tangent-canny/scale1:4",
+      "passed": true
+    },
+    {
+      "name": "preview source hardpaste exact tangent-canny/scale1:4",
+      "passed": true
+    },
+    {
+      "name": "preview exterior raw pixels preserved tangent-canny/scale1:4",
+      "passed": true
+    },
+    {
+      "name": "preview definition honest tangent-canny/scale1:4",
+      "passed": true
+    },
+    {
+      "name": "genuine preview position/sigma tangent-canny/scale1:6:final_canvas_ids",
+      "passed": true
+    },
+    {
+      "name": "genuine preview position/sigma tangent-canny/scale1:6:window_xyxy",
+      "passed": true
+    },
+    {
+      "name": "genuine preview position/sigma tangent-canny/scale1:6:sigma",
+      "passed": true
+    },
+    {
+      "name": "genuine preview active latent shape tangent-canny/scale1:6",
+      "passed": true
+    },
+    {
+      "name": "preview known codec restored tangent-canny/scale1:6",
+      "passed": true
+    },
+    {
+      "name": "preview metadata actual path/window tangent-canny/scale1:6",
+      "passed": true
+    },
+    {
+      "name": "preview raw/composite active image size tangent-canny/scale1:6",
+      "passed": true
+    },
+    {
+      "name": "preview raw/composite recorded hash tangent-canny/scale1:6",
+      "passed": true
+    },
+    {
+      "name": "preview source hardpaste exact tangent-canny/scale1:6",
+      "passed": true
+    },
+    {
+      "name": "preview exterior raw pixels preserved tangent-canny/scale1:6",
+      "passed": true
+    },
+    {
+      "name": "preview definition honest tangent-canny/scale1:6",
+      "passed": true
+    },
+    {
+      "name": "suite totals12NFE/24576targets/12288reference",
+      "passed": true
+    },
+    {
+      "name": "older cached geometry latent file hash retained",
+      "passed": true
+    },
+    {
+      "name": "older cached geometry remains numerically inexact",
+      "passed": true
+    },
+    {
+      "name": "older cached geometry max difference reproduced",
+      "passed": true
+    },
+    {
+      "name": "older cached geometry mean difference reproduced",
+      "passed": true
+    },
+    {
+      "name": "no unsupported hidden-state preservation claim",
+      "passed": true
+    }
+  ],
+  "array_inventory": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/reference_conditioning.npz:source_latents": {
+      "sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "shape": [
+        1,
+        1024,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/reference_conditioning.npz:prompt_embeds": {
+      "sha256": "56c33a6f81fcd6a3e2888636c7ce37200d6a894cb117b6553bab0737a2ff9ae1",
+      "shape": [
+        1,
+        429,
+        4096
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/reference_conditioning.npz:image_slots": {
+      "sha256": "a21c9e5a04f4be9d1f618bff6c332b0ce185922e3e69b3b154e00d188447313b",
+      "shape": [
+        429
+      ],
+      "dtype": "bool",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/reference_conditioning.npz:source_latents": {
+      "sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "shape": [
+        1,
+        1024,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/reference_conditioning.npz:prompt_embeds": {
+      "sha256": "56c33a6f81fcd6a3e2888636c7ce37200d6a894cb117b6553bab0737a2ff9ae1",
+      "shape": [
+        1,
+        429,
+        4096
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/reference_conditioning.npz:image_slots": {
+      "sha256": "a21c9e5a04f4be9d1f618bff6c332b0ce185922e3e69b3b154e00d188447313b",
+      "shape": [
+        429
+      ],
+      "dtype": "bool",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/edge_known_target.npz:known": {
+      "sha256": "5bfd5056ecb4c0c53a3386f8575c1ffe7a16a52925b4363d467ab25e7ef16c1a",
+      "shape": [
+        1,
+        1024,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/edge_known_target.npz:edge_guess": {
+      "sha256": "82d59640e5545d8ca863b64f859e98038cd0123aff197f4309150771e84ce078",
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/edge_known_target.npz:known": {
+      "sha256": "5bfd5056ecb4c0c53a3386f8575c1ffe7a16a52925b4363d467ab25e7ef16c1a",
+      "shape": [
+        1,
+        1024,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/edge_known_target.npz:edge_guess": {
+      "sha256": "82d59640e5545d8ca863b64f859e98038cd0123aff197f4309150771e84ce078",
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/target_noise.npz:noise": {
+      "sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/target_noise.npz:noise": {
+      "sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/tangent-canny_contexts.npz:target_context": {
+      "sha256": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+      "shape": [
+        1,
+        2304,
+        129
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/tangent-canny_contexts.npz:padded_image_context": {
+      "sha256": "981a307df789d30812d7c55b1fcab59d018e446b03fcc68edc4b296eb5c405df",
+      "shape": [
+        1,
+        3328,
+        129
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/tangent-canny_contexts.npz:structural_support": {
+      "sha256": "b628f540265dba9ceb8b221d3abb241ab6bfc8d036ddc8e9ebb0e19c9eb41d39",
+      "shape": [
+        1,
+        2304,
+        1
+      ],
+      "dtype": "bool",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/tangent-canny_contexts.npz:target_context": {
+      "sha256": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+      "shape": [
+        1,
+        2304,
+        129
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/tangent-canny_contexts.npz:padded_image_context": {
+      "sha256": "981a307df789d30812d7c55b1fcab59d018e446b03fcc68edc4b296eb5c405df",
+      "shape": [
+        1,
+        3328,
+        129
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/tangent-canny_contexts.npz:structural_support": {
+      "sha256": "b628f540265dba9ceb8b221d3abb241ab6bfc8d036ddc8e9ebb0e19c9eb41d39",
+      "shape": [
+        1,
+        2304,
+        1
+      ],
+      "dtype": "bool",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/effective_hint_weights.npz:target_weights": {
+      "sha256": "84901f9b4dd136b17567a166497d8e626feafde638ad4d964016ae94881aee4b",
+      "shape": [
+        1,
+        2304,
+        1
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/effective_hint_weights.npz:joint_weights": {
+      "sha256": "576846568b80421ea5f0d40929b66dc03e6f8d481d931ffb3221ac4a82486cd8",
+      "shape": [
+        1,
+        3501,
+        1
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/effective_hint_weights.npz:requested_target_weights": {
+      "sha256": "cdb3823495b18c315aa0dcd283733e44c13b9dfd6e0e34056e96fdf4ccaf909e",
+      "shape": [
+        1,
+        2304,
+        1
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/effective_hint_weights.npz:old_target_weights": {
+      "sha256": "84a394acbbc26e450054e217e2cd7531f808ef4412019ca85a3db34734c62e89",
+      "shape": [
+        1,
+        2304,
+        1
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/effective_hint_weights.npz:target_weights": {
+      "sha256": "84a394acbbc26e450054e217e2cd7531f808ef4412019ca85a3db34734c62e89",
+      "shape": [
+        1,
+        2304,
+        1
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/effective_hint_weights.npz:joint_weights": {
+      "sha256": "59c6d0faf720c72d8bb9f450f1fd86d61852645532dee449bf8ce120390e7385",
+      "shape": [
+        1,
+        3501,
+        1
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/effective_hint_weights.npz:requested_target_weights": {
+      "sha256": "1f78cd6187786d3be437a98cf50c4945f6ac75a9de2789ecee80ebd2e2427667",
+      "shape": [
+        1,
+        2304,
+        1
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/final_latents.npz:latents": {
+      "sha256": "75d0705296ab0d83975d020c1675692b42a1ecc515b16ffc62baa26c6a771556",
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/final_latents.npz:latents": {
+      "sha256": "0f7b0151b490b4d70ff8f95f6bd54a06e88091429acb1435ea346c39cfbc1046",
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step02_predicted_clean.npz:latents": {
+      "sha256": "64632c52363aa62a59f5c7a14e63b1dc9123996594773f752d618dde4ffcf4f7",
+      "shape": [
+        1,
+        1792,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step02_predicted_clean.npz:final_canvas_ids": {
+      "sha256": "35562c2af99ea1f1096887d65ba89d4f98ea9f9f25422b1c22154ac4aed4e66a",
+      "shape": [
+        1792
+      ],
+      "dtype": "int32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step02_predicted_clean.npz:sigma": {
+      "sha256": "e804bfdf21e21970728df766993c97202395c6f6b74fabf1863e03db7066b628",
+      "shape": [],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step02_predicted_clean.npz:window_xyxy": {
+      "sha256": "e12a2f3245fda3622ecaa800474cd3b3e8c6105f00d6ad30c6c75a0025007bd0",
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step04_predicted_clean.npz:latents": {
+      "sha256": "cf12aa97ceaac95544c4d2e3abe8e9fbb557950ac990553bce036d9c2d312ed7",
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step04_predicted_clean.npz:final_canvas_ids": {
+      "sha256": "eebe4a6aa3412ddf394f671ecf58e01afad5aad28303dc9d7018cf64eab2609a",
+      "shape": [
+        2304
+      ],
+      "dtype": "int32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step04_predicted_clean.npz:sigma": {
+      "sha256": "b9ebd9930b7915305c8d06efdcccf4245cfe3b2a2919978b40b708ec0e9401bf",
+      "shape": [],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step04_predicted_clean.npz:window_xyxy": {
+      "sha256": "854684a673b325ccd7c7d4d5f6c5fab92f219d0443929a2f1de76d60a4020d5f",
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step06_predicted_clean.npz:latents": {
+      "sha256": "75d0705296ab0d83975d020c1675692b42a1ecc515b16ffc62baa26c6a771556",
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step06_predicted_clean.npz:final_canvas_ids": {
+      "sha256": "eebe4a6aa3412ddf394f671ecf58e01afad5aad28303dc9d7018cf64eab2609a",
+      "shape": [
+        2304
+      ],
+      "dtype": "int32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step06_predicted_clean.npz:sigma": {
+      "sha256": "5ea95cea40a79a54c629675153440ff1d9ed1bfc204acd7d2be59a6d9a76b9a2",
+      "shape": [],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step06_predicted_clean.npz:window_xyxy": {
+      "sha256": "854684a673b325ccd7c7d4d5f6c5fab92f219d0443929a2f1de76d60a4020d5f",
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/final_latents.npz:latents": {
+      "sha256": "5c8796830878a9ba6178e876818d42f6e9e6902d91162a52633746ea015883b7",
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/final_latents.npz:latents": {
+      "sha256": "f4332dc2e84407486a970744ac2c988bc786e72d5a7ab247ccbee1061d7fa7a7",
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step02_predicted_clean.npz:latents": {
+      "sha256": "89d07211cfaef5b387d639cdca849326438050fc032e652f9042bcfa121cfba8",
+      "shape": [
+        1,
+        1792,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step02_predicted_clean.npz:final_canvas_ids": {
+      "sha256": "35562c2af99ea1f1096887d65ba89d4f98ea9f9f25422b1c22154ac4aed4e66a",
+      "shape": [
+        1792
+      ],
+      "dtype": "int32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step02_predicted_clean.npz:sigma": {
+      "sha256": "e804bfdf21e21970728df766993c97202395c6f6b74fabf1863e03db7066b628",
+      "shape": [],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step02_predicted_clean.npz:window_xyxy": {
+      "sha256": "e12a2f3245fda3622ecaa800474cd3b3e8c6105f00d6ad30c6c75a0025007bd0",
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step04_predicted_clean.npz:latents": {
+      "sha256": "f20bd0b50d90d17f4f16634c4a4b7e95dba3d7d91f64376bed547c09679b2374",
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step04_predicted_clean.npz:final_canvas_ids": {
+      "sha256": "eebe4a6aa3412ddf394f671ecf58e01afad5aad28303dc9d7018cf64eab2609a",
+      "shape": [
+        2304
+      ],
+      "dtype": "int32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step04_predicted_clean.npz:sigma": {
+      "sha256": "b9ebd9930b7915305c8d06efdcccf4245cfe3b2a2919978b40b708ec0e9401bf",
+      "shape": [],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step04_predicted_clean.npz:window_xyxy": {
+      "sha256": "854684a673b325ccd7c7d4d5f6c5fab92f219d0443929a2f1de76d60a4020d5f",
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step06_predicted_clean.npz:latents": {
+      "sha256": "5c8796830878a9ba6178e876818d42f6e9e6902d91162a52633746ea015883b7",
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step06_predicted_clean.npz:final_canvas_ids": {
+      "sha256": "eebe4a6aa3412ddf394f671ecf58e01afad5aad28303dc9d7018cf64eab2609a",
+      "shape": [
+        2304
+      ],
+      "dtype": "int32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step06_predicted_clean.npz:sigma": {
+      "sha256": "5ea95cea40a79a54c629675153440ff1d9ed1bfc204acd7d2be59a6d9a76b9a2",
+      "shape": [],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step06_predicted_clean.npz:window_xyxy": {
+      "sha256": "854684a673b325ccd7c7d4d5f6c5fab92f219d0443929a2f1de76d60a4020d5f",
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step06_predicted_clean.npz:latents": {
+      "sha256": "d9364fd615d577b28cfd0666f25eea2eed4acabc6ce3ae44a1d365e069337088",
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step06_predicted_clean.npz:final_canvas_ids": {
+      "sha256": "eebe4a6aa3412ddf394f671ecf58e01afad5aad28303dc9d7018cf64eab2609a",
+      "shape": [
+        2304
+      ],
+      "dtype": "int32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step06_predicted_clean.npz:sigma": {
+      "sha256": "5ea95cea40a79a54c629675153440ff1d9ed1bfc204acd7d2be59a6d9a76b9a2",
+      "shape": [],
+      "dtype": "float32",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step06_predicted_clean.npz:window_xyxy": {
+      "sha256": "854684a673b325ccd7c7d4d5f6c5fab92f219d0443929a2f1de76d60a4020d5f",
+      "shape": [
+        4
+      ],
+      "dtype": "int64",
+      "finite": true
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/final_latents.npz:latents": {
+      "sha256": "eb868473e61ec5932b5946a9eefcbe3376cea25a60a8ea73daa91a26837e46de",
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "finite": true
+    }
+  },
+  "file_inventory": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_growing_top32_control_trial.py": {
+      "sha256": "b4bda970127bc300d81cf44c9ced8ac1194866655f0cc6cea51f6dae37ee2f86",
+      "bytes": 38852
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_growing_localized_control_trial.py": {
+      "sha256": "6158d3812e811af840df0e5bdb300c5191b3e743b2572013bbdfdf75c39ea965",
+      "bytes": 51891
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/growing_localized_control.py": {
+      "sha256": "70a830a9d0139226fbdd2df7c5bc42db30c1e12b6b241950b540c5740b54eac8",
+      "bytes": 2313
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/localized_reference_control.py": {
+      "sha256": "2aa4dee1c5b4d64d119d58b8943f5d224b3119fc0ae8054c9d4b85d069fbd722",
+      "bytes": 9118
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/reference_control.py": {
+      "sha256": "ff8f404714defaf2909e82770cd5ec62811ffcca5b627ee5763efef3b92d09d9",
+      "bytes": 7505
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/control.py": {
+      "sha256": "f4017d5989b5a97db5783cc6f100938ffa1f8a17de92587a1608db5418dd9d2a",
+      "bytes": 9712
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/conditioning.py": {
+      "sha256": "a1526bdd8704de2b086ceafdd33ac57fa18b0aa6ad096f7c01525d4a772e7dfb",
+      "bytes": 14099
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/growing_known_collar_saved_inputs.py": {
+      "sha256": "f11bace7557cf6377d4c332e1cd0420c5a490713ecf57e91688e70bbaee9573d",
+      "bytes": 28956
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/test_growing_known_collar_cpu.py": {
+      "sha256": "f35b7a5dab6624b26762913812f39e7c3513c3c02bc6f114c2170b76a0f709fa",
+      "bytes": 21436
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_attention.py": {
+      "sha256": "e992e21c193cb2cd9f2225e8afb67af2424a770b853d3e065ff60c5b95581e83",
+      "bytes": 9056
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_transformer_block.py": {
+      "sha256": "60ed91c00e12066417636ea54f5e225198586af0e5e88ccc76dfe209d285b3de",
+      "bytes": 4792
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_layout.py": {
+      "sha256": "37bd0839fa8a215d2d25aec4e8f65f0e05c279ad1f1eab15e1af041368c0be44",
+      "bytes": 3866
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_transformer.py": {
+      "sha256": "8ee62ba80495fb36e8cf885b8b463bc7353cbfe2eb90b377d46283c539686735",
+      "bytes": 15143
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_norm_out.py": {
+      "sha256": "f403e5f7f63e297869190fdfe1155a6aabb2a13df480fca0ebf3af733adc911d",
+      "bytes": 552
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_text_projection.py": {
+      "sha256": "aca4d4c74c5450fa0238b4650984f478e5f59a5ecf25ddffe60a0a31514ca1aa",
+      "bytes": 805
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_time_text_embed.py": {
+      "sha256": "c051d7f82f285a9dd4be2c361e50afa51b1de13774d46b3a42037b3637ced348",
+      "bytes": 2372
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_rope.py": {
+      "sha256": "395f5c7281a77abb91fd1d40145a139b6b31d3af4112d7e6857efc2224fed1e6",
+      "bytes": 2696
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/growing_known_collar_cpu_validation.json": {
+      "sha256": "a7e255c21d63a974f761220583fbb6815c3f08a50886ed90bb8b4e0ba26eedb1",
+      "bytes": 68024
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/qwen/base/scheduler/scheduler_config.json": {
+      "sha256": "5895f3a167c14a967fe9ac70c64924ae5acc79799e0679fd12907e594a713cd1",
+      "bytes": 485
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/qwen/base/text_encoder/config.json": {
+      "sha256": "6001331949f7f86ab6d791a80b12246d4f8da5159fa08c3e62368a39f36d63a9",
+      "bytes": 1517
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/qwen/base/transformer/config.json": {
+      "sha256": "56ae3281c4e6c2d1aa3658252d187488071815fd79bef15808bb0205fc1a2241",
+      "bytes": 370
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/qwen/base/vae/config.json": {
+      "sha256": "9785d527b278cb8b210e9f48a8028d92a4190968ce7e24c8fc85d9d1b82f6ba2",
+      "bytes": 2079
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/Player/Resources/track3.jpg": {
+      "sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "bytes": 63491
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/inputs.json": {
+      "sha256": "89a17818b11b905bdf42cd64bb7fc2c55ea428784611568f3c7b48f048bc9afe",
+      "bytes": 3990
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track3/source_512.png": {
+      "sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+      "bytes": 348544
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux2/prompts.json": {
+      "sha256": "dd56cb5218534e225f91d353b6d940f95d286fdbd75e19d9fffddc797528cb91",
+      "bytes": 1366
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/base-manifest.json": {
+      "sha256": "3443d63b64d670c5ee42daa62b8d387c1167036145032d3561699d9eed6e4320",
+      "bytes": 4566
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track3/canny_extrapolated.png": {
+      "sha256": "77ef3e3fc7967a54de11b7a8d60985eb5d09ed25f28f65c1bc407960e37e39d8",
+      "bytes": 18604
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track3/extrapolated_only.png": {
+      "sha256": "de298a2574b9155b409cc221f5c4ba399f4f809a1ce1a4038691906993b171e3",
+      "bytes": 5987
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/cpu_parity.json": {
+      "sha256": "35f94400ef25e4e2c8565db23d351aaa03d8f2d9ea08b32ef4cff31267b810f3",
+      "bytes": 26477
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/growing_localized_cpu_validation.json": {
+      "sha256": "151387e4ec6f97990787c31f7f2bb1396b82751fa46ec4166dfc75c29f7cffed",
+      "bytes": 8242
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/known_collar_reference_control.py": {
+      "sha256": "d2479285007aac746a03535218451a2ccb6d6c921be3321c0ee81bcbecfcab94",
+      "bytes": 13146
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/known_collar_saved_baseline.py": {
+      "sha256": "f25c31fcfbf699506dfa2ba3bf16e7bb2f688ea25e2255a138b17c6adec997d1",
+      "bytes": 14279
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/localized_cpu_validation.json": {
+      "sha256": "8a9ca1d279f3ae3bae85d7343cb58a0f214319a5fec671f51d8cb834fa660996",
+      "bytes": 12504
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/reference_cpu_validation.json": {
+      "sha256": "d27c1777eaa2792dc0f3ce70986fdabecfc010b9cb4e4c3d5616e0e550007afc",
+      "bytes": 5183
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/sparse_conditioning.py": {
+      "sha256": "458a8eda69b31600365360822a25369bf479ba86246fdb110b07a546fbb12b0f",
+      "bytes": 7279
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/test_growing_localized_cpu.py": {
+      "sha256": "cadde338f713ea9399513da4911aa5f4ded2266500a021de03b24e2c7d3b6a98",
+      "bytes": 11456
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/test_localized_reference_cpu.py": {
+      "sha256": "5d8264091bb467529f90f2726d2386f03630c4763de2549052266f98f7d74328",
+      "bytes": 10920
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/test_reference_control_cpu.py": {
+      "sha256": "d3b6f628b0699eadd9526db4157985d9a7e2f673730e4c179d887a1af0d2bbfa",
+      "bytes": 12297
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/growing_localized_metrics.json": {
+      "sha256": "951479c4fb39af03c91fc465159f19aad039396ec9ff2719acc3b49200c996c8",
+      "bytes": 78646
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/edge_known_target.npz": {
+      "sha256": "e47f218e08642524b3400f93495e541d900f7123c86a8ad06560a8e737924992",
+      "bytes": 251292
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/effective_hint_weights.npz": {
+      "sha256": "389f82f5c924717f025171825b2ccad6b3ca22a676051da4f38ac5405f3fc8d0",
+      "bytes": 1636
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/hint_pixel_weights_float32.npy": {
+      "sha256": "b93812ec78c3748e4e15552796e8c282d9712f5ba04a190f54f3e97d9efbde2f",
+      "bytes": 2359424
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/hint_target_weights_float32.npy": {
+      "sha256": "31567ec0ea4c64305afdd2259da0a1699e378f4682ba9c7ffec045a4af3e1fe4",
+      "bytes": 9344
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/hint_weights.json": {
+      "sha256": "14ce93d29ed85a4d3dc7c0ee4d010e93593458c8bdf62802c7ef9bb14943c0a1",
+      "bytes": 1286
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/hint_weights.png": {
+      "sha256": "c1778b91c0e72914748050ff47941c99786e141abcd7db653a5b38b92474cbcf",
+      "bytes": 3563
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/reference_conditioning.npz": {
+      "sha256": "82c43708d5af2310a150a1d14c1a0457fdd36d7390dbaff14efdd1f544c00b1f",
+      "bytes": 3392472
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/support.json": {
+      "sha256": "b963ae452fb38d808d0628543b23ef259a9e87d182ed0a107e1d02025f94ede7",
+      "bytes": 1178
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/support.png": {
+      "sha256": "e181e4455adc7efe2acae40ab332a67f13b6782e787506d809e4191627576caa",
+      "bytes": 2233
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/support_tokens.npy": {
+      "sha256": "38ed40e7186380d66e2d7733ef92456210bf5e765a670a0931887e2a1ccc1a55",
+      "bytes": 2432
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/tangent-canny_contexts.npz": {
+      "sha256": "5a973dd8b447de5e0bf5edaf56a80139f1deb816a9cbc244418afc28a9784d27",
+      "bytes": 830787
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/target_noise.npz": {
+      "sha256": "66f5fcc50aca469517350f763804ecb2cb3ef6f42caccfab95c761a06e0ab0db",
+      "bytes": 277526
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/source_rgba.png": {
+      "sha256": "38d08d8113c8518d37cdb45d1034e9bd7a9331e28362b8839a6059cb370bc01f",
+      "bytes": 375581
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/composite.png": {
+      "sha256": "5adf284d7540150c4630f5cb3dd51f5b63b02e0ea1982d0bdbf59183e8d8639e",
+      "bytes": 847229
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/final_latents.npz": {
+      "sha256": "566b3aed5a294484ce73ba9f7b12d531bdf7367f11601d0d7d598ed2b2a050fc",
+      "bytes": 277179
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/metrics.json": {
+      "sha256": "fbd501663d7edb50316d7abfd8a5e3f36c7913d5b73ef6b7a26db94efe9e10c2",
+      "bytes": 18223
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step02_predicted_clean.npz": {
+      "sha256": "c6193fe41e5414f9bcb4ee30f3c3136f0006d4eef61226e4e80125766d2f4c42",
+      "bytes": 218804
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step02_predicted_clean_composite.png": {
+      "sha256": "7daa3ea97219c0f6ef757d8209a502cf2b15b14971e0cdf0c83bf861f8ab13eb",
+      "bytes": 594938
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step02_predicted_clean_raw.png": {
+      "sha256": "2879fae3813474f2a86b1f310ffa5c8f3ab77e28fe0093cda673f27dc34493a0",
+      "bytes": 670412
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step04_predicted_clean.npz": {
+      "sha256": "5273feee451b49011434e8c05c3b59c4d201dfb8fc78695ee7627f750f74f795",
+      "bytes": 280393
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step04_predicted_clean_composite.png": {
+      "sha256": "c047cfcedcd9bc6a007d50ab15e8010d0dfac0c9018c1d919b3465a6319c7eb7",
+      "bytes": 738849
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step04_predicted_clean_raw.png": {
+      "sha256": "db5352b399aef518741398ba2bd5af24421b1418db7372e16c0f942c9d556cb7",
+      "bytes": 814449
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step06_predicted_clean.npz": {
+      "sha256": "4bd2410e804a235bb4a1f3cf846bc82ebbe3211ad6cff9f6dc15cf6e82b54f90",
+      "bytes": 281005
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step06_predicted_clean_composite.png": {
+      "sha256": "5adf284d7540150c4630f5cb3dd51f5b63b02e0ea1982d0bdbf59183e8d8639e",
+      "bytes": 847229
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step06_predicted_clean_raw.png": {
+      "sha256": "c09f8c276ba4f23a7cf5948225951682ee808046dae4bda4884b4f5931de1b66",
+      "bytes": 923758
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/raw.png": {
+      "sha256": "c09f8c276ba4f23a7cf5948225951682ee808046dae4bda4884b4f5931de1b66",
+      "bytes": 923758
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/composite.png": {
+      "sha256": "b573535f0b7be0f81cb36cd2ec23ae1dfbad5e4f7811a14fe6e6da2d63a2c29a",
+      "bytes": 846800
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/final_latents.npz": {
+      "sha256": "97fa2bd8fe74d31a4e62ebd9a95c42853f1cfcb6d67b74810f38056edb85e06c",
+      "bytes": 277209
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/metrics.json": {
+      "sha256": "a1bb6da52d6fbc5b3b0da7a1d3dfbfc62e9d87b47f92eb654e28f415f39810e8",
+      "bytes": 17382
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step02_predicted_clean.npz": {
+      "sha256": "fe846937a25d7ab67fd37b50ca973c6666e6bf85d774545f3ab49442d5a55a78",
+      "bytes": 218871
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step02_predicted_clean_composite.png": {
+      "sha256": "f3b3f10a561812c5dbecdb83473287610410b870f5b35204c8ef48bacaaedfff",
+      "bytes": 594809
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step02_predicted_clean_raw.png": {
+      "sha256": "97fc807b78563398c53dcd8a90e4c22a6a526c392fb185cf271a1b5f3997d700",
+      "bytes": 670354
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step04_predicted_clean.npz": {
+      "sha256": "a4ede92b6b615598138e51638f1762a3ed8d381152e56077e54cc89137ba7277",
+      "bytes": 280344
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step04_predicted_clean_composite.png": {
+      "sha256": "98a689fe4024a6da37bef4f8714ad88c730632a0d7f0319e101630f2c6c688b7",
+      "bytes": 739533
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step04_predicted_clean_raw.png": {
+      "sha256": "03ab46afbe4603b4d225ee59fe0cf4ad03cd2828e4afbc6aeab889f23a418398",
+      "bytes": 815015
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step06_predicted_clean.npz": {
+      "sha256": "cf8d84c1807bba00552a14d7e06c8ba67821cf0fd608e26a0cd7474a97768611",
+      "bytes": 281035
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step06_predicted_clean_composite.png": {
+      "sha256": "b573535f0b7be0f81cb36cd2ec23ae1dfbad5e4f7811a14fe6e6da2d63a2c29a",
+      "bytes": 846800
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step06_predicted_clean_raw.png": {
+      "sha256": "1153d33c3a3351e73f817f4a05cd2930542b5fcc6841aea588d0791f5003401d",
+      "bytes": 923317
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/raw.png": {
+      "sha256": "1153d33c3a3351e73f817f4a05cd2930542b5fcc6841aea588d0791f5003401d",
+      "bytes": 923317
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/composite.png": {
+      "sha256": "bc1baac780457724295345eb0a6b43b08ab0dbc3d4e50fb2330c6e2ed7c44d29",
+      "bytes": 845356
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/final_latents.npz": {
+      "sha256": "6fa7a17746ed5d8fac160c8fd1e1f687a642a17343b7ad05317700f8633b1123",
+      "bytes": 277164
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/metrics.json": {
+      "sha256": "4ef95935ee4647aafdc3609e35dc9b5c0cf0a4c8970c145be8cfde5a1e6de41a",
+      "bytes": 17362
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step02_predicted_clean.npz": {
+      "sha256": "0e7c3108dcfde8e4a81dbce69a6742df8284c558b8948e9b8afd4aab15ea7c69",
+      "bytes": 218862
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step02_predicted_clean_composite.png": {
+      "sha256": "861f17845853f1d184ee988db07ef224d19a41dfaaec3fd35df4596951302e3f",
+      "bytes": 594911
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step02_predicted_clean_raw.png": {
+      "sha256": "17496684f72186c3697891d0e3f380975193b7d164f728fe43223a38489ab5ba",
+      "bytes": 670771
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step04_predicted_clean.npz": {
+      "sha256": "d056736c8590effddc56523a6ccec8fc71a4d23a2514520acd2e17d481814538",
+      "bytes": 280371
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step04_predicted_clean_composite.png": {
+      "sha256": "b63f34a7b3da55edd6076c79348f400b1c7a01d68be17ec972360e45b34c224d",
+      "bytes": 739944
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step04_predicted_clean_raw.png": {
+      "sha256": "9a8a00656302dc0e9790c3bd376dcca06b7b29cdf8e293a9e43dd4545355dda6",
+      "bytes": 815464
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step06_predicted_clean.npz": {
+      "sha256": "edce65738a1b3344d15ffe11f336baf04141ef0bdd767aa4d640fc7bd3644713",
+      "bytes": 280990
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step06_predicted_clean_composite.png": {
+      "sha256": "bc1baac780457724295345eb0a6b43b08ab0dbc3d4e50fb2330c6e2ed7c44d29",
+      "bytes": 845356
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step06_predicted_clean_raw.png": {
+      "sha256": "c62fd29a9e40f884831a81c8449042ff11c3d041acdcf4820919a802733e6391",
+      "bytes": 921871
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/raw.png": {
+      "sha256": "c62fd29a9e40f884831a81c8449042ff11c3d041acdcf4820919a802733e6391",
+      "bytes": 921871
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_geometry_trial.py": {
+      "sha256": "68c169700228af7a219caf66fb5526dbd2bf3684c92ca14a56c53d1767ab215f",
+      "bytes": 38291
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_spatial_ablation.py": {
+      "sha256": "03899bbe81cc34404fd31a15fefcf0f0e684d6b120d929b87ca8e1e713d137ea",
+      "bytes": 32712
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/viggle-manifest.json": {
+      "sha256": "5dccfd23a241d8c66ba70670e922adc562ee8aff39ed1d9d5d10c10a72b3a7ed",
+      "bytes": 1169
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/reference_conditioning.npz": {
+      "sha256": "82c43708d5af2310a150a1d14c1a0457fdd36d7390dbaff14efdd1f544c00b1f",
+      "bytes": 3392472
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/edge_known_target.npz": {
+      "sha256": "e47f218e08642524b3400f93495e541d900f7123c86a8ad06560a8e737924992",
+      "bytes": 251292
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/target_noise.npz": {
+      "sha256": "66f5fcc50aca469517350f763804ecb2cb3ef6f42caccfab95c761a06e0ab0db",
+      "bytes": 277526
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/tangent-canny_contexts.npz": {
+      "sha256": "5a973dd8b447de5e0bf5edaf56a80139f1deb816a9cbc244418afc28a9784d27",
+      "bytes": 830787
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/effective_hint_weights.npz": {
+      "sha256": "8c4e76a42d8eda8775beffe18ba0d9fc654aef65a2e7d982a47779d7fe850abe",
+      "bytes": 2130
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/support.png": {
+      "sha256": "e181e4455adc7efe2acae40ab332a67f13b6782e787506d809e4191627576caa",
+      "bytes": 2233
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/hint_target_weights_float32.npy": {
+      "sha256": "0adcbabe1ec824794f6c4f6ecc9df25a27a781e7b76ccfbbaa8e3d18ee5c6571",
+      "bytes": 9344
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/hint_weights.json": {
+      "sha256": "0d9ada6a8ddf72424395414aa93d1b92214ce08602a4ed7f38dbaa7807a994d2",
+      "bytes": 1928
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/hint_pixel_weights_float32.npy": {
+      "sha256": "1ebe464089082fcce3b5415c52498d3744e4f6428a359c050e4d0497ef902314",
+      "bytes": 2359424
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/support.json": {
+      "sha256": "b963ae452fb38d808d0628543b23ef259a9e87d182ed0a107e1d02025f94ede7",
+      "bytes": 1178
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/support_tokens.npy": {
+      "sha256": "38ed40e7186380d66e2d7733ef92456210bf5e765a670a0931887e2a1ccc1a55",
+      "bytes": 2432
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/shared/hint_weights.png": {
+      "sha256": "e850d259a59654f717aedd61bac18b599c1c3b6fc6def3a35ac14d28c6bbc7ab",
+      "bytes": 3651
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/final_latents.npz": {
+      "sha256": "3587c020063d372c254bd61eb2f7d7ac7021cb707a834fa9489019ef8cb43151",
+      "bytes": 277229
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/raw.png": {
+      "sha256": "951ac0f1087afab5a15eff37b1e2bc7ab15fe2d50c5db9a708d468c82bae691d",
+      "bytes": 918891
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/composite.png": {
+      "sha256": "23d1c69c04da05f7f87dfc4fff714d701e55adf4ffc7d21bfcf0725ae21597c0",
+      "bytes": 842311
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step02_predicted_clean.npz": {
+      "sha256": "849d42cf2c6658e6806e82f072b349cf660ee56a1f5fd2f219a0ced7c3d62c15",
+      "bytes": 218915
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step02_predicted_clean_raw.png": {
+      "sha256": "e45d6a8769e470d3750e600e2920c8c91cce7c5b74d35b9b90839a59e1399bd6",
+      "bytes": 669057
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step02_predicted_clean_composite.png": {
+      "sha256": "27041a612ef08eec519af457bb9af1cb24733689095d1a0c6278312ff1d9eb01",
+      "bytes": 593730
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step04_predicted_clean.npz": {
+      "sha256": "cf6c44eae9b632eb3e9d3308ae0d8eb3751e00f2de7198679c9acee65bc95fa0",
+      "bytes": 280488
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step04_predicted_clean_raw.png": {
+      "sha256": "bbf90f16f2bf73c2a58ab07b6a4fada725bf918a7fe7502b49f9f3d7002e0cd6",
+      "bytes": 812331
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step04_predicted_clean_composite.png": {
+      "sha256": "0b251ac07a9185f2686638cc7e255e4ccee267736a5b29497cba316cff788b0c",
+      "bytes": 737137
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step06_predicted_clean.npz": {
+      "sha256": "7aafd971896de42b3531ed341016f9cd447328ff81d7eccbffc0d90af91d0128",
+      "bytes": 281055
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step06_predicted_clean_raw.png": {
+      "sha256": "951ac0f1087afab5a15eff37b1e2bc7ab15fe2d50c5db9a708d468c82bae691d",
+      "bytes": 918891
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/previews/step06_predicted_clean_composite.png": {
+      "sha256": "23d1c69c04da05f7f87dfc4fff714d701e55adf4ffc7d21bfcf0725ae21597c0",
+      "bytes": 842311
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/final_latents.npz": {
+      "sha256": "7f8224b9d5c5e40deae7f15b97f675aae85e01531c33c725281c137883faf71c",
+      "bytes": 277237
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/raw.png": {
+      "sha256": "ad9799e98feac97acafd4a96e545279dfafe2183eff949f7a1dcb241d7a9f152",
+      "bytes": 906176
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/composite.png": {
+      "sha256": "ab4d41404e5422cc5c630e5e7f55efbbeba1a0c7e98431590150e91ee77e78df",
+      "bytes": 829603
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step02_predicted_clean.npz": {
+      "sha256": "abaf98a7ccb31562f0b05419a1744ae056dab5c316a913136f414a1f477d2aa7",
+      "bytes": 218932
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step02_predicted_clean_raw.png": {
+      "sha256": "241120175b641a3e4da9bf2e449e57aa9e65d4155594264b9f6e5b641af28554",
+      "bytes": 660595
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step02_predicted_clean_composite.png": {
+      "sha256": "d5715efc7c8b1519c9339da629db2df0abee98c7c4d83649ad17e477a19c7e14",
+      "bytes": 585290
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step04_predicted_clean.npz": {
+      "sha256": "a0998c60aff4b73224ce5214ce14648c0ddcdd540d05cfa97af96552c3a21435",
+      "bytes": 280475
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step04_predicted_clean_raw.png": {
+      "sha256": "d6a3b1e4c7b7cab234b51e08169db90d5ac0da59e4e5819269cbaca836cc5cf5",
+      "bytes": 806011
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step04_predicted_clean_composite.png": {
+      "sha256": "451fd51741fc91fe1741d6823367587a09e81a22fb1762d3442bd3565fafca5d",
+      "bytes": 731102
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step06_predicted_clean.npz": {
+      "sha256": "6850ceec45f316346de08a4c42efa550b0ab1b602364c2360cae3b9fe9cfe943",
+      "bytes": 281063
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step06_predicted_clean_raw.png": {
+      "sha256": "ad9799e98feac97acafd4a96e545279dfafe2183eff949f7a1dcb241d7a9f152",
+      "bytes": 906176
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/previews/step06_predicted_clean_composite.png": {
+      "sha256": "ab4d41404e5422cc5c630e5e7f55efbbeba1a0c7e98431590150e91ee77e78df",
+      "bytes": 829603
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step06_predicted_clean.npz": {
+      "sha256": "568cf55c157f5436ef2bb476713f77178387b67eb246b98fee5127f988f13298",
+      "bytes": 280952
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/growing_top32_metrics.json": {
+      "sha256": "941e1429a5a2e64753b297abc79e71e8477e068394a98b559aaa232d9f55d774",
+      "bytes": 116470
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/launch.json": {
+      "sha256": "dac1b597e8306fc721fd583bef173a93ccd4b95a58318fc04924d35c12d6b755",
+      "bytes": 785
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/process.log": {
+      "sha256": "064a24f9ea7631643c35432dd89b173436341ebbbadd49771b15da16241d4ffa",
+      "bytes": 11609
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/source_rgba.png": {
+      "sha256": "38d08d8113c8518d37cdb45d1034e9bd7a9331e28362b8839a6059cb370bc01f",
+      "bytes": 375581
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale0.5/metrics.json": {
+      "sha256": "18a185d75f2dfbb48bcc1c82ccf7feea1f13eb9dd5e97d705dea8309c57217bc",
+      "bytes": 19215
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step/tangent-canny/scale1/metrics.json": {
+      "sha256": "fbc00c91771f6fbfecdc29da7ed782f1080fdc105c65ce6700ebf9b3cba12183",
+      "bytes": 19200
+    },
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_eval/2026-10-05/growing-top32-comparison/audit_integrity.py": {
+      "sha256": "b642b8aab4781d08e16931a62943c06f5ada2ad3d1200ca8dd67b1f07a389da2",
+      "bytes": 34176
+    }
+  },
+  "limitations": [
+    "This is a saved-artifact/static-code audit; GPU execution is not repeated.",
+    "Per-step source-prefix input equality was checked by the runner immediately before each forward. Actual per-block hidden states were not retained, so this audit does not independently establish a hidden-state trace.",
+    "Per-step active context/hint hashes are reconstructed from exact saved full tensors and absolute IDs, then matched to the runner's logged actual gathers. Per-step context tensor files and RoPE values were not retained.",
+    "Predicted-clean previews retain actual latent arrays, IDs, windows, and sigma, and match source-preserving decode outputs. Pre-step states and velocities were not saved, so the predicted-clean arithmetic cannot be independently recomputed.",
+    "NPZ preview container/array hashes computed here are current provenance; the earlier run did not persist historical preview-latent hashes.",
+    "Checkpoint/base weight payloads and GPU determinism were not reverified. Header/config/runtime provenance is retained; same-scale baseline was not rerun.",
+    "The older cached geometry baseline was already numerically inexact; no exact reproduction of that pipeline is claimed.",
+    "Visual quality and boundary/tangent evaluation are separate from this integrity audit."
+  ],
+  "retained_recipe_keys": [
+    "width",
+    "height",
+    "source_rect_xyxy",
+    "prompt",
+    "prompt_style",
+    "source_512_path",
+    "source_512_sha256",
+    "source_uint8_sha256",
+    "source_rgba_uint8_sha256",
+    "model_repo",
+    "model_revision",
+    "base_quantization",
+    "control_quantization",
+    "cfg",
+    "adapter",
+    "adapter_revision",
+    "adapter_rank",
+    "adapter_scale",
+    "adapter_baked",
+    "active_heights",
+    "known_target_encoding_context",
+    "known_target_and_control_source_codec_contexts_distinct",
+    "compute_mode",
+    "growing_compute",
+    "prefix_cache_enabled",
+    "base_prefix_cache_enabled",
+    "control_prefix_cache_enabled",
+    "old_cached_implementation_approximation",
+    "scheduler_resolution_basis",
+    "sigmas",
+    "noise_sha256",
+    "edge_known_target_sha256",
+    "map_paths",
+    "map_sha256",
+    "guide_path",
+    "structural_modes",
+    "structural_support",
+    "structural_support_metadata",
+    "hint_shape",
+    "hint_radius_pixels",
+    "known_bridge_extension",
+    "base_manifest_sha256",
+    "base_config_sha256",
+    "checkpoint_header",
+    "control_revision",
+    "upstream_revision",
+    "reference_encoding",
+    "control_conditioning",
+    "source_conditioning",
+    "reference_control_rows",
+    "layout"
+  ],
+  "saved_helper_recipe_scope": {
+    "baseline_validation_list_size": 49,
+    "direct_top_level_equal_names": [
+      "track",
+      "seed",
+      "steps",
+      "width",
+      "height",
+      "source_rect_xyxy",
+      "prompt",
+      "prompt_style",
+      "source_512_path",
+      "source_512_sha256",
+      "source_uint8_sha256",
+      "source_rgba_uint8_sha256",
+      "map_paths",
+      "map_sha256",
+      "guide_path",
+      "model_repo",
+      "model_revision",
+      "base_quantization",
+      "control_quantization",
+      "cfg",
+      "adapter",
+      "adapter_revision",
+      "adapter_rank",
+      "adapter_scale",
+      "adapter_baked",
+      "hint_shape",
+      "hint_radius_pixels",
+      "structural_modes",
+      "structural_support",
+      "known_bridge_extension",
+      "scheduler_resolution_basis",
+      "sigmas",
+      "active_heights",
+      "known_target_encoding_context",
+      "prefix_cache_enabled",
+      "base_prefix_cache_enabled",
+      "control_prefix_cache_enabled",
+      "compute_mode",
+      "growing_compute",
+      "base_manifest_sha256",
+      "base_config_sha256",
+      "checkpoint_header",
+      "control_revision",
+      "upstream_revision"
+    ],
+    "intentionally_different_names": [
+      "control_scales"
+    ],
+    "baseline_only_names": [
+      "adapter_bytes",
+      "adapter_expected_sha256",
+      "adapter_manifest_sha256",
+      "scheduler_target_tokens"
+    ],
+    "note": "The helper's 49-item list validates the retained baseline. The current top32 suite copies a separate 51-field protocol; those copied fields are independently compared above. Executed scales differ intentionally, and four baseline metadata fields are not copied into the new suite."
+  },
+  "retained_historical_files": {
+    "total": 91,
+    "baseline_artifacts": 53,
+    "external_code_runtime_inputs_configs": 38,
+    "claim_set_sha256": "9a9433919fc1484a64436757a46e25e412761f7c0e290326cef706ee97e0c0dc",
+    "baseline_files_without_historical_claim": [
+      "launch.json",
+      "process.log"
+    ]
+  },
+  "distinct_edge_known_and_control_source_codec": {
+    "arrays_equal": false,
+    "max_abs": 2.859375,
+    "mean_abs": 0.14377358555793762
+  },
+  "restored_inference_tensors": {
+    "all_common_tensor_arrays_exact_against_saved": true,
+    "hint_changed_ids_half_open": [
+      640,
+      704
+    ],
+    "hint_changed_tokens": 64,
+    "prefix_tokens": 1197,
+    "target_tokens": 2304,
+    "known_tokens": 1024,
+    "known_collar_tokens": 64,
+    "other_known_hint_tokens_zero": 960,
+    "unknown_positive_hint_tokens_retained": 97,
+    "effective_hint_sum": 118.75911712646484,
+    "requested_hint_sum": 118.75653076171875
+  },
+  "arms": {
+    "tangent-canny/scale0.5": {
+      "status": "success",
+      "step_gathers": [
+        {
+          "step": 1,
+          "absolute_target_ids_half_open": [
+            512,
+            1792
+          ],
+          "window_xyxy": [
+            0,
+            256,
+            512,
+            896
+          ],
+          "target_tokens": 1280,
+          "future_targets_absent": 1024,
+          "active_context_sha256_recomputed": "da10ecc6d9cbc9d4cb581ba9158c1ba3bcf3568467dcc72e6eaa63f77fca8413",
+          "active_hint_weights_sha256_recomputed": "436b0ca1db4e01b2b26d80d1593dd52dbae32e6bed7e222d7e78ccc8f76b2f4c"
+        },
+        {
+          "step": 2,
+          "absolute_target_ids_half_open": [
+            256,
+            2048
+          ],
+          "window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ],
+          "target_tokens": 1792,
+          "future_targets_absent": 512,
+          "active_context_sha256_recomputed": "672f49d4044b1d9593dc405dede03766a41e4a9e368be76acba0ee697a1cb72c",
+          "active_hint_weights_sha256_recomputed": "37c57a4b5baec078962c3561b0f12327b18cdbb53b5a3c1cd835544a608ce3cf"
+        },
+        {
+          "step": 3,
+          "absolute_target_ids_half_open": [
+            0,
+            2304
+          ],
+          "window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens": 2304,
+          "future_targets_absent": 0,
+          "active_context_sha256_recomputed": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+          "active_hint_weights_sha256_recomputed": "84901f9b4dd136b17567a166497d8e626feafde638ad4d964016ae94881aee4b"
+        },
+        {
+          "step": 4,
+          "absolute_target_ids_half_open": [
+            0,
+            2304
+          ],
+          "window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens": 2304,
+          "future_targets_absent": 0,
+          "active_context_sha256_recomputed": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+          "active_hint_weights_sha256_recomputed": "84901f9b4dd136b17567a166497d8e626feafde638ad4d964016ae94881aee4b"
+        },
+        {
+          "step": 5,
+          "absolute_target_ids_half_open": [
+            0,
+            2304
+          ],
+          "window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens": 2304,
+          "future_targets_absent": 0,
+          "active_context_sha256_recomputed": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+          "active_hint_weights_sha256_recomputed": "84901f9b4dd136b17567a166497d8e626feafde638ad4d964016ae94881aee4b"
+        },
+        {
+          "step": 6,
+          "absolute_target_ids_half_open": [
+            0,
+            2304
+          ],
+          "window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens": 2304,
+          "future_targets_absent": 0,
+          "active_context_sha256_recomputed": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+          "active_hint_weights_sha256_recomputed": "84901f9b4dd136b17567a166497d8e626feafde638ad4d964016ae94881aee4b"
+        }
+      ],
+      "nfe": 6,
+      "base_blocks": 192,
+      "control_blocks": 96,
+      "target_token_forwards": 12288,
+      "reference_image_token_forwards": 6144,
+      "final_known_codec_exact": true,
+      "source_pixels_exact": true,
+      "same_scale_final_latent_difference": {
+        "final_latents_exact": false,
+        "max_abs": 0.671875,
+        "mean_abs": 0.016370128840208054
+      },
+      "raw_source_maes": {
+        "raw_source_top16_mae_255": 8.240315755208334,
+        "raw_source_bottom16_mae_255": 4.977742513020833,
+        "raw_source_inner_mae_255": 3.2219251844618055,
+        "raw_source_mae_255": 3.433619181315104
+      },
+      "previews": [
+        {
+          "step": 2,
+          "active_height": 896,
+          "window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ],
+          "local_source_y": 192,
+          "latent_array_sha256_current": "64632c52363aa62a59f5c7a14e63b1dc9123996594773f752d618dde4ffcf4f7",
+          "latent_container_sha256_current": "849d42cf2c6658e6806e82f072b349cf660ee56a1f5fd2f219a0ced7c3d62c15",
+          "final_latents_exact": false
+        },
+        {
+          "step": 4,
+          "active_height": 1152,
+          "window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "local_source_y": 320,
+          "latent_array_sha256_current": "cf12aa97ceaac95544c4d2e3abe8e9fbb557950ac990553bce036d9c2d312ed7",
+          "latent_container_sha256_current": "cf6c44eae9b632eb3e9d3308ae0d8eb3751e00f2de7198679c9acee65bc95fa0",
+          "final_latents_exact": false
+        },
+        {
+          "step": 6,
+          "active_height": 1152,
+          "window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "local_source_y": 320,
+          "latent_array_sha256_current": "75d0705296ab0d83975d020c1675692b42a1ecc515b16ffc62baa26c6a771556",
+          "latent_container_sha256_current": "7aafd971896de42b3531ed341016f9cd447328ff81d7eccbffc0d90af91d0128",
+          "final_latents_exact": true
+        }
+      ]
+    },
+    "tangent-canny/scale1": {
+      "status": "success",
+      "step_gathers": [
+        {
+          "step": 1,
+          "absolute_target_ids_half_open": [
+            512,
+            1792
+          ],
+          "window_xyxy": [
+            0,
+            256,
+            512,
+            896
+          ],
+          "target_tokens": 1280,
+          "future_targets_absent": 1024,
+          "active_context_sha256_recomputed": "da10ecc6d9cbc9d4cb581ba9158c1ba3bcf3568467dcc72e6eaa63f77fca8413",
+          "active_hint_weights_sha256_recomputed": "436b0ca1db4e01b2b26d80d1593dd52dbae32e6bed7e222d7e78ccc8f76b2f4c"
+        },
+        {
+          "step": 2,
+          "absolute_target_ids_half_open": [
+            256,
+            2048
+          ],
+          "window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ],
+          "target_tokens": 1792,
+          "future_targets_absent": 512,
+          "active_context_sha256_recomputed": "672f49d4044b1d9593dc405dede03766a41e4a9e368be76acba0ee697a1cb72c",
+          "active_hint_weights_sha256_recomputed": "37c57a4b5baec078962c3561b0f12327b18cdbb53b5a3c1cd835544a608ce3cf"
+        },
+        {
+          "step": 3,
+          "absolute_target_ids_half_open": [
+            0,
+            2304
+          ],
+          "window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens": 2304,
+          "future_targets_absent": 0,
+          "active_context_sha256_recomputed": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+          "active_hint_weights_sha256_recomputed": "84901f9b4dd136b17567a166497d8e626feafde638ad4d964016ae94881aee4b"
+        },
+        {
+          "step": 4,
+          "absolute_target_ids_half_open": [
+            0,
+            2304
+          ],
+          "window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens": 2304,
+          "future_targets_absent": 0,
+          "active_context_sha256_recomputed": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+          "active_hint_weights_sha256_recomputed": "84901f9b4dd136b17567a166497d8e626feafde638ad4d964016ae94881aee4b"
+        },
+        {
+          "step": 5,
+          "absolute_target_ids_half_open": [
+            0,
+            2304
+          ],
+          "window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens": 2304,
+          "future_targets_absent": 0,
+          "active_context_sha256_recomputed": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+          "active_hint_weights_sha256_recomputed": "84901f9b4dd136b17567a166497d8e626feafde638ad4d964016ae94881aee4b"
+        },
+        {
+          "step": 6,
+          "absolute_target_ids_half_open": [
+            0,
+            2304
+          ],
+          "window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens": 2304,
+          "future_targets_absent": 0,
+          "active_context_sha256_recomputed": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+          "active_hint_weights_sha256_recomputed": "84901f9b4dd136b17567a166497d8e626feafde638ad4d964016ae94881aee4b"
+        }
+      ],
+      "nfe": 6,
+      "base_blocks": 192,
+      "control_blocks": 96,
+      "target_token_forwards": 12288,
+      "reference_image_token_forwards": 6144,
+      "final_known_codec_exact": true,
+      "source_pixels_exact": true,
+      "same_scale_final_latent_difference": {
+        "final_latents_exact": false,
+        "max_abs": 1.043212890625,
+        "mean_abs": 0.024918772280216217
+      },
+      "raw_source_maes": {
+        "raw_source_top16_mae_255": 7.737019856770833,
+        "raw_source_bottom16_mae_255": 4.962565104166667,
+        "raw_source_inner_mae_255": 3.2175360785590277,
+        "raw_source_mae_255": 3.4133021036783853
+      },
+      "previews": [
+        {
+          "step": 2,
+          "active_height": 896,
+          "window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ],
+          "local_source_y": 192,
+          "latent_array_sha256_current": "89d07211cfaef5b387d639cdca849326438050fc032e652f9042bcfa121cfba8",
+          "latent_container_sha256_current": "abaf98a7ccb31562f0b05419a1744ae056dab5c316a913136f414a1f477d2aa7",
+          "final_latents_exact": false
+        },
+        {
+          "step": 4,
+          "active_height": 1152,
+          "window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "local_source_y": 320,
+          "latent_array_sha256_current": "f20bd0b50d90d17f4f16634c4a4b7e95dba3d7d91f64376bed547c09679b2374",
+          "latent_container_sha256_current": "a0998c60aff4b73224ce5214ce14648c0ddcdd540d05cfa97af96552c3a21435",
+          "final_latents_exact": false
+        },
+        {
+          "step": 6,
+          "active_height": 1152,
+          "window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "local_source_y": 320,
+          "latent_array_sha256_current": "5c8796830878a9ba6178e876818d42f6e9e6902d91162a52633746ea015883b7",
+          "latent_container_sha256_current": "6850ceec45f316346de08a4c42efa550b0ab1b602364c2360cae3b9fe9cfe943",
+          "final_latents_exact": true
+        }
+      ]
+    }
+  },
+  "recomputed_totals": {
+    "nfe": 12,
+    "base_blocks": 384,
+    "control_blocks": 192,
+    "target_token_forwards": 24576,
+    "reference_image_token_forwards": 12288
+  },
+  "elapsed_seconds_runner": 145.6635384169931,
+  "older_cached_geometry_comparison": {
+    "status": "compared_same_provenance",
+    "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context",
+    "matching_provenance": {
+      "seed": true,
+      "prompt": true,
+      "source_prefix": true,
+      "noise": true,
+      "known_target": true,
+      "sigmas": true,
+      "adapter_rank": true,
+      "adapter_revision": true,
+      "quantization": true,
+      "model_revision": true,
+      "width": true,
+      "height": true,
+      "steps": true,
+      "spatial_mode": true,
+      "active_heights": true,
+      "initializer": true,
+      "known_context": true
+    },
+    "exact": false,
+    "max_abs": 0.0625,
+    "mean_abs": 0.0020019630901515484,
+    "old_latents_file_sha256": "568cf55c157f5436ef2bb476713f77178387b67eb246b98fee5127f988f13298"
+  },
+  "checks_total": 719,
+  "checks_passed": 719,
+  "failed_checks": [],
+  "audit_script_sha256": "b642b8aab4781d08e16931a62943c06f5ada2ad3d1200ca8dd67b1f07a389da2"
+}
