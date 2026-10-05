@@ -1,0 +1,219 @@
+{
+  "_id": "694ca30d4f715c34acef8f1b",
+  "id": "aifx-art/Qwen-Image-Edit-2511-Q4",
+  "private": false,
+  "pipeline_tag": "image-to-image",
+  "library_name": "diffusers",
+  "tags": [
+    "diffusers",
+    "safetensors",
+    "diffusers:QwenImageEditPlusPipeline",
+    "8-bit",
+    "region:us"
+  ],
+  "downloads": 78,
+  "likes": 0,
+  "modelId": "aifx-art/Qwen-Image-Edit-2511-Q4",
+  "author": "aifx-art",
+  "sha": "62a8488079b2ef1c47d1331eece1d432a96b6f56",
+  "lastModified": "2025-12-25T17:13:54.000Z",
+  "gated": false,
+  "disabled": false,
+  "model-index": null,
+  "config": {
+    "diffusers": {
+      "_class_name": "QwenImageEditPlusPipeline"
+    }
+  },
+  "cardData": {
+    "library_name": "diffusers"
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes",
+      "blobId": "b2ef89be59c5792bf037a43d1bb69d922d28e9d8",
+      "size": 1580
+    },
+    {
+      "rfilename": "README.md",
+      "blobId": "71f2500424344affdd56f91e9bb662594ba417dd",
+      "size": 95
+    },
+    {
+      "rfilename": "model_index.json",
+      "blobId": "008fc8a6e1e55df5f2aed7a44f588eb443a0004f",
+      "size": 564
+    },
+    {
+      "rfilename": "processor/added_tokens.json",
+      "blobId": "482ced4679301bf287ebb310bdd1790eb4514232",
+      "size": 605
+    },
+    {
+      "rfilename": "processor/chat_template.jinja",
+      "blobId": "6c226632394ae7474b0d4b13e15793eac2e21ee9",
+      "size": 1017
+    },
+    {
+      "rfilename": "processor/merges.txt",
+      "blobId": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+      "size": 1671853
+    },
+    {
+      "rfilename": "processor/processor_config.json",
+      "blobId": "8eb8977df0eb8170cfd52a1003cd612b6c91f117",
+      "size": 2062
+    },
+    {
+      "rfilename": "processor/special_tokens_map.json",
+      "blobId": "ac23c0aaa2434523c494330aeb79c58395378103",
+      "size": 613
+    },
+    {
+      "rfilename": "processor/tokenizer.json",
+      "blobId": "51ebb3ba93988c73bbd83a3c163a14343fbc5b06",
+      "size": 11421896,
+      "lfs": {
+        "sha256": "9c5ae00e602b8860cbd784ba82a8aa14e8feecec692e7076590d014d7b7fdafa",
+        "size": 11421896,
+        "pointerSize": 133
+      }
+    },
+    {
+      "rfilename": "processor/tokenizer_config.json",
+      "blobId": "203eb2267a9b927c93a97b67990818164bf3c692",
+      "size": 4727
+    },
+    {
+      "rfilename": "processor/vocab.json",
+      "blobId": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "size": 2776833
+    },
+    {
+      "rfilename": "scheduler/scheduler_config.json",
+      "blobId": "45cd05b021892b1cafbd16d61ce692637e88bedd",
+      "size": 485
+    },
+    {
+      "rfilename": "text_encoder/config.json",
+      "blobId": "29c15fa5ff0ee5bfb1e4bac760cc567281d6adea",
+      "size": 5176
+    },
+    {
+      "rfilename": "text_encoder/generation_config.json",
+      "blobId": "c47da04ee991379edf5820ef99b6e5282c3975ee",
+      "size": 125
+    },
+    {
+      "rfilename": "text_encoder/model-00001-of-00002.safetensors",
+      "blobId": "a1bbffd4065959656714934a613d927e3a370427",
+      "size": 4975533694,
+      "lfs": {
+        "sha256": "1a85f0ecd05a3e32f557ac82c909b25243479a56b7d92789a37c1a8c35db876a",
+        "size": 4975533694,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "text_encoder/model-00002-of-00002.safetensors",
+      "blobId": "c479ff6b80d8c31fdb25d638b9d60bbed1266c17",
+      "size": 475891982,
+      "lfs": {
+        "sha256": "20ef6388aa525994ebf0009ac499f7df4974aec98fc754a10c4b4aa9ccc34c62",
+        "size": 475891982,
+        "pointerSize": 134
+      }
+    },
+    {
+      "rfilename": "text_encoder/model.safetensors.index.json",
+      "blobId": "153db425975e9d491e67851e79e98a9474d21458",
+      "size": 160465
+    },
+    {
+      "rfilename": "tokenizer/added_tokens.json",
+      "blobId": "482ced4679301bf287ebb310bdd1790eb4514232",
+      "size": 605
+    },
+    {
+      "rfilename": "tokenizer/chat_template.jinja",
+      "blobId": "28028c056af412405debd878cdda0171e35fa5d1",
+      "size": 2427
+    },
+    {
+      "rfilename": "tokenizer/merges.txt",
+      "blobId": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+      "size": 1671853
+    },
+    {
+      "rfilename": "tokenizer/special_tokens_map.json",
+      "blobId": "ac23c0aaa2434523c494330aeb79c58395378103",
+      "size": 613
+    },
+    {
+      "rfilename": "tokenizer/tokenizer_config.json",
+      "blobId": "eaed590d62aaf0ba31e284b66ddcb18222f066c2",
+      "size": 4686
+    },
+    {
+      "rfilename": "tokenizer/vocab.json",
+      "blobId": "6bce3a0a3866c4791a74d83d78f6824c3af64ec3",
+      "size": 3383407
+    },
+    {
+      "rfilename": "transformer/config.json",
+      "blobId": "fe25f356344895a6a45129757d430c0598fc179c",
+      "size": 2545
+    },
+    {
+      "rfilename": "transformer/diffusion_pytorch_model-00001-of-00002.safetensors",
+      "blobId": "70cdd86800e940f6789ca3c97b7cf6bab0d7e2a4",
+      "size": 9986329149,
+      "lfs": {
+        "sha256": "ed056edb3123f65c465b6ab92ac16aea3d4922a09721854ad3a0a8fa08289282",
+        "size": 9986329149,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "transformer/diffusion_pytorch_model-00002-of-00002.safetensors",
+      "blobId": "89c3099dde6fada4818e046c46e61b039e7f1a23",
+      "size": 2644380642,
+      "lfs": {
+        "sha256": "03698f1ab7934a14a1d8550f501967011f67791471653d803046403f40be93c8",
+        "size": 2644380642,
+        "pointerSize": 135
+      }
+    },
+    {
+      "rfilename": "transformer/diffusion_pytorch_model.safetensors.index.json",
+      "blobId": "fad757b330bd3712f58e30a43c368001a47705bd",
+      "size": 488975
+    },
+    {
+      "rfilename": "vae/config.json",
+      "blobId": "46128711dc22ec13c1168c5c6a2eb253974ce22f",
+      "size": 878
+    },
+    {
+      "rfilename": "vae/diffusion_pytorch_model.safetensors",
+      "blobId": "5c203341583690b7e93ff899368ce1a7dce658a6",
+      "size": 253806966,
+      "lfs": {
+        "sha256": "0c8bc8b758c649abef9ea407b95408389a3b2f610d0d10fcb054fe171d0a8344",
+        "size": 253806966,
+        "pointerSize": 134
+      }
+    }
+  ],
+  "spaces": [],
+  "createdAt": "2025-12-25T02:35:57.000Z",
+  "safetensors": {
+    "parameters": {
+      "F32": 306868896,
+      "BF16": 791621184,
+      "U8": 9819456719
+    },
+    "total": 10917946799
+  },
+  "usedStorage": 18347364329
+}
