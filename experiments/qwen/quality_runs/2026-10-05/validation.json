@@ -1,0 +1,52 @@
+{
+  "status": "passed",
+  "runner_sha256": "03899bbe81cc34404fd31a15fefcf0f0e684d6b120d929b87ca8e1e713d137ea",
+  "runs": {
+    "track3/full": {
+      "six_calls": true,
+      "source_pixels_exact": true,
+      "finite": true,
+      "token_total": 13824
+    },
+    "track3/old-grow": {
+      "six_calls": true,
+      "source_pixels_exact": true,
+      "finite": true,
+      "token_total": 10752
+    },
+    "track3/early-source": {
+      "six_calls": true,
+      "source_pixels_exact": true,
+      "finite": true,
+      "token_total": 12288
+    },
+    "track3/early-frontier": {
+      "six_calls": true,
+      "source_pixels_exact": true,
+      "finite": true,
+      "token_total": 12288
+    },
+    "track2/full": {
+      "six_calls": true,
+      "source_pixels_exact": true,
+      "finite": true,
+      "token_total": 13824
+    },
+    "track2/early-frontier": {
+      "six_calls": true,
+      "source_pixels_exact": true,
+      "finite": true,
+      "token_total": 12288
+    }
+  },
+  "original_jpeg_unchanged": {
+    "track1": true,
+    "track2": true,
+    "track3": true
+  },
+  "old_control_reproduced": {
+    "full": true,
+    "old-grow": true
+  },
+  "report_local_links_exist": true
+}
