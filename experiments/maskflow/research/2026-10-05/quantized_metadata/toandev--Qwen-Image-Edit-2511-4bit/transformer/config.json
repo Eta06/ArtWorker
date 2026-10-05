@@ -1,0 +1,39 @@
+{
+  "_class_name": "QwenImageTransformer2DModel",
+  "_diffusers_version": "0.37.0.dev0",
+  "_name_or_path": "/home/ezycloudx-admin/.cache/huggingface/hub/models--Qwen--Qwen-Image-Edit-2511/snapshots/6f3ccc0b56e431dc6a0c2b2039706d7d26f22cb9/transformer",
+  "attention_head_dim": 128,
+  "axes_dims_rope": [
+    16,
+    56,
+    56
+  ],
+  "guidance_embeds": false,
+  "in_channels": 64,
+  "joint_attention_dim": 3584,
+  "num_attention_heads": 24,
+  "num_layers": 60,
+  "out_channels": 16,
+  "patch_size": 2,
+  "quantization_config": {
+    "_load_in_4bit": true,
+    "_load_in_8bit": false,
+    "bnb_4bit_compute_dtype": "bfloat16",
+    "bnb_4bit_quant_storage": "uint8",
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": true,
+    "llm_int8_enable_fp32_cpu_offload": false,
+    "llm_int8_has_fp16_weight": false,
+    "llm_int8_skip_modules": [
+      "transformer_blocks.0.img_mod",
+      "proj_out"
+    ],
+    "llm_int8_threshold": 6.0,
+    "load_in_4bit": true,
+    "load_in_8bit": false,
+    "quant_method": "bitsandbytes"
+  },
+  "use_additional_t_cond": false,
+  "use_layer3d_rope": false,
+  "zero_cond_t": true
+}
