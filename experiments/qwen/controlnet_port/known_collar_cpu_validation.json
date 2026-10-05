@@ -1,0 +1,749 @@
+{
+  "status": "passed",
+  "device": "CPU only",
+  "dtypes": [
+    "float32",
+    "bfloat16"
+  ],
+  "real_models_loaded": false,
+  "checkpoint_weights_used": false,
+  "downloads": false,
+  "scope": "Known-top-collar post-chain hint mechanics; full32/16 joint computation. No image quality, checkpoint parity, or iPhone performance claim.",
+  "fields": {
+    "status": "passed",
+    "canvas": [
+      512,
+      1152
+    ],
+    "source_rect": [
+      0,
+      320,
+      512,
+      832
+    ],
+    "old_copied_local_field_byte_exact": true,
+    "unknown_cosine64_field_byte_exact": true,
+    "top32_only_rows20_and21": true,
+    "top64_only_rows20_through23": true,
+    "known_interior_and_bottom_zero": true,
+    "zero_collar_or_scalar_exact_old_field": true,
+    "empty_unknown_guide_does_not_disable_declared_known_collar": true,
+    "input_guide_unmodified": true,
+    "cases": [
+      {
+        "collar_pixels": 32,
+        "weight": 1.0,
+        "changed_packed_rows": [
+          20,
+          21
+        ],
+        "metadata": {
+          "experimental_localized_hints": true,
+          "shape": "cosine",
+          "radius_pixels": 64,
+          "distance_metric": "exact Euclidean L2 pixel distance",
+          "geometry_source": "nonblack input guide outside source ROI only; no output-derived geometry",
+          "cosine_formula": "0.5*(1+cos(pi*distance/radius)) for distance<radius; otherwise0",
+          "source_roi_always_zero": false,
+          "source_rect_xyxy": [
+            0,
+            320,
+            512,
+            832
+          ],
+          "unknown_guide_pixels": 128,
+          "positive_hint_pixels": 49268,
+          "positive_hint_target_tokens": 179,
+          "total_target_tokens": 2304,
+          "target_hint_weight_sum": 115.80068969726562,
+          "packed_shape": [
+            1,
+            2304,
+            1
+          ],
+          "nearest_coordinates": "floor(output_index*input_size/output_size), raster y-major",
+          "guide_rgb_uint8_sha256": "d930db14b28b48c990cc6ee7b7e8612540680fc4b85f97ea23599f70a64c2602",
+          "pixel_weights_float32_sha256": "91ba620a24b0430629034c18be4f47344154ea3fb75de9e33b72280ba6123354",
+          "target_weights_float32_sha256": "0baae4269c2d52f1f890496e40f6dfdb677727b0ac0e6fdae341e32315a72216",
+          "full_joint_computation": true,
+          "sparse_compute": false,
+          "experimental_known_top_collar_hints": true,
+          "known_collar_pixels": 32,
+          "known_collar_scalar_weight": 1.0,
+          "known_collar_pixel_rows_half_open": [
+            320,
+            352
+          ],
+          "known_collar_packed_rows_half_open": [
+            20,
+            22
+          ],
+          "known_collar_positive_tokens": 64,
+          "known_outside_collar_positive_tokens": 0,
+          "unknown_field_exact_against_old_localized": true,
+          "bottom_and_source_interior_hints_zero": true,
+          "reference_prefix_hints_zero": true,
+          "source_conditioning_channels_changed": false,
+          "old_target_weights_float32_sha256": "2e3b65550062ad637b76956dac90d98352fb48c2509a69ab448161f318e723bd"
+        }
+      },
+      {
+        "collar_pixels": 32,
+        "weight": 0.375,
+        "changed_packed_rows": [
+          20,
+          21
+        ],
+        "metadata": {
+          "experimental_localized_hints": true,
+          "shape": "cosine",
+          "radius_pixels": 64,
+          "distance_metric": "exact Euclidean L2 pixel distance",
+          "geometry_source": "nonblack input guide outside source ROI only; no output-derived geometry",
+          "cosine_formula": "0.5*(1+cos(pi*distance/radius)) for distance<radius; otherwise0",
+          "source_roi_always_zero": false,
+          "source_rect_xyxy": [
+            0,
+            320,
+            512,
+            832
+          ],
+          "unknown_guide_pixels": 128,
+          "positive_hint_pixels": 49268,
+          "positive_hint_target_tokens": 179,
+          "total_target_tokens": 2304,
+          "target_hint_weight_sum": 75.80068969726562,
+          "packed_shape": [
+            1,
+            2304,
+            1
+          ],
+          "nearest_coordinates": "floor(output_index*input_size/output_size), raster y-major",
+          "guide_rgb_uint8_sha256": "d930db14b28b48c990cc6ee7b7e8612540680fc4b85f97ea23599f70a64c2602",
+          "pixel_weights_float32_sha256": "da5ebd146eb959ea83a6772602916b195f3ceda7c767ef7c40726dc35e3d9ed5",
+          "target_weights_float32_sha256": "2ec6ec4f365d0cccbe9d722a8c13acadc1b4b022f3b37851779360509e58d655",
+          "full_joint_computation": true,
+          "sparse_compute": false,
+          "experimental_known_top_collar_hints": true,
+          "known_collar_pixels": 32,
+          "known_collar_scalar_weight": 0.375,
+          "known_collar_pixel_rows_half_open": [
+            320,
+            352
+          ],
+          "known_collar_packed_rows_half_open": [
+            20,
+            22
+          ],
+          "known_collar_positive_tokens": 64,
+          "known_outside_collar_positive_tokens": 0,
+          "unknown_field_exact_against_old_localized": true,
+          "bottom_and_source_interior_hints_zero": true,
+          "reference_prefix_hints_zero": true,
+          "source_conditioning_channels_changed": false,
+          "old_target_weights_float32_sha256": "2e3b65550062ad637b76956dac90d98352fb48c2509a69ab448161f318e723bd"
+        }
+      },
+      {
+        "collar_pixels": 64,
+        "weight": 0.75,
+        "changed_packed_rows": [
+          20,
+          21,
+          22,
+          23
+        ],
+        "metadata": {
+          "experimental_localized_hints": true,
+          "shape": "cosine",
+          "radius_pixels": 64,
+          "distance_metric": "exact Euclidean L2 pixel distance",
+          "geometry_source": "nonblack input guide outside source ROI only; no output-derived geometry",
+          "cosine_formula": "0.5*(1+cos(pi*distance/radius)) for distance<radius; otherwise0",
+          "source_roi_always_zero": false,
+          "source_rect_xyxy": [
+            0,
+            320,
+            512,
+            832
+          ],
+          "unknown_guide_pixels": 128,
+          "positive_hint_pixels": 65652,
+          "positive_hint_target_tokens": 243,
+          "total_target_tokens": 2304,
+          "target_hint_weight_sum": 147.80068969726562,
+          "packed_shape": [
+            1,
+            2304,
+            1
+          ],
+          "nearest_coordinates": "floor(output_index*input_size/output_size), raster y-major",
+          "guide_rgb_uint8_sha256": "d930db14b28b48c990cc6ee7b7e8612540680fc4b85f97ea23599f70a64c2602",
+          "pixel_weights_float32_sha256": "fd01cf2f8195ca5b9bc773fef46294897e1fa2f2432a70cf6a4f47a0261248fc",
+          "target_weights_float32_sha256": "fb5204314df8fe734a05d9662de7004942dc622e737576aef2fcf3173205e268",
+          "full_joint_computation": true,
+          "sparse_compute": false,
+          "experimental_known_top_collar_hints": true,
+          "known_collar_pixels": 64,
+          "known_collar_scalar_weight": 0.75,
+          "known_collar_pixel_rows_half_open": [
+            320,
+            384
+          ],
+          "known_collar_packed_rows_half_open": [
+            20,
+            24
+          ],
+          "known_collar_positive_tokens": 128,
+          "known_outside_collar_positive_tokens": 0,
+          "unknown_field_exact_against_old_localized": true,
+          "bottom_and_source_interior_hints_zero": true,
+          "reference_prefix_hints_zero": true,
+          "source_conditioning_channels_changed": false,
+          "old_target_weights_float32_sha256": "2e3b65550062ad637b76956dac90d98352fb48c2509a69ab448161f318e723bd"
+        }
+      },
+      {
+        "collar_pixels": 0,
+        "weight": 1.0,
+        "changed_packed_rows": [],
+        "metadata": {
+          "experimental_localized_hints": true,
+          "shape": "cosine",
+          "radius_pixels": 64,
+          "distance_metric": "exact Euclidean L2 pixel distance",
+          "geometry_source": "nonblack input guide outside source ROI only; no output-derived geometry",
+          "cosine_formula": "0.5*(1+cos(pi*distance/radius)) for distance<radius; otherwise0",
+          "source_roi_always_zero": true,
+          "source_rect_xyxy": [
+            0,
+            320,
+            512,
+            832
+          ],
+          "unknown_guide_pixels": 128,
+          "positive_hint_pixels": 32884,
+          "positive_hint_target_tokens": 115,
+          "total_target_tokens": 2304,
+          "target_hint_weight_sum": 51.80069351196289,
+          "packed_shape": [
+            1,
+            2304,
+            1
+          ],
+          "nearest_coordinates": "floor(output_index*input_size/output_size), raster y-major",
+          "guide_rgb_uint8_sha256": "d930db14b28b48c990cc6ee7b7e8612540680fc4b85f97ea23599f70a64c2602",
+          "pixel_weights_float32_sha256": "26ced6452f75675e46b359d51fe9d1a6e99dc340a75c2685de18153421e9e760",
+          "target_weights_float32_sha256": "2e3b65550062ad637b76956dac90d98352fb48c2509a69ab448161f318e723bd",
+          "full_joint_computation": true,
+          "sparse_compute": false,
+          "experimental_known_top_collar_hints": true,
+          "known_collar_pixels": 0,
+          "known_collar_scalar_weight": 1.0,
+          "known_collar_pixel_rows_half_open": [
+            320,
+            320
+          ],
+          "known_collar_packed_rows_half_open": [
+            20,
+            20
+          ],
+          "known_collar_positive_tokens": 0,
+          "known_outside_collar_positive_tokens": 0,
+          "unknown_field_exact_against_old_localized": true,
+          "bottom_and_source_interior_hints_zero": true,
+          "reference_prefix_hints_zero": true,
+          "source_conditioning_channels_changed": false,
+          "old_target_weights_float32_sha256": "2e3b65550062ad637b76956dac90d98352fb48c2509a69ab448161f318e723bd"
+        }
+      },
+      {
+        "collar_pixels": 32,
+        "weight": 0.0,
+        "changed_packed_rows": [],
+        "metadata": {
+          "experimental_localized_hints": true,
+          "shape": "cosine",
+          "radius_pixels": 64,
+          "distance_metric": "exact Euclidean L2 pixel distance",
+          "geometry_source": "nonblack input guide outside source ROI only; no output-derived geometry",
+          "cosine_formula": "0.5*(1+cos(pi*distance/radius)) for distance<radius; otherwise0",
+          "source_roi_always_zero": true,
+          "source_rect_xyxy": [
+            0,
+            320,
+            512,
+            832
+          ],
+          "unknown_guide_pixels": 128,
+          "positive_hint_pixels": 32884,
+          "positive_hint_target_tokens": 115,
+          "total_target_tokens": 2304,
+          "target_hint_weight_sum": 51.80069351196289,
+          "packed_shape": [
+            1,
+            2304,
+            1
+          ],
+          "nearest_coordinates": "floor(output_index*input_size/output_size), raster y-major",
+          "guide_rgb_uint8_sha256": "d930db14b28b48c990cc6ee7b7e8612540680fc4b85f97ea23599f70a64c2602",
+          "pixel_weights_float32_sha256": "26ced6452f75675e46b359d51fe9d1a6e99dc340a75c2685de18153421e9e760",
+          "target_weights_float32_sha256": "2e3b65550062ad637b76956dac90d98352fb48c2509a69ab448161f318e723bd",
+          "full_joint_computation": true,
+          "sparse_compute": false,
+          "experimental_known_top_collar_hints": true,
+          "known_collar_pixels": 32,
+          "known_collar_scalar_weight": 0.0,
+          "known_collar_pixel_rows_half_open": [
+            320,
+            352
+          ],
+          "known_collar_packed_rows_half_open": [
+            20,
+            22
+          ],
+          "known_collar_positive_tokens": 0,
+          "known_outside_collar_positive_tokens": 0,
+          "unknown_field_exact_against_old_localized": true,
+          "bottom_and_source_interior_hints_zero": true,
+          "reference_prefix_hints_zero": true,
+          "source_conditioning_channels_changed": false,
+          "old_target_weights_float32_sha256": "2e3b65550062ad637b76956dac90d98352fb48c2509a69ab448161f318e723bd"
+        }
+      }
+    ]
+  },
+  "invalid_fields": {
+    "status": "passed",
+    "rejected_cases": [
+      "negative_collar",
+      "unaligned_collar16",
+      "undeclared_collar48",
+      "too_large_collar96",
+      "float_collar",
+      "bool_collar",
+      "string_collar",
+      "negative_weight",
+      "weight_above_one",
+      "nan_weight",
+      "infinite_weight",
+      "string_weight",
+      "negative_radius",
+      "unbounded_radius",
+      "invalid_shape",
+      "unaligned_source_top",
+      "collar_exceeds_source_height",
+      "source_outside_canvas",
+      "empty_source",
+      "float_source_coordinates",
+      "nonbyte_guide",
+      "guide_shape"
+    ]
+  },
+  "full_canvas_geometry": {
+    "reference_image_tokens": 1024,
+    "target_tokens": 2304,
+    "joint_prefix_tokens": 1041,
+    "prefix_text_tokens": 17,
+    "context_rows": 3328,
+    "control_text_padding_rows": 0,
+    "full_prefix_hint_gate_uses_target_mask": true,
+    "status": "passed",
+    "context_channels": 129,
+    "source_hidden_noise_context_unmodified": true,
+    "literal_zero129_reference_padding": true,
+    "target_context_bitexact": true,
+    "reference_input_bridge_rejected": true,
+    "cases": [
+      {
+        "dtype": "float32",
+        "sigma": 1.0,
+        "known_target_exact": true,
+        "unknown_target_untouched": true,
+        "reference_input_exact_before_and_after_update": true
+      },
+      {
+        "dtype": "float32",
+        "sigma": 0.5,
+        "known_target_exact": true,
+        "unknown_target_untouched": true,
+        "reference_input_exact_before_and_after_update": true
+      },
+      {
+        "dtype": "float32",
+        "sigma": 0.0,
+        "known_target_exact": true,
+        "unknown_target_untouched": true,
+        "reference_input_exact_before_and_after_update": true
+      },
+      {
+        "dtype": "bfloat16",
+        "sigma": 1.0,
+        "known_target_exact": true,
+        "unknown_target_untouched": true,
+        "reference_input_exact_before_and_after_update": true
+      },
+      {
+        "dtype": "bfloat16",
+        "sigma": 0.5,
+        "known_target_exact": true,
+        "unknown_target_untouched": true,
+        "reference_input_exact_before_and_after_update": true
+      },
+      {
+        "dtype": "bfloat16",
+        "sigma": 0.0,
+        "known_target_exact": true,
+        "unknown_target_untouched": true,
+        "reference_input_exact_before_and_after_update": true
+      }
+    ]
+  },
+  "tiny_cases": [
+    {
+      "status": "passed",
+      "dtype": "float32",
+      "padded_prompt": false,
+      "base_blocks": 32,
+      "control_hints": 16,
+      "all16_raw_hints_exact_against_old": true,
+      "raw_target_hint_sha256": [
+        "ed3ae3bb8454743b12e1dc45ba02dfa5fb85dec0196cd7e94f3be45e574250fe",
+        "202702cbf181542a7a26abab6ca77afee934544cc4f0156975e7f92501f1ba0f",
+        "30c95ad0e9fe3443169dcab4737a672b94c9969aa656c9acfa3e0d4ad6ee61b7",
+        "38dd6599abb75340859f53e06e229bf30ec99eb547cc064eae1b205aa83f7739",
+        "62375b2d12927d3fb6735d4295fbe787b176fa72af4662e964bd8da18cbbc6b1",
+        "263af32a3de064d71d42d1492f6e5daf9274d3a3a0ae1a5ecb9c69fd5ef37260",
+        "b42c2cc8b75a77accda841a21be3bf778065454f7f5f28d569030e43cefb454a",
+        "57d1da45952fd13026b389f419a5183043ab03bdcbccf6b58966503909f5054d",
+        "c09a0a34265cece9dd7e927a1536c6fd9c683127da212b3a123717a64cf06d68",
+        "a550821e2b44b768c8cb216c3770b9891da3cffc14c938b58647e8b2362df882",
+        "5f5bc732bc96c9beac854dd939f44f3f4f49aa59d0d9fa7e8d94870e91d450a7",
+        "da75f9e4cad92064a4396c020e4b8cbaea6736972820b94717d0cfb596d3a618",
+        "5d699c15aa0809f0918ed2dd7ea8afb0229428c524115c07e3d7bc41dec8a68b",
+        "a51bbaea6e16bc0d1efd4b9e0a818e113f59f1926e65897a16c8cd6e003bb37d",
+        "7a841ee3834f3e1827d96f1c96977dc42a1e0de03b3e86a9416995ec977a5ffb",
+        "07217d7346b362f05d240780c8a3a1362cb489cf8082fd46af431a325fc8ffdb"
+      ],
+      "known_collar_hint_max_abs_by_layer": [
+        0.6679081320762634,
+        0.7679941654205322,
+        0.62574303150177,
+        0.6526935696601868,
+        0.5966736674308777,
+        1.0820190906524658,
+        0.8392830491065979,
+        0.9250854253768921,
+        0.6899319887161255,
+        0.9078809022903442,
+        0.62409508228302,
+        0.8142967224121094,
+        0.631095826625824,
+        0.8043581247329712,
+        1.083004355430603,
+        0.6803129315376282
+      ],
+      "prefix_gate_and_all16_completed_prefix_hints_zero": true,
+      "base_prefix_trace_exact_against_old_and_base_all32_blocks": true,
+      "collar_after_hints_nonzero_and_scaling_exact": true,
+      "known_interior_bottom_and_outside_unknown_after_hints_zero": true,
+      "unknown_after_hints_exact_against_old": true,
+      "collar_zero_or_scalar_zero_exact_old_forward": [
+        {
+          "collar_pixels": 0,
+          "weight": 1.0,
+          "old_output_exact": true
+        },
+        {
+          "collar_pixels": 32,
+          "weight": 0.0,
+          "old_output_exact": true
+        }
+      ],
+      "old_and_new_allzero_hint_exact_base": true,
+      "old_and_new_control_scale_zero_exact_base": true,
+      "hidden_source_target_and_context129_unmodified": true,
+      "new_vs_old_output_max_abs": 3.128223419189453,
+      "invalid_fields_context_cache_rejected": true,
+      "known_target_hidden_frozen_claim": false,
+      "trained_quality_claim": false,
+      "field_metadata": {
+        "experimental_localized_hints": true,
+        "shape": "cosine",
+        "radius_pixels": 64,
+        "distance_metric": "exact Euclidean L2 pixel distance",
+        "geometry_source": "nonblack input guide outside source ROI only; no output-derived geometry",
+        "cosine_formula": "0.5*(1+cos(pi*distance/radius)) for distance<radius; otherwise0",
+        "source_roi_always_zero": false,
+        "source_rect_xyxy": [
+          32,
+          32,
+          96,
+          96
+        ],
+        "unknown_guide_pixels": 1,
+        "positive_hint_pixels": 6124,
+        "positive_hint_target_tokens": 24,
+        "total_target_tokens": 64,
+        "target_hint_weight_sum": 11.897533416748047,
+        "packed_shape": [
+          1,
+          64,
+          1
+        ],
+        "nearest_coordinates": "floor(output_index*input_size/output_size), raster y-major",
+        "guide_rgb_uint8_sha256": "8fa22f971023959febfabad2f457e5d7ab6260c651d302044704fa2163d22857",
+        "pixel_weights_float32_sha256": "3fb95172b8493efa18e89228f372ce4b58c57a23e889a81d8bd4806b9234ad91",
+        "target_weights_float32_sha256": "39e8606fe3c80d989043d8fe8536078e256d3b25b152f1599b0952f721ce6f6d",
+        "full_joint_computation": true,
+        "sparse_compute": false,
+        "experimental_known_top_collar_hints": true,
+        "known_collar_pixels": 32,
+        "known_collar_scalar_weight": 0.375,
+        "known_collar_pixel_rows_half_open": [
+          32,
+          64
+        ],
+        "known_collar_packed_rows_half_open": [
+          2,
+          4
+        ],
+        "known_collar_positive_tokens": 8,
+        "known_outside_collar_positive_tokens": 0,
+        "unknown_field_exact_against_old_localized": true,
+        "bottom_and_source_interior_hints_zero": true,
+        "reference_prefix_hints_zero": true,
+        "source_conditioning_channels_changed": false,
+        "old_target_weights_float32_sha256": "30974b153d3e09b980a4a3bff68c07a6797ab45801598355b304910c560303a5"
+      }
+    },
+    {
+      "status": "passed",
+      "dtype": "float32",
+      "padded_prompt": true,
+      "base_blocks": 32,
+      "control_hints": 16,
+      "all16_raw_hints_exact_against_old": true,
+      "raw_target_hint_sha256": [
+        "c882a26195852a675fe2ab074c6135bcbf35c1d0fb4c4cf9248e44cc6bb98be5",
+        "f8369d1da1e6c1152f7754bfa3ed765ff89b28e38828fe940be6c2ea32647982",
+        "e527328be26338b2fcb29b28f35b2438bf91c9833b7b352aef8c8c886b4b2208",
+        "d5725944b3a8ce29f08b602615035f7b579116c8c9af47756f37e61fc6bc513e",
+        "fb4605c31e20e8ae20217be16f7f75499e48d0a9778445a829fca51f34398a49",
+        "10b00dd3712f0e171c9e20f54542030af664eb4c56c07182a3b3e66f1d3e2e6e",
+        "1fc5e2affae979ace6d1b0b818324d476aed8f4e46cea062c224d48e2ef609ba",
+        "c0f78cf11ced5b65cb76cacf101ec9e15a8a072bd8e005132be144bcfe6eb79c",
+        "4ad061b89c0840504f141ea3cb0207e142bdacbe91a1db823894f4c83239bddb",
+        "0057b1e8544ed1fed317d0403e6b9422cbee047b4b6a9edc6c4c72663ef61147",
+        "2c8fb0fb7729c65f31307e6ecb7a4f591d9e9ad86ed99d2ea260b99669702639",
+        "b99789f3990ce207cc59bf5ba8e06e85daa5299ea7d5b38249b88f5e9add0d87",
+        "e3e5342ab6e2b9a194191b391e6315e4a2ba97a0ad09111ceec5a2b2c0c639d1",
+        "e8afbcfc41249888594091a744e750857df8fd4b16124790fa388aedf2b1d68d",
+        "1bfddae3fe1e65b1441880b67bb1a6318a62abecf3c989271e76fc57a1660548",
+        "c0c99f073d525e5f17b9c7ee13637c87b79f35014db1c38e3ed213884c70c183"
+      ],
+      "known_collar_hint_max_abs_by_layer": [
+        1.149918794631958,
+        0.779256284236908,
+        0.7465894222259521,
+        0.7666497230529785,
+        1.0910176038742065,
+        0.7838081121444702,
+        0.7297252416610718,
+        0.8277426958084106,
+        0.7544689178466797,
+        1.0034996271133423,
+        1.0273890495300293,
+        0.9349005818367004,
+        0.8526668548583984,
+        0.9655542969703674,
+        0.94753098487854,
+        0.7986086010932922
+      ],
+      "prefix_gate_and_all16_completed_prefix_hints_zero": true,
+      "base_prefix_trace_exact_against_old_and_base_all32_blocks": true,
+      "collar_after_hints_nonzero_and_scaling_exact": true,
+      "known_interior_bottom_and_outside_unknown_after_hints_zero": true,
+      "unknown_after_hints_exact_against_old": true,
+      "collar_zero_or_scalar_zero_exact_old_forward": [
+        {
+          "collar_pixels": 0,
+          "weight": 1.0,
+          "old_output_exact": true
+        },
+        {
+          "collar_pixels": 32,
+          "weight": 0.0,
+          "old_output_exact": true
+        }
+      ],
+      "old_and_new_allzero_hint_exact_base": true,
+      "old_and_new_control_scale_zero_exact_base": true,
+      "hidden_source_target_and_context129_unmodified": true,
+      "new_vs_old_output_max_abs": 2.740981340408325,
+      "invalid_fields_context_cache_rejected": true,
+      "known_target_hidden_frozen_claim": false,
+      "trained_quality_claim": false,
+      "field_metadata": {
+        "experimental_localized_hints": true,
+        "shape": "cosine",
+        "radius_pixels": 64,
+        "distance_metric": "exact Euclidean L2 pixel distance",
+        "geometry_source": "nonblack input guide outside source ROI only; no output-derived geometry",
+        "cosine_formula": "0.5*(1+cos(pi*distance/radius)) for distance<radius; otherwise0",
+        "source_roi_always_zero": false,
+        "source_rect_xyxy": [
+          32,
+          32,
+          96,
+          96
+        ],
+        "unknown_guide_pixels": 1,
+        "positive_hint_pixels": 6124,
+        "positive_hint_target_tokens": 24,
+        "total_target_tokens": 64,
+        "target_hint_weight_sum": 11.897533416748047,
+        "packed_shape": [
+          1,
+          64,
+          1
+        ],
+        "nearest_coordinates": "floor(output_index*input_size/output_size), raster y-major",
+        "guide_rgb_uint8_sha256": "8fa22f971023959febfabad2f457e5d7ab6260c651d302044704fa2163d22857",
+        "pixel_weights_float32_sha256": "3fb95172b8493efa18e89228f372ce4b58c57a23e889a81d8bd4806b9234ad91",
+        "target_weights_float32_sha256": "39e8606fe3c80d989043d8fe8536078e256d3b25b152f1599b0952f721ce6f6d",
+        "full_joint_computation": true,
+        "sparse_compute": false,
+        "experimental_known_top_collar_hints": true,
+        "known_collar_pixels": 32,
+        "known_collar_scalar_weight": 0.375,
+        "known_collar_pixel_rows_half_open": [
+          32,
+          64
+        ],
+        "known_collar_packed_rows_half_open": [
+          2,
+          4
+        ],
+        "known_collar_positive_tokens": 8,
+        "known_outside_collar_positive_tokens": 0,
+        "unknown_field_exact_against_old_localized": true,
+        "bottom_and_source_interior_hints_zero": true,
+        "reference_prefix_hints_zero": true,
+        "source_conditioning_channels_changed": false,
+        "old_target_weights_float32_sha256": "30974b153d3e09b980a4a3bff68c07a6797ab45801598355b304910c560303a5"
+      }
+    },
+    {
+      "status": "passed",
+      "dtype": "bfloat16",
+      "padded_prompt": true,
+      "base_blocks": 32,
+      "control_hints": 16,
+      "trace_enabled": false,
+      "trace_limitation": "Existing NumPy trace hooks cannot expose MLX BF16 buffers; full hint/prefix traces verified separately in FP32.",
+      "lossless_bfloat16_to_float32_comparison": true,
+      "collar_zero_or_scalar_zero_exact_old_forward": true,
+      "old_and_new_allzero_hint_exact_base": true,
+      "old_and_new_control_scale_zero_exact_base": true,
+      "hidden_source_target_and_context129_unmodified": true,
+      "new_vs_old_output_max_abs": 2.734375,
+      "trained_quality_claim": false,
+      "field_metadata": {
+        "experimental_localized_hints": true,
+        "shape": "cosine",
+        "radius_pixels": 64,
+        "distance_metric": "exact Euclidean L2 pixel distance",
+        "geometry_source": "nonblack input guide outside source ROI only; no output-derived geometry",
+        "cosine_formula": "0.5*(1+cos(pi*distance/radius)) for distance<radius; otherwise0",
+        "source_roi_always_zero": false,
+        "source_rect_xyxy": [
+          32,
+          32,
+          96,
+          96
+        ],
+        "unknown_guide_pixels": 1,
+        "positive_hint_pixels": 6124,
+        "positive_hint_target_tokens": 24,
+        "total_target_tokens": 64,
+        "target_hint_weight_sum": 11.897533416748047,
+        "packed_shape": [
+          1,
+          64,
+          1
+        ],
+        "nearest_coordinates": "floor(output_index*input_size/output_size), raster y-major",
+        "guide_rgb_uint8_sha256": "8fa22f971023959febfabad2f457e5d7ab6260c651d302044704fa2163d22857",
+        "pixel_weights_float32_sha256": "3fb95172b8493efa18e89228f372ce4b58c57a23e889a81d8bd4806b9234ad91",
+        "target_weights_float32_sha256": "39e8606fe3c80d989043d8fe8536078e256d3b25b152f1599b0952f721ce6f6d",
+        "full_joint_computation": true,
+        "sparse_compute": false,
+        "experimental_known_top_collar_hints": true,
+        "known_collar_pixels": 32,
+        "known_collar_scalar_weight": 0.375,
+        "known_collar_pixel_rows_half_open": [
+          32,
+          64
+        ],
+        "known_collar_packed_rows_half_open": [
+          2,
+          4
+        ],
+        "known_collar_positive_tokens": 8,
+        "known_outside_collar_positive_tokens": 0,
+        "unknown_field_exact_against_old_localized": true,
+        "bottom_and_source_interior_hints_zero": true,
+        "reference_prefix_hints_zero": true,
+        "source_conditioning_channels_changed": false,
+        "old_target_weights_float32_sha256": "30974b153d3e09b980a4a3bff68c07a6797ab45801598355b304910c560303a5"
+      }
+    }
+  ],
+  "source_code_sha256": {
+    "control.py": "f4017d5989b5a97db5783cc6f100938ffa1f8a17de92587a1608db5418dd9d2a",
+    "conditioning.py": "a1526bdd8704de2b086ceafdd33ac57fa18b0aa6ad096f7c01525d4a772e7dfb",
+    "reference_control.py": "ff8f404714defaf2909e82770cd5ec62811ffcca5b627ee5763efef3b92d09d9",
+    "localized_reference_control.py": "2aa4dee1c5b4d64d119d58b8943f5d224b3119fc0ae8054c9d4b85d069fbd722",
+    "known_collar_reference_control.py": "d2479285007aac746a03535218451a2ccb6d6c921be3321c0ee81bcbecfcab94",
+    "sparse_conditioning.py": "458a8eda69b31600365360822a25369bf479ba86246fdb110b07a546fbb12b0f",
+    "test_reference_control_cpu.py": "d3b6f628b0699eadd9526db4157985d9a7e2f673730e4c179d887a1af0d2bbfa",
+    "test_localized_reference_cpu.py": "5d8264091bb467529f90f2726d2386f03630c4763de2549052266f98f7d74328"
+  },
+  "runtime_dependency_hashes": {
+    "qwen21_attention": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_attention.py",
+      "sha256": "e992e21c193cb2cd9f2225e8afb67af2424a770b853d3e065ff60c5b95581e83"
+    },
+    "qwen21_transformer_block": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_transformer_block.py",
+      "sha256": "60ed91c00e12066417636ea54f5e225198586af0e5e88ccc76dfe209d285b3de"
+    },
+    "qwen21_layout": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_layout.py",
+      "sha256": "37bd0839fa8a215d2d25aec4e8f65f0e05c279ad1f1eab15e1af041368c0be44"
+    },
+    "qwen21_transformer": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_transformer.py",
+      "sha256": "8ee62ba80495fb36e8cf885b8b463bc7353cbfe2eb90b377d46283c539686735"
+    },
+    "qwen21_norm_out": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_norm_out.py",
+      "sha256": "f403e5f7f63e297869190fdfe1155a6aabb2a13df480fca0ebf3af733adc911d"
+    },
+    "qwen21_text_projection": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_text_projection.py",
+      "sha256": "aca4d4c74c5450fa0238b4650984f478e5f59a5ecf25ddffe60a0a31514ca1aa"
+    },
+    "qwen21_time_text_embed": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_time_text_embed.py",
+      "sha256": "c051d7f82f285a9dd4be2c361e50afa51b1de13774d46b3a42037b3637ced348"
+    },
+    "qwen21_rope": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_rope.py",
+      "sha256": "395f5c7281a77abb91fd1d40145a139b6b31d3af4112d7e6857efc2224fed1e6"
+    }
+  },
+  "script_sha256": "6d3395783c73bfabbf636b02c50e20a0d27084758b8dbf4ca9386dc902afef5a",
+  "dependency_files_unchanged_during_validation": true
+}
