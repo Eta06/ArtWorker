@@ -1,0 +1,404 @@
+{
+  "scope": "Same frozen source-tangent diagnostic on actual active preview pixels; no future pixels evaluated or painted",
+  "source_fit": {
+    "valid": true,
+    "point_count": 21,
+    "y_range_half_open": [
+      320,
+      341
+    ],
+    "dx_dy": -1.8762351714835512,
+    "x_extrapolated_at_y320": 310.46760780382766,
+    "angle_from_downward_y_degrees": -61.94317730413087,
+    "median_absolute_fit_residual_px": 0.18948024982245215,
+    "p90_absolute_fit_residual_px": 0.5650285259889074
+  },
+  "minimum_gradient": 7.0,
+  "previews": {
+    "old edge-context/step2": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step02_predicted_clean_composite.png",
+      "sha256": "60751d6348846f2cb5d1419224ed633422aeb250eeb69a4f7f905bed983e84a1",
+      "active_window": [
+        0,
+        128,
+        512,
+        1024
+      ],
+      "status": "invalid-feature",
+      "metrics": {
+        "near_angle_difference_degrees": null,
+        "near_endpoint_signed_dx_px": null,
+        "last4_source_tangent_median_signed_dx_px": null
+      },
+      "invalid_reasons": [
+        "near ridge is discontinuous or strongly curved/ambiguous in the local fit"
+      ],
+      "near_fit_unpromoted": {
+        "valid": true,
+        "point_count": 14,
+        "y_range_half_open": [
+          304,
+          320
+        ],
+        "dx_dy": -1.9204552722630055,
+        "x_extrapolated_at_y320": 306.0673837263306,
+        "angle_from_downward_y_degrees": -62.49356248252689,
+        "median_absolute_fit_residual_px": 1.345215259132857,
+        "p90_absolute_fit_residual_px": 2.7994350783108244
+      }
+    },
+    "old edge-context/step4": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step04_predicted_clean_composite.png",
+      "sha256": "d779a1da80ba0e29633c2b7db41065f7f10fba523f7d4fee3048aaae07c61bad",
+      "active_window": [
+        0,
+        0,
+        512,
+        1152
+      ],
+      "status": "invalid-feature",
+      "metrics": {
+        "near_angle_difference_degrees": null,
+        "near_endpoint_signed_dx_px": null,
+        "last4_source_tangent_median_signed_dx_px": null
+      },
+      "invalid_reasons": [
+        "fewer than80 percent of near rows have a strong metal edge",
+        "near ridge is discontinuous or strongly curved/ambiguous in the local fit"
+      ],
+      "near_fit_unpromoted": {
+        "valid": true,
+        "point_count": 10,
+        "y_range_half_open": [
+          304,
+          320
+        ],
+        "dx_dy": -1.7926259821967179,
+        "x_extrapolated_at_y320": 305.9506254231545,
+        "angle_from_downward_y_degrees": -60.845436832659026,
+        "median_absolute_fit_residual_px": 1.02630402150848,
+        "p90_absolute_fit_residual_px": 2.6715669226230143
+      }
+    },
+    "old edge-context/step6": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step06_predicted_clean_composite.png",
+      "sha256": "03ad495177a35f9ca8e405fc7b5d5a111c4389ee93230ee30381c9b38dcbe2e8",
+      "active_window": [
+        0,
+        0,
+        512,
+        1152
+      ],
+      "status": "invalid-feature",
+      "metrics": {
+        "near_angle_difference_degrees": null,
+        "near_endpoint_signed_dx_px": null,
+        "last4_source_tangent_median_signed_dx_px": null
+      },
+      "invalid_reasons": [
+        "near ridge is discontinuous or strongly curved/ambiguous in the local fit"
+      ],
+      "near_fit_unpromoted": {
+        "valid": true,
+        "point_count": 16,
+        "y_range_half_open": [
+          304,
+          320
+        ],
+        "dx_dy": -0.511770910615437,
+        "x_extrapolated_at_y320": 312.83367985588677,
+        "angle_from_downward_y_degrees": -27.102045812297064,
+        "median_absolute_fit_residual_px": 1.72107748216078,
+        "p90_absolute_fit_residual_px": 2.7554640328519326
+      }
+    },
+    "scale0/step2": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step02_predicted_clean_composite.png",
+      "sha256": "7daa3ea97219c0f6ef757d8209a502cf2b15b14971e0cdf0c83bf861f8ab13eb",
+      "active_window": [
+        0,
+        128,
+        512,
+        1024
+      ],
+      "status": "invalid-feature",
+      "metrics": {
+        "near_angle_difference_degrees": null,
+        "near_endpoint_signed_dx_px": null,
+        "last4_source_tangent_median_signed_dx_px": null
+      },
+      "invalid_reasons": [
+        "near ridge is discontinuous or strongly curved/ambiguous in the local fit"
+      ],
+      "near_fit_unpromoted": {
+        "valid": true,
+        "point_count": 15,
+        "y_range_half_open": [
+          304,
+          320
+        ],
+        "dx_dy": -1.8721830814568534,
+        "x_extrapolated_at_y320": 306.11848397766056,
+        "angle_from_downward_y_degrees": -61.891729197414215,
+        "median_absolute_fit_residual_px": 1.3544364500633606,
+        "p90_absolute_fit_residual_px": 2.702542444486892
+      }
+    },
+    "scale0/step4": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step04_predicted_clean_composite.png",
+      "sha256": "c047cfcedcd9bc6a007d50ab15e8010d0dfac0c9018c1d919b3465a6319c7eb7",
+      "active_window": [
+        0,
+        0,
+        512,
+        1152
+      ],
+      "status": "invalid-feature",
+      "metrics": {
+        "near_angle_difference_degrees": null,
+        "near_endpoint_signed_dx_px": null,
+        "last4_source_tangent_median_signed_dx_px": null
+      },
+      "invalid_reasons": [
+        "fewer than80 percent of near rows have a strong metal edge"
+      ],
+      "near_fit_unpromoted": {
+        "valid": true,
+        "point_count": 10,
+        "y_range_half_open": [
+          304,
+          320
+        ],
+        "dx_dy": -1.7795698067326526,
+        "x_extrapolated_at_y320": 306.0896130382806,
+        "angle_from_downward_y_degrees": -60.666906300907684,
+        "median_absolute_fit_residual_px": 0.977589304465937,
+        "p90_absolute_fit_residual_px": 2.4819098383086153
+      }
+    },
+    "scale0/step6": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step06_predicted_clean_composite.png",
+      "sha256": "5adf284d7540150c4630f5cb3dd51f5b63b02e0ea1982d0bdbf59183e8d8639e",
+      "active_window": [
+        0,
+        0,
+        512,
+        1152
+      ],
+      "status": "invalid-feature",
+      "metrics": {
+        "near_angle_difference_degrees": null,
+        "near_endpoint_signed_dx_px": null,
+        "last4_source_tangent_median_signed_dx_px": null
+      },
+      "invalid_reasons": [
+        "near ridge is discontinuous or strongly curved/ambiguous in the local fit"
+      ],
+      "near_fit_unpromoted": {
+        "valid": true,
+        "point_count": 16,
+        "y_range_half_open": [
+          304,
+          320
+        ],
+        "dx_dy": -0.5094603098624082,
+        "x_extrapolated_at_y320": 312.8570267985462,
+        "angle_from_downward_y_degrees": -26.997036935231662,
+        "median_absolute_fit_residual_px": 1.733786128745777,
+        "p90_absolute_fit_residual_px": 2.753473899614704
+      }
+    },
+    "scale0.5/step2": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step02_predicted_clean_composite.png",
+      "sha256": "f3b3f10a561812c5dbecdb83473287610410b870f5b35204c8ef48bacaaedfff",
+      "active_window": [
+        0,
+        128,
+        512,
+        1024
+      ],
+      "status": "invalid-feature",
+      "metrics": {
+        "near_angle_difference_degrees": null,
+        "near_endpoint_signed_dx_px": null,
+        "last4_source_tangent_median_signed_dx_px": null
+      },
+      "invalid_reasons": [
+        "fewer than80 percent of near rows have a strong metal edge"
+      ],
+      "near_fit_unpromoted": {
+        "valid": true,
+        "point_count": 12,
+        "y_range_half_open": [
+          304,
+          320
+        ],
+        "dx_dy": -1.5617572987438506,
+        "x_extrapolated_at_y320": 308.018150510827,
+        "angle_from_downward_y_degrees": -57.368387566416985,
+        "median_absolute_fit_residual_px": 0.755487877339533,
+        "p90_absolute_fit_residual_px": 2.160134011558677
+      }
+    },
+    "scale0.5/step4": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step04_predicted_clean_composite.png",
+      "sha256": "98a689fe4024a6da37bef4f8714ad88c730632a0d7f0319e101630f2c6c688b7",
+      "active_window": [
+        0,
+        0,
+        512,
+        1152
+      ],
+      "status": "invalid-feature",
+      "metrics": {
+        "near_angle_difference_degrees": null,
+        "near_endpoint_signed_dx_px": null,
+        "last4_source_tangent_median_signed_dx_px": null
+      },
+      "invalid_reasons": [
+        "fewer than80 percent of near rows have a strong metal edge",
+        "near ridge is discontinuous or strongly curved/ambiguous in the local fit"
+      ],
+      "near_fit_unpromoted": {
+        "valid": true,
+        "point_count": 12,
+        "y_range_half_open": [
+          304,
+          320
+        ],
+        "dx_dy": -1.5641462498684178,
+        "x_extrapolated_at_y320": 308.0116313190477,
+        "angle_from_downward_y_degrees": -57.40814477744734,
+        "median_absolute_fit_residual_px": 1.0193385210508268,
+        "p90_absolute_fit_residual_px": 3.0809304219161056
+      }
+    },
+    "scale0.5/step6": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step06_predicted_clean_composite.png",
+      "sha256": "b573535f0b7be0f81cb36cd2ec23ae1dfbad5e4f7811a14fe6e6da2d63a2c29a",
+      "active_window": [
+        0,
+        0,
+        512,
+        1152
+      ],
+      "status": "invalid-feature",
+      "metrics": {
+        "near_angle_difference_degrees": null,
+        "near_endpoint_signed_dx_px": null,
+        "last4_source_tangent_median_signed_dx_px": null
+      },
+      "invalid_reasons": [
+        "near ridge is discontinuous or strongly curved/ambiguous in the local fit"
+      ],
+      "near_fit_unpromoted": {
+        "valid": true,
+        "point_count": 16,
+        "y_range_half_open": [
+          304,
+          320
+        ],
+        "dx_dy": -0.4894573240676238,
+        "x_extrapolated_at_y320": 313.30780545623793,
+        "angle_from_downward_y_degrees": -26.079775622512,
+        "median_absolute_fit_residual_px": 1.4123217673772785,
+        "p90_absolute_fit_residual_px": 2.547846276736095
+      }
+    },
+    "scale1/step2": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step02_predicted_clean_composite.png",
+      "sha256": "861f17845853f1d184ee988db07ef224d19a41dfaaec3fd35df4596951302e3f",
+      "active_window": [
+        0,
+        128,
+        512,
+        1024
+      ],
+      "status": "invalid-feature",
+      "metrics": {
+        "near_angle_difference_degrees": null,
+        "near_endpoint_signed_dx_px": null,
+        "last4_source_tangent_median_signed_dx_px": null
+      },
+      "invalid_reasons": [
+        "fewer than80 percent of near rows have a strong metal edge",
+        "near ridge is discontinuous or strongly curved/ambiguous in the local fit"
+      ],
+      "near_fit_unpromoted": {
+        "valid": true,
+        "point_count": 12,
+        "y_range_half_open": [
+          304,
+          320
+        ],
+        "dx_dy": -1.5649800866004966,
+        "x_extrapolated_at_y320": 309.0539893048033,
+        "angle_from_downward_y_degrees": -57.42200130179127,
+        "median_absolute_fit_residual_px": 1.258438455485276,
+        "p90_absolute_fit_residual_px": 3.4689857044162293
+      }
+    },
+    "scale1/step4": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step04_predicted_clean_composite.png",
+      "sha256": "b63f34a7b3da55edd6076c79348f400b1c7a01d68be17ec972360e45b34c224d",
+      "active_window": [
+        0,
+        0,
+        512,
+        1152
+      ],
+      "status": "feature-extracted",
+      "metrics": {
+        "near_angle_difference_degrees": 7.4200988022386625,
+        "near_endpoint_signed_dx_px": 13.612358328331311,
+        "last4_source_tangent_median_signed_dx_px": 12.012209403059245
+      },
+      "invalid_reasons": [],
+      "near_fit_unpromoted": {
+        "valid": true,
+        "point_count": 14,
+        "y_range_half_open": [
+          304,
+          320
+        ],
+        "dx_dy": -1.4031434440109436,
+        "x_extrapolated_at_y320": 324.079966132159,
+        "angle_from_downward_y_degrees": -54.52307850189221,
+        "median_absolute_fit_residual_px": 1.272390468295157,
+        "p90_absolute_fit_residual_px": 2.1662438604458827
+      }
+    },
+    "scale1/step6": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step06_predicted_clean_composite.png",
+      "sha256": "bc1baac780457724295345eb0a6b43b08ab0dbc3d4e50fb2330c6e2ed7c44d29",
+      "active_window": [
+        0,
+        0,
+        512,
+        1152
+      ],
+      "status": "invalid-feature",
+      "metrics": {
+        "near_angle_difference_degrees": null,
+        "near_endpoint_signed_dx_px": null,
+        "last4_source_tangent_median_signed_dx_px": null
+      },
+      "invalid_reasons": [
+        "near ridge is discontinuous or strongly curved/ambiguous in the local fit"
+      ],
+      "near_fit_unpromoted": {
+        "valid": true,
+        "point_count": 16,
+        "y_range_half_open": [
+          304,
+          320
+        ],
+        "dx_dy": -0.5143902342456741,
+        "x_extrapolated_at_y320": 313.4197512822413,
+        "angle_from_downward_y_degrees": -27.220847299758958,
+        "median_absolute_fit_residual_px": 1.7890480424375994,
+        "p90_absolute_fit_residual_px": 2.9871875767217944
+      }
+    }
+  }
+}
