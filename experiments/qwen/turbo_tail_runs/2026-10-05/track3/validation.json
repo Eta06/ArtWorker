@@ -1,0 +1,42 @@
+{
+  "status": "passed",
+  "suite_status": "success",
+  "controls": {
+    "raw_path_sha256_matched": true,
+    "composite_path_sha256_matched": true,
+    "source_prefix_known_noise_hashes_matched": true
+  },
+  "arms": {
+    "v021-six": {
+      "finite": true,
+      "final_raster_exact": true,
+      "known_source_hash_exact": true,
+      "source_pixels_exact": true,
+      "cache_extract_steps": [
+        1
+      ],
+      "target_forward_sum": 12288
+    },
+    "v03-six": {
+      "finite": true,
+      "final_raster_exact": true,
+      "known_source_hash_exact": true,
+      "source_pixels_exact": true,
+      "cache_extract_steps": [
+        1
+      ],
+      "target_forward_sum": 12288
+    },
+    "v03-nine-base-tail": {
+      "finite": true,
+      "final_raster_exact": true,
+      "known_source_hash_exact": true,
+      "source_pixels_exact": true,
+      "cache_extract_steps": [
+        1,
+        8
+      ],
+      "target_forward_sum": 19200
+    }
+  }
+}
