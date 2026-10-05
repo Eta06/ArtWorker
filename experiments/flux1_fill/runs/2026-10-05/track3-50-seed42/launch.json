@@ -1,0 +1,23 @@
+{
+  "command": [
+    "experiments/qwen/.venv/bin/python",
+    "experiments/flux1_fill/run_fill_trial.py",
+    "--track",
+    "track3",
+    "--steps",
+    "50",
+    "--seed",
+    "42",
+    "--output",
+    "experiments/flux1_fill/runs/2026-10-05/track3-50-seed42"
+  ],
+  "cwd": "/Users/emir/Documents/ChatGPT/ArtWorker",
+  "code_sha256": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/run_fill_trial.py": "e63fac021c3e3849baeac7aeb5f41ae44c27a3cbda38a12520963c8955d8b6b3"
+  },
+  "timeout_seconds": 1800.0,
+  "pid": 94517,
+  "status": "success",
+  "exit_code": 0,
+  "elapsed_seconds": 347.639701084001
+}
