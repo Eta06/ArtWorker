@@ -1,0 +1,26 @@
+{
+  "command": [
+    "experiments/qwen/.venv/bin/python",
+    "experiments/qwen/controlnet_port/run_growing_top32_control_trial.py",
+    "--track",
+    "track3",
+    "--steps",
+    "6",
+    "--control-scales",
+    "0.5",
+    "1",
+    "--max-seconds",
+    "900",
+    "--output",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-top32-6step"
+  ],
+  "cwd": "/Users/emir/Documents/ChatGPT/ArtWorker",
+  "code_sha256": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_growing_top32_control_trial.py": "b4bda970127bc300d81cf44c9ced8ac1194866655f0cc6cea51f6dae37ee2f86"
+  },
+  "timeout_seconds": 1000.0,
+  "pid": 28960,
+  "status": "success",
+  "exit_code": 0,
+  "elapsed_seconds": 146.51638354099123
+}
