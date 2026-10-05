@@ -1,0 +1,28 @@
+{
+  "scope": "CPU-created comparison artifacts; actual model outputs unchanged",
+  "files": {
+    "REPORT.md": "71ce328c9bf2c1dd5dc9d313f67b1f6b8cbb3d7c343b37636618ba2b18d7d6d6",
+    "REVIEW.md": "1fe2b4f96a6e05f53b9d5fa7b7424ee94940ed79b92348cd96ad2a6cc683ea0b",
+    "final-full-composite.png": "8ae628763549f7f329231bbd64fb33fed7cc087df01bfdc79945f61146346a4b",
+    "final-full-raw.png": "faf378e1fee6fe336b1356f11b22202be4fa72449a77e2410fff365c7e9d0256",
+    "independent_validation.json": "7547cee1dbc8ab3d12ae8c5eb6a4e074c23777bbb46dccf76e5d57804c6534f7",
+    "lower-border-all-frames-raw-composite.png": "1aeaf0ba4083b2a1449255076ddc1d32b774b8ec4ed6ab29b566a19ea8d946f8",
+    "metrics.json": "0b897681129962fbb551056b6c215544be2215c9abed043e2c95093e90a56fa1",
+    "preview_geometry_diagnostics.json": "bd272effd7cc5ee828749eba76e8a438b1b09495143fd01b684ad0af1f32c76a",
+    "rail-all-frames-raw-composite.png": "6adda277571aee1890be9b190e5ea085e4bf8bbfc3cd455c7a06f98aa13a0b65",
+    "scale0_baseline_pixel_and_latent_comparison.json": "42388bbd350e6658ef4aa8989c8a7f47e273752336e5927652b4746f1128146b",
+    "source-tangent-selected-features.png": "3d1bc11cb6a58e76e022a7e70e86c8b3548b781e478b97fbcde8817d92a6fd82",
+    "source-tangent-untouched-crops.png": "96fcdb64aca7261e8c496c346308b76a8e1c2557a436b031ed64050da208f873",
+    "step02-full-composite.png": "62dac9bba0326909667fa94e7e6cdfd0a371b1ec9513810ec0814ef72318ccf8",
+    "step02-full-raw.png": "ddd578973a85055254fb47f88206d8af61f4712045bbe8d2e835bc658298164b",
+    "step04-full-composite.png": "b0ad2f797aa7fcabf48cf45a74021bd95f56410af40a764289988a7cc28e1693",
+    "step04-full-raw.png": "be4c20fae5b61de95854576b22fd823f62ccfb89fb8b65c6911e2d5efd4d8fb4",
+    "step04-scale1-feature-diagnostic/REPORT.md": "e0f3a74c122a6697c16d75cc314cadace26c964649c56768b56852b0ccb0f041",
+    "step04-scale1-feature-diagnostic/metrics.json": "dd9a9224f61de3ad225c380e821535674efa5f23ac75add0a08f2691f006bbb8",
+    "step04-scale1-feature-diagnostic/source-tangent-selected-features.png": "2274993623ec6a3dbd068a2a3437173701b2cd812a8bab6938f0bcf70d816b1a",
+    "step04-scale1-feature-diagnostic/source-tangent-untouched-crops.png": "2a2bd4475399d61b6ebf3fb3fa9acb51360f89489376ca7d83ef923983b149c4",
+    "step06-full-composite.png": "8ae628763549f7f329231bbd64fb33fed7cc087df01bfdc79945f61146346a4b",
+    "step06-full-raw.png": "faf378e1fee6fe336b1356f11b22202be4fa72449a77e2410fff365c7e9d0256",
+    "upper-border-all-frames-raw-composite.png": "1e5c12882b0da49b23dbc3ad55d5053982343b7b8587602043358f07e26f637e"
+  }
+}
