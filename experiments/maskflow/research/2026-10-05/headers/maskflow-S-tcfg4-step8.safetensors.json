@@ -1,0 +1,10566 @@
+{
+  "__metadata__": {
+    "lora_adapter_metadata": "{\n  \"alora_invocation_tokens\": null,\n  \"alpha_pattern\": {},\n  \"arrow_config\": null,\n  \"auto_mapping\": null,\n  \"base_model_name_or_path\": null,\n  \"bias\": \"none\",\n  \"corda_config\": null,\n  \"ensure_weight_tying\": false,\n  \"eva_config\": null,\n  \"exclude_modules\": null,\n  \"fan_in_fan_out\": false,\n  \"inference_mode\": false,\n  \"init_lora_weights\": true,\n  \"layer_replication\": null,\n  \"layers_pattern\": null,\n  \"layers_to_transform\": null,\n  \"loftq_config\": {},\n  \"lora_alpha\": 256,\n  \"lora_bias\": false,\n  \"lora_dropout\": 0,\n  \"lora_ga_config\": null,\n  \"megatron_config\": null,\n  \"megatron_core\": \"megatron.core\",\n  \"modules_to_save\": null,\n  \"peft_type\": \"LORA\",\n  \"peft_version\": \"0.19.1\",\n  \"qalora_group_size\": 16,\n  \"r\": 256,\n  \"rank_pattern\": {},\n  \"revision\": null,\n  \"target_modules\": [\n    \"attn.add_v_proj\",\n    \"attn.to_out.0\",\n    \"attn.to_add_out\",\n    \"attn.to_q\",\n    \"attn.add_q_proj\",\n    \"attn.to_k\",\n    \"attn.add_k_proj\",\n    \"attn.to_v\"\n  ],\n  \"target_parameters\": null,\n  \"task_type\": null,\n  \"trainable_token_indices\": null,\n  \"use_bdlora\": null,\n  \"use_dora\": false,\n  \"use_qalora\": false,\n  \"use_rslora\": false\n}",
+    "format": "pt"
+  },
+  "transformer_blocks.0.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      0,
+      1572864
+    ]
+  },
+  "transformer_blocks.0.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1572864,
+      3145728
+    ]
+  },
+  "transformer_blocks.0.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      3145728,
+      4718592
+    ]
+  },
+  "transformer_blocks.0.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      4718592,
+      6291456
+    ]
+  },
+  "transformer_blocks.0.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      6291456,
+      7864320
+    ]
+  },
+  "transformer_blocks.0.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      7864320,
+      9437184
+    ]
+  },
+  "transformer_blocks.0.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      9437184,
+      11010048
+    ]
+  },
+  "transformer_blocks.0.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      11010048,
+      12582912
+    ]
+  },
+  "transformer_blocks.0.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      12582912,
+      14155776
+    ]
+  },
+  "transformer_blocks.0.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      14155776,
+      15728640
+    ]
+  },
+  "transformer_blocks.0.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      15728640,
+      17301504
+    ]
+  },
+  "transformer_blocks.0.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      17301504,
+      18874368
+    ]
+  },
+  "transformer_blocks.0.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      18874368,
+      20447232
+    ]
+  },
+  "transformer_blocks.0.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      20447232,
+      22020096
+    ]
+  },
+  "transformer_blocks.0.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      22020096,
+      23592960
+    ]
+  },
+  "transformer_blocks.0.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      23592960,
+      25165824
+    ]
+  },
+  "transformer_blocks.1.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      25165824,
+      26738688
+    ]
+  },
+  "transformer_blocks.1.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      26738688,
+      28311552
+    ]
+  },
+  "transformer_blocks.1.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      28311552,
+      29884416
+    ]
+  },
+  "transformer_blocks.1.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      29884416,
+      31457280
+    ]
+  },
+  "transformer_blocks.1.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      31457280,
+      33030144
+    ]
+  },
+  "transformer_blocks.1.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      33030144,
+      34603008
+    ]
+  },
+  "transformer_blocks.1.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      34603008,
+      36175872
+    ]
+  },
+  "transformer_blocks.1.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      36175872,
+      37748736
+    ]
+  },
+  "transformer_blocks.1.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      37748736,
+      39321600
+    ]
+  },
+  "transformer_blocks.1.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      39321600,
+      40894464
+    ]
+  },
+  "transformer_blocks.1.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      40894464,
+      42467328
+    ]
+  },
+  "transformer_blocks.1.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      42467328,
+      44040192
+    ]
+  },
+  "transformer_blocks.1.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      44040192,
+      45613056
+    ]
+  },
+  "transformer_blocks.1.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      45613056,
+      47185920
+    ]
+  },
+  "transformer_blocks.1.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      47185920,
+      48758784
+    ]
+  },
+  "transformer_blocks.1.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      48758784,
+      50331648
+    ]
+  },
+  "transformer_blocks.10.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      50331648,
+      51904512
+    ]
+  },
+  "transformer_blocks.10.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      51904512,
+      53477376
+    ]
+  },
+  "transformer_blocks.10.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      53477376,
+      55050240
+    ]
+  },
+  "transformer_blocks.10.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      55050240,
+      56623104
+    ]
+  },
+  "transformer_blocks.10.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      56623104,
+      58195968
+    ]
+  },
+  "transformer_blocks.10.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      58195968,
+      59768832
+    ]
+  },
+  "transformer_blocks.10.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      59768832,
+      61341696
+    ]
+  },
+  "transformer_blocks.10.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      61341696,
+      62914560
+    ]
+  },
+  "transformer_blocks.10.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      62914560,
+      64487424
+    ]
+  },
+  "transformer_blocks.10.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      64487424,
+      66060288
+    ]
+  },
+  "transformer_blocks.10.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      66060288,
+      67633152
+    ]
+  },
+  "transformer_blocks.10.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      67633152,
+      69206016
+    ]
+  },
+  "transformer_blocks.10.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      69206016,
+      70778880
+    ]
+  },
+  "transformer_blocks.10.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      70778880,
+      72351744
+    ]
+  },
+  "transformer_blocks.10.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      72351744,
+      73924608
+    ]
+  },
+  "transformer_blocks.10.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      73924608,
+      75497472
+    ]
+  },
+  "transformer_blocks.11.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      75497472,
+      77070336
+    ]
+  },
+  "transformer_blocks.11.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      77070336,
+      78643200
+    ]
+  },
+  "transformer_blocks.11.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      78643200,
+      80216064
+    ]
+  },
+  "transformer_blocks.11.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      80216064,
+      81788928
+    ]
+  },
+  "transformer_blocks.11.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      81788928,
+      83361792
+    ]
+  },
+  "transformer_blocks.11.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      83361792,
+      84934656
+    ]
+  },
+  "transformer_blocks.11.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      84934656,
+      86507520
+    ]
+  },
+  "transformer_blocks.11.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      86507520,
+      88080384
+    ]
+  },
+  "transformer_blocks.11.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      88080384,
+      89653248
+    ]
+  },
+  "transformer_blocks.11.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      89653248,
+      91226112
+    ]
+  },
+  "transformer_blocks.11.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      91226112,
+      92798976
+    ]
+  },
+  "transformer_blocks.11.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      92798976,
+      94371840
+    ]
+  },
+  "transformer_blocks.11.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      94371840,
+      95944704
+    ]
+  },
+  "transformer_blocks.11.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      95944704,
+      97517568
+    ]
+  },
+  "transformer_blocks.11.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      97517568,
+      99090432
+    ]
+  },
+  "transformer_blocks.11.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      99090432,
+      100663296
+    ]
+  },
+  "transformer_blocks.12.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      100663296,
+      102236160
+    ]
+  },
+  "transformer_blocks.12.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      102236160,
+      103809024
+    ]
+  },
+  "transformer_blocks.12.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      103809024,
+      105381888
+    ]
+  },
+  "transformer_blocks.12.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      105381888,
+      106954752
+    ]
+  },
+  "transformer_blocks.12.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      106954752,
+      108527616
+    ]
+  },
+  "transformer_blocks.12.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      108527616,
+      110100480
+    ]
+  },
+  "transformer_blocks.12.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      110100480,
+      111673344
+    ]
+  },
+  "transformer_blocks.12.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      111673344,
+      113246208
+    ]
+  },
+  "transformer_blocks.12.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      113246208,
+      114819072
+    ]
+  },
+  "transformer_blocks.12.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      114819072,
+      116391936
+    ]
+  },
+  "transformer_blocks.12.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      116391936,
+      117964800
+    ]
+  },
+  "transformer_blocks.12.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      117964800,
+      119537664
+    ]
+  },
+  "transformer_blocks.12.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      119537664,
+      121110528
+    ]
+  },
+  "transformer_blocks.12.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      121110528,
+      122683392
+    ]
+  },
+  "transformer_blocks.12.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      122683392,
+      124256256
+    ]
+  },
+  "transformer_blocks.12.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      124256256,
+      125829120
+    ]
+  },
+  "transformer_blocks.13.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      125829120,
+      127401984
+    ]
+  },
+  "transformer_blocks.13.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      127401984,
+      128974848
+    ]
+  },
+  "transformer_blocks.13.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      128974848,
+      130547712
+    ]
+  },
+  "transformer_blocks.13.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      130547712,
+      132120576
+    ]
+  },
+  "transformer_blocks.13.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      132120576,
+      133693440
+    ]
+  },
+  "transformer_blocks.13.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      133693440,
+      135266304
+    ]
+  },
+  "transformer_blocks.13.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      135266304,
+      136839168
+    ]
+  },
+  "transformer_blocks.13.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      136839168,
+      138412032
+    ]
+  },
+  "transformer_blocks.13.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      138412032,
+      139984896
+    ]
+  },
+  "transformer_blocks.13.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      139984896,
+      141557760
+    ]
+  },
+  "transformer_blocks.13.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      141557760,
+      143130624
+    ]
+  },
+  "transformer_blocks.13.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      143130624,
+      144703488
+    ]
+  },
+  "transformer_blocks.13.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      144703488,
+      146276352
+    ]
+  },
+  "transformer_blocks.13.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      146276352,
+      147849216
+    ]
+  },
+  "transformer_blocks.13.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      147849216,
+      149422080
+    ]
+  },
+  "transformer_blocks.13.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      149422080,
+      150994944
+    ]
+  },
+  "transformer_blocks.14.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      150994944,
+      152567808
+    ]
+  },
+  "transformer_blocks.14.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      152567808,
+      154140672
+    ]
+  },
+  "transformer_blocks.14.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      154140672,
+      155713536
+    ]
+  },
+  "transformer_blocks.14.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      155713536,
+      157286400
+    ]
+  },
+  "transformer_blocks.14.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      157286400,
+      158859264
+    ]
+  },
+  "transformer_blocks.14.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      158859264,
+      160432128
+    ]
+  },
+  "transformer_blocks.14.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      160432128,
+      162004992
+    ]
+  },
+  "transformer_blocks.14.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      162004992,
+      163577856
+    ]
+  },
+  "transformer_blocks.14.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      163577856,
+      165150720
+    ]
+  },
+  "transformer_blocks.14.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      165150720,
+      166723584
+    ]
+  },
+  "transformer_blocks.14.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      166723584,
+      168296448
+    ]
+  },
+  "transformer_blocks.14.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      168296448,
+      169869312
+    ]
+  },
+  "transformer_blocks.14.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      169869312,
+      171442176
+    ]
+  },
+  "transformer_blocks.14.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      171442176,
+      173015040
+    ]
+  },
+  "transformer_blocks.14.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      173015040,
+      174587904
+    ]
+  },
+  "transformer_blocks.14.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      174587904,
+      176160768
+    ]
+  },
+  "transformer_blocks.15.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      176160768,
+      177733632
+    ]
+  },
+  "transformer_blocks.15.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      177733632,
+      179306496
+    ]
+  },
+  "transformer_blocks.15.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      179306496,
+      180879360
+    ]
+  },
+  "transformer_blocks.15.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      180879360,
+      182452224
+    ]
+  },
+  "transformer_blocks.15.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      182452224,
+      184025088
+    ]
+  },
+  "transformer_blocks.15.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      184025088,
+      185597952
+    ]
+  },
+  "transformer_blocks.15.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      185597952,
+      187170816
+    ]
+  },
+  "transformer_blocks.15.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      187170816,
+      188743680
+    ]
+  },
+  "transformer_blocks.15.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      188743680,
+      190316544
+    ]
+  },
+  "transformer_blocks.15.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      190316544,
+      191889408
+    ]
+  },
+  "transformer_blocks.15.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      191889408,
+      193462272
+    ]
+  },
+  "transformer_blocks.15.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      193462272,
+      195035136
+    ]
+  },
+  "transformer_blocks.15.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      195035136,
+      196608000
+    ]
+  },
+  "transformer_blocks.15.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      196608000,
+      198180864
+    ]
+  },
+  "transformer_blocks.15.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      198180864,
+      199753728
+    ]
+  },
+  "transformer_blocks.15.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      199753728,
+      201326592
+    ]
+  },
+  "transformer_blocks.16.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      201326592,
+      202899456
+    ]
+  },
+  "transformer_blocks.16.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      202899456,
+      204472320
+    ]
+  },
+  "transformer_blocks.16.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      204472320,
+      206045184
+    ]
+  },
+  "transformer_blocks.16.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      206045184,
+      207618048
+    ]
+  },
+  "transformer_blocks.16.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      207618048,
+      209190912
+    ]
+  },
+  "transformer_blocks.16.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      209190912,
+      210763776
+    ]
+  },
+  "transformer_blocks.16.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      210763776,
+      212336640
+    ]
+  },
+  "transformer_blocks.16.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      212336640,
+      213909504
+    ]
+  },
+  "transformer_blocks.16.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      213909504,
+      215482368
+    ]
+  },
+  "transformer_blocks.16.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      215482368,
+      217055232
+    ]
+  },
+  "transformer_blocks.16.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      217055232,
+      218628096
+    ]
+  },
+  "transformer_blocks.16.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      218628096,
+      220200960
+    ]
+  },
+  "transformer_blocks.16.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      220200960,
+      221773824
+    ]
+  },
+  "transformer_blocks.16.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      221773824,
+      223346688
+    ]
+  },
+  "transformer_blocks.16.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      223346688,
+      224919552
+    ]
+  },
+  "transformer_blocks.16.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      224919552,
+      226492416
+    ]
+  },
+  "transformer_blocks.17.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      226492416,
+      228065280
+    ]
+  },
+  "transformer_blocks.17.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      228065280,
+      229638144
+    ]
+  },
+  "transformer_blocks.17.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      229638144,
+      231211008
+    ]
+  },
+  "transformer_blocks.17.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      231211008,
+      232783872
+    ]
+  },
+  "transformer_blocks.17.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      232783872,
+      234356736
+    ]
+  },
+  "transformer_blocks.17.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      234356736,
+      235929600
+    ]
+  },
+  "transformer_blocks.17.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      235929600,
+      237502464
+    ]
+  },
+  "transformer_blocks.17.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      237502464,
+      239075328
+    ]
+  },
+  "transformer_blocks.17.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      239075328,
+      240648192
+    ]
+  },
+  "transformer_blocks.17.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      240648192,
+      242221056
+    ]
+  },
+  "transformer_blocks.17.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      242221056,
+      243793920
+    ]
+  },
+  "transformer_blocks.17.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      243793920,
+      245366784
+    ]
+  },
+  "transformer_blocks.17.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      245366784,
+      246939648
+    ]
+  },
+  "transformer_blocks.17.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      246939648,
+      248512512
+    ]
+  },
+  "transformer_blocks.17.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      248512512,
+      250085376
+    ]
+  },
+  "transformer_blocks.17.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      250085376,
+      251658240
+    ]
+  },
+  "transformer_blocks.18.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      251658240,
+      253231104
+    ]
+  },
+  "transformer_blocks.18.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      253231104,
+      254803968
+    ]
+  },
+  "transformer_blocks.18.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      254803968,
+      256376832
+    ]
+  },
+  "transformer_blocks.18.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      256376832,
+      257949696
+    ]
+  },
+  "transformer_blocks.18.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      257949696,
+      259522560
+    ]
+  },
+  "transformer_blocks.18.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      259522560,
+      261095424
+    ]
+  },
+  "transformer_blocks.18.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      261095424,
+      262668288
+    ]
+  },
+  "transformer_blocks.18.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      262668288,
+      264241152
+    ]
+  },
+  "transformer_blocks.18.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      264241152,
+      265814016
+    ]
+  },
+  "transformer_blocks.18.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      265814016,
+      267386880
+    ]
+  },
+  "transformer_blocks.18.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      267386880,
+      268959744
+    ]
+  },
+  "transformer_blocks.18.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      268959744,
+      270532608
+    ]
+  },
+  "transformer_blocks.18.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      270532608,
+      272105472
+    ]
+  },
+  "transformer_blocks.18.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      272105472,
+      273678336
+    ]
+  },
+  "transformer_blocks.18.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      273678336,
+      275251200
+    ]
+  },
+  "transformer_blocks.18.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      275251200,
+      276824064
+    ]
+  },
+  "transformer_blocks.19.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      276824064,
+      278396928
+    ]
+  },
+  "transformer_blocks.19.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      278396928,
+      279969792
+    ]
+  },
+  "transformer_blocks.19.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      279969792,
+      281542656
+    ]
+  },
+  "transformer_blocks.19.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      281542656,
+      283115520
+    ]
+  },
+  "transformer_blocks.19.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      283115520,
+      284688384
+    ]
+  },
+  "transformer_blocks.19.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      284688384,
+      286261248
+    ]
+  },
+  "transformer_blocks.19.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      286261248,
+      287834112
+    ]
+  },
+  "transformer_blocks.19.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      287834112,
+      289406976
+    ]
+  },
+  "transformer_blocks.19.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      289406976,
+      290979840
+    ]
+  },
+  "transformer_blocks.19.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      290979840,
+      292552704
+    ]
+  },
+  "transformer_blocks.19.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      292552704,
+      294125568
+    ]
+  },
+  "transformer_blocks.19.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      294125568,
+      295698432
+    ]
+  },
+  "transformer_blocks.19.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      295698432,
+      297271296
+    ]
+  },
+  "transformer_blocks.19.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      297271296,
+      298844160
+    ]
+  },
+  "transformer_blocks.19.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      298844160,
+      300417024
+    ]
+  },
+  "transformer_blocks.19.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      300417024,
+      301989888
+    ]
+  },
+  "transformer_blocks.2.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      301989888,
+      303562752
+    ]
+  },
+  "transformer_blocks.2.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      303562752,
+      305135616
+    ]
+  },
+  "transformer_blocks.2.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      305135616,
+      306708480
+    ]
+  },
+  "transformer_blocks.2.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      306708480,
+      308281344
+    ]
+  },
+  "transformer_blocks.2.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      308281344,
+      309854208
+    ]
+  },
+  "transformer_blocks.2.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      309854208,
+      311427072
+    ]
+  },
+  "transformer_blocks.2.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      311427072,
+      312999936
+    ]
+  },
+  "transformer_blocks.2.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      312999936,
+      314572800
+    ]
+  },
+  "transformer_blocks.2.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      314572800,
+      316145664
+    ]
+  },
+  "transformer_blocks.2.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      316145664,
+      317718528
+    ]
+  },
+  "transformer_blocks.2.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      317718528,
+      319291392
+    ]
+  },
+  "transformer_blocks.2.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      319291392,
+      320864256
+    ]
+  },
+  "transformer_blocks.2.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      320864256,
+      322437120
+    ]
+  },
+  "transformer_blocks.2.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      322437120,
+      324009984
+    ]
+  },
+  "transformer_blocks.2.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      324009984,
+      325582848
+    ]
+  },
+  "transformer_blocks.2.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      325582848,
+      327155712
+    ]
+  },
+  "transformer_blocks.20.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      327155712,
+      328728576
+    ]
+  },
+  "transformer_blocks.20.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      328728576,
+      330301440
+    ]
+  },
+  "transformer_blocks.20.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      330301440,
+      331874304
+    ]
+  },
+  "transformer_blocks.20.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      331874304,
+      333447168
+    ]
+  },
+  "transformer_blocks.20.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      333447168,
+      335020032
+    ]
+  },
+  "transformer_blocks.20.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      335020032,
+      336592896
+    ]
+  },
+  "transformer_blocks.20.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      336592896,
+      338165760
+    ]
+  },
+  "transformer_blocks.20.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      338165760,
+      339738624
+    ]
+  },
+  "transformer_blocks.20.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      339738624,
+      341311488
+    ]
+  },
+  "transformer_blocks.20.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      341311488,
+      342884352
+    ]
+  },
+  "transformer_blocks.20.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      342884352,
+      344457216
+    ]
+  },
+  "transformer_blocks.20.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      344457216,
+      346030080
+    ]
+  },
+  "transformer_blocks.20.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      346030080,
+      347602944
+    ]
+  },
+  "transformer_blocks.20.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      347602944,
+      349175808
+    ]
+  },
+  "transformer_blocks.20.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      349175808,
+      350748672
+    ]
+  },
+  "transformer_blocks.20.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      350748672,
+      352321536
+    ]
+  },
+  "transformer_blocks.21.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      352321536,
+      353894400
+    ]
+  },
+  "transformer_blocks.21.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      353894400,
+      355467264
+    ]
+  },
+  "transformer_blocks.21.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      355467264,
+      357040128
+    ]
+  },
+  "transformer_blocks.21.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      357040128,
+      358612992
+    ]
+  },
+  "transformer_blocks.21.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      358612992,
+      360185856
+    ]
+  },
+  "transformer_blocks.21.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      360185856,
+      361758720
+    ]
+  },
+  "transformer_blocks.21.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      361758720,
+      363331584
+    ]
+  },
+  "transformer_blocks.21.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      363331584,
+      364904448
+    ]
+  },
+  "transformer_blocks.21.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      364904448,
+      366477312
+    ]
+  },
+  "transformer_blocks.21.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      366477312,
+      368050176
+    ]
+  },
+  "transformer_blocks.21.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      368050176,
+      369623040
+    ]
+  },
+  "transformer_blocks.21.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      369623040,
+      371195904
+    ]
+  },
+  "transformer_blocks.21.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      371195904,
+      372768768
+    ]
+  },
+  "transformer_blocks.21.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      372768768,
+      374341632
+    ]
+  },
+  "transformer_blocks.21.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      374341632,
+      375914496
+    ]
+  },
+  "transformer_blocks.21.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      375914496,
+      377487360
+    ]
+  },
+  "transformer_blocks.22.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      377487360,
+      379060224
+    ]
+  },
+  "transformer_blocks.22.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      379060224,
+      380633088
+    ]
+  },
+  "transformer_blocks.22.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      380633088,
+      382205952
+    ]
+  },
+  "transformer_blocks.22.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      382205952,
+      383778816
+    ]
+  },
+  "transformer_blocks.22.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      383778816,
+      385351680
+    ]
+  },
+  "transformer_blocks.22.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      385351680,
+      386924544
+    ]
+  },
+  "transformer_blocks.22.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      386924544,
+      388497408
+    ]
+  },
+  "transformer_blocks.22.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      388497408,
+      390070272
+    ]
+  },
+  "transformer_blocks.22.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      390070272,
+      391643136
+    ]
+  },
+  "transformer_blocks.22.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      391643136,
+      393216000
+    ]
+  },
+  "transformer_blocks.22.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      393216000,
+      394788864
+    ]
+  },
+  "transformer_blocks.22.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      394788864,
+      396361728
+    ]
+  },
+  "transformer_blocks.22.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      396361728,
+      397934592
+    ]
+  },
+  "transformer_blocks.22.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      397934592,
+      399507456
+    ]
+  },
+  "transformer_blocks.22.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      399507456,
+      401080320
+    ]
+  },
+  "transformer_blocks.22.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      401080320,
+      402653184
+    ]
+  },
+  "transformer_blocks.23.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      402653184,
+      404226048
+    ]
+  },
+  "transformer_blocks.23.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      404226048,
+      405798912
+    ]
+  },
+  "transformer_blocks.23.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      405798912,
+      407371776
+    ]
+  },
+  "transformer_blocks.23.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      407371776,
+      408944640
+    ]
+  },
+  "transformer_blocks.23.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      408944640,
+      410517504
+    ]
+  },
+  "transformer_blocks.23.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      410517504,
+      412090368
+    ]
+  },
+  "transformer_blocks.23.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      412090368,
+      413663232
+    ]
+  },
+  "transformer_blocks.23.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      413663232,
+      415236096
+    ]
+  },
+  "transformer_blocks.23.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      415236096,
+      416808960
+    ]
+  },
+  "transformer_blocks.23.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      416808960,
+      418381824
+    ]
+  },
+  "transformer_blocks.23.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      418381824,
+      419954688
+    ]
+  },
+  "transformer_blocks.23.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      419954688,
+      421527552
+    ]
+  },
+  "transformer_blocks.23.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      421527552,
+      423100416
+    ]
+  },
+  "transformer_blocks.23.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      423100416,
+      424673280
+    ]
+  },
+  "transformer_blocks.23.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      424673280,
+      426246144
+    ]
+  },
+  "transformer_blocks.23.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      426246144,
+      427819008
+    ]
+  },
+  "transformer_blocks.24.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      427819008,
+      429391872
+    ]
+  },
+  "transformer_blocks.24.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      429391872,
+      430964736
+    ]
+  },
+  "transformer_blocks.24.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      430964736,
+      432537600
+    ]
+  },
+  "transformer_blocks.24.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      432537600,
+      434110464
+    ]
+  },
+  "transformer_blocks.24.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      434110464,
+      435683328
+    ]
+  },
+  "transformer_blocks.24.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      435683328,
+      437256192
+    ]
+  },
+  "transformer_blocks.24.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      437256192,
+      438829056
+    ]
+  },
+  "transformer_blocks.24.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      438829056,
+      440401920
+    ]
+  },
+  "transformer_blocks.24.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      440401920,
+      441974784
+    ]
+  },
+  "transformer_blocks.24.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      441974784,
+      443547648
+    ]
+  },
+  "transformer_blocks.24.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      443547648,
+      445120512
+    ]
+  },
+  "transformer_blocks.24.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      445120512,
+      446693376
+    ]
+  },
+  "transformer_blocks.24.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      446693376,
+      448266240
+    ]
+  },
+  "transformer_blocks.24.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      448266240,
+      449839104
+    ]
+  },
+  "transformer_blocks.24.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      449839104,
+      451411968
+    ]
+  },
+  "transformer_blocks.24.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      451411968,
+      452984832
+    ]
+  },
+  "transformer_blocks.25.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      452984832,
+      454557696
+    ]
+  },
+  "transformer_blocks.25.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      454557696,
+      456130560
+    ]
+  },
+  "transformer_blocks.25.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      456130560,
+      457703424
+    ]
+  },
+  "transformer_blocks.25.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      457703424,
+      459276288
+    ]
+  },
+  "transformer_blocks.25.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      459276288,
+      460849152
+    ]
+  },
+  "transformer_blocks.25.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      460849152,
+      462422016
+    ]
+  },
+  "transformer_blocks.25.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      462422016,
+      463994880
+    ]
+  },
+  "transformer_blocks.25.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      463994880,
+      465567744
+    ]
+  },
+  "transformer_blocks.25.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      465567744,
+      467140608
+    ]
+  },
+  "transformer_blocks.25.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      467140608,
+      468713472
+    ]
+  },
+  "transformer_blocks.25.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      468713472,
+      470286336
+    ]
+  },
+  "transformer_blocks.25.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      470286336,
+      471859200
+    ]
+  },
+  "transformer_blocks.25.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      471859200,
+      473432064
+    ]
+  },
+  "transformer_blocks.25.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      473432064,
+      475004928
+    ]
+  },
+  "transformer_blocks.25.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      475004928,
+      476577792
+    ]
+  },
+  "transformer_blocks.25.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      476577792,
+      478150656
+    ]
+  },
+  "transformer_blocks.26.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      478150656,
+      479723520
+    ]
+  },
+  "transformer_blocks.26.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      479723520,
+      481296384
+    ]
+  },
+  "transformer_blocks.26.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      481296384,
+      482869248
+    ]
+  },
+  "transformer_blocks.26.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      482869248,
+      484442112
+    ]
+  },
+  "transformer_blocks.26.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      484442112,
+      486014976
+    ]
+  },
+  "transformer_blocks.26.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      486014976,
+      487587840
+    ]
+  },
+  "transformer_blocks.26.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      487587840,
+      489160704
+    ]
+  },
+  "transformer_blocks.26.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      489160704,
+      490733568
+    ]
+  },
+  "transformer_blocks.26.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      490733568,
+      492306432
+    ]
+  },
+  "transformer_blocks.26.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      492306432,
+      493879296
+    ]
+  },
+  "transformer_blocks.26.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      493879296,
+      495452160
+    ]
+  },
+  "transformer_blocks.26.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      495452160,
+      497025024
+    ]
+  },
+  "transformer_blocks.26.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      497025024,
+      498597888
+    ]
+  },
+  "transformer_blocks.26.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      498597888,
+      500170752
+    ]
+  },
+  "transformer_blocks.26.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      500170752,
+      501743616
+    ]
+  },
+  "transformer_blocks.26.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      501743616,
+      503316480
+    ]
+  },
+  "transformer_blocks.27.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      503316480,
+      504889344
+    ]
+  },
+  "transformer_blocks.27.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      504889344,
+      506462208
+    ]
+  },
+  "transformer_blocks.27.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      506462208,
+      508035072
+    ]
+  },
+  "transformer_blocks.27.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      508035072,
+      509607936
+    ]
+  },
+  "transformer_blocks.27.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      509607936,
+      511180800
+    ]
+  },
+  "transformer_blocks.27.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      511180800,
+      512753664
+    ]
+  },
+  "transformer_blocks.27.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      512753664,
+      514326528
+    ]
+  },
+  "transformer_blocks.27.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      514326528,
+      515899392
+    ]
+  },
+  "transformer_blocks.27.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      515899392,
+      517472256
+    ]
+  },
+  "transformer_blocks.27.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      517472256,
+      519045120
+    ]
+  },
+  "transformer_blocks.27.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      519045120,
+      520617984
+    ]
+  },
+  "transformer_blocks.27.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      520617984,
+      522190848
+    ]
+  },
+  "transformer_blocks.27.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      522190848,
+      523763712
+    ]
+  },
+  "transformer_blocks.27.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      523763712,
+      525336576
+    ]
+  },
+  "transformer_blocks.27.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      525336576,
+      526909440
+    ]
+  },
+  "transformer_blocks.27.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      526909440,
+      528482304
+    ]
+  },
+  "transformer_blocks.28.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      528482304,
+      530055168
+    ]
+  },
+  "transformer_blocks.28.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      530055168,
+      531628032
+    ]
+  },
+  "transformer_blocks.28.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      531628032,
+      533200896
+    ]
+  },
+  "transformer_blocks.28.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      533200896,
+      534773760
+    ]
+  },
+  "transformer_blocks.28.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      534773760,
+      536346624
+    ]
+  },
+  "transformer_blocks.28.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      536346624,
+      537919488
+    ]
+  },
+  "transformer_blocks.28.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      537919488,
+      539492352
+    ]
+  },
+  "transformer_blocks.28.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      539492352,
+      541065216
+    ]
+  },
+  "transformer_blocks.28.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      541065216,
+      542638080
+    ]
+  },
+  "transformer_blocks.28.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      542638080,
+      544210944
+    ]
+  },
+  "transformer_blocks.28.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      544210944,
+      545783808
+    ]
+  },
+  "transformer_blocks.28.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      545783808,
+      547356672
+    ]
+  },
+  "transformer_blocks.28.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      547356672,
+      548929536
+    ]
+  },
+  "transformer_blocks.28.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      548929536,
+      550502400
+    ]
+  },
+  "transformer_blocks.28.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      550502400,
+      552075264
+    ]
+  },
+  "transformer_blocks.28.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      552075264,
+      553648128
+    ]
+  },
+  "transformer_blocks.29.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      553648128,
+      555220992
+    ]
+  },
+  "transformer_blocks.29.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      555220992,
+      556793856
+    ]
+  },
+  "transformer_blocks.29.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      556793856,
+      558366720
+    ]
+  },
+  "transformer_blocks.29.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      558366720,
+      559939584
+    ]
+  },
+  "transformer_blocks.29.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      559939584,
+      561512448
+    ]
+  },
+  "transformer_blocks.29.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      561512448,
+      563085312
+    ]
+  },
+  "transformer_blocks.29.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      563085312,
+      564658176
+    ]
+  },
+  "transformer_blocks.29.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      564658176,
+      566231040
+    ]
+  },
+  "transformer_blocks.29.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      566231040,
+      567803904
+    ]
+  },
+  "transformer_blocks.29.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      567803904,
+      569376768
+    ]
+  },
+  "transformer_blocks.29.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      569376768,
+      570949632
+    ]
+  },
+  "transformer_blocks.29.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      570949632,
+      572522496
+    ]
+  },
+  "transformer_blocks.29.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      572522496,
+      574095360
+    ]
+  },
+  "transformer_blocks.29.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      574095360,
+      575668224
+    ]
+  },
+  "transformer_blocks.29.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      575668224,
+      577241088
+    ]
+  },
+  "transformer_blocks.29.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      577241088,
+      578813952
+    ]
+  },
+  "transformer_blocks.3.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      578813952,
+      580386816
+    ]
+  },
+  "transformer_blocks.3.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      580386816,
+      581959680
+    ]
+  },
+  "transformer_blocks.3.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      581959680,
+      583532544
+    ]
+  },
+  "transformer_blocks.3.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      583532544,
+      585105408
+    ]
+  },
+  "transformer_blocks.3.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      585105408,
+      586678272
+    ]
+  },
+  "transformer_blocks.3.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      586678272,
+      588251136
+    ]
+  },
+  "transformer_blocks.3.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      588251136,
+      589824000
+    ]
+  },
+  "transformer_blocks.3.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      589824000,
+      591396864
+    ]
+  },
+  "transformer_blocks.3.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      591396864,
+      592969728
+    ]
+  },
+  "transformer_blocks.3.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      592969728,
+      594542592
+    ]
+  },
+  "transformer_blocks.3.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      594542592,
+      596115456
+    ]
+  },
+  "transformer_blocks.3.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      596115456,
+      597688320
+    ]
+  },
+  "transformer_blocks.3.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      597688320,
+      599261184
+    ]
+  },
+  "transformer_blocks.3.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      599261184,
+      600834048
+    ]
+  },
+  "transformer_blocks.3.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      600834048,
+      602406912
+    ]
+  },
+  "transformer_blocks.3.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      602406912,
+      603979776
+    ]
+  },
+  "transformer_blocks.30.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      603979776,
+      605552640
+    ]
+  },
+  "transformer_blocks.30.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      605552640,
+      607125504
+    ]
+  },
+  "transformer_blocks.30.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      607125504,
+      608698368
+    ]
+  },
+  "transformer_blocks.30.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      608698368,
+      610271232
+    ]
+  },
+  "transformer_blocks.30.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      610271232,
+      611844096
+    ]
+  },
+  "transformer_blocks.30.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      611844096,
+      613416960
+    ]
+  },
+  "transformer_blocks.30.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      613416960,
+      614989824
+    ]
+  },
+  "transformer_blocks.30.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      614989824,
+      616562688
+    ]
+  },
+  "transformer_blocks.30.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      616562688,
+      618135552
+    ]
+  },
+  "transformer_blocks.30.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      618135552,
+      619708416
+    ]
+  },
+  "transformer_blocks.30.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      619708416,
+      621281280
+    ]
+  },
+  "transformer_blocks.30.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      621281280,
+      622854144
+    ]
+  },
+  "transformer_blocks.30.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      622854144,
+      624427008
+    ]
+  },
+  "transformer_blocks.30.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      624427008,
+      625999872
+    ]
+  },
+  "transformer_blocks.30.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      625999872,
+      627572736
+    ]
+  },
+  "transformer_blocks.30.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      627572736,
+      629145600
+    ]
+  },
+  "transformer_blocks.31.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      629145600,
+      630718464
+    ]
+  },
+  "transformer_blocks.31.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      630718464,
+      632291328
+    ]
+  },
+  "transformer_blocks.31.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      632291328,
+      633864192
+    ]
+  },
+  "transformer_blocks.31.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      633864192,
+      635437056
+    ]
+  },
+  "transformer_blocks.31.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      635437056,
+      637009920
+    ]
+  },
+  "transformer_blocks.31.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      637009920,
+      638582784
+    ]
+  },
+  "transformer_blocks.31.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      638582784,
+      640155648
+    ]
+  },
+  "transformer_blocks.31.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      640155648,
+      641728512
+    ]
+  },
+  "transformer_blocks.31.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      641728512,
+      643301376
+    ]
+  },
+  "transformer_blocks.31.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      643301376,
+      644874240
+    ]
+  },
+  "transformer_blocks.31.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      644874240,
+      646447104
+    ]
+  },
+  "transformer_blocks.31.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      646447104,
+      648019968
+    ]
+  },
+  "transformer_blocks.31.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      648019968,
+      649592832
+    ]
+  },
+  "transformer_blocks.31.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      649592832,
+      651165696
+    ]
+  },
+  "transformer_blocks.31.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      651165696,
+      652738560
+    ]
+  },
+  "transformer_blocks.31.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      652738560,
+      654311424
+    ]
+  },
+  "transformer_blocks.32.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      654311424,
+      655884288
+    ]
+  },
+  "transformer_blocks.32.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      655884288,
+      657457152
+    ]
+  },
+  "transformer_blocks.32.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      657457152,
+      659030016
+    ]
+  },
+  "transformer_blocks.32.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      659030016,
+      660602880
+    ]
+  },
+  "transformer_blocks.32.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      660602880,
+      662175744
+    ]
+  },
+  "transformer_blocks.32.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      662175744,
+      663748608
+    ]
+  },
+  "transformer_blocks.32.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      663748608,
+      665321472
+    ]
+  },
+  "transformer_blocks.32.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      665321472,
+      666894336
+    ]
+  },
+  "transformer_blocks.32.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      666894336,
+      668467200
+    ]
+  },
+  "transformer_blocks.32.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      668467200,
+      670040064
+    ]
+  },
+  "transformer_blocks.32.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      670040064,
+      671612928
+    ]
+  },
+  "transformer_blocks.32.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      671612928,
+      673185792
+    ]
+  },
+  "transformer_blocks.32.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      673185792,
+      674758656
+    ]
+  },
+  "transformer_blocks.32.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      674758656,
+      676331520
+    ]
+  },
+  "transformer_blocks.32.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      676331520,
+      677904384
+    ]
+  },
+  "transformer_blocks.32.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      677904384,
+      679477248
+    ]
+  },
+  "transformer_blocks.33.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      679477248,
+      681050112
+    ]
+  },
+  "transformer_blocks.33.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      681050112,
+      682622976
+    ]
+  },
+  "transformer_blocks.33.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      682622976,
+      684195840
+    ]
+  },
+  "transformer_blocks.33.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      684195840,
+      685768704
+    ]
+  },
+  "transformer_blocks.33.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      685768704,
+      687341568
+    ]
+  },
+  "transformer_blocks.33.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      687341568,
+      688914432
+    ]
+  },
+  "transformer_blocks.33.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      688914432,
+      690487296
+    ]
+  },
+  "transformer_blocks.33.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      690487296,
+      692060160
+    ]
+  },
+  "transformer_blocks.33.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      692060160,
+      693633024
+    ]
+  },
+  "transformer_blocks.33.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      693633024,
+      695205888
+    ]
+  },
+  "transformer_blocks.33.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      695205888,
+      696778752
+    ]
+  },
+  "transformer_blocks.33.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      696778752,
+      698351616
+    ]
+  },
+  "transformer_blocks.33.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      698351616,
+      699924480
+    ]
+  },
+  "transformer_blocks.33.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      699924480,
+      701497344
+    ]
+  },
+  "transformer_blocks.33.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      701497344,
+      703070208
+    ]
+  },
+  "transformer_blocks.33.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      703070208,
+      704643072
+    ]
+  },
+  "transformer_blocks.34.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      704643072,
+      706215936
+    ]
+  },
+  "transformer_blocks.34.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      706215936,
+      707788800
+    ]
+  },
+  "transformer_blocks.34.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      707788800,
+      709361664
+    ]
+  },
+  "transformer_blocks.34.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      709361664,
+      710934528
+    ]
+  },
+  "transformer_blocks.34.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      710934528,
+      712507392
+    ]
+  },
+  "transformer_blocks.34.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      712507392,
+      714080256
+    ]
+  },
+  "transformer_blocks.34.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      714080256,
+      715653120
+    ]
+  },
+  "transformer_blocks.34.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      715653120,
+      717225984
+    ]
+  },
+  "transformer_blocks.34.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      717225984,
+      718798848
+    ]
+  },
+  "transformer_blocks.34.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      718798848,
+      720371712
+    ]
+  },
+  "transformer_blocks.34.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      720371712,
+      721944576
+    ]
+  },
+  "transformer_blocks.34.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      721944576,
+      723517440
+    ]
+  },
+  "transformer_blocks.34.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      723517440,
+      725090304
+    ]
+  },
+  "transformer_blocks.34.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      725090304,
+      726663168
+    ]
+  },
+  "transformer_blocks.34.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      726663168,
+      728236032
+    ]
+  },
+  "transformer_blocks.34.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      728236032,
+      729808896
+    ]
+  },
+  "transformer_blocks.35.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      729808896,
+      731381760
+    ]
+  },
+  "transformer_blocks.35.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      731381760,
+      732954624
+    ]
+  },
+  "transformer_blocks.35.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      732954624,
+      734527488
+    ]
+  },
+  "transformer_blocks.35.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      734527488,
+      736100352
+    ]
+  },
+  "transformer_blocks.35.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      736100352,
+      737673216
+    ]
+  },
+  "transformer_blocks.35.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      737673216,
+      739246080
+    ]
+  },
+  "transformer_blocks.35.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      739246080,
+      740818944
+    ]
+  },
+  "transformer_blocks.35.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      740818944,
+      742391808
+    ]
+  },
+  "transformer_blocks.35.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      742391808,
+      743964672
+    ]
+  },
+  "transformer_blocks.35.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      743964672,
+      745537536
+    ]
+  },
+  "transformer_blocks.35.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      745537536,
+      747110400
+    ]
+  },
+  "transformer_blocks.35.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      747110400,
+      748683264
+    ]
+  },
+  "transformer_blocks.35.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      748683264,
+      750256128
+    ]
+  },
+  "transformer_blocks.35.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      750256128,
+      751828992
+    ]
+  },
+  "transformer_blocks.35.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      751828992,
+      753401856
+    ]
+  },
+  "transformer_blocks.35.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      753401856,
+      754974720
+    ]
+  },
+  "transformer_blocks.36.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      754974720,
+      756547584
+    ]
+  },
+  "transformer_blocks.36.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      756547584,
+      758120448
+    ]
+  },
+  "transformer_blocks.36.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      758120448,
+      759693312
+    ]
+  },
+  "transformer_blocks.36.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      759693312,
+      761266176
+    ]
+  },
+  "transformer_blocks.36.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      761266176,
+      762839040
+    ]
+  },
+  "transformer_blocks.36.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      762839040,
+      764411904
+    ]
+  },
+  "transformer_blocks.36.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      764411904,
+      765984768
+    ]
+  },
+  "transformer_blocks.36.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      765984768,
+      767557632
+    ]
+  },
+  "transformer_blocks.36.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      767557632,
+      769130496
+    ]
+  },
+  "transformer_blocks.36.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      769130496,
+      770703360
+    ]
+  },
+  "transformer_blocks.36.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      770703360,
+      772276224
+    ]
+  },
+  "transformer_blocks.36.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      772276224,
+      773849088
+    ]
+  },
+  "transformer_blocks.36.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      773849088,
+      775421952
+    ]
+  },
+  "transformer_blocks.36.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      775421952,
+      776994816
+    ]
+  },
+  "transformer_blocks.36.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      776994816,
+      778567680
+    ]
+  },
+  "transformer_blocks.36.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      778567680,
+      780140544
+    ]
+  },
+  "transformer_blocks.37.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      780140544,
+      781713408
+    ]
+  },
+  "transformer_blocks.37.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      781713408,
+      783286272
+    ]
+  },
+  "transformer_blocks.37.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      783286272,
+      784859136
+    ]
+  },
+  "transformer_blocks.37.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      784859136,
+      786432000
+    ]
+  },
+  "transformer_blocks.37.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      786432000,
+      788004864
+    ]
+  },
+  "transformer_blocks.37.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      788004864,
+      789577728
+    ]
+  },
+  "transformer_blocks.37.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      789577728,
+      791150592
+    ]
+  },
+  "transformer_blocks.37.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      791150592,
+      792723456
+    ]
+  },
+  "transformer_blocks.37.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      792723456,
+      794296320
+    ]
+  },
+  "transformer_blocks.37.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      794296320,
+      795869184
+    ]
+  },
+  "transformer_blocks.37.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      795869184,
+      797442048
+    ]
+  },
+  "transformer_blocks.37.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      797442048,
+      799014912
+    ]
+  },
+  "transformer_blocks.37.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      799014912,
+      800587776
+    ]
+  },
+  "transformer_blocks.37.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      800587776,
+      802160640
+    ]
+  },
+  "transformer_blocks.37.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      802160640,
+      803733504
+    ]
+  },
+  "transformer_blocks.37.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      803733504,
+      805306368
+    ]
+  },
+  "transformer_blocks.38.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      805306368,
+      806879232
+    ]
+  },
+  "transformer_blocks.38.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      806879232,
+      808452096
+    ]
+  },
+  "transformer_blocks.38.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      808452096,
+      810024960
+    ]
+  },
+  "transformer_blocks.38.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      810024960,
+      811597824
+    ]
+  },
+  "transformer_blocks.38.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      811597824,
+      813170688
+    ]
+  },
+  "transformer_blocks.38.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      813170688,
+      814743552
+    ]
+  },
+  "transformer_blocks.38.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      814743552,
+      816316416
+    ]
+  },
+  "transformer_blocks.38.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      816316416,
+      817889280
+    ]
+  },
+  "transformer_blocks.38.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      817889280,
+      819462144
+    ]
+  },
+  "transformer_blocks.38.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      819462144,
+      821035008
+    ]
+  },
+  "transformer_blocks.38.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      821035008,
+      822607872
+    ]
+  },
+  "transformer_blocks.38.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      822607872,
+      824180736
+    ]
+  },
+  "transformer_blocks.38.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      824180736,
+      825753600
+    ]
+  },
+  "transformer_blocks.38.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      825753600,
+      827326464
+    ]
+  },
+  "transformer_blocks.38.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      827326464,
+      828899328
+    ]
+  },
+  "transformer_blocks.38.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      828899328,
+      830472192
+    ]
+  },
+  "transformer_blocks.39.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      830472192,
+      832045056
+    ]
+  },
+  "transformer_blocks.39.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      832045056,
+      833617920
+    ]
+  },
+  "transformer_blocks.39.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      833617920,
+      835190784
+    ]
+  },
+  "transformer_blocks.39.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      835190784,
+      836763648
+    ]
+  },
+  "transformer_blocks.39.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      836763648,
+      838336512
+    ]
+  },
+  "transformer_blocks.39.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      838336512,
+      839909376
+    ]
+  },
+  "transformer_blocks.39.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      839909376,
+      841482240
+    ]
+  },
+  "transformer_blocks.39.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      841482240,
+      843055104
+    ]
+  },
+  "transformer_blocks.39.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      843055104,
+      844627968
+    ]
+  },
+  "transformer_blocks.39.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      844627968,
+      846200832
+    ]
+  },
+  "transformer_blocks.39.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      846200832,
+      847773696
+    ]
+  },
+  "transformer_blocks.39.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      847773696,
+      849346560
+    ]
+  },
+  "transformer_blocks.39.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      849346560,
+      850919424
+    ]
+  },
+  "transformer_blocks.39.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      850919424,
+      852492288
+    ]
+  },
+  "transformer_blocks.39.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      852492288,
+      854065152
+    ]
+  },
+  "transformer_blocks.39.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      854065152,
+      855638016
+    ]
+  },
+  "transformer_blocks.4.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      855638016,
+      857210880
+    ]
+  },
+  "transformer_blocks.4.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      857210880,
+      858783744
+    ]
+  },
+  "transformer_blocks.4.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      858783744,
+      860356608
+    ]
+  },
+  "transformer_blocks.4.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      860356608,
+      861929472
+    ]
+  },
+  "transformer_blocks.4.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      861929472,
+      863502336
+    ]
+  },
+  "transformer_blocks.4.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      863502336,
+      865075200
+    ]
+  },
+  "transformer_blocks.4.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      865075200,
+      866648064
+    ]
+  },
+  "transformer_blocks.4.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      866648064,
+      868220928
+    ]
+  },
+  "transformer_blocks.4.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      868220928,
+      869793792
+    ]
+  },
+  "transformer_blocks.4.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      869793792,
+      871366656
+    ]
+  },
+  "transformer_blocks.4.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      871366656,
+      872939520
+    ]
+  },
+  "transformer_blocks.4.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      872939520,
+      874512384
+    ]
+  },
+  "transformer_blocks.4.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      874512384,
+      876085248
+    ]
+  },
+  "transformer_blocks.4.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      876085248,
+      877658112
+    ]
+  },
+  "transformer_blocks.4.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      877658112,
+      879230976
+    ]
+  },
+  "transformer_blocks.4.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      879230976,
+      880803840
+    ]
+  },
+  "transformer_blocks.40.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      880803840,
+      882376704
+    ]
+  },
+  "transformer_blocks.40.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      882376704,
+      883949568
+    ]
+  },
+  "transformer_blocks.40.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      883949568,
+      885522432
+    ]
+  },
+  "transformer_blocks.40.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      885522432,
+      887095296
+    ]
+  },
+  "transformer_blocks.40.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      887095296,
+      888668160
+    ]
+  },
+  "transformer_blocks.40.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      888668160,
+      890241024
+    ]
+  },
+  "transformer_blocks.40.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      890241024,
+      891813888
+    ]
+  },
+  "transformer_blocks.40.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      891813888,
+      893386752
+    ]
+  },
+  "transformer_blocks.40.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      893386752,
+      894959616
+    ]
+  },
+  "transformer_blocks.40.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      894959616,
+      896532480
+    ]
+  },
+  "transformer_blocks.40.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      896532480,
+      898105344
+    ]
+  },
+  "transformer_blocks.40.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      898105344,
+      899678208
+    ]
+  },
+  "transformer_blocks.40.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      899678208,
+      901251072
+    ]
+  },
+  "transformer_blocks.40.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      901251072,
+      902823936
+    ]
+  },
+  "transformer_blocks.40.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      902823936,
+      904396800
+    ]
+  },
+  "transformer_blocks.40.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      904396800,
+      905969664
+    ]
+  },
+  "transformer_blocks.41.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      905969664,
+      907542528
+    ]
+  },
+  "transformer_blocks.41.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      907542528,
+      909115392
+    ]
+  },
+  "transformer_blocks.41.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      909115392,
+      910688256
+    ]
+  },
+  "transformer_blocks.41.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      910688256,
+      912261120
+    ]
+  },
+  "transformer_blocks.41.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      912261120,
+      913833984
+    ]
+  },
+  "transformer_blocks.41.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      913833984,
+      915406848
+    ]
+  },
+  "transformer_blocks.41.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      915406848,
+      916979712
+    ]
+  },
+  "transformer_blocks.41.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      916979712,
+      918552576
+    ]
+  },
+  "transformer_blocks.41.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      918552576,
+      920125440
+    ]
+  },
+  "transformer_blocks.41.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      920125440,
+      921698304
+    ]
+  },
+  "transformer_blocks.41.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      921698304,
+      923271168
+    ]
+  },
+  "transformer_blocks.41.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      923271168,
+      924844032
+    ]
+  },
+  "transformer_blocks.41.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      924844032,
+      926416896
+    ]
+  },
+  "transformer_blocks.41.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      926416896,
+      927989760
+    ]
+  },
+  "transformer_blocks.41.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      927989760,
+      929562624
+    ]
+  },
+  "transformer_blocks.41.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      929562624,
+      931135488
+    ]
+  },
+  "transformer_blocks.42.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      931135488,
+      932708352
+    ]
+  },
+  "transformer_blocks.42.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      932708352,
+      934281216
+    ]
+  },
+  "transformer_blocks.42.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      934281216,
+      935854080
+    ]
+  },
+  "transformer_blocks.42.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      935854080,
+      937426944
+    ]
+  },
+  "transformer_blocks.42.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      937426944,
+      938999808
+    ]
+  },
+  "transformer_blocks.42.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      938999808,
+      940572672
+    ]
+  },
+  "transformer_blocks.42.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      940572672,
+      942145536
+    ]
+  },
+  "transformer_blocks.42.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      942145536,
+      943718400
+    ]
+  },
+  "transformer_blocks.42.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      943718400,
+      945291264
+    ]
+  },
+  "transformer_blocks.42.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      945291264,
+      946864128
+    ]
+  },
+  "transformer_blocks.42.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      946864128,
+      948436992
+    ]
+  },
+  "transformer_blocks.42.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      948436992,
+      950009856
+    ]
+  },
+  "transformer_blocks.42.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      950009856,
+      951582720
+    ]
+  },
+  "transformer_blocks.42.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      951582720,
+      953155584
+    ]
+  },
+  "transformer_blocks.42.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      953155584,
+      954728448
+    ]
+  },
+  "transformer_blocks.42.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      954728448,
+      956301312
+    ]
+  },
+  "transformer_blocks.43.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      956301312,
+      957874176
+    ]
+  },
+  "transformer_blocks.43.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      957874176,
+      959447040
+    ]
+  },
+  "transformer_blocks.43.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      959447040,
+      961019904
+    ]
+  },
+  "transformer_blocks.43.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      961019904,
+      962592768
+    ]
+  },
+  "transformer_blocks.43.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      962592768,
+      964165632
+    ]
+  },
+  "transformer_blocks.43.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      964165632,
+      965738496
+    ]
+  },
+  "transformer_blocks.43.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      965738496,
+      967311360
+    ]
+  },
+  "transformer_blocks.43.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      967311360,
+      968884224
+    ]
+  },
+  "transformer_blocks.43.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      968884224,
+      970457088
+    ]
+  },
+  "transformer_blocks.43.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      970457088,
+      972029952
+    ]
+  },
+  "transformer_blocks.43.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      972029952,
+      973602816
+    ]
+  },
+  "transformer_blocks.43.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      973602816,
+      975175680
+    ]
+  },
+  "transformer_blocks.43.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      975175680,
+      976748544
+    ]
+  },
+  "transformer_blocks.43.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      976748544,
+      978321408
+    ]
+  },
+  "transformer_blocks.43.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      978321408,
+      979894272
+    ]
+  },
+  "transformer_blocks.43.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      979894272,
+      981467136
+    ]
+  },
+  "transformer_blocks.44.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      981467136,
+      983040000
+    ]
+  },
+  "transformer_blocks.44.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      983040000,
+      984612864
+    ]
+  },
+  "transformer_blocks.44.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      984612864,
+      986185728
+    ]
+  },
+  "transformer_blocks.44.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      986185728,
+      987758592
+    ]
+  },
+  "transformer_blocks.44.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      987758592,
+      989331456
+    ]
+  },
+  "transformer_blocks.44.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      989331456,
+      990904320
+    ]
+  },
+  "transformer_blocks.44.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      990904320,
+      992477184
+    ]
+  },
+  "transformer_blocks.44.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      992477184,
+      994050048
+    ]
+  },
+  "transformer_blocks.44.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      994050048,
+      995622912
+    ]
+  },
+  "transformer_blocks.44.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      995622912,
+      997195776
+    ]
+  },
+  "transformer_blocks.44.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      997195776,
+      998768640
+    ]
+  },
+  "transformer_blocks.44.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      998768640,
+      1000341504
+    ]
+  },
+  "transformer_blocks.44.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1000341504,
+      1001914368
+    ]
+  },
+  "transformer_blocks.44.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1001914368,
+      1003487232
+    ]
+  },
+  "transformer_blocks.44.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1003487232,
+      1005060096
+    ]
+  },
+  "transformer_blocks.44.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1005060096,
+      1006632960
+    ]
+  },
+  "transformer_blocks.45.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1006632960,
+      1008205824
+    ]
+  },
+  "transformer_blocks.45.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1008205824,
+      1009778688
+    ]
+  },
+  "transformer_blocks.45.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1009778688,
+      1011351552
+    ]
+  },
+  "transformer_blocks.45.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1011351552,
+      1012924416
+    ]
+  },
+  "transformer_blocks.45.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1012924416,
+      1014497280
+    ]
+  },
+  "transformer_blocks.45.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1014497280,
+      1016070144
+    ]
+  },
+  "transformer_blocks.45.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1016070144,
+      1017643008
+    ]
+  },
+  "transformer_blocks.45.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1017643008,
+      1019215872
+    ]
+  },
+  "transformer_blocks.45.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1019215872,
+      1020788736
+    ]
+  },
+  "transformer_blocks.45.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1020788736,
+      1022361600
+    ]
+  },
+  "transformer_blocks.45.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1022361600,
+      1023934464
+    ]
+  },
+  "transformer_blocks.45.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1023934464,
+      1025507328
+    ]
+  },
+  "transformer_blocks.45.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1025507328,
+      1027080192
+    ]
+  },
+  "transformer_blocks.45.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1027080192,
+      1028653056
+    ]
+  },
+  "transformer_blocks.45.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1028653056,
+      1030225920
+    ]
+  },
+  "transformer_blocks.45.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1030225920,
+      1031798784
+    ]
+  },
+  "transformer_blocks.46.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1031798784,
+      1033371648
+    ]
+  },
+  "transformer_blocks.46.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1033371648,
+      1034944512
+    ]
+  },
+  "transformer_blocks.46.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1034944512,
+      1036517376
+    ]
+  },
+  "transformer_blocks.46.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1036517376,
+      1038090240
+    ]
+  },
+  "transformer_blocks.46.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1038090240,
+      1039663104
+    ]
+  },
+  "transformer_blocks.46.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1039663104,
+      1041235968
+    ]
+  },
+  "transformer_blocks.46.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1041235968,
+      1042808832
+    ]
+  },
+  "transformer_blocks.46.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1042808832,
+      1044381696
+    ]
+  },
+  "transformer_blocks.46.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1044381696,
+      1045954560
+    ]
+  },
+  "transformer_blocks.46.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1045954560,
+      1047527424
+    ]
+  },
+  "transformer_blocks.46.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1047527424,
+      1049100288
+    ]
+  },
+  "transformer_blocks.46.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1049100288,
+      1050673152
+    ]
+  },
+  "transformer_blocks.46.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1050673152,
+      1052246016
+    ]
+  },
+  "transformer_blocks.46.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1052246016,
+      1053818880
+    ]
+  },
+  "transformer_blocks.46.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1053818880,
+      1055391744
+    ]
+  },
+  "transformer_blocks.46.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1055391744,
+      1056964608
+    ]
+  },
+  "transformer_blocks.47.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1056964608,
+      1058537472
+    ]
+  },
+  "transformer_blocks.47.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1058537472,
+      1060110336
+    ]
+  },
+  "transformer_blocks.47.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1060110336,
+      1061683200
+    ]
+  },
+  "transformer_blocks.47.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1061683200,
+      1063256064
+    ]
+  },
+  "transformer_blocks.47.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1063256064,
+      1064828928
+    ]
+  },
+  "transformer_blocks.47.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1064828928,
+      1066401792
+    ]
+  },
+  "transformer_blocks.47.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1066401792,
+      1067974656
+    ]
+  },
+  "transformer_blocks.47.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1067974656,
+      1069547520
+    ]
+  },
+  "transformer_blocks.47.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1069547520,
+      1071120384
+    ]
+  },
+  "transformer_blocks.47.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1071120384,
+      1072693248
+    ]
+  },
+  "transformer_blocks.47.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1072693248,
+      1074266112
+    ]
+  },
+  "transformer_blocks.47.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1074266112,
+      1075838976
+    ]
+  },
+  "transformer_blocks.47.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1075838976,
+      1077411840
+    ]
+  },
+  "transformer_blocks.47.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1077411840,
+      1078984704
+    ]
+  },
+  "transformer_blocks.47.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1078984704,
+      1080557568
+    ]
+  },
+  "transformer_blocks.47.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1080557568,
+      1082130432
+    ]
+  },
+  "transformer_blocks.48.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1082130432,
+      1083703296
+    ]
+  },
+  "transformer_blocks.48.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1083703296,
+      1085276160
+    ]
+  },
+  "transformer_blocks.48.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1085276160,
+      1086849024
+    ]
+  },
+  "transformer_blocks.48.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1086849024,
+      1088421888
+    ]
+  },
+  "transformer_blocks.48.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1088421888,
+      1089994752
+    ]
+  },
+  "transformer_blocks.48.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1089994752,
+      1091567616
+    ]
+  },
+  "transformer_blocks.48.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1091567616,
+      1093140480
+    ]
+  },
+  "transformer_blocks.48.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1093140480,
+      1094713344
+    ]
+  },
+  "transformer_blocks.48.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1094713344,
+      1096286208
+    ]
+  },
+  "transformer_blocks.48.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1096286208,
+      1097859072
+    ]
+  },
+  "transformer_blocks.48.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1097859072,
+      1099431936
+    ]
+  },
+  "transformer_blocks.48.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1099431936,
+      1101004800
+    ]
+  },
+  "transformer_blocks.48.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1101004800,
+      1102577664
+    ]
+  },
+  "transformer_blocks.48.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1102577664,
+      1104150528
+    ]
+  },
+  "transformer_blocks.48.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1104150528,
+      1105723392
+    ]
+  },
+  "transformer_blocks.48.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1105723392,
+      1107296256
+    ]
+  },
+  "transformer_blocks.49.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1107296256,
+      1108869120
+    ]
+  },
+  "transformer_blocks.49.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1108869120,
+      1110441984
+    ]
+  },
+  "transformer_blocks.49.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1110441984,
+      1112014848
+    ]
+  },
+  "transformer_blocks.49.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1112014848,
+      1113587712
+    ]
+  },
+  "transformer_blocks.49.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1113587712,
+      1115160576
+    ]
+  },
+  "transformer_blocks.49.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1115160576,
+      1116733440
+    ]
+  },
+  "transformer_blocks.49.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1116733440,
+      1118306304
+    ]
+  },
+  "transformer_blocks.49.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1118306304,
+      1119879168
+    ]
+  },
+  "transformer_blocks.49.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1119879168,
+      1121452032
+    ]
+  },
+  "transformer_blocks.49.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1121452032,
+      1123024896
+    ]
+  },
+  "transformer_blocks.49.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1123024896,
+      1124597760
+    ]
+  },
+  "transformer_blocks.49.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1124597760,
+      1126170624
+    ]
+  },
+  "transformer_blocks.49.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1126170624,
+      1127743488
+    ]
+  },
+  "transformer_blocks.49.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1127743488,
+      1129316352
+    ]
+  },
+  "transformer_blocks.49.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1129316352,
+      1130889216
+    ]
+  },
+  "transformer_blocks.49.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1130889216,
+      1132462080
+    ]
+  },
+  "transformer_blocks.5.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1132462080,
+      1134034944
+    ]
+  },
+  "transformer_blocks.5.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1134034944,
+      1135607808
+    ]
+  },
+  "transformer_blocks.5.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1135607808,
+      1137180672
+    ]
+  },
+  "transformer_blocks.5.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1137180672,
+      1138753536
+    ]
+  },
+  "transformer_blocks.5.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1138753536,
+      1140326400
+    ]
+  },
+  "transformer_blocks.5.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1140326400,
+      1141899264
+    ]
+  },
+  "transformer_blocks.5.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1141899264,
+      1143472128
+    ]
+  },
+  "transformer_blocks.5.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1143472128,
+      1145044992
+    ]
+  },
+  "transformer_blocks.5.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1145044992,
+      1146617856
+    ]
+  },
+  "transformer_blocks.5.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1146617856,
+      1148190720
+    ]
+  },
+  "transformer_blocks.5.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1148190720,
+      1149763584
+    ]
+  },
+  "transformer_blocks.5.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1149763584,
+      1151336448
+    ]
+  },
+  "transformer_blocks.5.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1151336448,
+      1152909312
+    ]
+  },
+  "transformer_blocks.5.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1152909312,
+      1154482176
+    ]
+  },
+  "transformer_blocks.5.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1154482176,
+      1156055040
+    ]
+  },
+  "transformer_blocks.5.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1156055040,
+      1157627904
+    ]
+  },
+  "transformer_blocks.50.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1157627904,
+      1159200768
+    ]
+  },
+  "transformer_blocks.50.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1159200768,
+      1160773632
+    ]
+  },
+  "transformer_blocks.50.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1160773632,
+      1162346496
+    ]
+  },
+  "transformer_blocks.50.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1162346496,
+      1163919360
+    ]
+  },
+  "transformer_blocks.50.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1163919360,
+      1165492224
+    ]
+  },
+  "transformer_blocks.50.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1165492224,
+      1167065088
+    ]
+  },
+  "transformer_blocks.50.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1167065088,
+      1168637952
+    ]
+  },
+  "transformer_blocks.50.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1168637952,
+      1170210816
+    ]
+  },
+  "transformer_blocks.50.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1170210816,
+      1171783680
+    ]
+  },
+  "transformer_blocks.50.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1171783680,
+      1173356544
+    ]
+  },
+  "transformer_blocks.50.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1173356544,
+      1174929408
+    ]
+  },
+  "transformer_blocks.50.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1174929408,
+      1176502272
+    ]
+  },
+  "transformer_blocks.50.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1176502272,
+      1178075136
+    ]
+  },
+  "transformer_blocks.50.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1178075136,
+      1179648000
+    ]
+  },
+  "transformer_blocks.50.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1179648000,
+      1181220864
+    ]
+  },
+  "transformer_blocks.50.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1181220864,
+      1182793728
+    ]
+  },
+  "transformer_blocks.51.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1182793728,
+      1184366592
+    ]
+  },
+  "transformer_blocks.51.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1184366592,
+      1185939456
+    ]
+  },
+  "transformer_blocks.51.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1185939456,
+      1187512320
+    ]
+  },
+  "transformer_blocks.51.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1187512320,
+      1189085184
+    ]
+  },
+  "transformer_blocks.51.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1189085184,
+      1190658048
+    ]
+  },
+  "transformer_blocks.51.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1190658048,
+      1192230912
+    ]
+  },
+  "transformer_blocks.51.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1192230912,
+      1193803776
+    ]
+  },
+  "transformer_blocks.51.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1193803776,
+      1195376640
+    ]
+  },
+  "transformer_blocks.51.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1195376640,
+      1196949504
+    ]
+  },
+  "transformer_blocks.51.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1196949504,
+      1198522368
+    ]
+  },
+  "transformer_blocks.51.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1198522368,
+      1200095232
+    ]
+  },
+  "transformer_blocks.51.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1200095232,
+      1201668096
+    ]
+  },
+  "transformer_blocks.51.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1201668096,
+      1203240960
+    ]
+  },
+  "transformer_blocks.51.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1203240960,
+      1204813824
+    ]
+  },
+  "transformer_blocks.51.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1204813824,
+      1206386688
+    ]
+  },
+  "transformer_blocks.51.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1206386688,
+      1207959552
+    ]
+  },
+  "transformer_blocks.52.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1207959552,
+      1209532416
+    ]
+  },
+  "transformer_blocks.52.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1209532416,
+      1211105280
+    ]
+  },
+  "transformer_blocks.52.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1211105280,
+      1212678144
+    ]
+  },
+  "transformer_blocks.52.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1212678144,
+      1214251008
+    ]
+  },
+  "transformer_blocks.52.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1214251008,
+      1215823872
+    ]
+  },
+  "transformer_blocks.52.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1215823872,
+      1217396736
+    ]
+  },
+  "transformer_blocks.52.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1217396736,
+      1218969600
+    ]
+  },
+  "transformer_blocks.52.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1218969600,
+      1220542464
+    ]
+  },
+  "transformer_blocks.52.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1220542464,
+      1222115328
+    ]
+  },
+  "transformer_blocks.52.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1222115328,
+      1223688192
+    ]
+  },
+  "transformer_blocks.52.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1223688192,
+      1225261056
+    ]
+  },
+  "transformer_blocks.52.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1225261056,
+      1226833920
+    ]
+  },
+  "transformer_blocks.52.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1226833920,
+      1228406784
+    ]
+  },
+  "transformer_blocks.52.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1228406784,
+      1229979648
+    ]
+  },
+  "transformer_blocks.52.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1229979648,
+      1231552512
+    ]
+  },
+  "transformer_blocks.52.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1231552512,
+      1233125376
+    ]
+  },
+  "transformer_blocks.53.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1233125376,
+      1234698240
+    ]
+  },
+  "transformer_blocks.53.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1234698240,
+      1236271104
+    ]
+  },
+  "transformer_blocks.53.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1236271104,
+      1237843968
+    ]
+  },
+  "transformer_blocks.53.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1237843968,
+      1239416832
+    ]
+  },
+  "transformer_blocks.53.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1239416832,
+      1240989696
+    ]
+  },
+  "transformer_blocks.53.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1240989696,
+      1242562560
+    ]
+  },
+  "transformer_blocks.53.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1242562560,
+      1244135424
+    ]
+  },
+  "transformer_blocks.53.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1244135424,
+      1245708288
+    ]
+  },
+  "transformer_blocks.53.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1245708288,
+      1247281152
+    ]
+  },
+  "transformer_blocks.53.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1247281152,
+      1248854016
+    ]
+  },
+  "transformer_blocks.53.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1248854016,
+      1250426880
+    ]
+  },
+  "transformer_blocks.53.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1250426880,
+      1251999744
+    ]
+  },
+  "transformer_blocks.53.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1251999744,
+      1253572608
+    ]
+  },
+  "transformer_blocks.53.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1253572608,
+      1255145472
+    ]
+  },
+  "transformer_blocks.53.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1255145472,
+      1256718336
+    ]
+  },
+  "transformer_blocks.53.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1256718336,
+      1258291200
+    ]
+  },
+  "transformer_blocks.54.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1258291200,
+      1259864064
+    ]
+  },
+  "transformer_blocks.54.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1259864064,
+      1261436928
+    ]
+  },
+  "transformer_blocks.54.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1261436928,
+      1263009792
+    ]
+  },
+  "transformer_blocks.54.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1263009792,
+      1264582656
+    ]
+  },
+  "transformer_blocks.54.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1264582656,
+      1266155520
+    ]
+  },
+  "transformer_blocks.54.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1266155520,
+      1267728384
+    ]
+  },
+  "transformer_blocks.54.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1267728384,
+      1269301248
+    ]
+  },
+  "transformer_blocks.54.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1269301248,
+      1270874112
+    ]
+  },
+  "transformer_blocks.54.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1270874112,
+      1272446976
+    ]
+  },
+  "transformer_blocks.54.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1272446976,
+      1274019840
+    ]
+  },
+  "transformer_blocks.54.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1274019840,
+      1275592704
+    ]
+  },
+  "transformer_blocks.54.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1275592704,
+      1277165568
+    ]
+  },
+  "transformer_blocks.54.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1277165568,
+      1278738432
+    ]
+  },
+  "transformer_blocks.54.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1278738432,
+      1280311296
+    ]
+  },
+  "transformer_blocks.54.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1280311296,
+      1281884160
+    ]
+  },
+  "transformer_blocks.54.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1281884160,
+      1283457024
+    ]
+  },
+  "transformer_blocks.55.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1283457024,
+      1285029888
+    ]
+  },
+  "transformer_blocks.55.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1285029888,
+      1286602752
+    ]
+  },
+  "transformer_blocks.55.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1286602752,
+      1288175616
+    ]
+  },
+  "transformer_blocks.55.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1288175616,
+      1289748480
+    ]
+  },
+  "transformer_blocks.55.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1289748480,
+      1291321344
+    ]
+  },
+  "transformer_blocks.55.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1291321344,
+      1292894208
+    ]
+  },
+  "transformer_blocks.55.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1292894208,
+      1294467072
+    ]
+  },
+  "transformer_blocks.55.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1294467072,
+      1296039936
+    ]
+  },
+  "transformer_blocks.55.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1296039936,
+      1297612800
+    ]
+  },
+  "transformer_blocks.55.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1297612800,
+      1299185664
+    ]
+  },
+  "transformer_blocks.55.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1299185664,
+      1300758528
+    ]
+  },
+  "transformer_blocks.55.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1300758528,
+      1302331392
+    ]
+  },
+  "transformer_blocks.55.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1302331392,
+      1303904256
+    ]
+  },
+  "transformer_blocks.55.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1303904256,
+      1305477120
+    ]
+  },
+  "transformer_blocks.55.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1305477120,
+      1307049984
+    ]
+  },
+  "transformer_blocks.55.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1307049984,
+      1308622848
+    ]
+  },
+  "transformer_blocks.56.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1308622848,
+      1310195712
+    ]
+  },
+  "transformer_blocks.56.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1310195712,
+      1311768576
+    ]
+  },
+  "transformer_blocks.56.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1311768576,
+      1313341440
+    ]
+  },
+  "transformer_blocks.56.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1313341440,
+      1314914304
+    ]
+  },
+  "transformer_blocks.56.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1314914304,
+      1316487168
+    ]
+  },
+  "transformer_blocks.56.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1316487168,
+      1318060032
+    ]
+  },
+  "transformer_blocks.56.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1318060032,
+      1319632896
+    ]
+  },
+  "transformer_blocks.56.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1319632896,
+      1321205760
+    ]
+  },
+  "transformer_blocks.56.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1321205760,
+      1322778624
+    ]
+  },
+  "transformer_blocks.56.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1322778624,
+      1324351488
+    ]
+  },
+  "transformer_blocks.56.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1324351488,
+      1325924352
+    ]
+  },
+  "transformer_blocks.56.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1325924352,
+      1327497216
+    ]
+  },
+  "transformer_blocks.56.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1327497216,
+      1329070080
+    ]
+  },
+  "transformer_blocks.56.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1329070080,
+      1330642944
+    ]
+  },
+  "transformer_blocks.56.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1330642944,
+      1332215808
+    ]
+  },
+  "transformer_blocks.56.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1332215808,
+      1333788672
+    ]
+  },
+  "transformer_blocks.57.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1333788672,
+      1335361536
+    ]
+  },
+  "transformer_blocks.57.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1335361536,
+      1336934400
+    ]
+  },
+  "transformer_blocks.57.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1336934400,
+      1338507264
+    ]
+  },
+  "transformer_blocks.57.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1338507264,
+      1340080128
+    ]
+  },
+  "transformer_blocks.57.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1340080128,
+      1341652992
+    ]
+  },
+  "transformer_blocks.57.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1341652992,
+      1343225856
+    ]
+  },
+  "transformer_blocks.57.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1343225856,
+      1344798720
+    ]
+  },
+  "transformer_blocks.57.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1344798720,
+      1346371584
+    ]
+  },
+  "transformer_blocks.57.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1346371584,
+      1347944448
+    ]
+  },
+  "transformer_blocks.57.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1347944448,
+      1349517312
+    ]
+  },
+  "transformer_blocks.57.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1349517312,
+      1351090176
+    ]
+  },
+  "transformer_blocks.57.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1351090176,
+      1352663040
+    ]
+  },
+  "transformer_blocks.57.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1352663040,
+      1354235904
+    ]
+  },
+  "transformer_blocks.57.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1354235904,
+      1355808768
+    ]
+  },
+  "transformer_blocks.57.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1355808768,
+      1357381632
+    ]
+  },
+  "transformer_blocks.57.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1357381632,
+      1358954496
+    ]
+  },
+  "transformer_blocks.58.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1358954496,
+      1360527360
+    ]
+  },
+  "transformer_blocks.58.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1360527360,
+      1362100224
+    ]
+  },
+  "transformer_blocks.58.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1362100224,
+      1363673088
+    ]
+  },
+  "transformer_blocks.58.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1363673088,
+      1365245952
+    ]
+  },
+  "transformer_blocks.58.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1365245952,
+      1366818816
+    ]
+  },
+  "transformer_blocks.58.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1366818816,
+      1368391680
+    ]
+  },
+  "transformer_blocks.58.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1368391680,
+      1369964544
+    ]
+  },
+  "transformer_blocks.58.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1369964544,
+      1371537408
+    ]
+  },
+  "transformer_blocks.58.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1371537408,
+      1373110272
+    ]
+  },
+  "transformer_blocks.58.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1373110272,
+      1374683136
+    ]
+  },
+  "transformer_blocks.58.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1374683136,
+      1376256000
+    ]
+  },
+  "transformer_blocks.58.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1376256000,
+      1377828864
+    ]
+  },
+  "transformer_blocks.58.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1377828864,
+      1379401728
+    ]
+  },
+  "transformer_blocks.58.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1379401728,
+      1380974592
+    ]
+  },
+  "transformer_blocks.58.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1380974592,
+      1382547456
+    ]
+  },
+  "transformer_blocks.58.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1382547456,
+      1384120320
+    ]
+  },
+  "transformer_blocks.59.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1384120320,
+      1385693184
+    ]
+  },
+  "transformer_blocks.59.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1385693184,
+      1387266048
+    ]
+  },
+  "transformer_blocks.59.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1387266048,
+      1388838912
+    ]
+  },
+  "transformer_blocks.59.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1388838912,
+      1390411776
+    ]
+  },
+  "transformer_blocks.59.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1390411776,
+      1391984640
+    ]
+  },
+  "transformer_blocks.59.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1391984640,
+      1393557504
+    ]
+  },
+  "transformer_blocks.59.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1393557504,
+      1395130368
+    ]
+  },
+  "transformer_blocks.59.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1395130368,
+      1396703232
+    ]
+  },
+  "transformer_blocks.59.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1396703232,
+      1398276096
+    ]
+  },
+  "transformer_blocks.59.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1398276096,
+      1399848960
+    ]
+  },
+  "transformer_blocks.59.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1399848960,
+      1401421824
+    ]
+  },
+  "transformer_blocks.59.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1401421824,
+      1402994688
+    ]
+  },
+  "transformer_blocks.59.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1402994688,
+      1404567552
+    ]
+  },
+  "transformer_blocks.59.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1404567552,
+      1406140416
+    ]
+  },
+  "transformer_blocks.59.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1406140416,
+      1407713280
+    ]
+  },
+  "transformer_blocks.59.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1407713280,
+      1409286144
+    ]
+  },
+  "transformer_blocks.6.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1409286144,
+      1410859008
+    ]
+  },
+  "transformer_blocks.6.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1410859008,
+      1412431872
+    ]
+  },
+  "transformer_blocks.6.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1412431872,
+      1414004736
+    ]
+  },
+  "transformer_blocks.6.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1414004736,
+      1415577600
+    ]
+  },
+  "transformer_blocks.6.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1415577600,
+      1417150464
+    ]
+  },
+  "transformer_blocks.6.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1417150464,
+      1418723328
+    ]
+  },
+  "transformer_blocks.6.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1418723328,
+      1420296192
+    ]
+  },
+  "transformer_blocks.6.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1420296192,
+      1421869056
+    ]
+  },
+  "transformer_blocks.6.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1421869056,
+      1423441920
+    ]
+  },
+  "transformer_blocks.6.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1423441920,
+      1425014784
+    ]
+  },
+  "transformer_blocks.6.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1425014784,
+      1426587648
+    ]
+  },
+  "transformer_blocks.6.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1426587648,
+      1428160512
+    ]
+  },
+  "transformer_blocks.6.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1428160512,
+      1429733376
+    ]
+  },
+  "transformer_blocks.6.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1429733376,
+      1431306240
+    ]
+  },
+  "transformer_blocks.6.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1431306240,
+      1432879104
+    ]
+  },
+  "transformer_blocks.6.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1432879104,
+      1434451968
+    ]
+  },
+  "transformer_blocks.7.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1434451968,
+      1436024832
+    ]
+  },
+  "transformer_blocks.7.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1436024832,
+      1437597696
+    ]
+  },
+  "transformer_blocks.7.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1437597696,
+      1439170560
+    ]
+  },
+  "transformer_blocks.7.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1439170560,
+      1440743424
+    ]
+  },
+  "transformer_blocks.7.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1440743424,
+      1442316288
+    ]
+  },
+  "transformer_blocks.7.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1442316288,
+      1443889152
+    ]
+  },
+  "transformer_blocks.7.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1443889152,
+      1445462016
+    ]
+  },
+  "transformer_blocks.7.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1445462016,
+      1447034880
+    ]
+  },
+  "transformer_blocks.7.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1447034880,
+      1448607744
+    ]
+  },
+  "transformer_blocks.7.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1448607744,
+      1450180608
+    ]
+  },
+  "transformer_blocks.7.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1450180608,
+      1451753472
+    ]
+  },
+  "transformer_blocks.7.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1451753472,
+      1453326336
+    ]
+  },
+  "transformer_blocks.7.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1453326336,
+      1454899200
+    ]
+  },
+  "transformer_blocks.7.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1454899200,
+      1456472064
+    ]
+  },
+  "transformer_blocks.7.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1456472064,
+      1458044928
+    ]
+  },
+  "transformer_blocks.7.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1458044928,
+      1459617792
+    ]
+  },
+  "transformer_blocks.8.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1459617792,
+      1461190656
+    ]
+  },
+  "transformer_blocks.8.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1461190656,
+      1462763520
+    ]
+  },
+  "transformer_blocks.8.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1462763520,
+      1464336384
+    ]
+  },
+  "transformer_blocks.8.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1464336384,
+      1465909248
+    ]
+  },
+  "transformer_blocks.8.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1465909248,
+      1467482112
+    ]
+  },
+  "transformer_blocks.8.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1467482112,
+      1469054976
+    ]
+  },
+  "transformer_blocks.8.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1469054976,
+      1470627840
+    ]
+  },
+  "transformer_blocks.8.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1470627840,
+      1472200704
+    ]
+  },
+  "transformer_blocks.8.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1472200704,
+      1473773568
+    ]
+  },
+  "transformer_blocks.8.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1473773568,
+      1475346432
+    ]
+  },
+  "transformer_blocks.8.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1475346432,
+      1476919296
+    ]
+  },
+  "transformer_blocks.8.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1476919296,
+      1478492160
+    ]
+  },
+  "transformer_blocks.8.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1478492160,
+      1480065024
+    ]
+  },
+  "transformer_blocks.8.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1480065024,
+      1481637888
+    ]
+  },
+  "transformer_blocks.8.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1481637888,
+      1483210752
+    ]
+  },
+  "transformer_blocks.8.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1483210752,
+      1484783616
+    ]
+  },
+  "transformer_blocks.9.attn.add_k_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1484783616,
+      1486356480
+    ]
+  },
+  "transformer_blocks.9.attn.add_k_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1486356480,
+      1487929344
+    ]
+  },
+  "transformer_blocks.9.attn.add_q_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1487929344,
+      1489502208
+    ]
+  },
+  "transformer_blocks.9.attn.add_q_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1489502208,
+      1491075072
+    ]
+  },
+  "transformer_blocks.9.attn.add_v_proj.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1491075072,
+      1492647936
+    ]
+  },
+  "transformer_blocks.9.attn.add_v_proj.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1492647936,
+      1494220800
+    ]
+  },
+  "transformer_blocks.9.attn.to_add_out.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1494220800,
+      1495793664
+    ]
+  },
+  "transformer_blocks.9.attn.to_add_out.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1495793664,
+      1497366528
+    ]
+  },
+  "transformer_blocks.9.attn.to_k.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1497366528,
+      1498939392
+    ]
+  },
+  "transformer_blocks.9.attn.to_k.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1498939392,
+      1500512256
+    ]
+  },
+  "transformer_blocks.9.attn.to_out.0.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1500512256,
+      1502085120
+    ]
+  },
+  "transformer_blocks.9.attn.to_out.0.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1502085120,
+      1503657984
+    ]
+  },
+  "transformer_blocks.9.attn.to_q.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1503657984,
+      1505230848
+    ]
+  },
+  "transformer_blocks.9.attn.to_q.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1505230848,
+      1506803712
+    ]
+  },
+  "transformer_blocks.9.attn.to_v.lora_A.weight": {
+    "dtype": "BF16",
+    "shape": [
+      256,
+      3072
+    ],
+    "data_offsets": [
+      1506803712,
+      1508376576
+    ]
+  },
+  "transformer_blocks.9.attn.to_v.lora_B.weight": {
+    "dtype": "BF16",
+    "shape": [
+      3072,
+      256
+    ],
+    "data_offsets": [
+      1508376576,
+      1509949440
+    ]
+  }
+}
