@@ -1,0 +1,11 @@
+{
+  "radius_pixels": 128,
+  "kind": "exact-source model raw composite",
+  "source_exact": true,
+  "far_exterior_exact": true,
+  "protected_edge_core_exact": true,
+  "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track3-top32-texture-v4/baseline/composite.png",
+  "composite_sha256": "d2b141a6610ba78a419577f1de5ba211e89b7c3c9c964b3e0f4a7d758f1f2bc9",
+  "generated_mean_abs_change_255": 0.0,
+  "no_source_texture_pixel_copy_or_geometric_warp": true
+}
