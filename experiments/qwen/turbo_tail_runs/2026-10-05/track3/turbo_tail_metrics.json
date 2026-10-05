@@ -1,0 +1,922 @@
+{
+  "status": "success",
+  "track": "track3",
+  "seed": 42,
+  "arms": [
+    "v021-six",
+    "v03-six",
+    "v03-nine-base-tail"
+  ],
+  "runs": {
+    "v021-six": {
+      "status": "success",
+      "track": "track3",
+      "seed": 42,
+      "arm": "v021-six",
+      "model_repo": "Qwen/Qwen-Image-2.1",
+      "model_revision": "790c92633540aa0cb11d9abf19eb46d861714758",
+      "runtime": "mflux native MLX QwenImage21Edit; true active target growth",
+      "runtime_git_revision": "25661d8e853996fec9134998b995edf97369bfbd",
+      "adapter_repo": "Viggle/Qwen-Image-2.1-viggle-turbo",
+      "adapter_baked": false,
+      "adapter_revision": "bb26a0f38e5fe6c124aaccc9187a87eed5d9ed13",
+      "adapter_file": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/qwen/viggle/Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors",
+      "adapter_sha256": "2a0148f5c73abbed5f97da5ea356e439318aadb281d01fce4af39cdf43728803",
+      "adapter_rank": 256,
+      "adapter_switch": {
+        "adapter_reloaded": false,
+        "same_version_reused": true
+      },
+      "adapter_scale_reset": {
+        "module_count": 227,
+        "previous_scales": [
+          1.0
+        ],
+        "new_scale": 1.0
+      },
+      "quantization": 4,
+      "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+      "width": 512,
+      "height": 1152,
+      "source_rect_xyxy": [
+        0,
+        320,
+        512,
+        832
+      ],
+      "source_prefix": "actual 512-square source; fixed 1024 image tokens",
+      "known_target_encoding_context": "edge-padded full canvas cropped rows20:52",
+      "source_prefix_and_known_target_separate": true,
+      "reference_prefix_unchanged": true,
+      "source_prefix_sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "known_target_sha256": "5bfd5056ecb4c0c53a3386f8575c1ffe7a16a52925b4363d467ab25e7ef16c1a",
+      "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "generation_order_within_process": 1,
+      "steps": 6,
+      "raw_sigma_nodes": [
+        1.0,
+        0.9375,
+        0.875,
+        0.75,
+        0.5,
+        0.25
+      ],
+      "sigmas": [
+        1.0,
+        0.9648136496543884,
+        0.92751544713974,
+        0.8457746505737305,
+        0.6463939547538757,
+        0.3786254823207855,
+        0.0
+      ],
+      "resolution_shift_target_tokens": 2304,
+      "shift_terminal": null,
+      "base_tail_step_zero_based": null,
+      "cfg": 1.0,
+      "base_tail_scale_zero_still_computes_lora_matmuls": false,
+      "active_heights_by_step": [
+        640,
+        896,
+        1152,
+        1152,
+        1152,
+        1152
+      ],
+      "target_tokens_future_absent_from_forward": true,
+      "initializer": "previous predicted-clean active frontier with same absolute noise; untrained heuristic",
+      "known_region_method": "known target flow bridge hard restored before/after every step",
+      "source_region_final_method": "exact original source paste; no feather/warp",
+      "diagnostic_control": true,
+      "shared_canvas_comparable": false,
+      "transformer_calls": 6,
+      "step_records": [
+        {
+          "step": 1,
+          "sigma": 1.0,
+          "next_sigma": 0.9648136496543884,
+          "active_height": 640,
+          "active_window_xyxy": [
+            0,
+            256,
+            512,
+            896
+          ],
+          "target_tokens_forwarded": 1280,
+          "future_target_tokens_absent": 1024,
+          "newly_activated_tokens": 1280,
+          "input_image_latent_tokens": 2304,
+          "adapter_scale": 1.0,
+          "cache_mode": "extract",
+          "cache_invalidated": false,
+          "attention_query_tokens": 2477,
+          "attention_key_value_tokens": 2477,
+          "core_step_seconds": 4.6982965000206605
+        },
+        {
+          "step": 2,
+          "sigma": 0.9648136496543884,
+          "next_sigma": 0.92751544713974,
+          "active_height": 896,
+          "active_window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ],
+          "target_tokens_forwarded": 1792,
+          "future_target_tokens_absent": 512,
+          "newly_activated_tokens": 512,
+          "input_image_latent_tokens": 2816,
+          "adapter_scale": 1.0,
+          "cache_mode": "reuse",
+          "cache_invalidated": false,
+          "attention_query_tokens": 1792,
+          "attention_key_value_tokens": 2989,
+          "core_step_seconds": 3.224650957999984
+        },
+        {
+          "step": 3,
+          "sigma": 0.92751544713974,
+          "next_sigma": 0.8457746505737305,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 512,
+          "input_image_latent_tokens": 3328,
+          "adapter_scale": 1.0,
+          "cache_mode": "reuse",
+          "cache_invalidated": false,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.364189624990104
+        },
+        {
+          "step": 4,
+          "sigma": 0.8457746505737305,
+          "next_sigma": 0.6463939547538757,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "adapter_scale": 1.0,
+          "cache_mode": "reuse",
+          "cache_invalidated": false,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.404912083002273
+        },
+        {
+          "step": 5,
+          "sigma": 0.6463939547538757,
+          "next_sigma": 0.3786254823207855,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "adapter_scale": 1.0,
+          "cache_mode": "reuse",
+          "cache_invalidated": false,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.722022250003647
+        },
+        {
+          "step": 6,
+          "sigma": 0.3786254823207855,
+          "next_sigma": 0.0,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "adapter_scale": 1.0,
+          "cache_mode": "reuse",
+          "cache_invalidated": false,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.871810541982995
+        }
+      ],
+      "cache_extract_steps": [
+        1
+      ],
+      "adapter_scale_events": [],
+      "phases": {
+        "load_seconds_shared": 11.516424417000962,
+        "conditioning_seconds_shared": 2.3606406250037253,
+        "adapter_switch_seconds": 0.000866167014464736,
+        "denoising_seconds": 26.285881957999663,
+        "decode_seconds": 4.1124856249953154
+      },
+      "timing_limit": "nine-step arm has three extra forwards and a second prefix extraction; not matched six-step compute",
+      "load_mlx_peak_bytes": 26306185728,
+      "conditioning_mlx_peak_bytes": 11641876732,
+      "final_latents_finite": true,
+      "known_source_latents_exact_at_sigma_zero": true,
+      "final_latents_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/turbo_tail_runs/2026-10-05/track3/v021-six/final_latents.npz",
+      "denoising_mlx_peak_bytes": 9068350654,
+      "target_token_forward_sum": 12288,
+      "denoising_timing_scope": "active insertion/layout, scale/cache changes, transformer, Euler and clean prediction; load/swap/capture/decode excluded",
+      "source_pixels_exact": true,
+      "decoded_pixels_finite": true,
+      "raw_source_region_mae_255": 3.4519666035970054,
+      "raw_source_top16_mae_255": 8.716593424479166,
+      "raw_source_bottom16_mae_255": 4.978474934895833,
+      "raw_source_inner_mae_255": 3.2255954318576388,
+      "decoding_mlx_peak_bytes": 6104277075,
+      "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/turbo_tail_runs/2026-10-05/track3/v021-six/raw.png",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/turbo_tail_runs/2026-10-05/track3/v021-six/composite.png",
+      "output_sha256": "03ad495177a35f9ca8e405fc7b5d5a111c4389ee93230ee30381c9b38dcbe2e8"
+    },
+    "v03-six": {
+      "status": "success",
+      "track": "track3",
+      "seed": 42,
+      "arm": "v03-six",
+      "model_repo": "Qwen/Qwen-Image-2.1",
+      "model_revision": "790c92633540aa0cb11d9abf19eb46d861714758",
+      "runtime": "mflux native MLX QwenImage21Edit; true active target growth",
+      "runtime_git_revision": "25661d8e853996fec9134998b995edf97369bfbd",
+      "adapter_repo": "Viggle/Qwen-Image-2.1-viggle-turbo",
+      "adapter_baked": false,
+      "adapter_revision": "009a44a895ef85f7e643c80fdca9543795248867",
+      "adapter_file": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/qwen/viggle/Qwen-Image-2.1-viggle-turbo-v0.3-6step-lora-r256.safetensors",
+      "adapter_sha256": "f06c266e04438b5272bdfb99410421d52a65d7a37f6f42aabc3cb1faf0142644",
+      "adapter_rank": 256,
+      "adapter_switch": {
+        "base_linear_objects_retained": true,
+        "adapter_fusion_absent": true,
+        "module_count": 227
+      },
+      "adapter_scale_reset": {
+        "module_count": 227,
+        "previous_scales": [
+          1.0
+        ],
+        "new_scale": 1.0
+      },
+      "quantization": 4,
+      "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+      "width": 512,
+      "height": 1152,
+      "source_rect_xyxy": [
+        0,
+        320,
+        512,
+        832
+      ],
+      "source_prefix": "actual 512-square source; fixed 1024 image tokens",
+      "known_target_encoding_context": "edge-padded full canvas cropped rows20:52",
+      "source_prefix_and_known_target_separate": true,
+      "reference_prefix_unchanged": true,
+      "source_prefix_sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "known_target_sha256": "5bfd5056ecb4c0c53a3386f8575c1ffe7a16a52925b4363d467ab25e7ef16c1a",
+      "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "generation_order_within_process": 2,
+      "steps": 6,
+      "raw_sigma_nodes": [
+        1.0,
+        0.9375,
+        0.875,
+        0.75,
+        0.5,
+        0.25
+      ],
+      "sigmas": [
+        1.0,
+        0.9648136496543884,
+        0.92751544713974,
+        0.8457746505737305,
+        0.6463939547538757,
+        0.3786254823207855,
+        0.0
+      ],
+      "resolution_shift_target_tokens": 2304,
+      "shift_terminal": null,
+      "base_tail_step_zero_based": null,
+      "cfg": 1.0,
+      "base_tail_scale_zero_still_computes_lora_matmuls": false,
+      "active_heights_by_step": [
+        640,
+        896,
+        1152,
+        1152,
+        1152,
+        1152
+      ],
+      "target_tokens_future_absent_from_forward": true,
+      "initializer": "previous predicted-clean active frontier with same absolute noise; untrained heuristic",
+      "known_region_method": "known target flow bridge hard restored before/after every step",
+      "source_region_final_method": "exact original source paste; no feather/warp",
+      "diagnostic_control": true,
+      "shared_canvas_comparable": false,
+      "transformer_calls": 6,
+      "step_records": [
+        {
+          "step": 1,
+          "sigma": 1.0,
+          "next_sigma": 0.9648136496543884,
+          "active_height": 640,
+          "active_window_xyxy": [
+            0,
+            256,
+            512,
+            896
+          ],
+          "target_tokens_forwarded": 1280,
+          "future_target_tokens_absent": 1024,
+          "newly_activated_tokens": 1280,
+          "input_image_latent_tokens": 2304,
+          "adapter_scale": 1.0,
+          "cache_mode": "extract",
+          "cache_invalidated": false,
+          "attention_query_tokens": 2477,
+          "attention_key_value_tokens": 2477,
+          "core_step_seconds": 5.141888542013476
+        },
+        {
+          "step": 2,
+          "sigma": 0.9648136496543884,
+          "next_sigma": 0.92751544713974,
+          "active_height": 896,
+          "active_window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ],
+          "target_tokens_forwarded": 1792,
+          "future_target_tokens_absent": 512,
+          "newly_activated_tokens": 512,
+          "input_image_latent_tokens": 2816,
+          "adapter_scale": 1.0,
+          "cache_mode": "reuse",
+          "cache_invalidated": false,
+          "attention_query_tokens": 1792,
+          "attention_key_value_tokens": 2989,
+          "core_step_seconds": 3.8807252910046373
+        },
+        {
+          "step": 3,
+          "sigma": 0.92751544713974,
+          "next_sigma": 0.8457746505737305,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 512,
+          "input_image_latent_tokens": 3328,
+          "adapter_scale": 1.0,
+          "cache_mode": "reuse",
+          "cache_invalidated": false,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.817116999998689
+        },
+        {
+          "step": 4,
+          "sigma": 0.8457746505737305,
+          "next_sigma": 0.6463939547538757,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "adapter_scale": 1.0,
+          "cache_mode": "reuse",
+          "cache_invalidated": false,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.8808264170074835
+        },
+        {
+          "step": 5,
+          "sigma": 0.6463939547538757,
+          "next_sigma": 0.3786254823207855,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "adapter_scale": 1.0,
+          "cache_mode": "reuse",
+          "cache_invalidated": false,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.943879541999195
+        },
+        {
+          "step": 6,
+          "sigma": 0.3786254823207855,
+          "next_sigma": 0.0,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "adapter_scale": 1.0,
+          "cache_mode": "reuse",
+          "cache_invalidated": false,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.993081166001502
+        }
+      ],
+      "cache_extract_steps": [
+        1
+      ],
+      "adapter_scale_events": [],
+      "phases": {
+        "load_seconds_shared": 11.516424417000962,
+        "conditioning_seconds_shared": 2.3606406250037253,
+        "adapter_switch_seconds": 0.28977908301749267,
+        "denoising_seconds": 28.657517958024982,
+        "decode_seconds": 1.5935173330071848
+      },
+      "timing_limit": "nine-step arm has three extra forwards and a second prefix extraction; not matched six-step compute",
+      "load_mlx_peak_bytes": 26306185728,
+      "conditioning_mlx_peak_bytes": 11641876732,
+      "final_latents_finite": true,
+      "known_source_latents_exact_at_sigma_zero": true,
+      "final_latents_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/turbo_tail_runs/2026-10-05/track3/v03-six/final_latents.npz",
+      "denoising_mlx_peak_bytes": 9077031762,
+      "target_token_forward_sum": 12288,
+      "denoising_timing_scope": "active insertion/layout, scale/cache changes, transformer, Euler and clean prediction; load/swap/capture/decode excluded",
+      "source_pixels_exact": true,
+      "decoded_pixels_finite": true,
+      "raw_source_region_mae_255": 3.439795176188151,
+      "raw_source_top16_mae_255": 8.563028971354166,
+      "raw_source_bottom16_mae_255": 4.859578450520833,
+      "raw_source_inner_mae_255": 3.221694607204861,
+      "decoding_mlx_peak_bytes": 6113714259,
+      "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/turbo_tail_runs/2026-10-05/track3/v03-six/raw.png",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/turbo_tail_runs/2026-10-05/track3/v03-six/composite.png",
+      "output_sha256": "6d78bf8215ba48f4aa7217c5b77ac7109d11b3ef1f6d30c5e9625bea458ee87f"
+    },
+    "v03-nine-base-tail": {
+      "status": "success",
+      "track": "track3",
+      "seed": 42,
+      "arm": "v03-nine-base-tail",
+      "model_repo": "Qwen/Qwen-Image-2.1",
+      "model_revision": "790c92633540aa0cb11d9abf19eb46d861714758",
+      "runtime": "mflux native MLX QwenImage21Edit; true active target growth",
+      "runtime_git_revision": "25661d8e853996fec9134998b995edf97369bfbd",
+      "adapter_repo": "Viggle/Qwen-Image-2.1-viggle-turbo",
+      "adapter_baked": false,
+      "adapter_revision": "009a44a895ef85f7e643c80fdca9543795248867",
+      "adapter_file": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/qwen/viggle/Qwen-Image-2.1-viggle-turbo-v0.3-6step-lora-r256.safetensors",
+      "adapter_sha256": "f06c266e04438b5272bdfb99410421d52a65d7a37f6f42aabc3cb1faf0142644",
+      "adapter_rank": 256,
+      "adapter_switch": {
+        "adapter_reloaded": false,
+        "same_version_reused": true
+      },
+      "adapter_scale_reset": {
+        "module_count": 227,
+        "previous_scales": [
+          1.0
+        ],
+        "new_scale": 1.0
+      },
+      "quantization": 4,
+      "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+      "width": 512,
+      "height": 1152,
+      "source_rect_xyxy": [
+        0,
+        320,
+        512,
+        832
+      ],
+      "source_prefix": "actual 512-square source; fixed 1024 image tokens",
+      "known_target_encoding_context": "edge-padded full canvas cropped rows20:52",
+      "source_prefix_and_known_target_separate": true,
+      "reference_prefix_unchanged": true,
+      "source_prefix_sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "known_target_sha256": "5bfd5056ecb4c0c53a3386f8575c1ffe7a16a52925b4363d467ab25e7ef16c1a",
+      "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "generation_order_within_process": 3,
+      "steps": 9,
+      "raw_sigma_nodes": [
+        1.0,
+        0.9583,
+        0.9167,
+        0.875,
+        0.75,
+        0.5,
+        0.25,
+        0.16666666666666666,
+        0.08333333333333333
+      ],
+      "sigmas": [
+        1.0,
+        0.976749062538147,
+        0.9526444673538208,
+        0.92751544713974,
+        0.8457746505737305,
+        0.6463939547538757,
+        0.3786254823207855,
+        0.2677218019962311,
+        0.14250119030475616,
+        0.0
+      ],
+      "resolution_shift_target_tokens": 2304,
+      "shift_terminal": null,
+      "base_tail_step_zero_based": 7,
+      "cfg": 1.0,
+      "base_tail_scale_zero_still_computes_lora_matmuls": true,
+      "active_heights_by_step": [
+        640,
+        896,
+        1152,
+        1152,
+        1152,
+        1152,
+        1152,
+        1152,
+        1152
+      ],
+      "target_tokens_future_absent_from_forward": true,
+      "initializer": "previous predicted-clean active frontier with same absolute noise; untrained heuristic",
+      "known_region_method": "known target flow bridge hard restored before/after every step",
+      "source_region_final_method": "exact original source paste; no feather/warp",
+      "diagnostic_control": true,
+      "shared_canvas_comparable": false,
+      "transformer_calls": 9,
+      "step_records": [
+        {
+          "step": 1,
+          "sigma": 1.0,
+          "next_sigma": 0.976749062538147,
+          "active_height": 640,
+          "active_window_xyxy": [
+            0,
+            256,
+            512,
+            896
+          ],
+          "target_tokens_forwarded": 1280,
+          "future_target_tokens_absent": 1024,
+          "newly_activated_tokens": 1280,
+          "input_image_latent_tokens": 2304,
+          "adapter_scale": 1.0,
+          "cache_mode": "extract",
+          "cache_invalidated": false,
+          "attention_query_tokens": 2477,
+          "attention_key_value_tokens": 2477,
+          "core_step_seconds": 5.1479040830163285
+        },
+        {
+          "step": 2,
+          "sigma": 0.976749062538147,
+          "next_sigma": 0.9526444673538208,
+          "active_height": 896,
+          "active_window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ],
+          "target_tokens_forwarded": 1792,
+          "future_target_tokens_absent": 512,
+          "newly_activated_tokens": 512,
+          "input_image_latent_tokens": 2816,
+          "adapter_scale": 1.0,
+          "cache_mode": "reuse",
+          "cache_invalidated": false,
+          "attention_query_tokens": 1792,
+          "attention_key_value_tokens": 2989,
+          "core_step_seconds": 3.8375271250260994
+        },
+        {
+          "step": 3,
+          "sigma": 0.9526444673538208,
+          "next_sigma": 0.92751544713974,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 512,
+          "input_image_latent_tokens": 3328,
+          "adapter_scale": 1.0,
+          "cache_mode": "reuse",
+          "cache_invalidated": false,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.9720027089933865
+        },
+        {
+          "step": 4,
+          "sigma": 0.92751544713974,
+          "next_sigma": 0.8457746505737305,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "adapter_scale": 1.0,
+          "cache_mode": "reuse",
+          "cache_invalidated": false,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.915209750004578
+        },
+        {
+          "step": 5,
+          "sigma": 0.8457746505737305,
+          "next_sigma": 0.6463939547538757,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "adapter_scale": 1.0,
+          "cache_mode": "reuse",
+          "cache_invalidated": false,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.933602208999218
+        },
+        {
+          "step": 6,
+          "sigma": 0.6463939547538757,
+          "next_sigma": 0.3786254823207855,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "adapter_scale": 1.0,
+          "cache_mode": "reuse",
+          "cache_invalidated": false,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.988804541993886
+        },
+        {
+          "step": 7,
+          "sigma": 0.3786254823207855,
+          "next_sigma": 0.2677218019962311,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "adapter_scale": 1.0,
+          "cache_mode": "reuse",
+          "cache_invalidated": false,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 5.117422250012169
+        },
+        {
+          "step": 8,
+          "sigma": 0.2677218019962311,
+          "next_sigma": 0.14250119030475616,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "adapter_scale": 0.0,
+          "cache_mode": "extract",
+          "cache_invalidated": true,
+          "attention_query_tokens": 3501,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 7.665183291013818
+        },
+        {
+          "step": 9,
+          "sigma": 0.14250119030475616,
+          "next_sigma": 0.0,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "adapter_scale": 0.0,
+          "cache_mode": "reuse",
+          "cache_invalidated": false,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 5.310399125010008
+        }
+      ],
+      "cache_extract_steps": [
+        1,
+        8
+      ],
+      "adapter_scale_events": [
+        {
+          "module_count": 227,
+          "previous_scales": [
+            1.0
+          ],
+          "new_scale": 0.0,
+          "step": 8,
+          "cache_layers_discarded": 32
+        }
+      ],
+      "phases": {
+        "load_seconds_shared": 11.516424417000962,
+        "conditioning_seconds_shared": 2.3606406250037253,
+        "adapter_switch_seconds": 0.0008999159908853471,
+        "denoising_seconds": 46.88805508406949,
+        "decode_seconds": 1.6244688330043573
+      },
+      "timing_limit": "nine-step arm has three extra forwards and a second prefix extraction; not matched six-step compute",
+      "load_mlx_peak_bytes": 26306185728,
+      "conditioning_mlx_peak_bytes": 11641876732,
+      "final_latents_finite": true,
+      "known_source_latents_exact_at_sigma_zero": true,
+      "final_latents_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/turbo_tail_runs/2026-10-05/track3/v03-nine-base-tail/final_latents.npz",
+      "denoising_mlx_peak_bytes": 9669842955,
+      "target_token_forward_sum": 19200,
+      "denoising_timing_scope": "active insertion/layout, scale/cache changes, transformer, Euler and clean prediction; load/swap/capture/decode excluded",
+      "source_pixels_exact": true,
+      "decoded_pixels_finite": true,
+      "raw_source_region_mae_255": 3.3998591105143228,
+      "raw_source_top16_mae_255": 7.990397135416667,
+      "raw_source_bottom16_mae_255": 4.591756184895833,
+      "raw_source_inner_mae_255": 3.207111273871528,
+      "decoding_mlx_peak_bytes": 6113714259,
+      "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/turbo_tail_runs/2026-10-05/track3/v03-nine-base-tail/raw.png",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/turbo_tail_runs/2026-10-05/track3/v03-nine-base-tail/composite.png",
+      "output_sha256": "b1dbab5d806baec7282d4db83186c139d37a742d40225629ef1653d61f62d2df"
+    }
+  },
+  "phases": {
+    "load_seconds": 11.516424417000962,
+    "conditioning_seconds": 2.3606406250037253
+  },
+  "runner_sha256": "afefc6c531c1be2aeae2ec5052bfaccfd4899a30521111b13640e03f468b63b7",
+  "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+  "mlx_version": "0.32.3",
+  "missing_files": [],
+  "raw_nodes_by_arm": {
+    "v021-six": [
+      1.0,
+      0.9375,
+      0.875,
+      0.75,
+      0.5,
+      0.25
+    ],
+    "v03-six": [
+      1.0,
+      0.9375,
+      0.875,
+      0.75,
+      0.5,
+      0.25
+    ],
+    "v03-nine-base-tail": [
+      1.0,
+      0.9583,
+      0.9167,
+      0.875,
+      0.75,
+      0.5,
+      0.25,
+      0.16666666666666666,
+      0.08333333333333333
+    ]
+  },
+  "adapter_sha256": {
+    "v021": "2a0148f5c73abbed5f97da5ea356e439318aadb281d01fce4af39cdf43728803",
+    "v03": "f06c266e04438b5272bdfb99410421d52a65d7a37f6f42aabc3cb1faf0142644"
+  },
+  "metal_device": {
+    "device_name": "Apple M4 Max",
+    "max_recommended_working_set_size": 30150672384,
+    "memory_size": 38654705664,
+    "architecture": "applegpu_g16s",
+    "max_buffer_length": 22613000192,
+    "resource_limit": 499000
+  },
+  "phase": "complete",
+  "elapsed_seconds": 127.15673570800573,
+  "process_peak_rss_bytes": 8513994752,
+  "loaded_component_parameter_bytes": {
+    "transformer": 5507571712,
+    "text_encoder": 4777530024,
+    "vae": 1350961616
+  },
+  "load_mlx_peak_bytes": 26306185728,
+  "target_context_encode_seconds": 0.3268064160074573,
+  "conditioning_mlx_peak_bytes": 11641876732,
+  "source_prefix_sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+  "known_target_sha256": "5bfd5056ecb4c0c53a3386f8575c1ffe7a16a52925b4363d467ab25e7ef16c1a",
+  "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+  "hash_representation": "float32 inference values",
+  "source_prefix_tokens": 1024,
+  "joint_prefix_tokens": 1197,
+  "full_target_tokens": 2304,
+  "current_arm": "v03-nine-base-tail",
+  "nfe": 9,
+  "core_seconds": 46.88805508406949,
+  "comparison": {
+    "source_prefix_and_known_target_and_noise_matched": true,
+    "six_step_sigma_schedule_matched": true,
+    "nine_step_compute_matched": false,
+    "base_tail_exact_cache_extract_steps": [
+      1,
+      8
+    ],
+    "no_early_region_finalization": true,
+    "no_live_ui_stream_implementation": true,
+    "limit": "single seed/device; visual quality needs direct image inspection; nine-step extra compute and warmup prevent reliable speed ranking"
+  }
+}
