@@ -1,0 +1,336 @@
+{
+  "status": "running_arm_inputs_exact_matched_visual_result_pending",
+  "audited_utc": "2026-10-05T02:53:17.030026+00:00",
+  "independent_audit": "CPU MLX,NumPy,Pillow,AST,hashlib; only writes this new audit JSON; no GPU,model weights,inference,downloads or native code changes",
+  "baseline_dir": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-seed42",
+  "new_arm_dir": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/runs/2026-10-05/track3-50-exterior-only-seed42",
+  "baseline_metrics_sha256": "b943e2832df3a249e2fd43ffc93cea39983fdef9f8e00c4376411ce30098c6c2",
+  "arm_manifest_sha256_at_audit": "920940bf4295f9ec15a48b2c51e67614046b82a869d6067e14e0962c77935fe4",
+  "arm_preflight_sha256": "6626e46d84fcc6508b21bf66a64f42ccd92874991d097664bda4f7afc4b7fa76",
+  "new_metrics_snapshot": {
+    "status": "running",
+    "phase": "denoise",
+    "completed_steps": 30,
+    "elapsed_seconds": 189.73363283401704,
+    "note": "Ongoing metrics may change after this read; this audit establishes input match, not completed 50-step counts."
+  },
+  "checks": {
+    "prompt": {
+      "prompt_sha256": "6acce49026289b9a632093b68242b0d33fbe8bb136fa19475553b3dbe8c60cee",
+      "file_manifest_argv_preflight_new_verbatim_equal": true,
+      "all_prompt_hashes_equal": true,
+      "no_trailing_newline": true,
+      "nonempty": true,
+      "banned_entity_term_matches": {},
+      "negative_phrase_term_matches": {},
+      "semantic_assessment": "Positive exterior contents: water, shrubs and guardrail upper area; uninterrupted asphalt lower area; matching twilight, grain, high-angle perspective. No album/car/person reinforcement or negative entity list.",
+      "assignment_ast_matches_args_prompt_or_baseline": true,
+      "assignment_line": 231,
+      "runner_encoder_passthrough_lines": [
+        319,
+        322
+      ],
+      "empty_prompt_caveat": "An empty string falls back to baseline description; this arm is nonempty."
+    },
+    "parameters": {
+      "track": {
+        "baseline": "track3",
+        "preflight": "track3",
+        "new_running": "track3",
+        "equal": true
+      },
+      "steps": {
+        "baseline": 50,
+        "preflight": 50,
+        "new_running": 50,
+        "equal": true
+      },
+      "seed": {
+        "baseline": 42,
+        "preflight": 42,
+        "new_running": 42,
+        "equal": true
+      },
+      "guidance": {
+        "baseline": 30.0,
+        "preflight": 30.0,
+        "new_running": 30.0,
+        "equal": true
+      },
+      "model_path": {
+        "baseline": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4",
+        "preflight": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4",
+        "new_running": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4",
+        "equal": true
+      },
+      "compute_mode": {
+        "baseline": "native full canvas every step",
+        "preflight": "native full canvas every step",
+        "new_running": "native full canvas every step",
+        "equal": true
+      },
+      "known_bridge": {
+        "baseline": false,
+        "preflight": false,
+        "new_running": false,
+        "equal": true
+      },
+      "negative_branch": {
+        "baseline": false,
+        "preflight": false,
+        "new_running": false,
+        "equal": true
+      },
+      "adapters": {
+        "baseline": [],
+        "preflight": [],
+        "new_running": [],
+        "equal": true
+      },
+      "target_tokens_per_forward": {
+        "baseline": 2304,
+        "preflight": 2304,
+        "new_running": 2304,
+        "equal": true
+      },
+      "planned_nfe": {
+        "baseline": 50,
+        "preflight": 50,
+        "new_running": 50,
+        "equal": true
+      },
+      "planned_target_token_forwards": {
+        "baseline": 115200,
+        "preflight": 115200,
+        "new_running": 115200,
+        "equal": true
+      },
+      "argv": {
+        "track": "track3",
+        "steps": 50,
+        "seed": 42,
+        "guidance": 30.0,
+        "uses_only_existing_options": true,
+        "output_distinct_from_baseline": true,
+        "output_started_by_parent_while_audit_running": true
+      }
+    },
+    "inputs": {
+      "source_512_sha256": {
+        "baseline": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+        "preflight": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+        "new_running": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+        "equal": true
+      },
+      "canvas_sha256": {
+        "baseline": "f1e4d8556cff94477a1d757bcbb5ee531e41edc0255bb34eed3f03aaa76432e1",
+        "preflight": "f1e4d8556cff94477a1d757bcbb5ee531e41edc0255bb34eed3f03aaa76432e1",
+        "new_running": "f1e4d8556cff94477a1d757bcbb5ee531e41edc0255bb34eed3f03aaa76432e1",
+        "equal": true
+      },
+      "mask_sha256": {
+        "baseline": "c4386579faf335ed709b14b461c6a843d0e58956e25ddfbe8d88e3a317f6dc70",
+        "preflight": "c4386579faf335ed709b14b461c6a843d0e58956e25ddfbe8d88e3a317f6dc70",
+        "new_running": "c4386579faf335ed709b14b461c6a843d0e58956e25ddfbe8d88e3a317f6dc70",
+        "equal": true
+      },
+      "source_rect_xyxy": {
+        "baseline": [
+          0,
+          320,
+          512,
+          832
+        ],
+        "preflight": [
+          0,
+          320,
+          512,
+          832
+        ],
+        "new_running": [
+          0,
+          320,
+          512,
+          832
+        ],
+        "equal": true
+      },
+      "files": {
+        "source_file_hash": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+        "preflight_canvas_file_hash": "f1e4d8556cff94477a1d757bcbb5ee531e41edc0255bb34eed3f03aaa76432e1",
+        "new_canvas_file_hash": "f1e4d8556cff94477a1d757bcbb5ee531e41edc0255bb34eed3f03aaa76432e1",
+        "preflight_mask_file_hash": "c4386579faf335ed709b14b461c6a843d0e58956e25ddfbe8d88e3a317f6dc70",
+        "new_mask_file_hash": "c4386579faf335ed709b14b461c6a843d0e58956e25ddfbe8d88e3a317f6dc70"
+      },
+      "pixel_checks": {
+        "source_exact_canvas": true,
+        "known_mask_all0": true,
+        "unknown_mask_all255": true,
+        "unknown_pixels": 327680,
+        "canvas_shape": [
+          1152,
+          512,
+          3
+        ],
+        "mask_shape": [
+          1152,
+          512
+        ],
+        "source_shape": [
+          512,
+          512,
+          3
+        ]
+      }
+    },
+    "runner": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/run_fill_trial.py",
+      "current_sha256": "e63fac021c3e3849baeac7aeb5f41ae44c27a3cbda38a12520963c8955d8b6b3",
+      "baseline_metrics_sha256": "e63fac021c3e3849baeac7aeb5f41ae44c27a3cbda38a12520963c8955d8b6b3",
+      "baseline_launch_sha256": "e63fac021c3e3849baeac7aeb5f41ae44c27a3cbda38a12520963c8955d8b6b3",
+      "arm_declared_sha256": "e63fac021c3e3849baeac7aeb5f41ae44c27a3cbda38a12520963c8955d8b6b3",
+      "preflight_sha256": "e63fac021c3e3849baeac7aeb5f41ae44c27a3cbda38a12520963c8955d8b6b3",
+      "new_running_sha256": "e63fac021c3e3849baeac7aeb5f41ae44c27a3cbda38a12520963c8955d8b6b3",
+      "all_exact_equal": true
+    },
+    "runtime_sources": {
+      "native_fill": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/flux/variants/fill/flux_fill.py",
+        "current_sha256": "3012abf8a9541aa8600eae80bf2d8bdd6167cddd79030a6190d1df680050fe41",
+        "baseline_recorded_sha256": "3012abf8a9541aa8600eae80bf2d8bdd6167cddd79030a6190d1df680050fe41",
+        "new_recorded_sha256": "3012abf8a9541aa8600eae80bf2d8bdd6167cddd79030a6190d1df680050fe41",
+        "exact_match": true
+      },
+      "mask_util": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/flux/variants/fill/mask_util.py",
+        "current_sha256": "b6f20892105b71e1ff64f325c2a3448d534f379ef95e44bec33d9224f5d5a7e9",
+        "baseline_recorded_sha256": "b6f20892105b71e1ff64f325c2a3448d534f379ef95e44bec33d9224f5d5a7e9",
+        "new_recorded_sha256": "b6f20892105b71e1ff64f325c2a3448d534f379ef95e44bec33d9224f5d5a7e9",
+        "exact_match": true
+      },
+      "config": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/common/config/config.py",
+        "current_sha256": "19a862b4414ea082a45c8142ca8932fce483121426b6efd562999eca64ff307d",
+        "baseline_recorded_sha256": "19a862b4414ea082a45c8142ca8932fce483121426b6efd562999eca64ff307d",
+        "new_recorded_sha256": "19a862b4414ea082a45c8142ca8932fce483121426b6efd562999eca64ff307d",
+        "exact_match": true
+      },
+      "latent_creator": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/flux/latent_creator/flux_latent_creator.py",
+        "current_sha256": "897505135f1d411b8af4967f0b8327ca5b91f8e2b1b9ec503e3fc2ce9f270d5c",
+        "baseline_recorded_sha256": "897505135f1d411b8af4967f0b8327ca5b91f8e2b1b9ec503e3fc2ce9f270d5c",
+        "new_recorded_sha256": "897505135f1d411b8af4967f0b8327ca5b91f8e2b1b9ec503e3fc2ce9f270d5c",
+        "exact_match": true
+      }
+    },
+    "additional_current_runtime_hashes": {
+      "linear_scheduler": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/common/schedulers/linear_scheduler.py",
+        "current_sha256": "294ef867120ad30e9a96b46a541e6ed3b037c53075d2244acb164683d97569b5",
+        "baseline_hash_separately_recorded": false
+      },
+      "prompt_encoder": {
+        "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/flux/model/flux_text_encoder/prompt_encoder.py",
+        "current_sha256": "ed9ea4c171e0b66163c7934b4a4641d08ed1922b7dcc858f0d71fdd304e477ad",
+        "baseline_hash_separately_recorded": false
+      }
+    },
+    "checkpoint": {
+      "manifest_path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/flux1-fill-q4.manifest.json",
+      "current_sha256": "4ab6a92ff25240f79c1d8dec341abbd9b8edb26ead6805d4c15c8d3eb9c1a8eb",
+      "baseline_sha256": "4ab6a92ff25240f79c1d8dec341abbd9b8edb26ead6805d4c15c8d3eb9c1a8eb",
+      "preflight_sha256": "4ab6a92ff25240f79c1d8dec341abbd9b8edb26ead6805d4c15c8d3eb9c1a8eb",
+      "new_sha256": "4ab6a92ff25240f79c1d8dec341abbd9b8edb26ead6805d4c15c8d3eb9c1a8eb",
+      "same_manifest_hash": true,
+      "same_pinned_revision": true,
+      "new_runner_recorded_payload_verification": true,
+      "payloads_reread_by_this_audit": false
+    },
+    "cpu_gate": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/flux1_fill/test_cpu_preflight.py",
+      "current_sha256": "09face4707f493125d7b03a4aed508b96bceecfe783e697cfc449508a2810d93",
+      "same_hash_baseline_new": true,
+      "preflight_status": "preflight_files_ready",
+      "conditioning_cpu_status": "passed",
+      "preflight_model_weights_loaded": false,
+      "tokenizer_shapes": {
+        "clip": {
+          "max_length": 77,
+          "token_shape": [
+            1,
+            77
+          ]
+        },
+        "t5": {
+          "max_length": 512,
+          "token_shape": [
+            1,
+            512
+          ]
+        }
+      },
+      "unknown_normalized_rgb": 0.0
+    },
+    "initial_noise": {
+      "device_for_rederivation": "Device(cpu, 0)",
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "all_arrays_finite": true,
+      "cpu_rederived_sha256_float32": "be05cdb78d1fa857d2a2bee84ddcf3416695a46f8bb6fb79da121ec9263dd674",
+      "baseline_saved_array_sha256_float32": "9b0f130d9dee403294a1429d7552add46da89cbb424e620aa3d8cbd80d549a1c",
+      "baseline_recorded_sha256_float32": "9b0f130d9dee403294a1429d7552add46da89cbb424e620aa3d8cbd80d549a1c",
+      "new_saved_array_sha256_float32": "9b0f130d9dee403294a1429d7552add46da89cbb424e620aa3d8cbd80d549a1c",
+      "new_recorded_sha256_float32": "9b0f130d9dee403294a1429d7552add46da89cbb424e620aa3d8cbd80d549a1c",
+      "cpu_vs_baseline_bitwise_equal": false,
+      "cpu_vs_baseline_max_abs_difference": 4.76837158203125e-07,
+      "cpu_vs_baseline_elements_differing": 6465,
+      "cpu_vs_baseline_within_absolute5e_7": true,
+      "baseline_vs_new_saved_array_bitwise_equal": true,
+      "baseline_vs_new_max_abs_difference": 0.0,
+      "all_metal_arrays_and_recorded_hashes_exact_equal": true,
+      "interpretation": "CPU versus saved Metal normal() differs by at most4.7683716e-7; this is not a bitwise CPU equivalence claim. Both actual Metal runs now saved exactly equal float32 noise arrays and hashes, so strict matched initial noise gate passes."
+    },
+    "scheduler": {
+      "device": "Device(cpu, 0)",
+      "name": "native MFLUX LinearScheduler with FLUX resolution shift",
+      "sigmas_length": 51,
+      "cpu_sha256_float32": "e643f7e7c88fa6be6ac26cb3dbb707f5c91470d99f91e8d16c2acfe6deea9c22",
+      "baseline_sha256_float32": "e643f7e7c88fa6be6ac26cb3dbb707f5c91470d99f91e8d16c2acfe6deea9c22",
+      "new_sha256_float32": "e643f7e7c88fa6be6ac26cb3dbb707f5c91470d99f91e8d16c2acfe6deea9c22",
+      "cpu_baseline_new_all_bitwise_equal": true,
+      "first": 1.0,
+      "last": 0.0,
+      "all_strictly_decreasing": true,
+      "guidance": 30.0,
+      "shift_parameters": {
+        "sigma_base_shift": 0.5,
+        "sigma_max_shift": 1.15,
+        "sigma_base_seq_len": 256,
+        "sigma_max_seq_len": 4096,
+        "sigma_shift_terminal": null
+      }
+    },
+    "static_conditioning": {
+      "baseline_sha256_float32": "c718c85772b48fc10d768d82064ba998ad40d51fd0de1dd7263702b1736c2edf",
+      "new_sha256_float32": "c718c85772b48fc10d768d82064ba998ad40d51fd0de1dd7263702b1736c2edf",
+      "exact_hash_equal": true,
+      "independently_recomputed_by_this_audit": false,
+      "scope": "Actual VAE conditioning hashes recorded by frozen native runners; source/mask pixel inputs independently verified here. No VAE/model weights loaded by auditor."
+    }
+  },
+  "remaining_checks": [
+    "After completion independently require50NFE/115200 target token forwards/finite final latents and source-only composite equality.",
+    "Directly inspect raw and composite for invented lettering, duplicated subjects, scene discontinuity and rail join."
+  ],
+  "limitations": [
+    "This verifies matched inputs, not quality or completed compute.",
+    "Static conditioning tensor not retained separately; its actual native run hash match is a runner record, while source/mask files and savednoise arrays were independently recomputed.",
+    "LinearScheduler and PromptEncoder lacked separate baseline source hash records; current hashes retained and native 51 sigmas match baseline bitwise.",
+    "CPU noise normalconversion is only numerically matching; actualbaseline/new Metal savedarrays are bitwise matching.",
+    "No known-border collar, cosine blend or cosmetic repair implemented."
+  ]
+}
