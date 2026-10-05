@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "device": "CPU only",
+  "model_weights_loaded": false,
+  "downloads": false,
+  "source_orientation_exact": true,
+  "source_unmodified": true,
+  "assembled_source_exact": true,
+  "generated_regions_raw_exact": true,
+  "raw_crops_unmodified": true,
+  "independent_calls_same_seed_noise_exact": true,
+  "patches": {
+    "upper": {
+      "source_crop": [
+        0,
+        0,
+        512,
+        128
+      ],
+      "known_patch_rect": [
+        0,
+        320,
+        512,
+        448
+      ],
+      "known_token_rows": [
+        20,
+        28
+      ],
+      "target_tokens": 896,
+      "known_tokens": 256,
+      "unknown_tokens": 640,
+      "native_static_shape": [
+        1,
+        896,
+        320
+      ],
+      "native_hidden_shape": [
+        1,
+        896,
+        384
+      ],
+      "masked_known_rgb_exact": true,
+      "unknown_normalized_rgb_zero": true,
+      "mask256_polarity_and_geometry_exact": true,
+      "steps": 50,
+      "guidance": 30.0,
+      "sigma_count": 51,
+      "noise_sha256_float32": "8676f08386f3ec9f80cbf8f090a9df282ef917bdfe0d2f7a3e9cf963f77b91b2"
+    },
+    "lower": {
+      "source_crop": [
+        0,
+        384,
+        512,
+        512
+      ],
+      "known_patch_rect": [
+        0,
+        0,
+        512,
+        128
+      ],
+      "known_token_rows": [
+        0,
+        8
+      ],
+      "target_tokens": 896,
+      "known_tokens": 256,
+      "unknown_tokens": 640,
+      "native_static_shape": [
+        1,
+        896,
+        320
+      ],
+      "native_hidden_shape": [
+        1,
+        896,
+        384
+      ],
+      "masked_known_rgb_exact": true,
+      "unknown_normalized_rgb_zero": true,
+      "mask256_polarity_and_geometry_exact": true,
+      "steps": 50,
+      "guidance": 30.0,
+      "sigma_count": 51,
+      "noise_sha256_float32": "8676f08386f3ec9f80cbf8f090a9df282ef917bdfe0d2f7a3e9cf963f77b91b2"
+    }
+  },
+  "total_calls": 2,
+  "planned_total_nfe": 100,
+  "planned_target_token_forwards": 89600,
+  "true_growth_or_streaming": false,
+  "runtime_source_sha256": {
+    "mask_util": "b6f20892105b71e1ff64f325c2a3448d534f379ef95e44bec33d9224f5d5a7e9",
+    "latent_creator": "897505135f1d411b8af4967f0b8327ca5b91f8e2b1b9ec503e3fc2ce9f270d5c",
+    "config": "19a862b4414ea082a45c8142ca8932fce483121426b6efd562999eca64ff307d"
+  },
+  "helper_sha256": "eb108e392e1b9bbe97bee7290af554dc70689cd2fd45129391e4bf062589c685",
+  "script_sha256": "6ac311999616fe4eae374b199250dd2ad58fc9a4f473e6ecf275830de90064b1"
+}
