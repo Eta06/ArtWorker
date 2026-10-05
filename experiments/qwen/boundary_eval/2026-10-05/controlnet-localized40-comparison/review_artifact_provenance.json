@@ -1,0 +1,20 @@
+{
+  "scope": "CPU-created comparison artifacts; no edit to completed model output pixels",
+  "files": {
+    "REPORT.md": "a5b74ef6cce9f323763e82ee45e631e125f9eb5c6fb1c21bedb1c29369c6fdba",
+    "REVIEW.md": "e9db33da05d9cfb8d6d0f34d538b3ff28e004d68e19ec3b35301e832c867478f",
+    "color_detector_sensitivity.json": "d006c396f03c32d383600053ed1a268e2e971768a798ce6bec9fa7809b20137a",
+    "compositor-lower-border-untouched.png": "f3822440ee3af38d1fa8d8c336d53ec30a728aa3ac921e9a2c3d9992946c4ba8",
+    "compositor-rail-untouched.png": "d4901e68c70885351bd50929a1ffa64ca9cf85e641be32f4fbbfb486d6a7aa7f",
+    "compositor-upper-border-untouched.png": "57d23a37a3ba0daac21f9b4005835f7bce3ebfbba704bfac64082a7e451abcce",
+    "compositor_independent_validation.json": "c26ab53309e6c3fbcaacb6d2113805e1ef55d0a6f12d3e377bf767ff54fd18c8",
+    "full-comparison.png": "d6af59b3a85ab06c7dbd54a023289ac7cf45d14216953b24eba0d998b677557e",
+    "independent_validation.json": "6a3102a0cd83105edf01fd1f87f34ca65abf96099c2fd0a2d243a6719fc67b44",
+    "lower-source-border-raw-composite.png": "00ba41d4fce665df8507f4baf51799224df569b1de7ebefae80cbe0d71d83c47",
+    "metrics.json": "ef8cd54bb43667b4fc8bfe775deb6dba68ddda30d69f82ed600dbec8f2f4f3a2",
+    "rail-raw-composite.png": "114c71ca9f70a2914a98d713c1941369ffad0a454b5c30f9c60b721e66a9d6f1",
+    "source-tangent-selected-features.png": "42514ba4a3027c3cffa016157499055c4820d760d275b157551690db62a80cee",
+    "source-tangent-untouched-crops.png": "21457eb30ce309b69be6ed662cf2ea2e278d022672577c1c9cbab5c58d62e34e",
+    "upper-source-border-raw-composite.png": "69a2b29acd4e14bd61022dc2e2696d323437b7c54432254e780ff4fe248a86c2"
+  }
+}
