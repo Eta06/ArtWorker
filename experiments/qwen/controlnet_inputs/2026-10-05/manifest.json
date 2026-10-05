@@ -1,0 +1,504 @@
+{
+  "status": "prepared_not_model_evaluated",
+  "device": "CPU",
+  "model_weights_loaded": false,
+  "script_sha256": "bb1b5066e63d3e5ae865e49159c5f1c37726983f46fc5dc31a9ccee93b6c5818",
+  "inputs_sha256": "89a17818b11b905bdf42cd64bb7fc2c55ea428784611568f3c7b48f048bc9afe",
+  "tracks": [
+    {
+      "track": "track1",
+      "canvas_size": [
+        512,
+        1152
+      ],
+      "source_rect_from_mask": [
+        0,
+        320,
+        512,
+        832
+      ],
+      "source_sha256": "d02d2fe0e696e91194f814f0dda34cfa7539a23a6c0d5d5803c83f70f5f26265",
+      "mask_sha256": "c4386579faf335ed709b14b461c6a843d0e58956e25ddfbe8d88e3a317f6dc70",
+      "original_jpg_sha256": "2d7162f9c4462b7706ef5d33c4b81d13b42da3e3c781175ee36447b7eb7a99b9",
+      "mask_convention": "mask.png: 255=regenerate, 0=known; mask_known_white.png is inverted",
+      "source_midgray_note": "PNG rounds midgray to128. Official codec must mask normalized RGB to exact0 before opaque-alpha VAE encoding.",
+      "mask_only_note": "Missing edge control must be literal zero64 latent, not black RGB VAE encoding.",
+      "purpose": "conditioning input; no outpainted result is modified",
+      "heuristic_not_semantic_detector": true,
+      "settings": {
+        "min_length_px": 64,
+        "max_border_gap_px": 12,
+        "max_extrapolation_euclidean_px": 256,
+        "parallel_angle_degrees": 6,
+        "parallel_normal_separation_px": [
+          2,
+          24
+        ],
+        "canny_thresholds": [
+          80,
+          160
+        ],
+        "line_width": 1,
+        "known_source_edges_preserved_exact": true
+      },
+      "candidate_lines": [],
+      "retained_lines": [],
+      "generated_edge_pixels": 0,
+      "files": {
+        "source_black": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track1/source_black.png",
+        "source_midgray": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track1/source_midgray.png",
+        "canny_known": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track1/canny_known.png",
+        "canny_extrapolated": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track1/canny_extrapolated.png",
+        "extrapolated_only": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track1/extrapolated_only.png",
+        "mask": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track1/mask.png",
+        "mask_known_white": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track1/mask_known_white.png",
+        "diagnostic_overlay": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track1/diagnostic_overlay.png"
+      },
+      "file_sha256": {
+        "source_black": "ad57301b5bdd8bb25dc6a62ae93e3adb19f067dd9334b517a61c7df54c0084ab",
+        "source_midgray": "1181456d31956b66ab3960d702581b10df2165e971c914b742d86b0df4d6a2d1",
+        "canny_known": "a08c9b711fa2c6dc5e25762e39df1614fcf4567f6dc74fad8028ad22c26d68ed",
+        "canny_extrapolated": "a08c9b711fa2c6dc5e25762e39df1614fcf4567f6dc74fad8028ad22c26d68ed",
+        "extrapolated_only": "af11a8a81ee2249dbb5fb32eca9159de6f4ed65796a09f0709b882b1b62a04e3",
+        "mask": "c4386579faf335ed709b14b461c6a843d0e58956e25ddfbe8d88e3a317f6dc70",
+        "mask_known_white": "590db2e79295c7e16a8f4e1ca5801525b1c2852c6027144c4164eac8cc7627d3",
+        "diagnostic_overlay": "1181456d31956b66ab3960d702581b10df2165e971c914b742d86b0df4d6a2d1"
+      }
+    },
+    {
+      "track": "track2",
+      "canvas_size": [
+        512,
+        1152
+      ],
+      "source_rect_from_mask": [
+        0,
+        320,
+        512,
+        832
+      ],
+      "source_sha256": "29d6e26983bb95387cfffe1671128ac8121e835f7898d26635e3f06b8a6f55c8",
+      "mask_sha256": "c4386579faf335ed709b14b461c6a843d0e58956e25ddfbe8d88e3a317f6dc70",
+      "original_jpg_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "mask_convention": "mask.png: 255=regenerate, 0=known; mask_known_white.png is inverted",
+      "source_midgray_note": "PNG rounds midgray to128. Official codec must mask normalized RGB to exact0 before opaque-alpha VAE encoding.",
+      "mask_only_note": "Missing edge control must be literal zero64 latent, not black RGB VAE encoding.",
+      "purpose": "conditioning input; no outpainted result is modified",
+      "heuristic_not_semantic_detector": true,
+      "settings": {
+        "min_length_px": 64,
+        "max_border_gap_px": 12,
+        "max_extrapolation_euclidean_px": 256,
+        "parallel_angle_degrees": 6,
+        "parallel_normal_separation_px": [
+          2,
+          24
+        ],
+        "canny_thresholds": [
+          80,
+          160
+        ],
+        "line_width": 1,
+        "known_source_edges_preserved_exact": true
+      },
+      "candidate_lines": [],
+      "retained_lines": [],
+      "generated_edge_pixels": 0,
+      "files": {
+        "source_black": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track2/source_black.png",
+        "source_midgray": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track2/source_midgray.png",
+        "canny_known": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track2/canny_known.png",
+        "canny_extrapolated": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track2/canny_extrapolated.png",
+        "extrapolated_only": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track2/extrapolated_only.png",
+        "mask": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track2/mask.png",
+        "mask_known_white": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track2/mask_known_white.png",
+        "diagnostic_overlay": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track2/diagnostic_overlay.png"
+      },
+      "file_sha256": {
+        "source_black": "48f7dad64530cbfb2e1918971f63239e679618cb67c88d255d47e271e845fa6a",
+        "source_midgray": "0dc3babef02e4ddf843445464e80fc225ebf97299c6becec041802bb9d2e17f4",
+        "canny_known": "2e32944abedcbdd5d9491b06c39c3aee943ebbc2a5e8a09c3b1a98658e869510",
+        "canny_extrapolated": "2e32944abedcbdd5d9491b06c39c3aee943ebbc2a5e8a09c3b1a98658e869510",
+        "extrapolated_only": "af11a8a81ee2249dbb5fb32eca9159de6f4ed65796a09f0709b882b1b62a04e3",
+        "mask": "c4386579faf335ed709b14b461c6a843d0e58956e25ddfbe8d88e3a317f6dc70",
+        "mask_known_white": "590db2e79295c7e16a8f4e1ca5801525b1c2852c6027144c4164eac8cc7627d3",
+        "diagnostic_overlay": "0dc3babef02e4ddf843445464e80fc225ebf97299c6becec041802bb9d2e17f4"
+      }
+    },
+    {
+      "track": "track3",
+      "canvas_size": [
+        512,
+        1152
+      ],
+      "source_rect_from_mask": [
+        0,
+        320,
+        512,
+        832
+      ],
+      "source_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+      "mask_sha256": "c4386579faf335ed709b14b461c6a843d0e58956e25ddfbe8d88e3a317f6dc70",
+      "original_jpg_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "mask_convention": "mask.png: 255=regenerate, 0=known; mask_known_white.png is inverted",
+      "source_midgray_note": "PNG rounds midgray to128. Official codec must mask normalized RGB to exact0 before opaque-alpha VAE encoding.",
+      "mask_only_note": "Missing edge control must be literal zero64 latent, not black RGB VAE encoding.",
+      "purpose": "conditioning input; no outpainted result is modified",
+      "heuristic_not_semantic_detector": true,
+      "settings": {
+        "min_length_px": 64,
+        "max_border_gap_px": 12,
+        "max_extrapolation_euclidean_px": 256,
+        "parallel_angle_degrees": 6,
+        "parallel_normal_separation_px": [
+          2,
+          24
+        ],
+        "canny_thresholds": [
+          80,
+          160
+        ],
+        "line_width": 1,
+        "known_source_edges_preserved_exact": true
+      },
+      "candidate_lines": [
+        {
+          "side": "top",
+          "points": [
+            [
+              297.3878173828125,
+              6.626961708068848
+            ],
+            [
+              234.1734619140625,
+              38.98121643066406
+            ]
+          ],
+          "length": 71.0130448296935,
+          "border_gap": 6.626961708068848,
+          "canny_support": 1.0,
+          "angle_radians": 2.6685352828383904,
+          "crossing": [
+            311.312610109112,
+            -0.5
+          ],
+          "outward_unit": [
+            0.8901794820987236,
+            -0.4556100192603847
+          ],
+          "accepted": true,
+          "parallel_support": [
+            1,
+            2,
+            3
+          ],
+          "canvas_start": [
+            311.312610109112,
+            319.5
+          ],
+          "canvas_end_before_clip": [
+            539.1985575263852,
+            202.86383506934152
+          ]
+        },
+        {
+          "side": "top",
+          "points": [
+            [
+              229.65908813476562,
+              48.670799255371094
+            ],
+            [
+              312.4905700683594,
+              5.557698726654053
+            ]
+          ],
+          "length": 93.37983634872428,
+          "border_gap": 5.557698726654053,
+          "canny_support": 1.0,
+          "angle_radians": 2.6616863800545665,
+          "crossing": [
+            324.1289852248332,
+            -0.5
+          ],
+          "outward_unit": [
+            0.8870381998128802,
+            -0.4616960386149363
+          ],
+          "accepted": true,
+          "parallel_support": [
+            0,
+            2,
+            3
+          ],
+          "canvas_start": [
+            324.1289852248332,
+            319.5
+          ],
+          "canvas_end_before_clip": [
+            551.2107643769305,
+            201.30581411457632
+          ]
+        },
+        {
+          "side": "top",
+          "points": [
+            [
+              260.0889587402344,
+              44.652835845947266
+            ],
+            [
+              325.7904052734375,
+              8.424994468688965
+            ]
+          ],
+          "length": 75.02757204795539,
+          "border_gap": 8.424994468688965,
+          "canny_support": 1.0,
+          "angle_radians": 2.637674477904366,
+          "crossing": [
+            341.9764385727276,
+            -0.5
+          ],
+          "outward_unit": [
+            0.8756973568491423,
+            -0.48286037237220664
+          ],
+          "accepted": true,
+          "parallel_support": [
+            0,
+            1,
+            3
+          ],
+          "canvas_start": [
+            341.9764385727276,
+            319.5
+          ],
+          "canvas_end_before_clip": [
+            566.1549619261081,
+            195.8877446727151
+          ]
+        },
+        {
+          "side": "top",
+          "points": [
+            [
+              326.51507568359375,
+              4.779307842254639
+            ],
+            [
+              235.40963745117188,
+              53.79796600341797
+            ]
+          ],
+          "length": 103.45544801238174,
+          "border_gap": 4.779307842254639,
+          "canny_support": 1.0,
+          "angle_radians": 2.6479756781833976,
+          "crossing": [
+            336.32712832997845,
+            -0.5
+          ],
+          "outward_unit": [
+            0.8806248485001796,
+            -0.47381417898162975
+          ],
+          "accepted": true,
+          "parallel_support": [
+            0,
+            1,
+            2
+          ],
+          "canvas_start": [
+            336.32712832997845,
+            319.5
+          ],
+          "canvas_end_before_clip": [
+            561.7670895460244,
+            198.2035701807028
+          ]
+        }
+      ],
+      "retained_lines": [
+        {
+          "side": "top",
+          "points": [
+            [
+              326.51507568359375,
+              4.779307842254639
+            ],
+            [
+              235.40963745117188,
+              53.79796600341797
+            ]
+          ],
+          "length": 103.45544801238174,
+          "border_gap": 4.779307842254639,
+          "canny_support": 1.0,
+          "angle_radians": 2.6479756781833976,
+          "crossing": [
+            336.32712832997845,
+            -0.5
+          ],
+          "outward_unit": [
+            0.8806248485001796,
+            -0.47381417898162975
+          ],
+          "accepted": true,
+          "parallel_support": [
+            0,
+            1,
+            2
+          ],
+          "canvas_start": [
+            336.32712832997845,
+            319.5
+          ],
+          "canvas_end_before_clip": [
+            561.7670895460244,
+            198.2035701807028
+          ]
+        },
+        {
+          "side": "top",
+          "points": [
+            [
+              229.65908813476562,
+              48.670799255371094
+            ],
+            [
+              312.4905700683594,
+              5.557698726654053
+            ]
+          ],
+          "length": 93.37983634872428,
+          "border_gap": 5.557698726654053,
+          "canny_support": 1.0,
+          "angle_radians": 2.6616863800545665,
+          "crossing": [
+            324.1289852248332,
+            -0.5
+          ],
+          "outward_unit": [
+            0.8870381998128802,
+            -0.4616960386149363
+          ],
+          "accepted": true,
+          "parallel_support": [
+            0,
+            2,
+            3
+          ],
+          "canvas_start": [
+            324.1289852248332,
+            319.5
+          ],
+          "canvas_end_before_clip": [
+            551.2107643769305,
+            201.30581411457632
+          ]
+        },
+        {
+          "side": "top",
+          "points": [
+            [
+              260.0889587402344,
+              44.652835845947266
+            ],
+            [
+              325.7904052734375,
+              8.424994468688965
+            ]
+          ],
+          "length": 75.02757204795539,
+          "border_gap": 8.424994468688965,
+          "canny_support": 1.0,
+          "angle_radians": 2.637674477904366,
+          "crossing": [
+            341.9764385727276,
+            -0.5
+          ],
+          "outward_unit": [
+            0.8756973568491423,
+            -0.48286037237220664
+          ],
+          "accepted": true,
+          "parallel_support": [
+            0,
+            1,
+            3
+          ],
+          "canvas_start": [
+            341.9764385727276,
+            319.5
+          ],
+          "canvas_end_before_clip": [
+            566.1549619261081,
+            195.8877446727151
+          ]
+        },
+        {
+          "side": "top",
+          "points": [
+            [
+              297.3878173828125,
+              6.626961708068848
+            ],
+            [
+              234.1734619140625,
+              38.98121643066406
+            ]
+          ],
+          "length": 71.0130448296935,
+          "border_gap": 6.626961708068848,
+          "canny_support": 1.0,
+          "angle_radians": 2.6685352828383904,
+          "crossing": [
+            311.312610109112,
+            -0.5
+          ],
+          "outward_unit": [
+            0.8901794820987236,
+            -0.4556100192603847
+          ],
+          "accepted": true,
+          "parallel_support": [
+            1,
+            2,
+            3
+          ],
+          "canvas_start": [
+            311.312610109112,
+            319.5
+          ],
+          "canvas_end_before_clip": [
+            539.1985575263852,
+            202.86383506934152
+          ]
+        }
+      ],
+      "generated_edge_pixels": 2031,
+      "files": {
+        "source_black": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track3/source_black.png",
+        "source_midgray": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track3/source_midgray.png",
+        "canny_known": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track3/canny_known.png",
+        "canny_extrapolated": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track3/canny_extrapolated.png",
+        "extrapolated_only": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track3/extrapolated_only.png",
+        "mask": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track3/mask.png",
+        "mask_known_white": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track3/mask_known_white.png",
+        "diagnostic_overlay": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track3/diagnostic_overlay.png"
+      },
+      "file_sha256": {
+        "source_black": "448c04c5be9ed18667008c671d302a09a137265e58003644e0516444301b3bd7",
+        "source_midgray": "f1e4d8556cff94477a1d757bcbb5ee531e41edc0255bb34eed3f03aaa76432e1",
+        "canny_known": "8d511f6f8d7197340a0ced5e43209377304eb57d1464322531469d67ed9a7788",
+        "canny_extrapolated": "77ef3e3fc7967a54de11b7a8d60985eb5d09ed25f28f65c1bc407960e37e39d8",
+        "extrapolated_only": "de298a2574b9155b409cc221f5c4ba399f4f809a1ce1a4038691906993b171e3",
+        "mask": "c4386579faf335ed709b14b461c6a843d0e58956e25ddfbe8d88e3a317f6dc70",
+        "mask_known_white": "590db2e79295c7e16a8f4e1ca5801525b1c2852c6027144c4164eac8cc7627d3",
+        "diagnostic_overlay": "99bed063b3126850d17654a2a752c647351fbefdaa2ca0ac3335c38c054d3a76"
+      }
+    }
+  ],
+  "all_original_artworks_unchanged": true
+}
