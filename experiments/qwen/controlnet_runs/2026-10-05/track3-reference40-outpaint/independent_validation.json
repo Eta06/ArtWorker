@@ -1,0 +1,83 @@
+{
+  "status": "passed",
+  "quality_status": "integrity only; independent full image review required",
+  "common": {
+    "saved_source_prefix_shape": true,
+    "source_prefix_hash": true,
+    "prefix_latents_finite": true,
+    "actual_square_rgba_shape": true,
+    "actual_square_rgb_exact": true,
+    "source_opaque_alpha": true,
+    "source_file_hash": true,
+    "source_rgb_array_hash": true,
+    "source_rgba_array_hash": true,
+    "prompt_embedding_hash": true,
+    "prompt_finite": true,
+    "image_slots_hash": true,
+    "image_slots_bool_and256": true,
+    "prefix_text_count": true,
+    "joint_prefix_count": true,
+    "image_context_count": true,
+    "saved_noise_shape": true,
+    "noise_hash": true,
+    "noise_finite": true,
+    "original_jpeg_hashes_unchanged": true
+  },
+  "contexts": {
+    "tangent-canny": {
+      "target_shape": true,
+      "target_hash": true,
+      "padded_shape": true,
+      "padded_hash": true,
+      "reference129_literal_zero": true,
+      "target_context_exact_after_padding": true,
+      "target_known_mask_exact": true,
+      "reference_known_mask_zero": true,
+      "unsupported_structural64_zero": true,
+      "support_known_tokens_all_true": true,
+      "source65_preserved_runtime_assertion": true
+    }
+  },
+  "arms": {
+    "tangent-canny/prefix-hints-disabled": {
+      "nfe_count": true,
+      "base_blocks": true,
+      "control_blocks": true,
+      "target_token_count": true,
+      "reference_image_token_count": true,
+      "joint_query_count": true,
+      "each_step_prefix_runtime_assertion": true,
+      "exact_prefix_concatenation_cpu": true,
+      "input_assembly_shape": true,
+      "same_prefix_hash": true,
+      "target_latent_shape": true,
+      "target_latents_finite": true,
+      "target_latents_hash": true,
+      "final_known_target_exact_from_saved_context": true,
+      "raw_image_shape": true,
+      "composite_shape": true,
+      "source_pixels_exact": true,
+      "raw_hash": true,
+      "composite_hash": true
+    }
+  },
+  "raw_near_white_diagnostic": {
+    "tangent-canny/prefix-hints-disabled": {
+      "definition": "all RGB channels>=230; row bands require90 percent pixels; brightness alone is not quality",
+      "row_bands_inclusive": [],
+      "top_generated_fraction": 0.0,
+      "bottom_generated_fraction": 0.0
+    }
+  },
+  "input_counts_per_forward": {
+    "target": 2304,
+    "reference_images": 1024,
+    "text": 173,
+    "joint_queries": 3501,
+    "packed_images": 3328
+  },
+  "runtime_prefix_limit": "Saved source and CPU assembly verified; equality in every actual model forward is a recorded checked runtime assertion, not independently replayed denoising.",
+  "prefix_hint_limit": "Literal-zero reference context does not itself disable biased hints; prefix-hints-disabled helper gates completed full text/image prefix hints. Mechanism is covered by pinned tiny CPU tests, not a stored per-layer real-model hint trace.",
+  "validator_sha256": "96f878ba45a422a18caf016096539dd683a98e9ef904092199e6318273779d60",
+  "suite_metrics_sha256": "178e84b35a921d706e8534a5d2848458ea604989ebdc9efc45c49bc5589a66d7"
+}
