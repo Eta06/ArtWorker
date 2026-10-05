@@ -1,0 +1,39 @@
+{
+  "scope": "three matrices / three rows each; packing and affine error only, not image acceptance",
+  "samples": [
+    {
+      "component": "transformer",
+      "key": "img_in.weight",
+      "rows": [
+        0,
+        2048,
+        4095
+      ],
+      "relative_l2_error": 0.0907776728272438,
+      "finite": true
+    },
+    {
+      "component": "text_encoder",
+      "key": "language_model.embed_tokens.weight",
+      "rows": [
+        0,
+        75968,
+        151935
+      ],
+      "relative_l2_error": 0.09895278513431549,
+      "finite": true
+    },
+    {
+      "component": "text_encoder",
+      "key": "visual.blocks.0.attn.qkv.weight",
+      "rows": [
+        0,
+        1728,
+        3455
+      ],
+      "relative_l2_error": 0.1271316260099411,
+      "finite": true
+    }
+  ],
+  "status": "passed"
+}
