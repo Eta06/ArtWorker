@@ -1,0 +1,29 @@
+{
+  "radius_pixels": 64,
+  "strength": 0.25,
+  "bands": "all",
+  "edge_statistics": {
+    "top": {
+      "delta_abs_p95_255": 0.1740446239709854,
+      "delta_max_abs_255": 2.644282579421997,
+      "pixels_changed_before_rounding": 26751,
+      "protected_core_delta_max": 0.0,
+      "clipped_channels_before_uint8": 0
+    },
+    "bottom": {
+      "delta_abs_p95_255": 0.11379215866327286,
+      "delta_max_abs_255": 1.4340853691101074,
+      "pixels_changed_before_rounding": 31726,
+      "protected_core_delta_max": 0,
+      "clipped_channels_before_uint8": 0
+    }
+  },
+  "kind": "derived CPU texture-band composite; not model raw",
+  "source_exact": true,
+  "far_exterior_exact": true,
+  "protected_edge_core_exact": true,
+  "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track3-top32-texture-v4/all-s25-r64/composite.png",
+  "composite_sha256": "e430592fa194f0ff7d233648ffe056d0e861db81df9aa8eea2b6b6d34b474c1d",
+  "generated_mean_abs_change_255": 0.008251953125,
+  "no_source_texture_pixel_copy_or_geometric_warp": true
+}
