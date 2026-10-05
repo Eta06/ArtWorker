@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-10-05T04:00:22.259017+00:00",
+  "status": "passed",
+  "device": "Device(cpu, 0)",
+  "gpu_used": false,
+  "full_model_loaded": false,
+  "source_sha256": {
+    "maskflow_checkpoint.py": "da241ff2d3f7d306eb1d23abe761506a3cb84f8e532c37803d2403399f8320da",
+    "test_checkpoint_cpu.py": "1d6a2e65d3fdfa7498eea9dabfd98de21902ea3aa190324f17d7bbefc9b59f2f"
+  },
+  "checks": {
+    "actual_inventory_checked_against_receipt": true,
+    "actual_shapes_and_dtype_checked_against_receipt": true,
+    "bf16_roundtrip": {
+      "packed_shape": [
+        1,
+        2304,
+        64
+      ],
+      "packed_dtype": "BF16",
+      "all_nine_tensors_equal": true,
+      "distinct_pm_nm_lengths": [
+        13,
+        7
+      ],
+      "mask_inventory_retained": true,
+      "state_bytes": 1475762
+    },
+    "state_byte_corruption_rejected": true,
+    "schema_step_inventory_rejected": true,
+    "all_five_packed_receipt_shapes_checked": true,
+    "atomic_retention": {
+      "three_unique_committed_states_retained": true,
+      "failed_save_preserves_prior_receipt_and_state": true,
+      "temporary_files_remaining_after_success": 0
+    },
+    "protocol_changes_rejected": [
+      "source_file_sha256",
+      "source_rgb_sha256",
+      "canvas_rgb_sha256",
+      "prompt_sha256",
+      "seed",
+      "width",
+      "height",
+      "known_box_xyxy",
+      "unknown_fill",
+      "steps",
+      "text_cfg",
+      "mask_cfg",
+      "rescale_cfg",
+      "runtime_revision",
+      "official_revision",
+      "port_sha256"
+    ],
+    "incomplete_save_rejected_without_receipt_change": true
+  },
+  "tests_run": 9,
+  "errors": 0,
+  "failures": 0,
+  "notes": [
+    "Real native packed geometry with CPU BF16 tensors; tiny CFG embeddings only.",
+    "Temporary test states are removed after each case; full teacher and GPU are not used.",
+    "Tests check committed receipts and failure retention; they do not simulate OS power loss."
+  ]
+}
