@@ -1,0 +1,22 @@
+{
+  "status": "independently audited CPU derived compositor; quality inconclusive",
+  "independent_reproduction": "exact harmonic-only and both combined outputs",
+  "source_far_and_original_file_integrity": "all passed",
+  "spectral_ratios_independently_recomputed_max_error": 0,
+  "held_out_highlight": "invalid y317/y318; absent y319; only one valid near observation",
+  "cap_analysis": {
+    "cap_255": 24,
+    "top_residual_channel_clamped_fraction": 0.046875,
+    "top_unclamped_min": -27.371694564819336,
+    "top_unclamped_max": 27.546239852905273,
+    "final_output_clipped_fraction": 0,
+    "different_operations": "residual cap clips the additive term; final output clipping clips final RGB pixels"
+  },
+  "visual_limitations": [
+    "full-width water/vegetation/road boundary remains",
+    "bottom grain transition remains",
+    "warm halo-like tint near upper rail/foliage",
+    "changed inner highlight and short kink",
+    "nearest staircase and duplicated/removed grain remain"
+  ]
+}
