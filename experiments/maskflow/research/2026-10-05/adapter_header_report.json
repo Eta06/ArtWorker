@@ -1,0 +1,155 @@
+[
+  {
+    "file": "latest.safetensors",
+    "header_bytes": 152184,
+    "content_range": "bytes 8-152191/2453820032",
+    "metadata": {
+      "lora_adapter_metadata": "{\n  \"alora_invocation_tokens\": null,\n  \"alpha_pattern\": {},\n  \"arrow_config\": null,\n  \"auto_mapping\": null,\n  \"base_model_name_or_path\": null,\n  \"bias\": \"none\",\n  \"corda_config\": null,\n  \"ensure_weight_tying\": false,\n  \"eva_config\": null,\n  \"exclude_modules\": null,\n  \"fan_in_fan_out\": false,\n  \"inference_mode\": false,\n  \"init_lora_weights\": true,\n  \"layer_replication\": null,\n  \"layers_pattern\": null,\n  \"layers_to_transform\": null,\n  \"loftq_config\": {},\n  \"lora_alpha\": 256,\n  \"lora_bias\": false,\n  \"lora_dropout\": 0,\n  \"lora_ga_config\": null,\n  \"megatron_config\": null,\n  \"megatron_core\": \"megatron.core\",\n  \"modules_to_save\": null,\n  \"monteclora_config\": null,\n  \"peft_type\": \"LORA\",\n  \"peft_version\": \"0.20.0\",\n  \"qalora_group_size\": 16,\n  \"r\": 256,\n  \"rank_pattern\": {},\n  \"revision\": null,\n  \"target_modules\": [\n    \"attn.to_add_out\",\n    \"attn.to_out.0\",\n    \"attn.add_k_proj\",\n    \"txt_mlp.net.2\",\n    \"attn.add_v_proj\",\n    \"attn.add_q_proj\",\n    \"attn.to_k\",\n    \"attn.to_v\",\n    \"attn.to_q\",\n    \"img_mlp.net.2\"\n  ],\n  \"target_parameters\": null,\n  \"task_type\": null,\n  \"trainable_token_indices\": null,\n  \"use_bdlora\": null,\n  \"use_dora\": false,\n  \"use_qalora\": false,\n  \"use_rslora\": false,\n  \"velora_config\": null\n}",
+      "format": "pt"
+    },
+    "tensor_count": 1200,
+    "dtypes": [
+      "BF16"
+    ],
+    "params": 1226833920,
+    "shapes": [
+      "[256, 12288]",
+      "[256, 3072]",
+      "[3072, 256]"
+    ],
+    "first_keys": [
+      "transformer_blocks.0.attn.add_k_proj.lora_A.weight",
+      "transformer_blocks.0.attn.add_k_proj.lora_B.weight",
+      "transformer_blocks.0.attn.add_q_proj.lora_A.weight",
+      "transformer_blocks.0.attn.add_q_proj.lora_B.weight",
+      "transformer_blocks.0.attn.add_v_proj.lora_A.weight",
+      "transformer_blocks.0.attn.add_v_proj.lora_B.weight",
+      "transformer_blocks.0.attn.to_add_out.lora_A.weight",
+      "transformer_blocks.0.attn.to_add_out.lora_B.weight",
+      "transformer_blocks.0.attn.to_k.lora_A.weight",
+      "transformer_blocks.0.attn.to_k.lora_B.weight"
+    ],
+    "last_keys": [
+      "transformer_blocks.9.attn.to_v.lora_A.weight",
+      "transformer_blocks.9.attn.to_v.lora_B.weight",
+      "transformer_blocks.9.img_mlp.net.2.lora_A.weight",
+      "transformer_blocks.9.img_mlp.net.2.lora_B.weight",
+      "transformer_blocks.9.txt_mlp.net.2.lora_A.weight",
+      "transformer_blocks.9.txt_mlp.net.2.lora_B.weight"
+    ]
+  },
+  {
+    "file": "maskflow-S.safetensors",
+    "header_bytes": 121248,
+    "content_range": "bytes 8-121255/1510070696",
+    "metadata": {
+      "lora_adapter_metadata": "{\n  \"alora_invocation_tokens\": null,\n  \"alpha_pattern\": {},\n  \"arrow_config\": null,\n  \"auto_mapping\": null,\n  \"base_model_name_or_path\": null,\n  \"bias\": \"none\",\n  \"corda_config\": null,\n  \"ensure_weight_tying\": false,\n  \"eva_config\": null,\n  \"exclude_modules\": null,\n  \"fan_in_fan_out\": false,\n  \"inference_mode\": false,\n  \"init_lora_weights\": true,\n  \"layer_replication\": null,\n  \"layers_pattern\": null,\n  \"layers_to_transform\": null,\n  \"loftq_config\": {},\n  \"lora_alpha\": 256,\n  \"lora_bias\": false,\n  \"lora_dropout\": 0,\n  \"lora_ga_config\": null,\n  \"megatron_config\": null,\n  \"megatron_core\": \"megatron.core\",\n  \"modules_to_save\": null,\n  \"peft_type\": \"LORA\",\n  \"peft_version\": \"0.19.1\",\n  \"qalora_group_size\": 16,\n  \"r\": 256,\n  \"rank_pattern\": {},\n  \"revision\": null,\n  \"target_modules\": [\n    \"attn.add_q_proj\",\n    \"attn.to_out.0\",\n    \"attn.add_v_proj\",\n    \"attn.to_k\",\n    \"attn.to_q\",\n    \"attn.to_add_out\",\n    \"attn.to_v\",\n    \"attn.add_k_proj\"\n  ],\n  \"target_parameters\": null,\n  \"task_type\": null,\n  \"trainable_token_indices\": null,\n  \"use_bdlora\": null,\n  \"use_dora\": false,\n  \"use_qalora\": false,\n  \"use_rslora\": false\n}",
+      "format": "pt"
+    },
+    "tensor_count": 960,
+    "dtypes": [
+      "BF16"
+    ],
+    "params": 754974720,
+    "shapes": [
+      "[256, 3072]",
+      "[3072, 256]"
+    ],
+    "first_keys": [
+      "transformer_blocks.0.attn.add_k_proj.lora_A.weight",
+      "transformer_blocks.0.attn.add_k_proj.lora_B.weight",
+      "transformer_blocks.0.attn.add_q_proj.lora_A.weight",
+      "transformer_blocks.0.attn.add_q_proj.lora_B.weight",
+      "transformer_blocks.0.attn.add_v_proj.lora_A.weight",
+      "transformer_blocks.0.attn.add_v_proj.lora_B.weight",
+      "transformer_blocks.0.attn.to_add_out.lora_A.weight",
+      "transformer_blocks.0.attn.to_add_out.lora_B.weight",
+      "transformer_blocks.0.attn.to_k.lora_A.weight",
+      "transformer_blocks.0.attn.to_k.lora_B.weight"
+    ],
+    "last_keys": [
+      "transformer_blocks.9.attn.to_out.0.lora_A.weight",
+      "transformer_blocks.9.attn.to_out.0.lora_B.weight",
+      "transformer_blocks.9.attn.to_q.lora_A.weight",
+      "transformer_blocks.9.attn.to_q.lora_B.weight",
+      "transformer_blocks.9.attn.to_v.lora_A.weight",
+      "transformer_blocks.9.attn.to_v.lora_B.weight"
+    ]
+  },
+  {
+    "file": "maskflow-S-tcfg4-step8.safetensors",
+    "header_bytes": 121208,
+    "content_range": "bytes 8-121215/1510070656",
+    "metadata": {
+      "lora_adapter_metadata": "{\n  \"alora_invocation_tokens\": null,\n  \"alpha_pattern\": {},\n  \"arrow_config\": null,\n  \"auto_mapping\": null,\n  \"base_model_name_or_path\": null,\n  \"bias\": \"none\",\n  \"corda_config\": null,\n  \"ensure_weight_tying\": false,\n  \"eva_config\": null,\n  \"exclude_modules\": null,\n  \"fan_in_fan_out\": false,\n  \"inference_mode\": false,\n  \"init_lora_weights\": true,\n  \"layer_replication\": null,\n  \"layers_pattern\": null,\n  \"layers_to_transform\": null,\n  \"loftq_config\": {},\n  \"lora_alpha\": 256,\n  \"lora_bias\": false,\n  \"lora_dropout\": 0,\n  \"lora_ga_config\": null,\n  \"megatron_config\": null,\n  \"megatron_core\": \"megatron.core\",\n  \"modules_to_save\": null,\n  \"peft_type\": \"LORA\",\n  \"peft_version\": \"0.19.1\",\n  \"qalora_group_size\": 16,\n  \"r\": 256,\n  \"rank_pattern\": {},\n  \"revision\": null,\n  \"target_modules\": [\n    \"attn.add_v_proj\",\n    \"attn.to_out.0\",\n    \"attn.to_add_out\",\n    \"attn.to_q\",\n    \"attn.add_q_proj\",\n    \"attn.to_k\",\n    \"attn.add_k_proj\",\n    \"attn.to_v\"\n  ],\n  \"target_parameters\": null,\n  \"task_type\": null,\n  \"trainable_token_indices\": null,\n  \"use_bdlora\": null,\n  \"use_dora\": false,\n  \"use_qalora\": false,\n  \"use_rslora\": false\n}",
+      "format": "pt"
+    },
+    "tensor_count": 960,
+    "dtypes": [
+      "BF16"
+    ],
+    "params": 754974720,
+    "shapes": [
+      "[256, 3072]",
+      "[3072, 256]"
+    ],
+    "first_keys": [
+      "transformer_blocks.0.attn.add_k_proj.lora_A.weight",
+      "transformer_blocks.0.attn.add_k_proj.lora_B.weight",
+      "transformer_blocks.0.attn.add_q_proj.lora_A.weight",
+      "transformer_blocks.0.attn.add_q_proj.lora_B.weight",
+      "transformer_blocks.0.attn.add_v_proj.lora_A.weight",
+      "transformer_blocks.0.attn.add_v_proj.lora_B.weight",
+      "transformer_blocks.0.attn.to_add_out.lora_A.weight",
+      "transformer_blocks.0.attn.to_add_out.lora_B.weight",
+      "transformer_blocks.0.attn.to_k.lora_A.weight",
+      "transformer_blocks.0.attn.to_k.lora_B.weight"
+    ],
+    "last_keys": [
+      "transformer_blocks.9.attn.to_out.0.lora_A.weight",
+      "transformer_blocks.9.attn.to_out.0.lora_B.weight",
+      "transformer_blocks.9.attn.to_q.lora_A.weight",
+      "transformer_blocks.9.attn.to_q.lora_B.weight",
+      "transformer_blocks.9.attn.to_v.lora_A.weight",
+      "transformer_blocks.9.attn.to_v.lora_B.weight"
+    ]
+  },
+  {
+    "file": "maskflow-S-tcfg4-step16.safetensors",
+    "header_bytes": 121208,
+    "content_range": "bytes 8-121215/1510070656",
+    "metadata": {
+      "format": "pt",
+      "lora_adapter_metadata": "{\n  \"alora_invocation_tokens\": null,\n  \"alpha_pattern\": {},\n  \"arrow_config\": null,\n  \"auto_mapping\": null,\n  \"base_model_name_or_path\": null,\n  \"bias\": \"none\",\n  \"corda_config\": null,\n  \"ensure_weight_tying\": false,\n  \"eva_config\": null,\n  \"exclude_modules\": null,\n  \"fan_in_fan_out\": false,\n  \"inference_mode\": false,\n  \"init_lora_weights\": true,\n  \"layer_replication\": null,\n  \"layers_pattern\": null,\n  \"layers_to_transform\": null,\n  \"loftq_config\": {},\n  \"lora_alpha\": 256,\n  \"lora_bias\": false,\n  \"lora_dropout\": 0,\n  \"lora_ga_config\": null,\n  \"megatron_config\": null,\n  \"megatron_core\": \"megatron.core\",\n  \"modules_to_save\": null,\n  \"peft_type\": \"LORA\",\n  \"peft_version\": \"0.19.1\",\n  \"qalora_group_size\": 16,\n  \"r\": 256,\n  \"rank_pattern\": {},\n  \"revision\": null,\n  \"target_modules\": [\n    \"attn.to_k\",\n    \"attn.add_k_proj\",\n    \"attn.to_out.0\",\n    \"attn.to_q\",\n    \"attn.add_v_proj\",\n    \"attn.add_q_proj\",\n    \"attn.to_add_out\",\n    \"attn.to_v\"\n  ],\n  \"target_parameters\": null,\n  \"task_type\": null,\n  \"trainable_token_indices\": null,\n  \"use_bdlora\": null,\n  \"use_dora\": false,\n  \"use_qalora\": false,\n  \"use_rslora\": false\n}"
+    },
+    "tensor_count": 960,
+    "dtypes": [
+      "BF16"
+    ],
+    "params": 754974720,
+    "shapes": [
+      "[256, 3072]",
+      "[3072, 256]"
+    ],
+    "first_keys": [
+      "transformer_blocks.0.attn.add_k_proj.lora_A.weight",
+      "transformer_blocks.0.attn.add_k_proj.lora_B.weight",
+      "transformer_blocks.0.attn.add_q_proj.lora_A.weight",
+      "transformer_blocks.0.attn.add_q_proj.lora_B.weight",
+      "transformer_blocks.0.attn.add_v_proj.lora_A.weight",
+      "transformer_blocks.0.attn.add_v_proj.lora_B.weight",
+      "transformer_blocks.0.attn.to_add_out.lora_A.weight",
+      "transformer_blocks.0.attn.to_add_out.lora_B.weight",
+      "transformer_blocks.0.attn.to_k.lora_A.weight",
+      "transformer_blocks.0.attn.to_k.lora_B.weight"
+    ],
+    "last_keys": [
+      "transformer_blocks.9.attn.to_out.0.lora_A.weight",
+      "transformer_blocks.9.attn.to_out.0.lora_B.weight",
+      "transformer_blocks.9.attn.to_q.lora_A.weight",
+      "transformer_blocks.9.attn.to_q.lora_B.weight",
+      "transformer_blocks.9.attn.to_v.lora_A.weight",
+      "transformer_blocks.9.attn.to_v.lora_B.weight"
+    ]
+  }
+]
