@@ -1,0 +1,15 @@
+{
+  "processing_seconds": 0.0,
+  "source_pixels_exact": true,
+  "untouched_outer_pixels_exact": true,
+  "generated_changed_pixel_fraction": 0.0,
+  "generated_mean_abs_change_255": 0.0,
+  "top_join_mean_abs_adjacent_row_jump_255": 8.376302083333334,
+  "bottom_join_mean_abs_adjacent_row_jump_255": 4.724609375,
+  "collar_horizontal_gradient_energy_ratio": 1.0,
+  "rgb_clipped_low_fraction_in_generated": 1.0172526041666667e-06,
+  "rgb_clipped_high_fraction_in_generated": 0.0,
+  "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality.",
+  "composite_path": "experiments/klein_outpaint/compositor_trial/2026-10-06/base12-seed17/baseline/composite.png",
+  "composite_sha256": "cd5ca14b4c9f77b0f8e07456d071c515b1137ec6d94922dbe500b02a5aa1e591"
+}
