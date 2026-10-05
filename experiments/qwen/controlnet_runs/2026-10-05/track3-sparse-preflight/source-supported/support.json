@@ -1,0 +1,31 @@
+{
+  "experimental_sparse_control": true,
+  "support_polarity": "white/True=retain encoded control64; black/False=literal zero64",
+  "guide_geometry_source": "input guide outside known ROI only; never model output",
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "dilation_pixels": 64,
+  "dilation_metric": "exact Euclidean L2 pixel distance",
+  "guide_rgb_uint8_sha256": null,
+  "unknown_guide_pixels": 0,
+  "known_pixels": 262144,
+  "supported_pixels": 262144,
+  "supported_target_tokens": 1024,
+  "total_target_tokens": 2304,
+  "packed_shape": [
+    1,
+    2304,
+    1
+  ],
+  "nearest_coordinates": "floor(output_index*input_size/output_size), raster y-major",
+  "support_pixels_bool_sha256": "3cf569fedc68800ef50b2fed2d20764c47cdee7a68b1f1005f67b55473a1b4e5",
+  "support_tokens_bool_sha256": "73a096e453439a6dfb8120cc2c17ec9103c359567164e1c1f2a23c8915244725",
+  "source_conditioning_channels_changed": false,
+  "support_path": "experiments/qwen/controlnet_runs/2026-10-05/track3-sparse-preflight/source-supported/support.png",
+  "support_png_sha256": "590db2e79295c7e16a8f4e1ca5801525b1c2852c6027144c4164eac8cc7627d3",
+  "guide_file_sha256": null
+}
