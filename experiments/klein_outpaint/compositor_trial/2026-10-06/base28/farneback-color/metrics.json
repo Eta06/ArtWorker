@@ -1,0 +1,65 @@
+{
+  "optical_flow": "farneback",
+  "flow_tangent_extrapolation": false,
+  "harmonic_color": true,
+  "strip_pixels": 96,
+  "warp_interpolation": "linear",
+  "color_sigma_x": 6,
+  "residual_cap_255": 24,
+  "registration": {
+    "algorithm": "farneback",
+    "cap_pixels": 24.0,
+    "source_before_mae_255": 16.31915537516276,
+    "source_after_mae_255": 15.118840535481771,
+    "source_top16_after_mae_255": 16.811442057291668,
+    "source_bottom16_after_mae_255": 10.286336263020834,
+    "flow_magnitude_p50": 0.2907072901725769,
+    "flow_magnitude_p95": 1.9372106790542603,
+    "flow_magnitude_max_before_cap": 7.9762654304504395
+  },
+  "exterior_flow": {
+    "top": {
+      "boundary_mean_dx": -0.36770668625831604,
+      "boundary_mean_dy": -0.7419942617416382,
+      "boundary_max_displacement": 6.738808631896973
+    },
+    "bottom": {
+      "boundary_mean_dx": 0.0016126986593008041,
+      "boundary_mean_dy": -0.03496481478214264,
+      "boundary_max_displacement": 0.5631959438323975
+    }
+  },
+  "color_residual": {
+    "top": {
+      "residual_mean_rgb": [
+        -2.738205671310425,
+        -13.163370132446289,
+        -4.669697284698486
+      ],
+      "residual_abs_p95_255": 24.0,
+      "residual_max_255": 24.0
+    },
+    "bottom": {
+      "residual_mean_rgb": [
+        16.35719108581543,
+        3.2110016345977783,
+        3.5817646980285645
+      ],
+      "residual_abs_p95_255": 22.10175895690918,
+      "residual_max_255": 24.0
+    }
+  },
+  "processing_seconds": 0.04204758400010178,
+  "source_pixels_exact": true,
+  "untouched_outer_pixels_exact": true,
+  "generated_changed_pixel_fraction": 0.2878692626953125,
+  "generated_mean_abs_change_255": 1.7875264485677083,
+  "top_join_mean_abs_adjacent_row_jump_255": 9.697265625,
+  "bottom_join_mean_abs_adjacent_row_jump_255": 5.750651041666667,
+  "collar_horizontal_gradient_energy_ratio": 0.8012195239153124,
+  "rgb_clipped_low_fraction_in_generated": 0.0079986572265625,
+  "rgb_clipped_high_fraction_in_generated": 0.0,
+  "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality.",
+  "composite_path": "experiments/klein_outpaint/compositor_trial/2026-10-06/base28/farneback-color/composite.png",
+  "composite_sha256": "235663f7c8cb6c9bdfd3f8c269a030a90add446b83c8829f87a6ac2a4e4431ec"
+}
