@@ -1,0 +1,1 @@
+This is a derived compositor input, not model raw. Its exterior comes from the saved profile warp. Its known square retains the original generator decoder pixels solely for the original-source RGB residual calculation. The original model raw.png is untouched.
