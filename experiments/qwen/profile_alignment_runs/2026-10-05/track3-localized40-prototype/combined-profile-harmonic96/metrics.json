@@ -1,0 +1,1365 @@
+{
+  "status": "CPU derived compositor; quality inconclusive",
+  "source_rect_xyxy": [
+    0,
+    320,
+    512,
+    832
+  ],
+  "device": "CPU only",
+  "no_optical_flow_or_model_calls": true,
+  "original_generator_raw_unchanged": true,
+  "input_and_frozen_hashes_before": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/tangent-canny/localized-hints/raw.png": "b47c8d1f86b345fa2f1490aed71c973a1890171f6f9a44502e1c1480646561c9",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/tangent-canny/localized-hints/composite.png": "0499773395f8a40c30b2eb5182a431202a2488f7a957254b99dfbe118479ae85",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track3/source_512.png": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/Player/Resources/track3.jpg": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_boundary_compositor.py": "5f2ee66d65106dbb050529b5498116aec659c223a4a4e30f5912b2d7a4f867b7",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/evaluate_boundary.py": "1071b971c7122e17170b5a545219554e56db35818026a23f9caa2f9f58f83578",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/evaluate_source_tangent.py": "81d9d3e03b5bfb59b3eacb97e7d1658ab1fc8afb0c82dda5f08bdfb8ecdcc4bf"
+  },
+  "harmonic_helper": "imported unchanged run_boundary_compositor.harmonic_transfer",
+  "harmonic_settings": {
+    "strip_pixels": 96,
+    "residual_source": "original generator decoded known pixels only",
+    "sigma_x": 6,
+    "residual_cap_255": 24
+  },
+  "constant_mode_cpu_preflight_passed": true,
+  "spectral_original": {
+    "top96_full_width": {
+      "roi_xyxy": [
+        0,
+        224,
+        512,
+        320
+      ],
+      "row_mean_removed": true,
+      "window": "Hann along x only; analysis, no pixel filtering",
+      "frequency_units": "cycles/pixel",
+      "band_power": {
+        "low": 255048.507275882,
+        "middle": 12868.520021753944,
+        "high": 1830.6287508013443
+      },
+      "x_difference_squared_mean": 32.608733578676606,
+      "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+    },
+    "top_rail_patch_includes_edges": {
+      "roi_xyxy": [
+        280,
+        288,
+        380,
+        320
+      ],
+      "row_mean_removed": true,
+      "window": "Hann along x only; analysis, no pixel filtering",
+      "frequency_units": "cycles/pixel",
+      "band_power": {
+        "low": 30511.739359105286,
+        "middle": 11232.900968513659,
+        "high": 597.7266804352432
+      },
+      "x_difference_squared_mean": 76.9196929352904,
+      "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+    },
+    "top_vegetation_no_geometry_warp": {
+      "roi_xyxy": [
+        200,
+        288,
+        260,
+        320
+      ],
+      "row_mean_removed": true,
+      "window": "Hann along x only; analysis, no pixel filtering",
+      "frequency_units": "cycles/pixel",
+      "band_power": {
+        "low": 4444.730144322186,
+        "middle": 2963.336907687247,
+        "high": 403.30541607175707
+      },
+      "x_difference_squared_mean": 58.30865522567796,
+      "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+    },
+    "bottom96_full_width": {
+      "roi_xyxy": [
+        0,
+        832,
+        512,
+        928
+      ],
+      "row_mean_removed": true,
+      "window": "Hann along x only; analysis, no pixel filtering",
+      "frequency_units": "cycles/pixel",
+      "band_power": {
+        "low": 4060.4256378375235,
+        "middle": 4311.790397400508,
+        "high": 2284.5174120720712
+      },
+      "x_difference_squared_mean": 27.7655891735486,
+      "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+    }
+  },
+  "limits": [
+    "A labeled derived_raw is a compositor intermediate, not a model-generated raw output.",
+    "The first highlight identity remains missing/invalid near the join; RGB residual cannot restore it.",
+    "Harmonic RGB adds a smooth correction without filtering model pixels, but quantization/clipping can change high frequencies.",
+    "Nearest profile sampling adds no interpolated RGB before RGB correction; harmonic correction does create new RGB values.",
+    "Profile sampling stretches/compresses texture. Spectral power also includes scene edges and cannot prove grain preservation."
+  ],
+  "variants": {
+    "harmonic-only": {
+      "preservation": {
+        "source_pixels_exact": true,
+        "far_exterior_pixels_exact": true,
+        "source_pixels_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+        "original_source_pixels_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+        "far_exterior_pixels_sha256": "2acb58553b755806a19a404c390e11a820eeac69dd38b0fdc450bdae9b70a170",
+        "original_far_exterior_pixels_sha256": "2acb58553b755806a19a404c390e11a820eeac69dd38b0fdc450bdae9b70a170",
+        "far_region": "top rows0..223 and bottom rows928..1151, full width",
+        "top_join_rgb_mae": 11.108723958333334,
+        "bottom_join_rgb_mae": 5.272786458333333,
+        "source_boundary_metrics": {
+          "source_pixels_exact": true,
+          "source_mae_255": 0.0,
+          "source_top16_mae_255": 0.0,
+          "source_bottom16_mae_255": 0.0,
+          "source_inner_mae_255": 0.0,
+          "boundaries": {
+            "top": {
+              "luminance_adjacent_row_mae_255": 11.047575,
+              "luminance_adjacent_row_p90_255": 23.40192000000001,
+              "nearby_row_change_mae_255": 6.359264098011363,
+              "join_to_nearby_change_ratio": 1.7372411067901303,
+              "x_texture_gradient_above_mean_255": 4.116392832681018,
+              "x_texture_gradient_below_mean_255": 3.979717049902152,
+              "above_luminance_mean_255": 78.93869536132812,
+              "below_luminance_mean_255": 88.79794060058593
+            },
+            "bottom": {
+              "luminance_adjacent_row_mae_255": 5.318334375,
+              "luminance_adjacent_row_p90_255": 10.787400000000005,
+              "nearby_row_change_mae_255": 3.3316150568181815,
+              "join_to_nearby_change_ratio": 1.5963231898943364,
+              "x_texture_gradient_above_mean_255": 3.614871648727984,
+              "x_texture_gradient_below_mean_255": 3.7732663649706457,
+              "above_luminance_mean_255": 50.61076872558593,
+              "below_luminance_mean_255": 47.01351264648437
+            }
+          }
+        }
+      },
+      "spectral": {
+        "top96_full_width": {
+          "roi_xyxy": [
+            0,
+            224,
+            512,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 285023.0016181265,
+            "middle": 12855.668030805464,
+            "high": 1833.0689883068883
+          },
+          "x_difference_squared_mean": 32.65019589365296,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "top_rail_patch_includes_edges": {
+          "roi_xyxy": [
+            280,
+            288,
+            380,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 33846.609984067,
+            "middle": 11186.398552612925,
+            "high": 599.3642699922569
+          },
+          "x_difference_squared_mean": 77.08564383574495,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "top_vegetation_no_geometry_warp": {
+          "roi_xyxy": [
+            200,
+            288,
+            260,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 5300.386459011045,
+            "middle": 2973.1832602888785,
+            "high": 403.69355394428214
+          },
+          "x_difference_squared_mean": 58.72178995527541,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "bottom96_full_width": {
+          "roi_xyxy": [
+            0,
+            832,
+            512,
+            928
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 4460.804781930954,
+            "middle": 4316.275057131244,
+            "high": 2285.4399032681577
+          },
+          "x_difference_squared_mean": 27.780174693251787,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        }
+      }
+    },
+    "profile64": {
+      "input_profile_sha256": "b7d303d5013365be3ec021980911915b1e31706d32623bb08cd8328a1cd713a8",
+      "derived_raw_sha256": "32aeddcf37bfb18e1601019897eab3a8235dfbd544e4b45487ef171555f961d3",
+      "derived_known_crop_exact_original_generator_decode": true,
+      "derived_exterior_exact_saved_profile": true,
+      "original_decoder_known_crop_sha256": "309319bed523c2f3cb95044291056552568300b5664db06d574e1d5b254f001a",
+      "derived_known_crop_sha256": "309319bed523c2f3cb95044291056552568300b5664db06d574e1d5b254f001a",
+      "identical_harmonic_additive_term_max_float32_error": 7.62939453125e-06,
+      "harmonic_residual_details": {
+        "top": {
+          "residual_mean_rgb": [
+            6.83503532409668,
+            -1.1021488904953003,
+            -8.661523818969727
+          ],
+          "residual_abs_p95_255": 23.36876678466797,
+          "residual_max_255": 24.0
+        },
+        "bottom": {
+          "residual_mean_rgb": [
+            2.5690698623657227,
+            -1.8586726188659668,
+            -2.9538066387176514
+          ],
+          "residual_abs_p95_255": 6.122265815734863,
+          "residual_max_255": 8.918508529663086
+        }
+      },
+      "preservation": {
+        "source_pixels_exact": true,
+        "far_exterior_pixels_exact": true,
+        "source_pixels_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+        "original_source_pixels_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+        "far_exterior_pixels_sha256": "2acb58553b755806a19a404c390e11a820eeac69dd38b0fdc450bdae9b70a170",
+        "original_far_exterior_pixels_sha256": "2acb58553b755806a19a404c390e11a820eeac69dd38b0fdc450bdae9b70a170",
+        "far_region": "top rows0..223 and bottom rows928..1151, full width",
+        "top_join_rgb_mae": 12.417317708333334,
+        "bottom_join_rgb_mae": 5.272786458333333,
+        "source_boundary_metrics": {
+          "source_pixels_exact": true,
+          "source_mae_255": 0.0,
+          "source_top16_mae_255": 0.0,
+          "source_bottom16_mae_255": 0.0,
+          "source_inner_mae_255": 0.0,
+          "boundaries": {
+            "top": {
+              "luminance_adjacent_row_mae_255": 12.286133203124999,
+              "luminance_adjacent_row_p90_255": 28.166980000000024,
+              "nearby_row_change_mae_255": 6.310958611505682,
+              "join_to_nearby_change_ratio": 1.9467934999170826,
+              "x_texture_gradient_above_mean_255": 4.008183781800391,
+              "x_texture_gradient_below_mean_255": 3.979717049902152,
+              "above_luminance_mean_255": 78.18936396484375,
+              "below_luminance_mean_255": 88.79794060058593
+            },
+            "bottom": {
+              "luminance_adjacent_row_mae_255": 5.318334375,
+              "luminance_adjacent_row_p90_255": 10.787400000000005,
+              "nearby_row_change_mae_255": 3.3316150568181815,
+              "join_to_nearby_change_ratio": 1.5963231898943364,
+              "x_texture_gradient_above_mean_255": 3.614871648727984,
+              "x_texture_gradient_below_mean_255": 3.7732663649706457,
+              "above_luminance_mean_255": 50.61076872558593,
+              "below_luminance_mean_255": 47.01351264648437
+            }
+          }
+        }
+      },
+      "spectral_before_warp": {
+        "top96_full_width": {
+          "roi_xyxy": [
+            0,
+            224,
+            512,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 255048.507275882,
+            "middle": 12868.520021753944,
+            "high": 1830.6287508013443
+          },
+          "x_difference_squared_mean": 32.608733578676606,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "top_rail_patch_includes_edges": {
+          "roi_xyxy": [
+            280,
+            288,
+            380,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 30511.739359105286,
+            "middle": 11232.900968513659,
+            "high": 597.7266804352432
+          },
+          "x_difference_squared_mean": 76.9196929352904,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "top_vegetation_no_geometry_warp": {
+          "roi_xyxy": [
+            200,
+            288,
+            260,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 4444.730144322186,
+            "middle": 2963.336907687247,
+            "high": 403.30541607175707
+          },
+          "x_difference_squared_mean": 58.30865522567796,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "bottom96_full_width": {
+          "roi_xyxy": [
+            0,
+            832,
+            512,
+            928
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 4060.4256378375235,
+            "middle": 4311.790397400508,
+            "high": 2284.5174120720712
+          },
+          "x_difference_squared_mean": 27.7655891735486,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        }
+      },
+      "spectral_warp": {
+        "top96_full_width": {
+          "roi_xyxy": [
+            0,
+            224,
+            512,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 256741.41576309557,
+            "middle": 11997.974952418008,
+            "high": 1776.958424669873
+          },
+          "x_difference_squared_mean": 31.87231536300799,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "top_rail_patch_includes_edges": {
+          "roi_xyxy": [
+            280,
+            288,
+            380,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 25659.596928924027,
+            "middle": 10125.748024246126,
+            "high": 636.9894234751811
+          },
+          "x_difference_squared_mean": 73.47658023328283,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "top_vegetation_no_geometry_warp": {
+          "roi_xyxy": [
+            200,
+            288,
+            260,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 4444.730144322186,
+            "middle": 2963.336907687247,
+            "high": 403.30541607175707
+          },
+          "x_difference_squared_mean": 58.30865522567796,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "bottom96_full_width": {
+          "roi_xyxy": [
+            0,
+            832,
+            512,
+            928
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 4060.4256378375235,
+            "middle": 4311.790397400508,
+            "high": 2284.5174120720712
+          },
+          "x_difference_squared_mean": 27.7655891735486,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        }
+      },
+      "spectral_combined": {
+        "top96_full_width": {
+          "roi_xyxy": [
+            0,
+            224,
+            512,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 287746.8719767885,
+            "middle": 11990.916073023882,
+            "high": 1779.5684778002897
+          },
+          "x_difference_squared_mean": 31.916149568608937,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "top_rail_patch_includes_edges": {
+          "roi_xyxy": [
+            280,
+            288,
+            380,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 28729.739109225695,
+            "middle": 10126.0678784651,
+            "high": 638.0990920307282
+          },
+          "x_difference_squared_mean": 73.67503848156564,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "top_vegetation_no_geometry_warp": {
+          "roi_xyxy": [
+            200,
+            288,
+            260,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 5300.386459011045,
+            "middle": 2973.1832602888785,
+            "high": 403.69355394428214
+          },
+          "x_difference_squared_mean": 58.72178995527541,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "bottom96_full_width": {
+          "roi_xyxy": [
+            0,
+            832,
+            512,
+            928
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 4460.804781930954,
+            "middle": 4316.275057131244,
+            "high": 2285.4399032681577
+          },
+          "x_difference_squared_mean": 27.780174693251787,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        }
+      },
+      "spectral_ratio_warp_to_original": {
+        "top96_full_width": {
+          "low": 1.0066375941788297,
+          "middle": 0.9323508011904789,
+          "high": 0.9706820259935405
+        },
+        "top_rail_patch_includes_edges": {
+          "low": 0.8409745713584406,
+          "middle": 0.9014365970668723,
+          "high": 1.065686783483294
+        },
+        "top_vegetation_no_geometry_warp": {
+          "low": 1.0,
+          "middle": 1.0,
+          "high": 1.0
+        },
+        "bottom96_full_width": {
+          "low": 1.0,
+          "middle": 1.0,
+          "high": 1.0
+        }
+      },
+      "spectral_ratio_combined_to_warp": {
+        "top96_full_width": {
+          "low": 1.1207653082442404,
+          "middle": 0.9994116607659109,
+          "high": 1.0014688318500764
+        },
+        "top_rail_patch_includes_edges": {
+          "low": 1.119648885709539,
+          "middle": 1.0000315882064426,
+          "high": 1.0017420517745699
+        },
+        "top_vegetation_no_geometry_warp": {
+          "low": 1.1925102957672014,
+          "middle": 1.0033227246541185,
+          "high": 1.0009623919170378
+        },
+        "bottom96_full_width": {
+          "low": 1.0986052152667083,
+          "middle": 1.0010400922395113,
+          "high": 1.0004038013416803
+        }
+      },
+      "clip_fraction_before_rounding_low": 0.0,
+      "clip_fraction_before_rounding_high": 0.0,
+      "edge_diagnostic": {
+        "edges": {
+          "outer_positive": {
+            "role": "fitted anchor",
+            "observations": 4,
+            "median_offset_px": -0.40960139231921744,
+            "p90_absolute_offset_px": 1.8895060287064895,
+            "minimum_strength": 8.5427,
+            "identity_invalid_rows": [],
+            "valid_identity_observations": 4,
+            "valid_identity_median_offset_px": -0.40960139231921744,
+            "identity_status": "observed identity; no quality acceptance",
+            "points": [
+              {
+                "y": 316,
+                "x": 315.8389500871297,
+                "offset_px": -2.179070600322632
+              },
+              {
+                "y": 317,
+                "x": 314.9258632362898,
+                "offset_px": -1.2138553616021568
+              },
+              {
+                "y": 318,
+                "x": 314.65606908529526,
+                "offset_px": 0.3946525769637219
+              },
+              {
+                "y": 319,
+                "x": 312.85081708807826,
+                "offset_px": 0.46770266930707294
+              }
+            ]
+          },
+          "highlight_negative": {
+            "role": "held out",
+            "observations": 3,
+            "median_offset_px": 0.6534156114763618,
+            "p90_absolute_offset_px": 1.847211005482859,
+            "minimum_strength": 6.527500000000003,
+            "identity_invalid_rows": [
+              317,
+              318
+            ],
+            "valid_identity_observations": 1,
+            "valid_identity_median_offset_px": -1.9136897176581442,
+            "identity_status": "insufficient near rows",
+            "points": [
+              {
+                "y": 316,
+                "x": 319.46241769623435,
+                "offset_px": -1.9136897176581442
+              },
+              {
+                "y": 317,
+                "x": 320.1520428401428,
+                "offset_px": 0.6534156114763618
+              },
+              {
+                "y": 318,
+                "x": 319.2024432002221,
+                "offset_px": 1.5812961567817183
+              }
+            ]
+          },
+          "inner_positive": {
+            "role": "fitted anchor",
+            "observations": 3,
+            "median_offset_px": 0.11357789417735376,
+            "p90_absolute_offset_px": 1.0305769203371824,
+            "minimum_strength": 6.3977,
+            "identity_invalid_rows": [],
+            "valid_identity_observations": 3,
+            "valid_identity_median_offset_px": 0.11357789417735376,
+            "identity_status": "observed identity; no quality acceptance",
+            "points": [
+              {
+                "y": 316,
+                "x": 325.02378050788843,
+                "offset_px": 0.009945266281931708
+              },
+              {
+                "y": 317,
+                "x": 323.2906824236628,
+                "offset_px": 0.11357789417735376
+              },
+              {
+                "y": 318,
+                "x": 322.6002004942416,
+                "offset_px": 1.2598266768771396
+              }
+            ]
+          },
+          "closing_negative": {
+            "role": "fitted anchor",
+            "observations": 3,
+            "median_offset_px": 0.5022346845869379,
+            "p90_absolute_offset_px": 1.2880893319521534,
+            "minimum_strength": 5.606299999999997,
+            "identity_invalid_rows": [],
+            "valid_identity_observations": 3,
+            "valid_identity_median_offset_px": 0.5022346845869379,
+            "identity_status": "observed identity; no quality acceptance",
+            "points": [
+              {
+                "y": 317,
+                "x": 325.9545798465566,
+                "offset_px": -1.29736495184045
+              },
+              {
+                "y": 318,
+                "x": 325.9143184194907,
+                "offset_px": 0.5022346845869379
+              },
+              {
+                "y": 319,
+                "x": 324.8232095238095,
+                "offset_px": 1.2509868523989667
+              }
+            ]
+          }
+        },
+        "upper_band_widths": [
+          {
+            "y": 317,
+            "actual_px": 11.028716610266827,
+            "source_tangent_px": 11.11222620050512
+          },
+          {
+            "y": 318,
+            "actual_px": 11.258249334195455,
+            "source_tangent_px": 11.150667226572239
+          },
+          {
+            "y": 319,
+            "actual_px": 11.972392435731251,
+            "source_tangent_px": 11.189108252639357
+          }
+        ],
+        "ambiguous_rows": [
+          311,
+          317,
+          318,
+          319
+        ],
+        "missing_closing_rows": [
+          315,
+          316
+        ],
+        "extra_positive_ridges": {
+          "311": [
+            {
+              "y": 311,
+              "x": 340.5294598564421,
+              "strength": 8.572199999999995,
+              "polarity": 1,
+              "valid": true
+            }
+          ],
+          "312": [
+            {
+              "y": 312,
+              "x": 337.2108441643692,
+              "strength": 9.287400000000005,
+              "polarity": 1,
+              "valid": true
+            }
+          ],
+          "313": [
+            {
+              "y": 313,
+              "x": 335.6879892809828,
+              "strength": 11.393699999999995,
+              "polarity": 1,
+              "valid": true
+            }
+          ],
+          "314": [
+            {
+              "y": 314,
+              "x": 333.6068718606391,
+              "strength": 10.4298,
+              "polarity": 1,
+              "valid": true
+            }
+          ],
+          "315": [
+            {
+              "y": 315,
+              "x": 331.4163574158125,
+              "strength": 12.393700000000003,
+              "polarity": 1,
+              "valid": true
+            }
+          ],
+          "316": [
+            {
+              "y": 316,
+              "x": 329.71389451439643,
+              "strength": 12.4298,
+              "polarity": 1,
+              "valid": true
+            }
+          ],
+          "317": [
+            {
+              "y": 317,
+              "x": 328.88351924573533,
+              "strength": 14.645000000000003,
+              "polarity": 1,
+              "valid": true
+            }
+          ],
+          "318": [
+            {
+              "y": 318,
+              "x": 328.2852487698196,
+              "strength": 13.110899999999997,
+              "polarity": 1,
+              "valid": true
+            }
+          ]
+        }
+      },
+      "output_sha256": "4ea2f38ae55b369d42d5d2c89714c8ed042702a6355aa352cb36959f150d4ade"
+    },
+    "nearest64": {
+      "input_profile_sha256": "c26f24a50e457cb623f9233dfd69bfc61b24dc1280fd996a1a4256c2eacfdd56",
+      "derived_raw_sha256": "a11cdfec3031bcc8fb95adfe46ca413ab3f2991450a3a4a5bc65ce19f4cc6be8",
+      "derived_known_crop_exact_original_generator_decode": true,
+      "derived_exterior_exact_saved_profile": true,
+      "original_decoder_known_crop_sha256": "309319bed523c2f3cb95044291056552568300b5664db06d574e1d5b254f001a",
+      "derived_known_crop_sha256": "309319bed523c2f3cb95044291056552568300b5664db06d574e1d5b254f001a",
+      "identical_harmonic_additive_term_max_float32_error": 7.62939453125e-06,
+      "harmonic_residual_details": {
+        "top": {
+          "residual_mean_rgb": [
+            6.83503532409668,
+            -1.1021488904953003,
+            -8.661523818969727
+          ],
+          "residual_abs_p95_255": 23.36876678466797,
+          "residual_max_255": 24.0
+        },
+        "bottom": {
+          "residual_mean_rgb": [
+            2.5690698623657227,
+            -1.8586726188659668,
+            -2.9538066387176514
+          ],
+          "residual_abs_p95_255": 6.122265815734863,
+          "residual_max_255": 8.918508529663086
+        }
+      },
+      "preservation": {
+        "source_pixels_exact": true,
+        "far_exterior_pixels_exact": true,
+        "source_pixels_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+        "original_source_pixels_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+        "far_exterior_pixels_sha256": "2acb58553b755806a19a404c390e11a820eeac69dd38b0fdc450bdae9b70a170",
+        "original_far_exterior_pixels_sha256": "2acb58553b755806a19a404c390e11a820eeac69dd38b0fdc450bdae9b70a170",
+        "far_region": "top rows0..223 and bottom rows928..1151, full width",
+        "top_join_rgb_mae": 12.399088541666666,
+        "bottom_join_rgb_mae": 5.272786458333333,
+        "source_boundary_metrics": {
+          "source_pixels_exact": true,
+          "source_mae_255": 0.0,
+          "source_top16_mae_255": 0.0,
+          "source_bottom16_mae_255": 0.0,
+          "source_inner_mae_255": 0.0,
+          "boundaries": {
+            "top": {
+              "luminance_adjacent_row_mae_255": 12.283517578125,
+              "luminance_adjacent_row_p90_255": 28.289479999999994,
+              "nearby_row_change_mae_255": 6.354511754261363,
+              "join_to_nearby_change_ratio": 1.9330387688538966,
+              "x_texture_gradient_above_mean_255": 4.069085543052838,
+              "x_texture_gradient_below_mean_255": 3.979717049902152,
+              "above_luminance_mean_255": 78.16102216796875,
+              "below_luminance_mean_255": 88.79794060058593
+            },
+            "bottom": {
+              "luminance_adjacent_row_mae_255": 5.318334375,
+              "luminance_adjacent_row_p90_255": 10.787400000000005,
+              "nearby_row_change_mae_255": 3.3316150568181815,
+              "join_to_nearby_change_ratio": 1.5963231898943364,
+              "x_texture_gradient_above_mean_255": 3.614871648727984,
+              "x_texture_gradient_below_mean_255": 3.7732663649706457,
+              "above_luminance_mean_255": 50.61076872558593,
+              "below_luminance_mean_255": 47.01351264648437
+            }
+          }
+        }
+      },
+      "spectral_before_warp": {
+        "top96_full_width": {
+          "roi_xyxy": [
+            0,
+            224,
+            512,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 255048.507275882,
+            "middle": 12868.520021753944,
+            "high": 1830.6287508013443
+          },
+          "x_difference_squared_mean": 32.608733578676606,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "top_rail_patch_includes_edges": {
+          "roi_xyxy": [
+            280,
+            288,
+            380,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 30511.739359105286,
+            "middle": 11232.900968513659,
+            "high": 597.7266804352432
+          },
+          "x_difference_squared_mean": 76.9196929352904,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "top_vegetation_no_geometry_warp": {
+          "roi_xyxy": [
+            200,
+            288,
+            260,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 4444.730144322186,
+            "middle": 2963.336907687247,
+            "high": 403.30541607175707
+          },
+          "x_difference_squared_mean": 58.30865522567796,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "bottom96_full_width": {
+          "roi_xyxy": [
+            0,
+            832,
+            512,
+            928
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 4060.4256378375235,
+            "middle": 4311.790397400508,
+            "high": 2284.5174120720712
+          },
+          "x_difference_squared_mean": 27.7655891735486,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        }
+      },
+      "spectral_warp": {
+        "top96_full_width": {
+          "roi_xyxy": [
+            0,
+            224,
+            512,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 256775.48354832467,
+            "middle": 12184.524678734835,
+            "high": 1946.1883896941417
+          },
+          "x_difference_squared_mean": 33.78239131189579,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "top_rail_patch_includes_edges": {
+          "roi_xyxy": [
+            280,
+            288,
+            380,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 25558.782289859708,
+            "middle": 10500.576829669537,
+            "high": 1078.9917753203429
+          },
+          "x_difference_squared_mean": 90.5675590732197,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "top_vegetation_no_geometry_warp": {
+          "roi_xyxy": [
+            200,
+            288,
+            260,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 4444.730144322186,
+            "middle": 2963.336907687247,
+            "high": 403.30541607175707
+          },
+          "x_difference_squared_mean": 58.30865522567796,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "bottom96_full_width": {
+          "roi_xyxy": [
+            0,
+            832,
+            512,
+            928
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 4060.4256378375235,
+            "middle": 4311.790397400508,
+            "high": 2284.5174120720712
+          },
+          "x_difference_squared_mean": 27.7655891735486,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        }
+      },
+      "spectral_combined": {
+        "top96_full_width": {
+          "roi_xyxy": [
+            0,
+            224,
+            512,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 287777.71588071354,
+            "middle": 12177.90233413114,
+            "high": 1948.6137231783505
+          },
+          "x_difference_squared_mean": 33.82483141386986,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "top_rail_patch_includes_edges": {
+          "roi_xyxy": [
+            280,
+            288,
+            380,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 28589.53292243467,
+            "middle": 10502.014272591607,
+            "high": 1079.454927074255
+          },
+          "x_difference_squared_mean": 90.76580246882577,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "top_vegetation_no_geometry_warp": {
+          "roi_xyxy": [
+            200,
+            288,
+            260,
+            320
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 5300.386459011045,
+            "middle": 2973.1832602888785,
+            "high": 403.69355394428214
+          },
+          "x_difference_squared_mean": 58.72178995527541,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        },
+        "bottom96_full_width": {
+          "roi_xyxy": [
+            0,
+            832,
+            512,
+            928
+          ],
+          "row_mean_removed": true,
+          "window": "Hann along x only; analysis, no pixel filtering",
+          "frequency_units": "cycles/pixel",
+          "band_power": {
+            "low": 4460.804781930954,
+            "middle": 4316.275057131244,
+            "high": 2285.4399032681577
+          },
+          "x_difference_squared_mean": 27.780174693251787,
+          "limitation": "This measures spectral texture including object edges, not a semantic grain estimator."
+        }
+      },
+      "spectral_ratio_warp_to_original": {
+        "top96_full_width": {
+          "low": 1.0067711679275764,
+          "middle": 0.9468473964478564,
+          "high": 1.063125654965384
+        },
+        "top_rail_patch_includes_edges": {
+          "low": 0.83767044510468,
+          "middle": 0.9348054308591467,
+          "high": 1.805159131485748
+        },
+        "top_vegetation_no_geometry_warp": {
+          "low": 1.0,
+          "middle": 1.0,
+          "high": 1.0
+        },
+        "bottom96_full_width": {
+          "low": 1.0,
+          "middle": 1.0,
+          "high": 1.0
+        }
+      },
+      "spectral_ratio_combined_to_warp": {
+        "top96_full_width": {
+          "low": 1.1207367304073417,
+          "middle": 0.9994564954499002,
+          "high": 1.0012461966668036
+        },
+        "top_rail_patch_includes_edges": {
+          "low": 1.1185796176908396,
+          "middle": 1.0001368918056015,
+          "high": 1.0004292449344896
+        },
+        "top_vegetation_no_geometry_warp": {
+          "low": 1.1925102957672014,
+          "middle": 1.0033227246541185,
+          "high": 1.0009623919170378
+        },
+        "bottom96_full_width": {
+          "low": 1.0986052152667083,
+          "middle": 1.0010400922395113,
+          "high": 1.0004038013416803
+        }
+      },
+      "clip_fraction_before_rounding_low": 0.0,
+      "clip_fraction_before_rounding_high": 0.0,
+      "edge_diagnostic": {
+        "edges": {
+          "outer_positive": {
+            "role": "fitted anchor",
+            "observations": 4,
+            "median_offset_px": -0.6266479634533084,
+            "p90_absolute_offset_px": 1.3770940094813853,
+            "minimum_strength": 9.470500000000005,
+            "identity_invalid_rows": [],
+            "valid_identity_observations": 4,
+            "valid_identity_median_offset_px": -0.6266479634533084,
+            "identity_status": "observed identity; no quality acceptance",
+            "points": [
+              {
+                "y": 316,
+                "x": 316.5730933966976,
+                "offset_px": -1.4449272907547765
+              },
+              {
+                "y": 317,
+                "x": 314.92090224471514,
+                "offset_px": -1.2188163531768055
+              },
+              {
+                "y": 318,
+                "x": 314.2269369346017,
+                "offset_px": -0.034479573729811364
+              },
+              {
+                "y": 319,
+                "x": 312.9130732879274,
+                "offset_px": 0.5299588691561894
+              }
+            ]
+          },
+          "highlight_negative": {
+            "role": "held out",
+            "observations": 3,
+            "median_offset_px": 0.6925844010565925,
+            "p90_absolute_offset_px": 1.9431223975116267,
+            "minimum_strength": 7.1699000000000055,
+            "identity_invalid_rows": [
+              317,
+              318
+            ],
+            "valid_identity_observations": 1,
+            "valid_identity_median_offset_px": -2.021721565984137,
+            "identity_status": "insufficient near rows",
+            "points": [
+              {
+                "y": 316,
+                "x": 319.35438584790836,
+                "offset_px": -2.021721565984137
+              },
+              {
+                "y": 317,
+                "x": 320.19121162972306,
+                "offset_px": 0.6925844010565925
+              },
+              {
+                "y": 318,
+                "x": 319.24987276706196,
+                "offset_px": 1.628725723621585
+              }
+            ]
+          },
+          "inner_positive": {
+            "role": "fitted anchor",
+            "observations": 3,
+            "median_offset_px": 0.18267062226914277,
+            "p90_absolute_offset_px": 1.0900839378590719,
+            "minimum_strength": 5.9298,
+            "identity_invalid_rows": [],
+            "valid_identity_observations": 3,
+            "valid_identity_median_offset_px": 0.18267062226914277,
+            "identity_status": "observed identity; no quality acceptance",
+            "points": [
+              {
+                "y": 316,
+                "x": 324.9385561737568,
+                "offset_px": -0.07527906784969218
+              },
+              {
+                "y": 317,
+                "x": 323.3597751517546,
+                "offset_px": 0.18267062226914277
+              },
+              {
+                "y": 318,
+                "x": 322.65731108412103,
+                "offset_px": 1.316937266756554
+              }
+            ]
+          },
+          "closing_negative": {
+            "role": "fitted anchor",
+            "observations": 3,
+            "median_offset_px": 0.2933290884151347,
+            "p90_absolute_offset_px": 1.217345224115229,
+            "minimum_strength": 5.963899999999995,
+            "identity_invalid_rows": [],
+            "valid_identity_observations": 3,
+            "valid_identity_median_offset_px": 0.2933290884151347,
+            "identity_status": "observed identity; no quality acceptance",
+            "points": [
+              {
+                "y": 317,
+                "x": 325.939571243258,
+                "offset_px": -1.312373555139061
+              },
+              {
+                "y": 318,
+                "x": 325.7054128233189,
+                "offset_px": 0.2933290884151347
+              },
+              {
+                "y": 319,
+                "x": 324.40945457143044,
+                "offset_px": 0.8372319000199013
+              }
+            ]
+          }
+        },
+        "upper_band_widths": [
+          {
+            "y": 317,
+            "actual_px": 11.018668998542864,
+            "source_tangent_px": 11.11222620050512
+          },
+          {
+            "y": 318,
+            "actual_px": 11.478475888717185,
+            "source_tangent_px": 11.150667226572239
+          },
+          {
+            "y": 319,
+            "actual_px": 11.49638128350307,
+            "source_tangent_px": 11.189108252639357
+          }
+        ],
+        "ambiguous_rows": [
+          311,
+          317,
+          318,
+          319
+        ],
+        "missing_closing_rows": [
+          315,
+          316
+        ],
+        "extra_positive_ridges": {
+          "311": [
+            {
+              "y": 311,
+              "x": 340.5294598564421,
+              "strength": 8.572199999999995,
+              "polarity": 1,
+              "valid": true
+            }
+          ],
+          "312": [
+            {
+              "y": 312,
+              "x": 337.2108441643692,
+              "strength": 9.287400000000005,
+              "polarity": 1,
+              "valid": true
+            }
+          ],
+          "313": [
+            {
+              "y": 313,
+              "x": 335.6879892809828,
+              "strength": 11.393699999999995,
+              "polarity": 1,
+              "valid": true
+            }
+          ],
+          "314": [
+            {
+              "y": 314,
+              "x": 333.6068718606391,
+              "strength": 10.4298,
+              "polarity": 1,
+              "valid": true
+            }
+          ],
+          "315": [
+            {
+              "y": 315,
+              "x": 331.4163574158125,
+              "strength": 12.393700000000003,
+              "polarity": 1,
+              "valid": true
+            }
+          ],
+          "316": [
+            {
+              "y": 316,
+              "x": 329.71389451439643,
+              "strength": 12.4298,
+              "polarity": 1,
+              "valid": true
+            }
+          ],
+          "317": [
+            {
+              "y": 317,
+              "x": 328.88351924573533,
+              "strength": 14.645000000000003,
+              "polarity": 1,
+              "valid": true
+            }
+          ],
+          "318": [
+            {
+              "y": 318,
+              "x": 328.2852487698196,
+              "strength": 13.110899999999997,
+              "polarity": 1,
+              "valid": true
+            }
+          ]
+        }
+      },
+      "output_sha256": "d51920c0dec2a373ac40bc02afcc9fe19a2439af6cc186d8931b137030cf6652"
+    }
+  },
+  "input_and_frozen_hashes_after": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/tangent-canny/localized-hints/raw.png": "b47c8d1f86b345fa2f1490aed71c973a1890171f6f9a44502e1c1480646561c9",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-localized40-outpaint/tangent-canny/localized-hints/composite.png": "0499773395f8a40c30b2eb5182a431202a2488f7a957254b99dfbe118479ae85",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track3/source_512.png": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/Player/Resources/track3.jpg": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_boundary_compositor.py": "5f2ee66d65106dbb050529b5498116aec659c223a4a4e30f5912b2d7a4f867b7",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/evaluate_boundary.py": "1071b971c7122e17170b5a545219554e56db35818026a23f9caa2f9f58f83578",
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/evaluate_source_tangent.py": "81d9d3e03b5bfb59b3eacb97e7d1658ab1fc8afb0c82dda5f08bdfb8ecdcc4bf"
+  },
+  "input_and_frozen_files_unchanged": true,
+  "seconds": 0.42489199998090044
+}
