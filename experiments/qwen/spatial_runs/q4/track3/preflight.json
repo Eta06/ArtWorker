@@ -1,0 +1,56 @@
+{
+  "status": "preflight_passed",
+  "track": "track3",
+  "seed": 42,
+  "runs": {},
+  "phases": {},
+  "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+  "mlx_version": "0.32.3",
+  "mode_output_directories": {
+    "full": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-full-q4/track3",
+    "grow": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-grow-q4/track3"
+  },
+  "layout_smoke": {
+    "device": "CPU",
+    "model_weights_loaded": false,
+    "checks": [
+      {
+        "height": 640,
+        "target_tokens": 1280,
+        "prefix_length": 1041,
+        "window_xyxy": [
+          0,
+          256,
+          512,
+          896
+        ]
+      },
+      {
+        "height": 896,
+        "target_tokens": 1792,
+        "prefix_length": 1041,
+        "window_xyxy": [
+          0,
+          128,
+          512,
+          1024
+        ]
+      },
+      {
+        "height": 1152,
+        "target_tokens": 2304,
+        "prefix_length": 1041,
+        "window_xyxy": [
+          0,
+          0,
+          512,
+          1152
+        ]
+      }
+    ],
+    "status": "passed"
+  },
+  "model_weights_loaded": false,
+  "elapsed_seconds": 1.962043249999624,
+  "process_peak_rss_bytes": 361234432
+}
