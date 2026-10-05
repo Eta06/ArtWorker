@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "teacher40_vs_bridge_matching_conditions": {
+    "model_repo": true,
+    "model_revision": true,
+    "control_repo": true,
+    "control_revision": true,
+    "upstream_revision": true,
+    "source_conditioning": true,
+    "compute_mode": true,
+    "prefix_cache_enabled": true,
+    "cfg": true,
+    "adapter": true,
+    "base_quantization": true,
+    "control_quantization": true,
+    "noise_sha256": true,
+    "source_512_sha256": true,
+    "prompt": true,
+    "width": true,
+    "height": true,
+    "source_rect_xyxy": true,
+    "runner_sha256": true,
+    "sigmas": true,
+    "steps": true,
+    "joint_prefix_tokens": true,
+    "control_conditioning": true
+  },
+  "only_sampler_switch_between40_runs": {
+    "known_bridge_extension": [
+      false,
+      true
+    ]
+  },
+  "decoded_raw_difference_255": {
+    "generated_outer_mae": 1.8690948486328125,
+    "source_top16_mae_between_outputs": 9.943644205729166,
+    "source_bottom16_mae_between_outputs": 6.676513671875,
+    "whole_raw_mae": 2.0318190963179976
+  },
+  "quality_limit": "Matched40 comparison establishes persistence of white failure with and without bridge; small pixel difference is not quality."
+}
