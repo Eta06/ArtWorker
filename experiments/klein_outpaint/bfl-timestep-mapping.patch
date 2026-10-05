@@ -1,0 +1,14 @@
+--- a/Sources/Flux2Core/LoRA/LoRALoader.swift
++++ b/Sources/Flux2Core/LoRA/LoRALoader.swift
+@@ -400,9 +400,9 @@
+ 
+         // Time embeddings
+         if bflPath.contains("time_in.in_layer") {
+-            return "timeGuidanceEmbed.timestepEmbedder.inLayer"
++            return "timeGuidanceEmbed.timestepEmbedder.linear1"
+         } else if bflPath.contains("time_in.out_layer") {
+-            return "timeGuidanceEmbed.timestepEmbedder.outLayer"
++            return "timeGuidanceEmbed.timestepEmbedder.linear2"
+         }
+ 
+         // Return original path if no mapping found
