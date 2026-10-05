@@ -1,0 +1,300 @@
+{
+  "status": "completed",
+  "method": "bit-identical tensor payload copy; per-layer safetensors",
+  "source_manifest": "experiments/qwen_outpaint/native_q4_manifest.json",
+  "source_repo": "Qwen/Qwen-Image-2.1",
+  "source_revision": "790c92633540aa0cb11d9abf19eb46d861714758",
+  "license": "qwen-research",
+  "tensor_count": 753,
+  "files": [
+    {
+      "group": "img_in",
+      "file": "000.safetensors",
+      "bytes": 147776,
+      "tensor_count": 3,
+      "sha256": "129bd933d9320a667b15deb640dfa30fe7579cf734f6e8f7ccb69dec1b9e2975"
+    },
+    {
+      "group": "modulation.layers.1",
+      "file": "001.safetensors",
+      "bytes": 134217904,
+      "tensor_count": 1,
+      "sha256": "7c2d61419f2e6cf1fa13c5f1d4d47ef7ad60968219980a305b9b6b1160a003ab"
+    },
+    {
+      "group": "norm_out.linear",
+      "file": "002.safetensors",
+      "bytes": 33554600,
+      "tensor_count": 1,
+      "sha256": "ec8018884f5b821cac330ab37aa227c3604a4ade926d2d18d6b2155d631c7688"
+    },
+    {
+      "group": "proj_out",
+      "file": "003.safetensors",
+      "bytes": 147776,
+      "tensor_count": 3,
+      "sha256": "a56a4ab330f90541beb0f14dfd043c5191af3dec159c1908e09d7be9f7f51c0c"
+    },
+    {
+      "group": "time_text_embed.timestep_embedder.linear_1",
+      "file": "004.safetensors",
+      "bytes": 2097344,
+      "tensor_count": 1,
+      "sha256": "49a7a05b0354665d4f707c9f5487b3c38ad4a49cf9789647c0496c5aee778520"
+    },
+    {
+      "group": "time_text_embed.timestep_embedder.linear_2",
+      "file": "005.safetensors",
+      "bytes": 33554632,
+      "tensor_count": 1,
+      "sha256": "6ecc60a3257a3ea5f0ec6b9927553af16b463d4ab41dcc4c3158c6dabab558b7"
+    },
+    {
+      "group": "transformer_blocks.0",
+      "file": "006.safetensors",
+      "bytes": 122686544,
+      "tensor_count": 23,
+      "sha256": "ad85e81fc9966b339ee5a89f98285acf4d23db77218efc5f78051aa8e11fb2ba"
+    },
+    {
+      "group": "transformer_blocks.1",
+      "file": "007.safetensors",
+      "bytes": 122686544,
+      "tensor_count": 23,
+      "sha256": "c2f7a75161f284134bf9a175179a4aa03552dd8b6313ae43d798e38926d4ebfe"
+    },
+    {
+      "group": "transformer_blocks.10",
+      "file": "008.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "5fa5130b6bad27c7b3620f81f1f6122966f065ab0f5590487673d6ec472cd0e9"
+    },
+    {
+      "group": "transformer_blocks.11",
+      "file": "009.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "abec4adf011b8762208e6bbf7bfe8a5e6e06cdbe2be6e07b978e91b216d4ca1f"
+    },
+    {
+      "group": "transformer_blocks.12",
+      "file": "010.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "c0007f1a6915a0b64d771715e7ff90dd53f0a231803bd08d3acdc82e33a215cf"
+    },
+    {
+      "group": "transformer_blocks.13",
+      "file": "011.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "9ff0d4547ca5cc4f43c8820a83f26f26c2d6ef1e4c03146e9457698439f0fd6e"
+    },
+    {
+      "group": "transformer_blocks.14",
+      "file": "012.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "e4708e5a18b85e4caf98a3262093514dc6b54fcef859913b691ba1c983305c34"
+    },
+    {
+      "group": "transformer_blocks.15",
+      "file": "013.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "c5924eef763dd709bef38e4133563677c2c16dccb104e444d3e017d3908319c7"
+    },
+    {
+      "group": "transformer_blocks.16",
+      "file": "014.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "5df414b908ae3d5a279e52b9c3219b8c236d2e277b8789c147198aa6865615e9"
+    },
+    {
+      "group": "transformer_blocks.17",
+      "file": "015.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "a377dc2c7f83579e5c8056cf60e5eeb79437e7e3f99a6df606532482699e3d79"
+    },
+    {
+      "group": "transformer_blocks.18",
+      "file": "016.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "6fc9226a9080b241501cd49b1459dd146532353a362473ae39000cd837adc829"
+    },
+    {
+      "group": "transformer_blocks.19",
+      "file": "017.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "f902c5e252d6aceeaac2a081f8a173073c0d9c5b991a949607c2ca30d6ffa8e6"
+    },
+    {
+      "group": "transformer_blocks.2",
+      "file": "018.safetensors",
+      "bytes": 122686544,
+      "tensor_count": 23,
+      "sha256": "adacdc11c1ea7b3ca4066e34a2b8c9f8d5246f32f94c25e5f49cba5da714e770"
+    },
+    {
+      "group": "transformer_blocks.20",
+      "file": "019.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "1dd72b61f6c17b0201ae56ba199b29f8a2410d64d1140c0200cc5533bc83f142"
+    },
+    {
+      "group": "transformer_blocks.21",
+      "file": "020.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "24af9f51fae2c857a07bb7544b6a9913750de50d8d5d3b36b0d80255a9ebc0e4"
+    },
+    {
+      "group": "transformer_blocks.22",
+      "file": "021.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "0c8bb4e92d0a4f9c611ea9e9f0014787030b5fa7423fa916cc53269eab4c881c"
+    },
+    {
+      "group": "transformer_blocks.23",
+      "file": "022.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "c4559dcca565febf69be928e78d76b04f0514dd405b63e9eb2d588dcb8edcd02"
+    },
+    {
+      "group": "transformer_blocks.24",
+      "file": "023.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "ff8e05c3a54cb7d4e4ae9c04bf178bac5b2ff209537c2f1d4663dd898f9b1fb9"
+    },
+    {
+      "group": "transformer_blocks.25",
+      "file": "024.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "70c2c4e9417d6c298749011f3d572320aceea730419f1ea7288750c4b434d8e8"
+    },
+    {
+      "group": "transformer_blocks.26",
+      "file": "025.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "fe4726d01d63eb4e7ec7e44055810235c485eebf71d53b6eff31976a0340d8a1"
+    },
+    {
+      "group": "transformer_blocks.27",
+      "file": "026.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "b7a11c2ed9e656b8817eaab6fc1524d9c7652c88ec31c068670397732f67d008"
+    },
+    {
+      "group": "transformer_blocks.28",
+      "file": "027.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "c5488a945e720284ed48d6ad87f81b164cfde02b153a8342c2a59411014577be"
+    },
+    {
+      "group": "transformer_blocks.29",
+      "file": "028.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "7d3118fc7d81a1ff4621520e8e198b095c792e671cf0075bd0ef20bb39325b9d"
+    },
+    {
+      "group": "transformer_blocks.3",
+      "file": "029.safetensors",
+      "bytes": 122686544,
+      "tensor_count": 23,
+      "sha256": "93b62d9ef5322ebf7758dead1b8288be23f4e923b49ad6d0c3c5b2fe6fc879ea"
+    },
+    {
+      "group": "transformer_blocks.30",
+      "file": "030.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "7e03b55fb638e275eac0260b91b53d77f012dab4a2110a2289d5cb9defbecf3b"
+    },
+    {
+      "group": "transformer_blocks.31",
+      "file": "031.safetensors",
+      "bytes": 122686568,
+      "tensor_count": 23,
+      "sha256": "5ce882310a588dfbc9df8d47b4c971416fac50025d9efb9ee7f8b8275e64b436"
+    },
+    {
+      "group": "transformer_blocks.4",
+      "file": "032.safetensors",
+      "bytes": 122686544,
+      "tensor_count": 23,
+      "sha256": "a8fb1050f0c3aeb4155726d3aec7111caefcd969e3166207d86b96e54a889de2"
+    },
+    {
+      "group": "transformer_blocks.5",
+      "file": "033.safetensors",
+      "bytes": 122686544,
+      "tensor_count": 23,
+      "sha256": "1ca0343278babc018ace862a258b3aa115c40a2de452224324b781ac61b7793f"
+    },
+    {
+      "group": "transformer_blocks.6",
+      "file": "034.safetensors",
+      "bytes": 122686544,
+      "tensor_count": 23,
+      "sha256": "60e0325f39937aab9169d52347913e49638f70f47fc668dc8dc5db8d8e7fd64a"
+    },
+    {
+      "group": "transformer_blocks.7",
+      "file": "035.safetensors",
+      "bytes": 122686544,
+      "tensor_count": 23,
+      "sha256": "184ebf91348fd4435b7e9dd0500664945b14387ca7070b46f8abecfc35c16a3d"
+    },
+    {
+      "group": "transformer_blocks.8",
+      "file": "036.safetensors",
+      "bytes": 122686544,
+      "tensor_count": 23,
+      "sha256": "875a89e0cb57ca895bd214518a82a2b1177487819a86f904c4a519552766da89"
+    },
+    {
+      "group": "transformer_blocks.9",
+      "file": "037.safetensors",
+      "bytes": 122686544,
+      "tensor_count": 23,
+      "sha256": "ebac5193e734868247148c37f81f8f61568371acd45f6009fd7f20285efa0b18"
+    },
+    {
+      "group": "txt_in.in_layer",
+      "file": "038.safetensors",
+      "bytes": 9437536,
+      "tensor_count": 3,
+      "sha256": "be0f5ea709742b7fdaa8af9df6df7bd93f631951e8c7b21eb5da6185b55bb1d3"
+    },
+    {
+      "group": "txt_in.out_layer",
+      "file": "039.safetensors",
+      "bytes": 9437536,
+      "tensor_count": 3,
+      "sha256": "16e46f8eae0421173f1c78c3d2bcd39b252e6535157ce67e833402ee50af0506"
+    },
+    {
+      "group": "txt_in.text_norm",
+      "file": "040.safetensors",
+      "bytes": 8352,
+      "tensor_count": 1,
+      "sha256": "0032dad5f319df365304d89dcad742910b805797ce247120bca8f814eab03a72"
+    }
+  ],
+  "payload_bytes": 4148573392,
+  "published_payloads": false
+}
