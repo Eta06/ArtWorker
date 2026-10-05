@@ -1,0 +1,23 @@
+{
+  "status": "completed",
+  "command": [
+    ".build/migan-venv/bin/python",
+    "experiments/migan/run_trial.py",
+    "--track",
+    "track1",
+    "--output",
+    "experiments/migan/runs/2026-10-06/track1-pipeline"
+  ],
+  "footprint_limit_bytes": 2147483648,
+  "swap_growth_limit_bytes": 268435456,
+  "timeout_seconds": 60.0,
+  "sample_interval_seconds": 0.1,
+  "initial_swap_bytes": 0,
+  "pid": 59813,
+  "stop_reason": "complete",
+  "exit_code": 0,
+  "elapsed_seconds": 0.5170444169998518,
+  "peak_sampled_rss_bytes": 591036416,
+  "peak_sampled_phys_footprint_bytes": 389137560,
+  "measurement_note": "RSS and phys_footprint overlap; do not add them. Process-group sums can double-count shared memory. Sampling is not a kernel-enforced limit."
+}
