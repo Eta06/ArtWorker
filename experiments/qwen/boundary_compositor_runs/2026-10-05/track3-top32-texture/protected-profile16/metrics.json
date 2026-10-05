@@ -1,0 +1,11 @@
+{
+  "radius_pixels": 32,
+  "kind": "source-connected protected color control",
+  "source_exact": true,
+  "far_exterior_exact": true,
+  "protected_edge_core_exact": true,
+  "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/boundary_compositor_runs/2026-10-05/track3-top32-texture/protected-profile16/composite.png",
+  "composite_sha256": "6afbbda724ff17835f23ab972e64af8c2bf089015946fb240d1bf7bd35e5df47",
+  "generated_mean_abs_change_255": 0.08610738118489583,
+  "no_source_texture_pixel_copy_or_geometric_warp": true
+}
