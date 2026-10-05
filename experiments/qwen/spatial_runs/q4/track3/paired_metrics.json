@@ -1,0 +1,604 @@
+{
+  "status": "success",
+  "track": "track3",
+  "seed": 42,
+  "runs": {
+    "full": {
+      "model_repo": "Qwen/Qwen-Image-2.1",
+      "model_revision": "790c92633540aa0cb11d9abf19eb46d861714758",
+      "runtime": "mflux native MLX QwenImage21Edit; experimental actual target-token growth",
+      "runtime_git_revision": "25661d8e853996fec9134998b995edf97369bfbd",
+      "adapter_repo": "Viggle/Qwen-Image-2.1-viggle-turbo",
+      "adapter_revision": "bb26a0f38e5fe6c124aaccc9187a87eed5d9ed13",
+      "adapter_file": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/qwen/viggle/Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors",
+      "adapter_rank": 256,
+      "adapter_baked": false,
+      "quantization": 4,
+      "track": "track3",
+      "seed": 42,
+      "steps": 6,
+      "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+      "width": 512,
+      "height": 1152,
+      "source_rect_xyxy": [
+        0,
+        320,
+        512,
+        832
+      ],
+      "status": "success",
+      "spatial_mode": "full",
+      "diagnostic_control": true,
+      "shared_canvas_comparable": false,
+      "paired_suite": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/spatial_runs/q4/track3/paired_metrics.json",
+      "generation_order_within_process": 1,
+      "source_prefix": "actual 512-square source; fixed 1024 latent image tokens",
+      "source_prefix_latent_tokens": 1024,
+      "joint_prefix_tokens": 1197,
+      "source_prefix_sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "source_encoding_shared_between_arms": true,
+      "fresh_prefix_cache_per_arm": true,
+      "sigmas": [
+        1.0,
+        0.9648136496543884,
+        0.92751544713974,
+        0.8457746505737305,
+        0.6463939547538757,
+        0.3786254823207855,
+        0.0
+      ],
+      "schedule_shift_target_tokens": 2304,
+      "target_tokens_future_absent_from_forward": false,
+      "late_activation_initializer": null,
+      "inner_region_denoising": "continues refining at the same global target sigma",
+      "mask_method": "known square-source latent flow bridge restored before/after every step",
+      "trained_spatial_time_schedule": false,
+      "transformer_calls": 6,
+      "preview_definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+      "metal_device": {
+        "device_name": "Apple M4 Max",
+        "max_recommended_working_set_size": 30150672384,
+        "memory_size": 38654705664,
+        "architecture": "applegpu_g16s",
+        "max_buffer_length": 22613000192,
+        "resource_limit": 499000
+      },
+      "mlx_version": "0.32.3",
+      "phases": {
+        "load_seconds": 7.874003832999733,
+        "conditioning_seconds": 1.3147641670002486,
+        "denoising_seconds": 29.380783708002127,
+        "core_loop_wall_seconds": 29.582509083000332,
+        "preview_capture_seconds": 0.1987008350006363,
+        "decode_seconds": 1.6549664590002067,
+        "preview_decode_seconds": 4.707608417000301
+      },
+      "shared_phase_scope": "load and conditioning executed once for the entire pair; values attributed to both arms for context",
+      "load_mlx_peak_bytes": 26306185728,
+      "conditioning_mlx_peak_bytes": 11641876732,
+      "step_records": [
+        {
+          "step": 1,
+          "sigma": 1.0,
+          "next_sigma": 0.9648136496543884,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 2304,
+          "input_image_latent_tokens": 3328,
+          "attention_query_tokens": 3501,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 7.234236833999603
+        },
+        {
+          "step": 2,
+          "sigma": 0.9648136496543884,
+          "next_sigma": 0.92751544713974,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.290013167001234
+        },
+        {
+          "step": 3,
+          "sigma": 0.92751544713974,
+          "next_sigma": 0.8457746505737305,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.280662332999782
+        },
+        {
+          "step": 4,
+          "sigma": 0.8457746505737305,
+          "next_sigma": 0.6463939547538757,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.402185041000848
+        },
+        {
+          "step": 5,
+          "sigma": 0.6463939547538757,
+          "next_sigma": 0.3786254823207855,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.603391042001022
+        },
+        {
+          "step": 6,
+          "sigma": 0.3786254823207855,
+          "next_sigma": 0.0,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.570295290999638
+        }
+      ],
+      "previews": [
+        {
+          "step": 2,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "latent_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-full-q4/track3/previews/step02_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-full-q4/track3/previews/step02_predicted_clean_raw.png",
+          "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-full-q4/track3/previews/step02_predicted_clean_composite.png",
+          "decode_seconds": 1.5715856250008073,
+          "source_pixels_exact": true
+        },
+        {
+          "step": 4,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "latent_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-full-q4/track3/previews/step04_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-full-q4/track3/previews/step04_predicted_clean_raw.png",
+          "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-full-q4/track3/previews/step04_predicted_clean_composite.png",
+          "decode_seconds": 1.56533754100019,
+          "source_pixels_exact": true
+        },
+        {
+          "step": 6,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "latent_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-full-q4/track3/previews/step06_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-full-q4/track3/previews/step06_predicted_clean_raw.png",
+          "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-full-q4/track3/previews/step06_predicted_clean_composite.png",
+          "decode_seconds": 1.5699252920003346,
+          "source_pixels_exact": true
+        }
+      ],
+      "process_peak_rss_bytes": 12817334272,
+      "known_source_latents_exact_at_sigma_zero": true,
+      "denoising_timing_scope": "sum of six active-layout/state/transformer/Euler steps; preview capture and all VAE decoding excluded",
+      "denoising_mlx_peak_bytes": 9664725157,
+      "raw_source_region_mae_255": 3.8832677205403647,
+      "raw_source_region_max_error_255": 121,
+      "raw_source_top16_mae_255": 14.5330810546875,
+      "raw_source_bottom16_mae_255": 10.097981770833334,
+      "raw_source_inner_mae_255": 3.3211168077256943,
+      "decoded_pixels_finite": true,
+      "decoding_mlx_peak_bytes": 6108738963,
+      "preview_decoding_mlx_peak_bytes": 6108738963,
+      "source_pixels_exact": true,
+      "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-full-q4/track3/raw.png",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-full-q4/track3/composite.png",
+      "elapsed_seconds": 71.08131308300108,
+      "mlx_peak_bytes": 11641876732,
+      "output_sha256": "fd94ddba151e3a8d94558148ffee62a80c75cf46ed5d52fe8a251557fc7b2d12",
+      "generation_seconds_excluding_load_previews": 32.35051433400258
+    },
+    "grow": {
+      "model_repo": "Qwen/Qwen-Image-2.1",
+      "model_revision": "790c92633540aa0cb11d9abf19eb46d861714758",
+      "runtime": "mflux native MLX QwenImage21Edit; experimental actual target-token growth",
+      "runtime_git_revision": "25661d8e853996fec9134998b995edf97369bfbd",
+      "adapter_repo": "Viggle/Qwen-Image-2.1-viggle-turbo",
+      "adapter_revision": "bb26a0f38e5fe6c124aaccc9187a87eed5d9ed13",
+      "adapter_file": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/models/qwen/viggle/Qwen-Image-2.1-viggle-turbo-v0.2.1-6step-lora-r256.safetensors",
+      "adapter_rank": 256,
+      "adapter_baked": false,
+      "quantization": 4,
+      "track": "track3",
+      "seed": 42,
+      "steps": 6,
+      "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+      "width": 512,
+      "height": 1152,
+      "source_rect_xyxy": [
+        0,
+        320,
+        512,
+        832
+      ],
+      "status": "success",
+      "spatial_mode": "grow",
+      "diagnostic_control": true,
+      "shared_canvas_comparable": false,
+      "paired_suite": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/spatial_runs/q4/track3/paired_metrics.json",
+      "generation_order_within_process": 2,
+      "source_prefix": "actual 512-square source; fixed 1024 latent image tokens",
+      "source_prefix_latent_tokens": 1024,
+      "joint_prefix_tokens": 1197,
+      "source_prefix_sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "source_encoding_shared_between_arms": true,
+      "fresh_prefix_cache_per_arm": true,
+      "sigmas": [
+        1.0,
+        0.9648136496543884,
+        0.92751544713974,
+        0.8457746505737305,
+        0.6463939547538757,
+        0.3786254823207855,
+        0.0
+      ],
+      "schedule_shift_target_tokens": 2304,
+      "target_tokens_future_absent_from_forward": true,
+      "late_activation_initializer": "(1-sigma)*source-latent edge extrapolation + sigma*shared noise; untrained heuristic",
+      "inner_region_denoising": "continues refining at the same global target sigma",
+      "mask_method": "known square-source latent flow bridge restored before/after every step",
+      "trained_spatial_time_schedule": false,
+      "transformer_calls": 6,
+      "preview_definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+      "metal_device": {
+        "device_name": "Apple M4 Max",
+        "max_recommended_working_set_size": 30150672384,
+        "memory_size": 38654705664,
+        "architecture": "applegpu_g16s",
+        "max_buffer_length": 22613000192,
+        "resource_limit": 499000
+      },
+      "mlx_version": "0.32.3",
+      "phases": {
+        "load_seconds": 7.874003832999733,
+        "conditioning_seconds": 1.3147641670002486,
+        "denoising_seconds": 24.325720959997852,
+        "core_loop_wall_seconds": 24.487162624998746,
+        "preview_capture_seconds": 0.158346583999446,
+        "decode_seconds": 1.5960150419996353,
+        "preview_decode_seconds": 3.6683224580010574
+      },
+      "shared_phase_scope": "load and conditioning executed once for the entire pair; values attributed to both arms for context",
+      "load_mlx_peak_bytes": 26306185728,
+      "conditioning_mlx_peak_bytes": 11641876732,
+      "step_records": [
+        {
+          "step": 1,
+          "sigma": 1.0,
+          "next_sigma": 0.9648136496543884,
+          "active_height": 640,
+          "active_window_xyxy": [
+            0,
+            256,
+            512,
+            896
+          ],
+          "target_tokens_forwarded": 1280,
+          "future_target_tokens_absent": 1024,
+          "newly_activated_tokens": 1280,
+          "input_image_latent_tokens": 2304,
+          "attention_query_tokens": 2477,
+          "attention_key_value_tokens": 2477,
+          "core_step_seconds": 4.768416667000565
+        },
+        {
+          "step": 2,
+          "sigma": 0.9648136496543884,
+          "next_sigma": 0.92751544713974,
+          "active_height": 640,
+          "active_window_xyxy": [
+            0,
+            256,
+            512,
+            896
+          ],
+          "target_tokens_forwarded": 1280,
+          "future_target_tokens_absent": 1024,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 2304,
+          "attention_query_tokens": 1280,
+          "attention_key_value_tokens": 2477,
+          "core_step_seconds": 2.5729339589997835
+        },
+        {
+          "step": 3,
+          "sigma": 0.92751544713974,
+          "next_sigma": 0.8457746505737305,
+          "active_height": 896,
+          "active_window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ],
+          "target_tokens_forwarded": 1792,
+          "future_target_tokens_absent": 512,
+          "newly_activated_tokens": 512,
+          "input_image_latent_tokens": 2816,
+          "attention_query_tokens": 1792,
+          "attention_key_value_tokens": 2989,
+          "core_step_seconds": 3.6516238339991105
+        },
+        {
+          "step": 4,
+          "sigma": 0.8457746505737305,
+          "next_sigma": 0.6463939547538757,
+          "active_height": 896,
+          "active_window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ],
+          "target_tokens_forwarded": 1792,
+          "future_target_tokens_absent": 512,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 2816,
+          "attention_query_tokens": 1792,
+          "attention_key_value_tokens": 2989,
+          "core_step_seconds": 3.6925117499995395
+        },
+        {
+          "step": 5,
+          "sigma": 0.6463939547538757,
+          "next_sigma": 0.3786254823207855,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 512,
+          "input_image_latent_tokens": 3328,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.808602832999895
+        },
+        {
+          "step": 6,
+          "sigma": 0.3786254823207855,
+          "next_sigma": 0.0,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "target_tokens_forwarded": 2304,
+          "future_target_tokens_absent": 0,
+          "newly_activated_tokens": 0,
+          "input_image_latent_tokens": 3328,
+          "attention_query_tokens": 2304,
+          "attention_key_value_tokens": 3501,
+          "core_step_seconds": 4.831631916998958
+        }
+      ],
+      "previews": [
+        {
+          "step": 2,
+          "active_height": 640,
+          "active_window_xyxy": [
+            0,
+            256,
+            512,
+            896
+          ],
+          "latent_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-grow-q4/track3/previews/step02_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-grow-q4/track3/previews/step02_predicted_clean_raw.png",
+          "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-grow-q4/track3/previews/step02_predicted_clean_composite.png",
+          "decode_seconds": 0.8957040420009434,
+          "source_pixels_exact": true
+        },
+        {
+          "step": 4,
+          "active_height": 896,
+          "active_window_xyxy": [
+            0,
+            128,
+            512,
+            1024
+          ],
+          "latent_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-grow-q4/track3/previews/step04_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-grow-q4/track3/previews/step04_predicted_clean_raw.png",
+          "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-grow-q4/track3/previews/step04_predicted_clean_composite.png",
+          "decode_seconds": 1.1896645830001944,
+          "source_pixels_exact": true
+        },
+        {
+          "step": 6,
+          "active_height": 1152,
+          "active_window_xyxy": [
+            0,
+            0,
+            512,
+            1152
+          ],
+          "latent_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-grow-q4/track3/previews/step06_predicted_clean.npz",
+          "definition": "genuine pre-step z_sigma - sigma*predicted_velocity; source latent restored",
+          "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-grow-q4/track3/previews/step06_predicted_clean_raw.png",
+          "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-grow-q4/track3/previews/step06_predicted_clean_composite.png",
+          "decode_seconds": 1.5821814160008216,
+          "source_pixels_exact": true
+        }
+      ],
+      "process_peak_rss_bytes": 12817334272,
+      "known_source_latents_exact_at_sigma_zero": true,
+      "denoising_timing_scope": "sum of six active-layout/state/transformer/Euler steps; preview capture and all VAE decoding excluded",
+      "denoising_mlx_peak_bytes": 9081362590,
+      "raw_source_region_mae_255": 3.8270963033040366,
+      "raw_source_region_max_error_255": 127,
+      "raw_source_top16_mae_255": 13.29150390625,
+      "raw_source_bottom16_mae_255": 9.938191731770834,
+      "raw_source_inner_mae_255": 3.3079128689236112,
+      "decoded_pixels_finite": true,
+      "decoding_mlx_peak_bytes": 6108738963,
+      "preview_decoding_mlx_peak_bytes": 6198605219,
+      "source_pixels_exact": true,
+      "raw_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-grow-q4/track3/raw.png",
+      "composite_path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-grow-q4/track3/composite.png",
+      "elapsed_seconds": 76.34678837499996,
+      "mlx_peak_bytes": 11641876732,
+      "output_sha256": "daa8a62bb1e7ae179c232eeab905251938da172f20791dfef59baf2e4c39b8af",
+      "generation_seconds_excluding_load_previews": 27.236500168997736
+    }
+  },
+  "phases": {
+    "load_seconds": 7.874003832999733,
+    "conditioning_seconds": 1.3147641670002486
+  },
+  "prompt": "Extend this album cover vertically above and below its existing central square to fill the entire portrait canvas. Seamlessly continue its existing colors, lighting, textures, scenery, and artistic style into the empty top and bottom regions. Keep the central artwork unchanged. Make one coherent expanded composition. Do not add new people, duplicated subjects, extra objects, text, letters, logos, frames, or borders. A vertical cinematic music album photograph viewed from above: one man sitting on dark asphalt beside the open door of a red sports car, with a metal roadside guardrail and water beyond it. Continue the existing road texture, water, vegetation and perspective above and below the central artwork. Maintain the muted twilight lighting and realistic photographic grain. Preserve the central scene. No additional cars, people, logos or lettering.",
+  "mlx_version": "0.32.3",
+  "mode_output_directories": {
+    "full": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-full-q4/track3",
+    "grow": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/results/qwen21-spatial-r256-grow-q4/track3"
+  },
+  "metal_device": {
+    "device_name": "Apple M4 Max",
+    "max_recommended_working_set_size": 30150672384,
+    "memory_size": 38654705664,
+    "architecture": "applegpu_g16s",
+    "max_buffer_length": 22613000192,
+    "resource_limit": 499000
+  },
+  "phase": "complete",
+  "elapsed_seconds": 76.34746774999985,
+  "process_peak_rss_bytes": 12817334272,
+  "loaded_component_parameter_bytes": {
+    "transformer": 5507571712,
+    "text_encoder": 4777530024,
+    "vae": 1350961616
+  },
+  "load_mlx_peak_bytes": 26306185728,
+  "conditioning_mlx_peak_bytes": 11641876732,
+  "sigmas": [
+    1.0,
+    0.9648136496543884,
+    0.92751544713974,
+    0.8457746505737305,
+    0.6463939547538757,
+    0.3786254823207855,
+    0.0
+  ],
+  "source_prefix_latent_tokens": 1024,
+  "joint_prefix_tokens": 1197,
+  "full_target_tokens": 2304,
+  "source_prefix_sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+  "noise_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+  "hash_representation": "float32 values converted from the shared inference tensors",
+  "growth_heights_by_step": [
+    640,
+    640,
+    896,
+    896,
+    1152,
+    1152
+  ],
+  "preview_steps": [
+    2,
+    4,
+    6
+  ],
+  "current_mode": "grow",
+  "core_seconds": 24.325720959997852,
+  "nfe": 6,
+  "paired_comparison": {
+    "nfe": {
+      "full": 6,
+      "grow": 6
+    },
+    "target_token_forward_sum": {
+      "full": 13824,
+      "grow": 10752
+    },
+    "core_seconds": {
+      "full": 29.380783708002127,
+      "grow": 24.325720959997852
+    },
+    "source_prefix_matched": true,
+    "noise_prompt_sigmas_matched": true,
+    "timing_limit": "single process and seed; execution order/thermal/kernel warm-up can affect time; previews excluded",
+    "quality_limit": "GROW late-token initialization is an untrained heuristic; no region is claimed finalized before the final step"
+  }
+}
