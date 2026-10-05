@@ -1,0 +1,53 @@
+{
+  "model_repo": "Qwen/Qwen-Image-2.1",
+  "model_revision": "790c92633540aa0cb11d9abf19eb46d861714758",
+  "checkpoint_export": "local tensor-wise affine q4, group64; complete visual encoder",
+  "upstream_license": "qwen-research",
+  "runtime": "mflux native reference QwenImage21Edit; no latent preservation",
+  "runtime_revision": "25661d8e853996fec9134998b995edf97369bfbd",
+  "adapter_repo": "ausboss/Qwen-Image-2.1-Outpaint-LoRA",
+  "adapter_revision": "449336db42ff074aee970ba0facc0ac0feb77863",
+  "adapter": "v1",
+  "adapter_scale": 1.0,
+  "bake_lora": false,
+  "track": "track3",
+  "width": 448,
+  "height": 992,
+  "source_rect": [
+    0,
+    272,
+    448,
+    720
+  ],
+  "prompt": "Outpaint the image: replace the solid gray areas with a seamless continuation of the scene, keeping the existing picture unchanged. Scene: A photograph viewed from above of one man sitting on dark asphalt beside the open door of a red sports car. A diagonal metal roadside guardrail separates the road from water. Water occupies the upper left and the top edge; dark asphalt occupies the bottom edge. Sparse vegetation grows beside the guardrail. Muted twilight light and fine photographic grain.",
+  "steps": 25,
+  "seed": 42,
+  "guidance": 1.0,
+  "prompt_style": "factual",
+  "turbo": "none",
+  "jointly_trained_adapters": false,
+  "reference_resize": false,
+  "known_latent_clamp": false,
+  "scheduler": "MFLUX native flow Euler; not claimed identical to Comfy simple",
+  "visual_quality_accepted": false,
+  "status": "running",
+  "phases": {
+    "load_seconds": 1.1960473750000347
+  },
+  "input_sha256": "0879ff0fc3af1e34f7830fe54f718906dcf7658892793cc39bb4b911a533dcdc",
+  "adapter_preflight": [
+    {
+      "file": "qwen-image-2.1-outpaint.safetensors",
+      "tensor_count": 384,
+      "unmapped_keys": []
+    }
+  ],
+  "model_bytes": 10288688002,
+  "mlx_version": "0.32.3",
+  "phase": "conditioning",
+  "elapsed_seconds": 3.5154029999998784,
+  "component_bytes": {
+    "text_encoder": 4777530024
+  },
+  "mlx_active_bytes": 4779959088
+}
