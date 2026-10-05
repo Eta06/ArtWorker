@@ -1,0 +1,19 @@
+{
+  "command": [
+    "experiments/qwen/.venv/bin/python",
+    "experiments/qwen/run_boundary_projection.py",
+    "--input",
+    "experiments/qwen/boundary_runs/2026-10-05/track3/edge-context/final_latents.npz",
+    "--output",
+    "experiments/qwen/projection_runs/2026-10-05/track3-exact-v2"
+  ],
+  "cwd": "/Users/emir/Documents/ChatGPT/ArtWorker",
+  "code_sha256": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_boundary_projection.py": "d6501a023b4b6ab3d3c05db94e3a6194b91f2b99c08218d71d118affd3b0bbe7"
+  },
+  "timeout_seconds": 600.0,
+  "pid": 66628,
+  "status": "timeout",
+  "exit_code": -15,
+  "elapsed_seconds": 600.4336597499787
+}
