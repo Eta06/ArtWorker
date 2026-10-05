@@ -1,0 +1,1910 @@
+{
+  "status": "passed",
+  "scope": "CPU-only saved artifact integrity; no quality conclusion",
+  "suite": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6",
+  "baseline": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context",
+  "checks": {
+    "six_steps_three_scales": true,
+    "active_heights": true,
+    "target_geometry": true,
+    "adapter_recipe": true,
+    "full_prefix_no_cache": true,
+    "hint_recipe": true,
+    "edge_known_codec_recorded": true,
+    "four_cpu_gates_recorded_passed": true,
+    "sigma_formula_exact": true,
+    "array_shape:sigmas": true,
+    "array_dtype:sigmas": true,
+    "array_finite:sigmas": true,
+    "layout": true,
+    "array_shape:source_latents": true,
+    "array_dtype:source_latents": true,
+    "array_finite:source_latents": true,
+    "array_hash:source_latents": true,
+    "array_shape:prompt_embeds": true,
+    "array_dtype:prompt_embeds": true,
+    "array_finite:prompt_embeds": true,
+    "array_hash:prompt_embeds": true,
+    "array_shape:image_slots": true,
+    "array_dtype:image_slots": true,
+    "array_finite:image_slots": true,
+    "array_hash:image_slots": true,
+    "array_shape:noise": true,
+    "array_dtype:noise": true,
+    "array_finite:noise": true,
+    "array_hash:noise": true,
+    "array_shape:edge_known": true,
+    "array_dtype:edge_known": true,
+    "array_finite:edge_known": true,
+    "array_hash:edge_known": true,
+    "array_shape:edge_guess": true,
+    "array_dtype:edge_guess": true,
+    "array_finite:edge_guess": true,
+    "array_shape:target_context": true,
+    "array_dtype:target_context": true,
+    "array_finite:target_context": true,
+    "array_hash:target_context": true,
+    "array_shape:padded_context": true,
+    "array_dtype:padded_context": true,
+    "array_finite:padded_context": true,
+    "array_hash:padded_context": true,
+    "array_shape:support": true,
+    "array_dtype:support": true,
+    "array_finite:support": true,
+    "array_hash:support": true,
+    "slots_256_image_173_text": true,
+    "known_mask_exact": true,
+    "reference129_zero_target_after_padding_exact": true,
+    "unsupported_control64_zero": true,
+    "known_support_all_true": true,
+    "edge_guess_absolute_clamped_rows_exact": true,
+    "edge_codec_distinct_from_control_source": true,
+    "array_shape:source_rgb": true,
+    "array_dtype:source_rgb": true,
+    "array_finite:source_rgb": true,
+    "array_hash:source_rgb": true,
+    "array_shape:source_rgba": true,
+    "array_dtype:source_rgba": true,
+    "array_finite:source_rgba": true,
+    "array_hash:source_rgba": true,
+    "actual_square_opaque_source_exact": true,
+    "file_hash:source512": true,
+    "file_hash:control_map": true,
+    "array_shape:desired_hint_pixels": true,
+    "array_dtype:desired_hint_pixels": true,
+    "array_finite:desired_hint_pixels": true,
+    "array_hash:desired_hint_pixels": true,
+    "array_shape:desired_hint_target_npy": true,
+    "array_dtype:desired_hint_target_npy": true,
+    "array_finite:desired_hint_target_npy": true,
+    "array_hash:desired_hint_target_npy": true,
+    "array_shape:requested_hint_target": true,
+    "array_dtype:requested_hint_target": true,
+    "array_finite:requested_hint_target": true,
+    "array_hash:requested_hint_target": true,
+    "array_shape:effective_hint_target": true,
+    "array_dtype:effective_hint_target": true,
+    "array_finite:effective_hint_target": true,
+    "array_hash:effective_hint_target": true,
+    "array_shape:effective_hint_joint": true,
+    "array_dtype:effective_hint_joint": true,
+    "array_finite:effective_hint_joint": true,
+    "array_hash:effective_hint_joint": true,
+    "array_shape:guide_rgb": true,
+    "array_dtype:guide_rgb": true,
+    "array_finite:guide_rgb": true,
+    "array_hash:guide_rgb": true,
+    "array_hash:support_pixels_reconstructed": true,
+    "independent_cosine64_pixels_exact": true,
+    "independent_nearest16_weights_exact": true,
+    "independent_bf16_rounding_exact": true,
+    "all1197_prefix_weights_zero": true,
+    "joint_suffix_effective_exact": true,
+    "all1024_known_target_weights_zero": true,
+    "97_positive_unknown_only": true,
+    "weights_bounded_positive_support_preserved": true,
+    "support_reconstruction_exact": true,
+    "positive_hints_inside_support": true,
+    "support_and_guide_counts": true,
+    "hint_display_exact": true,
+    "support_display_exact": true,
+    "file_hash:guide_png": true,
+    "file_hash:hint_display": true,
+    "file_hash:support_display": true,
+    "step1:reconstructed_absolute_window": true,
+    "step1:reconstructed_known_hint_zero": true,
+    "step2:reconstructed_absolute_window": true,
+    "step2:reconstructed_known_hint_zero": true,
+    "step3:reconstructed_absolute_window": true,
+    "step3:reconstructed_known_hint_zero": true,
+    "step4:reconstructed_absolute_window": true,
+    "step4:reconstructed_known_hint_zero": true,
+    "step5:reconstructed_absolute_window": true,
+    "step5:reconstructed_known_hint_zero": true,
+    "step6:reconstructed_absolute_window": true,
+    "step6:reconstructed_known_hint_zero": true,
+    "tangent-canny/scale0:arm_metrics_match_suite": true,
+    "tangent-canny/scale0:6nfe_192base_96control": true,
+    "tangent-canny/scale0:token_totals": true,
+    "tangent-canny/scale0:shared_input_hashes": true,
+    "tangent-canny/scale0:shared_prompt_sigmas_recipe": true,
+    "tangent-canny/scale0:no_cache_recorded": true,
+    "tangent-canny/scale0:forward_assertions_recorded": true,
+    "tangent-canny/scale0:step1:absolute_window_count": true,
+    "tangent-canny/scale0:step1:absent_and_new_counts": true,
+    "tangent-canny/scale0:step1:base_control_image_rows": true,
+    "tangent-canny/scale0:step1:both_chain_queries": true,
+    "tangent-canny/scale0:step1:blocks": true,
+    "tangent-canny/scale0:step1:sigmas": true,
+    "tangent-canny/scale0:step1:context_gather_hash": true,
+    "tangent-canny/scale0:step1:hint_gather_hash": true,
+    "tangent-canny/scale0:step1:runtime_assertions_recorded": true,
+    "tangent-canny/scale0:step2:absolute_window_count": true,
+    "tangent-canny/scale0:step2:absent_and_new_counts": true,
+    "tangent-canny/scale0:step2:base_control_image_rows": true,
+    "tangent-canny/scale0:step2:both_chain_queries": true,
+    "tangent-canny/scale0:step2:blocks": true,
+    "tangent-canny/scale0:step2:sigmas": true,
+    "tangent-canny/scale0:step2:context_gather_hash": true,
+    "tangent-canny/scale0:step2:hint_gather_hash": true,
+    "tangent-canny/scale0:step2:runtime_assertions_recorded": true,
+    "tangent-canny/scale0:step3:absolute_window_count": true,
+    "tangent-canny/scale0:step3:absent_and_new_counts": true,
+    "tangent-canny/scale0:step3:base_control_image_rows": true,
+    "tangent-canny/scale0:step3:both_chain_queries": true,
+    "tangent-canny/scale0:step3:blocks": true,
+    "tangent-canny/scale0:step3:sigmas": true,
+    "tangent-canny/scale0:step3:context_gather_hash": true,
+    "tangent-canny/scale0:step3:hint_gather_hash": true,
+    "tangent-canny/scale0:step3:runtime_assertions_recorded": true,
+    "tangent-canny/scale0:step4:absolute_window_count": true,
+    "tangent-canny/scale0:step4:absent_and_new_counts": true,
+    "tangent-canny/scale0:step4:base_control_image_rows": true,
+    "tangent-canny/scale0:step4:both_chain_queries": true,
+    "tangent-canny/scale0:step4:blocks": true,
+    "tangent-canny/scale0:step4:sigmas": true,
+    "tangent-canny/scale0:step4:context_gather_hash": true,
+    "tangent-canny/scale0:step4:hint_gather_hash": true,
+    "tangent-canny/scale0:step4:runtime_assertions_recorded": true,
+    "tangent-canny/scale0:step5:absolute_window_count": true,
+    "tangent-canny/scale0:step5:absent_and_new_counts": true,
+    "tangent-canny/scale0:step5:base_control_image_rows": true,
+    "tangent-canny/scale0:step5:both_chain_queries": true,
+    "tangent-canny/scale0:step5:blocks": true,
+    "tangent-canny/scale0:step5:sigmas": true,
+    "tangent-canny/scale0:step5:context_gather_hash": true,
+    "tangent-canny/scale0:step5:hint_gather_hash": true,
+    "tangent-canny/scale0:step5:runtime_assertions_recorded": true,
+    "tangent-canny/scale0:step6:absolute_window_count": true,
+    "tangent-canny/scale0:step6:absent_and_new_counts": true,
+    "tangent-canny/scale0:step6:base_control_image_rows": true,
+    "tangent-canny/scale0:step6:both_chain_queries": true,
+    "tangent-canny/scale0:step6:blocks": true,
+    "tangent-canny/scale0:step6:sigmas": true,
+    "tangent-canny/scale0:step6:context_gather_hash": true,
+    "tangent-canny/scale0:step6:hint_gather_hash": true,
+    "tangent-canny/scale0:step6:runtime_assertions_recorded": true,
+    "tangent-canny/scale0:sum:target_tokens_forwarded": true,
+    "tangent-canny/scale0:sum:base_blocks": true,
+    "tangent-canny/scale0:sum:control_blocks": true,
+    "tangent-canny/scale0:sum:base_joint_query_tokens": true,
+    "array_shape:tangent-canny/scale0:final_latents": true,
+    "array_dtype:tangent-canny/scale0:final_latents": true,
+    "array_finite:tangent-canny/scale0:final_latents": true,
+    "array_hash:tangent-canny/scale0:final_latents": true,
+    "tangent-canny/scale0:final_known_edge_exact": true,
+    "tangent-canny/scale0:saved_prefix_cpu_assembly_exact": true,
+    "tangent-canny/scale0:final_image_shapes": true,
+    "tangent-canny/scale0:final_composite_source_exact": true,
+    "file_hash:tangent-canny/scale0:raw_png": true,
+    "file_hash:tangent-canny/scale0:composite_png": true,
+    "tangent-canny/scale0:preview_steps": true,
+    "array_shape:tangent-canny/scale0:preview2:latents": true,
+    "array_dtype:tangent-canny/scale0:preview2:latents": true,
+    "array_finite:tangent-canny/scale0:preview2:latents": true,
+    "array_shape:tangent-canny/scale0:preview2:absolute_ids": true,
+    "array_dtype:tangent-canny/scale0:preview2:absolute_ids": true,
+    "array_finite:tangent-canny/scale0:preview2:absolute_ids": true,
+    "tangent-canny/scale0:preview2:absolute_ids_exact": true,
+    "tangent-canny/scale0:preview2:window_exact": true,
+    "tangent-canny/scale0:preview2:prestep_sigma": true,
+    "tangent-canny/scale0:preview2:known_edge_codec_exact": true,
+    "tangent-canny/scale0:preview2:image_shapes": true,
+    "tangent-canny/scale0:preview2:composite_source_exact": true,
+    "file_hash:tangent-canny/scale0:preview2:raw_png": true,
+    "file_hash:tangent-canny/scale0:preview2:composite_png": true,
+    "array_shape:tangent-canny/scale0:preview4:latents": true,
+    "array_dtype:tangent-canny/scale0:preview4:latents": true,
+    "array_finite:tangent-canny/scale0:preview4:latents": true,
+    "array_shape:tangent-canny/scale0:preview4:absolute_ids": true,
+    "array_dtype:tangent-canny/scale0:preview4:absolute_ids": true,
+    "array_finite:tangent-canny/scale0:preview4:absolute_ids": true,
+    "tangent-canny/scale0:preview4:absolute_ids_exact": true,
+    "tangent-canny/scale0:preview4:window_exact": true,
+    "tangent-canny/scale0:preview4:prestep_sigma": true,
+    "tangent-canny/scale0:preview4:known_edge_codec_exact": true,
+    "tangent-canny/scale0:preview4:image_shapes": true,
+    "tangent-canny/scale0:preview4:composite_source_exact": true,
+    "file_hash:tangent-canny/scale0:preview4:raw_png": true,
+    "file_hash:tangent-canny/scale0:preview4:composite_png": true,
+    "array_shape:tangent-canny/scale0:preview6:latents": true,
+    "array_dtype:tangent-canny/scale0:preview6:latents": true,
+    "array_finite:tangent-canny/scale0:preview6:latents": true,
+    "array_shape:tangent-canny/scale0:preview6:absolute_ids": true,
+    "array_dtype:tangent-canny/scale0:preview6:absolute_ids": true,
+    "array_finite:tangent-canny/scale0:preview6:absolute_ids": true,
+    "tangent-canny/scale0:preview6:absolute_ids_exact": true,
+    "tangent-canny/scale0:preview6:window_exact": true,
+    "tangent-canny/scale0:preview6:prestep_sigma": true,
+    "tangent-canny/scale0:preview6:known_edge_codec_exact": true,
+    "tangent-canny/scale0:preview6:image_shapes": true,
+    "tangent-canny/scale0:preview6:composite_source_exact": true,
+    "file_hash:tangent-canny/scale0:preview6:raw_png": true,
+    "file_hash:tangent-canny/scale0:preview6:composite_png": true,
+    "tangent-canny/scale0.5:arm_metrics_match_suite": true,
+    "tangent-canny/scale0.5:6nfe_192base_96control": true,
+    "tangent-canny/scale0.5:token_totals": true,
+    "tangent-canny/scale0.5:shared_input_hashes": true,
+    "tangent-canny/scale0.5:shared_prompt_sigmas_recipe": true,
+    "tangent-canny/scale0.5:no_cache_recorded": true,
+    "tangent-canny/scale0.5:forward_assertions_recorded": true,
+    "tangent-canny/scale0.5:step1:absolute_window_count": true,
+    "tangent-canny/scale0.5:step1:absent_and_new_counts": true,
+    "tangent-canny/scale0.5:step1:base_control_image_rows": true,
+    "tangent-canny/scale0.5:step1:both_chain_queries": true,
+    "tangent-canny/scale0.5:step1:blocks": true,
+    "tangent-canny/scale0.5:step1:sigmas": true,
+    "tangent-canny/scale0.5:step1:context_gather_hash": true,
+    "tangent-canny/scale0.5:step1:hint_gather_hash": true,
+    "tangent-canny/scale0.5:step1:runtime_assertions_recorded": true,
+    "tangent-canny/scale0.5:step2:absolute_window_count": true,
+    "tangent-canny/scale0.5:step2:absent_and_new_counts": true,
+    "tangent-canny/scale0.5:step2:base_control_image_rows": true,
+    "tangent-canny/scale0.5:step2:both_chain_queries": true,
+    "tangent-canny/scale0.5:step2:blocks": true,
+    "tangent-canny/scale0.5:step2:sigmas": true,
+    "tangent-canny/scale0.5:step2:context_gather_hash": true,
+    "tangent-canny/scale0.5:step2:hint_gather_hash": true,
+    "tangent-canny/scale0.5:step2:runtime_assertions_recorded": true,
+    "tangent-canny/scale0.5:step3:absolute_window_count": true,
+    "tangent-canny/scale0.5:step3:absent_and_new_counts": true,
+    "tangent-canny/scale0.5:step3:base_control_image_rows": true,
+    "tangent-canny/scale0.5:step3:both_chain_queries": true,
+    "tangent-canny/scale0.5:step3:blocks": true,
+    "tangent-canny/scale0.5:step3:sigmas": true,
+    "tangent-canny/scale0.5:step3:context_gather_hash": true,
+    "tangent-canny/scale0.5:step3:hint_gather_hash": true,
+    "tangent-canny/scale0.5:step3:runtime_assertions_recorded": true,
+    "tangent-canny/scale0.5:step4:absolute_window_count": true,
+    "tangent-canny/scale0.5:step4:absent_and_new_counts": true,
+    "tangent-canny/scale0.5:step4:base_control_image_rows": true,
+    "tangent-canny/scale0.5:step4:both_chain_queries": true,
+    "tangent-canny/scale0.5:step4:blocks": true,
+    "tangent-canny/scale0.5:step4:sigmas": true,
+    "tangent-canny/scale0.5:step4:context_gather_hash": true,
+    "tangent-canny/scale0.5:step4:hint_gather_hash": true,
+    "tangent-canny/scale0.5:step4:runtime_assertions_recorded": true,
+    "tangent-canny/scale0.5:step5:absolute_window_count": true,
+    "tangent-canny/scale0.5:step5:absent_and_new_counts": true,
+    "tangent-canny/scale0.5:step5:base_control_image_rows": true,
+    "tangent-canny/scale0.5:step5:both_chain_queries": true,
+    "tangent-canny/scale0.5:step5:blocks": true,
+    "tangent-canny/scale0.5:step5:sigmas": true,
+    "tangent-canny/scale0.5:step5:context_gather_hash": true,
+    "tangent-canny/scale0.5:step5:hint_gather_hash": true,
+    "tangent-canny/scale0.5:step5:runtime_assertions_recorded": true,
+    "tangent-canny/scale0.5:step6:absolute_window_count": true,
+    "tangent-canny/scale0.5:step6:absent_and_new_counts": true,
+    "tangent-canny/scale0.5:step6:base_control_image_rows": true,
+    "tangent-canny/scale0.5:step6:both_chain_queries": true,
+    "tangent-canny/scale0.5:step6:blocks": true,
+    "tangent-canny/scale0.5:step6:sigmas": true,
+    "tangent-canny/scale0.5:step6:context_gather_hash": true,
+    "tangent-canny/scale0.5:step6:hint_gather_hash": true,
+    "tangent-canny/scale0.5:step6:runtime_assertions_recorded": true,
+    "tangent-canny/scale0.5:sum:target_tokens_forwarded": true,
+    "tangent-canny/scale0.5:sum:base_blocks": true,
+    "tangent-canny/scale0.5:sum:control_blocks": true,
+    "tangent-canny/scale0.5:sum:base_joint_query_tokens": true,
+    "array_shape:tangent-canny/scale0.5:final_latents": true,
+    "array_dtype:tangent-canny/scale0.5:final_latents": true,
+    "array_finite:tangent-canny/scale0.5:final_latents": true,
+    "array_hash:tangent-canny/scale0.5:final_latents": true,
+    "tangent-canny/scale0.5:final_known_edge_exact": true,
+    "tangent-canny/scale0.5:saved_prefix_cpu_assembly_exact": true,
+    "tangent-canny/scale0.5:final_image_shapes": true,
+    "tangent-canny/scale0.5:final_composite_source_exact": true,
+    "file_hash:tangent-canny/scale0.5:raw_png": true,
+    "file_hash:tangent-canny/scale0.5:composite_png": true,
+    "tangent-canny/scale0.5:preview_steps": true,
+    "array_shape:tangent-canny/scale0.5:preview2:latents": true,
+    "array_dtype:tangent-canny/scale0.5:preview2:latents": true,
+    "array_finite:tangent-canny/scale0.5:preview2:latents": true,
+    "array_shape:tangent-canny/scale0.5:preview2:absolute_ids": true,
+    "array_dtype:tangent-canny/scale0.5:preview2:absolute_ids": true,
+    "array_finite:tangent-canny/scale0.5:preview2:absolute_ids": true,
+    "tangent-canny/scale0.5:preview2:absolute_ids_exact": true,
+    "tangent-canny/scale0.5:preview2:window_exact": true,
+    "tangent-canny/scale0.5:preview2:prestep_sigma": true,
+    "tangent-canny/scale0.5:preview2:known_edge_codec_exact": true,
+    "tangent-canny/scale0.5:preview2:image_shapes": true,
+    "tangent-canny/scale0.5:preview2:composite_source_exact": true,
+    "file_hash:tangent-canny/scale0.5:preview2:raw_png": true,
+    "file_hash:tangent-canny/scale0.5:preview2:composite_png": true,
+    "array_shape:tangent-canny/scale0.5:preview4:latents": true,
+    "array_dtype:tangent-canny/scale0.5:preview4:latents": true,
+    "array_finite:tangent-canny/scale0.5:preview4:latents": true,
+    "array_shape:tangent-canny/scale0.5:preview4:absolute_ids": true,
+    "array_dtype:tangent-canny/scale0.5:preview4:absolute_ids": true,
+    "array_finite:tangent-canny/scale0.5:preview4:absolute_ids": true,
+    "tangent-canny/scale0.5:preview4:absolute_ids_exact": true,
+    "tangent-canny/scale0.5:preview4:window_exact": true,
+    "tangent-canny/scale0.5:preview4:prestep_sigma": true,
+    "tangent-canny/scale0.5:preview4:known_edge_codec_exact": true,
+    "tangent-canny/scale0.5:preview4:image_shapes": true,
+    "tangent-canny/scale0.5:preview4:composite_source_exact": true,
+    "file_hash:tangent-canny/scale0.5:preview4:raw_png": true,
+    "file_hash:tangent-canny/scale0.5:preview4:composite_png": true,
+    "array_shape:tangent-canny/scale0.5:preview6:latents": true,
+    "array_dtype:tangent-canny/scale0.5:preview6:latents": true,
+    "array_finite:tangent-canny/scale0.5:preview6:latents": true,
+    "array_shape:tangent-canny/scale0.5:preview6:absolute_ids": true,
+    "array_dtype:tangent-canny/scale0.5:preview6:absolute_ids": true,
+    "array_finite:tangent-canny/scale0.5:preview6:absolute_ids": true,
+    "tangent-canny/scale0.5:preview6:absolute_ids_exact": true,
+    "tangent-canny/scale0.5:preview6:window_exact": true,
+    "tangent-canny/scale0.5:preview6:prestep_sigma": true,
+    "tangent-canny/scale0.5:preview6:known_edge_codec_exact": true,
+    "tangent-canny/scale0.5:preview6:image_shapes": true,
+    "tangent-canny/scale0.5:preview6:composite_source_exact": true,
+    "file_hash:tangent-canny/scale0.5:preview6:raw_png": true,
+    "file_hash:tangent-canny/scale0.5:preview6:composite_png": true,
+    "tangent-canny/scale1:arm_metrics_match_suite": true,
+    "tangent-canny/scale1:6nfe_192base_96control": true,
+    "tangent-canny/scale1:token_totals": true,
+    "tangent-canny/scale1:shared_input_hashes": true,
+    "tangent-canny/scale1:shared_prompt_sigmas_recipe": true,
+    "tangent-canny/scale1:no_cache_recorded": true,
+    "tangent-canny/scale1:forward_assertions_recorded": true,
+    "tangent-canny/scale1:step1:absolute_window_count": true,
+    "tangent-canny/scale1:step1:absent_and_new_counts": true,
+    "tangent-canny/scale1:step1:base_control_image_rows": true,
+    "tangent-canny/scale1:step1:both_chain_queries": true,
+    "tangent-canny/scale1:step1:blocks": true,
+    "tangent-canny/scale1:step1:sigmas": true,
+    "tangent-canny/scale1:step1:context_gather_hash": true,
+    "tangent-canny/scale1:step1:hint_gather_hash": true,
+    "tangent-canny/scale1:step1:runtime_assertions_recorded": true,
+    "tangent-canny/scale1:step2:absolute_window_count": true,
+    "tangent-canny/scale1:step2:absent_and_new_counts": true,
+    "tangent-canny/scale1:step2:base_control_image_rows": true,
+    "tangent-canny/scale1:step2:both_chain_queries": true,
+    "tangent-canny/scale1:step2:blocks": true,
+    "tangent-canny/scale1:step2:sigmas": true,
+    "tangent-canny/scale1:step2:context_gather_hash": true,
+    "tangent-canny/scale1:step2:hint_gather_hash": true,
+    "tangent-canny/scale1:step2:runtime_assertions_recorded": true,
+    "tangent-canny/scale1:step3:absolute_window_count": true,
+    "tangent-canny/scale1:step3:absent_and_new_counts": true,
+    "tangent-canny/scale1:step3:base_control_image_rows": true,
+    "tangent-canny/scale1:step3:both_chain_queries": true,
+    "tangent-canny/scale1:step3:blocks": true,
+    "tangent-canny/scale1:step3:sigmas": true,
+    "tangent-canny/scale1:step3:context_gather_hash": true,
+    "tangent-canny/scale1:step3:hint_gather_hash": true,
+    "tangent-canny/scale1:step3:runtime_assertions_recorded": true,
+    "tangent-canny/scale1:step4:absolute_window_count": true,
+    "tangent-canny/scale1:step4:absent_and_new_counts": true,
+    "tangent-canny/scale1:step4:base_control_image_rows": true,
+    "tangent-canny/scale1:step4:both_chain_queries": true,
+    "tangent-canny/scale1:step4:blocks": true,
+    "tangent-canny/scale1:step4:sigmas": true,
+    "tangent-canny/scale1:step4:context_gather_hash": true,
+    "tangent-canny/scale1:step4:hint_gather_hash": true,
+    "tangent-canny/scale1:step4:runtime_assertions_recorded": true,
+    "tangent-canny/scale1:step5:absolute_window_count": true,
+    "tangent-canny/scale1:step5:absent_and_new_counts": true,
+    "tangent-canny/scale1:step5:base_control_image_rows": true,
+    "tangent-canny/scale1:step5:both_chain_queries": true,
+    "tangent-canny/scale1:step5:blocks": true,
+    "tangent-canny/scale1:step5:sigmas": true,
+    "tangent-canny/scale1:step5:context_gather_hash": true,
+    "tangent-canny/scale1:step5:hint_gather_hash": true,
+    "tangent-canny/scale1:step5:runtime_assertions_recorded": true,
+    "tangent-canny/scale1:step6:absolute_window_count": true,
+    "tangent-canny/scale1:step6:absent_and_new_counts": true,
+    "tangent-canny/scale1:step6:base_control_image_rows": true,
+    "tangent-canny/scale1:step6:both_chain_queries": true,
+    "tangent-canny/scale1:step6:blocks": true,
+    "tangent-canny/scale1:step6:sigmas": true,
+    "tangent-canny/scale1:step6:context_gather_hash": true,
+    "tangent-canny/scale1:step6:hint_gather_hash": true,
+    "tangent-canny/scale1:step6:runtime_assertions_recorded": true,
+    "tangent-canny/scale1:sum:target_tokens_forwarded": true,
+    "tangent-canny/scale1:sum:base_blocks": true,
+    "tangent-canny/scale1:sum:control_blocks": true,
+    "tangent-canny/scale1:sum:base_joint_query_tokens": true,
+    "array_shape:tangent-canny/scale1:final_latents": true,
+    "array_dtype:tangent-canny/scale1:final_latents": true,
+    "array_finite:tangent-canny/scale1:final_latents": true,
+    "array_hash:tangent-canny/scale1:final_latents": true,
+    "tangent-canny/scale1:final_known_edge_exact": true,
+    "tangent-canny/scale1:saved_prefix_cpu_assembly_exact": true,
+    "tangent-canny/scale1:final_image_shapes": true,
+    "tangent-canny/scale1:final_composite_source_exact": true,
+    "file_hash:tangent-canny/scale1:raw_png": true,
+    "file_hash:tangent-canny/scale1:composite_png": true,
+    "tangent-canny/scale1:preview_steps": true,
+    "array_shape:tangent-canny/scale1:preview2:latents": true,
+    "array_dtype:tangent-canny/scale1:preview2:latents": true,
+    "array_finite:tangent-canny/scale1:preview2:latents": true,
+    "array_shape:tangent-canny/scale1:preview2:absolute_ids": true,
+    "array_dtype:tangent-canny/scale1:preview2:absolute_ids": true,
+    "array_finite:tangent-canny/scale1:preview2:absolute_ids": true,
+    "tangent-canny/scale1:preview2:absolute_ids_exact": true,
+    "tangent-canny/scale1:preview2:window_exact": true,
+    "tangent-canny/scale1:preview2:prestep_sigma": true,
+    "tangent-canny/scale1:preview2:known_edge_codec_exact": true,
+    "tangent-canny/scale1:preview2:image_shapes": true,
+    "tangent-canny/scale1:preview2:composite_source_exact": true,
+    "file_hash:tangent-canny/scale1:preview2:raw_png": true,
+    "file_hash:tangent-canny/scale1:preview2:composite_png": true,
+    "array_shape:tangent-canny/scale1:preview4:latents": true,
+    "array_dtype:tangent-canny/scale1:preview4:latents": true,
+    "array_finite:tangent-canny/scale1:preview4:latents": true,
+    "array_shape:tangent-canny/scale1:preview4:absolute_ids": true,
+    "array_dtype:tangent-canny/scale1:preview4:absolute_ids": true,
+    "array_finite:tangent-canny/scale1:preview4:absolute_ids": true,
+    "tangent-canny/scale1:preview4:absolute_ids_exact": true,
+    "tangent-canny/scale1:preview4:window_exact": true,
+    "tangent-canny/scale1:preview4:prestep_sigma": true,
+    "tangent-canny/scale1:preview4:known_edge_codec_exact": true,
+    "tangent-canny/scale1:preview4:image_shapes": true,
+    "tangent-canny/scale1:preview4:composite_source_exact": true,
+    "file_hash:tangent-canny/scale1:preview4:raw_png": true,
+    "file_hash:tangent-canny/scale1:preview4:composite_png": true,
+    "array_shape:tangent-canny/scale1:preview6:latents": true,
+    "array_dtype:tangent-canny/scale1:preview6:latents": true,
+    "array_finite:tangent-canny/scale1:preview6:latents": true,
+    "array_shape:tangent-canny/scale1:preview6:absolute_ids": true,
+    "array_dtype:tangent-canny/scale1:preview6:absolute_ids": true,
+    "array_finite:tangent-canny/scale1:preview6:absolute_ids": true,
+    "tangent-canny/scale1:preview6:absolute_ids_exact": true,
+    "tangent-canny/scale1:preview6:window_exact": true,
+    "tangent-canny/scale1:preview6:prestep_sigma": true,
+    "tangent-canny/scale1:preview6:known_edge_codec_exact": true,
+    "tangent-canny/scale1:preview6:image_shapes": true,
+    "tangent-canny/scale1:preview6:composite_source_exact": true,
+    "file_hash:tangent-canny/scale1:preview6:raw_png": true,
+    "file_hash:tangent-canny/scale1:preview6:composite_png": true,
+    "baseline_recorded_hash:source_prefix": true,
+    "baseline_recorded_hash:noise": true,
+    "baseline_recorded_hash:edge_known": true,
+    "baseline_metadata:seed": true,
+    "baseline_metadata:prompt": true,
+    "baseline_metadata:sigmas": true,
+    "baseline_metadata:steps": true,
+    "baseline_metadata:model_revision": true,
+    "baseline_metadata:adapter_revision": true,
+    "baseline_metadata:adapter_rank": true,
+    "baseline_metadata:width": true,
+    "baseline_metadata:height": true,
+    "baseline_metadata:active_heights_by_step": true,
+    "baseline_metadata:known_target_encoding_context": true,
+    "baseline_metadata:quantization": true,
+    "baseline_metadata:successful_edge_context": true,
+    "array_shape:baseline_step6_clean": true,
+    "array_dtype:baseline_step6_clean": true,
+    "array_finite:baseline_step6_clean": true,
+    "baseline_actual_known_edge_block_exact": true,
+    "recorded_baseline_comparison_matches_original_precision": true,
+    "recorded_baseline_comparison_provenance": true,
+    "recorded_baseline_clean_file_hash": true,
+    "baseline_preview2:absolute_ids_match_new": true,
+    "baseline_preview2:window_sigma_match_new": true,
+    "baseline_preview4:absolute_ids_match_new": true,
+    "baseline_preview4:window_sigma_match_new": true,
+    "baseline_preview6:absolute_ids_match_new": true,
+    "baseline_preview6:window_sigma_match_new": true,
+    "file_hash:baseline_composite_png": true,
+    "baseline_cached_query_total": true,
+    "file_hash:runner": true,
+    "file_hash:code:control.py": true,
+    "file_hash:code:conditioning.py": true,
+    "file_hash:code:reference_control.py": true,
+    "file_hash:code:sparse_conditioning.py": true,
+    "file_hash:code:localized_reference_control.py": true,
+    "file_hash:code:growing_localized_control.py": true,
+    "file_hash:code:test_reference_control_cpu.py": true,
+    "file_hash:code:test_localized_reference_cpu.py": true,
+    "file_hash:code:test_growing_localized_cpu.py": true,
+    "file_hash:runtime:qwen21_attention": true,
+    "file_hash:runtime:qwen21_transformer_block": true,
+    "file_hash:runtime:qwen21_layout": true,
+    "file_hash:runtime:qwen21_transformer": true,
+    "file_hash:runtime:qwen21_norm_out": true,
+    "file_hash:runtime:qwen21_text_projection": true,
+    "file_hash:runtime:qwen21_time_text_embed": true,
+    "file_hash:runtime:qwen21_rope": true,
+    "file_hash:old_geometry_runner": true,
+    "file_hash:old_spatial_runner": true,
+    "file_hash:cpu_report:cpu_parity.json": true,
+    "cpu_report_passed:cpu_parity.json": true,
+    "file_hash:cpu_script:test_cpu_parity.py": true,
+    "cpu_report_source_pin:cpu_parity.json:control.py": true,
+    "file_hash:cpu_report:reference_cpu_validation.json": true,
+    "cpu_report_passed:reference_cpu_validation.json": true,
+    "file_hash:cpu_script:test_reference_control_cpu.py": true,
+    "cpu_report_source_pin:reference_cpu_validation.json:control.py": true,
+    "cpu_report_source_pin:reference_cpu_validation.json:reference_control.py": true,
+    "cpu_report_source_pin:reference_cpu_validation.json:conditioning.py": true,
+    "file_hash:cpu_report:localized_cpu_validation.json": true,
+    "cpu_report_passed:localized_cpu_validation.json": true,
+    "file_hash:cpu_script:test_localized_reference_cpu.py": true,
+    "cpu_report_sources_pinned:localized_cpu_validation.json": true,
+    "cpu_report_runtime_pinned:localized_cpu_validation.json": true,
+    "file_hash:cpu_report:growing_localized_cpu_validation.json": true,
+    "cpu_report_passed:growing_localized_cpu_validation.json": true,
+    "file_hash:cpu_script:test_growing_localized_cpu.py": true,
+    "cpu_report_sources_pinned:growing_localized_cpu_validation.json": true,
+    "cpu_report_runtime_pinned:growing_localized_cpu_validation.json": true,
+    "growth_test_geometry_runner_pinned": true,
+    "growth_test_two_paired_toy_trajectories": true,
+    "file_hash:base_manifest": true,
+    "file_hash:adapter_manifest": true,
+    "file_hash:original_jpeg:track1": true,
+    "file_hash:original_jpeg:track2": true,
+    "file_hash:original_jpeg:track3": true
+  },
+  "file_hashes": {
+    "suite_metrics": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/growing_localized_metrics.json",
+      "sha256": "951479c4fb39af03c91fc465159f19aad039396ec9ff2719acc3b49200c996c8"
+    },
+    "baseline_metrics": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/metrics.json",
+      "sha256": "9820efd6170a0634afd6a56f70b930b367e214c202e3fbc0020b523dcdf2335c"
+    },
+    "source512": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/track3/source_512.png",
+      "sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+      "recorded_sha256": "ddc835523a27f455b999673ee2460b31a1b6b93b86ef0420e6f37ff8ea0f0157",
+      "matches_recorded": true
+    },
+    "source_rgba_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/source_rgba.png",
+      "sha256": "38d08d8113c8518d37cdb45d1034e9bd7a9331e28362b8839a6059cb370bc01f"
+    },
+    "control_map": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track3/canny_extrapolated.png",
+      "sha256": "77ef3e3fc7967a54de11b7a8d60985eb5d09ed25f28f65c1bc407960e37e39d8",
+      "recorded_sha256": "77ef3e3fc7967a54de11b7a8d60985eb5d09ed25f28f65c1bc407960e37e39d8",
+      "matches_recorded": true
+    },
+    "guide_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_inputs/2026-10-05/track3/extrapolated_only.png",
+      "sha256": "de298a2574b9155b409cc221f5c4ba399f4f809a1ce1a4038691906993b171e3",
+      "recorded_sha256": "de298a2574b9155b409cc221f5c4ba399f4f809a1ce1a4038691906993b171e3",
+      "matches_recorded": true
+    },
+    "hint_display": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/hint_weights.png",
+      "sha256": "c1778b91c0e72914748050ff47941c99786e141abcd7db653a5b38b92474cbcf",
+      "recorded_sha256": "c1778b91c0e72914748050ff47941c99786e141abcd7db653a5b38b92474cbcf",
+      "matches_recorded": true
+    },
+    "support_display": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/support.png",
+      "sha256": "e181e4455adc7efe2acae40ab332a67f13b6782e787506d809e4191627576caa",
+      "recorded_sha256": "e181e4455adc7efe2acae40ab332a67f13b6782e787506d809e4191627576caa",
+      "matches_recorded": true
+    },
+    "shared:edge_known_target.npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/edge_known_target.npz",
+      "sha256": "e47f218e08642524b3400f93495e541d900f7123c86a8ad06560a8e737924992"
+    },
+    "shared:effective_hint_weights.npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/effective_hint_weights.npz",
+      "sha256": "389f82f5c924717f025171825b2ccad6b3ca22a676051da4f38ac5405f3fc8d0"
+    },
+    "shared:hint_pixel_weights_float32.npy": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/hint_pixel_weights_float32.npy",
+      "sha256": "b93812ec78c3748e4e15552796e8c282d9712f5ba04a190f54f3e97d9efbde2f"
+    },
+    "shared:hint_target_weights_float32.npy": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/hint_target_weights_float32.npy",
+      "sha256": "31567ec0ea4c64305afdd2259da0a1699e378f4682ba9c7ffec045a4af3e1fe4"
+    },
+    "shared:hint_weights.json": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/hint_weights.json",
+      "sha256": "14ce93d29ed85a4d3dc7c0ee4d010e93593458c8bdf62802c7ef9bb14943c0a1"
+    },
+    "shared:hint_weights.png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/hint_weights.png",
+      "sha256": "c1778b91c0e72914748050ff47941c99786e141abcd7db653a5b38b92474cbcf"
+    },
+    "shared:reference_conditioning.npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/reference_conditioning.npz",
+      "sha256": "82c43708d5af2310a150a1d14c1a0457fdd36d7390dbaff14efdd1f544c00b1f"
+    },
+    "shared:support.json": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/support.json",
+      "sha256": "b963ae452fb38d808d0628543b23ef259a9e87d182ed0a107e1d02025f94ede7"
+    },
+    "shared:support.png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/support.png",
+      "sha256": "e181e4455adc7efe2acae40ab332a67f13b6782e787506d809e4191627576caa"
+    },
+    "shared:support_tokens.npy": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/support_tokens.npy",
+      "sha256": "38ed40e7186380d66e2d7733ef92456210bf5e765a670a0931887e2a1ccc1a55"
+    },
+    "shared:tangent-canny_contexts.npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/tangent-canny_contexts.npz",
+      "sha256": "5a973dd8b447de5e0bf5edaf56a80139f1deb816a9cbc244418afc28a9784d27"
+    },
+    "shared:target_noise.npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/shared/target_noise.npz",
+      "sha256": "66f5fcc50aca469517350f763804ecb2cb3ef6f42caccfab95c761a06e0ab0db"
+    },
+    "tangent-canny/scale0:final_latents_npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/final_latents.npz",
+      "sha256": "566b3aed5a294484ce73ba9f7b12d531bdf7367f11601d0d7d598ed2b2a050fc"
+    },
+    "tangent-canny/scale0:raw_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/raw.png",
+      "sha256": "c09f8c276ba4f23a7cf5948225951682ee808046dae4bda4884b4f5931de1b66",
+      "recorded_sha256": "c09f8c276ba4f23a7cf5948225951682ee808046dae4bda4884b4f5931de1b66",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0:composite_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/composite.png",
+      "sha256": "5adf284d7540150c4630f5cb3dd51f5b63b02e0ea1982d0bdbf59183e8d8639e",
+      "recorded_sha256": "5adf284d7540150c4630f5cb3dd51f5b63b02e0ea1982d0bdbf59183e8d8639e",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0:preview2:npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step02_predicted_clean.npz",
+      "sha256": "c6193fe41e5414f9bcb4ee30f3c3136f0006d4eef61226e4e80125766d2f4c42"
+    },
+    "tangent-canny/scale0:preview2:raw_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step02_predicted_clean_raw.png",
+      "sha256": "2879fae3813474f2a86b1f310ffa5c8f3ab77e28fe0093cda673f27dc34493a0",
+      "recorded_sha256": "2879fae3813474f2a86b1f310ffa5c8f3ab77e28fe0093cda673f27dc34493a0",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0:preview2:composite_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step02_predicted_clean_composite.png",
+      "sha256": "7daa3ea97219c0f6ef757d8209a502cf2b15b14971e0cdf0c83bf861f8ab13eb",
+      "recorded_sha256": "7daa3ea97219c0f6ef757d8209a502cf2b15b14971e0cdf0c83bf861f8ab13eb",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0:preview4:npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step04_predicted_clean.npz",
+      "sha256": "5273feee451b49011434e8c05c3b59c4d201dfb8fc78695ee7627f750f74f795"
+    },
+    "tangent-canny/scale0:preview4:raw_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step04_predicted_clean_raw.png",
+      "sha256": "db5352b399aef518741398ba2bd5af24421b1418db7372e16c0f942c9d556cb7",
+      "recorded_sha256": "db5352b399aef518741398ba2bd5af24421b1418db7372e16c0f942c9d556cb7",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0:preview4:composite_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step04_predicted_clean_composite.png",
+      "sha256": "c047cfcedcd9bc6a007d50ab15e8010d0dfac0c9018c1d919b3465a6319c7eb7",
+      "recorded_sha256": "c047cfcedcd9bc6a007d50ab15e8010d0dfac0c9018c1d919b3465a6319c7eb7",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0:preview6:npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step06_predicted_clean.npz",
+      "sha256": "4bd2410e804a235bb4a1f3cf846bc82ebbe3211ad6cff9f6dc15cf6e82b54f90"
+    },
+    "tangent-canny/scale0:preview6:raw_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step06_predicted_clean_raw.png",
+      "sha256": "c09f8c276ba4f23a7cf5948225951682ee808046dae4bda4884b4f5931de1b66",
+      "recorded_sha256": "c09f8c276ba4f23a7cf5948225951682ee808046dae4bda4884b4f5931de1b66",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0:preview6:composite_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/previews/step06_predicted_clean_composite.png",
+      "sha256": "5adf284d7540150c4630f5cb3dd51f5b63b02e0ea1982d0bdbf59183e8d8639e",
+      "recorded_sha256": "5adf284d7540150c4630f5cb3dd51f5b63b02e0ea1982d0bdbf59183e8d8639e",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0:metrics": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0/metrics.json",
+      "sha256": "fbd501663d7edb50316d7abfd8a5e3f36c7913d5b73ef6b7a26db94efe9e10c2"
+    },
+    "tangent-canny/scale0.5:final_latents_npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/final_latents.npz",
+      "sha256": "97fa2bd8fe74d31a4e62ebd9a95c42853f1cfcb6d67b74810f38056edb85e06c"
+    },
+    "tangent-canny/scale0.5:raw_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/raw.png",
+      "sha256": "1153d33c3a3351e73f817f4a05cd2930542b5fcc6841aea588d0791f5003401d",
+      "recorded_sha256": "1153d33c3a3351e73f817f4a05cd2930542b5fcc6841aea588d0791f5003401d",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0.5:composite_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/composite.png",
+      "sha256": "b573535f0b7be0f81cb36cd2ec23ae1dfbad5e4f7811a14fe6e6da2d63a2c29a",
+      "recorded_sha256": "b573535f0b7be0f81cb36cd2ec23ae1dfbad5e4f7811a14fe6e6da2d63a2c29a",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0.5:preview2:npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step02_predicted_clean.npz",
+      "sha256": "fe846937a25d7ab67fd37b50ca973c6666e6bf85d774545f3ab49442d5a55a78"
+    },
+    "tangent-canny/scale0.5:preview2:raw_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step02_predicted_clean_raw.png",
+      "sha256": "97fc807b78563398c53dcd8a90e4c22a6a526c392fb185cf271a1b5f3997d700",
+      "recorded_sha256": "97fc807b78563398c53dcd8a90e4c22a6a526c392fb185cf271a1b5f3997d700",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0.5:preview2:composite_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step02_predicted_clean_composite.png",
+      "sha256": "f3b3f10a561812c5dbecdb83473287610410b870f5b35204c8ef48bacaaedfff",
+      "recorded_sha256": "f3b3f10a561812c5dbecdb83473287610410b870f5b35204c8ef48bacaaedfff",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0.5:preview4:npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step04_predicted_clean.npz",
+      "sha256": "a4ede92b6b615598138e51638f1762a3ed8d381152e56077e54cc89137ba7277"
+    },
+    "tangent-canny/scale0.5:preview4:raw_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step04_predicted_clean_raw.png",
+      "sha256": "03ab46afbe4603b4d225ee59fe0cf4ad03cd2828e4afbc6aeab889f23a418398",
+      "recorded_sha256": "03ab46afbe4603b4d225ee59fe0cf4ad03cd2828e4afbc6aeab889f23a418398",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0.5:preview4:composite_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step04_predicted_clean_composite.png",
+      "sha256": "98a689fe4024a6da37bef4f8714ad88c730632a0d7f0319e101630f2c6c688b7",
+      "recorded_sha256": "98a689fe4024a6da37bef4f8714ad88c730632a0d7f0319e101630f2c6c688b7",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0.5:preview6:npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step06_predicted_clean.npz",
+      "sha256": "cf8d84c1807bba00552a14d7e06c8ba67821cf0fd608e26a0cd7474a97768611"
+    },
+    "tangent-canny/scale0.5:preview6:raw_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step06_predicted_clean_raw.png",
+      "sha256": "1153d33c3a3351e73f817f4a05cd2930542b5fcc6841aea588d0791f5003401d",
+      "recorded_sha256": "1153d33c3a3351e73f817f4a05cd2930542b5fcc6841aea588d0791f5003401d",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0.5:preview6:composite_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/previews/step06_predicted_clean_composite.png",
+      "sha256": "b573535f0b7be0f81cb36cd2ec23ae1dfbad5e4f7811a14fe6e6da2d63a2c29a",
+      "recorded_sha256": "b573535f0b7be0f81cb36cd2ec23ae1dfbad5e4f7811a14fe6e6da2d63a2c29a",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0.5:metrics": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale0.5/metrics.json",
+      "sha256": "a1bb6da52d6fbc5b3b0da7a1d3dfbfc62e9d87b47f92eb654e28f415f39810e8"
+    },
+    "tangent-canny/scale1:final_latents_npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/final_latents.npz",
+      "sha256": "6fa7a17746ed5d8fac160c8fd1e1f687a642a17343b7ad05317700f8633b1123"
+    },
+    "tangent-canny/scale1:raw_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/raw.png",
+      "sha256": "c62fd29a9e40f884831a81c8449042ff11c3d041acdcf4820919a802733e6391",
+      "recorded_sha256": "c62fd29a9e40f884831a81c8449042ff11c3d041acdcf4820919a802733e6391",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale1:composite_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/composite.png",
+      "sha256": "bc1baac780457724295345eb0a6b43b08ab0dbc3d4e50fb2330c6e2ed7c44d29",
+      "recorded_sha256": "bc1baac780457724295345eb0a6b43b08ab0dbc3d4e50fb2330c6e2ed7c44d29",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale1:preview2:npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step02_predicted_clean.npz",
+      "sha256": "0e7c3108dcfde8e4a81dbce69a6742df8284c558b8948e9b8afd4aab15ea7c69"
+    },
+    "tangent-canny/scale1:preview2:raw_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step02_predicted_clean_raw.png",
+      "sha256": "17496684f72186c3697891d0e3f380975193b7d164f728fe43223a38489ab5ba",
+      "recorded_sha256": "17496684f72186c3697891d0e3f380975193b7d164f728fe43223a38489ab5ba",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale1:preview2:composite_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step02_predicted_clean_composite.png",
+      "sha256": "861f17845853f1d184ee988db07ef224d19a41dfaaec3fd35df4596951302e3f",
+      "recorded_sha256": "861f17845853f1d184ee988db07ef224d19a41dfaaec3fd35df4596951302e3f",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale1:preview4:npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step04_predicted_clean.npz",
+      "sha256": "d056736c8590effddc56523a6ccec8fc71a4d23a2514520acd2e17d481814538"
+    },
+    "tangent-canny/scale1:preview4:raw_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step04_predicted_clean_raw.png",
+      "sha256": "9a8a00656302dc0e9790c3bd376dcca06b7b29cdf8e293a9e43dd4545355dda6",
+      "recorded_sha256": "9a8a00656302dc0e9790c3bd376dcca06b7b29cdf8e293a9e43dd4545355dda6",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale1:preview4:composite_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step04_predicted_clean_composite.png",
+      "sha256": "b63f34a7b3da55edd6076c79348f400b1c7a01d68be17ec972360e45b34c224d",
+      "recorded_sha256": "b63f34a7b3da55edd6076c79348f400b1c7a01d68be17ec972360e45b34c224d",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale1:preview6:npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step06_predicted_clean.npz",
+      "sha256": "edce65738a1b3344d15ffe11f336baf04141ef0bdd767aa4d640fc7bd3644713"
+    },
+    "tangent-canny/scale1:preview6:raw_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step06_predicted_clean_raw.png",
+      "sha256": "c62fd29a9e40f884831a81c8449042ff11c3d041acdcf4820919a802733e6391",
+      "recorded_sha256": "c62fd29a9e40f884831a81c8449042ff11c3d041acdcf4820919a802733e6391",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale1:preview6:composite_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/previews/step06_predicted_clean_composite.png",
+      "sha256": "bc1baac780457724295345eb0a6b43b08ab0dbc3d4e50fb2330c6e2ed7c44d29",
+      "recorded_sha256": "bc1baac780457724295345eb0a6b43b08ab0dbc3d4e50fb2330c6e2ed7c44d29",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale1:metrics": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_runs/2026-10-05/track3-growing-localized6/tangent-canny/scale1/metrics.json",
+      "sha256": "4ef95935ee4647aafdc3609e35dc9b5c0cf0a4c8970c145be8cfde5a1e6de41a"
+    },
+    "baseline_step6_clean_npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step06_predicted_clean.npz",
+      "sha256": "568cf55c157f5436ef2bb476713f77178387b67eb246b98fee5127f988f13298"
+    },
+    "baseline_preview2:raw_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step02_predicted_clean_raw.png",
+      "sha256": "b70c3c90647c32d82fa4734415c248e65811421d454fdb26befc4bc845ba1be5"
+    },
+    "baseline_preview2:composite_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step02_predicted_clean_composite.png",
+      "sha256": "60751d6348846f2cb5d1419224ed633422aeb250eeb69a4f7f905bed983e84a1"
+    },
+    "baseline_preview2:npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step02_predicted_clean.npz",
+      "sha256": "73ea028a207f193db71ed7d3aa8d91c9eb3e3736113883f0201b73a53b68064f"
+    },
+    "baseline_preview4:raw_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step04_predicted_clean_raw.png",
+      "sha256": "b4ff6e51c3ead6fb595df503083d92eee89213cf267a4e357ca07a3090dba41b"
+    },
+    "baseline_preview4:composite_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step04_predicted_clean_composite.png",
+      "sha256": "d779a1da80ba0e29633c2b7db41065f7f10fba523f7d4fee3048aaae07c61bad"
+    },
+    "baseline_preview4:npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step04_predicted_clean.npz",
+      "sha256": "1a8bf8709639c9def7442791d4fc67f88b5e8fecc17ad2fe9377d5f050e26c62"
+    },
+    "baseline_preview6:raw_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step06_predicted_clean_raw.png",
+      "sha256": "76ac905a5728fc3c41af795de3e802d40972d9c589941d8e85474cf561e9fdf6"
+    },
+    "baseline_preview6:composite_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step06_predicted_clean_composite.png",
+      "sha256": "03ad495177a35f9ca8e405fc7b5d5a111c4389ee93230ee30381c9b38dcbe2e8"
+    },
+    "baseline_preview6:npz": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/previews/step06_predicted_clean.npz",
+      "sha256": "568cf55c157f5436ef2bb476713f77178387b67eb246b98fee5127f988f13298"
+    },
+    "baseline_raw_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/raw.png",
+      "sha256": "76ac905a5728fc3c41af795de3e802d40972d9c589941d8e85474cf561e9fdf6"
+    },
+    "baseline_composite_png": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/geometry_runs/2026-10-05/track3/edge-context/composite.png",
+      "sha256": "03ad495177a35f9ca8e405fc7b5d5a111c4389ee93230ee30381c9b38dcbe2e8",
+      "recorded_sha256": "03ad495177a35f9ca8e405fc7b5d5a111c4389ee93230ee30381c9b38dcbe2e8",
+      "matches_recorded": true
+    },
+    "runner": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_growing_localized_control_trial.py",
+      "sha256": "6158d3812e811af840df0e5bdb300c5191b3e743b2572013bbdfdf75c39ea965",
+      "recorded_sha256": "6158d3812e811af840df0e5bdb300c5191b3e743b2572013bbdfdf75c39ea965",
+      "matches_recorded": true
+    },
+    "code:control.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/control.py",
+      "sha256": "f4017d5989b5a97db5783cc6f100938ffa1f8a17de92587a1608db5418dd9d2a",
+      "recorded_sha256": "f4017d5989b5a97db5783cc6f100938ffa1f8a17de92587a1608db5418dd9d2a",
+      "matches_recorded": true
+    },
+    "code:conditioning.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/conditioning.py",
+      "sha256": "a1526bdd8704de2b086ceafdd33ac57fa18b0aa6ad096f7c01525d4a772e7dfb",
+      "recorded_sha256": "a1526bdd8704de2b086ceafdd33ac57fa18b0aa6ad096f7c01525d4a772e7dfb",
+      "matches_recorded": true
+    },
+    "code:reference_control.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/reference_control.py",
+      "sha256": "ff8f404714defaf2909e82770cd5ec62811ffcca5b627ee5763efef3b92d09d9",
+      "recorded_sha256": "ff8f404714defaf2909e82770cd5ec62811ffcca5b627ee5763efef3b92d09d9",
+      "matches_recorded": true
+    },
+    "code:sparse_conditioning.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/sparse_conditioning.py",
+      "sha256": "458a8eda69b31600365360822a25369bf479ba86246fdb110b07a546fbb12b0f",
+      "recorded_sha256": "458a8eda69b31600365360822a25369bf479ba86246fdb110b07a546fbb12b0f",
+      "matches_recorded": true
+    },
+    "code:localized_reference_control.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/localized_reference_control.py",
+      "sha256": "2aa4dee1c5b4d64d119d58b8943f5d224b3119fc0ae8054c9d4b85d069fbd722",
+      "recorded_sha256": "2aa4dee1c5b4d64d119d58b8943f5d224b3119fc0ae8054c9d4b85d069fbd722",
+      "matches_recorded": true
+    },
+    "code:growing_localized_control.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/growing_localized_control.py",
+      "sha256": "70a830a9d0139226fbdd2df7c5bc42db30c1e12b6b241950b540c5740b54eac8",
+      "recorded_sha256": "70a830a9d0139226fbdd2df7c5bc42db30c1e12b6b241950b540c5740b54eac8",
+      "matches_recorded": true
+    },
+    "code:test_reference_control_cpu.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/test_reference_control_cpu.py",
+      "sha256": "d3b6f628b0699eadd9526db4157985d9a7e2f673730e4c179d887a1af0d2bbfa",
+      "recorded_sha256": "d3b6f628b0699eadd9526db4157985d9a7e2f673730e4c179d887a1af0d2bbfa",
+      "matches_recorded": true
+    },
+    "code:test_localized_reference_cpu.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/test_localized_reference_cpu.py",
+      "sha256": "5d8264091bb467529f90f2726d2386f03630c4763de2549052266f98f7d74328",
+      "recorded_sha256": "5d8264091bb467529f90f2726d2386f03630c4763de2549052266f98f7d74328",
+      "matches_recorded": true
+    },
+    "code:test_growing_localized_cpu.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/test_growing_localized_cpu.py",
+      "sha256": "cadde338f713ea9399513da4911aa5f4ded2266500a021de03b24e2c7d3b6a98",
+      "recorded_sha256": "cadde338f713ea9399513da4911aa5f4ded2266500a021de03b24e2c7d3b6a98",
+      "matches_recorded": true
+    },
+    "runtime:qwen21_attention": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_attention.py",
+      "sha256": "e992e21c193cb2cd9f2225e8afb67af2424a770b853d3e065ff60c5b95581e83",
+      "recorded_sha256": "e992e21c193cb2cd9f2225e8afb67af2424a770b853d3e065ff60c5b95581e83",
+      "matches_recorded": true
+    },
+    "runtime:qwen21_transformer_block": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_transformer_block.py",
+      "sha256": "60ed91c00e12066417636ea54f5e225198586af0e5e88ccc76dfe209d285b3de",
+      "recorded_sha256": "60ed91c00e12066417636ea54f5e225198586af0e5e88ccc76dfe209d285b3de",
+      "matches_recorded": true
+    },
+    "runtime:qwen21_layout": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_layout.py",
+      "sha256": "37bd0839fa8a215d2d25aec4e8f65f0e05c279ad1f1eab15e1af041368c0be44",
+      "recorded_sha256": "37bd0839fa8a215d2d25aec4e8f65f0e05c279ad1f1eab15e1af041368c0be44",
+      "matches_recorded": true
+    },
+    "runtime:qwen21_transformer": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_transformer.py",
+      "sha256": "8ee62ba80495fb36e8cf885b8b463bc7353cbfe2eb90b377d46283c539686735",
+      "recorded_sha256": "8ee62ba80495fb36e8cf885b8b463bc7353cbfe2eb90b377d46283c539686735",
+      "matches_recorded": true
+    },
+    "runtime:qwen21_norm_out": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_norm_out.py",
+      "sha256": "f403e5f7f63e297869190fdfe1155a6aabb2a13df480fca0ebf3af733adc911d",
+      "recorded_sha256": "f403e5f7f63e297869190fdfe1155a6aabb2a13df480fca0ebf3af733adc911d",
+      "matches_recorded": true
+    },
+    "runtime:qwen21_text_projection": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_text_projection.py",
+      "sha256": "aca4d4c74c5450fa0238b4650984f478e5f59a5ecf25ddffe60a0a31514ca1aa",
+      "recorded_sha256": "aca4d4c74c5450fa0238b4650984f478e5f59a5ecf25ddffe60a0a31514ca1aa",
+      "matches_recorded": true
+    },
+    "runtime:qwen21_time_text_embed": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_time_text_embed.py",
+      "sha256": "c051d7f82f285a9dd4be2c361e50afa51b1de13774d46b3a42037b3637ced348",
+      "recorded_sha256": "c051d7f82f285a9dd4be2c361e50afa51b1de13774d46b3a42037b3637ced348",
+      "matches_recorded": true
+    },
+    "runtime:qwen21_rope": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/.build/model-research/mflux/src/mflux/models/qwen21/model/qwen21_transformer/qwen21_rope.py",
+      "sha256": "395f5c7281a77abb91fd1d40145a139b6b31d3af4112d7e6857efc2224fed1e6",
+      "recorded_sha256": "395f5c7281a77abb91fd1d40145a139b6b31d3af4112d7e6857efc2224fed1e6",
+      "matches_recorded": true
+    },
+    "old_geometry_runner": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_geometry_trial.py",
+      "sha256": "68c169700228af7a219caf66fb5526dbd2bf3684c92ca14a56c53d1767ab215f",
+      "recorded_sha256": "68c169700228af7a219caf66fb5526dbd2bf3684c92ca14a56c53d1767ab215f",
+      "matches_recorded": true
+    },
+    "old_spatial_runner": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/run_spatial_ablation.py",
+      "sha256": "03899bbe81cc34404fd31a15fefcf0f0e684d6b120d929b87ca8e1e713d137ea",
+      "recorded_sha256": "03899bbe81cc34404fd31a15fefcf0f0e684d6b120d929b87ca8e1e713d137ea",
+      "matches_recorded": true
+    },
+    "cpu_report:cpu_parity.json": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/cpu_parity.json",
+      "sha256": "35f94400ef25e4e2c8565db23d351aaa03d8f2d9ea08b32ef4cff31267b810f3",
+      "recorded_sha256": "35f94400ef25e4e2c8565db23d351aaa03d8f2d9ea08b32ef4cff31267b810f3",
+      "matches_recorded": true
+    },
+    "cpu_script:test_cpu_parity.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/test_cpu_parity.py",
+      "sha256": "21bba9ce961cf29c7928f0c8082388975eca0e39b46b6a02a251334e01c74d9e",
+      "recorded_sha256": "21bba9ce961cf29c7928f0c8082388975eca0e39b46b6a02a251334e01c74d9e",
+      "matches_recorded": true
+    },
+    "cpu_report:reference_cpu_validation.json": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/reference_cpu_validation.json",
+      "sha256": "d27c1777eaa2792dc0f3ce70986fdabecfc010b9cb4e4c3d5616e0e550007afc",
+      "recorded_sha256": "d27c1777eaa2792dc0f3ce70986fdabecfc010b9cb4e4c3d5616e0e550007afc",
+      "matches_recorded": true
+    },
+    "cpu_script:test_reference_control_cpu.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/test_reference_control_cpu.py",
+      "sha256": "d3b6f628b0699eadd9526db4157985d9a7e2f673730e4c179d887a1af0d2bbfa",
+      "recorded_sha256": "d3b6f628b0699eadd9526db4157985d9a7e2f673730e4c179d887a1af0d2bbfa",
+      "matches_recorded": true
+    },
+    "cpu_report:localized_cpu_validation.json": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/localized_cpu_validation.json",
+      "sha256": "8a9ca1d279f3ae3bae85d7343cb58a0f214319a5fec671f51d8cb834fa660996",
+      "recorded_sha256": "8a9ca1d279f3ae3bae85d7343cb58a0f214319a5fec671f51d8cb834fa660996",
+      "matches_recorded": true
+    },
+    "cpu_script:test_localized_reference_cpu.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/test_localized_reference_cpu.py",
+      "sha256": "5d8264091bb467529f90f2726d2386f03630c4763de2549052266f98f7d74328",
+      "recorded_sha256": "5d8264091bb467529f90f2726d2386f03630c4763de2549052266f98f7d74328",
+      "matches_recorded": true
+    },
+    "cpu_report:growing_localized_cpu_validation.json": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/growing_localized_cpu_validation.json",
+      "sha256": "151387e4ec6f97990787c31f7f2bb1396b82751fa46ec4166dfc75c29f7cffed",
+      "recorded_sha256": "151387e4ec6f97990787c31f7f2bb1396b82751fa46ec4166dfc75c29f7cffed",
+      "matches_recorded": true
+    },
+    "cpu_script:test_growing_localized_cpu.py": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/test_growing_localized_cpu.py",
+      "sha256": "cadde338f713ea9399513da4911aa5f4ded2266500a021de03b24e2c7d3b6a98",
+      "recorded_sha256": "cadde338f713ea9399513da4911aa5f4ded2266500a021de03b24e2c7d3b6a98",
+      "matches_recorded": true
+    },
+    "base_manifest": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/base-manifest.json",
+      "sha256": "3443d63b64d670c5ee42daa62b8d387c1167036145032d3561699d9eed6e4320",
+      "recorded_sha256": "3443d63b64d670c5ee42daa62b8d387c1167036145032d3561699d9eed6e4320",
+      "matches_recorded": true
+    },
+    "adapter_manifest": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/viggle-manifest.json",
+      "sha256": "5dccfd23a241d8c66ba70670e922adc562ee8aff39ed1d9d5d10c10a72b3a7ed",
+      "recorded_sha256": "5dccfd23a241d8c66ba70670e922adc562ee8aff39ed1d9d5d10c10a72b3a7ed",
+      "matches_recorded": true
+    },
+    "input_manifest": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/evaluation/inputs/inputs.json",
+      "sha256": "89a17818b11b905bdf42cd64bb7fc2c55ea428784611568f3c7b48f048bc9afe"
+    },
+    "original_jpeg:track1": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/Player/Resources/track1.jpg",
+      "sha256": "2d7162f9c4462b7706ef5d33c4b81d13b42da3e3c781175ee36447b7eb7a99b9",
+      "recorded_sha256": "2d7162f9c4462b7706ef5d33c4b81d13b42da3e3c781175ee36447b7eb7a99b9",
+      "matches_recorded": true
+    },
+    "original_jpeg:track2": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/Player/Resources/track2.jpg",
+      "sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "recorded_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "matches_recorded": true
+    },
+    "original_jpeg:track3": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/Player/Resources/track3.jpg",
+      "sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "recorded_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "matches_recorded": true
+    },
+    "validator": {
+      "path": "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/validate_growing_localized_outputs.py",
+      "sha256": "6ef4fb723ec899221a0858b569f425dd204db626ff489fff255eb51cc296c7cc"
+    }
+  },
+  "array_hashes": {
+    "sigmas": {
+      "shape": [
+        7
+      ],
+      "dtype": "float32",
+      "sha256": "3bff7c23b43fd332e1ea4527b4f66fa2035f8ffdabe9b067c20272ce698351ca"
+    },
+    "source_latents": {
+      "shape": [
+        1,
+        1024,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "recorded_sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "matches_recorded": true
+    },
+    "prompt_embeds": {
+      "shape": [
+        1,
+        429,
+        4096
+      ],
+      "dtype": "float32",
+      "sha256": "56c33a6f81fcd6a3e2888636c7ce37200d6a894cb117b6553bab0737a2ff9ae1",
+      "recorded_sha256": "56c33a6f81fcd6a3e2888636c7ce37200d6a894cb117b6553bab0737a2ff9ae1",
+      "matches_recorded": true
+    },
+    "image_slots": {
+      "shape": [
+        429
+      ],
+      "dtype": "bool",
+      "sha256": "a21c9e5a04f4be9d1f618bff6c332b0ce185922e3e69b3b154e00d188447313b",
+      "recorded_sha256": "a21c9e5a04f4be9d1f618bff6c332b0ce185922e3e69b3b154e00d188447313b",
+      "matches_recorded": true
+    },
+    "noise": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "recorded_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "matches_recorded": true
+    },
+    "edge_known": {
+      "shape": [
+        1,
+        1024,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "5bfd5056ecb4c0c53a3386f8575c1ffe7a16a52925b4363d467ab25e7ef16c1a",
+      "recorded_sha256": "5bfd5056ecb4c0c53a3386f8575c1ffe7a16a52925b4363d467ab25e7ef16c1a",
+      "matches_recorded": true
+    },
+    "edge_guess": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "82d59640e5545d8ca863b64f859e98038cd0123aff197f4309150771e84ce078"
+    },
+    "target_context": {
+      "shape": [
+        1,
+        2304,
+        129
+      ],
+      "dtype": "float32",
+      "sha256": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+      "recorded_sha256": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+      "matches_recorded": true
+    },
+    "padded_context": {
+      "shape": [
+        1,
+        3328,
+        129
+      ],
+      "dtype": "float32",
+      "sha256": "981a307df789d30812d7c55b1fcab59d018e446b03fcc68edc4b296eb5c405df",
+      "recorded_sha256": "981a307df789d30812d7c55b1fcab59d018e446b03fcc68edc4b296eb5c405df",
+      "matches_recorded": true
+    },
+    "support": {
+      "shape": [
+        1,
+        2304,
+        1
+      ],
+      "dtype": "bool",
+      "sha256": "b628f540265dba9ceb8b221d3abb241ab6bfc8d036ddc8e9ebb0e19c9eb41d39",
+      "recorded_sha256": "b628f540265dba9ceb8b221d3abb241ab6bfc8d036ddc8e9ebb0e19c9eb41d39",
+      "matches_recorded": true
+    },
+    "source_rgb": {
+      "shape": [
+        512,
+        512,
+        3
+      ],
+      "dtype": "uint8",
+      "sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+      "recorded_sha256": "3c14574361c6ba293130acfadc1979707e8f8dfb0760b60150c7525aee922f20",
+      "matches_recorded": true
+    },
+    "source_rgba": {
+      "shape": [
+        512,
+        512,
+        4
+      ],
+      "dtype": "uint8",
+      "sha256": "6aa4eb9ffe533514a32f592113827881d3c360b52d278e0badb2ebbc001b575c",
+      "recorded_sha256": "6aa4eb9ffe533514a32f592113827881d3c360b52d278e0badb2ebbc001b575c",
+      "matches_recorded": true
+    },
+    "desired_hint_pixels": {
+      "shape": [
+        1152,
+        512
+      ],
+      "dtype": "float32",
+      "sha256": "b55b09223b18f3620de9ead796c7336a204db0b55f660061d5d35e4ab19e8174",
+      "recorded_sha256": "b55b09223b18f3620de9ead796c7336a204db0b55f660061d5d35e4ab19e8174",
+      "matches_recorded": true
+    },
+    "desired_hint_target_npy": {
+      "shape": [
+        1,
+        2304,
+        1
+      ],
+      "dtype": "float32",
+      "sha256": "1f78cd6187786d3be437a98cf50c4945f6ac75a9de2789ecee80ebd2e2427667",
+      "recorded_sha256": "1f78cd6187786d3be437a98cf50c4945f6ac75a9de2789ecee80ebd2e2427667",
+      "matches_recorded": true
+    },
+    "requested_hint_target": {
+      "shape": [
+        1,
+        2304,
+        1
+      ],
+      "dtype": "float32",
+      "sha256": "1f78cd6187786d3be437a98cf50c4945f6ac75a9de2789ecee80ebd2e2427667",
+      "recorded_sha256": "1f78cd6187786d3be437a98cf50c4945f6ac75a9de2789ecee80ebd2e2427667",
+      "matches_recorded": true
+    },
+    "effective_hint_target": {
+      "shape": [
+        1,
+        2304,
+        1
+      ],
+      "dtype": "float32",
+      "sha256": "84a394acbbc26e450054e217e2cd7531f808ef4412019ca85a3db34734c62e89",
+      "recorded_sha256": "84a394acbbc26e450054e217e2cd7531f808ef4412019ca85a3db34734c62e89",
+      "matches_recorded": true
+    },
+    "effective_hint_joint": {
+      "shape": [
+        1,
+        3501,
+        1
+      ],
+      "dtype": "float32",
+      "sha256": "59c6d0faf720c72d8bb9f450f1fd86d61852645532dee449bf8ce120390e7385",
+      "recorded_sha256": "59c6d0faf720c72d8bb9f450f1fd86d61852645532dee449bf8ce120390e7385",
+      "matches_recorded": true
+    },
+    "guide_rgb": {
+      "shape": [
+        1152,
+        512,
+        3
+      ],
+      "dtype": "uint8",
+      "sha256": "fd9b20c7d94a7dbe57d769424cafbb43046e27d49145307739dd59bf55cd3fbd",
+      "recorded_sha256": "fd9b20c7d94a7dbe57d769424cafbb43046e27d49145307739dd59bf55cd3fbd",
+      "matches_recorded": true
+    },
+    "support_pixels_reconstructed": {
+      "shape": [
+        1152,
+        512
+      ],
+      "dtype": "bool",
+      "sha256": "dfa2525acfd71143a762c1ea1f6db292ddc3c058c3c0568f78088afb71cffcd8",
+      "recorded_sha256": "dfa2525acfd71143a762c1ea1f6db292ddc3c058c3c0568f78088afb71cffcd8",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0:final_latents": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "eb868473e61ec5932b5946a9eefcbe3376cea25a60a8ea73daa91a26837e46de",
+      "recorded_sha256": "eb868473e61ec5932b5946a9eefcbe3376cea25a60a8ea73daa91a26837e46de",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0:preview2:latents": {
+      "shape": [
+        1,
+        1792,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "3f785ef6e630287800c023e1a2a2ec782b815eaffac8fd77eb4878efdfcfed38"
+    },
+    "tangent-canny/scale0:preview2:absolute_ids": {
+      "shape": [
+        1792
+      ],
+      "dtype": "int32",
+      "sha256": "35562c2af99ea1f1096887d65ba89d4f98ea9f9f25422b1c22154ac4aed4e66a"
+    },
+    "tangent-canny/scale0:preview4:latents": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "eb483fef8ec23e68d5be11b1ac81f66a720f9899c51a5862b376a3d05cfe58f7"
+    },
+    "tangent-canny/scale0:preview4:absolute_ids": {
+      "shape": [
+        2304
+      ],
+      "dtype": "int32",
+      "sha256": "eebe4a6aa3412ddf394f671ecf58e01afad5aad28303dc9d7018cf64eab2609a"
+    },
+    "tangent-canny/scale0:preview6:latents": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "eb868473e61ec5932b5946a9eefcbe3376cea25a60a8ea73daa91a26837e46de"
+    },
+    "tangent-canny/scale0:preview6:absolute_ids": {
+      "shape": [
+        2304
+      ],
+      "dtype": "int32",
+      "sha256": "eebe4a6aa3412ddf394f671ecf58e01afad5aad28303dc9d7018cf64eab2609a"
+    },
+    "tangent-canny/scale0.5:final_latents": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "0f7b0151b490b4d70ff8f95f6bd54a06e88091429acb1435ea346c39cfbc1046",
+      "recorded_sha256": "0f7b0151b490b4d70ff8f95f6bd54a06e88091429acb1435ea346c39cfbc1046",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale0.5:preview2:latents": {
+      "shape": [
+        1,
+        1792,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "9f62eeec1fa9ba3607d66d3da8a94bfa3bd5ffc373bfd03715a933dbda193016"
+    },
+    "tangent-canny/scale0.5:preview2:absolute_ids": {
+      "shape": [
+        1792
+      ],
+      "dtype": "int32",
+      "sha256": "35562c2af99ea1f1096887d65ba89d4f98ea9f9f25422b1c22154ac4aed4e66a"
+    },
+    "tangent-canny/scale0.5:preview4:latents": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "177fd30ce56ae0193bc6691b81679ab164b7e4d3850be16d2e12b27996386940"
+    },
+    "tangent-canny/scale0.5:preview4:absolute_ids": {
+      "shape": [
+        2304
+      ],
+      "dtype": "int32",
+      "sha256": "eebe4a6aa3412ddf394f671ecf58e01afad5aad28303dc9d7018cf64eab2609a"
+    },
+    "tangent-canny/scale0.5:preview6:latents": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "0f7b0151b490b4d70ff8f95f6bd54a06e88091429acb1435ea346c39cfbc1046"
+    },
+    "tangent-canny/scale0.5:preview6:absolute_ids": {
+      "shape": [
+        2304
+      ],
+      "dtype": "int32",
+      "sha256": "eebe4a6aa3412ddf394f671ecf58e01afad5aad28303dc9d7018cf64eab2609a"
+    },
+    "tangent-canny/scale1:final_latents": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "f4332dc2e84407486a970744ac2c988bc786e72d5a7ab247ccbee1061d7fa7a7",
+      "recorded_sha256": "f4332dc2e84407486a970744ac2c988bc786e72d5a7ab247ccbee1061d7fa7a7",
+      "matches_recorded": true
+    },
+    "tangent-canny/scale1:preview2:latents": {
+      "shape": [
+        1,
+        1792,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "c7290b4c75d5ee2cc7ca6c354e0b9e40949bfecc4ba6c510126d0be38f5b21df"
+    },
+    "tangent-canny/scale1:preview2:absolute_ids": {
+      "shape": [
+        1792
+      ],
+      "dtype": "int32",
+      "sha256": "35562c2af99ea1f1096887d65ba89d4f98ea9f9f25422b1c22154ac4aed4e66a"
+    },
+    "tangent-canny/scale1:preview4:latents": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "5d55d04e7de67e049a0e0d1604688de6bd968cf56ebe9ba7018ec68388af8853"
+    },
+    "tangent-canny/scale1:preview4:absolute_ids": {
+      "shape": [
+        2304
+      ],
+      "dtype": "int32",
+      "sha256": "eebe4a6aa3412ddf394f671ecf58e01afad5aad28303dc9d7018cf64eab2609a"
+    },
+    "tangent-canny/scale1:preview6:latents": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "f4332dc2e84407486a970744ac2c988bc786e72d5a7ab247ccbee1061d7fa7a7"
+    },
+    "tangent-canny/scale1:preview6:absolute_ids": {
+      "shape": [
+        2304
+      ],
+      "dtype": "int32",
+      "sha256": "eebe4a6aa3412ddf394f671ecf58e01afad5aad28303dc9d7018cf64eab2609a"
+    },
+    "baseline_step6_clean": {
+      "shape": [
+        1,
+        2304,
+        64
+      ],
+      "dtype": "float32",
+      "sha256": "d9364fd615d577b28cfd0666f25eea2eed4acabc6ce3ae44a1d365e069337088"
+    }
+  },
+  "active_gathers": {
+    "1": {
+      "window_xyxy": [
+        0,
+        256,
+        512,
+        896
+      ],
+      "absolute_id_bounds_inclusive": [
+        512,
+        1791
+      ],
+      "target_tokens": 1280,
+      "future_target_tokens": 1024,
+      "context_sha256": "da10ecc6d9cbc9d4cb581ba9158c1ba3bcf3568467dcc72e6eaa63f77fca8413",
+      "hint_sha256": "92a56bef945fbca3008a2327deba7ed7c8d98ddb99cd8efc928a760bc23cb56e",
+      "absolute_noise_gather_sha256": "de50803eb2f0c0c74ce028dd7ae1a354b6fe992c1d913ebcf89cc9899c40f2c6",
+      "absolute_ids_sha256": "e4d43e224fc5d394c1118a112f5802065a43df716bc06df4c6623cbdce4beb9b",
+      "padded_image_rows": 2304,
+      "joint_queries": 2477,
+      "positive_hint_tokens": 60,
+      "evidence_limit": "Context/hint digests compared with saved runtime records; active noise is independently reconstructed, with no saved actual per-step noise trace"
+    },
+    "2": {
+      "window_xyxy": [
+        0,
+        128,
+        512,
+        1024
+      ],
+      "absolute_id_bounds_inclusive": [
+        256,
+        2047
+      ],
+      "target_tokens": 1792,
+      "future_target_tokens": 512,
+      "context_sha256": "672f49d4044b1d9593dc405dede03766a41e4a9e368be76acba0ee697a1cb72c",
+      "hint_sha256": "e325a66839b4f257ea77a3287ce1cc99b5191e54c8dd9663467b114a0c1e5e28",
+      "absolute_noise_gather_sha256": "f6ea3790f4a091892e2a8e20fa063db7f0427a7b6995d24ebec2a63b658d2004",
+      "absolute_ids_sha256": "35562c2af99ea1f1096887d65ba89d4f98ea9f9f25422b1c22154ac4aed4e66a",
+      "padded_image_rows": 2816,
+      "joint_queries": 2989,
+      "positive_hint_tokens": 97,
+      "evidence_limit": "Context/hint digests compared with saved runtime records; active noise is independently reconstructed, with no saved actual per-step noise trace"
+    },
+    "3": {
+      "window_xyxy": [
+        0,
+        0,
+        512,
+        1152
+      ],
+      "absolute_id_bounds_inclusive": [
+        0,
+        2303
+      ],
+      "target_tokens": 2304,
+      "future_target_tokens": 0,
+      "context_sha256": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+      "hint_sha256": "84a394acbbc26e450054e217e2cd7531f808ef4412019ca85a3db34734c62e89",
+      "absolute_noise_gather_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "absolute_ids_sha256": "eebe4a6aa3412ddf394f671ecf58e01afad5aad28303dc9d7018cf64eab2609a",
+      "padded_image_rows": 3328,
+      "joint_queries": 3501,
+      "positive_hint_tokens": 97,
+      "evidence_limit": "Context/hint digests compared with saved runtime records; active noise is independently reconstructed, with no saved actual per-step noise trace"
+    },
+    "4": {
+      "window_xyxy": [
+        0,
+        0,
+        512,
+        1152
+      ],
+      "absolute_id_bounds_inclusive": [
+        0,
+        2303
+      ],
+      "target_tokens": 2304,
+      "future_target_tokens": 0,
+      "context_sha256": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+      "hint_sha256": "84a394acbbc26e450054e217e2cd7531f808ef4412019ca85a3db34734c62e89",
+      "absolute_noise_gather_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "absolute_ids_sha256": "eebe4a6aa3412ddf394f671ecf58e01afad5aad28303dc9d7018cf64eab2609a",
+      "padded_image_rows": 3328,
+      "joint_queries": 3501,
+      "positive_hint_tokens": 97,
+      "evidence_limit": "Context/hint digests compared with saved runtime records; active noise is independently reconstructed, with no saved actual per-step noise trace"
+    },
+    "5": {
+      "window_xyxy": [
+        0,
+        0,
+        512,
+        1152
+      ],
+      "absolute_id_bounds_inclusive": [
+        0,
+        2303
+      ],
+      "target_tokens": 2304,
+      "future_target_tokens": 0,
+      "context_sha256": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+      "hint_sha256": "84a394acbbc26e450054e217e2cd7531f808ef4412019ca85a3db34734c62e89",
+      "absolute_noise_gather_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "absolute_ids_sha256": "eebe4a6aa3412ddf394f671ecf58e01afad5aad28303dc9d7018cf64eab2609a",
+      "padded_image_rows": 3328,
+      "joint_queries": 3501,
+      "positive_hint_tokens": 97,
+      "evidence_limit": "Context/hint digests compared with saved runtime records; active noise is independently reconstructed, with no saved actual per-step noise trace"
+    },
+    "6": {
+      "window_xyxy": [
+        0,
+        0,
+        512,
+        1152
+      ],
+      "absolute_id_bounds_inclusive": [
+        0,
+        2303
+      ],
+      "target_tokens": 2304,
+      "future_target_tokens": 0,
+      "context_sha256": "569b4efc8be563d7315869a376927c57e3c8e775cc1566841caf694f5f6cf44f",
+      "hint_sha256": "84a394acbbc26e450054e217e2cd7531f808ef4412019ca85a3db34734c62e89",
+      "absolute_noise_gather_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "absolute_ids_sha256": "eebe4a6aa3412ddf394f671ecf58e01afad5aad28303dc9d7018cf64eab2609a",
+      "padded_image_rows": 3328,
+      "joint_queries": 3501,
+      "positive_hint_tokens": 97,
+      "evidence_limit": "Context/hint digests compared with saved runtime records; active noise is independently reconstructed, with no saved actual per-step noise trace"
+    }
+  },
+  "arms": {
+    "tangent-canny/scale0": {
+      "nfe": 6,
+      "base_blocks": 192,
+      "control_blocks": 96,
+      "target_forwards": 12288,
+      "reference_forwards": 6144,
+      "joint_queries": 19470,
+      "denoising_seconds_recorded": 54.779986208013725,
+      "step6_clean_vs_final": {
+        "exact": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "differing_values": 0
+      },
+      "scale_zero_control_cost_retained": true,
+      "step6_raw_vs_final_pixels": {
+        "exact": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "differing_values": 0
+      },
+      "step6_composite_vs_final_pixels": {
+        "exact": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "differing_values": 0
+      }
+    },
+    "tangent-canny/scale0.5": {
+      "nfe": 6,
+      "base_blocks": 192,
+      "control_blocks": 96,
+      "target_forwards": 12288,
+      "reference_forwards": 6144,
+      "joint_queries": 19470,
+      "denoising_seconds_recorded": 57.28977991602733,
+      "step6_clean_vs_final": {
+        "exact": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "differing_values": 0
+      },
+      "scale_zero_control_cost_retained": false,
+      "step6_raw_vs_final_pixels": {
+        "exact": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "differing_values": 0
+      },
+      "step6_composite_vs_final_pixels": {
+        "exact": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "differing_values": 0
+      }
+    },
+    "tangent-canny/scale1": {
+      "nfe": 6,
+      "base_blocks": 192,
+      "control_blocks": 96,
+      "target_forwards": 12288,
+      "reference_forwards": 6144,
+      "joint_queries": 19470,
+      "denoising_seconds_recorded": 58.39903941602097,
+      "step6_clean_vs_final": {
+        "exact": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "differing_values": 0
+      },
+      "scale_zero_control_cost_retained": false,
+      "step6_raw_vs_final_pixels": {
+        "exact": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "differing_values": 0
+      },
+      "step6_composite_vs_final_pixels": {
+        "exact": true,
+        "max_abs": 0.0,
+        "mean_abs": 0.0,
+        "differing_values": 0
+      }
+    }
+  },
+  "baseline_inputs": {
+    "source_prefix": {
+      "baseline_recorded_sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "new_saved_array_sha256": "bffd8c1053b8bf45abd7447a565ce6a8caf924508f75315319da0ec3625a7d01",
+      "matches": true,
+      "evidence_kind": "baseline recorded hash; actual original baseline input array unavailable"
+    },
+    "noise": {
+      "baseline_recorded_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "new_saved_array_sha256": "a23986b82c69e27372626fc4c4f415c96036a8fa2deb50981d1c560a64c2a23d",
+      "matches": true,
+      "evidence_kind": "baseline recorded hash; actual original baseline input array unavailable"
+    },
+    "edge_known": {
+      "baseline_recorded_sha256": "5bfd5056ecb4c0c53a3386f8575c1ffe7a16a52925b4363d467ab25e7ef16c1a",
+      "new_saved_array_sha256": "5bfd5056ecb4c0c53a3386f8575c1ffe7a16a52925b4363d467ab25e7ef16c1a",
+      "matches": true,
+      "evidence_kind": "baseline recorded hash; actual original baseline input array unavailable"
+    }
+  },
+  "cpu_tests": {
+    "cpu_parity.json": {
+      "status": "passed",
+      "device": "CPU only",
+      "reexecuted_in_this_audit": false
+    },
+    "reference_cpu_validation.json": {
+      "status": "passed",
+      "device": "CPU only",
+      "reexecuted_in_this_audit": false
+    },
+    "localized_cpu_validation.json": {
+      "status": "passed",
+      "device": "CPU only",
+      "reexecuted_in_this_audit": false
+    },
+    "growing_localized_cpu_validation.json": {
+      "status": "passed",
+      "device": "CPU only",
+      "reexecuted_in_this_audit": false
+    }
+  },
+  "hint_geometry": {
+    "positive_unknown_tokens": 97,
+    "support_tokens": 1121,
+    "desired_sum": 54.756526947021484,
+    "effective_sum": 54.759117126464844,
+    "bf16_rounded_cells": 88,
+    "maximum_bf16_rounding_error": 0.001889348030090332
+  },
+  "cached_scale_zero_comparison": {
+    "old_step6_clean_vs_new_step6_clean": {
+      "exact": false,
+      "max_abs": 0.0625,
+      "mean_abs": 0.0020019631902970206,
+      "differing_values": 52692
+    },
+    "old_step6_clean_vs_new_final": {
+      "exact": false,
+      "max_abs": 0.0625,
+      "mean_abs": 0.0020019631902970206,
+      "differing_values": 52692
+    },
+    "identity_required_for_integrity": false,
+    "old_final_latents_file_present": false,
+    "interpretation": "Observed comparisons; differences may involve arithmetic ordering and cached/recomputed prefix behavior, with causes not isolated",
+    "old_clean_vs_new_final_original_float32_statistics": {
+      "exact": false,
+      "max_abs": 0.0625,
+      "mean_abs": 0.0020019630901515484
+    },
+    "same_stage_scale_zero_previews": {
+      "2": {
+        "clean_latents": {
+          "exact": false,
+          "max_abs": 0.078125,
+          "mean_abs": 0.0018374769736380716,
+          "differing_values": 28196
+        },
+        "raw_pixels": {
+          "exact": false,
+          "max_abs": 10.0,
+          "mean_abs": 0.14379810151599703,
+          "differing_values": 188091
+        },
+        "composite_pixels": {
+          "exact": false,
+          "max_abs": 10.0,
+          "mean_abs": 0.13737923758370535,
+          "differing_values": 179308
+        }
+      },
+      "4": {
+        "clean_latents": {
+          "exact": false,
+          "max_abs": 0.10546875,
+          "mean_abs": 0.002053379404565526,
+          "differing_values": 45018
+        },
+        "raw_pixels": {
+          "exact": false,
+          "max_abs": 11.0,
+          "mean_abs": 0.14574573658130788,
+          "differing_values": 248953
+        },
+        "composite_pixels": {
+          "exact": false,
+          "max_abs": 11.0,
+          "mean_abs": 0.14201411494502314,
+          "differing_values": 242375
+        }
+      },
+      "6": {
+        "clean_latents": {
+          "exact": false,
+          "max_abs": 0.0625,
+          "mean_abs": 0.0020019631902970206,
+          "differing_values": 52692
+        },
+        "raw_pixels": {
+          "exact": false,
+          "max_abs": 11.0,
+          "mean_abs": 0.14903711389612267,
+          "differing_values": 254396
+        },
+        "composite_pixels": {
+          "exact": false,
+          "max_abs": 11.0,
+          "mean_abs": 0.14554906774450233,
+          "differing_values": 248305
+        }
+      }
+    },
+    "final_raw_pixel_comparison": {
+      "exact": false,
+      "max_abs": 11.0,
+      "mean_abs": 0.14903711389612267,
+      "differing_values": 254396
+    },
+    "final_composite_pixel_comparison": {
+      "exact": false,
+      "max_abs": 11.0,
+      "mean_abs": 0.14554906774450233,
+      "differing_values": 248305
+    }
+  },
+  "compute_counts": {
+    "target_counts": [
+      1280,
+      1792,
+      2304,
+      2304,
+      2304,
+      2304
+    ],
+    "target_total_per_arm": 12288,
+    "new_joint_queries": [
+      2477,
+      2989,
+      3501,
+      3501,
+      3501,
+      3501
+    ],
+    "new_joint_total_per_chain": 19470,
+    "old_cached_base_queries": [
+      2477,
+      1792,
+      2304,
+      2304,
+      2304,
+      2304
+    ],
+    "old_cached_base_query_total": 13485,
+    "new_prefix_query_total": 7182,
+    "old_prefix_initial_query_total": 1197,
+    "old_baseline_has_no_control_branch": true
+  },
+  "limitations": [
+    "No inference runtime, model weights, sampler or GPU was loaded. Model/adapter payload hashes were not reverified.",
+    "Full conditioning arrays and saved preview absolute IDs are directly verified. Context/hint gathers reproduce per-step recorded hashes; actual active-noise/model-input tensors are not saved.",
+    "Future-row exclusion and unchanged prefix in actual forwards remain recorded assertions plus pinned toy-test evidence. Actual rotary positions, per-layer hints, Euler states and insertion traces are unsaved.",
+    "Known-edge latents and composite source pixels are directly verified in all finals and saved previews. Zero direct hints do not prove preservation of intermediate hidden states.",
+    "Baseline prefix/noise equality is a recorded-hash comparison; prompt/sigma equality uses saved metadata. Baseline known-edge equality additionally uses actual saved preview source latents.",
+    "Old baseline retains step6 pre-step predicted-clean latents, not a separate final latent. Same-stage clean and cross-stage final comparisons are reported separately; tiny differences are not attributed solely to prefix caching.",
+    "New target total12288 equals the old schedule, but new joint queries19470 exceed cached baseline base queries13485. Scale0 still computes all96 control blocks; single-run timings do not prove speedup.",
+    "CPU reports are pinned passing tiny random float32 test evidence and were not rerun. Their uncached mechanics do not establish trained cached-model parity or BF16 trajectory equivalence.",
+    "Unsparsified control context is not saved. Source65/supported structural64 preservation during sparsification remains a recorded assertion.",
+    "This report establishes saved artifact integrity only and makes no image quality or feature continuation claim."
+  ],
+  "check_count": 551,
+  "failures": []
+}
