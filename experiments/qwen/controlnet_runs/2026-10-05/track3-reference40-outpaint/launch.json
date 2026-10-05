@@ -1,0 +1,30 @@
+{
+  "command": [
+    "experiments/qwen/.venv/bin/python",
+    "experiments/qwen/controlnet_port/run_reference_control_trial.py",
+    "--track",
+    "track3",
+    "--steps",
+    "40",
+    "--modes",
+    "tangent-canny",
+    "--structural-support",
+    "tangent",
+    "--known-bridge",
+    "--prefix-hints",
+    "prefix-hints-disabled",
+    "--prompt-style",
+    "outpaint",
+    "--output",
+    "experiments/qwen/controlnet_runs/2026-10-05/track3-reference40-outpaint"
+  ],
+  "cwd": "/Users/emir/Documents/ChatGPT/ArtWorker",
+  "code_sha256": {
+    "/Users/emir/Documents/ChatGPT/ArtWorker/experiments/qwen/controlnet_port/run_reference_control_trial.py": "850f9bd3ea8d162d152e37a4fe49a8f9c3e1d8f49f158939c2e8fb5339f477c8"
+  },
+  "timeout_seconds": 1500.0,
+  "pid": 84354,
+  "status": "success",
+  "exit_code": 0,
+  "elapsed_seconds": 425.983823165996
+}
