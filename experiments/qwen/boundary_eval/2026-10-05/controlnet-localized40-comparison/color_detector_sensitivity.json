@@ -1,0 +1,169 @@
+{
+  "scope": "Inspection only at already selected outer ridge; no evaluator threshold or selection changes",
+  "samples": {
+    "localized40": {
+      "last4_outer_ridge_samples": [
+        {
+          "y": 316,
+          "sample_x_from_fixed_original_localized_outer_ridge": 299,
+          "gradient": 19.861599999999996,
+          "ahead_rgb": [
+            88.0,
+            107.0,
+            119.0
+          ],
+          "ahead_luminance": 103.827,
+          "color_and_luminance_eligibility": true
+        },
+        {
+          "y": 317,
+          "sample_x_from_fixed_original_localized_outer_ridge": 298,
+          "gradient": 15.040099999999999,
+          "ahead_rgb": [
+            73.0,
+            91.0,
+            101.0
+          ],
+          "ahead_luminance": 87.89519999999999,
+          "color_and_luminance_eligibility": true
+        },
+        {
+          "y": 318,
+          "sample_x_from_fixed_original_localized_outer_ridge": 297,
+          "gradient": 11.040700000000001,
+          "ahead_rgb": [
+            57.0,
+            75.0,
+            86.0
+          ],
+          "ahead_luminance": 71.9674,
+          "color_and_luminance_eligibility": true
+        },
+        {
+          "y": 319,
+          "sample_x_from_fixed_original_localized_outer_ridge": 296,
+          "gradient": 10.217199999999998,
+          "ahead_rgb": [
+            65.0,
+            80.0,
+            85.0
+          ],
+          "ahead_luminance": 77.172,
+          "color_and_luminance_eligibility": true
+        }
+      ],
+      "selected_last4": [
+        {
+          "y": 316,
+          "x": 299.36151838299065,
+          "gradient_strength": 19.861599999999996,
+          "valid": true,
+          "corridor_edge_hit": false
+        },
+        {
+          "y": 317,
+          "x": 298.1415361303724,
+          "gradient_strength": 15.040099999999999,
+          "valid": true,
+          "corridor_edge_hit": false
+        },
+        {
+          "y": 318,
+          "x": 296.9922741378936,
+          "gradient_strength": 11.040700000000001,
+          "valid": true,
+          "corridor_edge_hit": false
+        },
+        {
+          "y": 319,
+          "x": 296.17940523980565,
+          "gradient_strength": 10.217199999999998,
+          "valid": true,
+          "corridor_edge_hit": false
+        }
+      ]
+    },
+    "localized40 color": {
+      "last4_outer_ridge_samples": [
+        {
+          "y": 316,
+          "sample_x_from_fixed_original_localized_outer_ridge": 299,
+          "gradient": 19.574199999999998,
+          "ahead_rgb": [
+            89.0,
+            96.0,
+            100.0
+          ],
+          "ahead_luminance": 94.8006,
+          "color_and_luminance_eligibility": true
+        },
+        {
+          "y": 317,
+          "sample_x_from_fixed_original_localized_outer_ridge": 298,
+          "gradient": 14.716599999999993,
+          "ahead_rgb": [
+            74.0,
+            80.0,
+            82.0
+          ],
+          "ahead_luminance": 78.8688,
+          "color_and_luminance_eligibility": true
+        },
+        {
+          "y": 318,
+          "sample_x_from_fixed_original_localized_outer_ridge": 297,
+          "gradient": 10.753299999999996,
+          "ahead_rgb": [
+            58.0,
+            64.0,
+            67.0
+          ],
+          "ahead_luminance": 62.941,
+          "color_and_luminance_eligibility": false
+        },
+        {
+          "y": 319,
+          "sample_x_from_fixed_original_localized_outer_ridge": 296,
+          "gradient": 10.3596,
+          "ahead_rgb": [
+            66.0,
+            71.0,
+            69.0
+          ],
+          "ahead_luminance": 69.79260000000001,
+          "color_and_luminance_eligibility": true
+        }
+      ],
+      "selected_last4": [
+        {
+          "y": 316,
+          "x": 315.7076127910347,
+          "gradient_strength": 8.323500000000003,
+          "valid": true,
+          "corridor_edge_hit": false
+        },
+        {
+          "y": 317,
+          "x": 316.0963133182783,
+          "gradient_strength": 0.0,
+          "valid": false,
+          "corridor_edge_hit": false
+        },
+        {
+          "y": 318,
+          "x": 314.2200781467948,
+          "gradient_strength": 0.0,
+          "valid": false,
+          "corridor_edge_hit": false
+        },
+        {
+          "y": 319,
+          "x": 312.3438429753112,
+          "gradient_strength": 0.0,
+          "valid": false,
+          "corridor_edge_hit": false
+        }
+      ]
+    }
+  }
+}
