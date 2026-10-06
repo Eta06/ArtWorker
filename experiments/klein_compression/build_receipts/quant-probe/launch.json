@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "command": [
+    "zsh",
+    "-c",
+    "cd .build/model-research/flux-2-swift-mlx && exec xcodebuild -scheme Flux2CLI -configuration Release -destination platform=macOS,arch=arm64 -derivedDataPath /Users/emir/Documents/ChatGPT/ArtWorker/.build/flux2-native -skipPackagePluginValidation -jobs 1 build"
+  ],
+  "footprint_limit_bytes": 3221225472,
+  "swap_growth_limit_bytes": 268435456,
+  "timeout_seconds": 180.0,
+  "sample_interval_seconds": 0.1,
+  "initial_swap_bytes": 0,
+  "pid": 99631,
+  "stop_reason": "complete",
+  "exit_code": 0,
+  "elapsed_seconds": 16.455185083001197,
+  "peak_sampled_rss_bytes": 2070429696,
+  "peak_sampled_phys_footprint_bytes": 1415598112,
+  "measurement_note": "RSS and phys_footprint overlap; do not add them. Process-group sums can double-count shared memory. Sampling is not a kernel-enforced limit."
+}
