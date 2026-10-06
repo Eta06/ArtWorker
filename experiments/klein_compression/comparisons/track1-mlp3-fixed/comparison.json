@@ -1,0 +1,15 @@
+{
+  "baseline": "experiments/klein_outpaint/runs/2026-10-06/track1-base12-baked-q4-sequential-decode",
+  "candidate": "experiments/klein_compression/runs/2026-10-06/track1-mlp3-fixed",
+  "track": "track1",
+  "seed": 42,
+  "raw_pixel_exact": false,
+  "outside_mae_255": 1.5046112537384033,
+  "outside_rmse_255": 2.036764621734619,
+  "outside_changed_pixel_fraction": 0.874298095703125,
+  "outside_max_channel_difference": 10.0,
+  "visual_quality_accepted": null,
+  "limitation": "Pixel differences do not measure semantic correctness; inspect both arms.",
+  "compression_quality_preserved_on_this_pair": null,
+  "visual_review": "No major additional visual loss on this simple cover; very faint dark noise/tint replaces pure black padding (outside MAE 1.50/255, max channel difference 10). Not pixel exact."
+}
