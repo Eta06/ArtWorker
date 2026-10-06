@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "test_count": 5,
+  "elapsed_seconds": 0.3239854170024046,
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.203s\n\nOK\n",
+  "test_sha256": "6bf8da5412de699cbb651efd9abe403ceafcaa80a137bfa7b4e73ebe6843ef7d",
+  "helper_sha256": "9de9b9103b04fc271a6c71c0cfe9b0a0c1c5e475fe9c0a2e5823138ba5c9e6cd",
+  "runner_syntax_valid": true,
+  "limitation": "Fresh seed17 inference used the prior runner; finishing was separately executed on its raw result. No additional full native run was made solely to validate CLI integration."
+}
