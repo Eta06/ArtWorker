@@ -27,7 +27,12 @@ def main() -> None:
     parser.add_argument("--require-prequantized", action="store_true")
     parser.add_argument("--baked-outpaint", action="store_true")
     parser.add_argument("--release-before-decode", action="store_true")
+    parser.add_argument("--bits", type=int, choices=[2,3,4], default=4)
+    parser.add_argument("--fixed-embedding", type=Path)
+    parser.add_argument("--quant-profile", choices=["uniform", "mlp3"], default="uniform")
     args = parser.parse_args()
+    if args.quant_profile == "mlp3" and (args.bits != 4 or not args.baked_outpaint or args.model != "klein-4b-base"):
+        parser.error("mlp3 requires baked base INT4")
     from PIL import Image
     import numpy as np
     args.output.mkdir(parents=True, exist_ok=True)
@@ -44,8 +49,8 @@ def main() -> None:
         prompt += ". " + json.loads((ROOT / "experiments/flux2/prompts.json").read_text())[args.track]
     cli = ROOT / ".build/flux2-native/Build/Products/Release/Flux2CLI"
     command = [str(cli), "i2i", prompt, "--images", str(args.output / "input.png"),
-        "--model", args.model, "--models-dir", str(ROOT / (".build/models/flux2-outpaint-baked" if args.baked_outpaint else ".build/models/flux2")),
-        "--text-quant", "4bit", "--transformer-quant", "int4", "--steps", str(args.steps),
+        "--model", args.model, "--models-dir", str(ROOT / ((".build/models/flux2-outpaint-baked" + ("-mlp3" if args.quant_profile == "mlp3" else "")) if args.baked_outpaint else ".build/models/flux2")),
+        "--text-quant", "4bit", "--transformer-quant", f"int{args.bits}", "--steps", str(args.steps),
         "--guidance", str(args.guidance), "--seed", str(args.seed), "--width", str(size[0]), "--height", str(size[1]),
         "--vae-variant", args.vae, "--memory-profile", "conservative", "--profile", "--verbose",
         "--output", str(args.output / "raw.png")]
@@ -60,6 +65,22 @@ def main() -> None:
         "source_rect": rect, "width": size[0], "height": size[1], "runtime_patch": "bfl-timestep-mapping.patch",
         "cli_sha256": hashlib.sha256(cli.read_bytes()).hexdigest(),
         "visual_quality_accepted": False, "status": "running"}
+    if args.fixed_embedding:
+        embedding = args.fixed_embedding.resolve()
+        if args.describe or args.guidance != 1 or args.model != "klein-4b-base":
+            parser.error("Fixed embedding only supports the base4B fixed fill/CFG1 recipe")
+        expected_embedding_sha = json.loads((ROOT / "experiments/klein_compression/fixed_embedding_manifest.json").read_text())["sha256"]
+        if hashlib.sha256(embedding.read_bytes()).hexdigest() != expected_embedding_sha:
+            parser.error("Fixed embedding differs from the pinned compression manifest")
+        command = ["env", f"ARTWORKER_FIXED_EMBEDDING={embedding}",
+            f"ARTWORKER_FIXED_EMBEDDING_SHA256={expected_embedding_sha}", *command]
+    if args.quant_profile != "uniform":
+        command = ["env", f"ARTWORKER_QUANT_PROFILE={args.quant_profile}", *command]
+    if args.require_prequantized:
+        command = ["env", "ARTWORKER_REQUIRE_PREQUANTIZED=1", *command]
+    record["quant_profile"] = args.quant_profile
+    record["transformer_bits"] = args.bits
+    record["fixed_embedding"] = bool(args.fixed_embedding)
     record["adapter_baked"] = args.baked_outpaint
     record["release_before_decode"] = args.release_before_decode
     if args.release_before_decode:
@@ -72,6 +93,10 @@ def main() -> None:
         text = (args.output / "execution.log").read_text()
         if args.require_prequantized and "Loaded pre-quantized" not in text:
             raise RuntimeError("Native pre-quantized load was not confirmed")
+        if args.quant_profile != "uniform" and f"ArtWorker quantization profile validated: {args.quant_profile}" not in text:
+            raise RuntimeError("Mixed quantization profile validation was not confirmed")
+        if args.fixed_embedding and ("ArtWorker fixed embedding validated; text encoder not loaded" not in text or "Loading text encoder for" in text):
+            raise RuntimeError("Fixed-embedding encoder bypass was not confirmed")
         matches = re.findall(r"\[LoRA\] Merged (\d+) layers \((\d+) not found\)", text)
         if not args.baked_outpaint and matches != [("88", "0")]:
             raise RuntimeError(f"Incomplete adapter application: {matches}")
