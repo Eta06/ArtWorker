@@ -4,6 +4,44 @@ Evaluate user-selected hosted models on `track3` (Aklın Hep Bende)
 and `track2` (Karambol). The original Kehribar stage covers six models; Zeytin
 covers nineteen models and every native resolution/quality setting. These are visual evaluation calls, not student training.
 
+The Ardıç consistency batch adds five new square album covers selected from the
+user's YouTube Music library. `cover_consistency.py` compares Sunburst high,
+Flare high, GPT Image 2 high and Nano Banana 2.1 1K: twenty serial requests,
+without paid POST retries. Teacher generation time is not a selection criterion.
+Use a local five-entry source manifest with `id`, `title`, `source_file` (relative
+to repository root) and source-file `sha256`. Media and full manifests stay
+ignored. Custom sources are accepted by `benchmark.py --source-image`; receipts
+pin their original path and hash, and fidelity analysis reconstructs the exact
+crop/resize. Historical resource paths remain supported.
+
+```sh
+python3 scripts/run_bounded_model.py \
+  --output .build/ardic-guard --max-gib 1.5 --timeout 14400 -- \
+  python3 experiments/openrouter_outpaint/cover_consistency.py \
+  --run --stage ardic --budget-usd 5 \
+  --sources /path/inside/repository/selected.json \
+  --results experiments/openrouter_outpaint/results/ardic \
+  --key-file /path/to/private-key-file
+```
+
+Omit `--run` to reconcile existing receipts and rebuild pages without generating
+images. Existing definitive receipts are never resubmitted; uncertain requests
+pause the batch. A $0.50 preflight reserve bounds dispatch against the batch and
+dedicated-key budget; this is not a provider-enforced spending cap. Source/output
+hashes, native dimensions, quality/resolution, response/generation charges and
+account reconciliation are recorded. Registration uses the same free-placement
+method and 512-pixel grid as Sumak. Generated exterior quality remains the user's
+decision; registration failures have no aligned content score. Each stage has a
+separate browser-vote namespace, with dynamic cover filters and export labels.
+
+A completed generation whose image response is lost remains a billed attempt,
+not an accepted output. Reconcile its exact generation ID/cost first; retain the
+original transport receipt and any explicitly authorized fresh recovery attempt
+under `superseded_attempts`. Never relabel a lost image as a visual success. The
+bounded JSON reader now returns once a complete document arrives and retains
+response IDs on read errors; this avoids waiting for transport EOF when it never
+arrives, without asserting that this caused a particular network failure.
+
 `benchmark.py` uses the dedicated `POST /api/v1/images` endpoint, pinned provider
 routing and one output per request. Model capabilities and endpoint prices come
 from the live Image Models API. Image-only models can be absent from the ordinary
