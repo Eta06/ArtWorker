@@ -1,0 +1,10 @@
+{"seconds": 0.026, "rss_bytes": 229376, "phys_footprint_bytes": 4473456, "pressure_level": 1, "swap_bytes": 0}
+{"seconds": 0.16, "rss_bytes": 2066055168, "phys_footprint_bytes": 3678833088, "pressure_level": 1, "swap_bytes": 0}
+{"seconds": 0.329, "rss_bytes": 2315386880, "phys_footprint_bytes": 4277979656, "pressure_level": 1, "swap_bytes": 0}
+{"seconds": 0.477, "rss_bytes": 2395373568, "phys_footprint_bytes": 4330539600, "pressure_level": 1, "swap_bytes": 0}
+{"seconds": 0.6, "rss_bytes": 2422128640, "phys_footprint_bytes": 4342745680, "pressure_level": 1, "swap_bytes": 0}
+{"seconds": 0.743, "rss_bytes": 2410348544, "phys_footprint_bytes": 3377367704, "pressure_level": 1, "swap_bytes": 0}
+{"seconds": 0.877, "rss_bytes": 2410774528, "phys_footprint_bytes": 3223816856, "pressure_level": 1, "swap_bytes": 0}
+{"seconds": 1.024, "rss_bytes": 2410790912, "phys_footprint_bytes": 3075852952, "pressure_level": 1, "swap_bytes": 0}
+{"seconds": 1.157, "rss_bytes": 2410790912, "phys_footprint_bytes": 2967734936, "pressure_level": 1, "swap_bytes": 0}
+{"seconds": 1.286, "rss_bytes": 2410790912, "phys_footprint_bytes": 2978958000, "pressure_level": 1, "swap_bytes": 0}
