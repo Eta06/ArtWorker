@@ -13,6 +13,7 @@ Store the source repository ID, immutable revision, source license, file sizes, 
 | SDXL inpaint and Union ProMax | [Download manifest](../experiments/sdxl_inpaint/download_manifest.json), [ProMax download manifest](../experiments/sdxl_inpaint/promax_download_manifest.json), verified file snapshots in [model manifests](../experiments/model_manifests/) |
 | Qwen-Image-Edit-2511 + MaskFlow latest | [Verified download manifest](../experiments/maskflow/download_manifest.json), [runtime and source pins](../experiments/maskflow/README.md) |
 | Other mobile candidates | [Trial results](OUTPAINT_TRIAL_RESULTS.md), [deployment research](IOS_OUTPAINT_DEPLOYMENT.md) and each experiment's status records |
+| Klein base4B compression | [Koza](stages/koza.md), [fixed-instruction cache and quantization experiments](../experiments/klein_compression/README.md), pinned source/adapter and conversion manifests in `experiments/klein_outpaint/` |
 
 Manifest verification is historical evidence at the recorded time, not a fresh check of today's remote or local files. Absolute local paths in historical records identify original artifacts; adapt paths in your own checkout. Model payloads, local caches, private input/output images and latent arrays remain outside normal Git. The files have not been deleted locally.
 
