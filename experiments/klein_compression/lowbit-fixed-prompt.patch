@@ -1,0 +1,227 @@
+--- a/Sources/Flux2Core/Configuration/QuantizationConfig.swift
++++ b/Sources/Flux2Core/Configuration/QuantizationConfig.swift
+@@ -40,6 +40,8 @@
+ public enum TransformerQuantization: String, CaseIterable, Codable, Sendable {
+     case bf16 = "bf16"      // Full precision ~64GB
+     case qint8 = "qint8"    // 8-bit affine ~32GB
++    case int2 = "int2"
++    case int3 = "int3"
+     case int4 = "int4"      // 4-bit affine ~16GB (on-the-fly quantization)
+     case mxfp8 = "mxfp8"    // 8-bit MXFP8 microscaling ~32GB (on-the-fly)
+     case mxfp4 = "mxfp4"    // 4-bit MXFP4 microscaling ~16GB (on-the-fly)
+@@ -52,6 +54,8 @@
+         switch self {
+         case .bf16: return (16, 64, .affine, 64, "Full Precision (bf16)")
+         case .qint8: return (8, 64, .affine, 32, "8-bit (qint8)")
++        case .int2: return (2, 64, .affine, 8, "2-bit (int2)")
++        case .int3: return (3, 64, .affine, 12, "3-bit (int3)")
+         case .int4: return (4, 64, .affine, 16, "4-bit (int4)")
+         case .mxfp8: return (8, 32, .mxfp8, 32, "8-bit FP (mxfp8)")
+         case .mxfp4: return (4, 32, .mxfp4, 16, "4-bit FP (mxfp4)")
+--- a/Sources/Flux2Core/Configuration/ModelRegistry.swift
++++ b/Sources/Flux2Core/Configuration/ModelRegistry.swift
+@@ -216,11 +216,11 @@
+             // pre-quantized-checkpoint availability is decided.
+             case (.dev, .bf16): return .bf16
+             case (.dev, .qint8): return .qint8
+-            case (.dev, .int4), (.dev, .mxfp8), (.dev, .mxfp4), (.dev, .nvfp4):
++            case (.dev, .int2), (.dev, .int3), (.dev, .int4), (.dev, .mxfp8), (.dev, .mxfp4), (.dev, .nvfp4):
+                 return .bf16  // Load bf16, quantize on-the-fly
+             case (.klein4B, .bf16): return .klein4B_bf16
+             case (.klein4B, .qint8): return .klein4B_8bit
+-            case (.klein4B, .int4), (.klein4B, .mxfp8), (.klein4B, .mxfp4), (.klein4B, .nvfp4):
++            case (.klein4B, .int2), (.klein4B, .int3), (.klein4B, .int4), (.klein4B, .mxfp8), (.klein4B, .mxfp4), (.klein4B, .nvfp4):
+                 return .klein4B_bf16  // Load bf16, quantize on-the-fly
+             // Base models only available in bf16
+             case (.klein4BBase, _): return .klein4B_base_bf16
+--- a/Sources/Flux2Core/Pipeline/Flux2Pipeline.swift
++++ b/Sources/Flux2Core/Pipeline/Flux2Pipeline.swift
+@@ -2,6 +2,7 @@
+ // Copyright 2025 Vincent Gourbin
+ 
+ import Foundation
++import CryptoKit
+ import MLX
+ import MLXRandom
+ import MLXNN
+@@ -540,6 +541,12 @@
+             }
+         }
+         transformerLoadedFromPrequantized = loadedFromPrequantized
++
++        if (ProcessInfo.processInfo.environment["ARTWORKER_QUANT_PROFILE"] != nil ||
++            ProcessInfo.processInfo.environment["ARTWORKER_REQUIRE_PREQUANTIZED"] == "1") && !loadedFromPrequantized {
++            unloadTransformer()
++            throw Flux2Error.invalidConfiguration("ArtWorker requires a validated prequantized checkpoint; refusing dense fallback")
++        }
+ 
+         if !loadedFromPrequantized {
+             // Load weights with explicit memory management
+@@ -1289,7 +1296,29 @@
+         // MEMORY OPTIMIZATION: Compute phase limits for all phases
+         let phaseLimits = MemoryConfig.PhaseLimits.forModel(model, profile: memoryProfile)
+ 
+-        if let precomputed = precomputedEmbeddings {
++        var suppliedEmbeddings = precomputedEmbeddings
++        if let path = ProcessInfo.processInfo.environment["ARTWORKER_FIXED_EMBEDDING"] {
++            guard model == .klein4BBase, prompt == "Fill the green spaces according to the image",
++                  !upsamplePrompt, interpretImagePaths == nil, guidance == 1,
++                  quantization.textEncoder == .mlx4bit else {
++                throw Flux2Error.invalidConfiguration("Fixed embedding only supports the pinned Klein base fill recipe")
++            }
++            let url = URL(fileURLWithPath: path)
++            let digest = SHA256.hash(data: try Data(contentsOf: url)).map { String(format: "%02x", $0) }.joined()
++            guard digest == ProcessInfo.processInfo.environment["ARTWORKER_FIXED_EMBEDDING_SHA256"] else {
++                throw Flux2Error.invalidConfiguration("Fixed embedding checksum mismatch")
++            }
++            let (arrays, metadata) = try loadArraysAndMetadata(url: url)
++            guard arrays.count == 1, let cached = arrays["embeddings"], cached.shape == [1, 512, 7680],
++                  metadata["format"] == "artworker-fixed-fill-v1", metadata["prompt"] == prompt,
++                  metadata["encoder_revision"] == "480ec45ecf06ae3c061e4ef11345d05c7fdb02f1" else {
++                throw Flux2Error.invalidConfiguration("Fixed embedding metadata or shape mismatch")
++            }
++            suppliedEmbeddings = cached
++            Flux2Debug.log("ArtWorker fixed embedding validated; text encoder not loaded")
++        }
++        if let precomputed = suppliedEmbeddings {
++            MemoryConfig.applyCacheLimit(bytes: phaseLimits.textEncoding)
+             // Skip text encoding entirely — use pre-computed embeddings
+             textEmbeddings = precomputed
+             Flux2Debug.log("=== PHASE 1: SKIPPED (using pre-computed embeddings) ===")
+@@ -2588,4 +2617,3 @@
+         return missing
+     }
+ }
+-
+--- a/Sources/Flux2CLI/Flux2CLI.swift
++++ b/Sources/Flux2CLI/Flux2CLI.swift
+@@ -31,6 +31,8 @@
+             MaskSubject.self,
+             Download.self,
+             ExportQuantized.self,
++            ArtWorkerEmbedding.self,
++            ArtWorkerQuantProbe.self,
+             Info.self,
+             Profile.self,
+             VLMTest.self,
+--- a/Sources/Flux2Core/Loading/PrequantizedCheckpoint.swift
++++ b/Sources/Flux2Core/Loading/PrequantizedCheckpoint.swift
+@@ -203,6 +203,13 @@
+         quantization: TransformerQuantization,
+         component: String
+     ) -> Bool {
++        let profile = ProcessInfo.processInfo.environment["ARTWORKER_QUANT_PROFILE"]
++        guard profile == nil || profile == "mlp3",
++              metadata["artworker_quant_profile"] == profile,
++              profile == nil || quantization == .int4 else {
++            Flux2Debug.warning("ArtWorker quantization profile mismatch; refusing mixed weights")
++            return false
++        }
+         let expected: [(String, String)] = [
+             ("format", format),
+             ("quantization", quantization.rawValue),
+@@ -231,7 +238,22 @@
+                 "Pre-quantized checkpoint is stale (source weights changed since export — re-download or update?) — falling back to standard load. Re-run `flux2 export-quantized` with force to refresh: \(url.path)")
+             return false
+         }
++        if let profile {
++            Flux2Debug.log("ArtWorker quantization profile validated: \(profile)")
++        }
+         return true
++    }
++
++    private static func quantizeStructure(_ model: Module, quantization: TransformerQuantization) {
++        if ProcessInfo.processInfo.environment["ARTWORKER_QUANT_PROFILE"] == "mlp3" {
++            quantize(model: model, filter: { path, _ in
++                let useThree = (path.hasPrefix("transformerBlocks.") && (path.contains(".ff.") || path.contains(".ffContext.")))
++                    || (path.hasPrefix("singleTransformerBlocks.") && path.hasSuffix(".attn.toOut"))
++                return (groupSize: 64, bits: useThree ? 3 : 4, mode: .affine)
++            })
++        } else {
++            quantize(model: model, groupSize: quantization.groupSize, bits: quantization.bits, mode: quantization.mode)
++        }
+     }
+ 
+     // MARK: - Save
+@@ -379,11 +401,7 @@
+                 ($0.0, $0.1.asType(.float16))
+             })
+         _ = reference.update(parameters: ModuleParameters.unflattened(castParams))
+-        quantize(
+-            model: reference,
+-            groupSize: quantization.groupSize,
+-            bits: quantization.bits,
+-            mode: quantization.mode)
++        quantizeStructure(reference, quantization: quantization)
+         let manifest = Dictionary(uniqueKeysWithValues: Array(reference.parameters().flattened()))
+ 
+         let manifestKeys = Set(manifest.keys)
+@@ -414,11 +432,7 @@
+ 
+         // All checks passed — NOW mutate the caller's model: structural
+         // quantize (lazy, never evaluated) then replace all parameters.
+-        quantize(
+-            model: model,
+-            groupSize: quantization.groupSize,
+-            bits: quantization.bits,
+-            mode: quantization.mode)
++        quantizeStructure(model, quantization: quantization)
+         _ = model.update(parameters: ModuleParameters.unflattened(loaded))
+         eval(model.parameters())
+         Flux2Debug.log(
+--- /dev/null
++++ b/Sources/Flux2CLI/ArtWorkerEmbedding.swift
+@@ -0,0 +1,22 @@
++import Foundation
++import ArgumentParser
++import MLX
++import Flux2Core
++
++struct ArtWorkerEmbedding: AsyncParsableCommand {
++    static let configuration = CommandConfiguration(commandName: "artworker-embedding", abstract: "Export the fixed Klein base outpaint instruction, without image inference")
++    @Option(name: .long) var encoderPath: String
++    @Option(name: .long) var output: String
++    func run() async throws {
++        let target = URL(fileURLWithPath: output)
++        guard !FileManager.default.fileExists(atPath: target.path) else { throw ValidationError("Refusing to overwrite an embedding cache") }
++        let prompt = "Fill the green spaces according to the image"
++        let encoder = KleinTextEncoder(variant: .klein4B, quantization: .mlx4bit)
++        try await encoder.load(from: URL(fileURLWithPath: encoderPath))
++        let embeddings = try encoder.encode(prompt, upsample: false)
++        eval(embeddings)
++        try MLX.save(arrays: ["embeddings": embeddings], metadata: ["format": "artworker-fixed-fill-v1", "prompt": prompt, "model": "klein-4b-base", "text_quant": "4bit", "encoder_repo": "lmstudio-community/Qwen3-4B-MLX-4bit", "encoder_revision": "480ec45ecf06ae3c061e4ef11345d05c7fdb02f1"], url: target)
++        print("Fixed embedding exported: \(embeddings.shape), \(embeddings.dtype)")
++        encoder.unload()
++    }
++}
+--- /dev/null
++++ b/Sources/Flux2CLI/ArtWorkerQuantProbe.swift
+@@ -0,0 +1,28 @@
++import Foundation
++import ArgumentParser
++import MLX
++
++struct ArtWorkerQuantProbe: ParsableCommand {
++    static let configuration = CommandConfiguration(commandName: "artworker-quant-probe", abstract: "Check Python/Swift quantized packing and matrix multiplication on a small fixture")
++    @Option(name: .long) var path: String
++    @Option(name: .long) var bits: Int
++    func run() throws {
++        guard [2, 3, 4].contains(bits) else { throw ValidationError("Expected 2, 3 or 4 bits") }
++        let arrays = try loadArrays(url: URL(fileURLWithPath: path))
++        guard let weight = arrays["weight"], let scales = arrays["scales"], let biases = arrays["biases"],
++              let input = arrays["input"], let reference = arrays["dequantized"], let product = arrays["product"] else {
++            throw ValidationError("Missing fixture tensors")
++        }
++        let decoded = dequantized(weight, scales: scales, biases: biases, groupSize: 64, bits: bits)
++        let output = quantizedMM(input, weight, scales: scales, biases: biases, transpose: true, groupSize: 64, bits: bits)
++        let decodeError = abs(decoded - reference).max().item(Float.self)
++        let productError = abs(output - product).max().item(Float.self)
++        let delta = (output - product).asType(.float32)
++        let productFloat = product.asType(.float32)
++        let relativeL2 = sqrt((delta * delta).sum()).item(Float.self) / max(sqrt((productFloat * productFloat).sum()).item(Float.self), 1e-12)
++        let report: [String: Any] = ["bits": bits, "dequant_max_abs": decodeError, "matmul_max_abs": productError,
++                                   "matmul_relative_l2": relativeL2, "relative_l2_limit": 0.001]
++        print(String(data: try JSONSerialization.data(withJSONObject: report, options: [.sortedKeys]), encoding: .utf8)!)
++        guard decodeError == 0, relativeL2 <= 0.001 else { throw ValidationError("Python/Swift quantized numerical compatibility failed") }
++    }
++}
