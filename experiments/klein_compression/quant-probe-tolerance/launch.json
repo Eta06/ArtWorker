@@ -1,0 +1,23 @@
+{
+  "status": "stopped_or_failed",
+  "command": [
+    "experiments/qwen/.venv/bin/python",
+    "experiments/klein_compression/quant_probe.py",
+    "--output",
+    "experiments/klein_compression/quant-probe-tolerance",
+    "--fixtures",
+    ".build/koza-quant-probes/tolerance"
+  ],
+  "footprint_limit_bytes": 1073741824,
+  "swap_growth_limit_bytes": 268435456,
+  "timeout_seconds": 60.0,
+  "sample_interval_seconds": 0.1,
+  "initial_swap_bytes": 0,
+  "pid": 961,
+  "stop_reason": "subprocess_exit",
+  "exit_code": 1,
+  "elapsed_seconds": 0.257896625000285,
+  "peak_sampled_rss_bytes": 82739200,
+  "peak_sampled_phys_footprint_bytes": 328255048,
+  "measurement_note": "RSS and phys_footprint overlap; do not add them. Process-group sums can double-count shared memory. Sampling is not a kernel-enforced limit."
+}
