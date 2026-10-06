@@ -1,0 +1,47 @@
+{
+  "status": "quality_preserving_compression_baseline_on_three_matched_covers",
+  "model": "klein-4b-base",
+  "bits": 4,
+  "quant_profile": "uniform",
+  "fixed_prompt": "Fill the green spaces according to the image",
+  "embedding": {
+    "local_file": ".build/models/artworker-fixed-fill/embedding.safetensors",
+    "bytes": 15728995,
+    "sha256": "914f88566b383817510778d3938f4d56da704d5704a00b16dcf248df64e70c2c",
+    "manifest": "fixed_embedding_manifest.json"
+  },
+  "transformer": {
+    "bytes": 2180050216,
+    "sha256": "50c5823d64a3984b3120452ce24a71346f2f678595a7b20d9e98983338a09ce9",
+    "manifest": "../klein_outpaint/native_q4_base_outpaint_baked_manifest.json"
+  },
+  "vae": {
+    "bytes": 168120878,
+    "sha256": "ca70d2202afe6415bdbcb8793ba8cd99fd159cfe6192381504d6c4d3036e0f04",
+    "manifest": "../klein_outpaint/standard_vae_manifest.json"
+  },
+  "total_component_bytes": 2363900089,
+  "steps": 12,
+  "guidance": 1,
+  "canvas": [
+    512,
+    1152
+  ],
+  "require_prequantized": true,
+  "release_before_decode": true,
+  "raw_parity": {
+    "track1_seed42": true,
+    "track2_seed42": true,
+    "track3_seed17": true
+  },
+  "general_quality_accepted": false,
+  "portable_bundle_complete": false,
+  "iphone_benchmark": false,
+  "trained_student": false,
+  "limitations": [
+    "Fixed instruction only; arbitrary prompts need an encoder",
+    "Existing human-cover failure retained",
+    "Native loader still uses the preserved BF16 source identity",
+    "Mac resource measurements are not iPhone results"
+  ]
+}
