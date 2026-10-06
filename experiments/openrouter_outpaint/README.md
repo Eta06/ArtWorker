@@ -109,3 +109,68 @@ is browser-dependent; the dialog provides readable/selectable export text.
 Storage failures are surfaced instead of claiming persistence. Preferences are
 not published to GitHub, Space or OpenRouter, and do not select a teacher
 automatically.
+
+## Source-square fidelity (Iris)
+
+`source_fidelity.py` evaluates existing raw images against the exact reference
+square sent in each request. It makes no network calls. Selection identities,
+raw/input hashes, original cover hashes and canvas source pixels are verified
+before a score is produced. User preferences, metrics and image diagnostics
+stay in ignored local results, not in the public repository or Space.
+
+Run with the existing `experiments/qwen/.venv` (tested: Pillow 12.3.0,
+NumPy 2.5.3, OpenCV 4.14.0); no diffusion weights are loaded:
+
+```sh
+python3 scripts/run_bounded_model.py \
+  --output .build/iris-fidelity-guard --max-gib 1 --timeout 600 -- \
+  experiments/qwen/.venv/bin/python \
+  experiments/openrouter_outpaint/source_fidelity.py \
+  --ledger experiments/openrouter_outpaint/zeytin-costs.json \
+  --selections /path/to/artworker-zeytin-secimler.json \
+  --output experiments/openrouter_outpaint/results/example/fidelity
+```
+
+Use a fresh output directory to preserve previous audits. Default scope is
+`liked`: accepted individual outputs/settings. `--scope liked-models` includes
+all completed settings of models with at least one accepted output;
+`--scope all` includes all completed ledger outputs. Raw images are never edited.
+The source is sampled on a common 512×512 analysis grid. The expected square
+rectangle is scaled from each receipt's layout to the actual output dimensions,
+including native tiers which are not exactly 9:16. The full output is resized
+with Lanczos; the expected square is sampled with bicubic interpolation.
+
+The primary metrics use that **fixed location**: luminance SSIM (11×11 Gaussian,
+sigma 1.5, population moments, L=255, K1=.01, K2=.03; exclude five-pixel border),
+RGB MAE/PSNR, signed RGB bias, mean/p95 CIELAB Delta E 76, fraction of pixels
+with any channel difference >8/255, and the worst SSIM among a 4×4 tile grid.
+These are fidelity diagnostics, not a calibrated preservation percentage,
+general image-quality score or proof of unchanged faces/text/logos. Subtle
+changes below 512px analysis resolution can be missed. Delta E 76 is a simple
+Euclidean Lab distance, not a perceptual neural metric or CIEDE2000.
+
+Secondary registration uses mutual ORB matches with a .75 ratio check and
+RANSAC to estimate one translation/rotation/isotropic-scale transform. Require
+at least 12 inliers, 40% inlier fraction, 15% source feature hull coverage and
+three quadrants. Accepted bounds: scale .75–1.25, rotation ±5°, center shift
+±18% of source width; at least 85% visible source. Unreliable/out-of-bounds
+fits are recorded as unavailable, not zero error. Matrices and rejected fit
+diagnostics are retained. Aligned metrics cover only visible source pixels;
+SSIM uses only windows wholly inside that overlap. Never locally warp, adjust
+colors or paste the original source before scoring. Registration can explain
+geometric errors but cannot replace the fixed-position score.
+
+An identity canvas passes through the same native dimensions and analysis
+pipeline to report a resampling-only control; its score is not subtracted.
+The HTML report includes original/output wipe sliders, fixed-scale difference
+maps (mean RGB difference 0–64/255), expected/fitted source rectangles, filters,
+metric/cost ordering and CSV/JSON exports. The gallery links to `fidelity/`
+when the report exists. It is a snapshot of the exported choices; subsequent
+browser votes require a fresh export and audit. No votes are altered.
+
+Known-answer validation:
+
+```sh
+cd experiments/openrouter_outpaint
+../qwen/.venv/bin/python -m unittest -v test_source_fidelity.py
+```
