@@ -30,6 +30,8 @@ def main() -> None:
     parser.add_argument("--bits", type=int, choices=[2,3,4], default=4)
     parser.add_argument("--fixed-embedding", type=Path)
     parser.add_argument("--quant-profile", choices=["uniform", "mlp3"], default="uniform")
+    parser.add_argument("--finish", choices=["color", "exact"], default="color",
+                        help="Restore Cinar exterior color harmonization; exact keeps the old hard paste")
     args = parser.parse_args()
     if args.quant_profile == "mlp3" and (args.bits != 4 or not args.baked_outpaint or args.model != "klein-4b-base"):
         parser.error("mlp3 requires baked base INT4")
@@ -106,9 +108,14 @@ def main() -> None:
         if raw.size != tuple(size):
             raise ValueError(f"Wrong output dimensions: {raw.size}")
         record["raw_source_mae_255"] = float(np.abs(np.asarray(raw.crop(rect), dtype=np.float32) - np.asarray(source, dtype=np.float32)).mean())
-        composite = raw.copy()
-        composite.paste(source, (rect[0], rect[1]))
+        exact = raw.copy()
+        exact.paste(source, (rect[0], rect[1]))
+        exact.save(args.output / "exact_composite.png")
+        from finish_output import finish
+        finished, finishing = finish(np.asarray(raw), np.asarray(source), mode=args.finish)
+        composite = Image.fromarray(finished)
         composite.save(args.output / "composite.png")
+        record["finishing"] = finishing
         record["source_exact_in_composite"] = bool(np.array_equal(np.asarray(composite.crop(rect)), np.asarray(source)))
         record["status"] = "completed"
     except BaseException as exc:
