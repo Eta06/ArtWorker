@@ -1,0 +1,15 @@
+{
+  "baseline": "experiments/klein_outpaint/runs/2026-10-06/track3-base12-seed17-baked-q4-sequential-decode",
+  "candidate": "experiments/klein_compression/runs/2026-10-06/track3-int3-fixed",
+  "track": "track3",
+  "seed": 17,
+  "raw_pixel_exact": false,
+  "outside_mae_255": 37.07756042480469,
+  "outside_rmse_255": 44.02583312988281,
+  "outside_changed_pixel_fraction": 0.99998779296875,
+  "outside_max_channel_difference": 99.0,
+  "visual_quality_accepted": false,
+  "limitation": "Pixel differences do not measure semantic correctness; inspect both arms.",
+  "compression_quality_preserved_on_this_pair": false,
+  "visual_review": "Rejected: blurred sea, lost upper guardrail continuation, pronounced horizontal seams at source boundary, flattened/repetitive asphalt texture. Source-exact compositing does not repair generated regions."
+}
