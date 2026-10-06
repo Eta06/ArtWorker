@@ -1,0 +1,719 @@
+{
+  "stage": "kehribar",
+  "date": "2026-10-06",
+  "currency": "USD",
+  "runs": [
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "track": "track2",
+      "status": "completed",
+      "created_utc": "2026-10-06T18:14:53Z",
+      "elapsed_seconds": 15.544,
+      "reported_cost_usd": 0.025012,
+      "cost_source": "image_api_usage.cost",
+      "http_status": null,
+      "error": null,
+      "run_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/flare/track2",
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "request_geometry": {
+        "original_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+        "original_dimensions": [
+          1280,
+          720
+        ],
+        "crop_xyxy": [
+          280,
+          0,
+          1000,
+          720
+        ],
+        "canvas_dimensions": [
+          720,
+          1280
+        ],
+        "source_rect_xyxy": [
+          0,
+          280,
+          720,
+          1000
+        ]
+      },
+      "generation_id": "gen-img-1791310494-8XXENlzT4fHlmRZ5H7n4",
+      "provider": "OpenAI",
+      "generation_billing": {
+        "id": "gen-img-1791310494-8XXENlzT4fHlmRZ5H7n4",
+        "model": "openai/gpt-image-2.5-flare-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.025012,
+        "native_tokens_completion_images": 280,
+        "created_at": "2026-10-06T18:14:54.18Z",
+        "generation_time": 14053
+      },
+      "actual_cost_usd": 0.025012,
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "6a0eae98a6d80e5950136d6f881bc509d4308941e736bfe4a1451466d2f0496d",
+      "expected_center_mae_255": 56.8628,
+      "raw_center_pixel_exact_after_normalization": false
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "track": "track3",
+      "status": "completed",
+      "created_utc": "2026-10-06T18:14:38Z",
+      "elapsed_seconds": 15.137,
+      "reported_cost_usd": 0.025012,
+      "cost_source": "image_api_usage.cost",
+      "http_status": null,
+      "error": null,
+      "run_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/flare/track3",
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "request_geometry": {
+        "original_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+        "original_dimensions": [
+          1280,
+          720
+        ],
+        "crop_xyxy": [
+          280,
+          0,
+          1000,
+          720
+        ],
+        "canvas_dimensions": [
+          720,
+          1280
+        ],
+        "source_rect_xyxy": [
+          0,
+          280,
+          720,
+          1000
+        ]
+      },
+      "generation_id": "gen-img-1791310478-mLbKazIScWixdCcQfjw5",
+      "provider": "OpenAI",
+      "generation_billing": {
+        "id": "gen-img-1791310478-mLbKazIScWixdCcQfjw5",
+        "model": "openai/gpt-image-2.5-flare-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.025012,
+        "native_tokens_completion_images": 280,
+        "created_at": "2026-10-06T18:14:38.459Z",
+        "generation_time": 13612
+      },
+      "actual_cost_usd": 0.025012,
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "67f85cf399a075dced4a56efa75f4749c0fc9d81e340b741e2d36663fb1edaf3",
+      "expected_center_mae_255": 23.7082,
+      "raw_center_pixel_exact_after_normalization": false
+    },
+    {
+      "model": "black-forest-labs/flux-3-image",
+      "track": "track2",
+      "status": "completed",
+      "created_utc": "2026-10-06T18:12:41Z",
+      "elapsed_seconds": 69.079,
+      "reported_cost_usd": 0.024,
+      "cost_source": "image_api_usage.cost",
+      "http_status": null,
+      "error": null,
+      "run_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/flux/track2",
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "request_geometry": {
+        "original_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+        "original_dimensions": [
+          1280,
+          720
+        ],
+        "crop_xyxy": [
+          280,
+          0,
+          1000,
+          720
+        ],
+        "canvas_dimensions": [
+          720,
+          1280
+        ],
+        "source_rect_xyxy": [
+          0,
+          280,
+          720,
+          1000
+        ]
+      },
+      "generation_id": "gen-img-1791310361-43730HtJZ7PuzGGhXe6p",
+      "provider": "Black Forest Labs",
+      "generation_billing": {
+        "id": "gen-img-1791310361-43730HtJZ7PuzGGhXe6p",
+        "model": "black-forest-labs/flux-3-image-20261001",
+        "provider_name": "Black Forest Labs",
+        "total_cost": 0.024,
+        "native_tokens_completion_images": 4175,
+        "created_at": "2026-10-06T18:12:41.878Z",
+        "generation_time": 67876
+      },
+      "actual_cost_usd": 0.024,
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        768,
+        1360
+      ],
+      "raw_sha256": "e910f6bd5a645216462d945972d41bfddfe4caecb54404f19646065cc409e3cb",
+      "expected_center_mae_255": 10.9736,
+      "raw_center_pixel_exact_after_normalization": false
+    },
+    {
+      "model": "black-forest-labs/flux-3-image",
+      "track": "track3",
+      "status": "http_error",
+      "created_utc": "2026-10-06T18:15:33Z",
+      "elapsed_seconds": 3.303,
+      "reported_cost_usd": null,
+      "cost_source": "definitive_http_error_and_dedicated_key_reconciliation",
+      "http_status": 400,
+      "error": "{\"error\":{\"message\":\"Black Forest Labs blocked this request: it was flagged for graphic violence.\",\"code\":400,\"metadata\":{\"provider_name\":\"Black Forest Labs\"}}}",
+      "run_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/flux/track3",
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "request_geometry": {
+        "original_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+        "original_dimensions": [
+          1280,
+          720
+        ],
+        "crop_xyxy": [
+          280,
+          0,
+          1000,
+          720
+        ],
+        "canvas_dimensions": [
+          720,
+          1280
+        ],
+        "source_rect_xyxy": [
+          0,
+          280,
+          720,
+          1000
+        ]
+      },
+      "generation_id": null,
+      "provider": "Black Forest Labs",
+      "actual_cost_usd": 0
+    },
+    {
+      "model": "black-forest-labs/flux-3-image",
+      "track": "track3",
+      "status": "http_error",
+      "created_utc": "2026-10-06T18:12:39Z",
+      "elapsed_seconds": 0.934,
+      "reported_cost_usd": null,
+      "cost_source": "definitive_http_error_and_dedicated_key_reconciliation",
+      "http_status": 503,
+      "error": "{\"error\":{\"message\":\"Black Forest Labs submit returned 503: {\\\"detail\\\":\\\"/v1/flux-3-image is over capacity and temporarily shedding requests. Please retry shortly.\\\"}\",\"code\":503,\"metadata\":{\"provider_name\":\"Black Forest Labs\"}}}",
+      "run_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/flux-capacity-error/track3",
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "request_geometry": {
+        "original_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+        "original_dimensions": [
+          1280,
+          720
+        ],
+        "crop_xyxy": [
+          280,
+          0,
+          1000,
+          720
+        ],
+        "canvas_dimensions": [
+          720,
+          1280
+        ],
+        "source_rect_xyxy": [
+          0,
+          280,
+          720,
+          1000
+        ]
+      },
+      "generation_id": null,
+      "provider": "Black Forest Labs",
+      "actual_cost_usd": 0
+    },
+    {
+      "model": "tencent/hy-image-v3.5-preview",
+      "track": "track2",
+      "status": "completed",
+      "created_utc": "2026-10-06T18:12:04Z",
+      "elapsed_seconds": 33.61,
+      "reported_cost_usd": 0.024,
+      "cost_source": "image_api_usage.cost",
+      "http_status": null,
+      "error": null,
+      "run_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/hy/track2",
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "request_geometry": {
+        "original_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+        "original_dimensions": [
+          1280,
+          720
+        ],
+        "crop_xyxy": [
+          280,
+          0,
+          1000,
+          720
+        ],
+        "canvas_dimensions": [
+          720,
+          1280
+        ],
+        "source_rect_xyxy": [
+          0,
+          280,
+          720,
+          1000
+        ]
+      },
+      "generation_id": "gen-img-1791310325-jIAp0Uyw57T7rFqlVkyA",
+      "provider": "Tencent Cloud",
+      "generation_billing": {
+        "id": "gen-img-1791310325-jIAp0Uyw57T7rFqlVkyA",
+        "model": "tencent/hy-image-v3.5-preview-20260922",
+        "provider_name": "Tencent",
+        "total_cost": 0.024,
+        "native_tokens_completion_images": 15000,
+        "created_at": "2026-10-06T18:12:05.24Z",
+        "generation_time": 32096
+      },
+      "actual_cost_usd": 0.024,
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        576,
+        1024
+      ],
+      "raw_sha256": "50780f4bbed6b194a55bebd909e10e91d502e1ba4e71e91a0d6bb734b0624193",
+      "expected_center_mae_255": 8.3786,
+      "raw_center_pixel_exact_after_normalization": false
+    },
+    {
+      "model": "tencent/hy-image-v3.5-preview",
+      "track": "track3",
+      "status": "completed",
+      "created_utc": "2026-10-06T18:11:32Z",
+      "elapsed_seconds": 32.355,
+      "reported_cost_usd": 0.024,
+      "cost_source": "image_api_usage.cost",
+      "http_status": null,
+      "error": null,
+      "run_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/hy/track3",
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "request_geometry": {
+        "original_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+        "original_dimensions": [
+          1280,
+          720
+        ],
+        "crop_xyxy": [
+          280,
+          0,
+          1000,
+          720
+        ],
+        "canvas_dimensions": [
+          720,
+          1280
+        ],
+        "source_rect_xyxy": [
+          0,
+          280,
+          720,
+          1000
+        ]
+      },
+      "generation_id": "gen-img-1791310292-EdRcwSgkEuP167mNyYHb",
+      "provider": "Tencent Cloud",
+      "generation_billing": {
+        "id": "gen-img-1791310292-EdRcwSgkEuP167mNyYHb",
+        "model": "tencent/hy-image-v3.5-preview-20260922",
+        "provider_name": "Tencent",
+        "total_cost": 0.024,
+        "native_tokens_completion_images": 15000,
+        "created_at": "2026-10-06T18:11:32.346Z",
+        "generation_time": 31378
+      },
+      "actual_cost_usd": 0.024,
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        576,
+        1024
+      ],
+      "raw_sha256": "a77897c43f387463dc82606277f506c8f0673ded62130a35c867c540439f4e2f",
+      "expected_center_mae_255": 11.4656,
+      "raw_center_pixel_exact_after_normalization": false
+    },
+    {
+      "model": "google/gemini-nano-banana-2.1",
+      "track": "track2",
+      "status": "completed",
+      "created_utc": "2026-10-06T18:11:14Z",
+      "elapsed_seconds": 16.69,
+      "reported_cost_usd": 0.040326,
+      "cost_source": "image_api_usage.cost",
+      "http_status": null,
+      "error": null,
+      "run_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/nano/track2",
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "request_geometry": {
+        "original_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+        "original_dimensions": [
+          1280,
+          720
+        ],
+        "crop_xyxy": [
+          280,
+          0,
+          1000,
+          720
+        ],
+        "canvas_dimensions": [
+          720,
+          1280
+        ],
+        "source_rect_xyxy": [
+          0,
+          280,
+          720,
+          1000
+        ]
+      },
+      "generation_id": "gen-img-1791310274-9KmbKfiXg2hOi54ZXI6p",
+      "provider": "Google AI Studio",
+      "generation_billing": {
+        "id": "gen-img-1791310274-9KmbKfiXg2hOi54ZXI6p",
+        "model": "google/gemini-nano-banana-2.1-20261006",
+        "provider_name": "Google AI Studio",
+        "total_cost": 0.040326,
+        "native_tokens_completion_images": 1120,
+        "created_at": "2026-10-06T18:11:14.909Z",
+        "generation_time": 15454
+      },
+      "actual_cost_usd": 0.040326,
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        768,
+        1376
+      ],
+      "raw_sha256": "7558a9cf29822e41fc2824986e7c5463c45c9ac0e13632ce5e198dda077059bc",
+      "expected_center_mae_255": 12.1994,
+      "raw_center_pixel_exact_after_normalization": false
+    },
+    {
+      "model": "google/gemini-nano-banana-2.1",
+      "track": "track3",
+      "status": "completed",
+      "created_utc": "2026-10-06T18:10:50Z",
+      "elapsed_seconds": 24.048,
+      "reported_cost_usd": 0.044526,
+      "cost_source": "image_api_usage.cost",
+      "http_status": null,
+      "error": null,
+      "run_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/nano/track3",
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "request_geometry": {
+        "original_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+        "original_dimensions": [
+          1280,
+          720
+        ],
+        "crop_xyxy": [
+          280,
+          0,
+          1000,
+          720
+        ],
+        "canvas_dimensions": [
+          720,
+          1280
+        ],
+        "source_rect_xyxy": [
+          0,
+          280,
+          720,
+          1000
+        ]
+      },
+      "generation_id": "gen-img-1791310250-Ns9nsbpS1DCHJVBn1zcy",
+      "provider": "Google AI Studio",
+      "generation_billing": {
+        "id": "gen-img-1791310250-Ns9nsbpS1DCHJVBn1zcy",
+        "model": "google/gemini-nano-banana-2.1-20261006",
+        "provider_name": "Google AI Studio",
+        "total_cost": 0.044526,
+        "native_tokens_completion_images": 1120,
+        "created_at": "2026-10-06T18:10:50.477Z",
+        "generation_time": 22751
+      },
+      "actual_cost_usd": 0.044526,
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        768,
+        1376
+      ],
+      "raw_sha256": "d0b79c44afdf384b57887715c3f4458fb8d962c3f80c43265a934b0dac5ae545",
+      "expected_center_mae_255": 6.3379,
+      "raw_center_pixel_exact_after_normalization": false
+    },
+    {
+      "model": "bytedance-seed/seedream-5-0-flash",
+      "track": "track2",
+      "status": "completed",
+      "created_utc": "2026-10-06T18:10:33Z",
+      "elapsed_seconds": 16.563,
+      "reported_cost_usd": 0.018,
+      "cost_source": "image_api_usage.cost",
+      "http_status": null,
+      "error": null,
+      "run_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/seedream/track2",
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "request_geometry": {
+        "original_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+        "original_dimensions": [
+          1280,
+          720
+        ],
+        "crop_xyxy": [
+          280,
+          0,
+          1000,
+          720
+        ],
+        "canvas_dimensions": [
+          720,
+          1280
+        ],
+        "source_rect_xyxy": [
+          0,
+          280,
+          720,
+          1000
+        ]
+      },
+      "generation_id": "gen-img-1791310233-HhSoByLoRSnWJnQ5JDwy",
+      "provider": "Seed",
+      "generation_billing": {
+        "id": "gen-img-1791310233-HhSoByLoRSnWJnQ5JDwy",
+        "model": "bytedance-seed/seedream-5-0-flash-20261001",
+        "provider_name": "Seed",
+        "total_cost": 0.018,
+        "native_tokens_completion_images": 3600,
+        "created_at": "2026-10-06T18:10:33.329Z",
+        "generation_time": 15589
+      },
+      "actual_cost_usd": 0.018,
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        720,
+        1280
+      ],
+      "raw_sha256": "953f9a4102f60832b6cee9ec9743ae29b6e3cdd18912de8e9a2bd537decb49f4",
+      "expected_center_mae_255": 58.8121,
+      "raw_center_pixel_exact_after_normalization": false
+    },
+    {
+      "model": "bytedance-seed/seedream-5-0-flash",
+      "track": "track3",
+      "status": "completed",
+      "created_utc": "2026-10-06T18:09:58Z",
+      "elapsed_seconds": 16.339,
+      "reported_cost_usd": 0.018,
+      "cost_source": "image_api_usage.cost",
+      "http_status": null,
+      "error": null,
+      "run_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/seedream/track3",
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "request_geometry": {
+        "original_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+        "original_dimensions": [
+          1280,
+          720
+        ],
+        "crop_xyxy": [
+          280,
+          0,
+          1000,
+          720
+        ],
+        "canvas_dimensions": [
+          720,
+          1280
+        ],
+        "source_rect_xyxy": [
+          0,
+          280,
+          720,
+          1000
+        ]
+      },
+      "generation_id": "gen-img-1791310198-IpOlV2lhsbvxZIBGLDmX",
+      "provider": "Seed",
+      "generation_billing": {
+        "id": "gen-img-1791310198-IpOlV2lhsbvxZIBGLDmX",
+        "model": "bytedance-seed/seedream-5-0-flash-20261001",
+        "provider_name": "Seed",
+        "total_cost": 0.018,
+        "native_tokens_completion_images": 3600,
+        "created_at": "2026-10-06T18:09:58.451Z",
+        "generation_time": 15911
+      },
+      "actual_cost_usd": 0.018,
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        720,
+        1280
+      ],
+      "raw_sha256": "8ac578486cda2a74af29d774d8e6f44a4222b335cac66c594a18f156dfe98706",
+      "expected_center_mae_255": 27.3926,
+      "raw_center_pixel_exact_after_normalization": false
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "track": "track2",
+      "status": "completed",
+      "created_utc": "2026-10-06T18:14:14Z",
+      "elapsed_seconds": 23.339,
+      "reported_cost_usd": 0.025012,
+      "cost_source": "image_api_usage.cost",
+      "http_status": null,
+      "error": null,
+      "run_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/sunburst/track2",
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "request_geometry": {
+        "original_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+        "original_dimensions": [
+          1280,
+          720
+        ],
+        "crop_xyxy": [
+          280,
+          0,
+          1000,
+          720
+        ],
+        "canvas_dimensions": [
+          720,
+          1280
+        ],
+        "source_rect_xyxy": [
+          0,
+          280,
+          720,
+          1000
+        ]
+      },
+      "generation_id": "gen-img-1791310454-nl6WzG2CJZl8GAF9kJEd",
+      "provider": "OpenAI",
+      "generation_billing": {
+        "id": "gen-img-1791310454-nl6WzG2CJZl8GAF9kJEd",
+        "model": "openai/gpt-image-2.5-sunburst-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.025012,
+        "native_tokens_completion_images": 280,
+        "created_at": "2026-10-06T18:14:14.528Z",
+        "generation_time": 21821
+      },
+      "actual_cost_usd": 0.025012,
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "df1aeaeaee2514a1703f607289a36de522bbe080c17b434e630ca1cde4924eb0",
+      "expected_center_mae_255": 75.0628,
+      "raw_center_pixel_exact_after_normalization": false
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "track": "track3",
+      "status": "completed",
+      "created_utc": "2026-10-06T18:13:50Z",
+      "elapsed_seconds": 22.774,
+      "reported_cost_usd": 0.025012,
+      "cost_source": "image_api_usage.cost",
+      "http_status": null,
+      "error": null,
+      "run_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/sunburst/track3",
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "request_geometry": {
+        "original_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+        "original_dimensions": [
+          1280,
+          720
+        ],
+        "crop_xyxy": [
+          280,
+          0,
+          1000,
+          720
+        ],
+        "canvas_dimensions": [
+          720,
+          1280
+        ],
+        "source_rect_xyxy": [
+          0,
+          280,
+          720,
+          1000
+        ]
+      },
+      "generation_id": "gen-img-1791310431-ZVHt9mwPAmm5h9ZkeGXs",
+      "provider": "OpenAI",
+      "generation_billing": {
+        "id": "gen-img-1791310431-ZVHt9mwPAmm5h9ZkeGXs",
+        "model": "openai/gpt-image-2.5-sunburst-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.025012,
+        "native_tokens_completion_images": 280,
+        "created_at": "2026-10-06T18:13:51.238Z",
+        "generation_time": 20404
+      },
+      "actual_cost_usd": 0.025012,
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "76a65b9e23d96d507aecae1021d5e32e6a3f9439ee7cb59526dc8c6fb8bb5dc4",
+      "expected_center_mae_255": 28.3122,
+      "raw_center_pixel_exact_after_normalization": false
+    }
+  ],
+  "total_reported_usd": 0.2929,
+  "per_model_usd": {
+    "openai/gpt-image-2.5-flare": 0.050024,
+    "black-forest-labs/flux-3-image": 0.024,
+    "tencent/hy-image-v3.5-preview": 0.048,
+    "google/gemini-nano-banana-2.1": 0.084852,
+    "bytedance-seed/seedream-5-0-flash": 0.036,
+    "openai/gpt-image-2.5-sunburst": 0.050024
+  },
+  "unknown_cost_runs": [],
+  "key_usage_snapshot": {
+    "usage": 0.2929
+  },
+  "initial_key_usage_usd": 0.0,
+  "account_usage_matches_known_charges": true,
+  "cost_note": "Generation total_cost, reconciled to Image API usage.cost. Credit purchase fees/tax and training compute excluded. Key usage can lag; it is not used to attribute individual requests.",
+  "quality_note": "Raw outputs only, no center paste or color finishing. Center MAE is a placement/pixel-change diagnostic, not a perceptual quality score. Single sample per cover/model is not a general benchmark.",
+  "training_eligibility": "Not established; evaluation images are not an approved training dataset."
+}
