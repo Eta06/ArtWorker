@@ -1,0 +1,15 @@
+{
+  "baseline": "experiments/klein_outpaint/runs/2026-10-06/track3-base12-seed17-baked-q4-sequential-decode",
+  "candidate": "experiments/klein_compression/runs/2026-10-06/track3-mlp3-fixed",
+  "track": "track3",
+  "seed": 17,
+  "raw_pixel_exact": false,
+  "outside_mae_255": 8.078513145446777,
+  "outside_rmse_255": 11.265105247497559,
+  "outside_changed_pixel_fraction": 0.999993896484375,
+  "outside_max_channel_difference": 120.0,
+  "visual_quality_accepted": null,
+  "limitation": "Pixel differences do not measure semantic correctness; inspect both arms.",
+  "compression_quality_preserved_on_this_pair": null,
+  "visual_review": "Promising road/sea candidate: guardrail and coastline still continue, unlike uniform INT3. Sea/asphalt texture and tone change, with subtle boundary differences. Not exact parity; remaining cover evaluation required."
+}
