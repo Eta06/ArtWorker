@@ -183,7 +183,9 @@ def audit(row: dict, destination: Path, placement_mode: str = 'bounded') -> dict
         raise ValueError('Unexpected source geometry')
     if ImageChops.difference(canvas.crop(geometry['source_rect_xyxy']), square).getbbox():
         raise ValueError('Source differs from preserved canvas square')
-    original = ROOT/'Player/Resources'/f"{row['track']}.jpg"
+    original = (ROOT/geometry.get('original_file', f"Player/Resources/{row['track']}.jpg")).resolve()
+    if not original.is_relative_to(ROOT):
+        raise ValueError('Original cover outside repository')
     if sha(original) != geometry['original_sha256'] or row['source_sha256'] != geometry['original_sha256']:
         raise ValueError('Original cover changed since generation')
     with Image.open(original) as im:
@@ -239,6 +241,8 @@ def render(rows: list[dict], destination: Path, metadata: dict, assets: Path | N
     data = json.dumps(rows, ensure_ascii=False, allow_nan=False).replace('<', '\\u003c')
     template = template.replace('{{ROWS}}', data).replace('{{COUNT}}', str(len(rows)))
     template = template.replace('{{CREATED}}', html.escape(metadata['created_utc']))
+    labels = metadata.get('cover_labels', {'track2':'Karambol', 'track3':'Aklın Hep Bende'})
+    template = template.replace('{{COVER_LABELS}}', json.dumps(labels, ensure_ascii=False).replace('<', '\\u003c'))
     prefix = urllib.parse.quote(os.path.relpath(assets, destination))+'/' if assets else ''
     template = template.replace('{{ASSET_PREFIX_JSON}}', json.dumps(prefix))
     template = template.replace('{{ASSET_PREFIX}}', html.escape(prefix))
