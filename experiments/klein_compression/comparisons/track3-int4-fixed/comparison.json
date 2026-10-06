@@ -1,0 +1,15 @@
+{
+  "baseline": "experiments/klein_outpaint/runs/2026-10-06/track3-base12-seed17-baked-q4-sequential-decode",
+  "candidate": "experiments/klein_compression/runs/2026-10-06/track3-int4-fixed-cachelimit",
+  "track": "track3",
+  "seed": 17,
+  "raw_pixel_exact": true,
+  "outside_mae_255": 0.0,
+  "outside_rmse_255": 0.0,
+  "outside_changed_pixel_fraction": 0.0,
+  "outside_max_channel_difference": 0.0,
+  "visual_quality_accepted": null,
+  "limitation": "Pixel differences do not measure semantic correctness; inspect both arms.",
+  "visual_review": "Exact raw parity confirmed, including existing subtle road/sea joins. No additional degradation; baseline is not universally accepted.",
+  "compression_quality_preserved_on_this_pair": true
+}
