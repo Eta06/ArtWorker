@@ -1,7 +1,8 @@
 # OpenRouter outpainting comparison
 
-Evaluate the six exact user-selected hosted models on `track3` (Aklın Hep Bende)
-and `track2` (Karambol). These are visual evaluation calls, not student training.
+Evaluate user-selected hosted models on `track3` (Aklın Hep Bende)
+and `track2` (Karambol). The original Kehribar stage covers six models; Zeytin
+covers nineteen models and every native resolution/quality setting. These are visual evaluation calls, not student training.
 
 `benchmark.py` uses the dedicated `POST /api/v1/images` endpoint, pinned provider
 routing and one output per request. Model capabilities and endpoint prices come
@@ -47,3 +48,35 @@ and source-artwork redistribution rights are not established by this evaluation.
 
 Sources: [Image API](https://openrouter.ai/docs/guides/overview/multimodal/image-generation),
 [generation billing](https://openrouter.ai/docs/api/api-reference/generations/get-request-&-usage-metadata-for-a-generation).
+
+## Zeytin variant batch
+
+See [capabilities](zeytin-capabilities.md) and [pinned plan](zeytin-plan.json).
+The batch has 98 comparison cells, reuses eleven identical previous successes,
+and withholds five FLUX road-cover cells following the provider's earlier filter.
+Recraft is excluded because its endpoint accepts text only. Single-reference
+models receive the canvas only, with the second-reference sentence removed.
+
+```sh
+python3 scripts/run_bounded_model.py \
+  --output .build/openrouter-zeytin-guard --max-gib 1.5 --timeout 7200 -- \
+  python3 experiments/openrouter_outpaint/variants.py \
+  --plan experiments/openrouter_outpaint/zeytin-plan.json \
+  --results experiments/openrouter_outpaint/results/2026-10-06/zeytin \
+  --key-file /path/to/private-key-file
+```
+
+At most two HTTP requests run concurrently; local image decoding is monitored
+under one shared process-group guard. A $45 new-spend ceiling reserves $3 per
+in-flight request against both that ceiling and the key's remaining credit. This
+is a dispatch guard, not a guarantee against provider billing delays. Unknown
+responses pause dispatch; no request with an existing receipt is automatically
+resubmitted. The batch can resume definitive completed/failed receipts with a
+fresh outer guard directory.
+
+`report_variants.py --key-file ... --results ... --ledger ...` reconciles each
+generation, writes JSON/CSV records and a local HTML gallery. It includes all
+variants and original raw outputs; overview sheets show the first profile only.
+Gallery images link to full-resolution files. Every charge is attributed from
+response usage or generation billing, not overlapping per-request key deltas.
+Visual selection belongs to the user; no winner or quality score is assigned.
