@@ -1,0 +1,6 @@
+{
+  "expected_rejection_verified": true,
+  "wrapper_exit_code": 2,
+  "model_launched": false,
+  "cause": "checksum differs from pinned embedding manifest"
+}
