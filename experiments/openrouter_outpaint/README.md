@@ -1,0 +1,49 @@
+# OpenRouter outpainting comparison
+
+Evaluate the six exact user-selected hosted models on `track3` (Aklın Hep Bende)
+and `track2` (Karambol). These are visual evaluation calls, not student training.
+
+`benchmark.py` uses the dedicated `POST /api/v1/images` endpoint, pinned provider
+routing and one output per request. Model capabilities and endpoint prices come
+from the live Image Models API. Image-only models can be absent from the ordinary
+chat model catalog. Never silently substitute another model slug.
+
+Local resource images are 1280×720 with side bars. Center-crop the true 720×720
+artwork and place it on a green 720×1280 target canvas at `[0,280,720,1000]`.
+Send the canvas and original square as two references, with the same prompt for
+every cover/model. This API route has reference images but no explicit pixel
+mask; preserving the source geometry is requested, not enforced. Keep raw output.
+
+All models support 9:16; this common benchmark ratio differs from the local
+512×1152 phone experiment. Request the 1K tier where supported and medium quality
+for OpenAI. Tiers and quality knobs are not equivalent across providers. Record
+actual returned dimensions; do not call this an identical-resolution benchmark.
+
+Run each request serially under `scripts/run_bounded_model.py` with a 0.6 GiB
+process-group sampling limit and pressure/swap guards. There are no automatic paid
+POST retries. An uncertain request must be reconciled before any retry; a definite
+capacity error can be retried in a fresh directory, retaining the original record.
+
+```sh
+python3 scripts/run_bounded_model.py \
+  --output .build/openrouter-research/guards/example \
+  --max-gib 0.6 --timeout 300 -- \
+  python3 experiments/openrouter_outpaint/benchmark.py \
+  --key-file /path/to/private-key-file \
+  --model bytedance-seed/seedream-5-0-flash --track track3 \
+  --output experiments/openrouter_outpaint/results/example/seedream/track3
+```
+
+Use `summarize.py --key-file ... --results ... --ledger ...` after the batch.
+Reconcile `usage.cost` to the generation's `total_cost` using `x-generation-id`.
+Do not infer an individual call's charge from an immediate key-usage delta: the
+key counter can lag. Credit purchase fees/tax and future training compute are
+outside these generation costs. Missing billing remains unknown, not assumed zero.
+
+Credentials, source images, generated images and full local request receipts stay
+outside normal Git. The public ledger contains cost, timing, dimensions, hashes,
+provider/model identifiers and limitations. Provider output-training permission
+and source-artwork redistribution rights are not established by this evaluation.
+
+Sources: [Image API](https://openrouter.ai/docs/guides/overview/multimodal/image-generation),
+[generation billing](https://openrouter.ai/docs/api/api-reference/generations/get-request-&-usage-metadata-for-a-generation).
