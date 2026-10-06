@@ -8,13 +8,14 @@
 <header><a href="../">← Model karşılaştırmasına dön</a><h1>Turuncu alan orijinalle ne kadar eşleşiyor?</h1>
 <p class="intro">{{COUNT}} mevcut çıktı · Yeni üretim ücreti $0. Hesaplanan kaynak alanı orijinalle aynı konum ve ölçekte üst üste getiriliyor. Kayma burada içerik hatası sayılmıyor; kalan detay ve renk farkı ölçülüyor.</p>
 <p class="intro small">SSIM yükseldikçe yapısal benzerlik artar. “RGB ≤ 8 eşleşen” görünür piksellerde üç renk kanalının da orijinalden en fazla 8/255 farklı olduğu orandır; 16 eşiği daha toleranslıdır. Bunlar anlamsal koruma yüzdesi değildir. Analiz 512×512; gri alanlar kaynak görünmediği için ölçüm dışıdır. Isı haritalarında koyu = az fark, açık = çok fark.</p>
-<div class="filters"><label for="model">Model<select id="model"><option value="">Tüm modeller</option></select></label><label for="track">Kapak<select id="track"><option value="">İki kapak</option><option value="track2">Karambol</option><option value="track3">Aklın Hep Bende</option></select></label><label for="frame">Karşılaştırma<select id="frame"><option value="aligned">Turuncu alan · üst üste hizalı</option><option value="fixed">Gönderilen sabit konum</option></select></label><label for="sort">Sıralama<select id="sort"><option value="ssim">Seçili karşılaştırma SSIM · yüksekten</option><option value="mae">RGB hata · düşükten</option><option value="color">Renk farkı · düşükten</option><option value="cost">Ücret · düşükten</option></select></label><span id="count" role="status"></span></div>
+<div class="filters"><label for="model">Model<select id="model"><option value="">Tüm modeller</option></select></label><label for="track">Kapak<select id="track"><option value="">Tüm kapaklar</option></select></label><label for="frame">Karşılaştırma<select id="frame"><option value="aligned">Turuncu alan · üst üste hizalı</option><option value="fixed">Gönderilen sabit konum</option></select></label><label for="sort">Sıralama<select id="sort"><option value="ssim">Seçili karşılaştırma SSIM · yüksekten</option><option value="mae">RGB hata · düşükten</option><option value="color">Renk farkı · düşükten</option><option value="cost">Ücret · düşükten</option></select></label><span id="count" role="status"></span></div>
 <p><a href="{{ASSET_PREFIX}}metrics.csv" download>CSV ölçümleri</a> · <a href="{{ASSET_PREFIX}}metrics.json" download>JSON ve yöntem kaydı</a></p></header>
 <main id="cards"></main><noscript><p>Karşılaştırma kartları için JavaScript açık olmalı. CSV/JSON bağlantıları JavaScript olmadan da kullanılabilir.</p></noscript>
 <script type="application/json" id="data">{{ROWS}}</script>
 <script>
 const rows=JSON.parse(document.querySelector('#data').textContent),cards=document.querySelector('#cards'),assetPrefix={{ASSET_PREFIX_JSON}};
-const cover={track2:'Karambol',track3:'Aklın Hep Bende'};
+const cover={{COVER_LABELS}};
+document.querySelector('#track').replaceChildren(new Option('Tüm kapaklar',''),...Array.from(new Set(rows.map(r=>r.track)),t=>new Option(cover[t]||t,t)));
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const n=(x,d=3)=>typeof x==='number'?x.toFixed(d):'—';
 const pct=x=>typeof x==='number'?n(100*x,1)+'%':'—';
