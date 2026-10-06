@@ -10,6 +10,7 @@ import base64
 import hashlib
 import io
 import json
+import re
 from pathlib import Path
 import time
 import urllib.error
@@ -69,11 +70,28 @@ def request_json(path: str, key: str, payload: dict | None = None, timeout: floa
         "Content-Type": "application/json",
     })
     with urllib.request.urlopen(req, timeout=timeout if payload else 30) as response:
-        raw = response.read(40 * 1024 * 1024 + 1)
-        if len(raw) > 40 * 1024 * 1024:
-            raise ValueError("Response exceeds bounded 40 MiB reader")
-        return json.loads(raw), {k.lower(): v for k, v in response.headers.items()
-                                 if k.lower() in {"x-request-id", "x-generation-id"}}
+        headers = {k.lower(): v for k, v in response.headers.items()
+                   if k.lower() in {"x-request-id", "x-generation-id"}}
+        raw = bytearray()
+        try:
+            # A complete JSON document is sufficient: don't wait for a broken
+            # relay to close its connection after the image has arrived.
+            while True:
+                chunk = response.read1(64 * 1024)
+                if not chunk:
+                    return json.loads(raw), headers
+                raw.extend(chunk)
+                if len(raw) > 40 * 1024 * 1024:
+                    raise ValueError("Response exceeds bounded 40 MiB reader")
+                if raw.rstrip().endswith((b'}', b']')):
+                    try:
+                        document = json.loads(raw)
+                    except (json.JSONDecodeError, UnicodeDecodeError):
+                        continue
+                    return document, headers
+        except Exception as exc:
+            exc.response_headers = headers
+            raise
 
 
 def key_usage(key: str) -> dict:
@@ -81,8 +99,12 @@ def key_usage(key: str) -> dict:
     return {k: d["data"].get(k) for k in ("usage", "limit", "limit_remaining")}
 
 
-def prepare(track: str, output: Path) -> dict:
-    source_path = ROOT / "Player/Resources" / (track + ".jpg")
+def prepare(track: str, output: Path, source_image: Path | None = None) -> dict:
+    if not re.fullmatch(r'[a-zA-Z0-9_-]+', track):
+        raise ValueError('Unsafe cover identifier')
+    source_path = (source_image or ROOT / "Player/Resources" / (track + ".jpg")).resolve()
+    if not source_path.is_relative_to(ROOT):
+        raise ValueError('Source image must be inside repository for reproducible receipts')
     original = Image.open(source_path).convert("RGB")
     width, height = original.size
     side = min(width, height)
@@ -93,7 +115,8 @@ def prepare(track: str, output: Path) -> dict:
     canvas.paste(source, (0, 280))
     source.save(output / "source.png")
     canvas.save(output / "input.png")
-    return {"original_sha256": hashlib.sha256(source_path.read_bytes()).hexdigest(),
+    return {"original_file": str(source_path.relative_to(ROOT)),
+            "original_sha256": hashlib.sha256(source_path.read_bytes()).hexdigest(),
             "original_dimensions": [width, height],
             "crop_xyxy": [left, top, left + side, top + side],
             "canvas_dimensions": [720, 1280], "source_rect_xyxy": [0, 280, 720, 1000]}
@@ -107,7 +130,8 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--key-file", type=Path, required=True)
     parser.add_argument("--model", choices=MODELS, required=True)
-    parser.add_argument("--track", choices=["track2", "track3"], required=True)
+    parser.add_argument("--track", required=True, help="Stable cover identifier")
+    parser.add_argument("--source-image", type=Path, help="Local cover; defaults to Player/Resources/<track>.jpg")
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--resolution", help="A supported native resolution tier")
     parser.add_argument("--quality", help="A supported native quality tier, including auto")
@@ -118,7 +142,7 @@ def main() -> None:
     if (out / "receipt.json").exists():
         raise SystemExit("Existing receipt: refusing to repeat a paid request")
     key = args.key_file.read_text().strip()
-    geometry = prepare(args.track, out)
+    geometry = prepare(args.track, out, args.source_image)
     catalog, _ = request_json("images/models/" + args.model + "/endpoints", key)
     endpoint = catalog["endpoints"][0]
     supported = endpoint["supported_parameters"]
@@ -197,6 +221,7 @@ def main() -> None:
         receipt["error"] = exc.read(8192).decode(errors="replace").replace(key, "[REDACTED]")
     except Exception as exc:
         receipt["status"] = "uncertain_or_decode_error"
+        receipt["response_headers"] = getattr(exc, 'response_headers', {})
         receipt["error"] = (type(exc).__name__ + ": " + str(exc)).replace(key, "[REDACTED]")
     finally:
         receipt["elapsed_seconds"] = round(time.monotonic() - started, 3)
