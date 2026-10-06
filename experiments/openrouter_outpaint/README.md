@@ -80,3 +80,32 @@ variants and original raw outputs; overview sheets show the first profile only.
 Gallery images link to full-resolution files. Every charge is attributed from
 response usage or generation billing, not overlapping per-request key deltas.
 Visual selection belongs to the user; no winner or quality score is assigned.
+
+## Local visual preferences
+
+`review_gallery.py` renders the preference gallery from an existing reconciled
+ledger without any API calls or new generations. `report_variants.py` uses the
+same renderer, so rebuilding reports retains the review interface.
+
+```sh
+python3 experiments/openrouter_outpaint/review_gallery.py \
+  --ledger experiments/openrouter_outpaint/zeytin-costs.json \
+  --results experiments/openrouter_outpaint/results/2026-10-06/zeytin
+```
+
+Each available output has mutually exclusive like/dislike buttons. Pressing the
+active button clears the choice. Votes persist in browser localStorage, keyed by
+model, native profile, cover and raw-image SHA256; a new generated image never
+inherits the old output's preference. Model summaries deduplicate models with at
+least one liked output and show accepted settings/covers plus rejection counts.
+Unavailable images cannot be rated. Filters can show liked, disliked or undecided
+outputs. Model-list text and full JSON preference exports are previewed in a
+copyable dialog with a download link.
+
+Preferences stay in this browser and origin, and sync between open tabs on that
+origin. Clearing browser data or changing the server port loses that storage;
+export a backup first. JSON import is not implemented. Native download handling
+is browser-dependent; the dialog provides readable/selectable export text.
+Storage failures are surfaced instead of claiming persistence. Preferences are
+not published to GitHub, Space or OpenRouter, and do not select a teacher
+automatically.
