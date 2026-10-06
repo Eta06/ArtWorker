@@ -1,0 +1,15 @@
+{
+  "baseline": "experiments/klein_outpaint/runs/2026-10-06/track3-base12-seed17-baked-q4-sequential-decode",
+  "candidate": "experiments/klein_compression/runs/2026-10-06/track3-int2-fixed",
+  "track": "track3",
+  "seed": 17,
+  "raw_pixel_exact": false,
+  "outside_mae_255": 54.91219711303711,
+  "outside_rmse_255": 69.0508804321289,
+  "outside_changed_pixel_fraction": 1.0,
+  "outside_max_channel_difference": 208.0,
+  "visual_quality_accepted": false,
+  "limitation": "Pixel differences do not measure semantic correctness; inspect both arms.",
+  "compression_quality_preserved_on_this_pair": false,
+  "visual_review": "Rejected immediately: generated upper/lower regions are speckled noise with hard source seams and no coherent scene continuation. Remaining covers were not run after this failure."
+}
