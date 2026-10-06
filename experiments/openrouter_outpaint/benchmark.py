@@ -1,4 +1,4 @@
-"""Serial reference-canvas outpainting comparison using OpenRouter's Image API.
+"""Reference-canvas outpainting call using OpenRouter's Image API.
 
 Credentials are read from a private file, never saved in receipts. No automatic
 POST retries: a lost response can still represent an upstream generation.
@@ -20,6 +20,19 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[2]
 API = "https://openrouter.ai/api/v1/"
 MODELS = [
+    "openai/gpt-image-2",
+    "google/gemini-3.1-flash-lite-image",
+    "krea/krea-2-medium-turbo",
+    "krea/krea-2-medium",
+    "krea/krea-2-large",
+    "microsoft/mai-image-2.5-pro",
+    "qwen/qwen-image-3",
+    "qwen/qwen-image-3-pro",
+    "x-ai/grok-imagine-image-2.0",
+    "bytedance-seed/seedream-5-0-pro",
+    "bytedance-seed/seedream-5-0-lite",
+    "microsoft/mai-image-2.6",
+    "microsoft/mai-image-2.6-flash",
     "google/gemini-nano-banana-2.1",
     "tencent/hy-image-v3.5-preview",
     "bytedance-seed/seedream-5-0-flash",
@@ -44,16 +57,18 @@ PROMPT = (
 
 
 def save_json(path: Path, value: object) -> None:
-    path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n")
+    temporary = path.with_suffix(path.suffix + '.tmp')
+    temporary.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n")
+    temporary.replace(path)
 
 
-def request_json(path: str, key: str, payload: dict | None = None) -> tuple[dict, dict]:
+def request_json(path: str, key: str, payload: dict | None = None, timeout: float = 240) -> tuple[dict, dict]:
     data = json.dumps(payload).encode() if payload is not None else None
     req = urllib.request.Request(API + path, data=data, headers={
         "Authorization": "Bearer " + key,
         "Content-Type": "application/json",
     })
-    with urllib.request.urlopen(req, timeout=240 if payload else 30) as response:
+    with urllib.request.urlopen(req, timeout=timeout if payload else 30) as response:
         raw = response.read(40 * 1024 * 1024 + 1)
         if len(raw) > 40 * 1024 * 1024:
             raise ValueError("Response exceeds bounded 40 MiB reader")
@@ -94,6 +109,9 @@ def main() -> None:
     parser.add_argument("--model", choices=MODELS, required=True)
     parser.add_argument("--track", choices=["track2", "track3"], required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--resolution", help="A supported native resolution tier")
+    parser.add_argument("--quality", help="A supported native quality tier, including auto")
+    parser.add_argument("--request-timeout", type=float, default=240)
     args = parser.parse_args()
     out = args.output
     out.mkdir(parents=True, exist_ok=True)
@@ -104,19 +122,39 @@ def main() -> None:
     catalog, _ = request_json("images/models/" + args.model + "/endpoints", key)
     endpoint = catalog["endpoints"][0]
     supported = endpoint["supported_parameters"]
-    payload = {"model": args.model, "prompt": PROMPT, "n": 1,
+    max_references = supported.get("input_references", {}).get("max", 0)
+    if max_references < 1:
+        raise SystemExit("This endpoint does not accept source images; no paid outpaint request sent")
+    names = ("input.png", "source.png") if max_references >= 2 else ("input.png",)
+    prompt = PROMPT if len(names) == 2 else PROMPT.replace(
+        "Reference 2 is the original square artwork. ", "")
+    payload = {"model": args.model, "prompt": prompt,
                "aspect_ratio": "9:16", "input_references": [
                    {"type": "image_url", "image_url": {"url": data_url(out / name)}}
-                   for name in ("input.png", "source.png")],
+                   for name in names],
                "provider": {"only": [endpoint["provider_tag"]], "allow_fallbacks": False}}
+    if "n" in supported:
+        payload["n"] = 1
     if "resolution" in supported:
-        payload["resolution"] = "1K"
+        values = supported["resolution"]["values"]
+        resolution = args.resolution or ("1K" if "1K" in values else values[0])
+        if resolution not in values:
+            raise SystemExit("Unsupported resolution tier; no paid request sent")
+        payload["resolution"] = resolution
+    elif args.resolution:
+        raise SystemExit("Endpoint has no resolution control; no paid request sent")
     if "quality" in supported:
-        payload["quality"] = "medium"
+        values = supported["quality"]["values"]
+        quality = args.quality or ("medium" if "medium" in values else values[0])
+        if quality not in values:
+            raise SystemExit("Unsupported quality tier; no paid request sent")
+        payload["quality"] = quality
+    elif args.quality:
+        raise SystemExit("Endpoint has no quality control; no paid request sent")
     # Receipt has hashes and paths instead of source payloads or authentication.
     public_payload = {**payload, "input_references": [
         {"local_file": name, "sha256": hashlib.sha256((out / name).read_bytes()).hexdigest()}
-        for name in ("input.png", "source.png")]}
+        for name in names]}
     receipt = {"model": args.model, "track": args.track, "geometry": geometry,
                "request": public_payload, "endpoint_snapshot": catalog,
                "status": "prepared", "before": key_usage(key),
@@ -128,7 +166,7 @@ def main() -> None:
     save_json(out / "receipt.json", receipt)
     print(json.dumps({"event": "request_started", "model": args.model, "track": args.track}), flush=True)
     try:
-        response, headers = request_json("images", key, payload)
+        response, headers = request_json("images", key, payload, timeout=args.request_timeout)
         receipt["response_headers"] = headers
         receipt["usage"] = response.get("usage", {})
         receipt["response_metadata"] = {k: v for k, v in response.items()
