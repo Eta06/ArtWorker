@@ -1,0 +1,15 @@
+{
+  "baseline": "experiments/klein_outpaint/runs/2026-10-06/track2-base12-baked-q4-sequential-decode",
+  "candidate": "experiments/klein_compression/runs/2026-10-06/track2-mlp3-fixed",
+  "track": "track2",
+  "seed": 42,
+  "raw_pixel_exact": false,
+  "outside_mae_255": 11.42261028289795,
+  "outside_rmse_255": 22.834760665893555,
+  "outside_changed_pixel_fraction": 0.997052001953125,
+  "outside_max_channel_difference": 207.0,
+  "visual_quality_accepted": false,
+  "limitation": "Pixel differences do not measure semantic correctness; inspect both arms.",
+  "compression_quality_preserved_on_this_pair": null,
+  "visual_review": "Not accepted as a general replacement: both arms retain the baseline invented real-bag failure, while mixed precision changes the bag shape and adds different lower-shirt graphics. No source degradation after compositing, but generated-region semantic equivalence is not established."
+}
