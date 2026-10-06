@@ -40,8 +40,25 @@
   "trained_student": false,
   "limitations": [
     "Fixed instruction only; arbitrary prompts need an encoder",
-    "Existing human-cover failure retained",
+    "Human cover seed17 improves bag-print continuation; residual seams and invented details remain",
     "Native loader still uses the preserved BF16 source identity",
     "Mac resource measurements are not iPhone results"
-  ]
+  ],
+  "finishing": {
+    "mode": "color",
+    "implementation": "../klein_outpaint/finish_output.py",
+    "strip_pixels": 96,
+    "sigma_x": 6,
+    "residual_cap_255": 24,
+    "near_black_bypass": "99th percentile of source and decoded edge rows <= 8",
+    "source_preserved_exact": true,
+    "raw_weights_and_sampling_unchanged": true,
+    "limitation": "Color only; incorrect clothing, objects and geometry remain",
+    "verified_cinar_road_preview_pixel_exact": true
+  },
+  "evaluation_seeds": {
+    "track1": 42,
+    "track2": 17,
+    "track3": 17
+  }
 }
