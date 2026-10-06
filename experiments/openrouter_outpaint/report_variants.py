@@ -5,9 +5,7 @@ import argparse
 from collections import Counter, defaultdict
 import csv
 from decimal import Decimal
-import html
 import json
-import os
 from pathlib import Path
 import urllib.parse
 
@@ -121,36 +119,8 @@ def main():
     summary += ['', f'New reported charges: ${ledger["new_charge_usd"]:.7f}. Dedicated-key reconciliation: {reconciled}.',
                 '', 'Per-generation IDs, resolved model versions, provider routing, image hashes and billing sources are in the JSON ledger. Native tiers are not equivalent pixel counts across providers. HTTP execution success is not source-preserving outpaint acceptance.']
     args.ledger.with_suffix('.md').write_text('\n'.join(summary)+'\n')
-    cards = []
-    for row in rows:
-        title = row['model'] + ' · ' + row['profile']
-        cover = 'Aklın Hep Bende' if row['track'] == 'track3' else 'Karambol'
-        image_path = ROOT / row.get('directory', '') / 'raw.png'
-        image_markup = '<div class="missing">' + html.escape(row['status']) + '</div>'
-        if image_path.is_file():
-            url = urllib.parse.quote(os.path.relpath(image_path, args.results.resolve()))
-            image_markup = f'<a href="{url}" target="_blank"><img loading="lazy" src="{url}"></a>'
-        cost = row.get('actual_cost_usd')
-        info = (f'${cost:.6f}' if cost is not None else 'Ücret doğrulanmadı')
-        if row['status'] in ('blocked_from_prior_filter', 'pending'):
-            info = 'Bu ayarda istek yapılmadı'
-        if row.get('elapsed_seconds') is not None:
-            info += f' · {row["elapsed_seconds"]:.1f}s'
-        if row.get('raw_dimensions'):
-            info += ' · ' + '×'.join(map(str, row['raw_dimensions']))
-        if row['reused']:
-            info += ' · Önceki sonuç; yeni ücret yok'
-        cards.append(f'<article data-model="{html.escape(row["model"])}" data-track="{row["track"]}"><h2>{html.escape(title)}</h2><p>{cover}</p>{image_markup}<p>{html.escape(info)}</p><small>{html.escape(row["status"])}</small></article>')
-    model_options = ''.join('<option>'+html.escape(m)+'</option>' for m in dict.fromkeys(r['model'] for r in rows))
-    originals = []
-    for track, label in [('track3', 'Aklın Hep Bende'), ('track2', 'Karambol')]:
-        row = next(r for r in rows if r['track'] == track and r.get('directory'))
-        url = urllib.parse.quote(os.path.relpath(ROOT / row['directory'] / 'source.png', args.results.resolve()))
-        originals.append(f'<div><p>{label} · orijinal kare</p><a href="{url}" target="_blank"><img style="width:120px" src="{url}"></a></div>')
-    document = '''<!doctype html><meta charset="utf-8"><title>ArtWorker — Zeytin</title>
-<style>body{margin:0;background:#121316;color:#eee;font:15px system-ui}header{padding:24px;position:sticky;top:0;background:#121316ee;z-index:1}h1{margin:0 0 10px}select{background:#292b31;color:white;padding:10px;border:1px solid #555;border-radius:8px}main{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:20px;padding:24px}article{background:#1d1f25;padding:14px;border-radius:14px}h2{font-size:14px;overflow-wrap:anywhere}img{width:100%;height:auto;border-radius:8px}.missing{height:350px;display:grid;place-items:center;color:#aaa}small{color:#aaa}p{font-size:13px}article[hidden]{display:none}</style>
-<header><h1>ArtWorker · Zeytin</h1><p>Ham çıktılar. Görsel kalite kararı sende. Tam boyut için görsele tıkla.</p><p>Batch: ''' + html.escape(state['status']) + ''' · Yeni doğrulanmış ücret: $''' + f'{ledger["new_charge_usd"]:.6f}' + '''</p><select id="model"><option value="">Tüm modeller</option>''' + model_options + '''</select> <select id="track"><option value="">İki kapak</option><option value="track3">Aklın Hep Bende</option><option value="track2">Karambol</option></select></header><div style="display:flex;gap:24px;padding:24px">''' + ''.join(originals) + '''</div><main>''' + ''.join(cards) + '''</main><script>const model=document.getElementById('model'),track=document.getElementById('track');function filter(){document.querySelectorAll('article').forEach(a=>a.hidden=(model.value&&a.dataset.model!==model.value)||(track.value&&a.dataset.track!==track.value));}model.onchange=track.onchange=filter;</script>'''
-    (args.results / 'index.html').write_text(document)
+    from review_gallery import render_gallery
+    render_gallery(rows, args.results, ledger, state['status'])
     font = ImageFont.truetype('/System/Library/Fonts/Supplemental/Arial.ttf', 15)
     for track in ('track3', 'track2'):
         # One default/first profile per model in the overview; every variant remains in the gallery.
