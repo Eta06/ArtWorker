@@ -1,0 +1,134 @@
+{
+  "status": "compression_comparison_completed_phone_goal_unmet",
+  "original_component_bytes": 4611193511,
+  "encoder_free_int4_component_bytes": 2363900089,
+  "encoder_free_int3_component_bytes": 1879457889,
+  "encoder_free_int2_component_bytes": 1395015601,
+  "mixed_mlp3_component_bytes": 2163359921,
+  "int4_payload_reduction_percent": 48.73561295224506,
+  "int4_raw_parity_tracks": [
+    "track1",
+    "track2",
+    "track3"
+  ],
+  "uniform_int3_quality": "rejected on all three covers",
+  "uniform_int2_quality": "catastrophic failure on track3; other covers not run",
+  "mixed_mlp3_quality": "promising road/black cover; different invented clothing on human cover, not accepted as general replacement",
+  "selected_recipe": "chosen_recipe.json",
+  "compatibility_probe": "quant-probe-all-bits/comparison.json",
+  "runs": [
+    {
+      "run": "experiments/klein_compression/runs/2026-10-06/track1-int3-fixed",
+      "status": "completed",
+      "bits": 3,
+      "profile": "uniform",
+      "seconds": 91.18105654099963,
+      "peak_phys_gib": 4.813158430159092,
+      "peak_rss_gib": 1.827178955078125,
+      "stop_reason": "complete"
+    },
+    {
+      "run": "experiments/klein_compression/runs/2026-10-06/track1-int4-fixed",
+      "status": "completed",
+      "bits": 4,
+      "profile": "uniform",
+      "seconds": 92.53869616600059,
+      "peak_phys_gib": 5.265490286052227,
+      "peak_rss_gib": 2.2649688720703125,
+      "stop_reason": "complete"
+    },
+    {
+      "run": "experiments/klein_compression/runs/2026-10-06/track1-mlp3-fixed",
+      "status": "completed",
+      "bits": 4,
+      "profile": "mlp3",
+      "seconds": 73.41231295800026,
+      "peak_phys_gib": 5.077471353113651,
+      "peak_rss_gib": 2.0914306640625,
+      "stop_reason": "complete"
+    },
+    {
+      "run": "experiments/klein_compression/runs/2026-10-06/track2-int3-fixed",
+      "status": "completed",
+      "bits": 3,
+      "profile": "uniform",
+      "seconds": 90.74408254099944,
+      "peak_phys_gib": 4.805834211409092,
+      "peak_rss_gib": 1.82672119140625,
+      "stop_reason": "complete"
+    },
+    {
+      "run": "experiments/klein_compression/runs/2026-10-06/track2-int4-fixed",
+      "status": "completed",
+      "bits": 4,
+      "profile": "uniform",
+      "seconds": 92.35878308300016,
+      "peak_phys_gib": 5.49879714846611,
+      "peak_rss_gib": 2.276123046875,
+      "stop_reason": "complete"
+    },
+    {
+      "run": "experiments/klein_compression/runs/2026-10-06/track2-mlp3-fixed",
+      "status": "completed",
+      "bits": 4,
+      "profile": "mlp3",
+      "seconds": 110.91013441699943,
+      "peak_phys_gib": 5.077776528894901,
+      "peak_rss_gib": 2.091888427734375,
+      "stop_reason": "complete"
+    },
+    {
+      "run": "experiments/klein_compression/runs/2026-10-06/track3-int2-fixed",
+      "status": "completed",
+      "bits": 2,
+      "profile": "uniform",
+      "seconds": 71.17290133300048,
+      "peak_phys_gib": 4.3614519611001015,
+      "peak_rss_gib": 1.3760528564453125,
+      "stop_reason": "complete"
+    },
+    {
+      "run": "experiments/klein_compression/runs/2026-10-06/track3-int3-fixed",
+      "status": "completed",
+      "bits": 3,
+      "profile": "uniform",
+      "seconds": 96.20852195800035,
+      "peak_phys_gib": 5.432053819298744,
+      "peak_rss_gib": 1.827880859375,
+      "stop_reason": "complete"
+    },
+    {
+      "run": "experiments/klein_compression/runs/2026-10-06/track3-int4-fixed-cachelimit",
+      "status": "completed",
+      "bits": 4,
+      "profile": "uniform",
+      "seconds": 79.76758474999951,
+      "peak_phys_gib": 5.232714407145977,
+      "peak_rss_gib": 2.2781219482421875,
+      "stop_reason": "complete"
+    },
+    {
+      "run": "experiments/klein_compression/runs/2026-10-06/track3-int4-fixed-parity",
+      "status": "failed",
+      "bits": 4,
+      "profile": "uniform",
+      "seconds": 0.957466875001046,
+      "peak_phys_gib": 5.305529214441776,
+      "peak_rss_gib": 2.2649383544921875,
+      "stop_reason": "system_memory_pressure"
+    },
+    {
+      "run": "experiments/klein_compression/runs/2026-10-06/track3-mlp3-fixed",
+      "status": "completed",
+      "bits": 4,
+      "profile": "mlp3",
+      "seconds": 71.53028799999993,
+      "peak_phys_gib": 5.077639199793339,
+      "peak_rss_gib": 2.0916290283203125,
+      "stop_reason": "complete"
+    }
+  ],
+  "phone_runtime_verified": false,
+  "portable_bundle_complete": false,
+  "trained_student": false
+}
