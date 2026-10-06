@@ -1,0 +1,3192 @@
+{
+  "stage": "zeytin",
+  "date": "2026-10-06",
+  "models": [
+    {
+      "id": "openai/gpt-image-2",
+      "name": "OpenAI: GPT Image 2",
+      "description": "OpenAI's latest image generation model. Supports high-fidelity image generation and editing via the dedicated Images API.",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "controls": {
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "3:2",
+            "2:3",
+            "4:3",
+            "3:4",
+            "16:9",
+            "9:16",
+            "21:9",
+            "auto"
+          ]
+        },
+        "quality": {
+          "type": "enum",
+          "values": [
+            "auto",
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "background": {
+          "type": "enum",
+          "values": [
+            "auto",
+            "opaque"
+          ]
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 10
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 16
+        },
+        "output_compression": {
+          "type": "range",
+          "min": 0,
+          "max": 100
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "openai/gpt-image-2",
+        "endpoints": [
+          {
+            "provider_name": "OpenAI",
+            "provider_slug": "openai",
+            "provider_tag": "openai",
+            "supported_parameters": {
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "3:2",
+                  "2:3",
+                  "4:3",
+                  "3:4",
+                  "16:9",
+                  "9:16",
+                  "21:9",
+                  "auto"
+                ]
+              },
+              "quality": {
+                "type": "enum",
+                "values": [
+                  "auto",
+                  "low",
+                  "medium",
+                  "high"
+                ]
+              },
+              "background": {
+                "type": "enum",
+                "values": [
+                  "auto",
+                  "opaque"
+                ]
+              },
+              "n": {
+                "type": "range",
+                "min": 1,
+                "max": 10
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 16
+              },
+              "output_compression": {
+                "type": "range",
+                "min": 0,
+                "max": 100
+              }
+            },
+            "allowed_passthrough_parameters": [
+              "moderation"
+            ],
+            "supports_streaming": true,
+            "pricing": [
+              {
+                "billable": "input_image",
+                "unit": "token",
+                "cost_usd": 8e-06
+              },
+              {
+                "billable": "input_text",
+                "unit": "token",
+                "cost_usd": 5e-06
+              },
+              {
+                "billable": "output_image",
+                "unit": "token",
+                "cost_usd": 3e-05
+              }
+            ]
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "quality-auto",
+          "resolution": null,
+          "quality": "auto",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "quality-low",
+          "resolution": null,
+          "quality": "low",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "quality-medium",
+          "resolution": null,
+          "quality": "medium",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "quality-high",
+          "resolution": null,
+          "quality": "high",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    },
+    {
+      "id": "google/gemini-3.1-flash-lite-image",
+      "name": "Google: Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
+      "description": "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image) is Google's fastest, most cost-efficient Gemini image model, built for high-velocity developer pipelines and rapid-fire visual exploration. It delivers text-to-image generation...",
+      "input_modalities": [
+        "image",
+        "text"
+      ],
+      "controls": {
+        "resolution": {
+          "type": "enum",
+          "values": [
+            "1K"
+          ]
+        },
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "1:4",
+            "1:8",
+            "2:3",
+            "3:2",
+            "3:4",
+            "4:1",
+            "4:3",
+            "4:5",
+            "5:4",
+            "8:1",
+            "9:16",
+            "16:9",
+            "21:9"
+          ]
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 1
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 14
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "google/gemini-3.1-flash-lite-image",
+        "endpoints": [
+          {
+            "provider_name": "Google Vertex",
+            "provider_slug": "google-vertex/global",
+            "provider_tag": "google-vertex/global",
+            "supported_parameters": {
+              "resolution": {
+                "type": "enum",
+                "values": [
+                  "1K"
+                ]
+              },
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "1:4",
+                  "1:8",
+                  "2:3",
+                  "3:2",
+                  "3:4",
+                  "4:1",
+                  "4:3",
+                  "4:5",
+                  "5:4",
+                  "8:1",
+                  "9:16",
+                  "16:9",
+                  "21:9"
+                ]
+              },
+              "n": {
+                "type": "range",
+                "min": 1,
+                "max": 1
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 14
+              }
+            },
+            "allowed_passthrough_parameters": [
+              "cachedContent"
+            ],
+            "supports_streaming": false,
+            "pricing": [
+              {
+                "billable": "output_image",
+                "unit": "token",
+                "cost_usd": 3e-05
+              }
+            ]
+          },
+          {
+            "provider_name": "Google AI Studio",
+            "provider_slug": "google-ai-studio",
+            "provider_tag": "google-ai-studio",
+            "supported_parameters": {
+              "resolution": {
+                "type": "enum",
+                "values": [
+                  "1K"
+                ]
+              },
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "1:4",
+                  "1:8",
+                  "2:3",
+                  "3:2",
+                  "3:4",
+                  "4:1",
+                  "4:3",
+                  "4:5",
+                  "5:4",
+                  "8:1",
+                  "9:16",
+                  "16:9",
+                  "21:9"
+                ]
+              },
+              "n": {
+                "type": "range",
+                "min": 1,
+                "max": 1
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 14
+              }
+            },
+            "allowed_passthrough_parameters": [
+              "cachedContent"
+            ],
+            "supports_streaming": false,
+            "pricing": [
+              {
+                "billable": "output_image",
+                "unit": "token",
+                "cost_usd": 3e-05
+              }
+            ]
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "resolution-1K",
+          "resolution": "1K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    },
+    {
+      "id": "krea/krea-2-medium-turbo",
+      "name": "Krea: Krea 2 Medium Turbo",
+      "description": "Krea 2 Medium Turbo is a distilled, speed-focused variant of Krea 2 Medium from Krea. It is designed for rapid iteration and graphic design exploration where fast generation is the...",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "controls": {
+        "resolution": {
+          "type": "enum",
+          "values": [
+            "1K"
+          ]
+        },
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "4:3",
+            "3:2",
+            "16:9",
+            "4:5",
+            "2:3",
+            "9:16"
+          ]
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        },
+        "seed": {
+          "type": "boolean"
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "krea/krea-2-medium-turbo",
+        "endpoints": [
+          {
+            "provider_name": "Krea",
+            "provider_slug": "krea",
+            "provider_tag": "krea",
+            "supported_parameters": {
+              "resolution": {
+                "type": "enum",
+                "values": [
+                  "1K"
+                ]
+              },
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "4:3",
+                  "3:2",
+                  "16:9",
+                  "4:5",
+                  "2:3",
+                  "9:16"
+                ]
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 1
+              },
+              "seed": {
+                "type": "boolean"
+              }
+            },
+            "allowed_passthrough_parameters": [
+              "image_style_references",
+              "moodboards",
+              "styles",
+              "creativity",
+              "intensity",
+              "complexity",
+              "movement",
+              "strength"
+            ],
+            "supports_streaming": false,
+            "pricing": []
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "resolution-1K",
+          "resolution": "1K",
+          "quality": null,
+          "reference_count": 1,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    },
+    {
+      "id": "krea/krea-2-medium",
+      "name": "Krea: Krea 2 Medium",
+      "description": "Krea 2 Medium is Krea's balanced, cost-efficient image generation model and a practical starting point for a broad range of use cases. Its extensive post-training supports stable, consistent generations, with...",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "controls": {
+        "resolution": {
+          "type": "enum",
+          "values": [
+            "1K"
+          ]
+        },
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "4:3",
+            "3:2",
+            "16:9",
+            "4:5",
+            "2:3",
+            "9:16"
+          ]
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        },
+        "seed": {
+          "type": "boolean"
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "krea/krea-2-medium",
+        "endpoints": [
+          {
+            "provider_name": "Krea",
+            "provider_slug": "krea",
+            "provider_tag": "krea",
+            "supported_parameters": {
+              "resolution": {
+                "type": "enum",
+                "values": [
+                  "1K"
+                ]
+              },
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "4:3",
+                  "3:2",
+                  "16:9",
+                  "4:5",
+                  "2:3",
+                  "9:16"
+                ]
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 1
+              },
+              "seed": {
+                "type": "boolean"
+              }
+            },
+            "allowed_passthrough_parameters": [
+              "image_style_references",
+              "moodboards",
+              "styles",
+              "creativity",
+              "intensity",
+              "complexity",
+              "movement",
+              "strength"
+            ],
+            "supports_streaming": false,
+            "pricing": []
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "resolution-1K",
+          "resolution": "1K",
+          "quality": null,
+          "reference_count": 1,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    },
+    {
+      "id": "krea/krea-2-large",
+      "name": "Krea: Krea 2 Large",
+      "description": "Krea 2 Large is Krea's high-capability image generation model, more than twice the size of Krea 2 Medium. Its lighter post-training gives images a rawer, more textured, and flexible character,...",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "controls": {
+        "resolution": {
+          "type": "enum",
+          "values": [
+            "1K"
+          ]
+        },
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "4:3",
+            "3:2",
+            "16:9",
+            "4:5",
+            "2:3",
+            "9:16"
+          ]
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        },
+        "seed": {
+          "type": "boolean"
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "krea/krea-2-large",
+        "endpoints": [
+          {
+            "provider_name": "Krea",
+            "provider_slug": "krea",
+            "provider_tag": "krea",
+            "supported_parameters": {
+              "resolution": {
+                "type": "enum",
+                "values": [
+                  "1K"
+                ]
+              },
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "4:3",
+                  "3:2",
+                  "16:9",
+                  "4:5",
+                  "2:3",
+                  "9:16"
+                ]
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 1
+              },
+              "seed": {
+                "type": "boolean"
+              }
+            },
+            "allowed_passthrough_parameters": [
+              "image_style_references",
+              "moodboards",
+              "styles",
+              "creativity",
+              "intensity",
+              "complexity",
+              "movement",
+              "strength"
+            ],
+            "supports_streaming": false,
+            "pricing": []
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "resolution-1K",
+          "resolution": "1K",
+          "quality": null,
+          "reference_count": 1,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    },
+    {
+      "id": "microsoft/mai-image-2.5-pro",
+      "name": "Microsoft AI: MAI-Image-2.5 Pro",
+      "description": "Microsoft AI's MAI-Image-2.5 is a high-quality image generation model available via Azure AI Foundry. It produces photorealistic and artistic images from text prompts with support for various aspect ratios.",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "controls": {
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "4:3",
+            "3:4",
+            "16:9",
+            "9:16",
+            "3:2",
+            "2:3",
+            "auto"
+          ]
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 1
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 1
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "microsoft/mai-image-2.5-pro",
+        "endpoints": [
+          {
+            "provider_name": "Azure",
+            "provider_slug": "azure",
+            "provider_tag": "azure",
+            "supported_parameters": {
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "4:3",
+                  "3:4",
+                  "16:9",
+                  "9:16",
+                  "3:2",
+                  "2:3",
+                  "auto"
+                ]
+              },
+              "n": {
+                "type": "range",
+                "min": 1,
+                "max": 1
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 1
+              }
+            },
+            "allowed_passthrough_parameters": [],
+            "supports_streaming": false,
+            "pricing": [
+              {
+                "billable": "input_text",
+                "unit": "token",
+                "cost_usd": 5e-06
+              },
+              {
+                "billable": "input_image",
+                "unit": "token",
+                "cost_usd": 8e-06
+              },
+              {
+                "billable": "output_image",
+                "unit": "token",
+                "cost_usd": 0.000108
+              }
+            ]
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "default",
+          "resolution": null,
+          "quality": null,
+          "reference_count": 1,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    },
+    {
+      "id": "qwen/qwen-image-3",
+      "name": "Qwen: Qwen Image 3",
+      "description": "Qwen Image 3 is a unified image generation and editing model from Qwen. It supports precise rendering of text and details as small as 10px, along with a richer world...",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "controls": {
+        "resolution": {
+          "type": "enum",
+          "values": [
+            "1K",
+            "2K"
+          ]
+        },
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "1:2",
+            "1:4",
+            "2:1",
+            "2:3",
+            "3:2",
+            "3:4",
+            "4:1",
+            "4:3",
+            "4:5",
+            "5:4",
+            "9:16",
+            "16:9"
+          ]
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 6
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 4
+        },
+        "seed": {
+          "type": "boolean"
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "qwen/qwen-image-3",
+        "endpoints": [
+          {
+            "provider_name": "Alibaba Cloud Int.",
+            "provider_slug": "alibaba",
+            "provider_tag": "alibaba",
+            "supported_parameters": {
+              "resolution": {
+                "type": "enum",
+                "values": [
+                  "1K",
+                  "2K"
+                ]
+              },
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "1:2",
+                  "1:4",
+                  "2:1",
+                  "2:3",
+                  "3:2",
+                  "3:4",
+                  "4:1",
+                  "4:3",
+                  "4:5",
+                  "5:4",
+                  "9:16",
+                  "16:9"
+                ]
+              },
+              "n": {
+                "type": "range",
+                "min": 1,
+                "max": 6
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 4
+              },
+              "seed": {
+                "type": "boolean"
+              }
+            },
+            "allowed_passthrough_parameters": [],
+            "supports_streaming": false,
+            "pricing": [
+              {
+                "billable": "input_image",
+                "unit": "image",
+                "cost_usd": 0.003
+              },
+              {
+                "billable": "output_image",
+                "unit": "image",
+                "cost_usd": 0.03,
+                "variant": "1k"
+              },
+              {
+                "billable": "output_image",
+                "unit": "image",
+                "cost_usd": 0.03,
+                "variant": "2k"
+              }
+            ]
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "resolution-1K",
+          "resolution": "1K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "resolution-2K",
+          "resolution": "2K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    },
+    {
+      "id": "qwen/qwen-image-3-pro",
+      "name": "Qwen: Qwen Image 3 Pro",
+      "description": "Qwen Image 3 Pro is an image generation and editing model from Qwen. It supports precise rendering of text and details as small as 10px, along with richer world knowledge...",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "controls": {
+        "resolution": {
+          "type": "enum",
+          "values": [
+            "1K",
+            "2K"
+          ]
+        },
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "1:2",
+            "1:4",
+            "2:1",
+            "2:3",
+            "3:2",
+            "3:4",
+            "4:1",
+            "4:3",
+            "4:5",
+            "5:4",
+            "9:16",
+            "16:9"
+          ]
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 6
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 4
+        },
+        "seed": {
+          "type": "boolean"
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "qwen/qwen-image-3-pro",
+        "endpoints": [
+          {
+            "provider_name": "Alibaba Cloud Int.",
+            "provider_slug": "alibaba",
+            "provider_tag": "alibaba",
+            "supported_parameters": {
+              "resolution": {
+                "type": "enum",
+                "values": [
+                  "1K",
+                  "2K"
+                ]
+              },
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "1:2",
+                  "1:4",
+                  "2:1",
+                  "2:3",
+                  "3:2",
+                  "3:4",
+                  "4:1",
+                  "4:3",
+                  "4:5",
+                  "5:4",
+                  "9:16",
+                  "16:9"
+                ]
+              },
+              "n": {
+                "type": "range",
+                "min": 1,
+                "max": 6
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 4
+              },
+              "seed": {
+                "type": "boolean"
+              }
+            },
+            "allowed_passthrough_parameters": [],
+            "supports_streaming": false,
+            "pricing": [
+              {
+                "billable": "input_image",
+                "unit": "image",
+                "cost_usd": 0.003
+              },
+              {
+                "billable": "output_image",
+                "unit": "image",
+                "cost_usd": 0.04,
+                "variant": "1k"
+              },
+              {
+                "billable": "output_image",
+                "unit": "image",
+                "cost_usd": 0.075,
+                "variant": "2k"
+              }
+            ]
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "resolution-1K",
+          "resolution": "1K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "resolution-2K",
+          "resolution": "2K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    },
+    {
+      "id": "x-ai/grok-imagine-image-2.0",
+      "name": "xAI: Grok Imagine Image 2.0",
+      "description": "Grok Imagine Image 2.0 is an image generation and editing model from xAI. It is suited for creating images from text prompts and editing images from references, with low and...",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "controls": {
+        "resolution": {
+          "type": "enum",
+          "values": [
+            "1K",
+            "2K"
+          ]
+        },
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "3:4",
+            "4:3",
+            "9:16",
+            "16:9",
+            "2:3",
+            "3:2",
+            "9:19.5",
+            "19.5:9",
+            "9:20",
+            "20:9",
+            "1:2",
+            "2:1",
+            "auto"
+          ]
+        },
+        "quality": {
+          "type": "enum",
+          "values": [
+            "low",
+            "medium"
+          ]
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 1
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 3
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "x-ai/grok-imagine-image-2.0",
+        "endpoints": [
+          {
+            "provider_name": "SpaceXAI",
+            "provider_slug": "xai",
+            "provider_tag": "xai",
+            "supported_parameters": {
+              "resolution": {
+                "type": "enum",
+                "values": [
+                  "1K",
+                  "2K"
+                ]
+              },
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "3:4",
+                  "4:3",
+                  "9:16",
+                  "16:9",
+                  "2:3",
+                  "3:2",
+                  "9:19.5",
+                  "19.5:9",
+                  "9:20",
+                  "20:9",
+                  "1:2",
+                  "2:1",
+                  "auto"
+                ]
+              },
+              "quality": {
+                "type": "enum",
+                "values": [
+                  "low",
+                  "medium"
+                ]
+              },
+              "n": {
+                "type": "range",
+                "min": 1,
+                "max": 1
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 3
+              }
+            },
+            "allowed_passthrough_parameters": [],
+            "supports_streaming": false,
+            "pricing": [
+              {
+                "billable": "input_image",
+                "unit": "image",
+                "cost_usd": 0.01
+              },
+              {
+                "billable": "output_image",
+                "unit": "image",
+                "cost_usd": 0.04,
+                "variant": "low_1k"
+              },
+              {
+                "billable": "output_image",
+                "unit": "image",
+                "cost_usd": 0.06,
+                "variant": "low_2k"
+              },
+              {
+                "billable": "output_image",
+                "unit": "image",
+                "cost_usd": 0.06,
+                "variant": "medium_1k"
+              },
+              {
+                "billable": "output_image",
+                "unit": "image",
+                "cost_usd": 0.08,
+                "variant": "medium_2k"
+              }
+            ]
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "resolution-1K__quality-low",
+          "resolution": "1K",
+          "quality": "low",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "resolution-1K__quality-medium",
+          "resolution": "1K",
+          "quality": "medium",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "resolution-2K__quality-low",
+          "resolution": "2K",
+          "quality": "low",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "resolution-2K__quality-medium",
+          "resolution": "2K",
+          "quality": "medium",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    },
+    {
+      "id": "bytedance-seed/seedream-5-0-pro",
+      "name": "ByteDance Seed: Seedream 5.0 Pro",
+      "description": "Seedream 5.0 Pro is an image generation and editing model from ByteDance Seed. It is suited for commercial visual-production workflows that require precise editing control, lifelike scenes, and natural rendering.",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "controls": {
+        "resolution": {
+          "type": "enum",
+          "values": [
+            "1K",
+            "2K"
+          ]
+        },
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "1:2",
+            "2:1",
+            "2:3",
+            "3:2",
+            "3:4",
+            "4:3",
+            "4:5",
+            "5:4",
+            "9:16",
+            "16:9",
+            "9:19.5",
+            "19.5:9",
+            "9:20",
+            "20:9",
+            "9:21",
+            "21:9",
+            "auto"
+          ]
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 1
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 14
+        },
+        "seed": {
+          "type": "boolean"
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "bytedance-seed/seedream-5-0-pro",
+        "endpoints": [
+          {
+            "provider_name": "Seed",
+            "provider_slug": "seed",
+            "provider_tag": "seed",
+            "supported_parameters": {
+              "resolution": {
+                "type": "enum",
+                "values": [
+                  "1K",
+                  "2K"
+                ]
+              },
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "1:2",
+                  "2:1",
+                  "2:3",
+                  "3:2",
+                  "3:4",
+                  "4:3",
+                  "4:5",
+                  "5:4",
+                  "9:16",
+                  "16:9",
+                  "9:19.5",
+                  "19.5:9",
+                  "9:20",
+                  "20:9",
+                  "9:21",
+                  "21:9",
+                  "auto"
+                ]
+              },
+              "n": {
+                "type": "range",
+                "min": 1,
+                "max": 1
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 14
+              },
+              "seed": {
+                "type": "boolean"
+              }
+            },
+            "allowed_passthrough_parameters": [],
+            "supports_streaming": false,
+            "pricing": [
+              {
+                "billable": "output_image",
+                "unit": "image",
+                "cost_usd": 0.045
+              },
+              {
+                "billable": "output_image",
+                "unit": "image",
+                "cost_usd": 0.09,
+                "variant": "high_resolution"
+              },
+              {
+                "billable": "input_image",
+                "unit": "image",
+                "cost_usd": 0.003
+              }
+            ]
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "resolution-1K",
+          "resolution": "1K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "resolution-2K",
+          "resolution": "2K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    },
+    {
+      "id": "bytedance-seed/seedream-5-0-lite",
+      "name": "ByteDance Seed: Seedream 5.0 Lite",
+      "description": "Seedream 5.0 Lite is an image generation model from ByteDance Seed. It is suited for professional visual creation that benefits from web-connected retrieval, complex-prompt comprehension, visual references, and broad knowledge...",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "controls": {
+        "resolution": {
+          "type": "enum",
+          "values": [
+            "2K",
+            "4K"
+          ]
+        },
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "1:2",
+            "2:1",
+            "2:3",
+            "3:2",
+            "3:4",
+            "4:3",
+            "4:5",
+            "5:4",
+            "9:16",
+            "16:9",
+            "9:19.5",
+            "19.5:9",
+            "9:20",
+            "20:9",
+            "9:21",
+            "21:9",
+            "auto"
+          ]
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 4
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 14
+        },
+        "seed": {
+          "type": "boolean"
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "bytedance-seed/seedream-5-0-lite",
+        "endpoints": [
+          {
+            "provider_name": "Seed",
+            "provider_slug": "seed",
+            "provider_tag": "seed",
+            "supported_parameters": {
+              "resolution": {
+                "type": "enum",
+                "values": [
+                  "2K",
+                  "4K"
+                ]
+              },
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "1:2",
+                  "2:1",
+                  "2:3",
+                  "3:2",
+                  "3:4",
+                  "4:3",
+                  "4:5",
+                  "5:4",
+                  "9:16",
+                  "16:9",
+                  "9:19.5",
+                  "19.5:9",
+                  "9:20",
+                  "20:9",
+                  "9:21",
+                  "21:9",
+                  "auto"
+                ]
+              },
+              "n": {
+                "type": "range",
+                "min": 1,
+                "max": 4
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 14
+              },
+              "seed": {
+                "type": "boolean"
+              }
+            },
+            "allowed_passthrough_parameters": [],
+            "supports_streaming": false,
+            "pricing": [
+              {
+                "billable": "output_image",
+                "unit": "image",
+                "cost_usd": 0.035
+              },
+              {
+                "billable": "input_image",
+                "unit": "image",
+                "cost_usd": 0
+              }
+            ]
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "resolution-2K",
+          "resolution": "2K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "resolution-4K",
+          "resolution": "4K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    },
+    {
+      "id": "microsoft/mai-image-2.6",
+      "name": "Microsoft AI: MAI-Image-2.6",
+      "description": "MAI-Image-2.6 is an image generation and editing model from Microsoft AI, the precision tier of the MAI-Image-2.6 family alongside the faster [MAI-Image-2.6 Flash](/microsoft/mai-image-2.6-flash). It is suited for design-ready visuals and...",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "controls": {
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "4:3",
+            "3:4",
+            "16:9",
+            "9:16",
+            "3:2",
+            "2:3",
+            "auto"
+          ]
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 1
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 5
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "microsoft/mai-image-2.6",
+        "endpoints": [
+          {
+            "provider_name": "Azure",
+            "provider_slug": "azure",
+            "provider_tag": "azure",
+            "supported_parameters": {
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "4:3",
+                  "3:4",
+                  "16:9",
+                  "9:16",
+                  "3:2",
+                  "2:3",
+                  "auto"
+                ]
+              },
+              "n": {
+                "type": "range",
+                "min": 1,
+                "max": 1
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 5
+              }
+            },
+            "allowed_passthrough_parameters": [
+              "web_grounding"
+            ],
+            "supports_streaming": false,
+            "pricing": [
+              {
+                "billable": "input_text",
+                "unit": "token",
+                "cost_usd": 5e-06
+              },
+              {
+                "billable": "input_image",
+                "unit": "token",
+                "cost_usd": 8e-06
+              },
+              {
+                "billable": "output_image",
+                "unit": "token",
+                "cost_usd": 3.8e-05
+              }
+            ]
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "default",
+          "resolution": null,
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    },
+    {
+      "id": "microsoft/mai-image-2.6-flash",
+      "name": "Microsoft AI: MAI-Image-2.6 Flash",
+      "description": "MAI-Image-2.6 Flash is the lower-latency, lower-cost member of the [MAI-Image-2.6](/microsoft/mai-image-2.6) family from Microsoft AI, built for latency-sensitive, high-throughput production image generation and editing at comparable quality to the precision tier....",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "controls": {
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "4:3",
+            "3:4",
+            "16:9",
+            "9:16",
+            "3:2",
+            "2:3",
+            "auto"
+          ]
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 1
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 5
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "microsoft/mai-image-2.6-flash",
+        "endpoints": [
+          {
+            "provider_name": "Azure",
+            "provider_slug": "azure",
+            "provider_tag": "azure",
+            "supported_parameters": {
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "4:3",
+                  "3:4",
+                  "16:9",
+                  "9:16",
+                  "3:2",
+                  "2:3",
+                  "auto"
+                ]
+              },
+              "n": {
+                "type": "range",
+                "min": 1,
+                "max": 1
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 5
+              }
+            },
+            "allowed_passthrough_parameters": [
+              "web_grounding"
+            ],
+            "supports_streaming": false,
+            "pricing": [
+              {
+                "billable": "input_text",
+                "unit": "token",
+                "cost_usd": 1.75e-06
+              },
+              {
+                "billable": "input_image",
+                "unit": "token",
+                "cost_usd": 2.5e-06
+              },
+              {
+                "billable": "output_image",
+                "unit": "token",
+                "cost_usd": 1.9e-05
+              }
+            ]
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "default",
+          "resolution": null,
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    },
+    {
+      "id": "google/gemini-nano-banana-2.1",
+      "name": "Google: Nano Banana 2.1",
+      "description": "Nano Banana 2.1 (Gemini Nano Banana 2.1) is Google's image generation and editing model on the Flash tier, succeeding Nano Banana 2 and Nano Banana Pro. It improves product recontextualization,...",
+      "input_modalities": [
+        "image",
+        "text"
+      ],
+      "controls": {
+        "resolution": {
+          "type": "enum",
+          "values": [
+            "1K",
+            "2K",
+            "4K"
+          ]
+        },
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "1:4",
+            "1:8",
+            "2:3",
+            "3:2",
+            "3:4",
+            "4:1",
+            "4:3",
+            "4:5",
+            "5:4",
+            "8:1",
+            "9:16",
+            "16:9",
+            "21:9"
+          ]
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 1
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 14
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "google/gemini-nano-banana-2.1",
+        "endpoints": [
+          {
+            "provider_name": "Google AI Studio",
+            "provider_slug": "google-ai-studio",
+            "provider_tag": "google-ai-studio",
+            "supported_parameters": {
+              "resolution": {
+                "type": "enum",
+                "values": [
+                  "1K",
+                  "2K",
+                  "4K"
+                ]
+              },
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "1:4",
+                  "1:8",
+                  "2:3",
+                  "3:2",
+                  "3:4",
+                  "4:1",
+                  "4:3",
+                  "4:5",
+                  "5:4",
+                  "8:1",
+                  "9:16",
+                  "16:9",
+                  "21:9"
+                ]
+              },
+              "n": {
+                "type": "range",
+                "min": 1,
+                "max": 1
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 14
+              }
+            },
+            "allowed_passthrough_parameters": [
+              "cachedContent"
+            ],
+            "supports_streaming": false,
+            "pricing": [
+              {
+                "billable": "output_image",
+                "unit": "token",
+                "cost_usd": 3e-05
+              }
+            ]
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "resolution-1K",
+          "resolution": "1K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/nano/track3",
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/nano/track2",
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "resolution-2K",
+          "resolution": "2K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "resolution-4K",
+          "resolution": "4K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    },
+    {
+      "id": "tencent/hy-image-v3.5-preview",
+      "name": "Tencent: Hy Image 3.5 Preview",
+      "description": "Hy Image 3.5 Preview is a unified image generation and editing model from Tencent. It handles text-to-image, image-to-image, and multi-turn editing through one endpoint, taking up to 20 reference images...",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "controls": {
+        "resolution": {
+          "type": "enum",
+          "values": [
+            "1K",
+            "1.5K",
+            "2K",
+            "4K"
+          ]
+        },
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "1:2",
+            "1:4",
+            "2:1",
+            "2:3",
+            "3:2",
+            "3:4",
+            "4:1",
+            "4:3",
+            "4:5",
+            "5:4",
+            "9:16",
+            "16:9"
+          ]
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 1
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 20
+        },
+        "seed": {
+          "type": "boolean"
+        },
+        "size": {
+          "type": "boolean"
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "tencent/hy-image-v3.5-preview",
+        "endpoints": [
+          {
+            "provider_name": "Tencent Cloud",
+            "provider_slug": "tencent",
+            "provider_tag": "tencent",
+            "supported_parameters": {
+              "resolution": {
+                "type": "enum",
+                "values": [
+                  "1K",
+                  "1.5K",
+                  "2K",
+                  "4K"
+                ]
+              },
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "1:2",
+                  "1:4",
+                  "2:1",
+                  "2:3",
+                  "3:2",
+                  "3:4",
+                  "4:1",
+                  "4:3",
+                  "4:5",
+                  "5:4",
+                  "9:16",
+                  "16:9"
+                ]
+              },
+              "n": {
+                "type": "range",
+                "min": 1,
+                "max": 1
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 20
+              },
+              "seed": {
+                "type": "boolean"
+              },
+              "size": {
+                "type": "boolean"
+              }
+            },
+            "allowed_passthrough_parameters": [],
+            "supports_streaming": false,
+            "pricing": [
+              {
+                "billable": "output_image",
+                "unit": "token",
+                "cost_usd": 1.6e-06
+              }
+            ]
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "resolution-1K",
+          "resolution": "1K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/hy/track3",
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/hy/track2",
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "resolution-1.5K",
+          "resolution": "1.5K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "resolution-2K",
+          "resolution": "2K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "resolution-4K",
+          "resolution": "4K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    },
+    {
+      "id": "bytedance-seed/seedream-5-0-flash",
+      "name": "ByteDance Seed: Seedream 5.0 Flash",
+      "description": "Seedream 5.0 Flash is an image generation and editing model from ByteDance Seed. It is the fast, cost-efficient tier of the Seedream 5.0 family, suited for high-volume production and interactive...",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "controls": {
+        "resolution": {
+          "type": "enum",
+          "values": [
+            "1K",
+            "2K"
+          ]
+        },
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "1:2",
+            "2:1",
+            "2:3",
+            "3:2",
+            "3:4",
+            "4:3",
+            "4:5",
+            "5:4",
+            "9:16",
+            "16:9",
+            "9:19.5",
+            "19.5:9",
+            "9:20",
+            "20:9",
+            "9:21",
+            "21:9",
+            "auto"
+          ]
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 1
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 14
+        },
+        "seed": {
+          "type": "boolean"
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "bytedance-seed/seedream-5-0-flash",
+        "endpoints": [
+          {
+            "provider_name": "Seed",
+            "provider_slug": "seed",
+            "provider_tag": "seed",
+            "supported_parameters": {
+              "resolution": {
+                "type": "enum",
+                "values": [
+                  "1K",
+                  "2K"
+                ]
+              },
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "1:2",
+                  "2:1",
+                  "2:3",
+                  "3:2",
+                  "3:4",
+                  "4:3",
+                  "4:5",
+                  "5:4",
+                  "9:16",
+                  "16:9",
+                  "9:19.5",
+                  "19.5:9",
+                  "9:20",
+                  "20:9",
+                  "9:21",
+                  "21:9",
+                  "auto"
+                ]
+              },
+              "n": {
+                "type": "range",
+                "min": 1,
+                "max": 1
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 14
+              },
+              "seed": {
+                "type": "boolean"
+              }
+            },
+            "allowed_passthrough_parameters": [],
+            "supports_streaming": false,
+            "pricing": [
+              {
+                "billable": "output_image",
+                "unit": "image",
+                "cost_usd": 0.018
+              },
+              {
+                "billable": "input_image",
+                "unit": "image",
+                "cost_usd": 0
+              }
+            ]
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "resolution-1K",
+          "resolution": "1K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/seedream/track3",
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/seedream/track2",
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "resolution-2K",
+          "resolution": "2K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    },
+    {
+      "id": "black-forest-labs/flux-3-image",
+      "name": "Black Forest Labs: FLUX.3 Image",
+      "description": "FLUX.3 Image is Black Forest Labs' flagship image generation and editing model. It handles text-to-image and multi-reference editing with up to 10 input images, and renders at fixed resolution tiers...",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "controls": {
+        "resolution": {
+          "type": "enum",
+          "values": [
+            "768",
+            "1K",
+            "1.5K",
+            "2K",
+            "4K"
+          ]
+        },
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "21:9",
+            "2:1",
+            "16:9",
+            "3:2",
+            "7:5",
+            "4:3",
+            "5:4",
+            "1:1",
+            "4:5",
+            "3:4",
+            "5:7",
+            "2:3",
+            "9:16",
+            "1:2",
+            "9:21",
+            "auto"
+          ]
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 1
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 10
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "black-forest-labs/flux-3-image",
+        "endpoints": [
+          {
+            "provider_name": "Black Forest Labs",
+            "provider_slug": "black-forest-labs",
+            "provider_tag": "black-forest-labs",
+            "supported_parameters": {
+              "resolution": {
+                "type": "enum",
+                "values": [
+                  "768",
+                  "1K",
+                  "1.5K",
+                  "2K",
+                  "4K"
+                ]
+              },
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "21:9",
+                  "2:1",
+                  "16:9",
+                  "3:2",
+                  "7:5",
+                  "4:3",
+                  "5:4",
+                  "1:1",
+                  "4:5",
+                  "3:4",
+                  "5:7",
+                  "2:3",
+                  "9:16",
+                  "1:2",
+                  "9:21",
+                  "auto"
+                ]
+              },
+              "n": {
+                "type": "range",
+                "min": 1,
+                "max": 1
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 10
+              }
+            },
+            "allowed_passthrough_parameters": [
+              "safety_tolerance"
+            ],
+            "supports_streaming": false,
+            "pricing": [
+              {
+                "billable": "output_image",
+                "unit": "image",
+                "cost_usd": 0.041,
+                "variant": "768"
+              },
+              {
+                "billable": "output_image",
+                "unit": "image",
+                "cost_usd": 0.048,
+                "variant": "1k"
+              },
+              {
+                "billable": "output_image",
+                "unit": "image",
+                "cost_usd": 0.07,
+                "variant": "1.5k"
+              },
+              {
+                "billable": "output_image",
+                "unit": "image",
+                "cost_usd": 0.1,
+                "variant": "2k"
+              },
+              {
+                "billable": "output_image",
+                "unit": "image",
+                "cost_usd": 0.607,
+                "variant": "4k"
+              }
+            ]
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "resolution-768",
+          "resolution": "768",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": true
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "resolution-1K",
+          "resolution": "1K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": true
+            },
+            {
+              "track": "track2",
+              "reuse_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/flux/track2",
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "resolution-1.5K",
+          "resolution": "1.5K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": true
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "resolution-2K",
+          "resolution": "2K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": true
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "resolution-4K",
+          "resolution": "4K",
+          "quality": null,
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": true
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    },
+    {
+      "id": "openai/gpt-image-2.5-sunburst",
+      "name": "OpenAI: GPT Image 2.5 Sunburst",
+      "description": "GPT Image 2.5 Sunburst is an image generation and editing model from OpenAI, positioned as the precision-oriented tier of the GPT Image 2.5 series. It is suited to detailed creative...",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "controls": {
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "3:2",
+            "2:3",
+            "4:3",
+            "3:4",
+            "16:9",
+            "9:16",
+            "21:9",
+            "auto"
+          ]
+        },
+        "quality": {
+          "type": "enum",
+          "values": [
+            "auto",
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        },
+        "background": {
+          "type": "enum",
+          "values": [
+            "auto",
+            "transparent",
+            "opaque"
+          ]
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 10
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 16
+        },
+        "output_compression": {
+          "type": "range",
+          "min": 0,
+          "max": 100
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "openai/gpt-image-2.5-sunburst",
+        "endpoints": [
+          {
+            "provider_name": "OpenAI",
+            "provider_slug": "openai",
+            "provider_tag": "openai",
+            "supported_parameters": {
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "3:2",
+                  "2:3",
+                  "4:3",
+                  "3:4",
+                  "16:9",
+                  "9:16",
+                  "21:9",
+                  "auto"
+                ]
+              },
+              "quality": {
+                "type": "enum",
+                "values": [
+                  "auto",
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ]
+              },
+              "background": {
+                "type": "enum",
+                "values": [
+                  "auto",
+                  "transparent",
+                  "opaque"
+                ]
+              },
+              "n": {
+                "type": "range",
+                "min": 1,
+                "max": 10
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 16
+              },
+              "output_compression": {
+                "type": "range",
+                "min": 0,
+                "max": 100
+              }
+            },
+            "allowed_passthrough_parameters": [
+              "moderation"
+            ],
+            "supports_streaming": true,
+            "pricing": [
+              {
+                "billable": "input_image",
+                "unit": "token",
+                "cost_usd": 8e-06
+              },
+              {
+                "billable": "input_text",
+                "unit": "token",
+                "cost_usd": 5e-06
+              },
+              {
+                "billable": "output_image",
+                "unit": "token",
+                "cost_usd": 3e-05
+              }
+            ]
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "quality-auto",
+          "resolution": null,
+          "quality": "auto",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "quality-low",
+          "resolution": null,
+          "quality": "low",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "quality-medium",
+          "resolution": null,
+          "quality": "medium",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/sunburst/track3",
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/sunburst/track2",
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "quality-high",
+          "resolution": null,
+          "quality": "high",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "quality-xhigh",
+          "resolution": null,
+          "quality": "xhigh",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "quality-max",
+          "resolution": null,
+          "quality": "max",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    },
+    {
+      "id": "openai/gpt-image-2.5-flare",
+      "name": "OpenAI: GPT Image 2.5 Flare",
+      "description": "GPT Image 2.5 Flare is an image generation and editing model from OpenAI, positioned as the speed-oriented tier of the GPT Image 2.5 series. It is suited to high-volume everyday...",
+      "input_modalities": [
+        "text",
+        "image"
+      ],
+      "controls": {
+        "aspect_ratio": {
+          "type": "enum",
+          "values": [
+            "1:1",
+            "3:2",
+            "2:3",
+            "4:3",
+            "3:4",
+            "16:9",
+            "9:16",
+            "21:9",
+            "auto"
+          ]
+        },
+        "quality": {
+          "type": "enum",
+          "values": [
+            "auto",
+            "low",
+            "medium",
+            "high",
+            "xhigh",
+            "max"
+          ]
+        },
+        "background": {
+          "type": "enum",
+          "values": [
+            "auto",
+            "transparent",
+            "opaque"
+          ]
+        },
+        "n": {
+          "type": "range",
+          "min": 1,
+          "max": 10
+        },
+        "input_references": {
+          "type": "range",
+          "min": 0,
+          "max": 16
+        },
+        "output_compression": {
+          "type": "range",
+          "min": 0,
+          "max": 100
+        }
+      },
+      "endpoint_snapshot": {
+        "id": "openai/gpt-image-2.5-flare",
+        "endpoints": [
+          {
+            "provider_name": "OpenAI",
+            "provider_slug": "openai",
+            "provider_tag": "openai",
+            "supported_parameters": {
+              "aspect_ratio": {
+                "type": "enum",
+                "values": [
+                  "1:1",
+                  "3:2",
+                  "2:3",
+                  "4:3",
+                  "3:4",
+                  "16:9",
+                  "9:16",
+                  "21:9",
+                  "auto"
+                ]
+              },
+              "quality": {
+                "type": "enum",
+                "values": [
+                  "auto",
+                  "low",
+                  "medium",
+                  "high",
+                  "xhigh",
+                  "max"
+                ]
+              },
+              "background": {
+                "type": "enum",
+                "values": [
+                  "auto",
+                  "transparent",
+                  "opaque"
+                ]
+              },
+              "n": {
+                "type": "range",
+                "min": 1,
+                "max": 10
+              },
+              "input_references": {
+                "type": "range",
+                "min": 0,
+                "max": 16
+              },
+              "output_compression": {
+                "type": "range",
+                "min": 0,
+                "max": 100
+              }
+            },
+            "allowed_passthrough_parameters": [
+              "moderation"
+            ],
+            "supports_streaming": true,
+            "pricing": [
+              {
+                "billable": "input_image",
+                "unit": "token",
+                "cost_usd": 8e-06
+              },
+              {
+                "billable": "input_text",
+                "unit": "token",
+                "cost_usd": 5e-06
+              },
+              {
+                "billable": "output_image",
+                "unit": "token",
+                "cost_usd": 3e-05
+              }
+            ]
+          }
+        ]
+      },
+      "profiles": [
+        {
+          "tag": "quality-auto",
+          "resolution": null,
+          "quality": "auto",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "quality-low",
+          "resolution": null,
+          "quality": "low",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "quality-medium",
+          "resolution": null,
+          "quality": "medium",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/flare/track3",
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/flare/track2",
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "quality-high",
+          "resolution": null,
+          "quality": "high",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "quality-xhigh",
+          "resolution": null,
+          "quality": "xhigh",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        },
+        {
+          "tag": "quality-max",
+          "resolution": null,
+          "quality": "max",
+          "reference_count": 2,
+          "tracks": [
+            {
+              "track": "track3",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            },
+            {
+              "track": "track2",
+              "reuse_directory": null,
+              "blocked_by_prior_filter": false
+            }
+          ]
+        }
+      ],
+      "eligibility": "image_reference_editing"
+    }
+  ],
+  "exclusions": [
+    "Image model list page",
+    "inclusionai/ming-image-0.1-design",
+    "inclusionai/ming-image-0.1-design-layer",
+    "meta/muse-image",
+    {
+      "model": "recraft/recraft-v4.1-flash",
+      "reason": "text input only; source image editing unsupported"
+    }
+  ],
+  "covers": [
+    "track3",
+    "track2"
+  ],
+  "aspect_ratio": "9:16",
+  "initial_key_usage_usd": 0.2929,
+  "max_concurrent_http_requests": 2,
+  "quality_selection_owner": "user",
+  "notes": [
+    "Native resolution and quality controls; full product only for models exposing both. Auto means provider-selected quality, not a fixed tier.",
+    "No forced aspect-ratio, seed, background or format sweep.",
+    "Reuse earlier identical settings; do not resubmit covers previously blocked by a provider filter."
+  ]
+}
