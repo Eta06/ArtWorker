@@ -1,0 +1,44 @@
+{
+  "seed": 17,
+  "weight_shape": [
+    32,
+    128
+  ],
+  "input_shape": [
+    8,
+    128
+  ],
+  "group_size": 64,
+  "python_mlx": "0.32.3",
+  "swift_mlx": "0.31.6",
+  "records": [
+    {
+      "bits": 2,
+      "dequant_max_abs": 0,
+      "matmul_max_abs": 0,
+      "matmul_relative_l2": 0,
+      "relative_l2_limit": 0.001,
+      "native_exit_code": 0,
+      "fixture_sha256": "826b9375095931e56610865dd7d986421e57cb2157dab1c55d0e13654a39ec08"
+    },
+    {
+      "bits": 3,
+      "dequant_max_abs": 0,
+      "matmul_max_abs": 0.033203125,
+      "matmul_relative_l2": 0.0010510797146707773,
+      "relative_l2_limit": 0.001,
+      "native_exit_code": 64,
+      "fixture_sha256": "699f43b4e09d0521a43b757ad8d478eb39c7327d6c1d9172ca48ccfda7ffdbb5"
+    },
+    {
+      "bits": 4,
+      "dequant_max_abs": 0,
+      "matmul_max_abs": 0,
+      "matmul_relative_l2": 0,
+      "relative_l2_limit": 0.001,
+      "native_exit_code": 0,
+      "fixture_sha256": "5ac442c75110693411fecfb6f03675a653ca5da4b911f0a0169243a4a08197e3"
+    }
+  ],
+  "limitation": "Small fixture compatibility, not full model semantic acceptance."
+}
