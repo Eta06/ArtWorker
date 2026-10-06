@@ -1,0 +1,23 @@
+{
+  "status": "stopped_or_failed",
+  "command": [
+    ".build/flux2-native/Build/Products/Release/Flux2CLI",
+    "artworker-embedding",
+    "--encoder-path",
+    ".build/models/flux2/lmstudio-community/Qwen3-4B-MLX-4bit",
+    "--output",
+    ".build/models/artworker-fixed-fill/embedding.safetensors"
+  ],
+  "footprint_limit_bytes": 4294967296,
+  "swap_growth_limit_bytes": 268435456,
+  "timeout_seconds": 120.0,
+  "sample_interval_seconds": 0.1,
+  "initial_swap_bytes": 0,
+  "pid": 88284,
+  "stop_reason": "memory_limit",
+  "exit_code": -15,
+  "elapsed_seconds": 1.0999917499993899,
+  "peak_sampled_rss_bytes": 2407661568,
+  "peak_sampled_phys_footprint_bytes": 4334340688,
+  "measurement_note": "RSS and phys_footprint overlap; do not add them. Process-group sums can double-count shared memory. Sampling is not a kernel-enforced limit."
+}
