@@ -1,0 +1,267 @@
+{
+  "stage": "ardic",
+  "currency": "USD",
+  "new_charge_usd": 0.7852625,
+  "account_delta_usd": 0.7852625,
+  "costs_reconcile": true,
+  "status_counts": {
+    "completed_output_unavailable": 1,
+    "completed": 12,
+    "http_error": 8
+  },
+  "per_model_usd": {
+    "openai/gpt-image-2.5-sunburst": 0.146856,
+    "openai/gpt-image-2.5-flare": 0.097904,
+    "openai/gpt-image-2": 0.291744,
+    "google/gemini-nano-banana-2.1": 0.2487585
+  },
+  "unknown_cost_count": 0,
+  "attempts": [
+    {
+      "model": "google/gemini-nano-banana-2.1",
+      "profile": "1K · yanıt kaybı",
+      "track": "cover02",
+      "status": "completed_output_unavailable",
+      "http_status": null,
+      "actual_cost_usd": 0.0399885,
+      "cost_source": "generation.total_cost",
+      "raw_dimensions": null
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "profile": "high",
+      "track": "cover01",
+      "status": "completed",
+      "http_status": null,
+      "actual_cost_usd": 0.048952,
+      "cost_source": "generation.total_cost",
+      "raw_dimensions": [
+        864,
+        1536
+      ]
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "profile": "high",
+      "track": "cover01",
+      "status": "http_error",
+      "http_status": 400,
+      "actual_cost_usd": 0,
+      "cost_source": "dedicated_key_reconciled_http_error",
+      "raw_dimensions": null
+    },
+    {
+      "model": "openai/gpt-image-2",
+      "profile": "high",
+      "track": "cover01",
+      "status": "http_error",
+      "http_status": 400,
+      "actual_cost_usd": 0,
+      "cost_source": "dedicated_key_reconciled_http_error",
+      "raw_dimensions": null
+    },
+    {
+      "model": "google/gemini-nano-banana-2.1",
+      "profile": "1K",
+      "track": "cover01",
+      "status": "completed",
+      "http_status": null,
+      "actual_cost_usd": 0.0442335,
+      "cost_source": "generation.total_cost",
+      "raw_dimensions": [
+        768,
+        1376
+      ]
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "profile": "high",
+      "track": "cover02",
+      "status": "completed",
+      "http_status": null,
+      "actual_cost_usd": 0.048952,
+      "cost_source": "generation.total_cost",
+      "raw_dimensions": [
+        864,
+        1536
+      ]
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "profile": "high",
+      "track": "cover02",
+      "status": "completed",
+      "http_status": null,
+      "actual_cost_usd": 0.048952,
+      "cost_source": "generation.total_cost",
+      "raw_dimensions": [
+        864,
+        1536
+      ]
+    },
+    {
+      "model": "openai/gpt-image-2",
+      "profile": "high",
+      "track": "cover02",
+      "status": "completed",
+      "http_status": null,
+      "actual_cost_usd": 0.145872,
+      "cost_source": "generation.total_cost",
+      "raw_dimensions": [
+        864,
+        1536
+      ]
+    },
+    {
+      "model": "google/gemini-nano-banana-2.1",
+      "profile": "1K",
+      "track": "cover02",
+      "status": "completed",
+      "http_status": null,
+      "actual_cost_usd": 0.0425685,
+      "cost_source": "generation.total_cost",
+      "raw_dimensions": [
+        768,
+        1376
+      ]
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "profile": "high",
+      "track": "cover03",
+      "status": "http_error",
+      "http_status": 400,
+      "actual_cost_usd": 0,
+      "cost_source": "dedicated_key_reconciled_http_error",
+      "raw_dimensions": null
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "profile": "high",
+      "track": "cover03",
+      "status": "http_error",
+      "http_status": 400,
+      "actual_cost_usd": 0,
+      "cost_source": "dedicated_key_reconciled_http_error",
+      "raw_dimensions": null
+    },
+    {
+      "model": "openai/gpt-image-2",
+      "profile": "high",
+      "track": "cover03",
+      "status": "http_error",
+      "http_status": 400,
+      "actual_cost_usd": 0,
+      "cost_source": "dedicated_key_reconciled_http_error",
+      "raw_dimensions": null
+    },
+    {
+      "model": "google/gemini-nano-banana-2.1",
+      "profile": "1K",
+      "track": "cover03",
+      "status": "completed",
+      "http_status": null,
+      "actual_cost_usd": 0.0406335,
+      "cost_source": "generation.total_cost",
+      "raw_dimensions": [
+        768,
+        1376
+      ]
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "profile": "high",
+      "track": "cover04",
+      "status": "http_error",
+      "http_status": 400,
+      "actual_cost_usd": 0,
+      "cost_source": "dedicated_key_reconciled_http_error",
+      "raw_dimensions": null
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "profile": "high",
+      "track": "cover04",
+      "status": "http_error",
+      "http_status": 400,
+      "actual_cost_usd": 0,
+      "cost_source": "dedicated_key_reconciled_http_error",
+      "raw_dimensions": null
+    },
+    {
+      "model": "openai/gpt-image-2",
+      "profile": "high",
+      "track": "cover04",
+      "status": "http_error",
+      "http_status": 400,
+      "actual_cost_usd": 0,
+      "cost_source": "dedicated_key_reconciled_http_error",
+      "raw_dimensions": null
+    },
+    {
+      "model": "google/gemini-nano-banana-2.1",
+      "profile": "1K",
+      "track": "cover04",
+      "status": "completed",
+      "http_status": null,
+      "actual_cost_usd": 0.0401985,
+      "cost_source": "generation.total_cost",
+      "raw_dimensions": [
+        768,
+        1376
+      ]
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "profile": "high",
+      "track": "cover05",
+      "status": "completed",
+      "http_status": null,
+      "actual_cost_usd": 0.048952,
+      "cost_source": "generation.total_cost",
+      "raw_dimensions": [
+        864,
+        1536
+      ]
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "profile": "high",
+      "track": "cover05",
+      "status": "completed",
+      "http_status": null,
+      "actual_cost_usd": 0.048952,
+      "cost_source": "generation.total_cost",
+      "raw_dimensions": [
+        864,
+        1536
+      ]
+    },
+    {
+      "model": "openai/gpt-image-2",
+      "profile": "high",
+      "track": "cover05",
+      "status": "completed",
+      "http_status": null,
+      "actual_cost_usd": 0.145872,
+      "cost_source": "generation.total_cost",
+      "raw_dimensions": [
+        864,
+        1536
+      ]
+    },
+    {
+      "model": "google/gemini-nano-banana-2.1",
+      "profile": "1K",
+      "track": "cover05",
+      "status": "completed",
+      "http_status": null,
+      "actual_cost_usd": 0.041136,
+      "cost_source": "generation.total_cost",
+      "raw_dimensions": [
+        768,
+        1376
+      ]
+    }
+  ]
+}
