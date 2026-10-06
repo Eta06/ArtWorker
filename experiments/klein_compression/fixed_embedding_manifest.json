@@ -1,0 +1,53 @@
+{
+  "bytes": 15728995,
+  "sha256": "914f88566b383817510778d3938f4d56da704d5704a00b16dcf248df64e70c2c",
+  "metadata": {
+    "encoder_repo": "lmstudio-community/Qwen3-4B-MLX-4bit",
+    "encoder_revision": "480ec45ecf06ae3c061e4ef11345d05c7fdb02f1",
+    "format": "artworker-fixed-fill-v1",
+    "model": "klein-4b-base",
+    "prompt": "Fill the green spaces according to the image",
+    "text_quant": "4bit"
+  },
+  "tensor": {
+    "data_offsets": [
+      0,
+      15728640
+    ],
+    "dtype": "F32",
+    "shape": [
+      1,
+      512,
+      7680
+    ]
+  },
+  "status": "raw_pixel_exact_parity_on_three_matched_album_covers",
+  "license": "inherits upstream Qwen3 terms",
+  "released_payload": false,
+  "validation": {
+    "tracks": [
+      "track1",
+      "track2",
+      "track3"
+    ],
+    "seeds": {
+      "track1": 42,
+      "track2": 42,
+      "track3": 17
+    },
+    "steps": 12,
+    "canvas": [
+      512,
+      1152
+    ],
+    "guidance": 1,
+    "vae": "standard",
+    "baseline": "cinar original pinned text encoder + baked INT4 transformer",
+    "outside_mae_255": [
+      0,
+      0,
+      0
+    ],
+    "general_quality_accepted": false
+  }
+}
