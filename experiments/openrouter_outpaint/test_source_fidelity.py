@@ -1,11 +1,15 @@
 """Known-answer fidelity controls, independent of any provider output."""
 import unittest
+import tempfile
+from pathlib import Path
+from unittest.mock import patch
 
 import cv2
 import numpy as np
 from PIL import Image, ImageDraw
 
 from source_fidelity import SIDE, expected_rect, metrics, register, square_at
+from benchmark import ROOT, prepare, request_json
 
 
 def reference():
@@ -22,6 +26,53 @@ def reference():
 
 
 class FidelityControls(unittest.TestCase):
+    def test_complete_json_does_not_wait_for_transport_eof(self):
+        class Response:
+            headers = {'x-generation-id':'known-id'}
+            chunks = iter([b'{"data": {"nested": {}}',b', "usage": {"cost": 0.04}}'])
+            def __enter__(self): return self
+            def __exit__(self,*args): pass
+            def read1(self,size):
+                try: return next(self.chunks)
+                except StopIteration: raise TimeoutError('relay never closes')
+        with patch('benchmark.urllib.request.urlopen',return_value=Response()):
+            data,headers = request_json('images','placeholder',{'model':'test'})
+        self.assertEqual(data['usage']['cost'],.04)
+        self.assertEqual(headers['x-generation-id'],'known-id')
+
+    def test_partial_response_timeout_retains_generation_id(self):
+        class Response:
+            headers = {'x-generation-id':'paid-request-id'}
+            def __enter__(self): return self
+            def __exit__(self,*args): pass
+            def read1(self,size): raise TimeoutError('incomplete response')
+        with patch('benchmark.urllib.request.urlopen',return_value=Response()):
+            with self.assertRaises(TimeoutError) as raised:
+                request_json('images','placeholder',{'model':'test'})
+        self.assertEqual(raised.exception.response_headers['x-generation-id'],'paid-request-id')
+
+    def test_custom_cover_reproducible_crop_and_provenance(self):
+        with tempfile.TemporaryDirectory(dir=ROOT/'.build') as folder:
+            folder = Path(folder)
+            source = Image.fromarray(np.random.default_rng(92).integers(0,256,(29,37,3),dtype=np.uint8))
+            path = folder/'new-cover.png'
+            source.save(path)
+            geometry = prepare('cover01', folder, path)
+            self.assertEqual(geometry['original_file'],str(path.relative_to(ROOT)))
+            self.assertEqual(geometry['crop_xyxy'],[4,0,33,29])
+            expected = source.crop((4,0,33,29)).resize((720,720),Image.Resampling.LANCZOS)
+            with Image.open(folder/'source.png') as actual:
+                self.assertTrue(np.array_equal(np.asarray(actual),np.asarray(expected)))
+            with Image.open(folder/'input.png') as canvas:
+                self.assertTrue(np.array_equal(np.asarray(canvas.crop((0,280,720,1000))),np.asarray(expected)))
+
+    def test_reject_external_source_and_unsafe_identifier(self):
+        with tempfile.TemporaryDirectory() as external:
+            with self.assertRaisesRegex(ValueError,'inside repository'):
+                prepare('cover01',ROOT/'.build',Path(external)/'cover.png')
+        with self.assertRaisesRegex(ValueError,'Unsafe'):
+            prepare('../cover',ROOT/'.build')
+
     def test_identity(self):
         a = reference()
         m = metrics(a, a)
