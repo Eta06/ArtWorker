@@ -1,7 +1,7 @@
 """Audit source-square fidelity of existing raw outpaints. No network or model calls.
 
 Dependencies: Pillow, NumPy, OpenCV. All metrics use a common 512px source grid.
-Fixed geometry is authoritative; similarity registration is diagnostic only.
+Aligned content and fixed-layout fidelity are separate measurements.
 """
 from __future__ import annotations
 
@@ -80,6 +80,8 @@ def metrics(reference: np.ndarray, candidate: np.ndarray,
             'psnr_db': 10*math.log10(255**2/mse) if mse else None,
             'pixel_exact_on_analysis_grid_fraction': float(np.all(delta == 0, axis=2)[valid].mean()),
             'pixels_over_8_rgb_fraction': float((absolute.max(axis=2)[valid] > 8).mean()),
+            'pixels_within_8_rgb_fraction': float((absolute.max(axis=2)[valid] <= 8).mean()),
+            'pixels_within_16_rgb_fraction': float((absolute.max(axis=2)[valid] <= 16).mean()),
             'mean_signed_rgb_delta': delta[valid].mean(axis=0).tolist(),
             'delta_e_76_mean': float(de.mean()), 'delta_e_76_p95': float(np.percentile(de, 95)),
             'worst_tile_ssim': min(tiles) if tiles else None,
@@ -97,7 +99,8 @@ def square_at(image: Image.Image, rect: tuple[float, ...]) -> np.ndarray:
                                       resample=Image.Resampling.BICUBIC))
 
 
-def register(reference: np.ndarray, output: np.ndarray, rect: tuple[float, ...]) -> tuple[dict, np.ndarray | None, np.ndarray | None]:
+def register(reference: np.ndarray, output: np.ndarray, rect: tuple[float, ...],
+             layout_free: bool = False) -> tuple[dict, np.ndarray | None, np.ndarray | None]:
     """Estimate one global similarity transform; never locally warp/color-correct."""
     orb = cv2.ORB_create(nfeatures=4000, edgeThreshold=15, fastThreshold=8)
     ka, da = orb.detectAndCompute(cv2.cvtColor(reference, cv2.COLOR_RGB2GRAY), None)
@@ -135,7 +138,12 @@ def register(reference: np.ndarray, output: np.ndarray, rect: tuple[float, ...])
                   'matrix_source_to_output': transform.tolist()}
     if ok.sum() < 12 or ok.mean() < .4 or coverage < .15 or quadrants < 3:
         return {**diagnostic, 'status': 'unavailable', 'reason': 'weak or spatially concentrated matches'}, None, None
-    if not .75 <= diagnostic['scale_relative_to_expected'] <= 1.25 or abs(rotation) > 5 or max(abs(shift)) > SIDE*.18:
+    diagnostic['placement_mode'] = 'free' if layout_free else 'bounded'
+    # Source placement is not an error in the free-layout task. Keep reliability,
+    # visibility and finite scale/rotation guards, but remove the center penalty.
+    scale_min, scale_max, rotation_max = (.25, 2, 10) if layout_free else (.75, 1.25, 5)
+    if (not scale_min <= diagnostic['scale_relative_to_expected'] <= scale_max or
+            abs(rotation) > rotation_max or (not layout_free and max(abs(shift)) > SIDE*.18)):
         return {**diagnostic, 'status': 'unavailable', 'reason': 'transform outside diagnostic search bounds'}, None, None
     aligned = cv2.warpAffine(output, transform, (SIDE, SIDE),
                             flags=cv2.INTER_LINEAR | cv2.WARP_INVERSE_MAP)
@@ -154,7 +162,7 @@ def heatmap(a: np.ndarray, b: np.ndarray) -> Image.Image:
     return Image.fromarray(cv2.cvtColor(colors, cv2.COLOR_BGR2RGB))
 
 
-def audit(row: dict, destination: Path) -> dict:
+def audit(row: dict, destination: Path, placement_mode: str = 'bounded') -> dict:
     directory = (ROOT / row['directory']).resolve()
     if not directory.is_relative_to(ROOT):
         raise ValueError('Ledger directory outside repository')
@@ -195,7 +203,7 @@ def audit(row: dict, destination: Path) -> dict:
     # the resampling-only floor. It is a diagnostic, not a subtracted score.
     control = canvas.resize(native_size, Image.Resampling.LANCZOS).resize(working.size, Image.Resampling.LANCZOS)
     control_crop = square_at(control, rect)
-    alignment, aligned, valid = register(reference, np.asarray(working), rect)
+    alignment, aligned, valid = register(reference, np.asarray(working), rect, layout_free=placement_mode == 'free')
     out = {k: row.get(k) for k in ('model', 'profile', 'track', 'raw_sha256', 'raw_dimensions', 'actual_cost_usd', 'elapsed_seconds')}
     out.update(id=identity(row), status='measured', source_png_sha256=sha(source),
                source_original_sha256=sha(original), geometry=geometry,
@@ -210,6 +218,10 @@ def audit(row: dict, destination: Path) -> dict:
     if aligned is not None:
         Image.fromarray(aligned).save(item/'aligned.png')
         heatmap(reference, aligned).save(item/'aligned-difference.png')
+        Image.fromarray(np.uint8(valid)*255).save(item/'aligned-visible-mask.png')
+        overlay = np.uint8((reference.astype(np.float32)+aligned.astype(np.float32))/2)
+        overlay[~valid] = (100, 100, 100)
+        Image.fromarray(overlay).save(item/'aligned-overlay.png')
     marked = np.asarray(working).copy()
     corners = np.float32([[0,0], [SIDE-1,0], [SIDE-1,SIDE-1], [0,SIDE-1]])
     cv2.rectangle(marked, (round(rect[0]), round(rect[1])), (round(rect[2])-1, round(rect[3])-1), (93,230,180), 2)
@@ -222,11 +234,14 @@ def audit(row: dict, destination: Path) -> dict:
     return out
 
 
-def render(rows: list[dict], destination: Path, metadata: dict) -> None:
+def render(rows: list[dict], destination: Path, metadata: dict, assets: Path | None = None) -> None:
     template = Path(__file__).with_name('source-fidelity.html').read_text()
     data = json.dumps(rows, ensure_ascii=False, allow_nan=False).replace('<', '\\u003c')
     template = template.replace('{{ROWS}}', data).replace('{{COUNT}}', str(len(rows)))
     template = template.replace('{{CREATED}}', html.escape(metadata['created_utc']))
+    prefix = urllib.parse.quote(os.path.relpath(assets, destination))+'/' if assets else ''
+    template = template.replace('{{ASSET_PREFIX_JSON}}', json.dumps(prefix))
+    template = template.replace('{{ASSET_PREFIX}}', html.escape(prefix))
     (destination/'index.html').write_text(template)
 
 
@@ -235,6 +250,8 @@ def main() -> None:
     parser.add_argument('--ledger', type=Path, required=True)
     parser.add_argument('--selections', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--placement-mode', choices=['free', 'bounded'], default='free',
+                        help='Free placement separates content similarity from layout; bounded reproduces Iris registration')
     parser.add_argument('--scope', choices=['liked', 'liked-models', 'all'], default='liked',
                         help='Liked outputs (default), all settings of liked models, or all completed outputs')
     args = parser.parse_args()
@@ -266,37 +283,43 @@ def main() -> None:
     started = time.monotonic()
     for r in selected:
         try:
-            result = audit(r, args.output)
+            result = audit(r, args.output, args.placement_mode)
         except (OSError, ValueError, KeyError, cv2.error) as error:
             result = {k:r.get(k) for k in ('model','profile','track')}
             result.update(id=identity(r), status='failed', error=str(error))
         results.append(result)
         print(json.dumps({'done':len(results), 'total':len(selected), 'status':result['status'],
                           'model':r['model'], 'profile':r['profile'], 'track':r['track']}, ensure_ascii=False), flush=True)
-    metadata = {'schema_version':1, 'stage':'iris', 'created_utc':time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+    metadata = {'schema_version':2, 'stage':'sumak', 'created_utc':time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                'placement_mode':args.placement_mode,
                 'scope':args.scope, 'ledger_sha256':sha(args.ledger), 'selections_sha256':sha(args.selections),
                 'analysis_side':SIDE, 'seconds':round(time.monotonic()-started, 3),
                 'versions':{'numpy':np.__version__, 'opencv':cv2.__version__, 'pillow':Image.__version__},
-                'notes':['Fixed location is the primary score; registered score never replaces it.',
+                'notes':['Aligned score measures content at the detected source placement; fixed score measures requested layout.',
+                         'Matching fraction means all RGB channels within 8/255 or 16/255 on visible analysis pixels; not semantic identity.',
+                         'Free registration: no center-shift limit, scale .25–2, rotation ±10 degrees; same inlier/coverage/visibility checks.',
                          'Metrics use resampled pixels, not a claim of native pixel equality.',
                          'No overall quality score, trained perceptual model, face/text-specific guarantee or automatic eligibility decision.',
                          'Alignment failures are unavailable, not perfect preservation; colored geometry is diagnostic.',
                          'No local warping, color correction, source pasting, provider calls or new billing.'],
                 'rows':results}
     (args.output/'metrics.json').write_text(json.dumps(metadata, ensure_ascii=False, indent=2, allow_nan=False)+'\n')
-    fields = ['model','profile','track','status','actual_cost_usd','ssim_luminance','mae_rgb_0_255','delta_e_76_mean',
-              'pixels_over_8_rgb_fraction','worst_tile_ssim','aligned_ssim','alignment_status','scale','shift_x','shift_y']
+    metric_fields = ['ssim_luminance','mae_rgb_0_255','delta_e_76_mean', 'pixels_within_8_rgb_fraction',
+                     'pixels_within_16_rgb_fraction','worst_tile_ssim','evaluated_fraction']
+    fields = ['model','profile','track','status','actual_cost_usd','alignment_status','scale','shift_x','shift_y']
+    fields += [frame+'_'+key for frame in ['fixed','aligned'] for key in metric_fields]
     with (args.output/'metrics.csv').open('w', newline='') as stream:
         writer = csv.DictWriter(stream, fieldnames=fields)
         writer.writeheader()
         for r in results:
             record = {k:r.get(k) for k in fields[:5]}
-            record.update({k:r.get('fixed',{}).get(k) for k in fields[5:10]})
             alignment = r.get('alignment', {})
-            record.update(aligned_ssim=(r.get('aligned') or {}).get('ssim_luminance'), alignment_status=alignment.get('status'),
+            record.update(alignment_status=alignment.get('status'),
                           scale=alignment.get('scale_relative_to_expected'),
                           shift_x=alignment.get('center_shift_fraction_of_cover',[None,None])[0],
                           shift_y=alignment.get('center_shift_fraction_of_cover',[None,None])[1])
+            for frame in ['fixed', 'aligned']:
+                record.update({frame+'_'+key:(r.get(frame) or {}).get(key) for key in metric_fields})
             writer.writerow(record)
     render(results, args.output, metadata)
     print(json.dumps({'completed':sum(r['status']=='measured' for r in results), 'failed':sum(r['status']=='failed' for r in results),
