@@ -13,8 +13,11 @@ ROOT = Path(__file__).resolve().parents[2]
 COVERS = {'track3': 'Aklın Hep Bende', 'track2': 'Karambol'}
 
 
-def render_gallery(rows: list[dict], results: Path, ledger: dict, status: str) -> None:
+def render_gallery(rows: list[dict], results: Path, ledger: dict, status: str,
+                   covers: dict | None = None) -> None:
     cards, entries = [], []
+    covers = covers or COVERS
+    stage = ledger.get('stage', 'zeytin')
     results = results.resolve()
     for row in rows:
         image_path = ROOT / row.get('directory', '') / 'raw.png'
@@ -23,7 +26,7 @@ def render_gallery(rows: list[dict], results: Path, ledger: dict, status: str) -
         review_id = hashlib.sha256(json.dumps(identity).encode()).hexdigest()
         entry = {k: row.get(k) for k in ('model', 'profile', 'track', 'resolution', 'quality',
                   'raw_dimensions', 'actual_cost_usd', 'raw_sha256')}
-        entry.update(id=review_id, available=available, cover=COVERS[row['track']])
+        entry.update(id=review_id, available=available, cover=covers[row['track']])
         entries.append(entry)
         image = '<div class="missing">Bu ayarda görsel yok</div>'
         if available:
@@ -33,6 +36,10 @@ def render_gallery(rows: list[dict], results: Path, ledger: dict, status: str) -
         info = f'${cost:.7f}' if cost is not None else 'Ücret doğrulanmadı'
         if row['status'] in ('blocked_from_prior_filter', 'pending'):
             info = 'Bu ayarda istek yapılmadı'
+        elif row['status'] == 'http_error':
+            info += f' · Sağlayıcı HTTP {row.get("http_status", "hatası")}; görsel döndürmedi'
+        elif row['status'] == 'completed_output_unavailable':
+            info += ' · Sağlayıcı tamamladı; görsel yanıtı alınamadı'
         if row.get('elapsed_seconds') is not None:
             info += f' · {row["elapsed_seconds"]:.1f}s'
         if row.get('raw_dimensions'):
@@ -41,17 +48,19 @@ def render_gallery(rows: list[dict], results: Path, ledger: dict, status: str) -
             info += ' · Önceki sonuç'
         vote = (f'<div class="vote"><button data-vote="liked" aria-pressed="false">♡ Beğendim</button><button data-vote="disliked" aria-pressed="false">× Beğenmedim</button></div><p class="decision">Karar verilmedi</p>'
                 if available else '<p class="decision">Görsel olmadığı için seçim yapılamaz</p>')
-        cards.append(f'<article data-id="{review_id}" data-model="{html.escape(row["model"])}" data-track="{row["track"]}" data-available="{str(available).lower()}"><div class="card-head"><p class="cover">{entry["cover"]}</p><h2>{html.escape(row["model"])}</h2><p class="profile">{html.escape(row["profile"])}</p></div>{image}<div class="card-foot"><p class="measure">{html.escape(info)}</p>{vote}</div></article>')
+        cards.append(f'<article data-id="{review_id}" data-model="{html.escape(row["model"])}" data-track="{row["track"]}" data-available="{str(available).lower()}"><div class="card-head"><p class="cover">{html.escape(entry["cover"])}</p><h2>{html.escape(row["model"])}</h2><p class="profile">{html.escape(row["profile"])}</p></div>{image}<div class="card-foot"><p class="measure">{html.escape(info)}</p>{vote}</div></article>')
     originals = []
-    for track, cover in COVERS.items():
+    for track, cover in covers.items():
         row = next(r for r in rows if r['track'] == track and r.get('directory'))
         url = urllib.parse.quote(os.path.relpath(ROOT / row['directory'] / 'source.png', results))
-        originals.append(f'<a href="{url}" target="_blank"><img src="{url}" alt="{cover} orijinal kapak"><span>{cover}<small>Orijinal kare</small></span></a>')
+        originals.append(f'<a href="{url}" target="_blank"><img src="{url}" alt="{html.escape(cover)} orijinal kapak"><span>{html.escape(cover)}<small>Orijinal kare</small></span></a>')
     model_options = ''.join('<option>' + html.escape(m) + '</option>' for m in dict.fromkeys(r['model'] for r in rows))
     template = Path(__file__).with_name('review-gallery.html').read_text()
     # Script data is JSON, never raw model HTML. Escape closing-script sequences.
     data = json.dumps(entries, ensure_ascii=False).replace('<', '\\u003c')
-    values = {'TITLE': 'ArtWorker · Zeytin', 'STATUS': html.escape(status),
+    values = {'TITLE': 'ArtWorker · '+html.escape(stage.capitalize()), 'STATUS': html.escape(status),
+              'STAGE_JSON': json.dumps(stage).replace('<', '\\u003c'),
+              'TRACKS': ''.join('<option value="'+html.escape(t)+'">'+html.escape(c)+'</option>' for t,c in covers.items()),
               'COST': f'{ledger["new_charge_usd"]:.7f}', 'MODELS': model_options,
               'CARDS': ''.join(cards), 'ORIGINALS': ''.join(originals), 'ENTRIES': data,
               'FIDELITY': ('<p style="max-width:1600px;margin:0 auto;padding:0 28px 14px"><a href="fidelity/">Ana kapağa sadakat raporu →</a></p>'
