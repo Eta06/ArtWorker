@@ -1,0 +1,3710 @@
+{
+  "stage": "zeytin",
+  "currency": "USD",
+  "rows": [
+    {
+      "model": "openai/gpt-image-2",
+      "profile": "quality-auto",
+      "track": "track3",
+      "resolution": null,
+      "quality": "auto",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 20.331,
+      "actual_cost_usd": 0.024912,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2/quality-auto/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:34:52Z",
+      "generation_id": "gen-img-1791311692-MANGMa8lqnsHWuDn0gwT",
+      "generation_billing": {
+        "id": "gen-img-1791311692-MANGMa8lqnsHWuDn0gwT",
+        "model": "openai/gpt-image-2",
+        "provider_name": "OpenAI",
+        "total_cost": 0.024912,
+        "created_at": "2026-10-06T18:34:52.988Z",
+        "generation_time": 18839
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "ca59817651cc6772fab41802b44c12394e34c3ad2202cdc606dd3c103e847675"
+    },
+    {
+      "model": "openai/gpt-image-2",
+      "profile": "quality-auto",
+      "track": "track2",
+      "resolution": null,
+      "quality": "auto",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 33.62,
+      "actual_cost_usd": 0.048852,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2/quality-auto/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:34:52Z",
+      "generation_id": "gen-img-1791311693-c3sgV5q7M0QCtFgMVKJV",
+      "generation_billing": {
+        "id": "gen-img-1791311693-c3sgV5q7M0QCtFgMVKJV",
+        "model": "openai/gpt-image-2",
+        "provider_name": "OpenAI",
+        "total_cost": 0.048852,
+        "created_at": "2026-10-06T18:34:53.361Z",
+        "generation_time": 31906
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "f08f17c277009f6cd87f2e786e808bac73b084a2c50d87eff82f341c6885b13e"
+    },
+    {
+      "model": "google/gemini-3.1-flash-lite-image",
+      "profile": "resolution-1K",
+      "track": "track3",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 8.135,
+      "actual_cost_usd": 0.0342095,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/google--gemini-3.1-flash-lite-image/resolution-1K/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "google-vertex/global"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:35:13Z",
+      "generation_id": "gen-img-1791311713-fW2AlBgpsEIdGpk3eCkK",
+      "generation_billing": {
+        "id": "gen-img-1791311713-fW2AlBgpsEIdGpk3eCkK",
+        "model": "google/gemini-3.1-flash-lite-image-20260630",
+        "provider_name": "Google",
+        "total_cost": 0.0342095,
+        "created_at": "2026-10-06T18:35:13.761Z",
+        "generation_time": 6939
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        768,
+        1376
+      ],
+      "raw_sha256": "5e465ff64a28e0049aee50b4b85d283529a82c9eed0fda620f3f57e191135c68"
+    },
+    {
+      "model": "google/gemini-3.1-flash-lite-image",
+      "profile": "resolution-1K",
+      "track": "track2",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 8.796,
+      "actual_cost_usd": 0.0342095,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/google--gemini-3.1-flash-lite-image/resolution-1K/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "google-vertex/global"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:35:22Z",
+      "generation_id": "gen-img-1791311722-HbLlCFPvaFuupX6FXRRv",
+      "generation_billing": {
+        "id": "gen-img-1791311722-HbLlCFPvaFuupX6FXRRv",
+        "model": "google/gemini-3.1-flash-lite-image-20260630",
+        "provider_name": "Google",
+        "total_cost": 0.0342095,
+        "created_at": "2026-10-06T18:35:22.403Z",
+        "generation_time": 6130
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        768,
+        1376
+      ],
+      "raw_sha256": "19c508568c583209ced5f83bc1eb923b533cc15778d07cda2bb386538dc8d986"
+    },
+    {
+      "model": "krea/krea-2-medium-turbo",
+      "profile": "resolution-1K",
+      "track": "track3",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 24.266,
+      "actual_cost_usd": 0.015,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/krea--krea-2-medium-turbo/resolution-1K/track3",
+      "reference_count": 1,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "krea"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:35:30Z",
+      "generation_id": "gen-img-1791311732-bsXxL0t8gX2gLnOjlI39",
+      "generation_billing": {
+        "id": "gen-img-1791311732-bsXxL0t8gX2gLnOjlI39",
+        "model": "krea/krea-2-medium-turbo-20260720",
+        "provider_name": "Krea",
+        "total_cost": 0.015,
+        "created_at": "2026-10-06T18:35:32.464Z",
+        "generation_time": 19457
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        768,
+        1376
+      ],
+      "raw_sha256": "420145dc6f527d667bfb675b602589f6368989fc493bffa6908346361d9eb314"
+    },
+    {
+      "model": "krea/krea-2-medium-turbo",
+      "profile": "resolution-1K",
+      "track": "track2",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 16.622,
+      "actual_cost_usd": 0.015,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/krea--krea-2-medium-turbo/resolution-1K/track2",
+      "reference_count": 1,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "krea"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:35:33Z",
+      "generation_id": "gen-img-1791311733-TwwjYgu5vCJAfquJjgaO",
+      "generation_billing": {
+        "id": "gen-img-1791311733-TwwjYgu5vCJAfquJjgaO",
+        "model": "krea/krea-2-medium-turbo-20260720",
+        "provider_name": "Krea",
+        "total_cost": 0.015,
+        "created_at": "2026-10-06T18:35:33.673Z",
+        "generation_time": 14732
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        768,
+        1376
+      ],
+      "raw_sha256": "cc33db8455990708ad74c6e96e5360934eacc0d49e8cd763364e251f0244c3ba"
+    },
+    {
+      "model": "krea/krea-2-medium",
+      "profile": "resolution-1K",
+      "track": "track3",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 26.243,
+      "actual_cost_usd": 0.03,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/krea--krea-2-medium/resolution-1K/track3",
+      "reference_count": 1,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "krea"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:35:52Z",
+      "generation_id": "gen-img-1791311755-5LH7D9ct743pOFnKnrGd",
+      "generation_billing": {
+        "id": "gen-img-1791311755-5LH7D9ct743pOFnKnrGd",
+        "model": "krea/krea-2-medium-20260720",
+        "provider_name": "Krea",
+        "total_cost": 0.03,
+        "created_at": "2026-10-06T18:35:55.019Z",
+        "generation_time": 22712
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        768,
+        1376
+      ],
+      "raw_sha256": "bdd6b4220f47b1920d5870e0fb3b9e6f05f97e2f19befd439464c4c839a8d8d5"
+    },
+    {
+      "model": "krea/krea-2-medium",
+      "profile": "resolution-1K",
+      "track": "track2",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 22.253,
+      "actual_cost_usd": 0.03,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/krea--krea-2-medium/resolution-1K/track2",
+      "reference_count": 1,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "krea"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:35:56Z",
+      "generation_id": "gen-img-1791311756-0LkR1Y3ds98v4Ea4HTuS",
+      "generation_billing": {
+        "id": "gen-img-1791311756-0LkR1Y3ds98v4Ea4HTuS",
+        "model": "krea/krea-2-medium-20260720",
+        "provider_name": "Krea",
+        "total_cost": 0.03,
+        "created_at": "2026-10-06T18:35:56.351Z",
+        "generation_time": 20980
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        768,
+        1376
+      ],
+      "raw_sha256": "e64894f2f6c25a84cedbd3c7ce794eaebc78908bc3ec06c639dca207df697567"
+    },
+    {
+      "model": "krea/krea-2-large",
+      "profile": "resolution-1K",
+      "track": "track3",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 31.622,
+      "actual_cost_usd": 0.06,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/krea--krea-2-large/resolution-1K/track3",
+      "reference_count": 1,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "krea"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:36:18Z",
+      "generation_id": "gen-img-1791311779-Bd1QLbQlhIM17fVkyXes",
+      "generation_billing": {
+        "id": "gen-img-1791311779-Bd1QLbQlhIM17fVkyXes",
+        "model": "krea/krea-2-large-20260720",
+        "provider_name": "Krea",
+        "total_cost": 0.06,
+        "created_at": "2026-10-06T18:36:19.021Z",
+        "generation_time": 30516
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        768,
+        1376
+      ],
+      "raw_sha256": "9420a30665b085ffb486264a4673d46c9ae5a2514bea0b2dc1b5f166c57e76f7"
+    },
+    {
+      "model": "krea/krea-2-large",
+      "profile": "resolution-1K",
+      "track": "track2",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 38.148,
+      "actual_cost_usd": 0.06,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/krea--krea-2-large/resolution-1K/track2",
+      "reference_count": 1,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "krea"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:36:19Z",
+      "generation_id": "gen-img-1791311779-hH45ueMGF9zGC4iVs89p",
+      "generation_billing": {
+        "id": "gen-img-1791311779-hH45ueMGF9zGC4iVs89p",
+        "model": "krea/krea-2-large-20260720",
+        "provider_name": "Krea",
+        "total_cost": 0.06,
+        "created_at": "2026-10-06T18:36:19.256Z",
+        "generation_time": 36355
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        768,
+        1376
+      ],
+      "raw_sha256": "37634af228af4d2e72c28cd4a2639b7f69344b403df3fd225230f76948b656ac"
+    },
+    {
+      "model": "microsoft/mai-image-2.5-pro",
+      "profile": "default",
+      "track": "track3",
+      "resolution": null,
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 47.357,
+      "actual_cost_usd": 0.118825,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/microsoft--mai-image-2.5-pro/default/track3",
+      "reference_count": 1,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "azure"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:36:50Z",
+      "generation_id": "gen-img-1791311811-NfUU1DBIJgG4Uqmb5ruY",
+      "generation_billing": {
+        "id": "gen-img-1791311811-NfUU1DBIJgG4Uqmb5ruY",
+        "model": "microsoft/mai-image-2.5-pro-20260723",
+        "provider_name": "Azure",
+        "total_cost": 0.118825,
+        "created_at": "2026-10-06T18:36:51.093Z",
+        "generation_time": 45203
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        768,
+        1360
+      ],
+      "raw_sha256": "3df45f349fe502a00ec7f7a98380856b01c3cf201c7ae63b7b85be7f96f09c67"
+    },
+    {
+      "model": "microsoft/mai-image-2.5-pro",
+      "profile": "default",
+      "track": "track2",
+      "resolution": null,
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 104.775,
+      "actual_cost_usd": 0.118825,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/microsoft--mai-image-2.5-pro/default/track2",
+      "reference_count": 1,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "azure"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:36:57Z",
+      "generation_id": "gen-img-1791311817-dp4GXrK0czWlfhdVUJl4",
+      "generation_billing": {
+        "id": "gen-img-1791311817-dp4GXrK0czWlfhdVUJl4",
+        "model": "microsoft/mai-image-2.5-pro-20260723",
+        "provider_name": "Azure",
+        "total_cost": 0.118825,
+        "created_at": "2026-10-06T18:36:57.91Z",
+        "generation_time": 103277
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        768,
+        1360
+      ],
+      "raw_sha256": "58ad81229648d197ac747fdd8d3b30565e2b4ca4fcb800e513ea3bc4215688a0"
+    },
+    {
+      "model": "qwen/qwen-image-3",
+      "profile": "resolution-1K",
+      "track": "track3",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 49.164,
+      "actual_cost_usd": 0.036,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/qwen--qwen-image-3/resolution-1K/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "alibaba"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:37:38Z",
+      "generation_id": "gen-img-1791311859-w1uvVbgWICZdpZ6h3E0M",
+      "generation_billing": {
+        "id": "gen-img-1791311859-w1uvVbgWICZdpZ6h3E0M",
+        "model": "qwen/qwen-image-3-20260805",
+        "provider_name": "Alibaba",
+        "total_cost": 0.036,
+        "created_at": "2026-10-06T18:37:39.095Z",
+        "generation_time": 48128
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        576,
+        1024
+      ],
+      "raw_sha256": "2f8c1f0b986db37e5e100c107f63087857cea3f450b595e58ecedb8a1e4c4218"
+    },
+    {
+      "model": "qwen/qwen-image-3",
+      "profile": "resolution-1K",
+      "track": "track2",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 35.163,
+      "actual_cost_usd": 0.036,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/qwen--qwen-image-3/resolution-1K/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "alibaba"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:38:28Z",
+      "generation_id": "gen-img-1791311908-CILvUgDWzqov7Kc7v4de",
+      "generation_billing": {
+        "id": "gen-img-1791311908-CILvUgDWzqov7Kc7v4de",
+        "model": "qwen/qwen-image-3-20260805",
+        "provider_name": "Alibaba",
+        "total_cost": 0.036,
+        "created_at": "2026-10-06T18:38:28.897Z",
+        "generation_time": 33366
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        576,
+        1024
+      ],
+      "raw_sha256": "6a2144d8235362f07c75d418b93451b201d36d92130642a7dbfaee6b4ca46f77"
+    },
+    {
+      "model": "qwen/qwen-image-3-pro",
+      "profile": "resolution-1K",
+      "track": "track3",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 151.57,
+      "actual_cost_usd": 0.046,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/qwen--qwen-image-3-pro/resolution-1K/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "alibaba"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:38:42Z",
+      "generation_id": "gen-img-1791311923-DUUfMysK2tDeDKWdrsDY",
+      "generation_billing": {
+        "id": "gen-img-1791311923-DUUfMysK2tDeDKWdrsDY",
+        "model": "qwen/qwen-image-3-pro-20260805",
+        "provider_name": "Alibaba",
+        "total_cost": 0.046,
+        "created_at": "2026-10-06T18:38:43.204Z",
+        "generation_time": 150394
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        576,
+        1024
+      ],
+      "raw_sha256": "fd35e8a3f3cfeeb70b157de5aeb66b23d380e128b33c0ff395375f9e17c4efba"
+    },
+    {
+      "model": "qwen/qwen-image-3-pro",
+      "profile": "resolution-1K",
+      "track": "track2",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 232.725,
+      "actual_cost_usd": 0.046,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/qwen--qwen-image-3-pro/resolution-1K/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "alibaba"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:39:04Z",
+      "generation_id": "gen-img-1791311945-JxihoxViH4xzZ50q6CkD",
+      "generation_billing": {
+        "id": "gen-img-1791311945-JxihoxViH4xzZ50q6CkD",
+        "model": "qwen/qwen-image-3-pro-20260805",
+        "provider_name": "Alibaba",
+        "total_cost": 0.046,
+        "created_at": "2026-10-06T18:39:05.168Z",
+        "generation_time": 232162
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        576,
+        1024
+      ],
+      "raw_sha256": "309ef9aab7242aac6a1ef757f2d18984fa23f553e0cb0188e372184df30d1727"
+    },
+    {
+      "model": "x-ai/grok-imagine-image-2.0",
+      "profile": "resolution-1K__quality-low",
+      "track": "track3",
+      "resolution": "1K",
+      "quality": "low",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 10.719,
+      "actual_cost_usd": 0.06,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/x-ai--grok-imagine-image-2.0/resolution-1K__quality-low/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "xai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:41:15Z",
+      "generation_id": "gen-img-1791312075-X6J31AbaPgqjDrDRTDjv",
+      "generation_billing": {
+        "id": "gen-img-1791312075-X6J31AbaPgqjDrDRTDjv",
+        "model": "x-ai/grok-imagine-image-2.0-20260811",
+        "provider_name": "xAI",
+        "total_cost": 0.06,
+        "created_at": "2026-10-06T18:41:15.518Z",
+        "generation_time": 9121
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        720,
+        1280
+      ],
+      "raw_sha256": "edf7d2df7ed206025087c2d82bbd95da8f4f2752aa6cc6dc8736337e9b307192"
+    },
+    {
+      "model": "x-ai/grok-imagine-image-2.0",
+      "profile": "resolution-1K__quality-low",
+      "track": "track2",
+      "resolution": "1K",
+      "quality": "low",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 12.72,
+      "actual_cost_usd": 0.06,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/x-ai--grok-imagine-image-2.0/resolution-1K__quality-low/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "xai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:41:26Z",
+      "generation_id": "gen-img-1791312086-8Kco6WaFTAqMH6PYIdGX",
+      "generation_billing": {
+        "id": "gen-img-1791312086-8Kco6WaFTAqMH6PYIdGX",
+        "model": "x-ai/grok-imagine-image-2.0-20260811",
+        "provider_name": "xAI",
+        "total_cost": 0.06,
+        "created_at": "2026-10-06T18:41:26.963Z",
+        "generation_time": 11497
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        720,
+        1280
+      ],
+      "raw_sha256": "4dc35c61093261f4a05498f9ab288f33f6f4992303ebeca50ebba8e84289e4b7"
+    },
+    {
+      "model": "bytedance-seed/seedream-5-0-pro",
+      "profile": "resolution-1K",
+      "track": "track3",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 50.705,
+      "actual_cost_usd": 0.048,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/bytedance-seed--seedream-5-0-pro/resolution-1K/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "seed"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:41:39Z",
+      "generation_id": "gen-img-1791312100-3j7gHARVq8GwNGbrezEV",
+      "generation_billing": {
+        "id": "gen-img-1791312100-3j7gHARVq8GwNGbrezEV",
+        "model": "bytedance-seed/seedream-5-0-pro-20260812",
+        "provider_name": "Seed",
+        "total_cost": 0.048,
+        "created_at": "2026-10-06T18:41:40.092Z",
+        "generation_time": 48084
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        720,
+        1280
+      ],
+      "raw_sha256": "29998d3625fc5611215c798ff9800d157005e49d8922118cbe839d745220eb54"
+    },
+    {
+      "model": "bytedance-seed/seedream-5-0-pro",
+      "profile": "resolution-1K",
+      "track": "track2",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 40.526,
+      "actual_cost_usd": 0.048,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/bytedance-seed--seedream-5-0-pro/resolution-1K/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "seed"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:42:31Z",
+      "generation_id": "gen-img-1791312151-3GoHopVo2LzUeVtDlYWR",
+      "generation_billing": {
+        "id": "gen-img-1791312151-3GoHopVo2LzUeVtDlYWR",
+        "model": "bytedance-seed/seedream-5-0-pro-20260812",
+        "provider_name": "Seed",
+        "total_cost": 0.048,
+        "created_at": "2026-10-06T18:42:31.52Z",
+        "generation_time": 39675
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        720,
+        1280
+      ],
+      "raw_sha256": "24797436309b2b611163697e0b1a9bf19dac564cb87f88d17d43dc86c3f4b201"
+    },
+    {
+      "model": "bytedance-seed/seedream-5-0-lite",
+      "profile": "resolution-2K",
+      "track": "track3",
+      "resolution": "2K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 53.244,
+      "actual_cost_usd": 0.035,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/bytedance-seed--seedream-5-0-lite/resolution-2K/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "seed"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:42:58Z",
+      "generation_id": "gen-img-1791312178-AG6mz2Ut69kIoVnbT3c9",
+      "generation_billing": {
+        "id": "gen-img-1791312178-AG6mz2Ut69kIoVnbT3c9",
+        "model": "bytedance-seed/seedream-5-0-lite-20260812",
+        "provider_name": "Seed",
+        "total_cost": 0.035,
+        "created_at": "2026-10-06T18:42:58.344Z",
+        "generation_time": 50996
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1440,
+        2560
+      ],
+      "raw_sha256": "3777466fc915cdb896db6bfbc6adfe32b753ac52b08a84241ff01a09c5ae4197"
+    },
+    {
+      "model": "bytedance-seed/seedream-5-0-lite",
+      "profile": "resolution-2K",
+      "track": "track2",
+      "resolution": "2K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 40.566,
+      "actual_cost_usd": 0.035,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/bytedance-seed--seedream-5-0-lite/resolution-2K/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "seed"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:43:12Z",
+      "generation_id": "gen-img-1791312192-wN9ptnH24Kyr7dVsARiW",
+      "generation_billing": {
+        "id": "gen-img-1791312192-wN9ptnH24Kyr7dVsARiW",
+        "model": "bytedance-seed/seedream-5-0-lite-20260812",
+        "provider_name": "Seed",
+        "total_cost": 0.035,
+        "created_at": "2026-10-06T18:43:12.533Z",
+        "generation_time": 39517
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1440,
+        2560
+      ],
+      "raw_sha256": "ef8e0d9dbb05adab0375697116993bf2c43eea56e083338c61e2480eee6d4943"
+    },
+    {
+      "model": "microsoft/mai-image-2.6",
+      "profile": "default",
+      "track": "track3",
+      "resolution": null,
+      "quality": null,
+      "status": "http_error",
+      "reused": false,
+      "elapsed_seconds": 22.573,
+      "actual_cost_usd": 0,
+      "cost_source": "definitive_http_error_and_dedicated_key_reconciliation",
+      "http_status": 400,
+      "error": "{\"error\":{\"message\":\"Input content violated imagegen safety policies.\",\"code\":400,\"metadata\":{\"provider_name\":\"Azure\"}}}",
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/microsoft--mai-image-2.6/default/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "azure"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:43:52Z"
+    },
+    {
+      "model": "microsoft/mai-image-2.6",
+      "profile": "default",
+      "track": "track2",
+      "resolution": null,
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 31.22,
+      "actual_cost_usd": 0.052277,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/microsoft--mai-image-2.6/default/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "azure"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:43:53Z",
+      "generation_id": "gen-img-1791312233-nC61n1XLkguw8N99JDI5",
+      "generation_billing": {
+        "id": "gen-img-1791312233-nC61n1XLkguw8N99JDI5",
+        "model": "microsoft/mai-image-2.6-20260904",
+        "provider_name": "Azure",
+        "total_cost": 0.052277,
+        "created_at": "2026-10-06T18:43:53.569Z",
+        "generation_time": 29167
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        768,
+        1365
+      ],
+      "raw_sha256": "2af4024d93257134acab1a7e567402d2373ba8dc45258ffffe829b849ac80b54"
+    },
+    {
+      "model": "microsoft/mai-image-2.6-flash",
+      "profile": "default",
+      "track": "track3",
+      "resolution": null,
+      "quality": null,
+      "status": "http_error",
+      "reused": false,
+      "elapsed_seconds": 17.974,
+      "actual_cost_usd": 0,
+      "cost_source": "definitive_http_error_and_dedicated_key_reconciliation",
+      "http_status": 400,
+      "error": "{\"error\":{\"message\":\"Input content violated imagegen safety policies.\",\"code\":400,\"metadata\":{\"provider_name\":\"Azure\"}}}",
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/microsoft--mai-image-2.6-flash/default/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "azure"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:44:15Z"
+    },
+    {
+      "model": "microsoft/mai-image-2.6-flash",
+      "profile": "default",
+      "track": "track2",
+      "resolution": null,
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 20.595,
+      "actual_cost_usd": 0.023708,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/microsoft--mai-image-2.6-flash/default/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "azure"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:44:25Z",
+      "generation_id": "gen-img-1791312265-kAY7V3kxEYLwYdQtjqtN",
+      "generation_billing": {
+        "id": "gen-img-1791312265-kAY7V3kxEYLwYdQtjqtN",
+        "model": "microsoft/mai-image-2.6-flash-20260904",
+        "provider_name": "Azure",
+        "total_cost": 0.023708,
+        "created_at": "2026-10-06T18:44:25.836Z",
+        "generation_time": 18962
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        768,
+        1365
+      ],
+      "raw_sha256": "ec63633bdd8ee78d210b49417c2af51e7c733c2885cf8de22e873979cc05c2fa"
+    },
+    {
+      "model": "google/gemini-nano-banana-2.1",
+      "profile": "resolution-1K",
+      "track": "track3",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": true,
+      "elapsed_seconds": 24.048,
+      "actual_cost_usd": 0.044526,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/nano/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "google-ai-studio"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:10:50Z",
+      "generation_id": "gen-img-1791310250-Ns9nsbpS1DCHJVBn1zcy",
+      "generation_billing": {
+        "id": "gen-img-1791310250-Ns9nsbpS1DCHJVBn1zcy",
+        "model": "google/gemini-nano-banana-2.1-20261006",
+        "provider_name": "Google AI Studio",
+        "total_cost": 0.044526,
+        "created_at": "2026-10-06T18:10:50.477Z",
+        "generation_time": 22751
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        768,
+        1376
+      ],
+      "raw_sha256": "d0b79c44afdf384b57887715c3f4458fb8d962c3f80c43265a934b0dac5ae545"
+    },
+    {
+      "model": "google/gemini-nano-banana-2.1",
+      "profile": "resolution-1K",
+      "track": "track2",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": true,
+      "elapsed_seconds": 16.69,
+      "actual_cost_usd": 0.040326,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/nano/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "google-ai-studio"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:11:14Z",
+      "generation_id": "gen-img-1791310274-9KmbKfiXg2hOi54ZXI6p",
+      "generation_billing": {
+        "id": "gen-img-1791310274-9KmbKfiXg2hOi54ZXI6p",
+        "model": "google/gemini-nano-banana-2.1-20261006",
+        "provider_name": "Google AI Studio",
+        "total_cost": 0.040326,
+        "created_at": "2026-10-06T18:11:14.909Z",
+        "generation_time": 15454
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        768,
+        1376
+      ],
+      "raw_sha256": "7558a9cf29822e41fc2824986e7c5463c45c9ac0e13632ce5e198dda077059bc"
+    },
+    {
+      "model": "tencent/hy-image-v3.5-preview",
+      "profile": "resolution-1K",
+      "track": "track3",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": true,
+      "elapsed_seconds": 32.355,
+      "actual_cost_usd": 0.024,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/hy/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "tencent"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:11:32Z",
+      "generation_id": "gen-img-1791310292-EdRcwSgkEuP167mNyYHb",
+      "generation_billing": {
+        "id": "gen-img-1791310292-EdRcwSgkEuP167mNyYHb",
+        "model": "tencent/hy-image-v3.5-preview-20260922",
+        "provider_name": "Tencent",
+        "total_cost": 0.024,
+        "created_at": "2026-10-06T18:11:32.346Z",
+        "generation_time": 31378
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        576,
+        1024
+      ],
+      "raw_sha256": "a77897c43f387463dc82606277f506c8f0673ded62130a35c867c540439f4e2f"
+    },
+    {
+      "model": "tencent/hy-image-v3.5-preview",
+      "profile": "resolution-1K",
+      "track": "track2",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": true,
+      "elapsed_seconds": 33.61,
+      "actual_cost_usd": 0.024,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/hy/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "tencent"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:12:04Z",
+      "generation_id": "gen-img-1791310325-jIAp0Uyw57T7rFqlVkyA",
+      "generation_billing": {
+        "id": "gen-img-1791310325-jIAp0Uyw57T7rFqlVkyA",
+        "model": "tencent/hy-image-v3.5-preview-20260922",
+        "provider_name": "Tencent",
+        "total_cost": 0.024,
+        "created_at": "2026-10-06T18:12:05.24Z",
+        "generation_time": 32096
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        576,
+        1024
+      ],
+      "raw_sha256": "50780f4bbed6b194a55bebd909e10e91d502e1ba4e71e91a0d6bb734b0624193"
+    },
+    {
+      "model": "bytedance-seed/seedream-5-0-flash",
+      "profile": "resolution-1K",
+      "track": "track3",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": true,
+      "elapsed_seconds": 16.339,
+      "actual_cost_usd": 0.018,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/seedream/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "seed"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:09:58Z",
+      "generation_id": "gen-img-1791310198-IpOlV2lhsbvxZIBGLDmX",
+      "generation_billing": {
+        "id": "gen-img-1791310198-IpOlV2lhsbvxZIBGLDmX",
+        "model": "bytedance-seed/seedream-5-0-flash-20261001",
+        "provider_name": "Seed",
+        "total_cost": 0.018,
+        "created_at": "2026-10-06T18:09:58.451Z",
+        "generation_time": 15911
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        720,
+        1280
+      ],
+      "raw_sha256": "8ac578486cda2a74af29d774d8e6f44a4222b335cac66c594a18f156dfe98706"
+    },
+    {
+      "model": "bytedance-seed/seedream-5-0-flash",
+      "profile": "resolution-1K",
+      "track": "track2",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": true,
+      "elapsed_seconds": 16.563,
+      "actual_cost_usd": 0.018,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/seedream/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "seed"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:10:33Z",
+      "generation_id": "gen-img-1791310233-HhSoByLoRSnWJnQ5JDwy",
+      "generation_billing": {
+        "id": "gen-img-1791310233-HhSoByLoRSnWJnQ5JDwy",
+        "model": "bytedance-seed/seedream-5-0-flash-20261001",
+        "provider_name": "Seed",
+        "total_cost": 0.018,
+        "created_at": "2026-10-06T18:10:33.329Z",
+        "generation_time": 15589
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        720,
+        1280
+      ],
+      "raw_sha256": "953f9a4102f60832b6cee9ec9743ae29b6e3cdd18912de8e9a2bd537decb49f4"
+    },
+    {
+      "model": "black-forest-labs/flux-3-image",
+      "profile": "resolution-768",
+      "track": "track3",
+      "resolution": "768",
+      "quality": null,
+      "status": "blocked_from_prior_filter",
+      "reused": false
+    },
+    {
+      "model": "black-forest-labs/flux-3-image",
+      "profile": "resolution-768",
+      "track": "track2",
+      "resolution": "768",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 105.292,
+      "actual_cost_usd": 0.0205,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/black-forest-labs--flux-3-image/resolution-768/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "black-forest-labs"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:44:33Z",
+      "generation_id": "gen-img-1791312273-5nnMUL9u51hBdcYBRRS3",
+      "generation_billing": {
+        "id": "gen-img-1791312273-5nnMUL9u51hBdcYBRRS3",
+        "model": "black-forest-labs/flux-3-image-20261001",
+        "provider_name": "Black Forest Labs",
+        "total_cost": 0.0205,
+        "created_at": "2026-10-06T18:44:33.736Z",
+        "generation_time": 104216
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        576,
+        1024
+      ],
+      "raw_sha256": "e027ec1640836a21564973c8215228783c422ed4ff7417b2a98f2a2842cea727"
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "profile": "quality-auto",
+      "track": "track3",
+      "resolution": null,
+      "quality": "auto",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 26.826,
+      "actual_cost_usd": 0.020212,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-sunburst/quality-auto/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:44:46Z",
+      "generation_id": "gen-img-1791312286-zIbvq4ZAZLURrt5Nvqz7",
+      "generation_billing": {
+        "id": "gen-img-1791312286-zIbvq4ZAZLURrt5Nvqz7",
+        "model": "openai/gpt-image-2.5-sunburst-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.020212,
+        "created_at": "2026-10-06T18:44:46.889Z",
+        "generation_time": 23873
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "bb7da4f46436b2d08f87e1f54599aefcb78fa4625d387ee37a3c94582c1765a7"
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "profile": "quality-auto",
+      "track": "track2",
+      "resolution": null,
+      "quality": "auto",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 36.327,
+      "actual_cost_usd": 0.048952,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-sunburst/quality-auto/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:45:15Z",
+      "generation_id": "gen-img-1791312316-AvVCCYr7gNpR6KeaYwou",
+      "generation_billing": {
+        "id": "gen-img-1791312316-AvVCCYr7gNpR6KeaYwou",
+        "model": "openai/gpt-image-2.5-sunburst-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.048952,
+        "created_at": "2026-10-06T18:45:16.087Z",
+        "generation_time": 34512
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "7e99dbd35a3827eef3c9f4f5a54a0bcaeb15ca3f07314fe152b782eabd4aa4a0"
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "profile": "quality-auto",
+      "track": "track3",
+      "resolution": null,
+      "quality": "auto",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 16.866,
+      "actual_cost_usd": 0.025012,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-flare/quality-auto/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:45:52Z",
+      "generation_id": "gen-img-1791312352-Yd335B2QLl7cSIPETKA4",
+      "generation_billing": {
+        "id": "gen-img-1791312352-Yd335B2QLl7cSIPETKA4",
+        "model": "openai/gpt-image-2.5-flare-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.025012,
+        "created_at": "2026-10-06T18:45:52.371Z",
+        "generation_time": 15292
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "bff2373ce3d0b7ab3c93d4ff312e2e775b6e766a0b376fd292e393793b213793"
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "profile": "quality-auto",
+      "track": "track2",
+      "resolution": null,
+      "quality": "auto",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 25.113,
+      "actual_cost_usd": 0.048952,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-flare/quality-auto/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:46:09Z",
+      "generation_id": "gen-img-1791312369-YtWv2D3qXrI0TmsmjmuE",
+      "generation_billing": {
+        "id": "gen-img-1791312369-YtWv2D3qXrI0TmsmjmuE",
+        "model": "openai/gpt-image-2.5-flare-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.048952,
+        "created_at": "2026-10-06T18:46:09.712Z",
+        "generation_time": 20596
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "1a0be91573c2e4af9ca6d1aaba0fe0b4742476cc4b44fd51018986cd0e3fcf9f"
+    },
+    {
+      "model": "openai/gpt-image-2",
+      "profile": "quality-low",
+      "track": "track3",
+      "resolution": null,
+      "quality": "low",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 18.758,
+      "actual_cost_usd": 0.020112,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2/quality-low/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:46:19Z",
+      "generation_id": "gen-img-1791312379-XE66CICJ7aMAfUukwtJ2",
+      "generation_billing": {
+        "id": "gen-img-1791312379-XE66CICJ7aMAfUukwtJ2",
+        "model": "openai/gpt-image-2",
+        "provider_name": "OpenAI",
+        "total_cost": 0.020112,
+        "created_at": "2026-10-06T18:46:19.475Z",
+        "generation_time": 16560
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "a335bce2681f35aa6e0f5d720e6a81711abcd14c7919ef8038b21d1ce92885ca"
+    },
+    {
+      "model": "openai/gpt-image-2",
+      "profile": "quality-low",
+      "track": "track2",
+      "resolution": null,
+      "quality": "low",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 17.613,
+      "actual_cost_usd": 0.020112,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2/quality-low/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:46:37Z",
+      "generation_id": "gen-img-1791312398-cHnG6MT7PcE6DryyIdEq",
+      "generation_billing": {
+        "id": "gen-img-1791312398-cHnG6MT7PcE6DryyIdEq",
+        "model": "openai/gpt-image-2",
+        "provider_name": "OpenAI",
+        "total_cost": 0.020112,
+        "created_at": "2026-10-06T18:46:38.011Z",
+        "generation_time": 14212
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "ea6d18e9dc43190524bd4bad606402256d757bbb69eaa7b01ac3a2c7544c5001"
+    },
+    {
+      "model": "qwen/qwen-image-3",
+      "profile": "resolution-2K",
+      "track": "track3",
+      "resolution": "2K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 67.694,
+      "actual_cost_usd": 0.036,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/qwen--qwen-image-3/resolution-2K/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "alibaba"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:46:38Z",
+      "generation_id": "gen-img-1791312398-uGRKLPJcDQndbn0NbhWa",
+      "generation_billing": {
+        "id": "gen-img-1791312398-uGRKLPJcDQndbn0NbhWa",
+        "model": "qwen/qwen-image-3-20260805",
+        "provider_name": "Alibaba",
+        "total_cost": 0.036,
+        "created_at": "2026-10-06T18:46:38.694Z",
+        "generation_time": 58004
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1152,
+        2048
+      ],
+      "raw_sha256": "616cc18c84256f872719e9daacedcb5fb8e2d80671cd303001753a1e93f4482a"
+    },
+    {
+      "model": "qwen/qwen-image-3",
+      "profile": "resolution-2K",
+      "track": "track2",
+      "resolution": "2K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 68.585,
+      "actual_cost_usd": 0.036,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/qwen--qwen-image-3/resolution-2K/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "alibaba"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:46:57Z",
+      "generation_id": "gen-img-1791312419-O2jyEio99shJThWIJXfz",
+      "generation_billing": {
+        "id": "gen-img-1791312419-O2jyEio99shJThWIJXfz",
+        "model": "qwen/qwen-image-3-20260805",
+        "provider_name": "Alibaba",
+        "total_cost": 0.036,
+        "created_at": "2026-10-06T18:46:59.736Z",
+        "generation_time": 64341
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1152,
+        2048
+      ],
+      "raw_sha256": "33ad90e1f3efb535a2756c62339e6153b5189829c4c58c03927f882f4ce9ab9f"
+    },
+    {
+      "model": "qwen/qwen-image-3-pro",
+      "profile": "resolution-2K",
+      "track": "track3",
+      "resolution": "2K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 176.756,
+      "actual_cost_usd": 0.081,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/qwen--qwen-image-3-pro/resolution-2K/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "alibaba"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:47:46Z",
+      "generation_id": "gen-img-1791312467-fcWP0iObRxT6Qxs0IKF5",
+      "generation_billing": {
+        "id": "gen-img-1791312467-fcWP0iObRxT6Qxs0IKF5",
+        "model": "qwen/qwen-image-3-pro-20260805",
+        "provider_name": "Alibaba",
+        "total_cost": 0.081,
+        "created_at": "2026-10-06T18:47:47.012Z",
+        "generation_time": 175094
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1152,
+        2048
+      ],
+      "raw_sha256": "568e003ee01d736e2a2b16d622572b6e0205bfcaf3f7b437e329a2e130781fa8"
+    },
+    {
+      "model": "qwen/qwen-image-3-pro",
+      "profile": "resolution-2K",
+      "track": "track2",
+      "resolution": "2K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 232.685,
+      "actual_cost_usd": 0.081,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/qwen--qwen-image-3-pro/resolution-2K/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "alibaba"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:48:06Z",
+      "generation_id": "gen-img-1791312487-oxuiCFf2M41Uut4puMzJ",
+      "generation_billing": {
+        "id": "gen-img-1791312487-oxuiCFf2M41Uut4puMzJ",
+        "model": "qwen/qwen-image-3-pro-20260805",
+        "provider_name": "Alibaba",
+        "total_cost": 0.081,
+        "created_at": "2026-10-06T18:48:07.259Z",
+        "generation_time": 230953
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1152,
+        2048
+      ],
+      "raw_sha256": "4549c4f3d9febc32866082084de7ded1ee64d7ebd69ca91e58cb909dc3b942da"
+    },
+    {
+      "model": "x-ai/grok-imagine-image-2.0",
+      "profile": "resolution-1K__quality-medium",
+      "track": "track3",
+      "resolution": "1K",
+      "quality": "medium",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 12.33,
+      "actual_cost_usd": 0.08,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/x-ai--grok-imagine-image-2.0/resolution-1K__quality-medium/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "xai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:50:44Z",
+      "generation_id": "gen-img-1791312644-nS0arWRTyvfGGWyEanhR",
+      "generation_billing": {
+        "id": "gen-img-1791312644-nS0arWRTyvfGGWyEanhR",
+        "model": "x-ai/grok-imagine-image-2.0-20260811",
+        "provider_name": "xAI",
+        "total_cost": 0.08,
+        "created_at": "2026-10-06T18:50:44.591Z",
+        "generation_time": 11322
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        720,
+        1280
+      ],
+      "raw_sha256": "fcfaf85f86e2c701f4c9ddb7f5466912dbcbdc1234546971a6b209ce60543812"
+    },
+    {
+      "model": "x-ai/grok-imagine-image-2.0",
+      "profile": "resolution-1K__quality-medium",
+      "track": "track2",
+      "resolution": "1K",
+      "quality": "medium",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 15.12,
+      "actual_cost_usd": 0.08,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/x-ai--grok-imagine-image-2.0/resolution-1K__quality-medium/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "xai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:50:57Z",
+      "generation_id": "gen-img-1791312657-BOxDigZz3NSbPTP1NqTM",
+      "generation_billing": {
+        "id": "gen-img-1791312657-BOxDigZz3NSbPTP1NqTM",
+        "model": "x-ai/grok-imagine-image-2.0-20260811",
+        "provider_name": "xAI",
+        "total_cost": 0.08,
+        "created_at": "2026-10-06T18:50:57.544Z",
+        "generation_time": 14109
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        720,
+        1280
+      ],
+      "raw_sha256": "a641fdac217af40b2e2b82bf36326c33dc18b33ce7f806a95e3ebe50ef5d73f6"
+    },
+    {
+      "model": "bytedance-seed/seedream-5-0-pro",
+      "profile": "resolution-2K",
+      "track": "track3",
+      "resolution": "2K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 40.216,
+      "actual_cost_usd": 0.048,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/bytedance-seed--seedream-5-0-pro/resolution-2K/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "seed"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:51:12Z",
+      "generation_id": "gen-img-1791312672-d8VBV3IOQvjOckOTBFRT",
+      "generation_billing": {
+        "id": "gen-img-1791312672-d8VBV3IOQvjOckOTBFRT",
+        "model": "bytedance-seed/seedream-5-0-pro-20260812",
+        "provider_name": "Seed",
+        "total_cost": 0.048,
+        "created_at": "2026-10-06T18:51:12.859Z",
+        "generation_time": 39384
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1152,
+        2048
+      ],
+      "raw_sha256": "0a30542ad743cf565c0fce662f300fc27cad4e0674f8d3f582bcf8c31dbe5610"
+    },
+    {
+      "model": "bytedance-seed/seedream-5-0-pro",
+      "profile": "resolution-2K",
+      "track": "track2",
+      "resolution": "2K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 44.348,
+      "actual_cost_usd": 0.048,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/bytedance-seed--seedream-5-0-pro/resolution-2K/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "seed"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:51:53Z",
+      "generation_id": "gen-img-1791312713-4bbgj6s60uGeQ4UODjq9",
+      "generation_billing": {
+        "id": "gen-img-1791312713-4bbgj6s60uGeQ4UODjq9",
+        "model": "bytedance-seed/seedream-5-0-pro-20260812",
+        "provider_name": "Seed",
+        "total_cost": 0.048,
+        "created_at": "2026-10-06T18:51:53.6Z",
+        "generation_time": 43468
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1152,
+        2048
+      ],
+      "raw_sha256": "8505f4d210a3a953df139a18652c7320ead15cb56e43d70df7fbb89c192873b8"
+    },
+    {
+      "model": "bytedance-seed/seedream-5-0-lite",
+      "profile": "resolution-4K",
+      "track": "track3",
+      "resolution": "4K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 61.793,
+      "actual_cost_usd": 0.035,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/bytedance-seed--seedream-5-0-lite/resolution-4K/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "seed"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:52:00Z",
+      "generation_id": "gen-img-1791312720-HASfoXbus8cdOltWeLL9",
+      "generation_billing": {
+        "id": "gen-img-1791312720-HASfoXbus8cdOltWeLL9",
+        "model": "bytedance-seed/seedream-5-0-lite-20260812",
+        "provider_name": "Seed",
+        "total_cost": 0.035,
+        "created_at": "2026-10-06T18:52:00.402Z",
+        "generation_time": 60095
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        2304,
+        4096
+      ],
+      "raw_sha256": "ab6004c73ef1ca1965a5433f044194abd9008b1369904e0b58a17dedb7f16510"
+    },
+    {
+      "model": "bytedance-seed/seedream-5-0-lite",
+      "profile": "resolution-4K",
+      "track": "track2",
+      "resolution": "4K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 50.546,
+      "actual_cost_usd": 0.035,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/bytedance-seed--seedream-5-0-lite/resolution-4K/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "seed"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:52:38Z",
+      "generation_id": "gen-img-1791312758-52paZH6D7KBIVBJUe93n",
+      "generation_billing": {
+        "id": "gen-img-1791312758-52paZH6D7KBIVBJUe93n",
+        "model": "bytedance-seed/seedream-5-0-lite-20260812",
+        "provider_name": "Seed",
+        "total_cost": 0.035,
+        "created_at": "2026-10-06T18:52:38.474Z",
+        "generation_time": 48912
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        2304,
+        4096
+      ],
+      "raw_sha256": "156bc98407dcbeba81fb147f0853bb283a9ee730556591c24cc3e89951e0b89c"
+    },
+    {
+      "model": "google/gemini-nano-banana-2.1",
+      "profile": "resolution-2K",
+      "track": "track3",
+      "resolution": "2K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 33.841,
+      "actual_cost_usd": 0.060471,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/google--gemini-nano-banana-2.1/resolution-2K/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "google-ai-studio"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:53:02Z",
+      "generation_id": "gen-img-1791312782-YHjazB0y8SVYuykD5z1Y",
+      "generation_billing": {
+        "id": "gen-img-1791312782-YHjazB0y8SVYuykD5z1Y",
+        "model": "google/gemini-nano-banana-2.1-20261006",
+        "provider_name": "Google AI Studio",
+        "total_cost": 0.060471,
+        "created_at": "2026-10-06T18:53:02.564Z",
+        "generation_time": 31780
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1536,
+        2752
+      ],
+      "raw_sha256": "6722e619a40cde23d734e4172503cb96c9a6314e0a1c46bef7a9603496a24326"
+    },
+    {
+      "model": "google/gemini-nano-banana-2.1",
+      "profile": "resolution-2K",
+      "track": "track2",
+      "resolution": "2K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 25.274,
+      "actual_cost_usd": 0.0577035,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/google--gemini-nano-banana-2.1/resolution-2K/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "google-ai-studio"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:53:29Z",
+      "generation_id": "gen-img-1791312809-GEhW2l9eb2WjxWPxG4Ml",
+      "generation_billing": {
+        "id": "gen-img-1791312809-GEhW2l9eb2WjxWPxG4Ml",
+        "model": "google/gemini-nano-banana-2.1-20261006",
+        "provider_name": "Google AI Studio",
+        "total_cost": 0.0577035,
+        "created_at": "2026-10-06T18:53:29.407Z",
+        "generation_time": 23144
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1536,
+        2752
+      ],
+      "raw_sha256": "d7221de73d0b5784b9e6e6a5274b256f2f18e67aa73ac93d756f01514c24db93"
+    },
+    {
+      "model": "tencent/hy-image-v3.5-preview",
+      "profile": "resolution-1.5K",
+      "track": "track3",
+      "resolution": "1.5K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 24.496,
+      "actual_cost_usd": 0.024,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/tencent--hy-image-v3.5-preview/resolution-1.5K/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "tencent"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:53:36Z",
+      "generation_id": "gen-img-1791312816-RmLk71YaVeN8F1Jjpeg7",
+      "generation_billing": {
+        "id": "gen-img-1791312816-RmLk71YaVeN8F1Jjpeg7",
+        "model": "tencent/hy-image-v3.5-preview-20260922",
+        "provider_name": "Tencent",
+        "total_cost": 0.024,
+        "created_at": "2026-10-06T18:53:36.916Z",
+        "generation_time": 23164
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "442bac897efcd2960a3916aa6f123fa32f6a8ed6835d1490b9f203c4b8817e8a"
+    },
+    {
+      "model": "tencent/hy-image-v3.5-preview",
+      "profile": "resolution-1.5K",
+      "track": "track2",
+      "resolution": "1.5K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 30.711,
+      "actual_cost_usd": 0.024,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/tencent--hy-image-v3.5-preview/resolution-1.5K/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "tencent"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:53:54Z",
+      "generation_id": "gen-img-1791312835-UXwDdbwh8Kx871QG3pBd",
+      "generation_billing": {
+        "id": "gen-img-1791312835-UXwDdbwh8Kx871QG3pBd",
+        "model": "tencent/hy-image-v3.5-preview-20260922",
+        "provider_name": "Tencent",
+        "total_cost": 0.024,
+        "created_at": "2026-10-06T18:53:55.112Z",
+        "generation_time": 28229
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "426a67caa6a65579681c98c793dd93e2b2fadfd1bee2bd3293f00320c2322cd0"
+    },
+    {
+      "model": "bytedance-seed/seedream-5-0-flash",
+      "profile": "resolution-2K",
+      "track": "track3",
+      "resolution": "2K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 16.066,
+      "actual_cost_usd": 0.018,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/bytedance-seed--seedream-5-0-flash/resolution-2K/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "seed"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:54:01Z",
+      "generation_id": "gen-img-1791312841-fd3GwdEMEK5vP8S6wctz",
+      "generation_billing": {
+        "id": "gen-img-1791312841-fd3GwdEMEK5vP8S6wctz",
+        "model": "bytedance-seed/seedream-5-0-flash-20261001",
+        "provider_name": "Seed",
+        "total_cost": 0.018,
+        "created_at": "2026-10-06T18:54:01.975Z",
+        "generation_time": 15119
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1152,
+        2048
+      ],
+      "raw_sha256": "285fbdca4f3407d7e8d70065a7faf1e6839f3b86e9695b23f4a4aff8a9858d4c"
+    },
+    {
+      "model": "bytedance-seed/seedream-5-0-flash",
+      "profile": "resolution-2K",
+      "track": "track2",
+      "resolution": "2K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 15.075,
+      "actual_cost_usd": 0.018,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/bytedance-seed--seedream-5-0-flash/resolution-2K/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "seed"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:54:18Z",
+      "generation_id": "gen-img-1791312858-ZU1KFTZQarsDIeIbcTD9",
+      "generation_billing": {
+        "id": "gen-img-1791312858-ZU1KFTZQarsDIeIbcTD9",
+        "model": "bytedance-seed/seedream-5-0-flash-20261001",
+        "provider_name": "Seed",
+        "total_cost": 0.018,
+        "created_at": "2026-10-06T18:54:18.551Z",
+        "generation_time": 14136
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1152,
+        2048
+      ],
+      "raw_sha256": "6c9f36ce3e0d9ae78f92fcd47a88ce308e57acc137f098ff790dd2542e946c2f"
+    },
+    {
+      "model": "black-forest-labs/flux-3-image",
+      "profile": "resolution-1K",
+      "track": "track3",
+      "resolution": "1K",
+      "quality": null,
+      "status": "blocked_from_prior_filter",
+      "reused": false
+    },
+    {
+      "model": "black-forest-labs/flux-3-image",
+      "profile": "resolution-1K",
+      "track": "track2",
+      "resolution": "1K",
+      "quality": null,
+      "status": "completed",
+      "reused": true,
+      "elapsed_seconds": 69.079,
+      "actual_cost_usd": 0.024,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/flux/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "black-forest-labs"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:12:41Z",
+      "generation_id": "gen-img-1791310361-43730HtJZ7PuzGGhXe6p",
+      "generation_billing": {
+        "id": "gen-img-1791310361-43730HtJZ7PuzGGhXe6p",
+        "model": "black-forest-labs/flux-3-image-20261001",
+        "provider_name": "Black Forest Labs",
+        "total_cost": 0.024,
+        "created_at": "2026-10-06T18:12:41.878Z",
+        "generation_time": 67876
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        768,
+        1360
+      ],
+      "raw_sha256": "e910f6bd5a645216462d945972d41bfddfe4caecb54404f19646065cc409e3cb"
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "profile": "quality-low",
+      "track": "track3",
+      "resolution": null,
+      "quality": "low",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 20.533,
+      "actual_cost_usd": 0.020212,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-sunburst/quality-low/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:54:26Z",
+      "generation_id": "gen-img-1791312866-lMTfYmWTyIobVpjdinXl",
+      "generation_billing": {
+        "id": "gen-img-1791312866-lMTfYmWTyIobVpjdinXl",
+        "model": "openai/gpt-image-2.5-sunburst-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.020212,
+        "created_at": "2026-10-06T18:54:26.364Z",
+        "generation_time": 18951
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "0fee81a63d1abd7da26b8c93f0b4273f4c7d5b615f689c87ba294190f95104e1"
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "profile": "quality-low",
+      "track": "track2",
+      "resolution": null,
+      "quality": "low",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 18.221,
+      "actual_cost_usd": 0.020212,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-sunburst/quality-low/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:54:33Z",
+      "generation_id": "gen-img-1791312874-cfTzL6KJSlqOi9GHuI0b",
+      "generation_billing": {
+        "id": "gen-img-1791312874-cfTzL6KJSlqOi9GHuI0b",
+        "model": "openai/gpt-image-2.5-sunburst-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.020212,
+        "created_at": "2026-10-06T18:54:34.144Z",
+        "generation_time": 16853
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "b55307ce73367a64619ea5c8ffa3cff37285ddcf66d9312459f19016f33a5911"
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "profile": "quality-low",
+      "track": "track3",
+      "resolution": null,
+      "quality": "low",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 99.433,
+      "actual_cost_usd": 0.020212,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-flare/quality-low/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:54:47Z",
+      "generation_id": "gen-img-1791312887-YfjW5uN4tyvVt3n6M281",
+      "generation_billing": {
+        "id": "gen-img-1791312887-YfjW5uN4tyvVt3n6M281",
+        "model": "openai/gpt-image-2.5-flare-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.020212,
+        "created_at": "2026-10-06T18:54:47.41Z",
+        "generation_time": 98086
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "f9f226013fbbb540f5b87fcec8b907bc018402f5bc9cb37458913837e3988263"
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "profile": "quality-low",
+      "track": "track2",
+      "resolution": null,
+      "quality": "low",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 14.899,
+      "actual_cost_usd": 0.020212,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-flare/quality-low/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:54:52Z",
+      "generation_id": "gen-img-1791312892-g41cOdGBPaxCqCNobOe9",
+      "generation_billing": {
+        "id": "gen-img-1791312892-g41cOdGBPaxCqCNobOe9",
+        "model": "openai/gpt-image-2.5-flare-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.020212,
+        "created_at": "2026-10-06T18:54:52.958Z",
+        "generation_time": 13344
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "5d92662be654eca1253b24d74bb302bc89b1dca28b7f84f4b9043805d85967f0"
+    },
+    {
+      "model": "openai/gpt-image-2",
+      "profile": "quality-medium",
+      "track": "track3",
+      "resolution": null,
+      "quality": "medium",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 30.915,
+      "actual_cost_usd": 0.048852,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2/quality-medium/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:55:08Z",
+      "generation_id": "gen-img-1791312908-t3zMf6sViIXqG0hMtwYs",
+      "generation_billing": {
+        "id": "gen-img-1791312908-t3zMf6sViIXqG0hMtwYs",
+        "model": "openai/gpt-image-2",
+        "provider_name": "OpenAI",
+        "total_cost": 0.048852,
+        "created_at": "2026-10-06T18:55:08.328Z",
+        "generation_time": 29418
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "80178eb5ff04c55d8ffbe6b5c8bb37bbe6f0d6a0afdce35e6e55c341506a8102"
+    },
+    {
+      "model": "openai/gpt-image-2",
+      "profile": "quality-medium",
+      "track": "track2",
+      "resolution": null,
+      "quality": "medium",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 28.661,
+      "actual_cost_usd": 0.048852,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2/quality-medium/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:55:39Z",
+      "generation_id": "gen-img-1791312939-5wP4WTWFph0bGdio73o2",
+      "generation_billing": {
+        "id": "gen-img-1791312939-5wP4WTWFph0bGdio73o2",
+        "model": "openai/gpt-image-2",
+        "provider_name": "OpenAI",
+        "total_cost": 0.048852,
+        "created_at": "2026-10-06T18:55:39.834Z",
+        "generation_time": 27365
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "36ae749d405849802b429e3f969ca3c20747f2e6a604ce6b06f904c810e6047a"
+    },
+    {
+      "model": "x-ai/grok-imagine-image-2.0",
+      "profile": "resolution-2K__quality-low",
+      "track": "track3",
+      "resolution": "2K",
+      "quality": "low",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 16.947,
+      "actual_cost_usd": 0.08,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/x-ai--grok-imagine-image-2.0/resolution-2K__quality-low/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "xai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:56:08Z",
+      "generation_id": "gen-img-1791312969-Nlp2wItit2weaqL0ELCI",
+      "generation_billing": {
+        "id": "gen-img-1791312969-Nlp2wItit2weaqL0ELCI",
+        "model": "x-ai/grok-imagine-image-2.0-20260811",
+        "provider_name": "xAI",
+        "total_cost": 0.08,
+        "created_at": "2026-10-06T18:56:09.053Z",
+        "generation_time": 13899
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1584,
+        2816
+      ],
+      "raw_sha256": "ea3e7f78939db706bf842df2f8dfc008ffabac770a9da8f0b5b31ec40ae486c3"
+    },
+    {
+      "model": "x-ai/grok-imagine-image-2.0",
+      "profile": "resolution-2K__quality-low",
+      "track": "track2",
+      "resolution": "2K",
+      "quality": "low",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 16.939,
+      "actual_cost_usd": 0.08,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/x-ai--grok-imagine-image-2.0/resolution-2K__quality-low/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "xai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:56:26Z",
+      "generation_id": "gen-img-1791312987-8ZMacK4jiSDY61izxyIS",
+      "generation_billing": {
+        "id": "gen-img-1791312987-8ZMacK4jiSDY61izxyIS",
+        "model": "x-ai/grok-imagine-image-2.0-20260811",
+        "provider_name": "xAI",
+        "total_cost": 0.08,
+        "created_at": "2026-10-06T18:56:27.075Z",
+        "generation_time": 14909
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1584,
+        2816
+      ],
+      "raw_sha256": "d785cc7ed665b98378217653e8e3f3b206cae9f4605cf536e41c0d6bb56b1809"
+    },
+    {
+      "model": "google/gemini-nano-banana-2.1",
+      "profile": "resolution-4K",
+      "track": "track3",
+      "resolution": "4K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 33.166,
+      "actual_cost_usd": 0.119466,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/google--gemini-nano-banana-2.1/resolution-4K/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "google-ai-studio"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:56:26Z",
+      "generation_id": "gen-img-1791312987-PeQXEa9gv2rlXOtdWJhL",
+      "generation_billing": {
+        "id": "gen-img-1791312987-PeQXEa9gv2rlXOtdWJhL",
+        "model": "google/gemini-nano-banana-2.1-20261006",
+        "provider_name": "Google AI Studio",
+        "total_cost": 0.119466,
+        "created_at": "2026-10-06T18:56:27.268Z",
+        "generation_time": 28729
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        3072,
+        5504
+      ],
+      "raw_sha256": "fdbed04f0f1f0723edcbab2fc1d7a8b858f250ca9aa71a48a0352ea9a9c08075"
+    },
+    {
+      "model": "google/gemini-nano-banana-2.1",
+      "profile": "resolution-4K",
+      "track": "track2",
+      "resolution": "4K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 35.466,
+      "actual_cost_usd": 0.121521,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/google--gemini-nano-banana-2.1/resolution-4K/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "google-ai-studio"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:56:44Z",
+      "generation_id": "gen-img-1791313004-z83wvGgwCdR4MuaMdmh2",
+      "generation_billing": {
+        "id": "gen-img-1791313004-z83wvGgwCdR4MuaMdmh2",
+        "model": "google/gemini-nano-banana-2.1-20261006",
+        "provider_name": "Google AI Studio",
+        "total_cost": 0.121521,
+        "created_at": "2026-10-06T18:56:44.405Z",
+        "generation_time": 31437
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        3072,
+        5504
+      ],
+      "raw_sha256": "4347dd443c567bf00bc046d77e5d7eb989c2af399421abf58e5cf3459f504cfe"
+    },
+    {
+      "model": "tencent/hy-image-v3.5-preview",
+      "profile": "resolution-2K",
+      "track": "track3",
+      "resolution": "2K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 22.002,
+      "actual_cost_usd": 0.024,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/tencent--hy-image-v3.5-preview/resolution-2K/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "tencent"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:57:00Z",
+      "generation_id": "gen-img-1791313020-gnANE4Mzi9ov9HqtkILZ",
+      "generation_billing": {
+        "id": "gen-img-1791313020-gnANE4Mzi9ov9HqtkILZ",
+        "model": "tencent/hy-image-v3.5-preview-20260922",
+        "provider_name": "Tencent",
+        "total_cost": 0.024,
+        "created_at": "2026-10-06T18:57:00.813Z",
+        "generation_time": 20088
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1152,
+        2048
+      ],
+      "raw_sha256": "cb3029b86da5b296daccaae2bf1703670325f72f4b9fb1ad080ca88bb5fab063"
+    },
+    {
+      "model": "tencent/hy-image-v3.5-preview",
+      "profile": "resolution-2K",
+      "track": "track2",
+      "resolution": "2K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 28.388,
+      "actual_cost_usd": 0.024,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/tencent--hy-image-v3.5-preview/resolution-2K/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "tencent"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:57:20Z",
+      "generation_id": "gen-img-1791313040-AUbrv4UdepKjU2jFb7uj",
+      "generation_billing": {
+        "id": "gen-img-1791313040-AUbrv4UdepKjU2jFb7uj",
+        "model": "tencent/hy-image-v3.5-preview-20260922",
+        "provider_name": "Tencent",
+        "total_cost": 0.024,
+        "created_at": "2026-10-06T18:57:20.337Z",
+        "generation_time": 26498
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1152,
+        2048
+      ],
+      "raw_sha256": "033d18129d25c4c41da7c435b4bdea8ce03b88044079b42992383f3a5da2a09d"
+    },
+    {
+      "model": "black-forest-labs/flux-3-image",
+      "profile": "resolution-1.5K",
+      "track": "track3",
+      "resolution": "1.5K",
+      "quality": null,
+      "status": "blocked_from_prior_filter",
+      "reused": false
+    },
+    {
+      "model": "black-forest-labs/flux-3-image",
+      "profile": "resolution-1.5K",
+      "track": "track2",
+      "resolution": "1.5K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 138.942,
+      "actual_cost_usd": 0.035,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/black-forest-labs--flux-3-image/resolution-1.5K/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "black-forest-labs"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:57:22Z",
+      "generation_id": "gen-img-1791313043-7TcMUeLYMMPAilTvf6Kb",
+      "generation_billing": {
+        "id": "gen-img-1791313043-7TcMUeLYMMPAilTvf6Kb",
+        "model": "black-forest-labs/flux-3-image-20261001",
+        "provider_name": "Black Forest Labs",
+        "total_cost": 0.035,
+        "created_at": "2026-10-06T18:57:23.247Z",
+        "generation_time": 137140
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1152,
+        2048
+      ],
+      "raw_sha256": "7eedf1c759ea317262db528c490a6f1f5b92f5e5c65b56211e77321c5f2575b7"
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "profile": "quality-medium",
+      "track": "track3",
+      "resolution": null,
+      "quality": "medium",
+      "status": "completed",
+      "reused": true,
+      "elapsed_seconds": 22.774,
+      "actual_cost_usd": 0.025012,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/sunburst/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:13:50Z",
+      "generation_id": "gen-img-1791310431-ZVHt9mwPAmm5h9ZkeGXs",
+      "generation_billing": {
+        "id": "gen-img-1791310431-ZVHt9mwPAmm5h9ZkeGXs",
+        "model": "openai/gpt-image-2.5-sunburst-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.025012,
+        "created_at": "2026-10-06T18:13:51.238Z",
+        "generation_time": 20404
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "76a65b9e23d96d507aecae1021d5e32e6a3f9439ee7cb59526dc8c6fb8bb5dc4"
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "profile": "quality-medium",
+      "track": "track2",
+      "resolution": null,
+      "quality": "medium",
+      "status": "completed",
+      "reused": true,
+      "elapsed_seconds": 23.339,
+      "actual_cost_usd": 0.025012,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/sunburst/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:14:14Z",
+      "generation_id": "gen-img-1791310454-nl6WzG2CJZl8GAF9kJEd",
+      "generation_billing": {
+        "id": "gen-img-1791310454-nl6WzG2CJZl8GAF9kJEd",
+        "model": "openai/gpt-image-2.5-sunburst-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.025012,
+        "created_at": "2026-10-06T18:14:14.528Z",
+        "generation_time": 21821
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "df1aeaeaee2514a1703f607289a36de522bbe080c17b434e630ca1cde4924eb0"
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "profile": "quality-medium",
+      "track": "track3",
+      "resolution": null,
+      "quality": "medium",
+      "status": "completed",
+      "reused": true,
+      "elapsed_seconds": 15.137,
+      "actual_cost_usd": 0.025012,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/flare/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:14:38Z",
+      "generation_id": "gen-img-1791310478-mLbKazIScWixdCcQfjw5",
+      "generation_billing": {
+        "id": "gen-img-1791310478-mLbKazIScWixdCcQfjw5",
+        "model": "openai/gpt-image-2.5-flare-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.025012,
+        "created_at": "2026-10-06T18:14:38.459Z",
+        "generation_time": 13612
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "67f85cf399a075dced4a56efa75f4749c0fc9d81e340b741e2d36663fb1edaf3"
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "profile": "quality-medium",
+      "track": "track2",
+      "resolution": null,
+      "quality": "medium",
+      "status": "completed",
+      "reused": true,
+      "elapsed_seconds": 15.544,
+      "actual_cost_usd": 0.025012,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/kehribar/flare/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:14:53Z",
+      "generation_id": "gen-img-1791310494-8XXENlzT4fHlmRZ5H7n4",
+      "generation_billing": {
+        "id": "gen-img-1791310494-8XXENlzT4fHlmRZ5H7n4",
+        "model": "openai/gpt-image-2.5-flare-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.025012,
+        "created_at": "2026-10-06T18:14:54.18Z",
+        "generation_time": 14053
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "6a0eae98a6d80e5950136d6f881bc509d4308941e736bfe4a1451466d2f0496d"
+    },
+    {
+      "model": "openai/gpt-image-2",
+      "profile": "quality-high",
+      "track": "track3",
+      "resolution": null,
+      "quality": "high",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 76.352,
+      "actual_cost_usd": 0.145872,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2/quality-high/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:57:48Z",
+      "generation_id": "gen-img-1791313069-1jv8oF6aINEntWGbuOmR",
+      "generation_billing": {
+        "id": "gen-img-1791313069-1jv8oF6aINEntWGbuOmR",
+        "model": "openai/gpt-image-2",
+        "provider_name": "OpenAI",
+        "total_cost": 0.145872,
+        "created_at": "2026-10-06T18:57:49.257Z",
+        "generation_time": 74580
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "1a4b363ce6aaa13b0a2c0b5f74aed7b87ccc1e8f5e812ea3283d8a8c50694d9e"
+    },
+    {
+      "model": "openai/gpt-image-2",
+      "profile": "quality-high",
+      "track": "track2",
+      "resolution": null,
+      "quality": "high",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 75.626,
+      "actual_cost_usd": 0.145872,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2/quality-high/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:59:05Z",
+      "generation_id": "gen-img-1791313146-TZYtpr8CalAMmMH2SOhv",
+      "generation_billing": {
+        "id": "gen-img-1791313146-TZYtpr8CalAMmMH2SOhv",
+        "model": "openai/gpt-image-2",
+        "provider_name": "OpenAI",
+        "total_cost": 0.145872,
+        "created_at": "2026-10-06T18:59:06.241Z",
+        "generation_time": 74099
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "0fb4285fd2221fde99a51eff26912cc4918a86175f46f4f2af5165cbef5a0536"
+    },
+    {
+      "model": "x-ai/grok-imagine-image-2.0",
+      "profile": "resolution-2K__quality-medium",
+      "track": "track3",
+      "resolution": "2K",
+      "quality": "medium",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 20.138,
+      "actual_cost_usd": 0.1,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/x-ai--grok-imagine-image-2.0/resolution-2K__quality-medium/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "xai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T18:59:42Z",
+      "generation_id": "gen-img-1791313182-srkc9KtO9qd7MBQhNc1m",
+      "generation_billing": {
+        "id": "gen-img-1791313182-srkc9KtO9qd7MBQhNc1m",
+        "model": "x-ai/grok-imagine-image-2.0-20260811",
+        "provider_name": "xAI",
+        "total_cost": 0.1,
+        "created_at": "2026-10-06T18:59:42.671Z",
+        "generation_time": 17693
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1584,
+        2816
+      ],
+      "raw_sha256": "e3f20057ef1b02dbd0bfba6098367a1c75effcc8a9bcd7f7e533504368c4c657"
+    },
+    {
+      "model": "x-ai/grok-imagine-image-2.0",
+      "profile": "resolution-2K__quality-medium",
+      "track": "track2",
+      "resolution": "2K",
+      "quality": "medium",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 21.562,
+      "actual_cost_usd": 0.1,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/x-ai--grok-imagine-image-2.0/resolution-2K__quality-medium/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "xai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T19:00:03Z",
+      "generation_id": "gen-img-1791313203-HBSW8Eh9NxfdGV9ndmKR",
+      "generation_billing": {
+        "id": "gen-img-1791313203-HBSW8Eh9NxfdGV9ndmKR",
+        "model": "x-ai/grok-imagine-image-2.0-20260811",
+        "provider_name": "xAI",
+        "total_cost": 0.1,
+        "created_at": "2026-10-06T19:00:03.311Z",
+        "generation_time": 19220
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1584,
+        2816
+      ],
+      "raw_sha256": "8895cca1e5a27c19816f4cf98cf9b0b891729a99f839426d7ecd91e2fedf060d"
+    },
+    {
+      "model": "tencent/hy-image-v3.5-preview",
+      "profile": "resolution-4K",
+      "track": "track3",
+      "resolution": "4K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 46.771,
+      "actual_cost_usd": 0.032,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/tencent--hy-image-v3.5-preview/resolution-4K/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "tencent"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T19:00:22Z",
+      "generation_id": "gen-img-1791313222-XWWe0pLOSUIhaz2tGdNE",
+      "generation_billing": {
+        "id": "gen-img-1791313222-XWWe0pLOSUIhaz2tGdNE",
+        "model": "tencent/hy-image-v3.5-preview-20260922",
+        "provider_name": "Tencent",
+        "total_cost": 0.032,
+        "created_at": "2026-10-06T19:00:22.348Z",
+        "generation_time": 42309
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        2304,
+        4096
+      ],
+      "raw_sha256": "c492b9a9aade3ce6f47e6433bb8dd5990e7454ba4d238c7a6c083dfb0749496d"
+    },
+    {
+      "model": "tencent/hy-image-v3.5-preview",
+      "profile": "resolution-4K",
+      "track": "track2",
+      "resolution": "4K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 49.317,
+      "actual_cost_usd": 0.032,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/tencent--hy-image-v3.5-preview/resolution-4K/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "tencent"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T19:00:24Z",
+      "generation_id": "gen-img-1791313225-ADfj7nu5erCYTOPfq3k5",
+      "generation_billing": {
+        "id": "gen-img-1791313225-ADfj7nu5erCYTOPfq3k5",
+        "model": "tencent/hy-image-v3.5-preview-20260922",
+        "provider_name": "Tencent",
+        "total_cost": 0.032,
+        "created_at": "2026-10-06T19:00:25.313Z",
+        "generation_time": 45219
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        2304,
+        4096
+      ],
+      "raw_sha256": "bd4e8c0327b2733af3753afde8f4b780c37482bfd1ad4ea121bf8694db610b98"
+    },
+    {
+      "model": "black-forest-labs/flux-3-image",
+      "profile": "resolution-2K",
+      "track": "track3",
+      "resolution": "2K",
+      "quality": null,
+      "status": "blocked_from_prior_filter",
+      "reused": false
+    },
+    {
+      "model": "black-forest-labs/flux-3-image",
+      "profile": "resolution-2K",
+      "track": "track2",
+      "resolution": "2K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 102.519,
+      "actual_cost_usd": 0.05,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/black-forest-labs--flux-3-image/resolution-2K/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "black-forest-labs"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T19:01:09Z",
+      "generation_id": "gen-img-1791313270-GZr6vmrUYJYPG7c6o0RZ",
+      "generation_billing": {
+        "id": "gen-img-1791313270-GZr6vmrUYJYPG7c6o0RZ",
+        "model": "black-forest-labs/flux-3-image-20261001",
+        "provider_name": "Black Forest Labs",
+        "total_cost": 0.05,
+        "created_at": "2026-10-06T19:01:10.216Z",
+        "generation_time": 100306
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        1536,
+        2736
+      ],
+      "raw_sha256": "50007121043eb247606da2d1c66d698d3f8c502db586ddb0901f416ad29dc7f7"
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "profile": "quality-high",
+      "track": "track3",
+      "resolution": null,
+      "quality": "high",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 34.487,
+      "actual_cost_usd": 0.048952,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-sunburst/quality-high/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T19:01:14Z",
+      "generation_id": "gen-img-1791313275-RCRJ3A2P7JyGDPJ9aIcr",
+      "generation_billing": {
+        "id": "gen-img-1791313275-RCRJ3A2P7JyGDPJ9aIcr",
+        "model": "openai/gpt-image-2.5-sunburst-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.048952,
+        "created_at": "2026-10-06T19:01:15.1Z",
+        "generation_time": 33054
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "9719cc36a7f53301124a45bba907d5ebf7464751ea6f8472205ec2d335849fa7"
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "profile": "quality-high",
+      "track": "track2",
+      "resolution": null,
+      "quality": "high",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 34.524,
+      "actual_cost_usd": 0.048952,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-sunburst/quality-high/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T19:01:49Z",
+      "generation_id": "gen-img-1791313310-jx0VFF7JZvYqUTfG8hAk",
+      "generation_billing": {
+        "id": "gen-img-1791313310-jx0VFF7JZvYqUTfG8hAk",
+        "model": "openai/gpt-image-2.5-sunburst-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.048952,
+        "created_at": "2026-10-06T19:01:50.07Z",
+        "generation_time": 33004
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "581659d06d0fbd54bff2252b1b2a4c4eaee8395d61fa058efc1594c58867122e"
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "profile": "quality-high",
+      "track": "track3",
+      "resolution": null,
+      "quality": "high",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 20.469,
+      "actual_cost_usd": 0.048952,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-flare/quality-high/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T19:02:24Z",
+      "generation_id": "gen-img-1791313345-iBm8v4Wm5fMYjYCBIDxs",
+      "generation_billing": {
+        "id": "gen-img-1791313345-iBm8v4Wm5fMYjYCBIDxs",
+        "model": "openai/gpt-image-2.5-flare-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.048952,
+        "created_at": "2026-10-06T19:02:25.131Z",
+        "generation_time": 18660
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "afd87892cd12c1e2b2eb4d9e4c25760beaa7e087965151a360e6207a0a496c61"
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "profile": "quality-high",
+      "track": "track2",
+      "resolution": null,
+      "quality": "high",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 20.71,
+      "actual_cost_usd": 0.048952,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-flare/quality-high/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T19:02:45Z",
+      "generation_id": "gen-img-1791313366-aoPlJG9dnAqomExN0Etu",
+      "generation_billing": {
+        "id": "gen-img-1791313366-aoPlJG9dnAqomExN0Etu",
+        "model": "openai/gpt-image-2.5-flare-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.048952,
+        "created_at": "2026-10-06T19:02:46.159Z",
+        "generation_time": 19270
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "5acdbb4bac1ffef5fbef4c028683ca54a6277a1ad7fb6a047cb5154d874e2a3e"
+    },
+    {
+      "model": "black-forest-labs/flux-3-image",
+      "profile": "resolution-4K",
+      "track": "track3",
+      "resolution": "4K",
+      "quality": null,
+      "status": "blocked_from_prior_filter",
+      "reused": false
+    },
+    {
+      "model": "black-forest-labs/flux-3-image",
+      "profile": "resolution-4K",
+      "track": "track2",
+      "resolution": "4K",
+      "quality": null,
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 207.273,
+      "actual_cost_usd": 0.3035,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/black-forest-labs--flux-3-image/resolution-4K/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "black-forest-labs"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T19:02:52Z",
+      "generation_id": "gen-img-1791313372-s6naZjmwnZolvpz3xrxg",
+      "generation_billing": {
+        "id": "gen-img-1791313372-s6naZjmwnZolvpz3xrxg",
+        "model": "black-forest-labs/flux-3-image-20261001",
+        "provider_name": "Black Forest Labs",
+        "total_cost": 0.3035,
+        "created_at": "2026-10-06T19:02:52.491Z",
+        "generation_time": 201851
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        3072,
+        5456
+      ],
+      "raw_sha256": "f91c1d0b5a224d52e2b9dfbda0a25797511030dea99bce65ec9a53a93b64ece0"
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "profile": "quality-xhigh",
+      "track": "track3",
+      "resolution": null,
+      "quality": "xhigh",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 43.339,
+      "actual_cost_usd": 0.074122,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-sunburst/quality-xhigh/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T19:03:06Z",
+      "generation_id": "gen-img-1791313387-7kiN1XPMrO9eLo8U0YlA",
+      "generation_billing": {
+        "id": "gen-img-1791313387-7kiN1XPMrO9eLo8U0YlA",
+        "model": "openai/gpt-image-2.5-sunburst-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.074122,
+        "created_at": "2026-10-06T19:03:07.302Z",
+        "generation_time": 41901
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "64b43a6932c3691e7783ffd950c39a77cf533d5f52e085af871d628c524eaa43"
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "profile": "quality-xhigh",
+      "track": "track2",
+      "resolution": null,
+      "quality": "xhigh",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 46.407,
+      "actual_cost_usd": 0.074122,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-sunburst/quality-xhigh/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T19:03:50Z",
+      "generation_id": "gen-img-1791313431-LIW6oRSjAv6NLzPxfsQB",
+      "generation_billing": {
+        "id": "gen-img-1791313431-LIW6oRSjAv6NLzPxfsQB",
+        "model": "openai/gpt-image-2.5-sunburst-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.074122,
+        "created_at": "2026-10-06T19:03:51.15Z",
+        "generation_time": 45062
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "4e8346919a55faace5cc7848dbe06622a31a46e5cd664c28ed9f7448d0ca436b"
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "profile": "quality-xhigh",
+      "track": "track3",
+      "resolution": null,
+      "quality": "xhigh",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 35.714,
+      "actual_cost_usd": 0.074122,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-flare/quality-xhigh/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T19:04:37Z",
+      "generation_id": "gen-img-1791313477-6T4BIGQ9v7bjP9IyKStd",
+      "generation_billing": {
+        "id": "gen-img-1791313477-6T4BIGQ9v7bjP9IyKStd",
+        "model": "openai/gpt-image-2.5-flare-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.074122,
+        "created_at": "2026-10-06T19:04:37.97Z",
+        "generation_time": 34119
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "162b5ed6d881103a21155d6e10c91ad52ba829860cd2f3a4dd7bd5128173e866"
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "profile": "quality-xhigh",
+      "track": "track2",
+      "resolution": null,
+      "quality": "xhigh",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 27.766,
+      "actual_cost_usd": 0.074122,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-flare/quality-xhigh/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T19:05:13Z",
+      "generation_id": "gen-img-1791313514-MAmmJ36I4FefeZCdAYBg",
+      "generation_billing": {
+        "id": "gen-img-1791313514-MAmmJ36I4FefeZCdAYBg",
+        "model": "openai/gpt-image-2.5-flare-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.074122,
+        "created_at": "2026-10-06T19:05:14.218Z",
+        "generation_time": 24545
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "34c44220fc2825dfab39d56f095957494d66e88086176a116b329572353bdf7d"
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "profile": "quality-max",
+      "track": "track3",
+      "resolution": null,
+      "quality": "max",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 82.715,
+      "actual_cost_usd": 0.145972,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-sunburst/quality-max/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T19:05:42Z",
+      "generation_id": "gen-img-1791313542-AFs9KTzg140lt6IgiD8m",
+      "generation_billing": {
+        "id": "gen-img-1791313542-AFs9KTzg140lt6IgiD8m",
+        "model": "openai/gpt-image-2.5-sunburst-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.145972,
+        "created_at": "2026-10-06T19:05:42.63Z",
+        "generation_time": 81234
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "019aecab7f35fc88b169459d722764aec73a9cb9af82fa87e6942eea73557441"
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "profile": "quality-max",
+      "track": "track2",
+      "resolution": null,
+      "quality": "max",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 83.076,
+      "actual_cost_usd": 0.145972,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-sunburst/quality-max/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T19:06:19Z",
+      "generation_id": "gen-img-1791313580-O1mxQuH05wISLMDmKgCh",
+      "generation_billing": {
+        "id": "gen-img-1791313580-O1mxQuH05wISLMDmKgCh",
+        "model": "openai/gpt-image-2.5-sunburst-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.145972,
+        "created_at": "2026-10-06T19:06:20.116Z",
+        "generation_time": 80785
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "4f20b18d071d4fe57df25f9764ee779c120f04006d37f74928a8e72e48b9a5f5"
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "profile": "quality-max",
+      "track": "track3",
+      "resolution": null,
+      "quality": "max",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 42.064,
+      "actual_cost_usd": 0.145972,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-flare/quality-max/track3",
+      "reference_count": 2,
+      "source_sha256": "463d3b03495acf8dd70bd8c1a4fe1277811460baf3598a4181c4111736021d3b",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T19:07:05Z",
+      "generation_id": "gen-img-1791313625-9GRDd08OtVHU3McATamp",
+      "generation_billing": {
+        "id": "gen-img-1791313625-9GRDd08OtVHU3McATamp",
+        "model": "openai/gpt-image-2.5-flare-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.145972,
+        "created_at": "2026-10-06T19:07:05.948Z",
+        "generation_time": 40665
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "72ba142ae635b3abc5ae186f53172578b466e32d1637c3a5cd24435b77cd14ad"
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "profile": "quality-max",
+      "track": "track2",
+      "resolution": null,
+      "quality": "max",
+      "status": "completed",
+      "reused": false,
+      "elapsed_seconds": 41.082,
+      "actual_cost_usd": 0.145972,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "error": null,
+      "directory": "experiments/openrouter_outpaint/results/2026-10-06/zeytin/openai--gpt-image-2.5-flare/quality-max/track2",
+      "reference_count": 2,
+      "source_sha256": "f62dee82c686d9e6e6788c9ece62f5fea20f383cbf93fdde2939e7d763ca9139",
+      "provider": {
+        "only": [
+          "openai"
+        ],
+        "allow_fallbacks": false
+      },
+      "created_utc": "2026-10-06T19:07:43Z",
+      "generation_id": "gen-img-1791313663-WXmmqzBiR96rTK5TobTo",
+      "generation_billing": {
+        "id": "gen-img-1791313663-WXmmqzBiR96rTK5TobTo",
+        "model": "openai/gpt-image-2.5-flare-20260908",
+        "provider_name": "OpenAI",
+        "total_cost": 0.145972,
+        "created_at": "2026-10-06T19:07:43.663Z",
+        "generation_time": 39016
+      },
+      "billing_matches_response": true,
+      "raw_dimensions": [
+        864,
+        1536
+      ],
+      "raw_sha256": "5b047a0acbb212440fac85f7411ef19dc144ee58376fa400ccb88dbfe8e9e1db"
+    }
+  ],
+  "status_counts": {
+    "completed": 91,
+    "http_error": 2,
+    "blocked_from_prior_filter": 5
+  },
+  "new_charge_usd": 4.7298115,
+  "comparison_charge_including_reused_usd": 5.0227115,
+  "per_model_new_usd": {
+    "openai/gpt-image-2": 0.503436,
+    "google/gemini-3.1-flash-lite-image": 0.068419,
+    "krea/krea-2-medium-turbo": 0.03,
+    "krea/krea-2-medium": 0.06,
+    "krea/krea-2-large": 0.12,
+    "microsoft/mai-image-2.5-pro": 0.23765,
+    "qwen/qwen-image-3": 0.144,
+    "qwen/qwen-image-3-pro": 0.254,
+    "x-ai/grok-imagine-image-2.0": 0.64,
+    "bytedance-seed/seedream-5-0-pro": 0.192,
+    "bytedance-seed/seedream-5-0-lite": 0.14,
+    "microsoft/mai-image-2.6": 0.052277,
+    "microsoft/mai-image-2.6-flash": 0.023708,
+    "black-forest-labs/flux-3-image": 0.409,
+    "openai/gpt-image-2.5-sunburst": 0.64768,
+    "openai/gpt-image-2.5-flare": 0.65248,
+    "google/gemini-nano-banana-2.1": 0.3591615,
+    "tencent/hy-image-v3.5-preview": 0.16,
+    "bytedance-seed/seedream-5-0-flash": 0.036
+  },
+  "per_model_including_reused_usd": {
+    "openai/gpt-image-2": 0.503436,
+    "google/gemini-3.1-flash-lite-image": 0.068419,
+    "krea/krea-2-medium-turbo": 0.03,
+    "krea/krea-2-medium": 0.06,
+    "krea/krea-2-large": 0.12,
+    "microsoft/mai-image-2.5-pro": 0.23765,
+    "qwen/qwen-image-3": 0.144,
+    "qwen/qwen-image-3-pro": 0.254,
+    "x-ai/grok-imagine-image-2.0": 0.64,
+    "bytedance-seed/seedream-5-0-pro": 0.192,
+    "bytedance-seed/seedream-5-0-lite": 0.14,
+    "microsoft/mai-image-2.6": 0.052277,
+    "microsoft/mai-image-2.6-flash": 0.023708,
+    "google/gemini-nano-banana-2.1": 0.4440135,
+    "tencent/hy-image-v3.5-preview": 0.208,
+    "bytedance-seed/seedream-5-0-flash": 0.072,
+    "black-forest-labs/flux-3-image": 0.433,
+    "openai/gpt-image-2.5-sunburst": 0.697704,
+    "openai/gpt-image-2.5-flare": 0.702504
+  },
+  "key_usage_usd": 5.0227115,
+  "new_account_delta_usd": 4.7298115,
+  "new_costs_reconcile": true,
+  "unknown_cost_attempts": [],
+  "quality_selection_owner": "user",
+  "notes": [
+    "Raw output images, no source paste or color finishing.",
+    "Single sample per cover and setting; not a general quality benchmark.",
+    "Auto is provider-selected quality. Native resolution tiers can have different actual dimensions.",
+    "Reused outputs incur no additional charge in this stage. Prior filtered cells are not new attempts.",
+    "Credit purchase fees, tax and training costs excluded.",
+    "Training and redistribution eligibility not established."
+  ]
+}
