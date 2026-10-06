@@ -1,0 +1,113 @@
+{
+  "raw_sha256": "87b65ddd2847048ac3a71f0d66966bfdffd2b5498db60b4961586a939ddce205",
+  "source_sha256": "29d6e26983bb95387cfffe1671128ac8121e835f7898d26635e3f06b8a6f55c8",
+  "arms": {
+    "exact": {
+      "mode": "exact",
+      "applied": false,
+      "near_black_bypass": false,
+      "strip_pixels": 96,
+      "sigma_x": 6,
+      "residual_cap_255": 24,
+      "color_residual": null,
+      "checks": {
+        "source_pixels_exact": true,
+        "untouched_outer_pixels_exact": true,
+        "generated_changed_pixel_fraction": 0.0,
+        "generated_mean_abs_change_255": 0.0,
+        "top_join_mean_abs_adjacent_row_jump_255": 8.856770833333334,
+        "bottom_join_mean_abs_adjacent_row_jump_255": 24.447265625,
+        "collar_horizontal_gradient_energy_ratio": 1.0,
+        "rgb_clipped_low_fraction_in_generated": 0.0007436116536458333,
+        "rgb_clipped_high_fraction_in_generated": 3.4586588541666666e-05,
+        "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality."
+      },
+      "seconds": 0.03959766699699685,
+      "limitation": "Color correction only; incorrect objects, clothing and geometry remain."
+    },
+    "cinar96": {
+      "mode": "color",
+      "applied": true,
+      "near_black_bypass": false,
+      "strip_pixels": 96,
+      "sigma_x": 6,
+      "residual_cap_255": 24,
+      "color_residual": {
+        "top": {
+          "residual_mean_rgb": [
+            2.30348539352417,
+            -9.191452026367188,
+            -3.817652940750122
+          ],
+          "residual_abs_p95_255": 18.03426742553711,
+          "residual_max_255": 23.196752548217773
+        },
+        "bottom": {
+          "residual_mean_rgb": [
+            0.5421335101127625,
+            -0.019108057022094727,
+            2.962862014770508
+          ],
+          "residual_abs_p95_255": 24.0,
+          "residual_max_255": 24.0
+        }
+      },
+      "checks": {
+        "source_pixels_exact": true,
+        "untouched_outer_pixels_exact": true,
+        "generated_changed_pixel_fraction": 0.2751312255859375,
+        "generated_mean_abs_change_255": 0.9503885904947916,
+        "top_join_mean_abs_adjacent_row_jump_255": 2.3033854166666665,
+        "bottom_join_mean_abs_adjacent_row_jump_255": 20.397135416666668,
+        "collar_horizontal_gradient_energy_ratio": 0.9996502525313441,
+        "rgb_clipped_low_fraction_in_generated": 0.0016591389973958333,
+        "rgb_clipped_high_fraction_in_generated": 2.5431315104166668e-05,
+        "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality."
+      },
+      "seconds": 0.048573291998764034,
+      "limitation": "Color correction only; incorrect objects, clothing and geometry remain."
+    },
+    "wide192": {
+      "mode": "color",
+      "applied": true,
+      "near_black_bypass": false,
+      "strip_pixels": 192,
+      "sigma_x": 6,
+      "residual_cap_255": 24,
+      "color_residual": {
+        "top": {
+          "residual_mean_rgb": [
+            2.30348539352417,
+            -9.191452026367188,
+            -3.817652940750122
+          ],
+          "residual_abs_p95_255": 18.03426742553711,
+          "residual_max_255": 23.196752548217773
+        },
+        "bottom": {
+          "residual_mean_rgb": [
+            0.5421335101127625,
+            -0.019108057022094727,
+            2.962862014770508
+          ],
+          "residual_abs_p95_255": 24.0,
+          "residual_max_255": 24.0
+        }
+      },
+      "checks": {
+        "source_pixels_exact": true,
+        "untouched_outer_pixels_exact": true,
+        "generated_changed_pixel_fraction": 0.543438720703125,
+        "generated_mean_abs_change_255": 1.5979604085286458,
+        "top_join_mean_abs_adjacent_row_jump_255": 2.29296875,
+        "bottom_join_mean_abs_adjacent_row_jump_255": 20.384114583333332,
+        "collar_horizontal_gradient_energy_ratio": 0.9994740378820373,
+        "rgb_clipped_low_fraction_in_generated": 0.0022298177083333332,
+        "rgb_clipped_high_fraction_in_generated": 1.4241536458333334e-05,
+        "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality."
+      },
+      "seconds": 0.047366250000777654,
+      "limitation": "Color correction only; incorrect objects, clothing and geometry remain."
+    }
+  }
+}
