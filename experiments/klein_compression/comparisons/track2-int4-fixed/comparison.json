@@ -1,0 +1,15 @@
+{
+  "baseline": "experiments/klein_outpaint/runs/2026-10-06/track2-base12-baked-q4-sequential-decode",
+  "candidate": "experiments/klein_compression/runs/2026-10-06/track2-int4-fixed",
+  "track": "track2",
+  "seed": 42,
+  "raw_pixel_exact": true,
+  "outside_mae_255": 0.0,
+  "outside_rmse_255": 0.0,
+  "outside_changed_pixel_fraction": 0.0,
+  "outside_max_channel_difference": 0.0,
+  "visual_quality_accepted": null,
+  "limitation": "Pixel differences do not measure semantic correctness; inspect both arms.",
+  "compression_quality_preserved_on_this_pair": true,
+  "visual_review": "Exact raw parity. Existing failure remains: the printed tote-bag graphic on the shirt becomes a real bag below the original cover. Compression adds no degradation, but the baseline is not generally accepted."
+}
