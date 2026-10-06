@@ -1,0 +1,56 @@
+{
+  "mode": "color",
+  "applied": true,
+  "near_black_bypass": false,
+  "strip_pixels": 96,
+  "sigma_x": 6,
+  "residual_cap_255": 24,
+  "color_residual": {
+    "top": {
+      "residual_mean_rgb": [
+        2.7848012447357178,
+        -7.110118865966797,
+        -1.5132784843444824
+      ],
+      "residual_abs_p95_255": 16.800457000732422,
+      "residual_max_255": 22.646087646484375
+    },
+    "bottom": {
+      "residual_mean_rgb": [
+        -1.1069660186767578,
+        2.500704765319824,
+        5.291557312011719
+      ],
+      "residual_abs_p95_255": 24.0,
+      "residual_max_255": 24.0
+    }
+  },
+  "checks": {
+    "source_pixels_exact": true,
+    "untouched_outer_pixels_exact": true,
+    "generated_changed_pixel_fraction": 0.2764556884765625,
+    "generated_mean_abs_change_255": 0.9211496988932292,
+    "top_join_mean_abs_adjacent_row_jump_255": 2.0227864583333335,
+    "bottom_join_mean_abs_adjacent_row_jump_255": 21.615234375,
+    "collar_horizontal_gradient_energy_ratio": 0.9995748841613694,
+    "rgb_clipped_low_fraction_in_generated": 0.0008046468098958333,
+    "rgb_clipped_high_fraction_in_generated": 8.138020833333333e-06,
+    "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality."
+  },
+  "seconds": 0.056747708003968,
+  "limitation": "Color correction only; incorrect objects, clothing and geometry remain.",
+  "exact_baseline_checks": {
+    "source_pixels_exact": true,
+    "untouched_outer_pixels_exact": true,
+    "generated_changed_pixel_fraction": 0.0,
+    "generated_mean_abs_change_255": 0.0,
+    "top_join_mean_abs_adjacent_row_jump_255": 7.71484375,
+    "bottom_join_mean_abs_adjacent_row_jump_255": 25.688151041666668,
+    "collar_horizontal_gradient_energy_ratio": 1.0,
+    "rgb_clipped_low_fraction_in_generated": 0.00023600260416666667,
+    "rgb_clipped_high_fraction_in_generated": 2.13623046875e-05,
+    "metric_limit": "Row jump is photometric only; gradient energy is not rail continuity or scene quality."
+  },
+  "raw_sha256": "22c4ef68451ed0ccd9b08d02b1bcc25d0efbd92cfc77b46a77aa7a410915ecc0",
+  "semantic_quality_accepted": false
+}
