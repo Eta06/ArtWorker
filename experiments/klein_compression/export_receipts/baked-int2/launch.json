@@ -1,0 +1,24 @@
+{
+  "status": "completed",
+  "command": [
+    "experiments/qwen/.venv/bin/python",
+    "experiments/klein_outpaint/prepare_native_q4.py",
+    "--model",
+    "base",
+    "--bake-outpaint",
+    "--bits",
+    "2"
+  ],
+  "footprint_limit_bytes": 2147483648,
+  "swap_growth_limit_bytes": 268435456,
+  "timeout_seconds": 120.0,
+  "sample_interval_seconds": 0.1,
+  "initial_swap_bytes": 0,
+  "pid": 6829,
+  "stop_reason": "complete",
+  "exit_code": 0,
+  "elapsed_seconds": 4.3951422499994806,
+  "peak_sampled_rss_bytes": 720994304,
+  "peak_sampled_phys_footprint_bytes": 1045742888,
+  "measurement_note": "RSS and phys_footprint overlap; do not add them. Process-group sums can double-count shared memory. Sampling is not a kernel-enforced limit."
+}
