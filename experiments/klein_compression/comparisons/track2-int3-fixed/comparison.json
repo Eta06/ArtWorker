@@ -1,0 +1,15 @@
+{
+  "baseline": "experiments/klein_outpaint/runs/2026-10-06/track2-base12-baked-q4-sequential-decode",
+  "candidate": "experiments/klein_compression/runs/2026-10-06/track2-int3-fixed",
+  "track": "track2",
+  "seed": 42,
+  "raw_pixel_exact": false,
+  "outside_mae_255": 39.33273696899414,
+  "outside_rmse_255": 52.332035064697266,
+  "outside_changed_pixel_fraction": 1.0,
+  "outside_max_channel_difference": 221.0,
+  "visual_quality_accepted": false,
+  "limitation": "Pixel differences do not measure semantic correctness; inspect both arms.",
+  "compression_quality_preserved_on_this_pair": false,
+  "visual_review": "Rejected: strong green contamination in both generated regions and sharp horizontal seams; the lower body/bag continuation is lost."
+}
