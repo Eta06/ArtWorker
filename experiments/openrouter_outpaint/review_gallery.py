@@ -53,7 +53,9 @@ def render_gallery(rows: list[dict], results: Path, ledger: dict, status: str) -
     data = json.dumps(entries, ensure_ascii=False).replace('<', '\\u003c')
     values = {'TITLE': 'ArtWorker · Zeytin', 'STATUS': html.escape(status),
               'COST': f'{ledger["new_charge_usd"]:.7f}', 'MODELS': model_options,
-              'CARDS': ''.join(cards), 'ORIGINALS': ''.join(originals), 'ENTRIES': data}
+              'CARDS': ''.join(cards), 'ORIGINALS': ''.join(originals), 'ENTRIES': data,
+              'FIDELITY': ('<p style="max-width:1600px;margin:0 auto;padding:0 28px 14px"><a href="fidelity/">Ana kapağa sadakat raporu →</a></p>'
+                           if (results / 'fidelity/index.html').is_file() else '')}
     for name, value in values.items():
         template = template.replace('{{' + name + '}}', value)
     (results / 'index.html').write_text(template)
