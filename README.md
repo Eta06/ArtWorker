@@ -9,6 +9,7 @@ There is no released trained ArtWorker model or visually accepted production out
 - [Sedef: first publication and experiment archive](docs/stages/sedef.md)
 - [Koza: fixed-instruction and low-bit compression results](docs/stages/koza.md)
 - [Ardıç: five-cover hosted teacher consistency and actual costs](docs/stages/ardic.md)
+- [Defne: 1,000 private source covers and a 100-cover pilot](docs/stages/defne.md)
 - [Model artifacts and redistribution](docs/MODEL_ARTIFACTS.md)
 
 ## Contribution and publication workflow
