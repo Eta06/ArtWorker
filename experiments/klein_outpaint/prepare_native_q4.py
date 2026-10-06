@@ -1,4 +1,4 @@
-"""Tensor-wise BFL -> Swift MLX native int4 export, without a dense model load.
+"""Tensor-wise BFL -> Swift MLX native low-bit export, without a dense model load.
 
 Matches the pinned runtime's BFL mapping, including QKV splitting and final
 scale/shift row order. The runtime must still validate every key/shape before
@@ -54,7 +54,11 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", choices=["base", "distilled"], default="base")
     parser.add_argument("--bake-outpaint", action="store_true")
+    parser.add_argument("--bits", type=int, choices=[2,3,4], default=4)
+    parser.add_argument("--quant-profile", choices=["uniform", "mlp3"], default="uniform")
     args = parser.parse_args()
+    if args.quant_profile == "mlp3" and (args.bits != 4 or not args.bake_outpaint or args.model != "base"):
+        parser.error("mlp3 requires baked base INT4")
     import mlx.core as mx
     import numpy as np
     mx.set_cache_limit(0)
@@ -67,6 +71,11 @@ def main():
     applied = set()
     if args.bake_outpaint:
         adapter = ROOT / ".build/models/flux2-outpaint-lora/flux-outpaint-lora.safetensors"
+        adapter_record = json.loads((ROOT / "experiments/klein_outpaint/download_manifest.json").read_text())
+        with adapter.open("rb") as adapter_stream:
+            adapter_digest = hashlib.file_digest(adapter_stream, "sha256").hexdigest()
+        if adapter_digest != adapter_record["expected_sha256"]:
+            raise ValueError("Adapter checksum differs from the pinned download manifest")
         arrays = mx.load(str(adapter))
         for key in arrays:
             if not key.endswith(".lora_A.weight"):
@@ -80,7 +89,7 @@ def main():
         if len(pairs) != 88:
             raise ValueError(f"Expected 88 mapped adapter pairs, got {len(pairs)}")
         # Separate model root prevents overwriting or disguising the unbaked cache.
-        baked_root = ROOT / ".build/models/flux2-outpaint-baked"
+        baked_root = ROOT / (".build/models/flux2-outpaint-baked" + ("-mlp3" if args.quant_profile == "mlp3" else ""))
         source_dir = baked_root / "black-forest-labs" / original_source_dir.name
         source_dir.mkdir(parents=True, exist_ok=True)
         for item in original_source_dir.iterdir():
@@ -99,16 +108,18 @@ def main():
             link = baked_root / "black-forest-labs" / child.name
             if not link.exists():
                 link.symlink_to(child.resolve(), target_is_directory=child.is_dir())
-    destination = source_dir / "mlx-prequantized/int4/transformer.safetensors"
+    destination = source_dir / f"mlx-prequantized/int{args.bits}/transformer.safetensors"
     if destination.exists():
         raise FileExistsError("An export already exists; it must be validated rather than overwritten")
     destination.parent.mkdir(parents=True, exist_ok=True)
     scratch = destination.with_suffix(".partial-data")
     temporary = destination.with_suffix(".partial")
     stat = source.stat()
-    metadata = {"format": "flux2-mlx-prequantized-v1", "quantization": "int4", "bits": "4", "group_size": "64",
+    metadata = {"format": "flux2-mlx-prequantized-v1", "quantization": f"int{args.bits}", "bits": str(args.bits), "group_size": "64",
         "mode": "affine", "component": "transformer", "source": source_dir.name,
         "source_fingerprint": f"{source.name}:{stat.st_size}:{int(stat.st_mtime)}", "created_by": "ArtWorker tensor-wise native exporter"}
+    if args.quant_profile != "uniform":
+        metadata["artworker_quant_profile"] = args.quant_profile
     if args.bake_outpaint:
         metadata.update(lora_baked="true", lora_source="fal/flux-2-klein-4B-outpaint-lora", lora_scale="1.1")
     entries = {"__metadata__": metadata}
@@ -137,7 +148,11 @@ def main():
                         tensor = tensor + 1.1 * mx.matmul(b, a)
                         applied.add(name)
                     if tensor.ndim == 2:
-                        packed, scales, biases = mx.quantize(tensor, group_size=64, bits=4)
+                        module = name.removesuffix(".weight")
+                        use_three = args.quant_profile == "mlp3" and (
+                            (module.startswith("transformerBlocks.") and (".ff." in module or ".ffContext." in module))
+                            or (module.startswith("singleTransformerBlocks.") and module.endswith(".attn.toOut")))
+                        packed, scales, biases = mx.quantize(tensor, group_size=64, bits=3 if use_three else args.bits)
                         tensors = {name: packed, name.removesuffix(".weight") + ".scales": scales,
                             name.removesuffix(".weight") + ".biases": biases}
                     else:
@@ -177,12 +192,20 @@ def main():
             digest.update(chunk)
     record = {"model": args.model, "source_file": source.name, "source_bytes": stat.st_size,
         "file": str(destination.relative_to(ROOT)), "bytes": destination.stat().st_size, "sha256": digest.hexdigest(),
-        "tensor_count": len(entries) - 1, "method": "tensor-wise native int4, all Linear matrices, QKV split, swapped final scale/shift",
+        "tensor_count": len(entries) - 1, "method": f"tensor-wise native int{args.bits}, all Linear matrices, QKV split, swapped final scale/shift",
         "license": "Apache-2.0 upstream", "lora_baked": args.bake_outpaint,
-        "adapter_pairs_applied": len(applied), "merge_method": "FP16 source + FP16 adapter, then one INT4 quantization" if args.bake_outpaint else None,
-        "runtime_validation": "pending"}
+        "adapter_pairs_applied": len(applied), "merge_method": f"FP16 source + FP16 adapter, then one INT{args.bits} quantization" if args.bake_outpaint else None,
+        "runtime_validation": "pending", "source_repo": "black-forest-labs/FLUX.2-klein-base-4B" if args.model == "base" else "black-forest-labs/FLUX.2-klein-4B", "source_revision": "a3b4f4849157f664bdbc776fd7453c2783562f4d" if args.model == "base" else "e7b7dc27f91deacad38e78976d1f2b499d76a294"}
+    if args.bake_outpaint:
+        record.update(adapter_repo=adapter_record["repo_id"], adapter_revision=adapter_record["revision"],
+                      adapter_sha256=adapter_digest, adapter_license=adapter_record["license"])
     suffix = "_outpaint_baked" if args.bake_outpaint else ""
-    (ROOT / f"experiments/klein_outpaint/native_q4_{args.model}{suffix}_manifest.json").write_text(json.dumps(record, indent=2) + "\n")
+    if args.quant_profile != "uniform":
+        suffix += "_" + args.quant_profile
+        record["quant_profile"] = args.quant_profile
+        record["method"] = "MLP/output projection INT3; attention input, modulation, timestep and other matrices INT4; group64"
+        record["merge_method"] = "FP16 source + FP16 adapter, then one per-layer INT3/INT4 quantization"
+    (ROOT / f"experiments/klein_outpaint/native_q{args.bits}_{args.model}{suffix}_manifest.json").write_text(json.dumps(record, indent=2) + "\n")
     print(json.dumps(record))
 
 
