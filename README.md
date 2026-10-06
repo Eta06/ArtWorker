@@ -7,6 +7,7 @@ There is no released trained ArtWorker model or visually accepted production out
 - [Public repository](https://github.com/Eta06/ArtWorker)
 - [ChatGPT Space progress Page](https://chatgpt.com/space/page_eeabd8711884819189a662a8a09e9290)
 - [Sedef: first publication and experiment archive](docs/stages/sedef.md)
+- [Koza: fixed-instruction and low-bit compression results](docs/stages/koza.md)
 - [Model artifacts and redistribution](docs/MODEL_ARTIFACTS.md)
 
 ## Contribution and publication workflow
