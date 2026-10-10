@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "stage": "kekik",
+  "candidates": [
+    {
+      "id": "anchored",
+      "hypothesis": "Preserve the previous placement-constrained candidate unchanged.",
+      "prompt": "Outpaint this artwork to a 9:16 portrait. Keep the entire original square unchanged, centered and spanning the full output width. Generate scene continuations only above and below it. Do not zoom out, recompose, redraw or independently resize anything inside the original artwork. Preserve faces, text, logos, clothing, colors, texture, lighting and perspective. Printed graphics must remain printed graphics, not become real objects. Join the extensions seamlessly without blurred or mirrored copies."
+    },
+    {
+      "id": "canvas-only",
+      "hypothesis": "A concise instruction to enlarge the canvas, rather than redraw the image.",
+      "prompt": "Expand the canvas of this square artwork to 9:16. Retain the complete reference artwork as one unchanged square; generate only the missing surroundings beyond its edges. Preserve every existing face, object, letter, logo, color and texture. Extend the existing scene naturally across the edges. No cropping, redesign, replacement text, blur or mirroring."
+    },
+    {
+      "id": "free-layout",
+      "hypothesis": "Explicitly allow asymmetric margins and global resizing while forbidding changes inside the source.",
+      "prompt": "Extend this artwork into a seamless 9:16 portrait. Preserve the entire original square as an intact reference region. You may position it anywhere within the output and uniformly scale the whole square to fit; unequal margins on all four sides are allowed. Do not crop, repaint, move individual elements, remove text or logos, or change faces, clothing, colors or texture within that region. Generate coherent continuations outside it, matching the scene, lighting and perspective."
+    },
+    {
+      "id": "edge-continuity",
+      "hypothesis": "Prioritize source preservation and continuation across each existing edge without fixing placement.",
+      "prompt": "Outpaint the supplied artwork to a 9:16 portrait while keeping its entire square image unchanged and fully visible. Continue only what already crosses its edges: surfaces, lines, lighting, shadows, clothing and background, with matching color and texture. Keep every original word, logo, face and printed design exactly as supplied. Printed graphics remain flat printed graphics. Allow asymmetric extensions around the square. Do not reinterpret, enhance or redraw the reference; do not add replacement lettering or duplicate the source."
+    },
+    {
+      "id": "verbatim",
+      "hypothesis": "Make the original square an immutable pasted-image region without requiring a colored layout reference.",
+      "prompt": "Create a 9:16 expanded version of this album artwork. Treat the complete original square like a photograph pasted onto a larger canvas: retain its contents verbatim, including small logos, lettering, faces, hands and clothing prints. Only create new image content beyond its borders, blending the continuation naturally with its existing edges. The source square may be offset rather than centered. Do not recreate the original picture from scratch, crop any part of it, or change its internal proportions or colors."
+    },
+    {
+      "id": "copy-square",
+      "hypothesis": "Test a literal copy instruction and top/bottom-only generation after pixel-art and logo preservation failures; no pixel-lock capability is assumed.",
+      "prompt": "Place the supplied square artwork unchanged in the middle of a 9:16 canvas at full canvas width. Copy the reference instead of recreating it. Preserve all pixels within that square: the exact shapes, proportions, text, logos and colors. Generate only the new top and bottom strips, continuing the existing background or scene from its edges. Do not enhance, restyle or redraw the square. The final image must fill the entire canvas naturally; no visible borders, padding, solid placeholder bars, mirrored copies or blur."
+    }
+  ]
+}
