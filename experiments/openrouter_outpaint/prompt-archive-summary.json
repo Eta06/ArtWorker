@@ -1,0 +1,133 @@
+{
+  "stage": "mersin",
+  "scope": "Local OpenRouter and direct Google teacher receipts",
+  "new_provider_requests": 0,
+  "new_generation_cost_usd": 0,
+  "receipt_count": 176,
+  "exact_prompt_count": 9,
+  "model_count": 19,
+  "existing_image_count": 151,
+  "status_counts": {
+    "completed": 151,
+    "http_error": 24,
+    "completed_output_unavailable": 1
+  },
+  "prompts": [
+    {
+      "id": "old-canvas",
+      "title": "Eski kaliteli referans · canvas + kare",
+      "prompt": "Outpaint the album artwork into one seamless portrait image, aspect ratio 9:16. Reference 1 is the target layout: a 720x1280 canvas containing the original 720x720 square at x=0, y=280, with solid green placeholder areas above and below. Reference 2 is the original square artwork. Keep that square centered, full width, at the same scale and position. Replace only the green placeholders with natural continuations of the existing scene. Preserve the original square's composition, people, faces, text, logos, color, grain, lighting and perspective. Continue lines, surfaces, shadows and clothing across both boundaries without visible seams or sudden color changes. Printed graphics on clothing must stay printed graphics, not become real objects. Do not add new people, new lettering, borders, gradients, blurred copies, mirrored copies or green tint. Return the complete expanded image, not a new cover.",
+      "sha256": "736716dd0146c1cbda160d21c6615dbe78e494a6e98dc779cb94701bd006efc8",
+      "request_count": 108,
+      "models": [
+        "black-forest-labs/flux-3-image",
+        "bytedance-seed/seedream-5-0-flash",
+        "bytedance-seed/seedream-5-0-lite",
+        "bytedance-seed/seedream-5-0-pro",
+        "google/gemini-3.1-flash-lite-image",
+        "google/gemini-nano-banana-2.1",
+        "microsoft/mai-image-2.6",
+        "microsoft/mai-image-2.6-flash",
+        "openai/gpt-image-2",
+        "openai/gpt-image-2.5-flare",
+        "openai/gpt-image-2.5-sunburst",
+        "qwen/qwen-image-3",
+        "qwen/qwen-image-3-pro",
+        "tencent/hy-image-v3.5-preview",
+        "x-ai/grok-imagine-image-2.0"
+      ]
+    },
+    {
+      "id": "old-canvas-single",
+      "title": "Eski canvas · tek referans sürümü",
+      "prompt": "Outpaint the album artwork into one seamless portrait image, aspect ratio 9:16. Reference 1 is the target layout: a 720x1280 canvas containing the original 720x720 square at x=0, y=280, with solid green placeholder areas above and below. Keep that square centered, full width, at the same scale and position. Replace only the green placeholders with natural continuations of the existing scene. Preserve the original square's composition, people, faces, text, logos, color, grain, lighting and perspective. Continue lines, surfaces, shadows and clothing across both boundaries without visible seams or sudden color changes. Printed graphics on clothing must stay printed graphics, not become real objects. Do not add new people, new lettering, borders, gradients, blurred copies, mirrored copies or green tint. Return the complete expanded image, not a new cover.",
+      "sha256": "0d0954887ac4fc564014dcdae75c56cd899d00dd2928d30df5c4cc0022802098",
+      "request_count": 8,
+      "models": [
+        "krea/krea-2-large",
+        "krea/krea-2-medium",
+        "krea/krea-2-medium-turbo",
+        "microsoft/mai-image-2.5-pro"
+      ]
+    },
+    {
+      "id": "short",
+      "title": "Kısa prompt · yalnız kare",
+      "prompt": "Extend this square artwork into a seamless 9:16 portrait image by generating the surrounding scene. Keep the original artwork unchanged, fully visible and at the same proportions. Match its colors, lighting, texture and perspective.",
+      "sha256": "57e23e2c63465c56616bbc6a133ba68491fde0c467e63c4530529c5c9c90d8d9",
+      "request_count": 17,
+      "models": [
+        "google/gemini-nano-banana-2.1",
+        "openai/gpt-image-2.5-flare",
+        "openai/gpt-image-2.5-sunburst"
+      ]
+    },
+    {
+      "id": "anchored",
+      "title": "Anchored · ortada ve tam genişlikte",
+      "prompt": "Outpaint this artwork to a 9:16 portrait. Keep the entire original square unchanged, centered and spanning the full output width. Generate scene continuations only above and below it. Do not zoom out, recompose, redraw or independently resize anything inside the original artwork. Preserve faces, text, logos, clothing, colors, texture, lighting and perspective. Printed graphics must remain printed graphics, not become real objects. Join the extensions seamlessly without blurred or mirrored copies.",
+      "sha256": "0ea1042aa4d31e95cd0ca43eefe9a36ef71acd26e27e13d11cffb20dfa41792d",
+      "request_count": 13,
+      "models": [
+        "google/gemini-nano-banana-2.1",
+        "openai/gpt-image-2.5-flare",
+        "openai/gpt-image-2.5-sunburst"
+      ]
+    },
+    {
+      "id": "canvas-only",
+      "title": "Canvas-only · kısa genişletme talimatı",
+      "prompt": "Expand the canvas of this square artwork to 9:16. Retain the complete reference artwork as one unchanged square; generate only the missing surroundings beyond its edges. Preserve every existing face, object, letter, logo, color and texture. Extend the existing scene naturally across the edges. No cropping, redesign, replacement text, blur or mirroring.",
+      "sha256": "fcc477d3cb829cf30ed263aca6e36985f50839344edececae895f65215056184",
+      "request_count": 4,
+      "models": [
+        "openai/gpt-image-2.5-flare",
+        "openai/gpt-image-2.5-sunburst"
+      ]
+    },
+    {
+      "id": "free-layout",
+      "title": "Free-layout · serbest konum ve ölçek",
+      "prompt": "Extend this artwork into a seamless 9:16 portrait. Preserve the entire original square as an intact reference region. You may position it anywhere within the output and uniformly scale the whole square to fit; unequal margins on all four sides are allowed. Do not crop, repaint, move individual elements, remove text or logos, or change faces, clothing, colors or texture within that region. Generate coherent continuations outside it, matching the scene, lighting and perspective.",
+      "sha256": "bfbaac7acc25f01a7e84eeb2dd0711ce12b3b2f530c98aae1443e301255129cd",
+      "request_count": 4,
+      "models": [
+        "openai/gpt-image-2.5-flare",
+        "openai/gpt-image-2.5-sunburst"
+      ]
+    },
+    {
+      "id": "edge-continuity",
+      "title": "Edge-continuity · kenar devamlılığı",
+      "prompt": "Outpaint the supplied artwork to a 9:16 portrait while keeping its entire square image unchanged and fully visible. Continue only what already crosses its edges: surfaces, lines, lighting, shadows, clothing and background, with matching color and texture. Keep every original word, logo, face and printed design exactly as supplied. Printed graphics remain flat printed graphics. Allow asymmetric extensions around the square. Do not reinterpret, enhance or redraw the reference; do not add replacement lettering or duplicate the source.",
+      "sha256": "b7739772145590901d503d3194784f91c7874476b39784fc345ca1a6a6b9fab1",
+      "request_count": 10,
+      "models": [
+        "openai/gpt-image-2.5-flare",
+        "openai/gpt-image-2.5-sunburst"
+      ]
+    },
+    {
+      "id": "verbatim",
+      "title": "Verbatim · kaynak içeriğini aynen tut",
+      "prompt": "Create a 9:16 expanded version of this album artwork. Treat the complete original square like a photograph pasted onto a larger canvas: retain its contents verbatim, including small logos, lettering, faces, hands and clothing prints. Only create new image content beyond its borders, blending the continuation naturally with its existing edges. The source square may be offset rather than centered. Do not recreate the original picture from scratch, crop any part of it, or change its internal proportions or colors.",
+      "sha256": "72e54111518205f60f822f66ac80a18d638579301705258d93549ff378ec93c9",
+      "request_count": 4,
+      "models": [
+        "openai/gpt-image-2.5-flare",
+        "openai/gpt-image-2.5-sunburst"
+      ]
+    },
+    {
+      "id": "copy-square",
+      "title": "Copy-square · kareyi kopyala",
+      "prompt": "Place the supplied square artwork unchanged in the middle of a 9:16 canvas at full canvas width. Copy the reference instead of recreating it. Preserve all pixels within that square: the exact shapes, proportions, text, logos and colors. Generate only the new top and bottom strips, continuing the existing background or scene from its edges. Do not enhance, restyle or redraw the square. The final image must fill the entire canvas naturally; no visible borders, padding, solid placeholder bars, mirrored copies or blur.",
+      "sha256": "c3ec80dee1f216f2a34fdf532338952c2aa6490e805ff73e798fb61937165ccc",
+      "request_count": 8,
+      "models": [
+        "openai/gpt-image-2.5-flare",
+        "openai/gpt-image-2.5-sunburst"
+      ]
+    }
+  ]
+}
