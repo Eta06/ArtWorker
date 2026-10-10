@@ -1,0 +1,77 @@
+{
+  "stage": "papatya",
+  "date": "2026-10-11",
+  "currency": "USD",
+  "new_attempt_count": 5,
+  "successful_image_count": 2,
+  "rows": [
+    {
+      "model": "google/gemini-nano-banana-2.1",
+      "profile": "1K",
+      "status": "http_error",
+      "actual_cost_usd": 0,
+      "cost_source": "key_delta_reconciled_http_error",
+      "http_status": 402,
+      "attempt": 1,
+      "protocol": "square",
+      "error_category": "provider_prepaid_credits_depleted"
+    },
+    {
+      "model": "google/gemini-nano-banana-2.1",
+      "profile": "1K",
+      "status": "http_error",
+      "actual_cost_usd": 0,
+      "cost_source": "key_delta_reconciled_http_error",
+      "http_status": 402,
+      "attempt": 2,
+      "protocol": "square",
+      "error_category": "provider_prepaid_credits_depleted"
+    },
+    {
+      "model": "google/gemini-nano-banana-2.1",
+      "profile": "1K",
+      "status": "http_error",
+      "actual_cost_usd": 0,
+      "cost_source": "key_delta_reconciled_http_error",
+      "http_status": 402,
+      "attempt": 3,
+      "protocol": "square",
+      "error_category": "provider_prepaid_credits_depleted"
+    },
+    {
+      "model": "openai/gpt-image-2.5-sunburst",
+      "profile": "high / square-anchored",
+      "status": "completed",
+      "actual_cost_usd": 0.041082,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "attempt": 4,
+      "protocol": "square-anchored",
+      "error_category": null
+    },
+    {
+      "model": "openai/gpt-image-2.5-flare",
+      "profile": "high / square-anchored",
+      "status": "completed",
+      "actual_cost_usd": 0.041082,
+      "cost_source": "generation.total_cost",
+      "http_status": null,
+      "attempt": 5,
+      "protocol": "square-anchored",
+      "error_category": null
+    }
+  ],
+  "new_charge_usd": 0.082164,
+  "settled_account_delta_usd": 0.082164,
+  "costs_reconcile": true,
+  "unknown_cost_count": 0,
+  "per_model_usd": {
+    "google/gemini-nano-banana-2.1": 0,
+    "openai/gpt-image-2.5-sunburst": 0.041082,
+    "openai/gpt-image-2.5-flare": 0.041082
+  },
+  "notes": [
+    "Six reused historical images are excluded from new charges.",
+    "Successful generation.total_cost values agree with settled account counters; all three HTTP 402 attempts cost zero."
+  ]
+}
