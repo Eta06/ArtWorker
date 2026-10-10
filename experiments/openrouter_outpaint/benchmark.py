@@ -60,13 +60,22 @@ SQUARE_PROMPT = (
     "the surrounding scene. Keep the original artwork unchanged, fully visible "
     "and at the same proportions. Match its colors, lighting, texture and perspective."
 )
+ANCHORED_SQUARE_PROMPT = (
+    "Outpaint this artwork to a 9:16 portrait. Keep the entire original square "
+    "unchanged, centered and spanning the full output width. Generate scene "
+    "continuations only above and below it. Do not zoom out, recompose, redraw "
+    "or independently resize anything inside the original artwork. Preserve "
+    "faces, text, logos, clothing, colors, texture, lighting and perspective. "
+    "Printed graphics must remain printed graphics, not become real objects. "
+    "Join the extensions seamlessly without blurred or mirrored copies."
+)
 
 
 def reference_spec(mode: str, maximum: int) -> tuple[tuple[str, ...], str]:
     if maximum < 1:
         raise ValueError("This endpoint does not accept source images")
-    if mode == "square":
-        return ("source.png",), SQUARE_PROMPT
+    if mode in {"square", "square-anchored"}:
+        return ("source.png",), SQUARE_PROMPT if mode == "square" else ANCHORED_SQUARE_PROMPT
     names = ("input.png", "source.png") if maximum >= 2 else ("input.png",)
     return names, PROMPT if len(names) == 2 else PROMPT.replace(
         "Reference 2 is the original square artwork. ", "")
@@ -151,8 +160,8 @@ def main() -> None:
     parser.add_argument("--resolution", help="A supported native resolution tier")
     parser.add_argument("--quality", help="A supported native quality tier, including auto")
     parser.add_argument("--request-timeout", type=float, default=240)
-    parser.add_argument("--input-mode", choices=["canvas", "square"], default="canvas",
-                        help="Square sends only the cover with a short extension prompt")
+    parser.add_argument("--input-mode", choices=["canvas", "square", "square-anchored"], default="canvas",
+                        help="Square modes send only the cover; square-anchored explicitly requests full-width centered placement")
     args = parser.parse_args()
     out = args.output
     out.mkdir(parents=True, exist_ok=True)
