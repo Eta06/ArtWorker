@@ -97,7 +97,10 @@ API reference: [OpenRouter Image API](https://openrouter.ai/docs/guides/overview
 
 ## Publication
 
-Five source/document/anonymous-cost files, one changed file per `filiz:` commit,
-grouped in one memory-guarded push. No AI trailers, media or credentials. Record
-verified publication and the current experimental limits in the existing ArtWorker
-Space Page.
+The initial five source/document/anonymous-cost files were published as five
+single-file `filiz:` commits in one guarded push (`a7faf98`). Subsequent live
+fidelity inspection exposed an absent CSV export linked by the shared template.
+Added the CSV writer, then regenerated the report without new paid requests and
+checked its six-row export. This corrective two-file publication uses two further
+single-file commits and one guarded push. No AI trailers, media or credentials.
+Record verified publication and the experimental limits in the existing Space Page.
