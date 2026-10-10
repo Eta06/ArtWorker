@@ -162,7 +162,17 @@ def main() -> None:
     parser.add_argument("--request-timeout", type=float, default=240)
     parser.add_argument("--input-mode", choices=["canvas", "square", "square-anchored"], default="canvas",
                         help="Square modes send only the cover; square-anchored explicitly requests full-width centered placement")
+    parser.add_argument("--prompt-file", type=Path, help="UTF-8 experimental prompt; square reference modes only")
+    parser.add_argument("--automatic-routing", action="store_true",
+                        help="Let OpenRouter choose routing instead of pinning the discovered provider")
     args = parser.parse_args()
+    custom_prompt = None
+    if args.prompt_file:
+        if args.input_mode == "canvas":
+            parser.error("Custom prompts require a square-only reference mode")
+        custom_prompt = args.prompt_file.read_text(encoding="utf-8").strip()
+        if not custom_prompt or len(custom_prompt.encode('utf-8')) > 6000:
+            parser.error("Custom prompt must contain 1–6000 UTF-8 bytes")
     out = args.output
     out.mkdir(parents=True, exist_ok=True)
     if (out / "receipt.json").exists():
@@ -176,11 +186,15 @@ def main() -> None:
     if max_references < 1:
         raise SystemExit("This endpoint does not accept source images; no paid outpaint request sent")
     names, prompt = reference_spec(args.input_mode, max_references)
+    if custom_prompt is not None:
+        prompt = custom_prompt
     payload = {"model": args.model, "prompt": prompt,
                "aspect_ratio": "9:16", "input_references": [
                    {"type": "image_url", "image_url": {"url": data_url(out / name)}}
                    for name in names],
                "provider": {"only": [endpoint["provider_tag"]], "allow_fallbacks": False}}
+    if args.automatic_routing:
+        payload.pop('provider')
     if "n" in supported:
         payload["n"] = 1
     if "resolution" in supported:
