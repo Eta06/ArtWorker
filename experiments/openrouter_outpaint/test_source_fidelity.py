@@ -8,7 +8,7 @@ import cv2
 import numpy as np
 from PIL import Image, ImageDraw
 
-from source_fidelity import SIDE, expected_rect, metrics, register, square_at
+from source_fidelity import SIDE, expected_rect, metrics, register, square_at, _register
 from benchmark import ROOT, prepare, request_json
 
 
@@ -124,6 +124,39 @@ class FidelityControls(unittest.TestCase):
         self.assertEqual(d['status'], 'unavailable')
         self.assertIsNone(aligned)
         self.assertIsNone(valid)
+
+    def test_sift_fallback_recovers_known_geometry(self):
+        a = reference()
+        transform = np.float32([[.72,0,65],[0,.72,110]])
+        output = cv2.warpAffine(a,transform,(512,910))
+        unavailable = ({'status':'unavailable','reason':'forced ORB miss'},None,None)
+        original = _register
+        def detector(reference, output, rect, layout_free, method):
+            return unavailable if method == 'orb' else original(reference,output,rect,layout_free,method)
+        with patch('source_fidelity._register',side_effect=detector):
+            result, aligned, valid = register(a,output,(0,199,512,711),True)
+        self.assertEqual(result['status'],'measured',result)
+        self.assertEqual(result['method'],'sift')
+        self.assertAlmostEqual(result['scale_relative_to_expected'],.72,delta=.01)
+        self.assertAlmostEqual(result['matrix_source_to_output'][0][2],65,delta=1)
+        self.assertAlmostEqual(result['matrix_source_to_output'][1][2],110,delta=1)
+
+    def test_fallback_rejects_match_only_in_top_half(self):
+        a = reference()
+        output=np.zeros((910,512,3),np.uint8)
+        output[199:455]=a[:256]
+        result,aligned,valid=register(a,output,(0,199,512,711),True)
+        self.assertEqual(result['status'],'unavailable',result)
+        self.assertIsNone(aligned)
+        self.assertIsNone(valid)
+        self.assertEqual(result['fallback_diagnostic']['status'],'unavailable')
+
+    def test_fallback_does_not_accept_unrelated_texture(self):
+        a=reference()
+        output=np.random.default_rng(702).integers(0,256,(910,512,3),dtype=np.uint8)
+        result,aligned,valid=register(a,output,(0,199,512,711),True)
+        self.assertEqual(result['status'],'unavailable',result)
+        self.assertIsNone(aligned)
 
     def test_asymmetric_placement_without_center_penalty(self):
         a = reference()
