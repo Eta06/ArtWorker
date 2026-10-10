@@ -61,7 +61,7 @@ def render_gallery(rows: list[dict], results: Path, ledger: dict, status: str,
     values = {'TITLE': 'ArtWorker · '+html.escape(stage.capitalize()), 'STATUS': html.escape(status),
               'STAGE_JSON': json.dumps(stage).replace('<', '\\u003c'),
               'TRACKS': ''.join('<option value="'+html.escape(t)+'">'+html.escape(c)+'</option>' for t,c in covers.items()),
-              'COST': f'{ledger["new_charge_usd"]:.7f}', 'MODELS': model_options,
+        'COST': f'${ledger["new_charge_usd"]:.7f}' if ledger.get('new_charge_usd') is not None else 'Doğrulanmadı', 'MODELS': model_options,
               'CARDS': ''.join(cards), 'ORIGINALS': ''.join(originals), 'ENTRIES': data,
               'FIDELITY': ('<p style="max-width:1600px;margin:0 auto;padding:0 28px 14px"><a href="fidelity/">Ana kapağa sadakat raporu →</a></p>'
                            if (results / 'fidelity/index.html').is_file() else '')}
