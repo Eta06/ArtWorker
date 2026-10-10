@@ -51,7 +51,10 @@ def main() -> None:
     parser.add_argument('--key-file', type=Path)
     parser.add_argument('--run', action='store_true')
     parser.add_argument('--budget-usd', type=Decimal, default=Decimal('2'))
+    parser.add_argument('--models', nargs='+', choices=[m for m,_,_ in PROFILES],
+                        help='Run only these models in a fresh trial; existing receipts remain untouched')
     args = parser.parse_args()
+    profiles = [p for p in PROFILES if args.models is None or p[0] in args.models]
     sources = json.loads(args.sources.read_text())
     if not re.fullmatch(r'[a-z][a-z0-9-]*', args.stage):
         parser.error('Unsafe stage name')
@@ -70,7 +73,7 @@ def main() -> None:
     batch_path = results/'batch.json'
     protocol = dict(stage=args.stage, sources_sha256=sha(args.sources),
                     input_mode='square', prompt=SQUARE_PROMPT,
-                    profiles=PROFILES, aspect_ratio='9:16')
+                    profiles=profiles, aspect_ratio='9:16')
     # Round-trip tuples to JSON lists before protocol comparison.
     protocol = json.loads(json.dumps(protocol))
     if batch_path.exists():
@@ -80,7 +83,7 @@ def main() -> None:
     else:
         state = dict(protocol=protocol, status='prepared_no_requests', cells=[])
         for source in sources:
-            for model, quality, resolution in PROFILES:
+            for model, quality, resolution in profiles:
                 directory = results/'outputs'/source['id']/model.split('/')[-1]/(quality or resolution)
                 directory.mkdir(parents=True)
                 prepare(source['id'], directory, ROOT/source['source_file'])
@@ -146,7 +149,7 @@ def main() -> None:
                   costs_reconcile=delta == known if delta is not None else None,
                   status_counts=dict(Counter(r['status'] for r in rows)),
                   per_model_usd={m:float(sum((Decimal(str(r['actual_cost_usd'])) for r in rows
-                    if r['model']==m and r.get('actual_cost_usd') is not None),Decimal(0))) for m,_,_ in PROFILES},
+                    if r['model']==m and r.get('actual_cost_usd') is not None),Decimal(0))) for m,_,_ in profiles},
                   unknown_cost_count=sum(r['status'] != 'pending' and r.get('actual_cost_usd') is None for r in rows))
     save_json(results/'ledger.json', ledger)
     labels = {s['id']:s['title'] for s in sources}
