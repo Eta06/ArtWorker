@@ -1,0 +1,43 @@
+{
+  "stage": "yonca",
+  "date": "2026-10-11",
+  "currency": "USD",
+  "model": "google/gemini-nano-banana-2.1",
+  "profile": "1K",
+  "protocol": "single_square_reference_short_prompt_9:16",
+  "attempt_count": 3,
+  "successful_image_count": 0,
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "http_error",
+      "http_status": 429,
+      "error_category": "provider_quota_exceeded",
+      "provider": "Google AI Studio",
+      "actual_cost_usd": 0,
+      "cost_source": "key_delta_reconciled_http_error"
+    },
+    {
+      "attempt": 2,
+      "status": "http_error",
+      "http_status": 429,
+      "error_category": "provider_quota_exceeded",
+      "provider": "Google AI Studio",
+      "actual_cost_usd": 0,
+      "cost_source": "key_delta_reconciled_http_error"
+    },
+    {
+      "attempt": 3,
+      "status": "http_error",
+      "http_status": 429,
+      "error_category": "provider_quota_exceeded",
+      "provider": "Google AI Studio",
+      "actual_cost_usd": 0,
+      "cost_source": "key_delta_reconciled_http_error"
+    }
+  ],
+  "new_charge_usd": 0,
+  "settled_account_delta_usd": 0,
+  "costs_reconcile": true,
+  "unknown_cost_count": 0
+}
