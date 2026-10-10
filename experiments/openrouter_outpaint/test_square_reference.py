@@ -14,6 +14,12 @@ import benchmark
 
 class SquareReferenceTests(unittest.TestCase):
     def test_square_wire_payload_and_receipt(self):
+        self.check_wire()
+
+    def test_custom_prompt_and_automatic_routing_wire_payload(self):
+        self.check_wire(custom=True)
+
+    def check_wire(self, custom=False):
         build = benchmark.ROOT/'.build'
         build.mkdir(exist_ok=True)
         with tempfile.TemporaryDirectory(dir=build) as directory:
@@ -35,11 +41,18 @@ class SquareReferenceTests(unittest.TestCase):
             args = ['benchmark.py','--key-file',str(key),'--model','openai/gpt-image-2.5-sunburst',
                     '--track','test','--source-image',str(source),'--output',str(root/'output'),
                     '--input-mode','square','--quality','high']
+            if custom:
+                prompt=root/'prompt.txt'
+                prompt.write_text('Keep source unchanged; extend its surroundings.\n')
+                args.extend(['--prompt-file',str(prompt),'--automatic-routing'])
             with patch.object(sys,'argv',args), patch.object(benchmark,'request_json',fake_request), \
                  patch.object(benchmark,'key_usage',return_value={'usage':0}):
                 benchmark.main()
             self.assertEqual(len(posted),1)
             request = posted[0]
+            self.assertEqual(request['prompt'], 'Keep source unchanged; extend its surroundings.' if custom else benchmark.SQUARE_PROMPT)
+            if custom:self.assertNotIn('provider',request)
+            else:self.assertEqual(request['provider'],{'only':['test'],'allow_fallbacks':False})
             self.assertEqual(request['aspect_ratio'],'9:16')
             self.assertEqual(request['quality'],'high')
             self.assertEqual(len(request['input_references']),1)
