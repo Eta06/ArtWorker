@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
+import csv
 from decimal import Decimal
 import json
 from pathlib import Path
@@ -168,6 +169,20 @@ def main() -> None:
                                'One sample per cell; prompt and reference count changed together.',
                                'Aligned scores are numerical diagnostics, not automatic visual acceptance.'])
         save_json(fidelity/'metrics.json', metadata)
+        fields = ['model','profile','track','status','actual_cost_usd','alignment_status']
+        fields += [frame+'_'+name for frame in ('fixed','aligned') for name in
+                   ('ssim_luminance','mae_rgb_0_255','delta_e_76_mean',
+                    'pixels_within_8_rgb_fraction','evaluated_fraction')]
+        with (fidelity/'metrics.csv').open('w',newline='') as stream:
+            writer = csv.DictWriter(stream,fieldnames=fields)
+            writer.writeheader()
+            for score in scores:
+                record = {k:score.get(k) for k in fields[:5]}
+                record['alignment_status'] = score.get('alignment',{}).get('status')
+                for frame in ('fixed','aligned'):
+                    for name,value in (score.get(frame) or {}).items():
+                        if frame+'_'+name in fields: record[frame+'_'+name] = value
+                writer.writerow(record)
         render(scores, fidelity, metadata)
     render_gallery(rows, results, ledger, state['status'], labels)
     public = {k:v for k,v in ledger.items() if k != 'rows'}
