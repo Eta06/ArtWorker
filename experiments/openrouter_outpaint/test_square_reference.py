@@ -52,6 +52,13 @@ class SquareReferenceTests(unittest.TestCase):
             self.assertEqual(receipt['request']['input_references'][0]['local_file'],'source.png')
             self.assertEqual(receipt['status'],'completed')
 
+    def test_anchored_mode_sends_only_square_reference(self):
+        names,prompt=benchmark.reference_spec('square-anchored',2)
+        self.assertEqual(names,('source.png',))
+        self.assertEqual(prompt,benchmark.ANCHORED_SQUARE_PROMPT)
+        self.assertNotIn('green',prompt.lower())
+        with self.assertRaises(ValueError): benchmark.reference_spec('square-anchored',0)
+
     def test_existing_canvas_protocol_unchanged(self):
         names,prompt=benchmark.reference_spec('canvas',2)
         self.assertEqual(names,('input.png','source.png'))
