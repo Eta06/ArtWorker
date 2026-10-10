@@ -67,7 +67,7 @@ def main():
     save_json(fidelity/'metrics.json',metadata)
     fields=['model','profile','track','actual_cost_usd','alignment_status','alignment_method']
     fields += [frame+'_'+name for frame in ('fixed','aligned') for name in
-               ('ssim_luminance','mae_rgb_0_255','pixels_within_8_rgb_fraction','pixels_within_16_rgb_fraction')]
+               ('ssim_luminance','mae_rgb_0_255','pixels_within_8_rgb_fraction','pixels_within_16_rgb_fraction','worst_tile_ssim','pixel_exact_on_analysis_grid_fraction')]
     with (fidelity/'metrics.csv').open('w',newline='') as stream:
         writer=csv.DictWriter(stream,fieldnames=fields);writer.writeheader()
         for r in scores:
