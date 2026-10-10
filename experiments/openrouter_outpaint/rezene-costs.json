@@ -1,0 +1,31 @@
+{
+  "stage": "rezene",
+  "route": "direct_google_gemini_api",
+  "model": "gemini-nano-banana-2.1",
+  "attempts": 3,
+  "successful_images": 2,
+  "http_400_png_format_errors": 1,
+  "actual_cost_usd": null,
+  "estimated_successful_requests_usd": 0.086343,
+  "pricing_source": "https://ai.google.dev/gemini-api/docs/pricing",
+  "estimate_not_invoice": true,
+  "unknown_actual_billing_for_all_attempts": true,
+  "requests": [
+    {
+      "track": "track2",
+      "estimated_cost_usd": 0.043284,
+      "dimensions": [
+        768,
+        1376
+      ]
+    },
+    {
+      "track": "track3",
+      "estimated_cost_usd": 0.043059,
+      "dimensions": [
+        768,
+        1376
+      ]
+    }
+  ]
+}
