@@ -101,14 +101,28 @@ def square_at(image: Image.Image, rect: tuple[float, ...]) -> np.ndarray:
 
 def register(reference: np.ndarray, output: np.ndarray, rect: tuple[float, ...],
              layout_free: bool = False) -> tuple[dict, np.ndarray | None, np.ndarray | None]:
+    """ORB first, then SIFT with the same reliability/geometry gates if unavailable."""
+    primary = _register(reference, output, rect, layout_free, 'orb')
+    if primary[0]['status'] == 'measured':
+        return primary
+    fallback = _register(reference, output, rect, layout_free, 'sift')
+    if fallback[0]['status'] == 'measured':
+        fallback[0]['fallback_from'] = primary[0]
+        return fallback
+    primary[0]['fallback_diagnostic'] = fallback[0]
+    return primary
+
+
+def _register(reference: np.ndarray, output: np.ndarray, rect: tuple[float, ...],
+              layout_free: bool, method: str) -> tuple[dict, np.ndarray | None, np.ndarray | None]:
     """Estimate one global similarity transform; never locally warp/color-correct."""
-    orb = cv2.ORB_create(nfeatures=4000, edgeThreshold=15, fastThreshold=8)
+    orb = cv2.ORB_create(nfeatures=4000, edgeThreshold=15, fastThreshold=8) if method == 'orb' else cv2.SIFT_create(nfeatures=4000)
     ka, da = orb.detectAndCompute(cv2.cvtColor(reference, cv2.COLOR_RGB2GRAY), None)
     kb, db = orb.detectAndCompute(cv2.cvtColor(output, cv2.COLOR_RGB2GRAY), None)
-    failed = {'status': 'unavailable', 'reason': 'insufficient reliable features'}
+    failed = {'status': 'unavailable', 'method': method, 'reason': 'insufficient reliable features'}
     if da is None or db is None or len(da) < 12 or len(db) < 12:
         return failed, None, None
-    matcher = cv2.BFMatcher(cv2.NORM_HAMMING)
+    matcher = cv2.BFMatcher(cv2.NORM_HAMMING if method == 'orb' else cv2.NORM_L2)
     reverse = {m.queryIdx: m.trainIdx for m in matcher.match(db, da)}
     matches = [a for pair in matcher.knnMatch(da, db, k=2) if len(pair) == 2
                for a, b in [pair] if a.distance < .75*b.distance and reverse.get(a.trainIdx) == a.queryIdx]
@@ -130,7 +144,7 @@ def register(reference: np.ndarray, output: np.ndarray, rect: tuple[float, ...],
     expected_center = np.array([(rect[0]+rect[2])/2, (rect[1]+rect[3])/2])
     shift = center-expected_center
     residual = np.linalg.norm((src @ transform[:, :2].T + transform[:, 2])-dst, axis=1)
-    diagnostic = {'status': 'measured', 'matches': len(matches), 'inliers': int(ok.sum()),
+    diagnostic = {'status': 'measured', 'method': method, 'matches': len(matches), 'inliers': int(ok.sum()),
                   'inlier_fraction': float(ok.mean()), 'source_feature_hull_fraction': coverage,
                   'quadrants': quadrants, 'median_inlier_residual_px': float(np.median(residual[ok])),
                   'scale_relative_to_expected': scale/((rect[2]-rect[0])/SIDE),
@@ -208,6 +222,7 @@ def audit(row: dict, destination: Path, placement_mode: str = 'bounded') -> dict
     alignment, aligned, valid = register(reference, np.asarray(working), rect, layout_free=placement_mode == 'free')
     out = {k: row.get(k) for k in ('model', 'profile', 'track', 'raw_sha256', 'raw_dimensions', 'actual_cost_usd', 'elapsed_seconds')}
     out.update(id=identity(row), status='measured', source_png_sha256=sha(source),
+               input_mode=receipt.get('input_mode','canvas'),
                source_original_sha256=sha(original), geometry=geometry,
                analysis_side=SIDE, fixed=metrics(reference, fixed),
                resampling_control=metrics(reference, control_crop), alignment=alignment,
@@ -227,7 +242,7 @@ def audit(row: dict, destination: Path, placement_mode: str = 'bounded') -> dict
     marked = np.asarray(working).copy()
     corners = np.float32([[0,0], [SIDE-1,0], [SIDE-1,SIDE-1], [0,SIDE-1]])
     cv2.rectangle(marked, (round(rect[0]), round(rect[1])), (round(rect[2])-1, round(rect[3])-1), (93,230,180), 2)
-    if aligned is not None:
+    if aligned is not None or 'matrix_source_to_output' in alignment:
         transform = np.array(alignment['matrix_source_to_output'])
         polygon = np.int32(corners @ transform[:, :2].T + transform[:, 2])
         cv2.polylines(marked, [polygon], True, (255,180,80), 2)
