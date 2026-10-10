@@ -55,6 +55,21 @@ PROMPT = (
     "new people, new lettering, borders, gradients, blurred copies, mirrored "
     "copies or green tint. Return the complete expanded image, not a new cover."
 )
+SQUARE_PROMPT = (
+    "Extend this square artwork into a seamless 9:16 portrait image by generating "
+    "the surrounding scene. Keep the original artwork unchanged, fully visible "
+    "and at the same proportions. Match its colors, lighting, texture and perspective."
+)
+
+
+def reference_spec(mode: str, maximum: int) -> tuple[tuple[str, ...], str]:
+    if maximum < 1:
+        raise ValueError("This endpoint does not accept source images")
+    if mode == "square":
+        return ("source.png",), SQUARE_PROMPT
+    names = ("input.png", "source.png") if maximum >= 2 else ("input.png",)
+    return names, PROMPT if len(names) == 2 else PROMPT.replace(
+        "Reference 2 is the original square artwork. ", "")
 
 
 def save_json(path: Path, value: object) -> None:
@@ -136,6 +151,8 @@ def main() -> None:
     parser.add_argument("--resolution", help="A supported native resolution tier")
     parser.add_argument("--quality", help="A supported native quality tier, including auto")
     parser.add_argument("--request-timeout", type=float, default=240)
+    parser.add_argument("--input-mode", choices=["canvas", "square"], default="canvas",
+                        help="Square sends only the cover with a short extension prompt")
     args = parser.parse_args()
     out = args.output
     out.mkdir(parents=True, exist_ok=True)
@@ -149,9 +166,7 @@ def main() -> None:
     max_references = supported.get("input_references", {}).get("max", 0)
     if max_references < 1:
         raise SystemExit("This endpoint does not accept source images; no paid outpaint request sent")
-    names = ("input.png", "source.png") if max_references >= 2 else ("input.png",)
-    prompt = PROMPT if len(names) == 2 else PROMPT.replace(
-        "Reference 2 is the original square artwork. ", "")
+    names, prompt = reference_spec(args.input_mode, max_references)
     payload = {"model": args.model, "prompt": prompt,
                "aspect_ratio": "9:16", "input_references": [
                    {"type": "image_url", "image_url": {"url": data_url(out / name)}}
@@ -180,6 +195,8 @@ def main() -> None:
         {"local_file": name, "sha256": hashlib.sha256((out / name).read_bytes()).hexdigest()}
         for name in names]}
     receipt = {"model": args.model, "track": args.track, "geometry": geometry,
+               "input_mode": args.input_mode,
+               "diagnostic_canvas_sent": "input.png" in names,
                "request": public_payload, "endpoint_snapshot": catalog,
                "status": "prepared", "before": key_usage(key),
                "created_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
