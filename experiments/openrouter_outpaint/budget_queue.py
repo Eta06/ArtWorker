@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import base64
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from decimal import Decimal
 import fcntl
 import hashlib
@@ -18,6 +19,7 @@ import subprocess
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 
 from PIL import Image
@@ -191,6 +193,124 @@ def nano_request(out):
                              'imageConfig': {'aspectRatio': '9:16', 'imageSize': '1K'}}}
 
 
+def slots_available(state,current,key_remaining,workers):
+    available=min(Decimal(state['openrouter_budget_usd'])-committed_spend(state,current),current,
+                  Decimal(str(key_remaining)) if key_remaining is not None else current)
+    return max(0,min(workers,int(available//Decimal('0.10'))))
+
+
+def lightweight_row(source,key):
+    receipt=json.loads((ROOT/source['directory']/'receipt.json').read_text())
+    row={'directory':source['directory'],'track':source['id'],'model':SUN,'profile':'high',
+         'source_sha256':source['sha256'],'status':receipt['status'],
+         'elapsed_seconds':receipt.get('elapsed_seconds'),
+         'actual_cost_usd':receipt.get('reported_cost_usd'),'cost_source':receipt.get('cost_source')}
+    generation=receipt.get('response_headers',{}).get('x-generation-id')
+    if generation:
+        try:
+            data,_=request_json('generation?id='+urllib.parse.quote(generation),key)
+            row.update(generation_id=generation,actual_cost_usd=data['data']['total_cost'],cost_source='generation.total_cost')
+        except Exception as exc: row['billing_lookup_error']=type(exc).__name__
+    if receipt.get('images'):
+        row.update(raw_sha256=receipt['images'][0]['sha256'],raw_dimensions=receipt['images'][0]['dimensions'])
+    return row
+
+
+def isolated_audit(row,destination,path):
+    """Release OpenCV/SIFT allocations when each serial audit finishes."""
+    destination.mkdir(exist_ok=True)
+    row_path=path.with_suffix('.row.json');save_json(row_path,row)
+    code=('import json,sys; from pathlib import Path; from source_fidelity import audit; '
+          'from benchmark import save_json; row=json.loads(Path(sys.argv[1]).read_text()); '
+          'save_json(Path(sys.argv[3]),audit(row,Path(sys.argv[2]),placement_mode="free"))')
+    subprocess.run([sys.executable,'-c',code,str(row_path),str(destination),str(path)],
+                   cwd=Path(__file__).resolve().parent,check=True)
+
+
+def run_parallel_sun(args,state):
+    """One coordinator reserves each whole wave; only network workers overlap.
+
+    Drain all launched calls before evaluating errors or starting another wave.
+    Registration and state updates run serially after the network workers exit.
+    """
+    key=args.key_file.read_text().strip()
+    if any(r['status'] in ('request_started','uncertain','unresolved_error') for r in state['sources']):
+        raise ValueError('Unresolved earlier request; reconcile before parallel work')
+    count=0
+    while count<args.limit:
+        if (ROOT/'.build/teacher-queue.pause').exists():
+            state['status']='paused_between_waves'; save_json(args.state,state); return
+        pending=[r for r in state['sources'] if r['status']=='pending']
+        if not pending: break
+        current=credit(key); key_data,_=request_json('key',key)
+        slots=slots_available(state,current,key_data['data'].get('limit_remaining'),args.workers)
+        wave=pending[:min(slots,args.limit-count)]
+        if not wave:
+            state['status']='openrouter_budget_stop'; save_json(args.state,state); return
+        commands=[]
+        for source in wave:
+            path=ROOT/source['file']
+            out=args.state.parent/'outputs'/source['id']/'gpt-image-2.5-sunburst'/'high'
+            if sha(path)!=source['sha256'] or (out/'receipt.json').exists():
+                raise ValueError('Source changed or receipt already exists; no wave sent')
+            command=[sys.executable,str(Path(__file__).with_name('benchmark.py')),
+                '--key-file',str(args.key_file),'--model',SUN,'--track',source['id'],
+                '--source-image',str(path),'--output',str(out),'--quality','high',
+                '--input-mode','canvas','--request-timeout','600',
+                '--require-prompt-sha256',PROMPT_HASH,'--require-reference-count','2']
+            commands.append(command)
+        for source in wave:
+            out=args.state.parent/'outputs'/source['id']/'gpt-image-2.5-sunburst'/'high'
+            source.update(status='request_started',directory=str(out.relative_to(ROOT)))
+        state.update(status='running_parallel_sunburst',inflight_reserved_usd=str(Decimal('0.10')*len(wave)),workers=args.workers)
+        save_json(args.state,state)
+        print(json.dumps({'wave_started':len(wave),'ids':[r['id'] for r in wave]}),flush=True)
+        failures={}
+        with ThreadPoolExecutor(max_workers=args.workers) as pool:
+            futures={pool.submit(subprocess.run,command,check=True):source for source,command in zip(wave,commands)}
+            for future in as_completed(futures):
+                source=futures[future]
+                try: future.result()
+                except Exception as exc: failures[source['id']]={'type':type(exc).__name__,'returncode':getattr(exc,'returncode',None)}
+        stop=False
+        for source in wave:
+            out=ROOT/source['directory']; receipt_path=out/'receipt.json'
+            if not receipt_path.exists():
+                if failures.get(source['id'],{}).get('returncode')==75:
+                    source.update(status='pending',deferred_before_post={'reason':'pause marker; child exit 75 before receipt or POST'})
+                    continue
+                # Child may have been stopped before POST; retain ambiguity until
+                # its exit receipt is inspected rather than automatically redoing it.
+                source.update(status='uncertain',worker_error=failures.get(source['id']))
+                stop=True; continue
+            receipt=json.loads(receipt_path.read_text())
+            if hashlib.sha256(receipt['request']['prompt'].encode()).hexdigest()!=PROMPT_HASH or len(receipt['request']['input_references'])!=2:
+                source['status']='uncertain';stop=True;continue
+            row=lightweight_row(source,key)
+            source.update(measurement_row=row,actual_cost_usd=row.get('actual_cost_usd'))
+            if receipt['status']=='completed' and row.get('actual_cost_usd') is not None:
+                source['status']='sunburst_completed_review_pending'
+            elif refusal(receipt) or (receipt['status']=='no_image' and row.get('actual_cost_usd') is not None):
+                source['status']='fallback_pending'
+            else:
+                source['status']='uncertain' if receipt['status'] in ('request_started','uncertain_or_decode_error') else 'unresolved_error'
+                stop=True
+            if row.get('actual_cost_usd') is not None and Decimal(str(row['actual_cost_usd']))>Decimal('0.10'):
+                source['unexpected_price']=True;stop=True
+            save_json(args.state,state)
+            if source['status']=='sunburst_completed_review_pending':
+                destination=args.state.parent/'fidelity';destination.mkdir(exist_ok=True)
+                path=destination/(source['id']+'-sunburst.json')
+                isolated_audit(row,destination,path)
+                source['fidelity_file']=str(path.relative_to(ROOT))
+        state['openrouter_spend_usd']=str(committed_spend(state,credit(key)))
+        state['inflight_reserved_usd']='0' if not stop else 'unresolved; reconcile receipts before more requests'
+        state['status']='parallel_reconciliation_required' if stop else 'parallel_wave_finished'
+        save_json(args.state,state);count+=len(wave)
+        print(json.dumps({'wave_finished':len(wave),'spend_usd':state['openrouter_spend_usd'],'stop':stop}),flush=True)
+        if stop: raise ValueError('Wave drained; reconcile error/billing before more POSTs')
+
+
 def submit_google(args, state):
     key = args.google_key_file.read_text().strip()
     if any(j['status'] == 'submit_uncertain' for j in state['google_jobs']):
@@ -278,7 +398,6 @@ def google_estimate(usage,has_image):
 
 
 def collect_google(args,state):
-    from source_fidelity import audit
     key=args.google_key_file.read_text().strip()
     by_id={r['id']:r for r in state['sources']}
     for job in state['google_jobs']:
@@ -329,8 +448,7 @@ def collect_google(args,state):
                      'profile':'1K','track':ident,'source_sha256':source['sha256'],
                      'raw_sha256':images[0]['sha256'],'raw_dimensions':images[0]['dimensions'],
                      'actual_cost_usd':None}
-                measurement=audit(row,destination,placement_mode='free')
-                save_json(destination/(ident+'-nano.json'),measurement)
+                isolated_audit(row,destination,destination/(ident+'-nano.json'))
         job.update(status='collected',estimated_cost_tl=str(estimate) if billing_known else None,
                    reserved_tl=str(estimate*Decimal('1.10')) if billing_known else job['reserved_tl'],
                    billing='usage estimate; invoice/actual TL remains unknown')
@@ -356,16 +474,23 @@ def production(args,state):
     """
     limit=args.limit
     started=sum(r['status']!='pending' for r in state['sources'])
-    for _ in range((limit+9)//10):
+    group_size=3*args.workers if args.workers>1 else 10
+    for _ in range((limit+group_size-1)//group_size):
         completed=sum(r['status']!='pending' for r in state['sources'])-started
         if completed>=limit: break
-        args.limit=min(10,limit-completed)
-        run_sun(args,state)
+        args.limit=min(group_size,limit-completed)
+        if args.workers>1: run_parallel_sun(args,state)
+        else: run_sun(args,state)
         collect_google(args,state)
         fallback=any(r['status']=='fallback_pending' for r in state['sources'])
-        if fallback and not state['google_jobs']:
-            args.limit=2; submit_google(args,state)
-        if state['status']=='openrouter_budget_stop' or not any(r['status']=='pending' for r in state['sources']):
+        if fallback and (not state['google_jobs'] or state.get('google_protocol_pilot_reviewed')):
+            args.limit=2
+            try: submit_google(args,state)
+            except ValueError as exc:
+                if str(exc)!='Google reservations exceed user budget; no POST': raise
+                state['google_budget_status']='Reservations full; no further Google POST'
+                save_json(args.state,state)
+        if state['status'] in ('openrouter_budget_stop','paused_between_waves') or not any(r['status']=='pending' for r in state['sources']):
             break
     state['google_next_action']='Inspect first batch raw images and source audit before further batch submissions' if state['google_jobs'] else 'No fallback batch needed yet'
     save_json(args.state,state)
@@ -381,12 +506,22 @@ def main():
     parser.add_argument('--budget-usd',type=Decimal,help='Required for init; account budget stays in private state')
     parser.add_argument('--google-budget-tl',type=Decimal,help='Required for init; fallback budget stays in private state')
     parser.add_argument('--limit',type=int,default=4)
+    parser.add_argument('--workers',type=int,choices=[1,2,3],default=1,
+                        help='Network calls only; source audits and state writes remain serial')
     args=parser.parse_args(); args.state=args.state.resolve()
     if not args.state.is_relative_to(ROOT/'experiments/openrouter_outpaint/results'):
         parser.error('Private state must be under ignored results/')
     if hashlib.sha256(PROMPT.encode()).hexdigest()!=PROMPT_HASH:
         parser.error('Frozen prompt changed')
+    if args.limit<1: parser.error('Positive count required')
     args.state.parent.mkdir(parents=True,exist_ok=True)
+    if args.command=='status':
+        from collections import Counter
+        state=json.loads(args.state.read_text())  # Atomic replacement allows a live read without the mutation lock.
+        print(json.dumps({'status':state['status'],'counts':dict(Counter(r['status'] for r in state['sources'])),
+            'spend_usd':state.get('openrouter_spend_usd'),'workers':state.get('workers',1),
+            'google_jobs':[{k:j.get(k) for k in ('status','provider_state','ids','estimated_cost_tl','reserved_tl')} for j in state['google_jobs']]},ensure_ascii=False))
+        return
     with (args.state.parent/'queue.lock').open('a+') as lock:
         fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
         if args.command=='init': init(args); return
