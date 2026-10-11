@@ -37,8 +37,21 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def read_account(path,key):
+    if path not in ('credits','key'):
+        raise ValueError('Account retry helper accepts read-only endpoints only')
+    for attempt in range(3):
+        try:
+            return request_json(path,key)
+        except urllib.error.HTTPError as exc:
+            if exc.code not in (408,429,500,502,503,504) or attempt==2: raise
+        except (urllib.error.URLError,TimeoutError):
+            if attempt==2: raise
+        time.sleep(2**(attempt+1))
+
+
 def credit(key):
-    d, _ = request_json('credits', key)
+    d, _ = read_account('credits', key)
     return Decimal(str(d['data']['total_credits'])) - Decimal(str(d['data']['total_usage']))
 
 
@@ -125,7 +138,7 @@ def run_sun(args, state):
             continue
         current = credit(key)
         spent = committed_spend(state, current)
-        key_data, _ = request_json('key', key)
+        key_data, _ = read_account('key', key)
         remaining_key = key_data['data'].get('limit_remaining')
         # A conservative preflight reserve, not a provider-enforced price cap.
         reserve = Decimal('0.10')
@@ -242,7 +255,7 @@ def run_parallel_sun(args,state):
             state['status']='paused_between_waves'; save_json(args.state,state); return
         pending=[r for r in state['sources'] if r['status']=='pending']
         if not pending: break
-        current=credit(key); key_data,_=request_json('key',key)
+        current=credit(key); key_data,_=read_account('key',key)
         slots=slots_available(state,current,key_data['data'].get('limit_remaining'),args.workers)
         wave=pending[:min(slots,args.limit-count)]
         if not wave:
@@ -303,7 +316,16 @@ def run_parallel_sun(args,state):
                 path=destination/(source['id']+'-sunburst.json')
                 isolated_audit(row,destination,path)
                 source['fidelity_file']=str(path.relative_to(ROOT))
-        state['openrouter_spend_usd']=str(committed_spend(state,credit(key)))
+        # Preserve audit paths and known charges before a possibly failing GET.
+        known=sum((Decimal(str(r.get('actual_cost_usd') or 0)) for r in state['sources']),Decimal(0))
+        state['openrouter_spend_usd']=str(max(known,Decimal(state.get('openrouter_spend_usd','0'))))
+        save_json(args.state,state)
+        try:
+            state['openrouter_spend_usd']=str(committed_spend(state,credit(key)))
+        except Exception as exc:
+            state.update(status='account_query_paused',account_query_error=type(exc).__name__)
+            save_json(args.state,state)
+            raise
         state['inflight_reserved_usd']='0' if not stop else 'unresolved; reconcile receipts before more requests'
         state['status']='parallel_reconciliation_required' if stop else 'parallel_wave_finished'
         save_json(args.state,state);count+=len(wave)
