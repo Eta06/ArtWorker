@@ -165,6 +165,8 @@ def main() -> None:
     parser.add_argument("--prompt-file", type=Path, help="UTF-8 experimental prompt; square reference modes only")
     parser.add_argument("--automatic-routing", action="store_true",
                         help="Let OpenRouter choose routing instead of pinning the discovered provider")
+    parser.add_argument("--require-prompt-sha256", help="Abort before POST if the resolved prompt differs")
+    parser.add_argument("--require-reference-count", type=int, help="Abort before POST if reference count differs")
     args = parser.parse_args()
     custom_prompt = None
     if args.prompt_file:
@@ -188,6 +190,10 @@ def main() -> None:
     names, prompt = reference_spec(args.input_mode, max_references)
     if custom_prompt is not None:
         prompt = custom_prompt
+    if args.require_prompt_sha256 and hashlib.sha256(prompt.encode()).hexdigest() != args.require_prompt_sha256:
+        raise SystemExit("Required prompt checksum differs; no paid request sent")
+    if args.require_reference_count is not None and len(names) != args.require_reference_count:
+        raise SystemExit("Required reference count differs; no paid request sent")
     payload = {"model": args.model, "prompt": prompt,
                "aspect_ratio": "9:16", "input_references": [
                    {"type": "image_url", "image_url": {"url": data_url(out / name)}}
