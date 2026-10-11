@@ -76,6 +76,22 @@ class QueueTests(unittest.TestCase):
             self.assertEqual(raised.exception.code,75)
             self.assertFalse((Path(temp)/'out').exists())
 
+    def test_account_timeout_retries_only_read_requests(self):
+        error=q.urllib.error.HTTPError('https://example.invalid',408,'timeout',{},None)
+        with patch.object(q,'request_json',side_effect=[error,({'data':{}}, {})]) as read,patch.object(q.time,'sleep'):
+            self.assertEqual(q.read_account('credits','dummy'),({'data':{}},{}))
+            self.assertEqual(read.call_count,2)
+            self.assertEqual(read.call_args_list[0].args,('credits','dummy'))
+        with patch.object(q,'request_json') as request:
+            with self.assertRaises(ValueError):q.read_account('images','dummy')
+            request.assert_not_called()
+
+    def test_account_auth_error_is_not_retried(self):
+        error=q.urllib.error.HTTPError('https://example.invalid',401,'unauthorized',{},None)
+        with patch.object(q,'request_json',side_effect=error) as read,patch.object(q.time,'sleep') as sleep:
+            with self.assertRaises(q.urllib.error.HTTPError):q.read_account('credits','dummy')
+            self.assertEqual(read.call_count,1);sleep.assert_not_called()
+
     def test_parallel_dispatch_overlaps_and_stops_at_budget(self):
         with TemporaryDirectory(dir=q.ROOT/'.build') as temp:
             root=Path(temp);key=root/'key';key.write_text('dummy')
