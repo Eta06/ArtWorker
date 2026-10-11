@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "stage": "erguvan",
-  "execution": "plan_only_no_new_teacher_calls",
+  "stage": "mahlep",
+  "execution": "budgeted_executor_installed; explicit private state and launch required",
   "primary": {
     "model": "openai/gpt-image-2.5-sunburst",
     "quality": "high",
@@ -10,7 +10,10 @@
   "fallback": {
     "model": "google/gemini-nano-banana-2.1",
     "resolution": "1K",
-    "provider_route": "OpenRouter; explicitly selected direct Google route may be substituted and logged"
+    "provider_route": "direct Google Batch API for definite primary refusals/no-image responses",
+    "batch_pilot": "at most two fallbacks; inspect returned images before submitting more",
+    "max_output_tokens": 8192,
+    "cost_measurement": "published batch rates times usage; actual invoice and TRY conversion are not available through the API key"
   },
   "comparison_only": [
     "openai/gpt-image-2.5-flare"
