@@ -1,5 +1,8 @@
 """Offline spending and route regression checks; never access paid services."""
 import unittest
+import json
+import threading
+import time
 from decimal import Decimal
 from pathlib import Path
 from tempfile import TemporaryDirectory
@@ -52,6 +55,53 @@ class QueueTests(unittest.TestCase):
         usage={'promptTokenCount':1000,'candidatesTokenCount':1120,'thoughtsTokenCount':500,
                'candidatesTokensDetails':[{'modality':'IMAGE','tokenCount':1120}]}
         self.assertEqual(q.google_estimate(usage,True),Decimal('0.019425'))
+
+    def test_concurrent_wave_reserves_all_slots_before_dispatch(self):
+        state={'initial_openrouter_credit_usd':'10','openrouter_budget_usd':'0.30',
+               'sources':[{'actual_cost_usd':None},{'actual_cost_usd':None}]}
+        self.assertEqual(q.slots_available(state,Decimal('10'),10,3),3)
+        state['sources'][0]['actual_cost_usd']='0.15'
+        self.assertEqual(q.slots_available(state,Decimal('10'),10,3),1)
+        self.assertEqual(q.slots_available(state,Decimal('0.05'),10,3),0)
+        self.assertEqual(q.slots_available(state,Decimal('10'),0.05,3),0)
+
+    def test_pause_marker_exits_before_any_api_call(self):
+        import benchmark
+        with TemporaryDirectory() as temp:
+            pause=Path(temp)/'pause';pause.touch()
+            argv=['benchmark.py','--key-file',str(Path(temp)/'absent-key'),'--model',q.SUN,
+                  '--track','test','--output',str(Path(temp)/'out'),'--stop-file',str(pause)]
+            with patch('sys.argv',argv),patch.object(benchmark,'request_json',side_effect=AssertionError('No API access')):
+                with self.assertRaises(SystemExit) as raised: benchmark.main()
+            self.assertEqual(raised.exception.code,75)
+            self.assertFalse((Path(temp)/'out').exists())
+
+    def test_parallel_dispatch_overlaps_and_stops_at_budget(self):
+        with TemporaryDirectory(dir=q.ROOT/'.build') as temp:
+            root=Path(temp);key=root/'key';key.write_text('dummy')
+            state={'initial_openrouter_credit_usd':'10','openrouter_budget_usd':'0.30','sources':[]}
+            for i in range(7):
+                source=root/f'{i}.png';source.write_bytes(b'cover'+bytes([i]))
+                state['sources'].append({'id':f'test{i}','sha256':q.sha(source),
+                                        'file':str(source.relative_to(q.ROOT)),'status':'pending'})
+            args=type('Args',(),{'state':root/'queue.json','key_file':key,'workers':3,'limit':7})()
+            lock=threading.Lock();active=0;peak=0
+            def run(command,**kw):
+                nonlocal active,peak
+                out=Path(command[command.index('--output')+1]);out.mkdir(parents=True)
+                with lock: active+=1;peak=max(peak,active)
+                time.sleep(.03)
+                q.save_json(out/'receipt.json',{'status':'completed','request':{'prompt':q.PROMPT,'input_references':[{},{}]}})
+                with lock: active-=1
+            def row(source,key):return {'actual_cost_usd':'0.05'}
+            with patch.object(q,'credit',return_value=Decimal('10')),patch.object(q,'request_json',return_value=({'data':{'limit_remaining':10}},{})),patch.object(q,'lightweight_row',side_effect=row),patch.object(q,'isolated_audit'),patch.object(q.subprocess,'run',side_effect=run),patch.object(q.Path,'exists',autospec=True,side_effect=lambda p:False if str(p).endswith('teacher-queue.pause') else original_exists(p)):
+                q.run_parallel_sun(args,state)
+            self.assertEqual(peak,3)
+            self.assertEqual(sum(r['status']=='sunburst_completed_review_pending' for r in state['sources']),5)
+            self.assertEqual(state['status'],'openrouter_budget_stop')
+
+
+original_exists=Path.exists
 
 
 if __name__=='__main__': unittest.main()
