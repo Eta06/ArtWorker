@@ -52,6 +52,45 @@ At student inference, the original region can be composited back exactly, with
 boundary quality evaluated separately; this stage does not implement that model.
 
 Keep artwork, account preferences, cookies, credentials and request bodies local.
-The queue remains a **plan**, with no automatic API execution during collection.
-Before a paid batch, set its cover count and spending cap explicitly. Existing
-teacher trials do not establish general quality across the new cover corpus.
+Collection does not trigger paid generations. Mahlep adds an explicitly launched
+[`budget_queue.py`](../experiments/openrouter_outpaint/budget_queue.py) executor.
+Initialize its private state under ignored `results/` with a source manifest,
+`--budget-usd` and `--google-budget-tl`; then choose an explicit `--limit`.
+The `sun` command generates a bounded group; `production` continues serial
+groups until its count or account budget is reached. Run either under the existing
+memory/pressure/swap guard. The queue interleaves the four requested Turkish
+artists first, then other Turkish sources and remaining covers.
+
+Every primary call checks live **account credit**, the API-key spending limit,
+and the larger of known receipt charges or account-credit movement. A $0.10
+preflight reserve is conservative relative to measured Sunburst calls, but is
+not a provider-enforced maximum price. Unexpected higher prices stop further
+calls. Existing or unresolved receipts prevent repeating a paid POST. Completion
+with unknown billing also pauses the queue. Source alignment runs freely after
+successful primary images; all outputs remain pending human training admission.
+
+Google fallbacks use the native Batch API, with the frozen prompt and same two
+references, 9:16 / 1K. The first protocol pilot contains at most two rejected
+primary sources. `production` can submit that pilot and collect it between primary
+groups; it **does not submit a larger Google queue without inspection**. Explicit
+`google-submit` and `google-collect` commands recover pending jobs using saved IDs.
+Batch submissions have durable intents and never retry an ambiguous POST.
+Unknown/failed batch charges retain their reservations; failures are quarantined.
+
+Google reservations count input tokens and an 8,192-token output cap at the
+highest applicable output-token price, plus 10% conversion allowance. Completed
+usage can replace that reservation with a buffered **estimate**, never an actual
+invoice charge. Account balance, taxes and billing currency conversion cannot
+be independently retrieved using this Google API key. These local controls are
+not provider-side budget enforcement. Existing teacher trials do not establish
+general quality across the new cover corpus.
+
+Native Google image batches cost 50% of standard rates; 1K image output alone
+is $0.0168, plus input and text/thinking tokens. Native OpenAI also supports image
+edits in its Batch API, but OpenRouter credit does not fund a native OpenAI
+account. The current OpenRouter Batch API rejects image-output configurations
+and does not expose the dedicated Image API used for this Sunburst baseline.
+See [Google batch](https://ai.google.dev/gemini-api/docs/batch-api),
+[Google pricing](https://ai.google.dev/gemini-api/docs/pricing),
+[OpenAI batch](https://developers.openai.com/api/docs/guides/batch), and
+[OpenRouter batch constraints](https://openrouter.ai/docs/batch-quickstart).
