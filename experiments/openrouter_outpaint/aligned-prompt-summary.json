@@ -1,0 +1,561 @@
+{
+  "stage": "sahil",
+  "new_provider_requests": 0,
+  "new_generation_cost_usd": 0,
+  "placement_mode": "free",
+  "analysis_side": 512,
+  "output_count": 88,
+  "active_prompt_count": 8,
+  "reliably_aligned_count": 77,
+  "full_source_ranking_count": 61,
+  "metric_note": "SSIM is structural similarity, not unchanged pixel percentage. Within-8 means every RGB channel differs by at most 8/255 after one global alignment on a 512px analysis grid. No local warping or color correction. Position is not penalized.",
+  "sunburst_high_two_cover_comparison": [
+    {
+      "prompt_id": "old-canvas",
+      "complete": true,
+      "cells": [
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.9078991413116455,
+          "pixels_within_8_rgb_fraction": 0.6486854553222656,
+          "mae_rgb_0_255": 6.576661586761475,
+          "worst_tile_ssim": 0.7733453512191772
+        },
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "cover02",
+          "n": 1,
+          "ssim_luminance": 0.8518226742744446,
+          "pixels_within_8_rgb_fraction": 0.6246137038211329,
+          "mae_rgb_0_255": 7.790134906768799,
+          "worst_tile_ssim": 0.70904541015625
+        }
+      ],
+      "mean_ssim": 0.879860907793045,
+      "mean_within_8": 0.6366495795716993
+    },
+    {
+      "prompt_id": "anchored",
+      "complete": true,
+      "cells": [
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.8410359621047974,
+          "pixels_within_8_rgb_fraction": 0.5303535461425781,
+          "mae_rgb_0_255": 9.533519744873047,
+          "worst_tile_ssim": 0.6219038367271423
+        },
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "cover02",
+          "n": 1,
+          "ssim_luminance": 0.7561764717102051,
+          "pixels_within_8_rgb_fraction": 0.4547254986510568,
+          "mae_rgb_0_255": 10.4594144821167,
+          "worst_tile_ssim": 0.49468275904655457
+        }
+      ],
+      "mean_ssim": 0.7986062169075012,
+      "mean_within_8": 0.4925395223968175
+    },
+    {
+      "prompt_id": "edge-continuity",
+      "complete": true,
+      "cells": [
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.8220596313476562,
+          "pixels_within_8_rgb_fraction": 0.5840568542480469,
+          "mae_rgb_0_255": 9.50188159942627,
+          "worst_tile_ssim": 0.6031554937362671
+        },
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "cover02",
+          "n": 1,
+          "ssim_luminance": 0.7634038329124451,
+          "pixels_within_8_rgb_fraction": 0.42192377855632646,
+          "mae_rgb_0_255": 10.351804733276367,
+          "worst_tile_ssim": 0.5186335444450378
+        }
+      ],
+      "mean_ssim": 0.7927317321300507,
+      "mean_within_8": 0.5029903164021867
+    },
+    {
+      "prompt_id": "canvas-only",
+      "complete": true,
+      "cells": [
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.8316727876663208,
+          "pixels_within_8_rgb_fraction": 0.5255012512207031,
+          "mae_rgb_0_255": 9.607963562011719,
+          "worst_tile_ssim": 0.6154389977455139
+        },
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "cover02",
+          "n": 1,
+          "ssim_luminance": 0.6697489023208618,
+          "pixels_within_8_rgb_fraction": 0.4722557067871094,
+          "mae_rgb_0_255": 13.658352851867676,
+          "worst_tile_ssim": 0.4237706661224365
+        }
+      ],
+      "mean_ssim": 0.7507108449935913,
+      "mean_within_8": 0.49887847900390625
+    },
+    {
+      "prompt_id": "verbatim",
+      "complete": true,
+      "cells": [
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.7955514192581177,
+          "pixels_within_8_rgb_fraction": 0.5228080749511719,
+          "mae_rgb_0_255": 10.86274242401123,
+          "worst_tile_ssim": 0.571841299533844
+        },
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "cover02",
+          "n": 1,
+          "ssim_luminance": 0.6577833294868469,
+          "pixels_within_8_rgb_fraction": 0.41021744525686793,
+          "mae_rgb_0_255": 15.704767227172852,
+          "worst_tile_ssim": 0.35150888562202454
+        }
+      ],
+      "mean_ssim": 0.7266673743724823,
+      "mean_within_8": 0.4665127601040199
+    },
+    {
+      "prompt_id": "short",
+      "complete": true,
+      "cells": [
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.6418049931526184,
+          "pixels_within_8_rgb_fraction": 0.43862152099609375,
+          "mae_rgb_0_255": 16.851186752319336,
+          "worst_tile_ssim": 0.37141984701156616
+        },
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "cover02",
+          "n": 1,
+          "ssim_luminance": 0.728934645652771,
+          "pixels_within_8_rgb_fraction": 0.3667259216308594,
+          "mae_rgb_0_255": 12.138703346252441,
+          "worst_tile_ssim": 0.532797634601593
+        }
+      ],
+      "mean_ssim": 0.6853698194026947,
+      "mean_within_8": 0.40267372131347656
+    },
+    {
+      "prompt_id": "free-layout",
+      "complete": true,
+      "cells": [
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.5782674551010132,
+          "pixels_within_8_rgb_fraction": 0.294921875,
+          "mae_rgb_0_255": 31.839303970336914,
+          "worst_tile_ssim": 0.12401744723320007
+        },
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "cover02",
+          "n": 1,
+          "ssim_luminance": 0.6193234920501709,
+          "pixels_within_8_rgb_fraction": 0.3014984130859375,
+          "mae_rgb_0_255": 17.62618064880371,
+          "worst_tile_ssim": 0.23337961733341217
+        }
+      ],
+      "mean_ssim": 0.598795473575592,
+      "mean_within_8": 0.29821014404296875
+    },
+    {
+      "prompt_id": "copy-square",
+      "complete": false,
+      "cells": [
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.8539451360702515,
+          "pixels_within_8_rgb_fraction": 0.6259117126464844,
+          "mae_rgb_0_255": 8.387484550476074,
+          "worst_tile_ssim": 0.6387335658073425
+        },
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "cover02",
+          "n": 0,
+          "ssim_luminance": null,
+          "pixels_within_8_rgb_fraction": null,
+          "mae_rgb_0_255": null,
+          "worst_tile_ssim": null
+        }
+      ],
+      "mean_ssim": null,
+      "mean_within_8": null
+    }
+  ],
+  "openai_high_karambol_comparison": [
+    {
+      "prompt_id": "old-canvas",
+      "complete": true,
+      "cells": [
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.9078991413116455,
+          "pixels_within_8_rgb_fraction": 0.6486854553222656,
+          "mae_rgb_0_255": 6.576661586761475,
+          "worst_tile_ssim": 0.7733453512191772
+        },
+        {
+          "model": "openai/gpt-image-2.5-flare",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.8609488010406494,
+          "pixels_within_8_rgb_fraction": 0.5633621215820312,
+          "mae_rgb_0_255": 8.988703727722168,
+          "worst_tile_ssim": 0.7215876579284668
+        }
+      ],
+      "mean_ssim": 0.8844239711761475,
+      "mean_within_8": 0.6060237884521484
+    },
+    {
+      "prompt_id": "anchored",
+      "complete": true,
+      "cells": [
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.8410359621047974,
+          "pixels_within_8_rgb_fraction": 0.5303535461425781,
+          "mae_rgb_0_255": 9.533519744873047,
+          "worst_tile_ssim": 0.6219038367271423
+        },
+        {
+          "model": "openai/gpt-image-2.5-flare",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.8149906396865845,
+          "pixels_within_8_rgb_fraction": 0.5658531188964844,
+          "mae_rgb_0_255": 9.404029846191406,
+          "worst_tile_ssim": 0.5910115838050842
+        }
+      ],
+      "mean_ssim": 0.8280133008956909,
+      "mean_within_8": 0.5481033325195312
+    },
+    {
+      "prompt_id": "copy-square",
+      "complete": true,
+      "cells": [
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.8539451360702515,
+          "pixels_within_8_rgb_fraction": 0.6259117126464844,
+          "mae_rgb_0_255": 8.387484550476074,
+          "worst_tile_ssim": 0.6387335658073425
+        },
+        {
+          "model": "openai/gpt-image-2.5-flare",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.7917977571487427,
+          "pixels_within_8_rgb_fraction": 0.5049171447753906,
+          "mae_rgb_0_255": 11.234130859375,
+          "worst_tile_ssim": 0.52666836977005
+        }
+      ],
+      "mean_ssim": 0.8228714466094971,
+      "mean_within_8": 0.5654144287109375
+    },
+    {
+      "prompt_id": "free-layout",
+      "complete": true,
+      "cells": [
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.5782674551010132,
+          "pixels_within_8_rgb_fraction": 0.294921875,
+          "mae_rgb_0_255": 31.839303970336914,
+          "worst_tile_ssim": 0.12401744723320007
+        },
+        {
+          "model": "openai/gpt-image-2.5-flare",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.5662516951560974,
+          "pixels_within_8_rgb_fraction": 0.27616119384765625,
+          "mae_rgb_0_255": 35.51741409301758,
+          "worst_tile_ssim": 0.15570394694805145
+        }
+      ],
+      "mean_ssim": 0.5722595751285553,
+      "mean_within_8": 0.2855415344238281
+    },
+    {
+      "prompt_id": "short",
+      "complete": false,
+      "cells": [
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.6418049931526184,
+          "pixels_within_8_rgb_fraction": 0.43862152099609375,
+          "mae_rgb_0_255": 16.851186752319336,
+          "worst_tile_ssim": 0.37141984701156616
+        },
+        {
+          "model": "openai/gpt-image-2.5-flare",
+          "track": "track2",
+          "n": 0,
+          "ssim_luminance": null,
+          "pixels_within_8_rgb_fraction": null,
+          "mae_rgb_0_255": null,
+          "worst_tile_ssim": null
+        }
+      ],
+      "mean_ssim": null,
+      "mean_within_8": null
+    },
+    {
+      "prompt_id": "canvas-only",
+      "complete": false,
+      "cells": [
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.8316727876663208,
+          "pixels_within_8_rgb_fraction": 0.5255012512207031,
+          "mae_rgb_0_255": 9.607963562011719,
+          "worst_tile_ssim": 0.6154389977455139
+        },
+        {
+          "model": "openai/gpt-image-2.5-flare",
+          "track": "track2",
+          "n": 0,
+          "ssim_luminance": null,
+          "pixels_within_8_rgb_fraction": null,
+          "mae_rgb_0_255": null,
+          "worst_tile_ssim": null
+        }
+      ],
+      "mean_ssim": null,
+      "mean_within_8": null
+    },
+    {
+      "prompt_id": "edge-continuity",
+      "complete": false,
+      "cells": [
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.8220596313476562,
+          "pixels_within_8_rgb_fraction": 0.5840568542480469,
+          "mae_rgb_0_255": 9.50188159942627,
+          "worst_tile_ssim": 0.6031554937362671
+        },
+        {
+          "model": "openai/gpt-image-2.5-flare",
+          "track": "track2",
+          "n": 0,
+          "ssim_luminance": null,
+          "pixels_within_8_rgb_fraction": null,
+          "mae_rgb_0_255": null,
+          "worst_tile_ssim": null
+        }
+      ],
+      "mean_ssim": null,
+      "mean_within_8": null
+    },
+    {
+      "prompt_id": "verbatim",
+      "complete": false,
+      "cells": [
+        {
+          "model": "openai/gpt-image-2.5-sunburst",
+          "track": "track2",
+          "n": 1,
+          "ssim_luminance": 0.7955514192581177,
+          "pixels_within_8_rgb_fraction": 0.5228080749511719,
+          "mae_rgb_0_255": 10.86274242401123,
+          "worst_tile_ssim": 0.571841299533844
+        },
+        {
+          "model": "openai/gpt-image-2.5-flare",
+          "track": "track2",
+          "n": 0,
+          "ssim_luminance": null,
+          "pixels_within_8_rgb_fraction": null,
+          "mae_rgb_0_255": null,
+          "worst_tile_ssim": null
+        }
+      ],
+      "mean_ssim": null,
+      "mean_within_8": null
+    }
+  ],
+  "ranking_visibility_note": "The conservative full-source ranking gate requires >=99.5% visible source. Reliable registrations below that coverage still have valid overlap metrics, but are excluded from whole-source ranking; this may exclude slight edge loss or interpolation.",
+  "model_prompt_coverage": [
+    {
+      "prompt_id": "anchored",
+      "model": "google/gemini-nano-banana-2.1",
+      "outputs": 2,
+      "aligned": 2,
+      "whole_source_eligible": 1
+    },
+    {
+      "prompt_id": "anchored",
+      "model": "openai/gpt-image-2.5-flare",
+      "outputs": 5,
+      "aligned": 3,
+      "whole_source_eligible": 3
+    },
+    {
+      "prompt_id": "anchored",
+      "model": "openai/gpt-image-2.5-sunburst",
+      "outputs": 5,
+      "aligned": 4,
+      "whole_source_eligible": 4
+    },
+    {
+      "prompt_id": "canvas-only",
+      "model": "openai/gpt-image-2.5-flare",
+      "outputs": 2,
+      "aligned": 1,
+      "whole_source_eligible": 1
+    },
+    {
+      "prompt_id": "canvas-only",
+      "model": "openai/gpt-image-2.5-sunburst",
+      "outputs": 2,
+      "aligned": 2,
+      "whole_source_eligible": 2
+    },
+    {
+      "prompt_id": "copy-square",
+      "model": "openai/gpt-image-2.5-flare",
+      "outputs": 3,
+      "aligned": 2,
+      "whole_source_eligible": 2
+    },
+    {
+      "prompt_id": "copy-square",
+      "model": "openai/gpt-image-2.5-sunburst",
+      "outputs": 5,
+      "aligned": 4,
+      "whole_source_eligible": 2
+    },
+    {
+      "prompt_id": "edge-continuity",
+      "model": "openai/gpt-image-2.5-flare",
+      "outputs": 5,
+      "aligned": 3,
+      "whole_source_eligible": 3
+    },
+    {
+      "prompt_id": "edge-continuity",
+      "model": "openai/gpt-image-2.5-sunburst",
+      "outputs": 5,
+      "aligned": 4,
+      "whole_source_eligible": 4
+    },
+    {
+      "prompt_id": "free-layout",
+      "model": "openai/gpt-image-2.5-flare",
+      "outputs": 2,
+      "aligned": 2,
+      "whole_source_eligible": 2
+    },
+    {
+      "prompt_id": "free-layout",
+      "model": "openai/gpt-image-2.5-sunburst",
+      "outputs": 2,
+      "aligned": 2,
+      "whole_source_eligible": 2
+    },
+    {
+      "prompt_id": "old-canvas",
+      "model": "google/gemini-nano-banana-2.1",
+      "outputs": 11,
+      "aligned": 11,
+      "whole_source_eligible": 1
+    },
+    {
+      "prompt_id": "old-canvas",
+      "model": "openai/gpt-image-2.5-flare",
+      "outputs": 14,
+      "aligned": 14,
+      "whole_source_eligible": 13
+    },
+    {
+      "prompt_id": "old-canvas",
+      "model": "openai/gpt-image-2.5-sunburst",
+      "outputs": 15,
+      "aligned": 15,
+      "whole_source_eligible": 13
+    },
+    {
+      "prompt_id": "short",
+      "model": "openai/gpt-image-2.5-flare",
+      "outputs": 3,
+      "aligned": 2,
+      "whole_source_eligible": 2
+    },
+    {
+      "prompt_id": "short",
+      "model": "openai/gpt-image-2.5-sunburst",
+      "outputs": 3,
+      "aligned": 3,
+      "whole_source_eligible": 3
+    },
+    {
+      "prompt_id": "verbatim",
+      "model": "openai/gpt-image-2.5-flare",
+      "outputs": 2,
+      "aligned": 1,
+      "whole_source_eligible": 1
+    },
+    {
+      "prompt_id": "verbatim",
+      "model": "openai/gpt-image-2.5-sunburst",
+      "outputs": 2,
+      "aligned": 2,
+      "whole_source_eligible": 2
+    }
+  ]
+}
