@@ -1,11 +1,13 @@
 {
   "schema_version": 1,
-  "stage": "mahlep",
+  "stage": "feslegen",
   "execution": "budgeted_executor_installed; explicit private state and launch required",
   "primary": {
     "model": "openai/gpt-image-2.5-sunburst",
     "quality": "high",
-    "provider_route": "OpenRouter"
+    "provider_route": "OpenRouter",
+    "network_workers_max": 3,
+    "concurrency": "explicit --workers; reserve all wave slots together; drain before next wave; source audits serial and isolated"
   },
   "fallback": {
     "model": "google/gemini-nano-banana-2.1",
