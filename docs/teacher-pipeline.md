@@ -61,6 +61,20 @@ groups until its count or account budget is reached. Run either under the existi
 memory/pressure/swap guard. The queue interleaves the four requested Turkish
 artists first, then other Turkish sources and remaining covers.
 
+Feslegen adds `--workers 3`: three network requests overlap, while a single
+coordinator reserves the **whole wave** before dispatch. All launched requests
+drain before another wave, including when one fails. Source audits run serially
+in short-lived processes so OpenCV/SIFT memory is released between covers. No
+model inference runs locally. The 512 MiB group limit still applies. Default
+worker count remains one unless explicitly selected. Near budget exhaustion the
+available reserve reduces the worker count automatically.
+
+Create `.build/teacher-queue.pause` to stop fresh POSTs while active calls finish;
+remove it before an explicitly resumed run. Benchmark exit 75 occurs before
+receipt creation or API access, allowing that specific deferred item to return
+to pending. Other missing receipts remain ambiguous. `status` now reads the
+atomic state snapshot without the mutation lock, including during active work.
+
 Every primary call checks live **account credit**, the API-key spending limit,
 and the larger of known receipt charges or account-credit movement. A $0.10
 preflight reserve is conservative relative to measured Sunburst calls, but is
@@ -72,7 +86,11 @@ successful primary images; all outputs remain pending human training admission.
 Google fallbacks use the native Batch API, with the frozen prompt and same two
 references, 9:16 / 1K. The first protocol pilot contains at most two rejected
 primary sources. `production` can submit that pilot and collect it between primary
-groups; it **does not submit a larger Google queue without inspection**. Explicit
+groups; it **does not submit a larger Google queue without inspection**. After
+the first image and source audit are inspected, record `google_protocol_pilot_reviewed`
+in private state; production can then submit further two-item fallback batches
+within the existing reservation budget. This is protocol review, not human
+training acceptance. Explicit
 `google-submit` and `google-collect` commands recover pending jobs using saved IDs.
 Batch submissions have durable intents and never retry an ambiguous POST.
 Unknown/failed batch charges retain their reservations; failures are quarantined.
