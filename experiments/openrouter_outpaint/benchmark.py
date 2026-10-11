@@ -167,7 +167,11 @@ def main() -> None:
                         help="Let OpenRouter choose routing instead of pinning the discovered provider")
     parser.add_argument("--require-prompt-sha256", help="Abort before POST if the resolved prompt differs")
     parser.add_argument("--require-reference-count", type=int, help="Abort before POST if reference count differs")
+    parser.add_argument("--stop-file", type=Path, default=ROOT / '.build/teacher-queue.pause',
+                        help="Existence prevents a fresh paid request; lets an older worker drain")
     args = parser.parse_args()
+    if args.stop_file.exists():
+        raise SystemExit(75)  # No receipt or POST created; caller may safely defer.
     custom_prompt = None
     if args.prompt_file:
         if args.input_mode == "canvas":
