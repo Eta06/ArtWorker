@@ -10,6 +10,15 @@ import teacher_pipeline as p
 
 
 class PipelineTests(unittest.TestCase):
+    def test_credit_rejected_sources_go_to_remaining_nano_before_untouched(self):
+        state=self.state();state['sources'].append({'id':'credit','status':'primary_budget_rejected'})
+        args=SimpleNamespace(max_active_batches=1)
+        def submit(args,state,selected_ids):
+            self.assertEqual(selected_ids,['refused','credit'])
+            state['google_jobs'].append({'status':'submitted'})
+        with patch.object(p,'paused',return_value=False),patch.object(q,'submit_google',side_effect=submit):
+            p.pump_google(args,state,remaining=True)
+
     def state(self):
         return {'prompt_sha256':q.PROMPT_HASH,'google_jobs':[],'sources':[
             {'id':'old','status':'nano_completed_review_pending'},
