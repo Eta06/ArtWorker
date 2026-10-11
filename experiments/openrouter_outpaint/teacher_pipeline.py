@@ -26,6 +26,7 @@ def pump_google(args,state,remaining=False):
         if paused(): break
         ids=[r['id'] for r in state['sources'] if r['status']=='fallback_pending']
         if remaining:
+            ids.extend(r['id'] for r in state['sources'] if r['status']=='primary_budget_rejected')
             ids.extend(r['id'] for r in state['sources'] if r['status']=='pending')
         if not ids: break
         try: q.submit_google(args,state,selected_ids=ids[:2])
@@ -69,7 +70,7 @@ def run(args,state):
                 continue
         blocked=pump_google(args,state,remaining=True)
         active=sum(j['status']=='submitted' for j in state['google_jobs'])
-        eligible=any(r['status'] in ('pending','fallback_pending') for r in state['sources'])
+        eligible=any(r['status'] in ('pending','fallback_pending','primary_budget_rejected') for r in state['sources'])
         if not active and (blocked or not eligible):
             plan['status']='budget_stop' if blocked else 'attempts_finished_review_pending'
             state['status']='teacher_pipeline_'+plan['status']
