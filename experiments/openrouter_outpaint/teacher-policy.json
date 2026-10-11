@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "stage": "erguvan",
+  "execution": "plan_only_no_new_teacher_calls",
+  "primary": {
+    "model": "openai/gpt-image-2.5-sunburst",
+    "quality": "high",
+    "provider_route": "OpenRouter"
+  },
+  "fallback": {
+    "model": "google/gemini-nano-banana-2.1",
+    "resolution": "1K",
+    "provider_route": "OpenRouter; explicitly selected direct Google route may be substituted and logged"
+  },
+  "comparison_only": [
+    "openai/gpt-image-2.5-flare"
+  ],
+  "prompt": {
+    "id": "old-canvas",
+    "sha256": "736716dd0146c1cbda160d21c6615dbe78e494a6e98dc779cb94701bd006efc8",
+    "text": "Outpaint the album artwork into one seamless portrait image, aspect ratio 9:16. Reference 1 is the target layout: a 720x1280 canvas containing the original 720x720 square at x=0, y=280, with solid green placeholder areas above and below. Reference 2 is the original square artwork. Keep that square centered, full width, at the same scale and position. Replace only the green placeholders with natural continuations of the existing scene. Preserve the original square's composition, people, faces, text, logos, color, grain, lighting and perspective. Continue lines, surfaces, shadows and clothing across both boundaries without visible seams or sudden color changes. Printed graphics on clothing must stay printed graphics, not become real objects. Do not add new people, new lettering, borders, gradients, blurred copies, mirrored copies or green tint. Return the complete expanded image, not a new cover.",
+    "input_references": [
+      {
+        "kind": "green_placeholder_canvas",
+        "width": 720,
+        "height": 1280,
+        "source_rectangle": [
+          0,
+          280,
+          720,
+          720
+        ]
+      },
+      {
+        "kind": "original_square",
+        "width": 720,
+        "height": 720
+      }
+    ]
+  },
+  "policy": {
+    "definite_primary_safety_refusal": "one fallback attempt",
+    "completed_no_image": "one fallback attempt only after billing reconciliation",
+    "technical_error_429_5xx": "bounded backoff on same primary only after charge/status reconciliation; no blind POST retry",
+    "ambiguous_timeout_or_lost_response": "pause item; reconcile provider generation and billing before fresh POST",
+    "successful_image": "free source alignment; report SSIM and RGB tolerance as distinct metrics; no center-placement penalty",
+    "unreliable_registration_or_partial_source": "manual review; no fabricated rectangle, no automatic training admission",
+    "preservation_or_exterior_quality_fail": "manual review; one fallback attempt only when explicitly rejected and budget permits",
+    "fallback_failure": "quarantine; no recursive fallback/retry loop",
+    "training_admission": "reliable full-source match and human review of source content, outside quality and seams; shifted/scaled source allowed",
+    "thresholds": "not universally calibrated; no SSIM-only percentage unchanged or auto acceptance threshold",
+    "billing": "persist every actual attempt, model, prompt hash, settings, request/generation IDs, source/output hashes, actual cost or explicitly unknown; both costs count when fallback is used",
+    "paid_execution": "requires a separately configured batch size and spending cap before running; collecting covers does not trigger generation",
+    "max_primary_attempts": 2,
+    "max_fallback_attempts": 1,
+    "primary_retry_conditions": "at most one confirmed transient technical failure after completion/charge reconciliation; never retry a refusal"
+  },
+  "student_status": "Local iOS student is not final or trained by this stage"
+}
