@@ -121,6 +121,19 @@ def refusal(receipt):
     return any(s in text for s in ('safety', 'content_policy', 'content policy', 'moderation', 'refusal'))
 
 
+def credit_rejection(receipt):
+    """Recognize an explicit account-credit rejection, not an ambiguous POST."""
+    if receipt.get('status')!='http_error' or receipt.get('http_status')!=402:
+        return False
+    if receipt.get('images') or receipt.get('generation_id') or receipt.get('reported_cost_usd') not in (None,0,'0'):
+        return False
+    try: error=json.loads(receipt.get('error',''))['error']
+    except (ValueError,KeyError,TypeError): return False
+    return (error.get('code')==402 and
+            error.get('metadata',{}).get('limit_source')=='openrouter_credits' and
+            'insufficient credits' in error.get('message','').lower())
+
+
 def run_sun(args, state):
     key = args.key_file.read_text().strip()
     catalog, _ = request_json('images/models/' + SUN + '/endpoints', key)
@@ -285,7 +298,7 @@ def run_parallel_sun(args,state):
                 source=futures[future]
                 try: future.result()
                 except Exception as exc: failures[source['id']]={'type':type(exc).__name__,'returncode':getattr(exc,'returncode',None)}
-        stop=False
+        stop=False;primary_budget_stop=False
         for source in wave:
             out=ROOT/source['directory']; receipt_path=out/'receipt.json'
             if not receipt_path.exists():
@@ -303,6 +316,9 @@ def run_parallel_sun(args,state):
             source.update(measurement_row=row,actual_cost_usd=row.get('actual_cost_usd'))
             if receipt['status']=='completed' and row.get('actual_cost_usd') is not None:
                 source['status']='sunburst_completed_review_pending'
+            elif credit_rejection(receipt):
+                source['status']='primary_budget_rejected'
+                primary_budget_stop=True
             elif refusal(receipt) or (receipt['status']=='no_image' and row.get('actual_cost_usd') is not None):
                 source['status']='fallback_pending'
             else:
@@ -327,10 +343,11 @@ def run_parallel_sun(args,state):
             save_json(args.state,state)
             raise
         state['inflight_reserved_usd']='0' if not stop else 'unresolved; reconcile receipts before more requests'
-        state['status']='parallel_reconciliation_required' if stop else 'parallel_wave_finished'
+        state['status']='parallel_reconciliation_required' if stop else ('openrouter_budget_stop' if primary_budget_stop else 'parallel_wave_finished')
         save_json(args.state,state);count+=len(wave)
         print(json.dumps({'wave_finished':len(wave),'spend_usd':state['openrouter_spend_usd'],'stop':stop}),flush=True)
         if stop: raise ValueError('Wave drained; reconcile error/billing before more POSTs')
+        if primary_budget_stop: return
 
 
 def submit_google(args, state, selected_ids=None):
@@ -344,7 +361,7 @@ def submit_google(args, state, selected_ids=None):
         if not selected_ids or len(selected_ids)>2 or len(set(selected_ids))!=len(selected_ids):
             raise ValueError('Explicit Nano batch requires one or two distinct sources')
         by_id={r['id']:r for r in state['sources']}
-        if any(i not in by_id or by_id[i]['status'] not in ('pending','fallback_pending') for i in selected_ids):
+        if any(i not in by_id or by_id[i]['status'] not in ('pending','fallback_pending','primary_budget_rejected') for i in selected_ids):
             raise ValueError('Explicit Nano source was already attempted or is not eligible')
         selected=[by_id[i] for i in selected_ids]
     if not selected:
