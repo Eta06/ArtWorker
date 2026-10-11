@@ -333,11 +333,20 @@ def run_parallel_sun(args,state):
         if stop: raise ValueError('Wave drained; reconcile error/billing before more POSTs')
 
 
-def submit_google(args, state):
+def submit_google(args, state, selected_ids=None):
     key = args.google_key_file.read_text().strip()
     if any(j['status'] == 'submit_uncertain' for j in state['google_jobs']):
         raise ValueError('Unknown batch submission; reconcile before another POST')
-    selected = [r for r in state['sources'] if r['status'] == 'fallback_pending'][:min(args.limit, 2)]
+    if selected_ids is None:
+        selected = [r for r in state['sources'] if r['status'] == 'fallback_pending'][:min(args.limit, 2)]
+    else:
+        # Direct Nano trials require a separately saved, explicitly authorized plan.
+        if not selected_ids or len(selected_ids)>2 or len(set(selected_ids))!=len(selected_ids):
+            raise ValueError('Explicit Nano batch requires one or two distinct sources')
+        by_id={r['id']:r for r in state['sources']}
+        if any(i not in by_id or by_id[i]['status'] not in ('pending','fallback_pending') for i in selected_ids):
+            raise ValueError('Explicit Nano source was already attempted or is not eligible')
+        selected=[by_id[i] for i in selected_ids]
     if not selected:
         print('No definite Sunburst refusals/no-image fallbacks pending'); return
     requests, refs = [], []
