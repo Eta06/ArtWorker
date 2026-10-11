@@ -58,54 +58,67 @@ def matched_table(rows: list[dict], conditions: list[tuple[str, str]],
                                         r['mean_ssim'] or -1), reverse=True)
 
 
-def comparison_image(rows: list[dict], output: Path) -> Path:
+def comparison_image(rows: list[dict], output: Path, model: str = MODELS[0],
+                     covers: tuple = (('track2', 'Karambol'), ('cover02', 'Gripin')),
+                     variants: list[tuple] | None = None,
+                     target: Path | None = None) -> Path:
     """Static diagnostic sheet for chat, not a generated or repaired artwork."""
     prompts = ['old-canvas', 'anchored', 'edge-continuity', 'copy-square',
                'canvas-only', 'verbatim', 'short', 'free-layout']
-    sheet = Image.new('RGB', (1220, 300+len(prompts)*210), '#15191c')
+    variants = variants or [(p, p, 'quality', 'high') for p in prompts]
+    target = target or output/'source-preservation-comparison.png'
+    if not target.resolve().is_relative_to(ROOT):
+        raise ValueError('Diagnostic image must remain inside repository')
+    sheet = Image.new('RGB', (16+len(covers)*602, 300+len(variants)*210), '#15191c')
     draw = ImageDraw.Draw(sheet)
     font_path = Path('/System/Library/Fonts/Supplemental/Arial.ttf')
     def font(size):
         return ImageFont.truetype(str(font_path), size) if font_path.exists() else ImageFont.load_default()
-    draw.text((24, 18), 'Kaynak koruma — Sunburst high', fill='white', font=font(30))
+    model_label = {MODELS[0]: 'Sunburst high', MODELS[1]: 'Flare high',
+                   MODELS[2]: 'Nano Banana 2.1'}[model]
+    draw.text((24, 18), 'Kaynak koruma — '+model_label, fill='white', font=font(30))
     draw.text((24, 65), 'Konum puanlanmadı. Turuncu: bulunan kare · Hizalanmış kırpım · Piksel farkı',
               fill='#b9c3cb', font=font(20))
-    for column, (track, title) in enumerate([('track2', 'Karambol'), ('cover02', 'Gripin')]):
+    for column, (track, title) in enumerate(covers):
         x = 24+column*602
-        reference = next(r for r in rows if r['track'] == track and r['model'] == MODELS[0])
+        reference = next(r for r in rows if r['track'] == track and r['model'] == model)
         draw.text((x, 108), title+' — orijinal kare', fill='white', font=font(22))
         with Image.open(output/reference['id']/'source.png') as original:
             sheet.paste(original.resize((138, 138)), (x, 146))
-        for index, prompt in enumerate(prompts):
+        for index, (label, prompt, setting_key, setting_value) in enumerate(variants):
             y = 300+index*210
             candidates = [r for r in rows if r['prompt_id'] == prompt and r['track'] == track
-                          and r['model'] == MODELS[0] and r['settings'].get('quality') == 'high']
+                          and r['model'] == model and r['settings'].get(setting_key) == setting_value]
             if not candidates:
-                draw.text((x, y), prompt+' — denenmedi', fill='white', font=font(20))
+                draw.text((x, y), label+' — denenmedi', fill='white', font=font(20))
                 continue
             row = candidates[0]
             score = row['aligned']
             if score is None:
-                draw.text((x, y), prompt+' — güvenilir eşleşme yok', fill='white', font=font(20))
-                continue
-            suffix = '' if row['ranking_eligible'] else ' · kısmi görünürlük'
-            draw.text((x, y), f"{prompt} · SSIM {100*score['ssim_luminance']:.1f}%"+suffix,
-                      fill='#b9efc3' if prompt == 'old-canvas' else 'white', font=font(18))
+                draw.text((x, y), label+' — güvenilir eşleşme yok', fill='white', font=font(18))
+            else:
+                visible = row['alignment']['visible_source_fraction']
+                suffix = '' if row['ranking_eligible'] else f' · görünür {100*visible:.1f}%'
+                draw.text((x, y), f"{label} · SSIM {100*score['ssim_luminance']:.1f}%"+suffix,
+                          fill='#b9efc3' if prompt == 'old-canvas' else 'white', font=font(18))
             raw = (output/row['raw_url']).resolve()
             with Image.open(raw) as im:
                 working = im.convert('RGB').resize((512, round(im.height*512/im.width)),
                                                     Image.Resampling.LANCZOS)
-            transform = np.asarray(row['alignment']['matrix_source_to_output'])
-            corners = np.float64([[0, 0], [511, 0], [511, 511], [0, 511]])
-            polygon = corners@transform[:, :2].T+transform[:, 2]
-            ImageDraw.Draw(working).line([tuple(v) for v in polygon]+[tuple(polygon[0])],
-                                        fill=(255, 180, 80), width=5)
+            if score is not None:
+                transform = np.asarray(row['alignment']['matrix_source_to_output'])
+                corners = np.float64([[0, 0], [511, 0], [511, 511], [0, 511]])
+                polygon = corners@transform[:, :2].T+transform[:, 2]
+                ImageDraw.Draw(working).line([tuple(v) for v in polygon]+[tuple(polygon[0])],
+                                            fill=(255, 180, 80), width=5)
             working.thumbnail((105, 175))
             sheet.paste(working, (x, y+29))
+            if score is None:
+                draw.text((x+125, y+75), 'Hizalı kırpım / skor verilmedi.', fill='#b9c3cb', font=font(18))
+                continue
             for dx, file in [(125, 'aligned.png'), (302, 'aligned-difference.png')]:
                 with Image.open(output/row['id']/file) as im:
                     sheet.paste(im.resize((170, 170)), (x+dx, y+29))
-    target = output/'source-preservation-comparison.png'
     sheet.save(target)
     return target
 
