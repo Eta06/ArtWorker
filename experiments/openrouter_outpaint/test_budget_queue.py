@@ -1,0 +1,57 @@
+"""Offline spending and route regression checks; never access paid services."""
+import unittest
+from decimal import Decimal
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
+
+import budget_queue as q
+
+
+class QueueTests(unittest.TestCase):
+    def test_spend_uses_larger_of_receipts_and_live_account_movement(self):
+        state={'initial_openrouter_credit_usd':'16.07', 'sources':[{'actual_cost_usd':0.2}]}
+        self.assertEqual(q.committed_spend(state,Decimal('16')),Decimal('0.2'))
+        self.assertEqual(q.committed_spend(state,Decimal('15.77')),Decimal('0.30'))
+
+    def test_technical_errors_do_not_enter_safety_fallback(self):
+        self.assertFalse(q.refusal({'http_status':429,'error':'safety quota exceeded'}))
+        self.assertFalse(q.refusal({'http_status':400,'error':'invalid image dimensions'}))
+        self.assertTrue(q.refusal({'http_status':400,'error':'content_policy_violation'}))
+
+    def test_requested_artists_are_interleaved_without_duplicate_cover_hashes(self):
+        def row(i,a): return {'id':i,'sha256':i,'artists':[a], 'origin':'turkish_focus_discography'}
+        rows=[row('u1','UZI'),row('u2','UZI'),row('m1','Motive'),row('g1','Güneş'),row('r1','Murda')]
+        rows.append(dict(rows[0]))
+        self.assertEqual([r['id'] for r in q.select({'covers':rows})],['u1','m1','g1','r1','u2'])
+
+    def test_unknown_batch_submission_blocks_another_post(self):
+        with patch.object(q,'google',side_effect=AssertionError('No request allowed')):
+            with TemporaryDirectory() as temp:
+                key=Path(temp)/'key'; key.write_text('dummy')
+                args=type('Args',(),{'google_key_file':key})()
+                with self.assertRaisesRegex(ValueError,'Unknown batch'):
+                    q.submit_google(args,{'google_jobs':[{'status':'submit_uncertain'}]})
+
+    def test_batch_preserves_two_reference_order_and_prompt(self):
+        with TemporaryDirectory() as temp:
+            out=Path(temp)
+            (out/'input.png').write_bytes(b'canvas'); (out/'source.png').write_bytes(b'source')
+            request=q.nano_request(out)
+            self.assertEqual(request['contents'][0]['parts'][0]['text'],q.PROMPT)
+            self.assertEqual(len(request['contents'][0]['parts']),3)
+            self.assertEqual(request['generationConfig']['imageConfig'],{'aspectRatio':'9:16','imageSize':'1K'})
+
+    def test_rest_nested_batch_response_and_state(self):
+        response={'metadata':{'state':'BATCH_STATE_SUCCEEDED'},'response':{'inlinedResponses':{'inlinedResponses':[{'metadata':{'key':'a'}}]}}}
+        self.assertEqual(q.batch_outputs(response),('BATCH_STATE_SUCCEEDED',[{'metadata':{'key':'a'}}]))
+
+    def test_missing_usage_cannot_be_estimated_as_free(self):
+        self.assertIsNone(q.google_estimate({},False))
+        self.assertIsNone(q.google_estimate({'promptTokenCount':100,'candidatesTokenCount':1120},True))
+        usage={'promptTokenCount':1000,'candidatesTokenCount':1120,'thoughtsTokenCount':500,
+               'candidatesTokensDetails':[{'modality':'IMAGE','tokenCount':1120}]}
+        self.assertEqual(q.google_estimate(usage,True),Decimal('0.019425'))
+
+
+if __name__=='__main__': unittest.main()
