@@ -12,6 +12,35 @@ import budget_queue as q
 
 
 class QueueTests(unittest.TestCase):
+    def test_credit_rejection_requires_explicit_metadata_without_output(self):
+        receipt={'status':'http_error','http_status':402,'error':json.dumps({'error':{
+            'code':402,'message':'Insufficient credits','metadata':{'limit_source':'openrouter_credits'}}})}
+        self.assertTrue(q.credit_rejection(receipt))
+        for change in ({'http_status':500},{'images':[{}]},{'generation_id':'gen-test'},
+                       {'reported_cost_usd':0.01},{'error':'timeout'},
+                       {'error':json.dumps({'error':{'code':402,'message':'Insufficient credits'}})}):
+            self.assertFalse(q.credit_rejection(dict(receipt,**change)))
+
+    def test_credit_402_drains_wave_and_stops_primary_without_retry(self):
+        with TemporaryDirectory(dir=q.ROOT/'.build') as temp:
+            root=Path(temp);key=root/'key';key.write_text('dummy')
+            cover=root/'source.png';cover.write_bytes(b'cover')
+            state={'initial_openrouter_credit_usd':'1','openrouter_budget_usd':'1','sources':[
+                {'id':'a','status':'pending','sha256':q.sha(cover),'file':str(cover.relative_to(q.ROOT))}]}
+            args=type('Args',(),{'state':root/'queue.json','key_file':key,'workers':3,'limit':9})()
+            def run(command,**kw):
+                out=Path(command[command.index('--output')+1]);out.mkdir(parents=True)
+                q.save_json(out/'receipt.json',{'status':'http_error','http_status':402,
+                    'request':{'prompt':q.PROMPT,'input_references':[{},{}]},
+                    'error':json.dumps({'error':{'code':402,'message':'Insufficient credits',
+                        'metadata':{'limit_source':'openrouter_credits'}}})})
+            with patch.object(q,'credit',return_value=Decimal('1')),patch.object(q,'read_account',return_value=({'data':{'limit_remaining':1}},{})),patch.object(q,'lightweight_row',return_value={'actual_cost_usd':None}),patch.object(q.subprocess,'run',side_effect=run) as posts,patch.object(q.Path,'exists',autospec=True,side_effect=lambda p:False if str(p).endswith('teacher-queue.pause') else original_exists(p)):
+                q.run_parallel_sun(args,state)
+                self.assertEqual(posts.call_count,1)
+                self.assertEqual(state['status'],'openrouter_budget_stop')
+                self.assertEqual(state['sources'][0]['status'],'primary_budget_rejected')
+                self.assertEqual(state['inflight_reserved_usd'],'0')
+
     def test_spend_uses_larger_of_receipts_and_live_account_movement(self):
         state={'initial_openrouter_credit_usd':'16.07', 'sources':[{'actual_cost_usd':0.2}]}
         self.assertEqual(q.committed_spend(state,Decimal('16')),Decimal('0.2'))
