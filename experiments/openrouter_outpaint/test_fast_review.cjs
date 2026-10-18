@@ -192,6 +192,34 @@ test('detail hover follows the current boundary checkbox without changing saved 
   assert.equal(h.run('reviewCropExtensions(data.rows[0]).top'),false);
 });
 
+test('summary separates selected, rejected, pending and unseen outputs by current fingerprint',()=>{
+  const h=fixture();
+  h.run("trainingReviews={one:{raw_sha256:data.rows[0].raw_sha256,decision:'accepted'},two:{raw_sha256:data.rows[1].raw_sha256,decision:'rejected'},three:{raw_sha256:'old-output',decision:'accepted'}}");
+  assert.match(h.run('reviewSummaryText()'),/Seçtin: 1 · Kötü: 1 · Kararsız: 0 · İncelenmedi: 1/);
+  h.run("trainingReviews.three={raw_sha256:data.rows[2].raw_sha256,decision:'pending'};updateReviewSummary()");
+  assert.match(h.node('#fast-selection-count').textContent,/Kararsız: 1 · İncelenmedi: 0/);
+});
+
+test('remove top keeps only source plus bottom target, autosaves, and clears conflicting include-top',async()=>{
+  const h=fixture();h.rows[0].dimensions=[1000,2000];h.rows[0].region={polygon:[[0,500],[1000,500],[1000,1500],[0,1500]]};
+  h.run("cropDrafts.set(data.rows[0].id+'-'+data.rows[0].raw_sha256,{top:true,bottom:false})");
+  await h.run("toggleTargetTrim(data.rows[0],'top','fast')");
+  const crop=JSON.parse(h.run('JSON.stringify(trainingCrop(data.rows[0]))'));
+  assert.deepEqual(crop.target_box_px,[0,500,1000,2000]);assert.deepEqual(crop.input_box_in_target_px,[0,0,1000,1000]);
+  assert.equal(h.requests[0].target_trim.top,true);assert.equal(h.requests[0].crop_extensions.top,false);
+  assert.equal(h.requests[0].decision,'pending');assert.equal(h.run('fastReview.index'),0);
+  const reloaded=fixture(h.storage);assert.equal(reloaded.run('reviewTargetTrim(data.rows[0]).top'),true);
+});
+
+test('trim hover does not save and resets the target overlay on mouse leave',()=>{
+  const h=fixture();h.rows[0].dimensions=[1000,2000];h.rows[0].region={polygon:[[0,500],[1000,500],[1000,1500],[0,1500]]};
+  h.run("bindCropControls(data.rows[0],'fast')");h.node('#fast-trim-bottom').onmouseenter();
+  assert.match(h.node('#fast-trim-zones').innerHTML,/trim-discard/);
+  assert.match(h.node('#fast-crop-info').textContent,/eğitim hedefinden çıkarılacak/);
+  assert.equal(h.requests.length,0);assert.equal(h.run('reviewTargetTrim(data.rows[0]).bottom'),false);
+  h.node('#fast-trim-bottom').onmouseleave();assert.equal(h.node('#fast-trim-zones').innerHTML,'');
+});
+
 test('a response without the exact durable operation acknowledgement never advances',async()=>{
   const h=fixture();h.c.fetch=async()=>({ok:true,json:async()=>({decisions:{}})});
   await h.run("chooseFastReview('accepted')");
