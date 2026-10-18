@@ -103,6 +103,41 @@ class TrainingReviewTests(unittest.TestCase):
         crop = training_crop(row, {'top': False, 'bottom': True})
         self.assertEqual(crop['box_px'], [0, 400, 905, 2000])
 
+    def test_target_trim_coordinates_and_mask_are_relative_to_retained_target(self):
+        payload = {**self.decision('a', 'accepted'), 'target_trim': {'top': True, 'bottom': False}}
+        result = self.store.decide(payload)
+        crop = result['manifest']['candidates'][0]['conditioning']
+        self.assertEqual(crop['target_box_px'], [0, 500, 1000, 2000])
+        self.assertEqual(crop['target_dimensions'], [1000, 1500])
+        self.assertEqual(crop['input_box_in_target_px'], [0, 0, 1000, 1000])
+        self.assertEqual(crop['remaining_target_pixels'], 500000)
+        self.store.decide(self.decision('a', 'accepted', revision=1))
+        self.assertTrue(ReviewStore(self.root).snapshot()['decisions']['a']['target_trim']['top'])
+        bottom = {**payload, 'revision': 2, 'target_trim': {'top': False, 'bottom': True}}
+        crop = self.store.decide(bottom)['manifest']['candidates'][0]['conditioning']
+        self.assertEqual(crop['target_box_px'], [0, 0, 1000, 1500])
+        self.assertEqual(crop['input_box_in_target_px'], [0, 500, 1000, 1500])
+
+    def test_trimming_both_sides_leaves_no_outpainting_and_can_be_undone(self):
+        payload = {**self.decision('a', 'accepted'), 'target_trim': {'top': True, 'bottom': True}, 'request_id': 'trim-test'}
+        result = self.store.decide(payload)
+        self.assertEqual(result['manifest']['candidates'], [])
+        self.assertEqual(result['manifest']['blocked'][0]['reason'], 'no_region_left_to_outpaint')
+        with self.assertRaises(FileExistsError):
+            self.store.decide({**payload, 'target_trim': {'top': True, 'bottom': False}})
+        undone = self.store.decide({**payload, 'request_id': 'undo-trim', 'revision': 1, 'target_trim': {'top': False, 'bottom': False}})
+        self.assertEqual(len(undone['manifest']['candidates']), 1)
+
+    def test_trim_validation_and_asymmetric_source_keep_only_vertical_completion(self):
+        with self.assertRaises(ValueError):
+            self.store.decide({**self.decision('a', 'accepted'), 'target_trim': {'top': 'yes', 'bottom': False}})
+        with self.assertRaises(ValueError):
+            self.store.decide({**self.decision('b', 'accepted'), 'target_trim': {'top': True, 'bottom': False}})
+        row = {**self.rows[0], 'region': {'polygon': [[100, 400], [900, 400], [900, 1400], [100, 1400]]}}
+        crop = training_crop(row, {'top': False, 'bottom': False}, {'top': True, 'bottom': False})
+        self.assertEqual(crop['target_box_px'], [100, 400, 900, 2000])
+        self.assertEqual(crop['input_box_in_target_px'], [0, 0, 800, 1000])
+
     def test_http_persistence_and_foreign_origin_block(self):
         server = HTTPServer(('127.0.0.1', 0), partial(Handler, store=self.store, directory=str(self.root)))
         thread = threading.Thread(target=server.serve_forever, daemon=True)
