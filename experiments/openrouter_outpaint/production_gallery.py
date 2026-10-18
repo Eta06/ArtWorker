@@ -125,6 +125,9 @@ def main():
     (args.output/'training-review.js').write_text(Path(__file__).with_name('training-review.js').read_text())
     (args.output/'fast-review.js').write_text(Path(__file__).with_name('fast-review.js').read_text())
     (args.output/'training-crop.js').write_text(Path(__file__).with_name('training-crop.js').read_text())
+    approved=args.output/'approved';approved.mkdir(exist_ok=True)
+    (approved/'index.html').write_text(Path(__file__).with_name('approved-training.html').read_text())
+    (approved/'approved-training.js').write_text(Path(__file__).with_name('approved-training.js').read_text())
     if args.watch:
         # Separate short snapshots have a 256 MiB/pressure guard. They do not
         # acquire the heavy-model lock held by the running teacher coordinator.
