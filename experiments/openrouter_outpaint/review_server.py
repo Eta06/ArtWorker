@@ -12,7 +12,7 @@ from http.server import HTTPServer, SimpleHTTPRequestHandler
 import json
 import math
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import parse_qs, urlsplit
 
 
 def training_crop(row, extensions, trim=None):
@@ -196,7 +196,27 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         path = urlsplit(self.path).path
-        if path == '/sumbul/review-api':
+        if path.startswith('/sumbul/training-preview/'):
+            pieces = path.split('/')
+            if len(pieces) != 5 or not pieces[4].endswith('.jpg'):
+                return self.send_json({'error': 'Unknown preview'}, 404)
+            query = parse_qs(urlsplit(self.path).query)
+            try:
+                from training_preview import preview
+                data = preview(self.store, pieces[3], pieces[4][:-4],
+                               query.get('sha', [''])[0], query.get('revision', [''])[0])
+            except FileExistsError as error:
+                return self.send_json({'error': str(error)}, 409)
+            except PermissionError as error:
+                return self.send_json({'error': str(error)}, 403)
+            except (OSError, ValueError, KeyError) as error:
+                return self.send_json({'error': 'Preview unavailable; refresh the selection'}, 400)
+            self.send_response(200)
+            self.send_header('Content-Type', 'image/jpeg')
+            self.send_header('Content-Length', str(len(data)))
+            self.end_headers()
+            self.wfile.write(data)
+        elif path == '/sumbul/review-api':
             try:
                 self.send_json(self.store.snapshot())
             except (OSError, ValueError, KeyError):
