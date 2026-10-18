@@ -6,6 +6,7 @@ atomically while the producer continues; it never reruns paid generation.
 from __future__ import annotations
 
 import argparse
+import hashlib
 from collections import Counter
 from datetime import datetime, timezone
 import json
@@ -55,6 +56,8 @@ def thumbnail(source,target):
 
 def snapshot(state_path,output):
     state=json.loads(state_path.read_text());rows=[];fidelity=state_path.parent/'fidelity'
+    recovery_path=output/'registration-recovery.json'
+    recoveries=json.loads(recovery_path.read_text())['candidates'] if recovery_path.exists() else {}
     for source in state['sources']:
         kind='sunburst' if source['status']=='sunburst_completed_review_pending' else 'nano' if source['status']=='nano_completed_review_pending' else None
         if not kind:continue
@@ -88,6 +91,16 @@ def snapshot(state_path,output):
             'estimated_cost_usd':receipt.get('estimated_cost_usd'),
             'prompt':receipt['request']['prompt'],
             'settings':{k:receipt['request'][k] for k in ('quality','resolution','aspect_ratio','response_format','generationConfig') if k in receipt['request']}})
+        recovery=recoveries.get(name)
+        if recovery and recovery.get('status')=='review_pending':
+            if recovery['raw_sha256']!=rows[-1]['raw_sha256'] or hashlib.sha256(audit_path.read_bytes()).hexdigest()!=recovery['original_audit_sha256']:
+                raise ValueError('Recovery proposal no longer matches its baseline evidence')
+            folder=Path(recovery['directory']);target=asset/('recovery-'+recovery['id'][:12]);target.mkdir(exist_ok=True)
+            for filename in ('source.png','aligned.png','aligned-overlay.png','aligned-difference.png','placement.png'):
+                alias(folder/filename,target/('audit-'+filename))
+            rows[-1]['registration_recovery']={k:recovery[k] for k in ('id','evidence','metrics','original_audit_sha256','algorithm')}
+            rows[-1]['registration_recovery']['asset']='assets/'+name+'/'+target.name+'/'
+            rows[-1]['region']=recovery['region']
     counts=dict(Counter(r['status'] for r in state['sources']))
     data={'updated_utc':datetime.now(timezone.utc).isoformat(),'queue_status':state['status'],
           'phase':state.get('teacher_pipeline',{}).get('phase'),'status_counts':counts,
