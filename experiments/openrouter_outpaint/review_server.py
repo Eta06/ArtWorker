@@ -70,12 +70,23 @@ class ReviewStore:
         records = self.records()
         old = records.get(row['id'], {})
         revision = old.get('revision', 0) if old.get('raw_sha256') == row['raw_sha256'] else 0
+        request_id = payload.get('request_id')
+        if request_id is not None and (not isinstance(request_id, str) or not 1 <= len(request_id) <= 100):
+            raise ValueError('Invalid request id')
+        if request_id and old.get('request_id') == request_id:
+            if any(old.get(k) != payload.get(k, '') for k in ('raw_sha256', 'decision', 'reason')):
+                raise FileExistsError('Request id reused for a different decision')
+            snapshot = self.snapshot()
+            self.write(self.gallery / 'training-admission.json', snapshot['manifest'])
+            return snapshot
         if payload.get('revision', 0) != revision:
             raise FileExistsError('Decision changed in another tab; reload before editing')
         records[row['id']] = {'raw_sha256': row['raw_sha256'],
                               'decision': payload['decision'], 'reason': reason,
                               'revision': revision + 1,
                               'updated_utc': datetime.now(timezone.utc).isoformat()}
+        if request_id:
+            records[row['id']]['request_id'] = request_id
         self.write(self.path, {'schema_version': 1, 'decisions': records})
         snapshot = self.snapshot()
         self.write(self.gallery / 'training-admission.json', snapshot['manifest'])
@@ -87,11 +98,15 @@ class Handler(SimpleHTTPRequestHandler):
         self.store = store
         super().__init__(*args, **kwargs)
 
+    def end_headers(self):
+        # Avoid running an old keyboard/save implementation after a refresh.
+        self.send_header('Cache-Control', 'no-store')
+        super().end_headers()
+
     def send_json(self, value, status=200):
         data = json.dumps(value, ensure_ascii=False).encode()
         self.send_response(status)
         self.send_header('Content-Type', 'application/json; charset=utf-8')
-        self.send_header('Cache-Control', 'no-store')
         self.send_header('Content-Length', str(len(data)))
         self.end_headers()
         self.wfile.write(data)
