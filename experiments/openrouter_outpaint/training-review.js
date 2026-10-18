@@ -53,20 +53,11 @@ async function startReviews() {
 async function saveReview(r, decision) {
   if(reviewBusy||!reviewReady)return;
   const reason=$('#review-reason').value;
-  const saved=trainingReviews[r.id];
-  const revision=saved?.raw_sha256===r.raw_sha256?saved.revision:0;
   reviewBusy=true;
   document.querySelectorAll('[data-decision],#save-review-note').forEach(b=>b.disabled=true);
   $('#review-save').textContent='Kaydediliyor…';
   try {
-    const response=await fetch('review-api',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:r.id,raw_sha256:r.raw_sha256,decision,reason,revision})});
-    const result=await response.json();
-    if(!response.ok) {
-      if(response.status===409)await fetchReviews();
-      throw Error(response.status===409?'Başka bir sekme bu kararı değiştirmiş. Pencereyi kapatıp yeniden aç; sonra kararını tekrar seç.':'Kayıt başarısız. Karar kaydedilmedi; tekrar dene.');
-    }
-    trainingReviews=result.decisions;
-    try{localStorage.setItem('artworker-training-review-backup',JSON.stringify(trainingReviews))}catch{}
+    await persistReview(r,decision,reason);
     reviewBusy=false;render();
     if(current?.id===r.id&&$('#dialog').open){openDetail(r);$('#review-save').textContent='✓ Dosyaya kaydedildi. '+(decision==='rejected'?'Bu çıktı eğitim verisine alınmayacak.':decision==='accepted'?'Eğitim adayı olarak işaretlendi.':'Bu çıktı karar verilene kadar eğitim dışında.');}
   } catch(error) {
@@ -75,6 +66,18 @@ async function saveReview(r, decision) {
     reviewBusy=false;
     document.querySelectorAll('[data-decision],#save-review-note').forEach(b=>b.disabled=!reviewReady);
   }
+}
+async function persistReview(r,decision,reason) {
+  const saved=trainingReviews[r.id];
+  const revision=saved?.raw_sha256===r.raw_sha256?saved.revision:0;
+  const response=await fetch('review-api',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:r.id,raw_sha256:r.raw_sha256,decision,reason,revision})});
+  const result=await response.json();
+  if(!response.ok) {
+    if(response.status===409)await fetchReviews();
+    throw Error(response.status===409?'Başka bir sekme bu kararı değiştirmiş. Yenile ve kararını tekrar seç.':'Kayıt başarısız. Karar kaydedilmedi; tekrar dene.');
+  }
+  trainingReviews=result.decisions;
+  try{localStorage.setItem('artworker-training-review-backup',JSON.stringify(trainingReviews))}catch{}
 }
 function exportReviews() {
   const selections=data.rows.map(r=>({id:r.id,cover_id:r.cover_id,model:r.model,raw_sha256:r.raw_sha256,title:r.title,decision:reviewDecision(r),reason:trainingReviews[r.id]?.raw_sha256===r.raw_sha256?trainingReviews[r.id].reason:''}));
