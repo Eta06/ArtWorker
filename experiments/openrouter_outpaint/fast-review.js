@@ -67,7 +67,7 @@ function renderFastReview() {
   }
   const saved=trainingReviews[r.id],key=r.id+'-'+r.raw_sha256;
   const note=reviewNote(r);
-  $('#fast-content').innerHTML=`<div class="fast-heading"><div><span class="eyebrow">Hızlı inceleme · ${fastReview.index+1} / ${fastReview.rows.length}</span>${modelBanner(r)}<h2 id="fast-title">${esc(r.title)}</h2><p id="fast-selection-count" class="selection-progress">${reviewSummaryText()}</p><p>${esc(r.artists.join(' · '))} · ${r.model==='sunburst'?'Sunburst 2.5':'Nano Banana 2.1'} ${reviewBadge(r)}</p></div><button id="fast-close" aria-label="Hızlı incelemeyi kapat">✕</button></div><div class="fast-pair"><figure><figcaption>ÖNCE · ORİJİNAL</figcaption><div class="fast-image"><img id="fast-before" src="${r.asset}${r.original_file}" alt="${esc(r.title)} orijinal kapak" decoding="async"></div></figure><figure><figcaption>SONRA · GENİŞLETİLMİŞ</figcaption><div class="fast-image fast-output"><img id="fast-after" src="${r.asset}raw.png" alt="${esc(r.title)} genişletilmiş kapak" decoding="async">${fastRegion(r)?`<svg id="fast-boundary" style="display:none" viewBox="0 0 ${r.dimensions.join(' ')}" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><polygon points="${r.region.polygon.map(p=>p.join(',')).join(' ')}"/><polygon id="fast-training-crop" class="training-crop-outline" points="${trainingCropPoints(r)}"/><g id="fast-trim-zones">${targetTrimMarks(r)}</g></svg>`:''}</div></figure></div><div class="fast-region-control"><button id="fast-region-toggle" aria-pressed="false" ${fastRegion(r)?'':'disabled'}>Kaynak bölgesini göster <kbd>Space</kbd></button>${fastRegion(r)?'':'<span class="subtle">Güvenilir kaynak bölgesi bulunamadı</span>'}</div>${cropControls(r,'fast')}<div class="fast-actions"><p id="fast-save-status" class="autosave-inline" role="status">${esc(autosaveMessage)}</p><label class="fast-note-label" for="fast-note">Not otomatik kaydedilir · Enter: kısayollara dön</label><input id="fast-note" maxlength="500" placeholder="Bir not ekle…" value="${esc(note)}"><div class="fast-choices"><button data-fast-decision="rejected" class="fast-bad" disabled>← Kötü <kbd>A</kbd></button><button data-fast-decision="pending" disabled>Emin değilim / Atla <kbd>S</kbd></button><button data-fast-decision="accepted" class="fast-good" disabled>İyi → <kbd>D</kbd></button></div><div class="fast-meta"><button id="fast-previous">Önceki</button><span id="fast-status" role="status" aria-live="polite">İki görsel yükleniyor…</span><button id="fast-detail">Eşleşme detayları ↗</button></div></div>`;
+  $('#fast-content').innerHTML=`<div class="fast-heading"><div><span class="eyebrow">Hızlı inceleme · ${fastReview.index+1} / ${fastReview.rows.length}</span>${modelBanner(r)}<h2 id="fast-title">${esc(r.title)}</h2><p id="fast-selection-count" class="selection-progress">${reviewSummaryText()}</p><p>${esc(r.artists.join(' · '))} · ${r.model==='sunburst'?'Sunburst 2.5':'Nano Banana 2.1'} ${reviewBadge(r)}</p></div><button id="fast-close" aria-label="Hızlı incelemeyi kapat">✕</button></div><div class="fast-pair"><figure><figcaption>ÖNCE · ORİJİNAL</figcaption><div class="fast-image"><img id="fast-before" src="${r.asset}${r.original_file}" alt="${esc(r.title)} orijinal kapak" decoding="async"></div></figure><figure><figcaption>SONRA · GENİŞLETİLMİŞ</figcaption><div class="fast-image fast-output"><img id="fast-after" src="${r.asset}raw.png" alt="${esc(r.title)} genişletilmiş kapak" decoding="async">${fastRegion(r)?`<svg id="fast-boundary" style="display:none" viewBox="0 0 ${r.dimensions.join(' ')}" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><polygon points="${r.region.polygon.map(p=>p.join(',')).join(' ')}"/><polygon id="fast-training-crop" class="training-crop-outline" points="${trainingCropPoints(r)}"/><g id="fast-trim-zones">${targetTrimMarks(r)}</g></svg>`:''}</div></figure></div><div class="fast-region-control"><button id="fast-region-toggle" aria-pressed="false" ${fastRegion(r)?'':'disabled'}>Kaynak bölgesini göster <kbd>Space</kbd></button>${fastRegion(r)?'':'<span class="subtle">Güvenilir kaynak bölgesi bulunamadı</span>'}</div>${recoveryControls(r,'fast')}${cropControls(r,'fast')}<div class="fast-actions"><p id="fast-save-status" class="autosave-inline" role="status">${esc(autosaveMessage)}</p><label class="fast-note-label" for="fast-note">Not otomatik kaydedilir · Enter: kısayollara dön</label><input id="fast-note" maxlength="500" placeholder="Bir not ekle…" value="${esc(note)}"><div class="fast-choices"><button data-fast-decision="rejected" class="fast-bad" disabled>← Kötü <kbd>A</kbd></button><button data-fast-decision="pending" disabled>Emin değilim / Atla <kbd>S</kbd></button><button data-fast-decision="accepted" class="fast-good" disabled>İyi → <kbd>D</kbd></button></div><div class="fast-meta"><button id="fast-previous">Önceki</button><span id="fast-status" role="status" aria-live="polite">İki görsel yükleniyor…</span><button id="fast-detail">Eşleşme detayları ↗</button></div></div>`;
   $('#fast-close').onclick=()=>{rememberFastNote();$('#fast-dialog').close()};
   $('#fast-previous').onclick=()=>{if(fastReview.busy||!fastReview.index)return;rememberFastNote();fastReview.index--;renderFastReview()};
   $('#fast-detail').onclick=()=>{rememberFastNote();$('#fast-dialog').close();openDetail(r)};
@@ -90,7 +90,7 @@ function renderFastReview() {
   }}
   loaded();
   $('#fast-region-toggle').onclick=toggleFastRegion;
-  bindCropControls(r,'fast');
+  bindCropControls(r,'fast');bindRecoveryControls(r,true);
   // Only the next pair is prefetched; no unbounded decoded-image queue.
   const next=fastReview.rows[fastReview.index+1];
   if(next)for(const file of [next.original_file,'raw.png']){const image=new Image();image.src=next.asset+file;}
@@ -121,7 +121,7 @@ function fastKeydown(event) {
   event.preventDefault();chooseFastReview(decision);
 }
 function fastRegion(r){
-  return r.audit_status==='reliable'&&r.region?.polygon?.length===4;
+  return Boolean((r.audit_status==='reliable'||r.registration_recovery)&&r.region?.polygon?.length===4);
 }
 function toggleFastRegion(){
   const r=fastReview.rows[fastReview.index];
@@ -133,6 +133,8 @@ function toggleFastRegion(){
 }
 function setupFastReview() {
   $('#fast-start').onclick=startFastReview;
+  $('#review-rejected-start').onclick=()=>{if(!reviewReady||reviewBusy||fastReview.busy)return;$('#search').value='';$('#model').value='';$('#review-filter').value='rejected';$('#audit').value='';render();fastQueue(selected())};
+  $('#review-recovered-start').onclick=()=>{if(!reviewReady||reviewBusy||fastReview.busy)return;$('#search').value='';$('#model').value='';$('#review-filter').value='';$('#audit').value='recovery';render();fastQueue(selected().filter(r=>r.registration_recovery&&!registrationIsReady(r)))};
   document.addEventListener('keydown',fastKeydown);
   $('#fast-dialog').addEventListener('cancel',event=>{if(fastReview.busy)event.preventDefault();else rememberFastNote()});
 }
