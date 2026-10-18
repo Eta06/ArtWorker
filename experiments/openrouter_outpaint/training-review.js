@@ -1,5 +1,31 @@
 // Human decisions are separate from numerical source-fidelity measurements.
 let trainingReviews = {}, reviewReady = false, reviewBusy = false;
+const reviewOutboxKey='artworker-review-outbox-v1';
+let reviewOutbox={}, mutationChain=Promise.resolve(), noteTimer=null, autosaveReplay=false;
+let autosaveMessage='✓ Otomatik kayıt açık';
+try{reviewOutbox=JSON.parse(localStorage.getItem(reviewOutboxKey)||'{}')}catch{}
+function autosaveStatus(message,failed=false){
+  autosaveMessage=message;
+  for(const selector of ['#autosave-status','#fast-save-status']){
+    const el=$(selector);if(el){el.textContent=message;el.classList.toggle('save-error',failed)}
+  }
+}
+function stashReviewOutbox(){localStorage.setItem(reviewOutboxKey,JSON.stringify(reviewOutbox))}
+function reviewNote(r){
+  try{const draft=localStorage.getItem('artworker-note-'+r.id+'-'+r.raw_sha256);if(draft!==null)return draft}catch{}
+  const saved=trainingReviews[r.id];return saved?.raw_sha256===r.raw_sha256?saved.reason||'':'';
+}
+function stashReviewNote(r,value){try{localStorage.setItem('artworker-note-'+r.id+'-'+r.raw_sha256,value)}catch{}}
+function cancelNoteAutosave(){clearTimeout(noteTimer);noteTimer=null}
+function queueNoteAutosave(r,reason){
+  cancelNoteAutosave();
+  autosaveStatus('Not taslağı cihazda; otomatik kaydediliyor…');
+  noteTimer=setTimeout(()=>{
+    noteTimer=null;
+    persistReview(r,()=>reviewDecision(r),reason).catch(error=>autosaveStatus(error.message,true));
+  },700);
+}
+function modelBanner(r){return r.model==='nano'?'<div class="nano-banner">🍌 NANO BANANA <span>Bu görsel Nano Banana ile üretildi</span></div>':''}
 const reviewLabels = {accepted:'Eğitime al', rejected:'Eğitimden çıkar', pending:'Kararsız / incelenmedi'};
 function reviewDecision(r) {
   const saved = trainingReviews[r.id];
@@ -11,7 +37,7 @@ function reviewBadge(r) {
 }
 function reviewControls(r) {
   const decision = reviewDecision(r), saved = trainingReviews[r.id];
-  return `<section class="review-box" aria-label="Eğitim kararı"><div class="review-top"><strong>Bu çıktı eğitime girsin mi?</strong>${reviewBadge(r)}</div><div class="detail-controls">${Object.entries(reviewLabels).map(([value,label])=>`<button data-decision="${value}" aria-pressed="${decision===value}" class="${decision===value?'active':''}" ${!reviewReady||reviewBusy?'disabled':''}>${label}</button>`).join('')}<button id="next-review">Sonraki incelenmemiş →</button></div><label class="subtle" for="review-reason">Not / eleme nedeni (isteğe bağlı)</label><div class="review-note"><input id="review-reason" maxlength="500" placeholder="Örn. yüz değişmiş, renk geçişi kötü…" value="${esc(saved?.raw_sha256===r.raw_sha256?saved.reason:'')}"><button id="save-review-note" ${!reviewReady||reviewBusy?'disabled':''}>Notu kaydet</button></div><p class="subtle" id="review-save" role="status">${reviewReady?'Kararlar anında bu Mac’te dosyaya kaydedilir. Kararsız olanlar eğitim listesine alınmaz.':'Kayıt bağlantısı yükleniyor; karar düğmeleri henüz açık değil.'}</p>${decision==='accepted'&&r.audit_status!=='reliable'?'<p class="error">Kabul ettin; ancak güvenilir kaynak eşleşmesi eksik. Bu çıktı ayrıca kontrol edilene kadar eğitim adayı listesinde bekletiliyor.</p>':''}</section>`;
+  return `<section class="review-box" aria-label="Eğitim kararı"><div class="review-top"><strong>Bu çıktı eğitime girsin mi?</strong>${reviewBadge(r)}</div><div class="detail-controls">${Object.entries(reviewLabels).map(([value,label])=>`<button data-decision="${value}" aria-pressed="${decision===value}" class="${decision===value?'active':''}" ${!reviewReady||reviewBusy?'disabled':''}>${label}</button>`).join('')}<button id="next-review">Sonraki incelenmemiş →</button></div><label class="subtle" for="review-reason">Not / eleme nedeni (isteğe bağlı)</label><div class="review-note"><input id="review-reason" maxlength="500" placeholder="Örn. yüz değişmiş, renk geçişi kötü…" value="${esc(reviewNote(r))}"><button id="save-review-note" ${!reviewReady||reviewBusy?'disabled':''}>Notu kaydet</button></div><p class="subtle" id="review-save" role="status">${reviewReady?'Kararlar anında bu Mac’te dosyaya kaydedilir. Kararsız olanlar eğitim listesine alınmaz.':'Kayıt bağlantısı yükleniyor; karar düğmeleri henüz açık değil.'}</p>${decision==='accepted'&&r.audit_status!=='reliable'?'<p class="error">Kabul ettin; ancak güvenilir kaynak eşleşmesi eksik. Bu çıktı ayrıca kontrol edilene kadar eğitim adayı listesinde bekletiliyor.</p>':''}</section>`;
 }
 function updateReviewSummary() {
   const counts = {accepted:0,rejected:0,pending:0};
@@ -21,6 +47,10 @@ function updateReviewSummary() {
 function bindReviewControls(r) {
   document.querySelectorAll('[data-decision]').forEach(button=>button.onclick=()=>saveReview(r,button.dataset.decision));
   $('#save-review-note').onclick=()=>saveReview(r,reviewDecision(r));
+  $('#review-reason').oninput=()=>{
+    stashReviewNote(r,$('#review-reason').value);
+    queueNoteAutosave(r,$('#review-reason').value);
+  };
   $('#next-review').onclick=()=>{
     const rows=selected(), index=rows.findIndex(x=>x.id===r.id);
     const ordered=[...rows.slice(index+1),...rows.slice(0,index+1)];
@@ -37,13 +67,19 @@ async function fetchReviews() {
   return snapshot;
 }
 async function startReviews() {
+  let connected=false;
   try {
     await fetchReviews();
+    connected=true;
+    await replayReviewOutbox();
     $('#review-connection').textContent='✓ Kararlar bu Mac’te dosyaya kaydediliyor';
+    autosaveStatus('✓ Otomatik kayıt açık · kararlar dosyaya yazılır');
     render();if(current&&$('#dialog').open)openDetail(current);
   } catch {
-    reviewReady=false;
-    $('#review-connection').textContent='Kayıt sunucusuna bağlanılamadı. Karar vermeden önce Yenile’ye bas.';
+    reviewReady=connected;
+    $('#review-connection').textContent=connected?'Bekleyen karar var. Dosyadaki kararlar yüklendi; bekleyen kayıt korunuyor.':'Kayıt sunucusuna bağlanılamadı. Karar vermeden önce Yenile’ye bas.';
+    autosaveStatus(connected?'Bekleyen kayıt henüz onaylanmadı. Gerekirse kendi kararını yeniden seç.':'Kayıt bağlantısı yok; Yenile ile tekrar dene.',true);
+    render();
     if(current&&$('#dialog').open){
       openDetail(current);
       $('#review-save').textContent='Kayıt bağlantısı yok. Yenile’ye basarak tekrar bağlan.';
@@ -53,6 +89,7 @@ async function startReviews() {
 async function saveReview(r, decision) {
   if(reviewBusy||!reviewReady)return;
   const reason=$('#review-reason').value;
+  cancelNoteAutosave();
   reviewBusy=true;
   document.querySelectorAll('[data-decision],#save-review-note').forEach(b=>b.disabled=true);
   $('#review-save').textContent='Kaydediliyor…';
@@ -67,17 +104,79 @@ async function saveReview(r, decision) {
     document.querySelectorAll('[data-decision],#save-review-note').forEach(b=>b.disabled=!reviewReady);
   }
 }
-async function persistReview(r,decision,reason) {
-  const saved=trainingReviews[r.id];
-  const revision=saved?.raw_sha256===r.raw_sha256?saved.revision:0;
-  const response=await fetch('review-api',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:r.id,raw_sha256:r.raw_sha256,decision,reason,revision})});
+async function sendReviewOperation(operation) {
+  if(!operation.attempted){
+    const latest=trainingReviews[operation.id];
+    const same=latest?.raw_sha256===operation.raw_sha256;
+    operation.revision=same?latest.revision:0;
+    if(operation.kind==='note')operation.decision=same?latest.decision:'pending';
+    operation.attempted=true;
+    try{stashReviewOutbox()}catch{}
+  }
+  const response=await fetch('review-api',{method:'POST',keepalive:true,signal:typeof AbortSignal!=='undefined'?AbortSignal.timeout(12000):undefined,headers:{'Content-Type':'application/json'},body:JSON.stringify(operation)});
   const result=await response.json();
   if(!response.ok) {
-    if(response.status===409)await fetchReviews();
-    throw Error(response.status===409?'Başka bir sekme bu kararı değiştirmiş. Yenile ve kararını tekrar seç.':'Kayıt başarısız. Karar kaydedilmedi; tekrar dene.');
+    if(response.status===409){
+      operation.conflict=true;try{stashReviewOutbox()}catch{}
+      await fetchReviews();
+    }
+    throw Error(response.status===409?'Karar başka sekmede değişmiş; dosyanın üzerine yazılmadı. Kendi son tercihini uygulamak için karar düğmesine tekrar bas.':'Sunucuya kaydedilemedi. Karar bu cihazda bekliyor; bağlantı gelince tekrar gönderilecek.');
+  }
+  const acknowledged=result.decisions?.[operation.id];
+  if(!acknowledged||acknowledged.request_id!==operation.request_id||acknowledged.raw_sha256!==operation.raw_sha256||acknowledged.decision!==operation.decision||acknowledged.reason!==operation.reason){
+    throw Error('Dosya kaydı onayı doğrulanamadı; bekleyen karar korunuyor.');
   }
   trainingReviews=result.decisions;
-  try{localStorage.setItem('artworker-training-review-backup',JSON.stringify(trainingReviews))}catch{}
+  // Only delete after the server acknowledges the exact operation.
+  delete reviewOutbox[operation.request_id];
+  try{stashReviewOutbox();localStorage.setItem('artworker-training-review-backup',JSON.stringify(trainingReviews))}catch{}
+  autosaveStatus('✓ Dosyaya kaydedildi · '+new Date().toLocaleTimeString('tr-TR'));
+}
+function serialReviewJob(job){
+  const pending=mutationChain.then(job);mutationChain=pending.catch(()=>{});return pending;
+}
+function replayReviewOutbox(){return serialReviewJob(async()=>{
+  for(const operation of Object.values(reviewOutbox))await sendReviewOperation(operation);
+})}
+function persistReview(r,decision,reason) {
+  // Write intent synchronously, before the first network wait or page navigation.
+  // A single id per operation makes retry after a lost response safe.
+  const saved=trainingReviews[r.id];
+  if(typeof decision!=='function'&&Object.values(reviewOutbox).some(op=>op.id===r.id&&op.raw_sha256===r.raw_sha256&&op.conflict)){
+    // A fresh human click supersedes this tab's conflicted intentions for that
+    // image. Background note saves may never overwrite a conflicting decision.
+    for(const [id,op] of Object.entries(reviewOutbox))if(op.id===r.id&&op.raw_sha256===r.raw_sha256)delete reviewOutbox[id];
+  }
+  const revision=saved?.raw_sha256===r.raw_sha256?saved.revision:0;
+  const operation={id:r.id,raw_sha256:r.raw_sha256,decision:typeof decision==='function'?decision():decision,reason,revision,kind:typeof decision==='function'?'note':'decision',request_id:crypto.randomUUID()};
+  reviewOutbox[operation.request_id]=operation;
+  try{stashReviewOutbox()}catch{autosaveStatus('Tarayıcı yedeği yazılamadı; dosya kaydı bekleniyor.',true)}
+  autosaveStatus('Kaydediliyor…');
+  return serialReviewJob(async()=>{
+    // Flush earlier intentions before applying a newer note or decision.
+    for(const earlier of Object.values(reviewOutbox)){
+      if(earlier.request_id===operation.request_id)break;
+      await sendReviewOperation(earlier);
+    }
+    await sendReviewOperation(operation);
+  }).catch(error=>{
+    autosaveStatus('Cihazda bekleyen kayıt var; dosyaya henüz onaylanmadı. Yeniden deneniyor…',true);
+    throw error;
+  });
+}
+function setupReviewAutosave(){
+  const retry=async()=>{
+    if(autosaveReplay||reviewBusy||!Object.keys(reviewOutbox).length||typeof fastReview!=='undefined'&&fastReview.busy)return;
+    autosaveReplay=true;
+    try{
+      await fetchReviews();await replayReviewOutbox();render();
+      $('#review-connection').textContent='✓ Kararlar bu Mac’te dosyaya kaydediliyor';
+      if(typeof fastButtons==='function')fastButtons();
+    }catch{autosaveStatus('Bekleyen kayıt korunuyor; bağlantı gelince tekrar denenecek.',true)}
+    finally{autosaveReplay=false}
+  };
+  window.addEventListener('online',retry);
+  setInterval(retry,4000);
 }
 function exportReviews() {
   const selections=data.rows.map(r=>({id:r.id,cover_id:r.cover_id,model:r.model,raw_sha256:r.raw_sha256,title:r.title,decision:reviewDecision(r),reason:trainingReviews[r.id]?.raw_sha256===r.raw_sha256?trainingReviews[r.id].reason:''}));
