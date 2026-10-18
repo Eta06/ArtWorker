@@ -122,3 +122,24 @@ Kaynaklar: [Sunburst edit API](https://fal.ai/models/openai/gpt-image-2.5/sunbur
 [kuyruk API'si](https://fal.ai/docs/documentation/model-apis/inference/queue),
 [retry başlığı](https://fal.ai/docs/documentation/model-apis/common-parameters),
 [bakiye yetkileri](https://fal.ai/docs/platform-apis/v1/account/billing).
+
+## Bellek basıncı nedeniyle duruş ve sonuç kurtarma
+
+18 Ekim'deki sonraki canlı kontrolde ana süreç durmuş bulundu. Koruma kaydı
+585,47. saniyede sistem bellek basıncının 2'ye yükseldiğini gösterdi; işin
+o andaki RSS'i yaklaşık 58,55 MiB, footprint'i 56,80 MiB idi. Süreç kendi
+512 MiB sınırını aşmadı. Sistem basıncını hangi uygulamanın artırdığı bu
+denetimde belirlenmedi; başka süreçler kapatılmadı veya koruma gevşetilmedi.
+
+Durma anındaki 35 çıktı ve 24 ret korunmuştu. Basınç tekrar 1 olduğunda
+bilinen üç fal istek kimliğinin sonucu yalnız GET ile geri alındı; yeni
+üretim POST'u yapılmadı. Böylece yerel çıktı sayısı 38 oldu. Kurtarma işi
+7,91 saniye, 46,23 MiB tepe RSS / 31,20 MiB footprint ile tamamlandı.
+
+63. kaynağın kesinti anında `submitting` kaydı vardı, kalıcı request_id
+yoktu. Kaynak zamanından filtrelenmiş fal request geçmişi yalnız bilinen
+üç kimliği döndürdü. Geçmişte görülmemesi isteğin kesin kabul edilmediğini
+kanıtlamadığı için 63. kaynak `uncertain` olarak korundu; yeniden gönderilmedi.
+Kuyruk `paused_uncertain_submission`: 38 tamamlanmış, 24 ret, 1 belirsiz,
+937 bekleyen. Yeni üretim yeniden başlatılmadı. Özel pressure-recovery.json
+ve önceki state kopyası saklandı; tamamlanmış çıktı veya insan kararı silinmedi.
