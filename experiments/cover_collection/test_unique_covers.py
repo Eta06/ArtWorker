@@ -6,10 +6,22 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
-from collect_unique_covers import CoverIndex, signature
+from collect_unique_covers import CoverIndex, signature, vividness
 
 
 class DuplicateDecisions(unittest.TestCase):
+    def test_color_prefilter_distinguishes_grayscale_and_vivid_art(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory)
+            pixels=np.random.default_rng(7).integers(20,240,(128,128),dtype='uint8')
+            gray=Image.fromarray(pixels).convert('RGB');gray.save(root/'gray.png')
+            vivid=Image.new('RGB',(128,128),'#ff0077');vivid.paste('#00ddff',(0,0,64,128));vivid.save(root/'vivid.png')
+            a,b=vividness(root/'gray.png'),vividness(root/'vivid.png')
+            self.assertEqual(a['colorfulness'],0)
+            self.assertEqual(a['saturated_pixel_fraction'],0)
+            self.assertGreater(b['colorfulness'],25)
+            self.assertGreater(b['saturated_pixel_fraction'],.9)
+
     def test_reencoded_resize_matches_but_new_art_does_not(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
