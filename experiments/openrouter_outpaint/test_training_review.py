@@ -40,6 +40,31 @@ class TrainingReviewTests(unittest.TestCase):
         self.assertEqual([r['id'] for r in manifest['excluded']], ['a'])
         self.assertEqual([r['id'] for r in manifest['blocked']], ['b'])
 
+    def test_recovery_needs_explicit_confirmation_and_keeps_quality_vote(self):
+        self.rows[1]['registration_recovery'] = {'id': 'proposal-1', 'evidence': {'classification': 'dense_verified'}}
+        self.publish()
+        first = self.store.decide(self.decision('b', 'accepted'))
+        self.assertEqual(first['manifest']['blocked'][0]['reason'], 'registration_recovery_confirmation_required')
+        confirmed = self.store.decide({**self.decision('b', 'accepted', 1), 'registration_confirmation': 'proposal-1'})
+        self.assertEqual(confirmed['manifest']['candidates'][0]['id'], 'b')
+        self.assertEqual(self.rows[1]['audit_status'], 'unavailable')
+        # A note edit from an older client retains the confirmation.
+        saved = self.store.decide(self.decision('b', 'accepted', 2))
+        self.assertEqual(saved['decisions']['b']['registration_confirmation'], 'proposal-1')
+        self.rows[1]['registration_recovery']['id'] = 'proposal-2'
+        self.publish()
+        self.assertEqual(self.store.snapshot()['manifest']['candidates'], [])
+        with self.assertRaises(ValueError):
+            self.store.decide({**self.decision('b', 'accepted', 3), 'registration_confirmation': 'proposal-1'})
+
+    def test_boundary_confirmation_cannot_admit_rejected_output(self):
+        self.rows[1]['registration_recovery'] = {'id': 'proposal-1', 'evidence': {'classification': 'partial_reference'}}
+        self.publish()
+        result = self.store.decide({**self.decision('b', 'rejected'), 'registration_confirmation': 'proposal-1'})
+        self.assertEqual(result['manifest']['candidates'], [])
+        self.assertEqual(result['decisions']['b']['decision'], 'rejected')
+        self.assertEqual(result['manifest']['excluded'][1]['reason'], 'rejected')
+
     def test_restart_reset_and_no_transfer_to_replaced_image(self):
         self.store.decide(self.decision('a', 'accepted'))
         reopened = ReviewStore(self.root)
