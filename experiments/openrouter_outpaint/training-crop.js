@@ -16,7 +16,7 @@ function reviewCropExtensions(r){
   return {top:choice?.top===true,bottom:choice?.bottom===true};
 }
 function trainingCrop(r,extensions=reviewCropExtensions(r),trim=reviewTargetTrim(r)){
-  if(r.audit_status!=='reliable'||r.region?.polygon?.length!==4||r.dimensions?.length!==2)return null;
+  if(!registrationIsReady(r)||r.region?.polygon?.length!==4||r.dimensions?.length!==2)return null;
   const [w,h]=r.dimensions,points=r.region.polygon;
   if(!(w>0&&h>0)||!points.every(p=>p.length===2&&p.every(Number.isFinite)))return null;
   const xs=points.map(p=>p[0]),ys=points.map(p=>p[1]),clamp=(v,max)=>Math.max(0,Math.min(max,v));
