@@ -48,6 +48,13 @@ def training_crop(row, extensions, trim=None):
             'remaining_target_pixels': (target[2]-target[0])*(target[3]-target[1])-(box[2]-box[0])*(box[3]-box[1])}
 
 
+def registration_row(row, confirmation):
+    recovery = row.get('registration_recovery')
+    if recovery:
+        return {**row, 'audit_status': 'reliable' if confirmation == recovery['id'] else 'unavailable'}
+    return row
+
+
 class ReviewStore:
     def __init__(self, gallery: Path):
         self.gallery = gallery
@@ -68,6 +75,7 @@ class ReviewStore:
                      if k in rows and v['raw_sha256'] == rows[k]['raw_sha256']}
         candidates, excluded, blocked = [], [], []
         for key, row in rows.items():
+            row = registration_row(row, decisions.get(key, {}).get('registration_confirmation'))
             decision = decisions.get(key, {}).get('decision', 'pending')
             item = {k: row[k] for k in ('id', 'cover_id', 'model', 'raw_sha256')}
             item['raw_file'] = str((self.gallery / row['asset'] / 'raw.png').resolve())
@@ -76,6 +84,9 @@ class ReviewStore:
             crop = training_crop(row, extensions, trim)
             if crop:
                 item['conditioning'] = crop
+            if row.get('registration_recovery'):
+                item['registration_provenance'] = {'proposal_id': row['registration_recovery']['id'],
+                    'human_confirmed': row['audit_status']=='reliable', 'evidence': row['registration_recovery']['evidence']}
             if decision == 'accepted' and row['audit_status'] == 'reliable':
                 if not crop:
                     blocked.append({**item, 'reason': 'valid_training_crop_required'})
@@ -84,7 +95,7 @@ class ReviewStore:
                 else:
                     candidates.append(item)
             elif decision == 'accepted':
-                blocked.append({**item, 'reason': 'reliable_source_registration_required'})
+                blocked.append({**item, 'reason': 'registration_recovery_confirmation_required' if row.get('registration_recovery') else 'reliable_source_registration_required'})
             else:
                 excluded.append({**item, 'reason': decision})
         manifest = {'schema_version': 3, 'policy': 'explicit_accept_and_reliable_registration',
@@ -113,6 +124,11 @@ class ReviewStore:
             raise ValueError('Reason must be at most 500 characters')
         records = self.records()
         old = records.get(row['id'], {})
+        confirmation = payload.get('registration_confirmation', old.get('registration_confirmation')
+                                   if old.get('raw_sha256') == row['raw_sha256'] else None)
+        if confirmation is not None and confirmation != row.get('registration_recovery', {}).get('id'):
+            raise ValueError('Registration confirmation does not match the current proposal')
+        row = registration_row(row, confirmation)
         extensions = payload.get('crop_extensions', old.get('crop_extensions', {'top': False, 'bottom': False})
                                  if old.get('raw_sha256') == row['raw_sha256'] else {'top': False, 'bottom': False})
         if (not isinstance(extensions, dict) or set(extensions) != {'top', 'bottom'}
@@ -138,6 +154,8 @@ class ReviewStore:
                 raise FileExistsError('Request id reused for a different training crop')
             if 'target_trim' in payload and old.get('target_trim') != trim:
                 raise FileExistsError('Request id reused for a different training target')
+            if 'registration_confirmation' in payload and old.get('registration_confirmation') != confirmation:
+                raise FileExistsError('Request id reused for different registration confirmation')
             snapshot = self.snapshot()
             self.write(self.gallery / 'training-admission.json', snapshot['manifest'])
             return snapshot
@@ -147,6 +165,7 @@ class ReviewStore:
                               'decision': payload['decision'], 'reason': reason,
                               'crop_extensions': extensions,
                               'target_trim': trim,
+                              'registration_confirmation': confirmation,
                               'revision': revision + 1,
                               'updated_utc': datetime.now(timezone.utc).isoformat()}
         if request_id:
