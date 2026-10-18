@@ -1,6 +1,7 @@
 from argparse import Namespace
 import json
 import io
+import http.client
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
@@ -127,6 +128,35 @@ class QueueTests(unittest.TestCase):
             row=json.loads(state.read_text())['sources'][0]
             self.assertEqual(row['request_id'],'saved-id')
             self.assertEqual(row['status'],'refused')
+
+    def test_interrupted_download_retries_only_reads_of_same_generation(self):
+        for error in (ConnectionResetError(54,'reset'),http.client.IncompleteRead(b'partial',10)):
+            with self.subTest(error=type(error).__name__),TemporaryDirectory() as temp:
+                root=Path(temp);manifest=root/'manifest.json';manifest.write_text('{}')
+                state=root/'state.json';key=root/'key';key.write_text('test-only')
+                folder=root/'outputs/one';folder.mkdir(parents=True)
+                (folder/'receipt.json').write_text('{"actual_cost_usd":null}')
+                row={'id':'one','status':'submitted','request_id':'original-id','submitted_unix':0,
+                    'width':864,'height':1152,'aspect_ratio':'3:4',
+                    'status_url':'https://queue.fal.run/original/status',
+                    'response_url':'https://queue.fal.run/original/result'}
+                state.write_text(json.dumps({'endpoint_id':q.ENDPOINT,'source_manifest':'manifest.json',
+                    'source_manifest_sha256':q.sha(manifest),'sources':[row]}))
+                responses=[({'status':'COMPLETED'},{}),({'images':[{'url':'https://v3b.fal.media/test.png'}]},
+                    {'x-fal-billable-units':'0.0559'})]*2
+                with (patch.object(q,'ROOT',root),patch.object(q,'request',side_effect=responses) as request,
+                      patch.object(q,'download',side_effect=[error,{'sha256':'test','dimensions':[864,1152]}]) as download,
+                      patch.object(q.time,'sleep')):
+                    q.run(Namespace(state=state,limit=1000,key_file=key,concurrency=4,poll_seconds=2))
+                self.assertEqual(request.call_count,4)
+                self.assertTrue(all(len(call.args)==2 for call in request.call_args_list))
+                self.assertEqual(download.call_count,2)
+                saved=json.loads(state.read_text())['sources'][0]
+                self.assertEqual(saved['request_id'],'original-id')
+                self.assertEqual(saved['status'],'completed')
+                receipt=json.loads((folder/'receipt.json').read_text())
+                self.assertEqual(receipt['actual_cost_usd'],'0.0559')
+                self.assertEqual(receipt['last_read_error']['type'],type(error).__name__)
 
 
 if __name__=='__main__':unittest.main()
