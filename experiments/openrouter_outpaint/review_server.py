@@ -15,7 +15,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 
-def training_crop(row, extensions):
+def training_crop(row, extensions, trim=None):
     """Axis-aligned crop of the teacher output, distinct from source registration."""
     if row.get('audit_status') != 'reliable' or not row.get('region'):
         return None
@@ -27,15 +27,25 @@ def training_crop(row, extensions):
     if w <= 0 or h <= 0 or not all(math.isfinite(v) for p in points for v in p):
         return None
     xs, ys = zip(*points)
+    trim = trim or {'top': False, 'bottom': False}
+    base = [max(0, min(w, math.floor(min(xs)))), max(0, min(h, math.floor(min(ys)))),
+            max(0, min(w, math.ceil(max(xs)))), max(0, min(h, math.ceil(max(ys))))]
+    target = [base[0] if any(trim.values()) else 0, base[1] if trim['top'] else 0,
+              base[2] if any(trim.values()) else w, base[3] if trim['bottom'] else h]
     box = [max(0, min(w, math.floor(min(xs)))),
            0 if extensions['top'] else max(0, min(h, math.floor(min(ys)))),
            max(0, min(w, math.ceil(max(xs)))),
            h if extensions['bottom'] else max(0, min(h, math.ceil(max(ys))))]
+    box = [max(box[0], target[0]), max(box[1], target[1]),
+           min(box[2], target[2]), min(box[3], target[3])]
     if box[2] <= box[0] or box[3] <= box[1]:
         return None
     return {'source': 'teacher_output_crop', 'box_px': box,
-            'target_dimensions': [w, h], 'extensions': extensions,
-            'remaining_target_pixels': w*h-(box[2]-box[0])*(box[3]-box[1])}
+            'raw_dimensions': [w, h], 'target_box_px': target,
+            'target_dimensions': [target[2]-target[0], target[3]-target[1]],
+            'input_box_in_target_px': [box[0]-target[0], box[1]-target[1], box[2]-target[0], box[3]-target[1]],
+            'extensions': extensions, 'target_trim': trim,
+            'remaining_target_pixels': (target[2]-target[0])*(target[3]-target[1])-(box[2]-box[0])*(box[3]-box[1])}
 
 
 class ReviewStore:
@@ -62,7 +72,8 @@ class ReviewStore:
             item = {k: row[k] for k in ('id', 'cover_id', 'model', 'raw_sha256')}
             item['raw_file'] = str((self.gallery / row['asset'] / 'raw.png').resolve())
             extensions = decisions.get(key, {}).get('crop_extensions', {'top': False, 'bottom': False})
-            crop = training_crop(row, extensions)
+            trim = decisions.get(key, {}).get('target_trim', {'top': False, 'bottom': False})
+            crop = training_crop(row, extensions, trim)
             if crop:
                 item['conditioning'] = crop
             if decision == 'accepted' and row['audit_status'] == 'reliable':
@@ -76,7 +87,7 @@ class ReviewStore:
                 blocked.append({**item, 'reason': 'reliable_source_registration_required'})
             else:
                 excluded.append({**item, 'reason': decision})
-        manifest = {'schema_version': 2, 'policy': 'explicit_accept_and_reliable_registration',
+        manifest = {'schema_version': 3, 'policy': 'explicit_accept_and_reliable_registration',
                     'training_started': False, 'candidates': candidates,
                     'excluded': excluded, 'blocked': blocked}
         return {'schema_version': 1, 'decisions': decisions, 'manifest': manifest}
@@ -109,6 +120,13 @@ class ReviewStore:
             raise ValueError('Invalid crop extensions')
         if any(extensions.values()) and not training_crop(row, extensions):
             raise ValueError('Reliable registration required for extending the training crop')
+        trim = payload.get('target_trim', old.get('target_trim', {'top': False, 'bottom': False})
+                           if old.get('raw_sha256') == row['raw_sha256'] else {'top': False, 'bottom': False})
+        if (not isinstance(trim, dict) or set(trim) != {'top', 'bottom'}
+                or any(type(value) is not bool for value in trim.values())):
+            raise ValueError('Invalid target trim')
+        if any(trim.values()) and not training_crop(row, extensions, trim):
+            raise ValueError('Reliable registration required for trimming the training target')
         revision = old.get('revision', 0) if old.get('raw_sha256') == row['raw_sha256'] else 0
         request_id = payload.get('request_id')
         if request_id is not None and (not isinstance(request_id, str) or not 1 <= len(request_id) <= 100):
@@ -118,6 +136,8 @@ class ReviewStore:
                 raise FileExistsError('Request id reused for a different decision')
             if 'crop_extensions' in payload and old.get('crop_extensions') != extensions:
                 raise FileExistsError('Request id reused for a different training crop')
+            if 'target_trim' in payload and old.get('target_trim') != trim:
+                raise FileExistsError('Request id reused for a different training target')
             snapshot = self.snapshot()
             self.write(self.gallery / 'training-admission.json', snapshot['manifest'])
             return snapshot
@@ -126,6 +146,7 @@ class ReviewStore:
         records[row['id']] = {'raw_sha256': row['raw_sha256'],
                               'decision': payload['decision'], 'reason': reason,
                               'crop_extensions': extensions,
+                              'target_trim': trim,
                               'revision': revision + 1,
                               'updated_utc': datetime.now(timezone.utc).isoformat()}
         if request_id:
