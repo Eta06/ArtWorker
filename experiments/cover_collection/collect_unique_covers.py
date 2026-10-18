@@ -1,4 +1,4 @@
-"""Serial yt-dlp artwork downloads with cross-archive duplicate exclusion.
+"""Bounded yt-dlp artwork downloads with cross-archive duplicate exclusion.
 
 Only observed Music album-image URLs enter the thumbnail-only download playlist.
 Run under run_bounded_model.py. All manifests, cookies and images stay private.
@@ -11,6 +11,7 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import sys
 
 import cv2
 import numpy as np
@@ -19,6 +20,19 @@ from PIL import Image, ImageOps
 from collect_covers import ROOT, atomic_json, fingerprint, image_request_url, safe_candidate
 
 cv2.setNumThreads(1)
+
+
+def vividness(path: Path) -> dict:
+    """A transparent color prefilter, not a beauty or training-quality score."""
+    with Image.open(path) as image:
+        rgb=np.asarray(image.convert('RGB').resize((128,128)),dtype=np.float32)
+    red,green,blue=rgb[:,:,0],rgb[:,:,1],rgb[:,:,2]
+    rg=np.abs(red-green);yb=np.abs((red+green)/2-blue)
+    colorfulness=float(np.hypot(rg.std(),yb.std())+.3*np.hypot(rg.mean(),yb.mean()))
+    hsv=cv2.cvtColor(rgb.astype(np.uint8),cv2.COLOR_RGB2HSV)
+    saturated=float(((hsv[:,:,1]>=70)&(hsv[:,:,2]>=60)).mean())
+    return {'colorfulness':round(colorfulness,3),'saturated_pixel_fraction':round(saturated,4),
+            'note':'Color prefilter only; no aesthetic or training approval implied'}
 
 
 def signature(path: Path) -> dict:
@@ -105,7 +119,8 @@ def run(args):
     manifest_path = output/'manifest.json'
     manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else dict(
         schema_version=2, stage=args.stage, target=args.target, covers=[], attempts=[],
-        source='Authorized Chrome Music DOM; yt-dlp thumbnail-only download',
+        source=args.source_description,
+        rights_status='Local reference candidates only; artwork is not published',
         audio_downloads=0, new_generation_cost_usd=0)
     if manifest['stage'] != args.stage:
         raise ValueError('Stage mismatch')
@@ -123,6 +138,11 @@ def run(args):
         known['albums'].add(row['album_id'])
         known['assets'].add(row['asset_identity'])
     manifest['baseline_indexed_files'] = len(files)
+    artist_counts=Counter(r.get('catalog_artist') or str(r.get('artists',[{}])[0]) for r in manifest['covers'])
+    manifest['selection_policy']={'minimum_colorfulness':args.min_colorfulness,
+        'minimum_saturated_pixel_fraction':args.min_saturated_fraction,'maximum_per_artist':args.max_per_artist,
+        'thumbnail_workers':args.workers,
+        'note':'Color and diversity prefilters, not human aesthetic acceptance'}
     attempts = {(r['album_id'], r['asset_identity']) for r in manifest['attempts']
                 if r['status'] not in {'duplicate_pending_album', 'duplicate_pending_asset'}
                 and (r['status'] != 'error' or not args.retry_errors)}
@@ -156,8 +176,15 @@ def run(args):
     # Batches are bounded to avoid downloading an entire backlog after target.
     start = 0
     while start < len(pending) and len(manifest['covers']) < args.target:
-        batch = pending[start:start+min(50, args.target-len(manifest['covers']))]
-        start += len(batch)
+        batch=[];capacity=min(50,args.target-len(manifest['covers']))
+        while start<len(pending) and len(batch)<capacity:
+            item=pending[start];start+=1
+            row,record,url=item
+            artist=row.get('catalog_artist') or str(row.get('artists',[{}])[0])
+            if args.max_per_artist and artist_counts[artist]>=args.max_per_artist:
+                manifest['attempts'].append({**record,'status':'artist_quota','artist':artist})
+            else:batch.append(item)
+        if not batch:break
         entries = []
         for row, record, url in batch:
             entries.append(dict(id=record['album_id'], title=row.get('album') or record['album_id'],
@@ -174,6 +201,9 @@ def run(args):
             '-o', str(staging/'%(id)s.%(ext)s')]
         if args.chrome_cookies:
             command += ['--cookies-from-browser', 'chrome:Default']
+        if args.workers>1:
+            command=[sys.executable,str(Path(__file__).with_name('download_thumbnails.py')),
+                '--info',str(info),'--output',str(staging),'--workers',str(args.workers)]
         with (output/'yt-dlp.log').open('a') as log:
             completed = subprocess.run(command, stdout=log, stderr=subprocess.STDOUT, timeout=900)
         for row, record, url in batch:
@@ -187,6 +217,19 @@ def run(args):
                 width, height = sig['dimensions']
                 if width != height or not 512 <= width <= 4096 or sig['variation'] < 2:
                     raise ValueError('Expected detailed square cover >=512 pixels')
+                artist=row.get('catalog_artist') or str(row.get('artists',[{}])[0])
+                colors=vividness(path)
+                if (args.max_per_artist and artist_counts[artist]>=args.max_per_artist):
+                    record.update(status='artist_quota',artist=artist)
+                    path.unlink()
+                    manifest['attempts'].append(record);atomic_json(manifest_path,manifest)
+                    continue
+                if (colors['colorfulness']<args.min_colorfulness or
+                        colors['saturated_pixel_fraction']<args.min_saturated_fraction):
+                    record.update(status='color_prefilter',color_metrics=colors)
+                    path.unlink()
+                    manifest['attempts'].append(record);atomic_json(manifest_path,manifest)
+                    continue
                 digest = hashlib.sha256(path.read_bytes()).hexdigest()
                 record['sha256'] = digest
                 duplicate, method = index.match(sig)
@@ -201,8 +244,9 @@ def run(args):
                     index.add(output/relative, cover_id)
                     cover = dict(row, **record, id=cover_id, file=relative, dimensions=sig['dimensions'],
                         bytes=size, normalized_rgb_sha256=sig['pixel'], dhash=f"{sig['dhash']:016x}",
-                        request_image_url=url, native_source_resolution='Unknown; CDN response dimensions only')
+                        color_metrics=colors,request_image_url=url, native_source_resolution='Unknown; CDN response dimensions only')
                     manifest['covers'].append(cover)
+                    artist_counts[artist]+=1
                     record.update(status='downloaded', cover_id=cover_id)
             except Exception as error:
                 record.update(status='error', error=f'{type(error).__name__}: {error}')
@@ -226,7 +270,16 @@ if __name__ == '__main__':
     parser.add_argument('--yt-dlp', default='yt-dlp')
     parser.add_argument('--chrome-cookies', action='store_true')
     parser.add_argument('--retry-errors', action='store_true', help='Explicit retry of failed inbound image downloads')
+    parser.add_argument('--source-description',default='Authorized Chrome Music DOM; yt-dlp thumbnail-only download')
+    parser.add_argument('--min-colorfulness',type=float,default=0)
+    parser.add_argument('--min-saturated-fraction',type=float,default=0)
+    parser.add_argument('--max-per-artist',type=int,default=0)
+    parser.add_argument('--workers',type=int,default=1,help='1: existing CLI; 2..4: yt-dlp Python thumbnail-only workers')
     args = parser.parse_args()
     if not 1 <= args.target <= 1000:
         parser.error('Target must be in 1..1000')
+    if args.min_colorfulness<0 or not 0<=args.min_saturated_fraction<=1 or args.max_per_artist<0:
+        parser.error('Color thresholds and artist limit must be nonnegative, saturation <=1')
+    if not 1<=args.workers<=4 or (args.workers>1 and args.chrome_cookies):
+        parser.error('Use 1..4 workers; authenticated CLI downloads require one worker')
     run(args)
