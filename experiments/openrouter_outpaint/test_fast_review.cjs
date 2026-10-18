@@ -5,19 +5,19 @@ const fs=require('node:fs');
 const path=require('node:path');
 const vm=require('node:vm');
 
-function fixture(){
+function fixture(storage=new Map()){
   const nodes=new Map(), requests=[];
   function node(selector){
     if(!nodes.has(selector))nodes.set(selector,{value:'',textContent:'',innerHTML:'',disabled:false,
-      open:false,complete:true,naturalWidth:720,focus(){},showModal(){this.open=true},close(){this.open=false}});
+      open:false,complete:true,naturalWidth:720,style:{},classList:{toggle(){}},setAttribute(){},focus(){},showModal(){this.open=true},close(){this.open=false}});
     return nodes.get(selector);
   }
   const rows=['one','two','three'].map(id=>({id,raw_sha256:id+'-sha',title:id,artists:['Artist'],
     asset:'assets/'+id+'/',original_file:'original.jpg',model:'nano',audit_status:'reliable'}));
   let decisions={};
-  const c=vm.createContext({console,Map,Image:class{},data:{rows},$:node,
+  const c=vm.createContext({console,Map,Image:class{},data:{rows},$:node,crypto:require('node:crypto').webcrypto,setTimeout,clearTimeout,
     esc:s=>String(s??'').replaceAll('"','&quot;'),selected:()=>rows,render(){},openDetail(){},
-    document:{querySelectorAll:()=>[],addEventListener(){}},localStorage:{setItem(){}},
+    document:{querySelectorAll:()=>[],addEventListener(){}},localStorage:{setItem:(k,v)=>storage.set(k,v),getItem:k=>storage.get(k)||null},
     fetch:async(url,options)=>{
       const payload=JSON.parse(options.body);requests.push(payload);
       decisions={...decisions,[payload.id]:{...payload,revision:payload.revision+1}};
@@ -26,7 +26,7 @@ function fixture(){
   const run=code=>vm.runInContext(code,c);
   for(const file of ['training-review.js','fast-review.js'])run(fs.readFileSync(path.join(__dirname,file),'utf8'));
   run('reviewReady=true; fastReview.rows=data.rows.slice(); fastReview.ready=true;');
-  return {c,run,node,requests,rows};
+  return {c,run,node,requests,rows,storage};
 }
 
 test('successful skip saves optional note and pending decision before advancing',async()=>{
@@ -72,9 +72,79 @@ test('shortcuts ignore text editing, IME, modifiers and held keys',async()=>{
   press('a',{target:{closest:()=>({tagName:'INPUT'})}});
   press('d',{repeat:true});press(' ',{isComposing:true});press('ArrowLeft',{metaKey:true});
   assert.equal(calls.length,0);
-  press('ArrowLeft');press('ArrowRight');press(' ');
+  press('ArrowLeft');press('ArrowRight');press('s');press(' ');
   assert.deepEqual(calls,['rejected','accepted','pending']);
-  h.node('#fast-dialog').open=false;press(' ');assert.equal(calls.length,3);
+  h.node('#fast-dialog').open=false;press('s');assert.equal(calls.length,3);
+});
+
+test('Space only toggles reliable geometry and never sends or advances a decision',()=>{
+  const h=fixture();
+  h.rows[0].dimensions=[1000,2000];h.rows[0].region={polygon:[[0,500],[1000,500],[1000,1500],[0,1500]]};
+  h.node('#fast-dialog').open=true;
+  h.run('renderFastReview()');
+  assert.match(h.node('#fast-content').innerHTML,/🍌 NANO BANANA/);
+  assert.match(h.node('#fast-content').innerHTML,/preserveAspectRatio="xMidYMid meet"/);
+  assert.match(h.node('#fast-content').innerHTML,/style="display:none"/);
+  const key={key:' ',preventDefault(){},target:{closest:()=>null}};
+  h.c.fastKeydown(key);assert.equal(h.node('#fast-boundary').style.display,'block');
+  h.c.fastKeydown(key);assert.equal(h.node('#fast-boundary').style.display,'none');
+  assert.equal(h.requests.length,0);assert.equal(h.run('fastReview.index'),0);
+  h.rows[0].audit_status='unavailable';h.run('renderFastReview()');
+  assert.doesNotMatch(h.node('#fast-content').innerHTML,/id="fast-boundary"/);
+});
+
+test('intent is durable before the network request and is replayed after refresh',async()=>{
+  const h=fixture();
+  h.c.fetch=async()=>{assert.equal(JSON.parse(h.storage.get('artworker-review-outbox-v1'))[h.run('Object.keys(reviewOutbox)[0]')].reason,'saved before request');throw Error('offline')};
+  await assert.rejects(h.run("persistReview(data.rows[0],'accepted','saved before request')"));
+  const reloaded=fixture(h.storage);
+  await reloaded.run('replayReviewOutbox()');
+  assert.equal(reloaded.requests.length,1);
+  assert.equal(reloaded.requests[0].decision,'accepted');
+  assert.equal(reloaded.run('Object.keys(reviewOutbox).length'),0);
+});
+
+test('resumes cursor and draft without transferring a note to another image',()=>{
+  const h=fixture();h.node('#fast-note').value='durable note';h.run('rememberFastNote(); fastReview.index=1; persistFastSession()');
+  const next=fixture(h.storage);assert.equal(next.run('restoreFastSession()'),true);
+  assert.equal(next.run('fastReview.index'),1);
+  assert.equal(next.run('fastReview.drafts.get("one-one-sha")'),'durable note');
+  assert.equal(next.run('fastReview.drafts.has("two-two-sha")'),false);
+});
+
+test('queued notes inherit the accepted decision instead of resetting it to pending',async()=>{
+  const h=fixture();
+  const accepted=h.run("persistReview(data.rows[0],'accepted','initial')");
+  const note=h.run("persistReview(data.rows[0],()=>reviewDecision(data.rows[0]),'updated note')");
+  await Promise.all([accepted,note]);
+  assert.equal(h.requests.length,2);assert.equal(h.requests[1].revision,1);
+  assert.equal(h.requests[1].decision,'accepted');assert.equal(h.requests[1].reason,'updated note');
+});
+
+test('typing a note autosaves without requiring a decision click',async()=>{
+  const h=fixture();let timer;
+  h.c.setTimeout=callback=>{timer=callback;return 1};h.c.clearTimeout=()=>{};
+  h.run("queueNoteAutosave(data.rows[0],'automatic note')");
+  timer();await h.run('mutationChain');
+  assert.equal(h.requests.length,1);assert.equal(h.requests[0].reason,'automatic note');
+  assert.equal(h.requests[0].decision,'pending');
+});
+
+test('a response without the exact durable operation acknowledgement never advances',async()=>{
+  const h=fixture();h.c.fetch=async()=>({ok:true,json:async()=>({decisions:{}})});
+  await h.run("chooseFastReview('accepted')");
+  assert.equal(h.run('fastReview.index'),0);
+  assert.equal(h.run('Object.keys(reviewOutbox).length'),1);
+  assert.match(h.node('#fast-status').textContent,/onayı doğrulanamadı/);
+});
+
+test('several offline intentions replay in order with fresh revisions after reload',async()=>{
+  const h=fixture();h.c.fetch=async()=>{throw Error('offline')};
+  await assert.rejects(h.run("persistReview(data.rows[0],'accepted','first')"));
+  await assert.rejects(h.run("persistReview(data.rows[0],'rejected','second')"));
+  const reloaded=fixture(h.storage);await reloaded.run('replayReviewOutbox()');
+  assert.equal(reloaded.requests.length,2);assert.equal(reloaded.requests[0].revision,0);
+  assert.equal(reloaded.requests[1].revision,1);assert.equal(reloaded.requests[1].decision,'rejected');
 });
 
 test('decisions wait for images; both original and expanded remain in the same view',async()=>{
