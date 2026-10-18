@@ -109,6 +109,7 @@ def main():
     if args.interval<30:p.error('Refresh interval must be at least 30 seconds')
     args.output.mkdir(parents=True,exist_ok=True)
     (args.output/'index.html').write_text(Path(__file__).with_name('production-gallery.html').read_text())
+    (args.output/'training-review.js').write_text(Path(__file__).with_name('training-review.js').read_text())
     if args.watch:
         # Separate short snapshots have a 256 MiB/pressure guard. They do not
         # acquire the heavy-model lock held by the running teacher coordinator.
