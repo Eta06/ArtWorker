@@ -53,6 +53,27 @@ class GalleryTests(unittest.TestCase):
             self.assertNotIn('should-not-export',(out/'data.json').read_text())
             self.assertNotIn('initial_openrouter_credit_usd',(out/'data.json').read_text())
             self.assertEqual((out/'assets/cover-test-sunburst/raw.png').resolve(),raw)
+            # A proposal is displayed separately, never promoted to an old audit.
+            fidelity=root/'fidelity';fidelity.mkdir()
+            baseline=fidelity/'cover-test-sunburst.json'
+            baseline.write_text(json.dumps({'id':'old-audit','raw_sha256':fingerprint,
+                'alignment':{'status':'unavailable'},'aligned':None}))
+            old_audit=baseline.read_bytes()
+            proposal=root/'proposal';proposal.mkdir()
+            for filename in ('source.png','aligned.png','aligned-overlay.png','aligned-difference.png','placement.png'):
+                Image.new('RGB',(64,64),'orange').save(proposal/filename)
+            candidate={'id':'new-proposal','status':'review_pending','raw_sha256':fingerprint,
+                'original_audit_sha256':hashlib.sha256(old_audit).hexdigest(), 'directory':str(proposal),
+                'evidence':{'classification':'dense_verified'},'metrics':{'ssim_luminance':.99},
+                'algorithm':'fixture','region':{'polygon':[[0,32],[64,32],[64,96],[0,96]]}}
+            (out/'registration-recovery.json').write_text(json.dumps({'candidates':{'cover-test-sunburst':candidate}}))
+            row=g.snapshot(path,out)['rows'][0]
+            self.assertEqual(row['audit_status'],'unavailable')
+            self.assertIsNone(row['metrics'])
+            self.assertEqual(row['registration_recovery']['id'],'new-proposal')
+            self.assertEqual(row['region'],candidate['region'])
+            self.assertEqual(baseline.read_bytes(),old_audit)
+            self.assertEqual(hashlib.sha256(raw.read_bytes()).hexdigest(),fingerprint)
 
 
 if __name__=='__main__':unittest.main()
