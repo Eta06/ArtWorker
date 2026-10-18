@@ -60,6 +60,16 @@ class TrainingReviewTests(unittest.TestCase):
             self.store.decide(self.decision('a', 'invented', revision=1))
         self.assertEqual(self.store.path.read_bytes(), original)
 
+    def test_lost_response_can_be_retried_after_restart_without_changing_revision(self):
+        payload = {**self.decision('a', 'accepted'), 'request_id': 'one-operation'}
+        self.store.decide(payload)
+        restarted = ReviewStore(self.root)
+        retried = restarted.decide(payload)
+        self.assertEqual(retried['decisions']['a']['revision'], 1)
+        self.assertEqual(retried['decisions']['a']['request_id'], 'one-operation')
+        with self.assertRaises(FileExistsError):
+            restarted.decide({**payload, 'decision': 'rejected'})
+
     def test_http_persistence_and_foreign_origin_block(self):
         server = HTTPServer(('127.0.0.1', 0), partial(Handler, store=self.store, directory=str(self.root)))
         thread = threading.Thread(target=server.serve_forever, daemon=True)
