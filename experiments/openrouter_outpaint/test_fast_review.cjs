@@ -24,7 +24,7 @@ function fixture(storage=new Map()){
       return {ok:true,json:async()=>({decisions})};
     }});
   const run=code=>vm.runInContext(code,c);
-  for(const file of ['training-review.js','fast-review.js'])run(fs.readFileSync(path.join(__dirname,file),'utf8'));
+  for(const file of ['training-review.js','training-crop.js','fast-review.js'])run(fs.readFileSync(path.join(__dirname,file),'utf8'));
   run('reviewReady=true; fastReview.rows=data.rows.slice(); fastReview.ready=true;');
   return {c,run,node,requests,rows,storage};
 }
@@ -128,6 +128,28 @@ test('typing a note autosaves without requiring a decision click',async()=>{
   timer();await h.run('mutationChain');
   assert.equal(h.requests.length,1);assert.equal(h.requests[0].reason,'automatic note');
   assert.equal(h.requests[0].decision,'pending');
+});
+
+test('including the bottom autosaves the crop without accepting or advancing the cover',async()=>{
+  const h=fixture();h.rows[0].dimensions=[1000,2000];
+  h.rows[0].region={polygon:[[0,500],[1000,500],[1000,1500],[0,1500]]};
+  const original=JSON.stringify(h.rows[0].region);
+  await h.run("toggleTrainingExtent(data.rows[0],'bottom','fast')");
+  assert.equal(h.requests.length,1);assert.equal(h.requests[0].decision,'pending');
+  assert.equal(h.requests[0].crop_extensions.bottom,true);assert.equal(h.run('fastReview.index'),0);
+  assert.equal(JSON.stringify(h.rows[0].region),original);
+  assert.deepEqual(JSON.parse(h.run('JSON.stringify(trainingCrop(data.rows[0]).box_px)')),[0,500,1000,2000]);
+  const restored=fixture(h.storage);restored.rows[0].dimensions=h.rows[0].dimensions;restored.rows[0].region=h.rows[0].region;
+  assert.equal(restored.run('reviewCropExtensions(data.rows[0]).bottom'),true);
+});
+
+test('top/bottom selections carry into later decisions and stay bound to the output hash',async()=>{
+  const h=fixture();h.rows[0].dimensions=[1000,2000];h.rows[0].region={polygon:[[0,500],[1000,500],[1000,1500],[0,1500]]};
+  await h.run("toggleTrainingExtent(data.rows[0],'top','fast')");
+  await h.run("persistReview(data.rows[0],'accepted','ready')");
+  assert.equal(h.requests[1].crop_extensions.top,true);
+  h.rows[0].raw_sha256='new-output';
+  assert.equal(h.run('reviewCropExtensions(data.rows[0]).top'),false);
 });
 
 test('a response without the exact durable operation acknowledgement never advances',async()=>{
