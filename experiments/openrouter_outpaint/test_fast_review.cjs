@@ -9,7 +9,7 @@ function fixture(storage=new Map()){
   const nodes=new Map(), requests=[];
   function node(selector){
     if(!nodes.has(selector))nodes.set(selector,{value:'',textContent:'',innerHTML:'',disabled:false,
-      open:false,complete:true,naturalWidth:720,style:{},classList:{toggle(){}},setAttribute(){},focus(){},showModal(){this.open=true},close(){this.open=false}});
+      open:false,complete:true,naturalWidth:720,style:{},attributes:{},classList:{toggle(){}},setAttribute(k,v){this.attributes[k]=v},focus(){},showModal(){this.open=true},close(){this.open=false}});
     return nodes.get(selector);
   }
   const rows=['one','two','three'].map(id=>({id,raw_sha256:id+'-sha',title:id,artists:['Artist'],
@@ -149,6 +149,46 @@ test('top/bottom selections carry into later decisions and stay bound to the out
   await h.run("persistReview(data.rows[0],'accepted','ready')");
   assert.equal(h.requests[1].crop_extensions.top,true);
   h.rows[0].raw_sha256='new-output';
+  assert.equal(h.run('reviewCropExtensions(data.rows[0]).top'),false);
+});
+
+test('hover previews the next crop without persisting and restores the hidden saved selection',()=>{
+  const h=fixture();h.rows[0].dimensions=[1000,2000];h.rows[0].region={polygon:[[0,500],[1000,500],[1000,1500],[0,1500]]};
+  const saved=JSON.stringify([...h.storage]);
+  h.run("bindCropControls(data.rows[0],'fast')");
+  h.node('#fast-crop-bottom').onmouseenter();
+  assert.equal(h.node('#fast-training-crop').attributes.points,'0,500 1000,500 1000,2000 0,2000');
+  assert.equal(h.node('#fast-boundary').style.display,'block');
+  assert.match(h.node('#fast-crop-info').textContent,/ÖNİZLEME/);
+  assert.equal(h.requests.length,0);assert.equal(JSON.stringify([...h.storage]),saved);
+  assert.equal(h.run('reviewCropExtensions(data.rows[0]).bottom'),false);
+  h.node('#fast-crop-bottom').onmouseleave();
+  assert.equal(h.node('#fast-training-crop').attributes.points,'0,500 1000,500 1000,1500 0,1500');
+  assert.equal(h.node('#fast-boundary').style.display,'none');
+});
+
+test('keyboard focus previews removal, and Space visibility intent survives mouse leave',()=>{
+  const h=fixture();h.rows[0].dimensions=[1000,2000];h.rows[0].region={polygon:[[0,500],[1000,500],[1000,1500],[0,1500]]};
+  h.run("cropDrafts.set(data.rows[0].id+'-'+data.rows[0].raw_sha256,{top:true,bottom:false});bindCropControls(data.rows[0],'fast')");
+  h.node('#fast-crop-top').onfocus();
+  assert.equal(h.node('#fast-training-crop').attributes.points,'0,500 1000,500 1000,1500 0,1500');
+  assert.match(h.node('#fast-crop-info').textContent,/çıkarılacak/);
+  h.run('toggleFastRegion()');
+  h.node('#fast-crop-top').onblur();
+  assert.equal(h.node('#fast-boundary').style.display,'block');
+  assert.equal(h.node('#fast-training-crop').attributes.points,'0,0 1000,0 1000,1500 0,1500');
+  assert.equal(h.requests.length,0);
+});
+
+test('detail hover follows the current boundary checkbox without changing saved crop',()=>{
+  const h=fixture();h.rows[0].dimensions=[1000,2000];h.rows[0].region={polygon:[[0,500],[1000,500],[1000,1500],[0,1500]]};
+  h.node('#boundary-toggle').checked=true;
+  h.run("bindCropControls(data.rows[0],'detail')");
+  h.node('#detail-crop-top').onmouseenter();
+  assert.equal(h.node('#detail-training-crop').attributes.points,'0,0 1000,0 1000,1500 0,1500');
+  h.node('#boundary-toggle').checked=false;
+  h.node('#detail-crop-top').onmouseleave();
+  assert.equal(h.node('#boundary').style.display,'none');
   assert.equal(h.run('reviewCropExtensions(data.rows[0]).top'),false);
 });
 
