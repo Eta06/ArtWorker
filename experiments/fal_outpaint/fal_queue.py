@@ -12,6 +12,7 @@ from collections import Counter
 from decimal import Decimal
 import fcntl
 import hashlib
+import http.client
 import json
 from pathlib import Path
 import re
@@ -220,8 +221,14 @@ def run(args):
                 row['status']=classification(exc.code,message)
                 receipt.update(error=message,http_status=exc.code)
                 if row['status']!='refused':stopping=True;state['stop_reason']=row['status']
-            except (urllib.error.URLError,TimeoutError) as exc:
-                row['last_poll_error']=type(exc).__name__;continue
+            except (urllib.error.URLError,TimeoutError,ConnectionError,http.client.IncompleteRead) as exc:
+                # These reads (status/result/CDN download) are GET-only. Keep
+                # the original request ID and retry its read on the next poll;
+                # a dropped download must never create a new generation POST.
+                row['last_poll_error']=type(exc).__name__
+                receipt['last_read_error']={'type':type(exc).__name__,'unix':time.time()}
+                save_json(receipt_path,receipt)
+                continue
             if row['status'] in {'failed','account_stop'}:
                 stopping=True;state['stop_reason']=row['status']
             receipt['status']=row['status'];receipt['elapsed_seconds']=time.time()-row['submitted_unix']
