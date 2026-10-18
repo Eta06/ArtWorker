@@ -1,5 +1,6 @@
 from argparse import Namespace
 import json
+import io
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
@@ -87,6 +88,45 @@ class QueueTests(unittest.TestCase):
             self.assertEqual([r['status'] for r in saved['sources']],['uncertain','pending'])
             self.assertEqual(saved['status'],'stopped')
             self.assertEqual(json.loads((root/'outputs/one/receipt.json').read_text())['status'],'uncertain')
+
+    def test_explicit_hold_never_repeats_uncertain_cover_and_continues_next(self):
+        with TemporaryDirectory() as temp:
+            root=Path(temp);manifest=root/'manifest.json';manifest.write_text('{}')
+            state=root/'state.json';key=root/'key';key.write_text('test-only')
+            for name in ('one','two'):(root/'outputs'/name).mkdir(parents=True)
+            receipt=root/'outputs/one/receipt.json';receipt.write_text('{"status":"uncertain"}')
+            rows=[{'id':'one','status':'uncertain'},{'id':'two','status':'pending'}]
+            state.write_text(json.dumps({'endpoint_id':q.ENDPOINT,'source_manifest':'manifest.json',
+                'source_manifest_sha256':q.sha(manifest),'sources':rows}))
+            error=urllib.error.HTTPError('https://queue.fal.run/test',422,'refused',{},io.BytesIO(b'content_policy_violation'))
+            with (patch.object(q,'ROOT',root),patch.object(q,'prepare',return_value=({'prompt':'test'},{})) as prepare,
+                  patch.object(q,'request',side_effect=error) as request):
+                q.run(Namespace(state=state,limit=1000,key_file=key,concurrency=4,poll_seconds=2,hold_uncertain=True))
+                self.assertEqual(request.call_count,1)
+                self.assertEqual(prepare.call_args.args[0]['id'],'two')
+            saved=json.loads(state.read_text())
+            self.assertEqual([r['status'] for r in saved['sources']],['held_uncertain','refused'])
+            self.assertEqual(json.loads(receipt.read_text())['status'],'held_uncertain')
+
+    def test_receipt_with_known_request_id_is_recovered_instead_of_held(self):
+        with TemporaryDirectory() as temp:
+            root=Path(temp);manifest=root/'manifest.json';manifest.write_text('{}')
+            state=root/'state.json';key=root/'key';key.write_text('test-only')
+            folder=root/'outputs/one';folder.mkdir(parents=True)
+            queue={'request_id':'saved-id','status_url':'https://queue.fal.run/saved/status',
+                'response_url':'https://queue.fal.run/saved/result'}
+            (folder/'receipt.json').write_text(json.dumps({'queue':queue}))
+            state.write_text(json.dumps({'endpoint_id':q.ENDPOINT,'source_manifest':'manifest.json',
+                'source_manifest_sha256':q.sha(manifest),'sources':[
+                    {'id':'one','status':'submitting','submitted_unix':0,'aspect_ratio':'3:4'}]}))
+            with (patch.object(q,'ROOT',root),patch.object(q,'request',side_effect=[
+                    ({'status':'COMPLETED'},{}),({'error':'content_policy_violation'}, {})]) as request):
+                q.run(Namespace(state=state,limit=1000,key_file=key,concurrency=4,poll_seconds=2,hold_uncertain=True))
+                self.assertEqual(request.call_count,2)
+                self.assertTrue(all(len(c.args)==2 for c in request.call_args_list))
+            row=json.loads(state.read_text())['sources'][0]
+            self.assertEqual(row['request_id'],'saved-id')
+            self.assertEqual(row['status'],'refused')
 
 
 if __name__=='__main__':unittest.main()
