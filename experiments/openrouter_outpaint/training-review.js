@@ -40,9 +40,16 @@ function reviewControls(r) {
   return `<section class="review-box" aria-label="Eğitim kararı"><div class="review-top"><strong>Bu çıktı eğitime girsin mi?</strong>${reviewBadge(r)}</div><div class="detail-controls">${Object.entries(reviewLabels).map(([value,label])=>`<button data-decision="${value}" aria-pressed="${decision===value}" class="${decision===value?'active':''}" ${!reviewReady||reviewBusy?'disabled':''}>${label}</button>`).join('')}<button id="next-review">Sonraki incelenmemiş →</button></div><label class="subtle" for="review-reason">Not / eleme nedeni (isteğe bağlı)</label><div class="review-note"><input id="review-reason" maxlength="500" placeholder="Örn. yüz değişmiş, renk geçişi kötü…" value="${esc(reviewNote(r))}"><button id="save-review-note" ${!reviewReady||reviewBusy?'disabled':''}>Notu kaydet</button></div><p class="subtle" id="review-save" role="status">${reviewReady?'Kararlar anında bu Mac’te dosyaya kaydedilir. Kararsız olanlar eğitim listesine alınmaz.':'Kayıt bağlantısı yükleniyor; karar düğmeleri henüz açık değil.'}</p>${decision==='accepted'&&r.audit_status!=='reliable'?'<p class="error">Kabul ettin; ancak güvenilir kaynak eşleşmesi eksik. Bu çıktı ayrıca kontrol edilene kadar eğitim adayı listesinde bekletiliyor.</p>':''}</section>`;
 }
 function updateReviewSummary() {
-  const counts = {accepted:0,rejected:0,pending:0};
-  for (const r of data.rows) counts[reviewDecision(r)]++;
-  $('#review-summary').textContent = `${counts.accepted} kabul · ${counts.rejected} eğitim dışında · ${counts.pending} incelenmedi / kararsız`;
+  const text=reviewSummaryText();
+  for(const selector of ['#review-summary','#fast-selection-count'])if($(selector))$(selector).textContent=text;
+}
+function reviewSummaryText(){
+  const counts={accepted:0,rejected:0,pending:0,unreviewed:0};
+  for(const r of data.rows){
+    const saved=trainingReviews[r.id];
+    counts[saved?.raw_sha256===r.raw_sha256?saved.decision:'unreviewed']++;
+  }
+  return `✓ Seçtin: ${counts.accepted} · Kötü: ${counts.rejected} · Kararsız: ${counts.pending} · İncelenmedi: ${counts.unreviewed}`;
 }
 function bindReviewControls(r) {
   document.querySelectorAll('[data-decision]').forEach(button=>button.onclick=()=>saveReview(r,button.dataset.decision));
@@ -112,6 +119,7 @@ async function sendReviewOperation(operation) {
     if(operation.kind==='note')operation.decision=same?latest.decision:'pending';
     if(operation.kind==='geometry')operation.decision=same?latest.decision:'pending';
     if(operation.kind==='note'&&operation.crop_extensions&&same&&latest.crop_extensions)operation.crop_extensions=latest.crop_extensions;
+    if(operation.kind==='note'&&operation.target_trim&&same&&latest.target_trim)operation.target_trim=latest.target_trim;
     operation.attempted=true;
     try{stashReviewOutbox()}catch{}
   }
@@ -129,6 +137,7 @@ async function sendReviewOperation(operation) {
     throw Error('Dosya kaydı onayı doğrulanamadı; bekleyen karar korunuyor.');
   }
   if(operation.crop_extensions&&['top','bottom'].some(side=>acknowledged.crop_extensions?.[side]!==operation.crop_extensions[side]))throw Error('Eğitim alanı kaydı onaylanmadı; seçim cihazda korunuyor.');
+  if(operation.target_trim&&['top','bottom'].some(side=>acknowledged.target_trim?.[side]!==operation.target_trim[side]))throw Error('Hedef kırpma kaydı onaylanmadı; seçim cihazda korunuyor.');
   trainingReviews=result.decisions;
   // Only delete after the server acknowledges the exact operation.
   delete reviewOutbox[operation.request_id];
@@ -141,7 +150,7 @@ function serialReviewJob(job){
 function replayReviewOutbox(){return serialReviewJob(async()=>{
   for(const operation of Object.values(reviewOutbox))await sendReviewOperation(operation);
 })}
-function persistReview(r,decision,reason,cropOverride=null) {
+function persistReview(r,decision,reason,cropOverride=null,trimOverride=null) {
   // Write intent synchronously, before the first network wait or page navigation.
   // A single id per operation makes retry after a lost response safe.
   const saved=trainingReviews[r.id];
@@ -151,7 +160,7 @@ function persistReview(r,decision,reason,cropOverride=null) {
     for(const [id,op] of Object.entries(reviewOutbox))if(op.id===r.id&&op.raw_sha256===r.raw_sha256)delete reviewOutbox[id];
   }
   const revision=saved?.raw_sha256===r.raw_sha256?saved.revision:0;
-  const operation={id:r.id,raw_sha256:r.raw_sha256,decision:typeof decision==='function'?decision():decision,reason,revision,kind:typeof decision==='function'?(cropOverride?'geometry':'note'):'decision',crop_extensions:cropOverride||reviewCropExtensions(r),request_id:crypto.randomUUID()};
+  const operation={id:r.id,raw_sha256:r.raw_sha256,decision:typeof decision==='function'?decision():decision,reason,revision,kind:typeof decision==='function'?(cropOverride||trimOverride?'geometry':'note'):'decision',crop_extensions:cropOverride||reviewCropExtensions(r),target_trim:trimOverride||reviewTargetTrim(r),request_id:crypto.randomUUID()};
   reviewOutbox[operation.request_id]=operation;
   try{stashReviewOutbox()}catch{autosaveStatus('Tarayıcı yedeği yazılamadı; dosya kaydı bekleniyor.',true)}
   autosaveStatus('Kaydediliyor…');
@@ -182,7 +191,7 @@ function setupReviewAutosave(){
   setInterval(retry,4000);
 }
 function exportReviews() {
-  const selections=data.rows.map(r=>({id:r.id,cover_id:r.cover_id,model:r.model,raw_sha256:r.raw_sha256,title:r.title,decision:reviewDecision(r),reason:trainingReviews[r.id]?.raw_sha256===r.raw_sha256?trainingReviews[r.id].reason:'',crop_extensions:reviewCropExtensions(r),conditioning:trainingCrop(r)}));
-  const blob=new Blob([JSON.stringify({schema_version:3,policy:'explicit_accept_and_reliable_registration',selections},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+  const selections=data.rows.map(r=>({id:r.id,cover_id:r.cover_id,model:r.model,raw_sha256:r.raw_sha256,title:r.title,decision:reviewDecision(r),reason:trainingReviews[r.id]?.raw_sha256===r.raw_sha256?trainingReviews[r.id].reason:'',crop_extensions:reviewCropExtensions(r),target_trim:reviewTargetTrim(r),conditioning:trainingCrop(r)}));
+  const blob=new Blob([JSON.stringify({schema_version:4,policy:'explicit_accept_and_reliable_registration',selections},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
   a.href=url;a.download='artworker-egitim-secimleri.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
