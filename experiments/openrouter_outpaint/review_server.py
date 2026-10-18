@@ -10,8 +10,32 @@ from datetime import datetime, timezone
 from functools import partial
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 import json
+import math
 from pathlib import Path
 from urllib.parse import urlsplit
+
+
+def training_crop(row, extensions):
+    """Axis-aligned crop of the teacher output, distinct from source registration."""
+    if row.get('audit_status') != 'reliable' or not row.get('region'):
+        return None
+    points = row['region'].get('polygon', [])
+    dimensions = row.get('dimensions', [])
+    if len(points) != 4 or len(dimensions) != 2 or any(len(p) != 2 for p in points):
+        return None
+    w, h = dimensions
+    if w <= 0 or h <= 0 or not all(math.isfinite(v) for p in points for v in p):
+        return None
+    xs, ys = zip(*points)
+    box = [max(0, min(w, math.floor(min(xs)))),
+           0 if extensions['top'] else max(0, min(h, math.floor(min(ys)))),
+           max(0, min(w, math.ceil(max(xs)))),
+           h if extensions['bottom'] else max(0, min(h, math.ceil(max(ys))))]
+    if box[2] <= box[0] or box[3] <= box[1]:
+        return None
+    return {'source': 'teacher_output_crop', 'box_px': box,
+            'target_dimensions': [w, h], 'extensions': extensions,
+            'remaining_target_pixels': w*h-(box[2]-box[0])*(box[3]-box[1])}
 
 
 class ReviewStore:
@@ -37,13 +61,22 @@ class ReviewStore:
             decision = decisions.get(key, {}).get('decision', 'pending')
             item = {k: row[k] for k in ('id', 'cover_id', 'model', 'raw_sha256')}
             item['raw_file'] = str((self.gallery / row['asset'] / 'raw.png').resolve())
+            extensions = decisions.get(key, {}).get('crop_extensions', {'top': False, 'bottom': False})
+            crop = training_crop(row, extensions)
+            if crop:
+                item['conditioning'] = crop
             if decision == 'accepted' and row['audit_status'] == 'reliable':
-                candidates.append(item)
+                if not crop:
+                    blocked.append({**item, 'reason': 'valid_training_crop_required'})
+                elif crop['remaining_target_pixels'] == 0:
+                    blocked.append({**item, 'reason': 'no_region_left_to_outpaint'})
+                else:
+                    candidates.append(item)
             elif decision == 'accepted':
                 blocked.append({**item, 'reason': 'reliable_source_registration_required'})
             else:
                 excluded.append({**item, 'reason': decision})
-        manifest = {'schema_version': 1, 'policy': 'explicit_accept_and_reliable_registration',
+        manifest = {'schema_version': 2, 'policy': 'explicit_accept_and_reliable_registration',
                     'training_started': False, 'candidates': candidates,
                     'excluded': excluded, 'blocked': blocked}
         return {'schema_version': 1, 'decisions': decisions, 'manifest': manifest}
@@ -69,6 +102,13 @@ class ReviewStore:
             raise ValueError('Reason must be at most 500 characters')
         records = self.records()
         old = records.get(row['id'], {})
+        extensions = payload.get('crop_extensions', old.get('crop_extensions', {'top': False, 'bottom': False})
+                                 if old.get('raw_sha256') == row['raw_sha256'] else {'top': False, 'bottom': False})
+        if (not isinstance(extensions, dict) or set(extensions) != {'top', 'bottom'}
+                or any(type(value) is not bool for value in extensions.values())):
+            raise ValueError('Invalid crop extensions')
+        if any(extensions.values()) and not training_crop(row, extensions):
+            raise ValueError('Reliable registration required for extending the training crop')
         revision = old.get('revision', 0) if old.get('raw_sha256') == row['raw_sha256'] else 0
         request_id = payload.get('request_id')
         if request_id is not None and (not isinstance(request_id, str) or not 1 <= len(request_id) <= 100):
@@ -76,6 +116,8 @@ class ReviewStore:
         if request_id and old.get('request_id') == request_id:
             if any(old.get(k) != payload.get(k, '') for k in ('raw_sha256', 'decision', 'reason')):
                 raise FileExistsError('Request id reused for a different decision')
+            if 'crop_extensions' in payload and old.get('crop_extensions') != extensions:
+                raise FileExistsError('Request id reused for a different training crop')
             snapshot = self.snapshot()
             self.write(self.gallery / 'training-admission.json', snapshot['manifest'])
             return snapshot
@@ -83,6 +125,7 @@ class ReviewStore:
             raise FileExistsError('Decision changed in another tab; reload before editing')
         records[row['id']] = {'raw_sha256': row['raw_sha256'],
                               'decision': payload['decision'], 'reason': reason,
+                              'crop_extensions': extensions,
                               'revision': revision + 1,
                               'updated_utc': datetime.now(timezone.utc).isoformat()}
         if request_id:
