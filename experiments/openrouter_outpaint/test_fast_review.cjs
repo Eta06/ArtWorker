@@ -40,6 +40,44 @@ test('successful skip saves optional note and pending decision before advancing'
   assert.equal(h.run('fastReview.drafts.has(data.rows[1].id+"-"+data.rows[1].raw_sha256)'),false);
 });
 
+test('recovered boundary preview is read only; confirmation preserves rejected vote and note',async()=>{
+  const h=fixture();
+  h.rows[0].audit_status='unavailable';
+  h.rows[0].dimensions=[1000,2000];
+  h.rows[0].region={polygon:[[0,500],[1000,500],[1000,1500],[0,1500]]};
+  h.rows[0].registration_recovery={id:'recovered-region',evidence:{classification:'dense_verified'},metrics:{ssim_luminance:.9}};
+  h.run("trainingReviews.one={raw_sha256:data.rows[0].raw_sha256,decision:'rejected',reason:'Find source',revision:1}");
+  h.node('#fast-note').value='Find source';
+  h.run('toggleFastRegion()');
+  assert.equal(h.requests.length,0);
+  assert.equal(h.run('registrationIsReady(data.rows[0])'),false);
+  assert.equal(h.run('reviewMetrics(data.rows[0])'),null);
+  h.run('bindRecoveryControls(data.rows[0],true)');
+  await h.node('#fast-confirm-registration').onclick();
+  assert.equal(h.requests.length,1);
+  assert.equal(h.requests[0].decision,'rejected');
+  assert.equal(h.requests[0].reason,'Find source');
+  assert.equal(h.requests[0].registration_confirmation,'recovered-region');
+  assert.equal(h.run('fastReview.index'),0);
+  assert.equal(h.run('registrationIsReady(data.rows[0])'),true);
+  assert.equal(h.run('reviewMetrics(data.rows[0]).ssim_luminance'),.9);
+});
+
+test('rejected shortcut starts a fresh review queue and does not vote',()=>{
+  const h=fixture();h.node('#fast-dialog').addEventListener=()=>{};
+  h.run("trainingReviews.one={raw_sha256:data.rows[0].raw_sha256,decision:'rejected',revision:1}");
+  h.c.selected=()=>h.rows.filter(r=>h.run(`reviewDecision(data.rows.find(x=>x.id==='${r.id}'))`)==='rejected');
+  h.run('setupFastReview()');
+  h.node('#search').value='Old search';h.node('#model').value='nano';
+  h.node('#review-rejected-start').onclick();
+  assert.equal(h.node('#search').value,'');
+  assert.equal(h.node('#model').value,'');
+  assert.equal(h.node('#review-filter').value,'rejected');
+  assert.equal(h.run('fastReview.rows.length'),1);
+  assert.equal(h.run('fastReview.rows[0].id'),'one');
+  assert.equal(h.requests.length,0);
+});
+
 test('failure keeps the same cover and note; rapid double presses do not submit twice',async()=>{
   const h=fixture();h.node('#fast-note').value='Important note';
   let reject;
