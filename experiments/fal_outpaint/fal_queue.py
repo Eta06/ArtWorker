@@ -1,7 +1,8 @@
 """Durable fal Sunburst outpaint queue. No fallback model or paid POST retries.
 
 Private source art, receipts and state belong under ignored results/. A lost
-submission response pauses new spending; known request IDs remain recoverable.
+submission response pauses new spending; explicitly held uncertain rows are
+never resubmitted and need not block unrelated covers.
 """
 from __future__ import annotations
 
@@ -169,8 +170,26 @@ def run(args):
     if state['endpoint_id']!=ENDPOINT:raise ValueError('Wrong model state')
     if sha(ROOT/state['source_manifest'])!=state['source_manifest_sha256']:raise ValueError('Manifest changed')
     rows=state['sources'][:args.limit];key=args.key_file.read_text().strip()
+    if getattr(args,'hold_uncertain',False):
+        for row in rows:
+            if row['status'] not in {'submitting','uncertain'}:continue
+            receipt_path=root/'outputs'/row['id']/'receipt.json'
+            receipt=json.loads(receipt_path.read_text())
+            queue=receipt.get('queue')
+            if queue and all(queue.get(k) for k in ('request_id','status_url','response_url')):
+                safe_queue_url(queue['status_url']);safe_queue_url(queue['response_url'])
+                row.update({k:queue[k] for k in ('request_id','status_url','response_url')})
+                row['status']='submitted';receipt['status']='submitted'
+            else:
+                row['status']='held_uncertain'
+                row['hold_reason']='User authorized continuing other covers without repeating this uncertain submission'
+                row['held_unix']=time.time()
+                receipt.update(status='held_uncertain',hold_reason=row['hold_reason'],held_unix=row['held_unix'])
+            save_json(receipt_path,receipt);save_json(args.state,state)
     if any(r['status'] in {'submitting','uncertain'} for r in rows):
         raise ValueError('Uncertain submission exists; reconcile before new spending')
+    state.setdefault('resumes',[]).append({'unix':time.time(),'previous_stop_reason':state.pop('stop_reason',None),
+        'held_uncertain':sum(r['status']=='held_uncertain' for r in state['sources'])})
     stopping=False
     while True:
         active=[r for r in rows if r['status']=='submitted']
@@ -256,6 +275,8 @@ def main():
     parser.add_argument('--limit',type=int,default=1000)
     parser.add_argument('--concurrency',type=int,default=4)
     parser.add_argument('--poll-seconds',type=float,default=8)
+    parser.add_argument('--hold-uncertain',action='store_true',
+                        help='Hold unresolved submissions without repeating them; continue unrelated pending covers')
     args=parser.parse_args();args.state=args.state.resolve()
     if not args.state.is_relative_to(ROOT/'experiments/fal_outpaint/results'):parser.error('Use private ignored results')
     if not re.fullmatch(r'[a-z][a-z0-9]*',args.stage):parser.error('Use a safe single-word stage')
