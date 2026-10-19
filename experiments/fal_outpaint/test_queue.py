@@ -158,5 +158,26 @@ class QueueTests(unittest.TestCase):
                 self.assertEqual(receipt['actual_cost_usd'],'0.0559')
                 self.assertEqual(receipt['last_read_error']['type'],type(error).__name__)
 
+    def test_persisted_success_target_stops_without_submitting_another_cover(self):
+        with TemporaryDirectory() as temp:
+            root=Path(temp);manifest=root/'manifest.json';manifest.write_text('{}')
+            state=root/'state.json';key=root/'key';key.write_text('test-only')
+            folder=root/'outputs/one';folder.mkdir(parents=True)
+            (folder/'receipt.json').write_text('{}')
+            row={'id':'one','status':'submitted','submitted_unix':0,'width':864,'height':1152,
+                'aspect_ratio':'3:4','status_url':'https://queue.fal.run/known/status',
+                'response_url':'https://queue.fal.run/known/result'}
+            state.write_text(json.dumps({'endpoint_id':q.ENDPOINT,'completed_target':1,'source_manifest':'manifest.json',
+                'source_manifest_sha256':q.sha(manifest),'sources':[row,{'id':'two','status':'pending'}]}))
+            with (patch.object(q,'ROOT',root),patch.object(q,'request',side_effect=[
+                    ({'status':'IN_PROGRESS'},{}),({'status':'COMPLETED'},{}),({'images':[{'url':'https://v3b.fal.media/test.png'}]}, {})]) as request,
+                  patch.object(q,'download',return_value={'sha256':'test','dimensions':[864,1152]}),
+                  patch.object(q,'prepare') as prepare,patch.object(q.time,'sleep')):
+                q.run(Namespace(state=state,limit=1000,key_file=key,concurrency=4,poll_seconds=2))
+                prepare.assert_not_called();self.assertEqual(request.call_count,3)
+            saved=json.loads(state.read_text())
+            self.assertEqual(saved['status'],'completed_target_reached')
+            self.assertEqual(saved['sources'][1]['status'],'pending')
+
 
 if __name__=='__main__':unittest.main()
