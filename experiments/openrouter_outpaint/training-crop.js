@@ -3,17 +3,24 @@
 const cropDrafts=new Map();
 const cropPreviews=new Map();
 const targetTrimDrafts=new Map();
+function cropSideLabels(r){return (r.dimensions?.[0]>r.dimensions?.[1])?
+  [['left','Solu da dahil et','Solu sil · sadece sağa genişlet'],['right','Sağı da dahil et','Sağı sil · sadece sola genişlet']]:
+  [['top','Üstü de dahil et','Üstü sil · sadece alta genişlet'],['bottom','Altı da dahil et','Altı sil · sadece üste genişlet']];}
 function reviewTargetTrim(r){
   let choice=targetTrimDrafts.get(r.id+'-'+r.raw_sha256);
   if(!choice)try{choice=JSON.parse(localStorage.getItem('artworker-trim-'+r.id+'-'+r.raw_sha256)||'null')}catch{}
   if(!choice){const saved=trainingReviews[r.id];choice=saved?.raw_sha256===r.raw_sha256?saved.target_trim:null}
-  return {top:choice?.top===true,bottom:choice?.bottom===true};
+  const sides={top:choice?.top===true,bottom:choice?.bottom===true};
+  if(r.dimensions?.[0]>r.dimensions?.[1]||choice?.left!==undefined||choice?.right!==undefined)Object.assign(sides,{left:choice?.left===true,right:choice?.right===true});
+  return sides;
 }
 function reviewCropExtensions(r){
   let choice=cropDrafts.get(r.id+'-'+r.raw_sha256);
   if(!choice)try{choice=JSON.parse(localStorage.getItem('artworker-crop-'+r.id+'-'+r.raw_sha256)||'null')}catch{}
   if(!choice){const saved=trainingReviews[r.id];choice=saved?.raw_sha256===r.raw_sha256?saved.crop_extensions:null}
-  return {top:choice?.top===true,bottom:choice?.bottom===true};
+  const sides={top:choice?.top===true,bottom:choice?.bottom===true};
+  if(r.dimensions?.[0]>r.dimensions?.[1]||choice?.left!==undefined||choice?.right!==undefined)Object.assign(sides,{left:choice?.left===true,right:choice?.right===true});
+  return sides;
 }
 function trainingCrop(r,extensions=reviewCropExtensions(r),trim=reviewTargetTrim(r)){
   if(!registrationIsReady(r)||r.region?.polygon?.length!==4||r.dimensions?.length!==2)return null;
@@ -21,9 +28,10 @@ function trainingCrop(r,extensions=reviewCropExtensions(r),trim=reviewTargetTrim
   if(!(w>0&&h>0)||!points.every(p=>p.length===2&&p.every(Number.isFinite)))return null;
   const xs=points.map(p=>p[0]),ys=points.map(p=>p[1]),clamp=(v,max)=>Math.max(0,Math.min(max,v));
   const base=[clamp(Math.floor(Math.min(...xs)),w),clamp(Math.floor(Math.min(...ys)),h),clamp(Math.ceil(Math.max(...xs)),w),clamp(Math.ceil(Math.max(...ys)),h)];
-  const trimmed=trim.top||trim.bottom;
-  const target=[trimmed?base[0]:0,trim.top?base[1]:0,trimmed?base[2]:w,trim.bottom?base[3]:h];
-  const box=[clamp(Math.floor(Math.min(...xs)),w),extensions.top?0:clamp(Math.floor(Math.min(...ys)),h),clamp(Math.ceil(Math.max(...xs)),w),extensions.bottom?h:clamp(Math.ceil(Math.max(...ys)),h)];
+  const vertical=trim.top||trim.bottom,horizontal=trim.left||trim.right;
+  const target=[trim.left||(vertical&&!horizontal)?base[0]:0,trim.top||(horizontal&&!vertical)?base[1]:0,
+    trim.right||(vertical&&!horizontal)?base[2]:w,trim.bottom||(horizontal&&!vertical)?base[3]:h];
+  const box=[extensions.left?0:base[0],extensions.top?0:base[1],extensions.right?w:base[2],extensions.bottom?h:base[3]];
   box[0]=Math.max(box[0],target[0]);box[1]=Math.max(box[1],target[1]);box[2]=Math.min(box[2],target[2]);box[3]=Math.min(box[3],target[3]);
   if(box[2]<=box[0]||box[3]<=box[1])return null;
   return {source:'teacher_output_crop',box_px:box,raw_dimensions:[w,h],target_box_px:target,target_dimensions:[target[2]-target[0],target[3]-target[1]],input_box_in_target_px:[box[0]-target[0],box[1]-target[1],box[2]-target[0],box[3]-target[1]],extensions,target_trim:trim,
@@ -31,7 +39,7 @@ function trainingCrop(r,extensions=reviewCropExtensions(r),trim=reviewTargetTrim
 }
 function cropControls(r,prefix){
   const crop=trainingCrop(r),ext=reviewCropExtensions(r),trim=reviewTargetTrim(r);
-  return `<section class="crop-controls"><strong>Eğitim girdisine dahil et</strong><div class="detail-controls">${[['top','Üstü de dahil et'],['bottom','Altı da dahil et']].map(([side,label])=>`<button id="${prefix}-crop-${side}" aria-pressed="${ext[side]}" class="${ext[side]?'active':''}" ${!crop||!reviewReady||trim[side]?'disabled':''}>${ext[side]?'✓ ':''}${label}</button>`).join('')}</div><strong>Kötü genişlemeyi eğitim hedefinden çıkar</strong><div class="detail-controls">${[['top','Üstü sil · sadece alta genişlet'],['bottom','Altı sil · sadece üste genişlet']].map(([side,label])=>`<button id="${prefix}-trim-${side}" aria-pressed="${trim[side]}" class="trim-control ${trim[side]?'active':''}" ${!crop||!reviewReady?'disabled':''}>${trim[side]?'✓ ':''}${label}</button>`).join('')}</div><p class="subtle" id="${prefix}-crop-info">${cropInfo(crop)}</p></section>`;
+  return `<section class="crop-controls"><strong>Eğitim girdisine dahil et · ${r.dimensions?.[0]>r.dimensions?.[1]?'yatay / sol–sağ':'dikey / üst–alt'}</strong><div class="detail-controls">${cropSideLabels(r).map(([side,label])=>`<button id="${prefix}-crop-${side}" aria-pressed="${ext[side]}" class="${ext[side]?'active':''}" ${!crop||!reviewReady||trim[side]?'disabled':''}>${ext[side]?'✓ ':''}${label}</button>`).join('')}</div><strong>Kötü genişlemeyi eğitim hedefinden çıkar</strong><div class="detail-controls">${cropSideLabels(r).map(([side,_,label])=>`<button id="${prefix}-trim-${side}" aria-pressed="${trim[side]}" class="trim-control ${trim[side]?'active':''}" ${!crop||!reviewReady?'disabled':''}>${trim[side]?'✓ ':''}${label}</button>`).join('')}</div><p class="subtle" id="${prefix}-crop-info">${cropInfo(crop)}</p></section>`;
 }
 function cropInfo(crop,preview=false){
   if(!crop)return 'Güvenilir kaynak alanı bulunamadı; eğitim girdisi sınırı seçilemiyor.';
@@ -63,7 +71,7 @@ function previewTrainingExtent(r,side,prefix,type='crop'){
   const marks=$('#'+prefix+'-trim-zones');if(marks)marks.innerHTML=targetTrimMarks(r,crop);
   polygon.classList.toggle('crop-preview',true);
   info.classList.toggle('crop-preview-label',true);
-  info.textContent='ÖNİZLEME · tıklarsan '+(side==='top'?'üst taraf ':'alt taraf ')+(type==='trim'?(trim[side]?'eğitim hedefinden çıkarılacak. ':'hedefe geri alınacak. '):(ext[side]?'girdiye dahil edilecek. ':'girdiden çıkarılacak. '))+cropInfo(crop,true)+' Henüz kaydedilmedi.';
+  info.textContent='ÖNİZLEME · tıklarsan '+({top:'üst taraf ',bottom:'alt taraf ',left:'sol taraf ',right:'sağ taraf '}[side])+(type==='trim'?(trim[side]?'eğitim hedefinden çıkarılacak. ':'hedefe geri alınacak. '):(ext[side]?'girdiye dahil edilecek. ':'girdiden çıkarılacak. '))+cropInfo(crop,true)+' Henüz kaydedilmedi.';
 }
 function clearTrainingPreview(r,prefix){
   const preview=cropPreviews.get(prefix);
@@ -79,14 +87,14 @@ function clearTrainingPreview(r,prefix){
 }
 function updateCropView(r,prefix){
   const ext=reviewCropExtensions(r),crop=trainingCrop(r);
-  for(const [side,label] of [['top','Üstü de dahil et'],['bottom','Altı da dahil et']]){
+  for(const [side,label] of cropSideLabels(r)){
     const button=$('#'+prefix+'-crop-'+side);if(!button)continue;
     button.setAttribute('aria-pressed',String(ext[side]));button.classList.toggle('active',ext[side]);button.textContent=(ext[side]?'✓ ':'')+label;
   }
   const polygon=$('#'+prefix+'-training-crop');if(polygon)polygon.setAttribute('points',trainingCropPoints(r));
   const info=$('#'+prefix+'-crop-info');if(info)info.textContent=cropInfo(crop);
   const trim=reviewTargetTrim(r);
-  for(const [side,label] of [['top','Üstü sil · sadece alta genişlet'],['bottom','Altı sil · sadece üste genişlet']]){
+  for(const [side,_,label] of cropSideLabels(r)){
     const button=$('#'+prefix+'-trim-'+side);if(button){button.setAttribute('aria-pressed',String(trim[side]));button.classList.toggle('active',trim[side]);button.textContent=(trim[side]?'✓ ':'')+label}
   }
   const marks=$('#'+prefix+'-trim-zones');if(marks)marks.innerHTML=targetTrimMarks(r);
@@ -113,20 +121,20 @@ async function saveTrainingGeometry(r,prefix,ext,trim){
   if(fast){rememberFastNote();fastReview.busy=true;fastReview.boundary=true;$('#fast-boundary').style.display='block';$('#fast-region-toggle').setAttribute('aria-pressed','true');$('#fast-region-toggle').textContent='Kaynak bölgesini gizle [Space]';fastButtons()}
   else{reviewBusy=true;if($('#boundary'))$('#boundary').style.display='';if($('#boundary-toggle'))$('#boundary-toggle').checked=true}
   updateCropView(r,prefix);
-  for(const s of ['top','bottom'])for(const type of ['crop','trim'])$('#'+prefix+'-'+type+'-'+s).disabled=true;
+  for(const [s] of cropSideLabels(r))for(const type of ['crop','trim'])$('#'+prefix+'-'+type+'-'+s).disabled=true;
   try{
     await persistReview(r,()=>reviewDecision(r),reason,ext,trim);
     render();
   }catch(error){autosaveStatus(error.message,true)}
   finally{
     if(fast){fastReview.busy=false;fastButtons()}else reviewBusy=false;
-    for(const s of ['top','bottom']){ $('#'+prefix+'-crop-'+s).disabled=!reviewReady||trim[s];$('#'+prefix+'-trim-'+s).disabled=!reviewReady; }
+    for(const [s] of cropSideLabels(r)){ $('#'+prefix+'-crop-'+s).disabled=!reviewReady||trim[s];$('#'+prefix+'-trim-'+s).disabled=!reviewReady; }
     if(fast&&$('#fast-dialog').open)$('#fast-content').focus({preventScroll:true});
   }
 }
 function bindCropControls(r,prefix){
   cropPreviews.delete(prefix);
-  for(const side of ['top','bottom']){
+  for(const [side] of cropSideLabels(r)){
     const button=$('#'+prefix+'-crop-'+side);
     button.setAttribute('aria-describedby',prefix+'-crop-info');
     button.onmouseenter=()=>previewTrainingExtent(r,side,prefix);
