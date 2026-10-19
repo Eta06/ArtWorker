@@ -53,6 +53,18 @@ class GalleryTests(unittest.TestCase):
             self.assertNotIn('should-not-export',(out/'data.json').read_text())
             self.assertNotIn('initial_openrouter_credit_usd',(out/'data.json').read_text())
             self.assertEqual((out/'assets/cover-test-sunburst/raw.png').resolve(),raw)
+            # New fal receipts join the separate live gallery with an explicit
+            # aspect group, without depending on legacy Google batch fields.
+            source.update(status='completed',aspect_ratio='1:2')
+            state.update(endpoint_id='openai/gpt-image-2.5/sunburst/edit',completed_target=650)
+            state.pop('google_jobs');path.write_text(json.dumps(state))
+            receipt.update(provider='fal');receipt['request']['image_size']={'width':64,'height':128}
+            (directory/'receipt.json').write_text(json.dumps(receipt))
+            fal=g.snapshot(path,out)
+            self.assertTrue(fal['aspect_groups']);self.assertEqual(fal['completed_target'],650)
+            self.assertEqual(fal['rows'][0]['aspect_ratio'],'1:2')
+            self.assertEqual(fal['rows'][0]['provider'],'fal')
+            self.assertEqual(fal['rows'][0]['settings']['image_size'],{'width':64,'height':128})
             # A proposal is displayed separately, never promoted to an old audit.
             fidelity=root/'fidelity';fidelity.mkdir()
             baseline=fidelity/'cover-test-sunburst.json'
