@@ -30,12 +30,14 @@ def training_crop(row, extensions, trim=None):
     trim = trim or {'top': False, 'bottom': False}
     base = [max(0, min(w, math.floor(min(xs)))), max(0, min(h, math.floor(min(ys)))),
             max(0, min(w, math.ceil(max(xs)))), max(0, min(h, math.ceil(max(ys))))]
-    target = [base[0] if any(trim.values()) else 0, base[1] if trim['top'] else 0,
-              base[2] if any(trim.values()) else w, base[3] if trim['bottom'] else h]
-    box = [max(0, min(w, math.floor(min(xs)))),
-           0 if extensions['top'] else max(0, min(h, math.floor(min(ys)))),
-           max(0, min(w, math.ceil(max(xs)))),
-           h if extensions['bottom'] else max(0, min(h, math.ceil(max(ys))))]
+    vertical = trim.get('top') or trim.get('bottom')
+    horizontal = trim.get('left') or trim.get('right')
+    target = [base[0] if trim.get('left') or (vertical and not horizontal) else 0,
+              base[1] if trim.get('top') or (horizontal and not vertical) else 0,
+              base[2] if trim.get('right') or (vertical and not horizontal) else w,
+              base[3] if trim.get('bottom') or (horizontal and not vertical) else h]
+    box = [0 if extensions.get('left') else base[0],0 if extensions.get('top') else base[1],
+           w if extensions.get('right') else base[2],h if extensions.get('bottom') else base[3]]
     box = [max(box[0], target[0]), max(box[1], target[1]),
            min(box[2], target[2]), min(box[3], target[3])]
     if box[2] <= box[0] or box[3] <= box[1]:
@@ -131,14 +133,14 @@ class ReviewStore:
         row = registration_row(row, confirmation)
         extensions = payload.get('crop_extensions', old.get('crop_extensions', {'top': False, 'bottom': False})
                                  if old.get('raw_sha256') == row['raw_sha256'] else {'top': False, 'bottom': False})
-        if (not isinstance(extensions, dict) or set(extensions) != {'top', 'bottom'}
+        if (not isinstance(extensions, dict) or set(extensions) not in ({'top', 'bottom'},{'top','bottom','left','right'})
                 or any(type(value) is not bool for value in extensions.values())):
             raise ValueError('Invalid crop extensions')
         if any(extensions.values()) and not training_crop(row, extensions):
             raise ValueError('Reliable registration required for extending the training crop')
         trim = payload.get('target_trim', old.get('target_trim', {'top': False, 'bottom': False})
                            if old.get('raw_sha256') == row['raw_sha256'] else {'top': False, 'bottom': False})
-        if (not isinstance(trim, dict) or set(trim) != {'top', 'bottom'}
+        if (not isinstance(trim, dict) or set(trim) not in ({'top', 'bottom'},{'top','bottom','left','right'})
                 or any(type(value) is not bool for value in trim.values())):
             raise ValueError('Invalid target trim')
         if any(trim.values()) and not training_crop(row, extensions, trim):
@@ -177,8 +179,9 @@ class ReviewStore:
 
 
 class Handler(SimpleHTTPRequestHandler):
-    def __init__(self, *args, store, **kwargs):
+    def __init__(self, *args, store, route='/sumbul', **kwargs):
         self.store = store
+        self.route = route
         super().__init__(*args, **kwargs)
 
     def end_headers(self):
@@ -196,7 +199,7 @@ class Handler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         path = urlsplit(self.path).path
-        if path.startswith('/sumbul/training-preview/'):
+        if path.startswith(self.route+'/training-preview/'):
             pieces = path.split('/')
             if len(pieces) != 5 or not pieces[4].endswith('.jpg'):
                 return self.send_json({'error': 'Unknown preview'}, 404)
@@ -216,18 +219,18 @@ class Handler(SimpleHTTPRequestHandler):
             self.send_header('Content-Length', str(len(data)))
             self.end_headers()
             self.wfile.write(data)
-        elif path == '/sumbul/review-api':
+        elif path == self.route+'/review-api':
             try:
                 self.send_json(self.store.snapshot())
             except (OSError, ValueError, KeyError):
                 self.send_json({'error': 'Review data could not be read; nothing overwritten'}, 500)
-        elif path == '/sumbul/training-manifest':
+        elif path == self.route+'/training-manifest':
             self.send_json(self.store.snapshot()['manifest'])
         else:
             super().do_GET()
 
     def do_POST(self):
-        if urlsplit(self.path).path != '/sumbul/review-api':
+        if urlsplit(self.path).path != self.route+'/review-api':
             return self.send_json({'error': 'Not found'}, 404)
         # Browser writes only from this exact local origin, never foreign pages.
         if self.headers.get('Origin') != 'http://' + self.headers.get('Host', ''):
@@ -254,13 +257,16 @@ def main():
     parser.add_argument('--directory', type=Path, required=True)
     parser.add_argument('--gallery', type=Path, required=True)
     parser.add_argument('--port', type=int, default=54146)
+    parser.add_argument('--route', default='/sumbul')
     args = parser.parse_args()
+    import re
+    if not re.fullmatch(r'/[a-z][a-z0-9-]*',args.route):parser.error('Use a single safe gallery route')
     store = ReviewStore(args.gallery.resolve())
     # Regenerate the derived manifest from authoritative decisions on restart.
     store.write(store.gallery / 'training-admission.json', store.snapshot()['manifest'])
-    handler = partial(Handler, directory=str(args.directory.resolve()), store=store)
+    handler = partial(Handler, directory=str(args.directory.resolve()), store=store,route=args.route)
     server = HTTPServer(('127.0.0.1', args.port), handler)
-    print(f'Gallery and training reviews: http://127.0.0.1:{args.port}/sumbul/', flush=True)
+    print(f'Gallery and training reviews: http://127.0.0.1:{args.port}{args.route}/', flush=True)
     server.serve_forever()
 
 
