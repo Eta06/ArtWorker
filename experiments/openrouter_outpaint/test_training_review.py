@@ -163,6 +163,33 @@ class TrainingReviewTests(unittest.TestCase):
         self.assertEqual(crop['target_box_px'], [100, 400, 900, 2000])
         self.assertEqual(crop['input_box_in_target_px'], [0, 0, 800, 1000])
 
+    def test_landscape_left_and_right_geometry_and_persistence(self):
+        self.rows[0].update(dimensions=[2000,1000],region={'polygon':[[500,100],[1500,100],[1500,900],[500,900]]})
+        self.publish()
+        empty={'top':False,'bottom':False,'left':False,'right':False}
+        result=self.store.decide({**self.decision('a','accepted'),'crop_extensions':{**empty,'left':True}})
+        self.assertEqual(result['manifest']['candidates'][0]['conditioning']['box_px'],[0,100,1500,900])
+        result=self.store.decide({**self.decision('a','accepted',1),'crop_extensions':empty,'target_trim':{**empty,'left':True}})
+        crop=result['manifest']['candidates'][0]['conditioning']
+        self.assertEqual(crop['target_box_px'],[500,100,2000,900])
+        self.assertEqual(crop['input_box_in_target_px'],[0,0,1000,800])
+        self.assertEqual(crop['remaining_target_pixels'],400000)
+        reopened=ReviewStore(self.root).snapshot()
+        self.assertTrue(reopened['decisions']['a']['target_trim']['left'])
+        result=self.store.decide({**self.decision('a','accepted',2),'target_trim':{**empty,'right':True}})
+        self.assertEqual(result['manifest']['candidates'][0]['conditioning']['target_box_px'],[0,100,1500,900])
+
+    def test_separate_gallery_route_uses_same_durable_store(self):
+        server=HTTPServer(('127.0.0.1',0),partial(Handler,store=self.store,directory=str(self.root),route='/nilufer'))
+        thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
+        try:
+            origin=f'http://127.0.0.1:{server.server_address[1]}'
+            with urlopen(origin+'/nilufer/review-api') as response:self.assertEqual(response.status,200)
+            request=Request(origin+'/nilufer/review-api',data=json.dumps(self.decision('a','accepted')).encode(),
+                            headers={'Origin':origin,'Content-Type':'application/json'})
+            with urlopen(request) as response:self.assertEqual(json.load(response)['decisions']['a']['decision'],'accepted')
+        finally:server.shutdown();server.server_close();thread.join()
+
     def test_http_persistence_and_foreign_origin_block(self):
         server = HTTPServer(('127.0.0.1', 0), partial(Handler, store=self.store, directory=str(self.root)))
         thread = threading.Thread(target=server.serve_forever, daemon=True)
