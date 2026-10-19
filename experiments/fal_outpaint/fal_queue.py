@@ -171,6 +171,9 @@ def run(args):
     if state['endpoint_id']!=ENDPOINT:raise ValueError('Wrong model state')
     if sha(ROOT/state['source_manifest'])!=state['source_manifest_sha256']:raise ValueError('Manifest changed')
     rows=state['sources'][:args.limit];key=args.key_file.read_text().strip()
+    if getattr(args,'target_completed',None) is not None:
+        state['completed_target']=args.target_completed
+    target=state.get('completed_target')
     if getattr(args,'hold_uncertain',False):
         for row in rows:
             if row['status'] not in {'submitting','uncertain'}:continue
@@ -194,6 +197,8 @@ def run(args):
     stopping=False
     while True:
         active=[r for r in rows if r['status']=='submitted']
+        if target is not None and sum(r['status']=='completed' for r in state['sources'])>=target:
+            stopping=True;state['stop_reason']='completed_target_reached'
         if (root/'STOP').exists():stopping=True
         for row in active:
             folder=root/'outputs'/row['id'];receipt_path=folder/'receipt.json'
@@ -239,6 +244,9 @@ def run(args):
         if not stopping:
             for row in (r for r in rows if r['status']=='pending'):
                 if len(active)>=args.concurrency:break
+                # Every active request could succeed: reserve its slot before
+                # submitting another cover so the success target is not exceeded.
+                if target is not None and sum(r['status']=='completed' for r in state['sources'])+len(active)>=target:break
                 folder=root/'outputs'/row['id'];receipt_path=folder/'receipt.json'
                 if receipt_path.exists():raise ValueError('Pending row has receipt; manual reconciliation required')
                 payload,receipt=prepare(row,folder)
@@ -269,7 +277,8 @@ def run(args):
         if not any(r['status']=='submitted' for r in rows):
             if stopping or not any(r['status']=='pending' for r in rows):break
         time.sleep(args.poll_seconds)
-    state['status']='stopped' if stopping else 'selected_slice_finished';save_json(args.state,state)
+    state['status']='completed_target_reached' if state.get('stop_reason')=='completed_target_reached' else ('stopped' if stopping else 'selected_slice_finished')
+    save_json(args.state,state)
 
 
 def main():
@@ -284,10 +293,12 @@ def main():
     parser.add_argument('--poll-seconds',type=float,default=8)
     parser.add_argument('--hold-uncertain',action='store_true',
                         help='Hold unresolved submissions without repeating them; continue unrelated pending covers')
+    parser.add_argument('--target-completed',type=int,help='Persist a maximum successful-output target, including prior completed covers')
     args=parser.parse_args();args.state=args.state.resolve()
     if not args.state.is_relative_to(ROOT/'experiments/fal_outpaint/results'):parser.error('Use private ignored results')
     if not re.fullmatch(r'[a-z][a-z0-9]*',args.stage):parser.error('Use a safe single-word stage')
     if not 1<=args.concurrency<=4 or not 1<=args.limit<=1000 or args.poll_seconds<2:parser.error('Invalid bounded queue limits')
+    if args.target_completed is not None and not 1<=args.target_completed<=1000:parser.error('Invalid successful-output target')
     args.state.parent.parent.mkdir(parents=True,exist_ok=True)
     with (args.state.parent.parent/(args.state.parent.name+'.lock')).open('a+') as lock:
         fcntl.flock(lock.fileno(),fcntl.LOCK_EX|fcntl.LOCK_NB)
