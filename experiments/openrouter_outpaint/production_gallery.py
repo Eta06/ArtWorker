@@ -59,7 +59,8 @@ def snapshot(state_path,output):
     recovery_path=output/'registration-recovery.json'
     recoveries=json.loads(recovery_path.read_text())['candidates'] if recovery_path.exists() else {}
     for source in state['sources']:
-        kind='sunburst' if source['status']=='sunburst_completed_review_pending' else 'nano' if source['status']=='nano_completed_review_pending' else None
+        fal=state.get('endpoint_id')=='openai/gpt-image-2.5/sunburst/edit'
+        kind='sunburst' if source['status']=='sunburst_completed_review_pending' or (fal and source['status']=='completed') else 'nano' if source['status']=='nano_completed_review_pending' else None
         if not kind:continue
         directory=ROOT/source['directory' if kind=='sunburst' else 'fallback_directory']
         receipt=json.loads((directory/'receipt.json').read_text())
@@ -82,6 +83,7 @@ def snapshot(state_path,output):
         aligned=audit.get('aligned') if audit else None
         matched=bool(audit and audit.get('alignment',{}).get('status')=='measured' and aligned)
         rows.append({'id':name,'cover_id':source['id'],'model':kind,'title':album,'artists':names,
+            'aspect_ratio':source.get('aspect_ratio'),'provider':receipt.get('provider','openrouter'),
             'raw_sha256':images[0]['sha256'],'dimensions':images[0]['dimensions'],
             'asset':'assets/'+name+'/','original_file':'original'+original.suffix,
             'audit_status':'reliable' if matched else 'unavailable' if audit else 'pending',
@@ -90,7 +92,7 @@ def snapshot(state_path,output):
             'actual_cost_usd':receipt.get('reported_cost_usd'),
             'estimated_cost_usd':receipt.get('estimated_cost_usd'),
             'prompt':receipt['request']['prompt'],
-            'settings':{k:receipt['request'][k] for k in ('quality','resolution','aspect_ratio','response_format','generationConfig') if k in receipt['request']}})
+            'settings':{k:receipt['request'][k] for k in ('quality','resolution','aspect_ratio','image_size','output_format','response_format','generationConfig') if k in receipt['request']}})
         recovery=recoveries.get(name)
         if recovery and recovery.get('status')=='review_pending':
             if recovery['raw_sha256']!=rows[-1]['raw_sha256'] or hashlib.sha256(audit_path.read_bytes()).hexdigest()!=recovery['original_audit_sha256']:
@@ -103,8 +105,10 @@ def snapshot(state_path,output):
             rows[-1]['region']=recovery['region']
     counts=dict(Counter(r['status'] for r in state['sources']))
     data={'updated_utc':datetime.now(timezone.utc).isoformat(),'queue_status':state['status'],
+          'stage':state.get('stage'),'aspect_groups':state.get('endpoint_id')=='openai/gpt-image-2.5/sunburst/edit',
+          'completed_target':state.get('completed_target'),
           'phase':state.get('teacher_pipeline',{}).get('phase'),'status_counts':counts,
-          'active_batches':sum(j['status']=='submitted' for j in state['google_jobs']),
+          'active_batches':sum(j['status']=='submitted' for j in state.get('google_jobs',[])) or sum(r['status'] in ('submitted','submitting') for r in state['sources']),
           'completed':len(rows),'reliable':sum(r['audit_status']=='reliable' for r in rows),
           'audit_unavailable':sum(r['audit_status']=='unavailable' for r in rows),
           'audit_pending':sum(r['audit_status']=='pending' for r in rows),'rows':rows}
@@ -117,14 +121,15 @@ def main():
     p.add_argument('--state',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
     p.add_argument('--watch',action='store_true');p.add_argument('--interval',type=int,default=30)
     args=p.parse_args();args.state=args.state.resolve();args.output=args.output.resolve()
-    private=ROOT/'experiments/openrouter_outpaint/results'
-    if not args.state.is_relative_to(private) or not args.output.is_relative_to(private):p.error('Keep gallery and state inside ignored results')
+    private=[ROOT/'experiments/openrouter_outpaint/results',ROOT/'experiments/fal_outpaint/results']
+    if not any(args.state.is_relative_to(p) for p in private) or not any(args.output.is_relative_to(p) for p in private):p.error('Keep gallery and state inside ignored results')
     if args.interval<30:p.error('Refresh interval must be at least 30 seconds')
     args.output.mkdir(parents=True,exist_ok=True)
     (args.output/'index.html').write_text(Path(__file__).with_name('production-gallery.html').read_text())
     (args.output/'training-review.js').write_text(Path(__file__).with_name('training-review.js').read_text())
     (args.output/'fast-review.js').write_text(Path(__file__).with_name('fast-review.js').read_text())
     (args.output/'training-crop.js').write_text(Path(__file__).with_name('training-crop.js').read_text())
+    (args.output/'aspect-review.js').write_text(Path(__file__).with_name('aspect-review.js').read_text())
     approved=args.output/'approved';approved.mkdir(exist_ok=True)
     (approved/'index.html').write_text(Path(__file__).with_name('approved-training.html').read_text())
     (approved/'approved-training.js').write_text(Path(__file__).with_name('approved-training.js').read_text())
