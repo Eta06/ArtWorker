@@ -288,3 +288,38 @@ test('decisions wait for images; both original and expanded remain in the same v
   h.run('fastReview.index=0;renderFastReview()');
   assert.match(h.node('#fast-content').innerHTML,/value="A note"/);
 });
+
+test('landscape controls use left/right, preview without saving, then autosave the retained right target',async()=>{
+  const h=fixture();h.rows[0].dimensions=[2000,1000];h.rows[0].region={polygon:[[500,100],[1500,100],[1500,900],[500,900]]};
+  assert.match(h.run("cropControls(data.rows[0],'fast')"),/Solu da dahil et/);
+  assert.doesNotMatch(h.run("cropControls(data.rows[0],'fast')"),/Üstü de dahil et/);
+  h.run("bindCropControls(data.rows[0],'fast')");h.node('#fast-trim-left').onmouseenter();
+  assert.equal(h.requests.length,0);assert.match(h.node('#fast-crop-info').textContent,/sol taraf/);
+  h.node('#fast-trim-left').onmouseleave();
+  await h.run("toggleTargetTrim(data.rows[0],'left','fast')");
+  assert.equal(h.requests.length,1);assert.equal(h.requests[0].target_trim.left,true);
+  assert.equal(h.requests[0].decision,'pending');
+  assert.equal(h.run('JSON.stringify(trainingCrop(data.rows[0]).target_box_px)'),'[500,100,2000,900]');
+});
+
+test('aspect review stays in one group and another group requires explicit switching',()=>{
+  const h=fixture();h.run(fs.readFileSync(path.join(__dirname,'aspect-review.js'),'utf8'));
+  h.rows[0].aspect_ratio='3:4';h.rows[1].aspect_ratio='9:16';h.rows[2].aspect_ratio='3:4';
+  h.node('#aspect').value='3:4';h.run('fastQueue(data.rows)');
+  assert.equal(h.run('fastReview.rows.length'),2);
+  assert.equal(h.run("fastReview.rows.every(r=>r.aspect_ratio==='3:4')"),true);
+  h.node('#aspect').value='9:16';assert.equal(h.run('restoreFastSession()'),false);
+  h.run('fastQueue(data.rows)');assert.equal(h.run('fastReview.rows[0].id'),'two');
+  h.rows.push({...h.rows[0],id:'new-one',aspect_ratio:'3:4'});
+  assert.equal(h.run('fastReview.rows.length'),1);
+});
+
+test('aspect selection survives reload and new arrivals never change the chosen ratio',()=>{
+  const storage=new Map([['artworker-aspect-group','4:3']]),h=fixture(storage);
+  h.c.URLSearchParams=URLSearchParams;h.c.location={search:''};
+  h.run(fs.readFileSync(path.join(__dirname,'aspect-review.js'),'utf8'));
+  h.run('data.aspect_groups=true');h.rows[0].aspect_ratio='4:3';h.rows[1].aspect_ratio='9:16';
+  h.run('updateAspectGroups()');assert.equal(h.node('#aspect').value,'4:3');
+  h.rows.push({...h.rows[0],id:'new-portrait',aspect_ratio:'3:4'});
+  h.run('updateAspectGroups()');assert.equal(h.node('#aspect').value,'4:3');
+});
