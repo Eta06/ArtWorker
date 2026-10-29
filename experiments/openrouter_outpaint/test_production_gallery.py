@@ -50,6 +50,7 @@ class GalleryTests(unittest.TestCase):
             self.assertIsNone(result['rows'][0]['metrics']);self.assertIsNone(result['rows'][0]['region'])
             g.snapshot(path,out)
             self.assertEqual(hashlib.sha256(raw.read_bytes()).hexdigest(),fingerprint)
+
             self.assertNotIn('should-not-export',(out/'data.json').read_text())
             self.assertNotIn('initial_openrouter_credit_usd',(out/'data.json').read_text())
             self.assertEqual((out/'assets/cover-test-sunburst/raw.png').resolve(),raw)
@@ -86,6 +87,17 @@ class GalleryTests(unittest.TestCase):
             self.assertEqual(row['region'],candidate['region'])
             self.assertEqual(baseline.read_bytes(),old_audit)
             self.assertEqual(hashlib.sha256(raw.read_bytes()).hexdigest(),fingerprint)
+
+            manual=root/'manual';manual.mkdir()
+            for filename in ('source.png','placement.png'):
+                Image.new('RGB',(64,64),'orange').save(manual/filename)
+            candidate.update(id='manual-center',directory=str(manual),metrics=None,
+                             evidence={'classification':'manual_center_reference','is_source_match':False})
+            (out/'registration-recovery.json').write_text(json.dumps({'candidates':{'cover-test-sunburst':candidate}}))
+            row=g.snapshot(path,out)['rows'][0]
+            self.assertIsNone(row['registration_recovery']['metrics'])
+            self.assertEqual(row['registration_recovery']['evidence']['classification'],'manual_center_reference')
+            self.assertFalse((out/'assets/cover-test-sunburst/recovery-manual-cente/audit-aligned.png').exists())
 
 
 if __name__=='__main__':unittest.main()
