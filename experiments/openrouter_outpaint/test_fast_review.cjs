@@ -323,3 +323,30 @@ test('aspect selection survives reload and new arrivals never change the chosen 
   h.rows.push({...h.rows[0],id:'new-portrait',aspect_ratio:'3:4'});
   h.run('updateAspectGroups()');assert.equal(h.node('#aspect').value,'4:3');
 });
+
+test('square fit preview is read only; include bottom has no side strips and survives reload',async()=>{
+  const h=fixture();Object.assign(h.rows[0],{dimensions:[1000,2000],region:{polygon:[[200,600],[800,600],[800,1200],[200,1200]]}});
+  const original=JSON.stringify(h.rows[0].region);h.node('#fast-dialog').open=true;h.node('#fast-note').value='keep note';
+  h.run("trainingReviews.one={raw_sha256:data.rows[0].raw_sha256,decision:'accepted',revision:1}");
+  h.run("previewTrainingExtent(data.rows[0],'square','fast','square')");
+  assert.equal(h.requests.length,0);assert.equal(h.run('reviewSquareFit(data.rows[0])'),false);
+  assert.equal(h.node('#fast-source-boundary').attributes.points,'0,400 1000,400 1000,1400 0,1400');
+  h.run("clearTrainingPreview(data.rows[0],'fast')");
+  assert.equal(h.node('#fast-source-boundary').attributes.points,'200,600 800,600 800,1200 200,1200');
+  await h.run("toggleSquareFit(data.rows[0],'fast')");
+  await h.run("toggleTrainingExtent(data.rows[0],'bottom','fast')");
+  assert.equal(h.requests.length,2);assert.equal(h.requests[1].square_fit,true);assert.equal(h.requests[1].decision,'accepted');
+  assert.equal(h.run('fastReview.index'),0);assert.equal(JSON.stringify(h.rows[0].region),original);
+  assert.equal(h.run('JSON.stringify(trainingCrop(data.rows[0]).box_px)'),'[0,400,1000,2000]');
+  const reload=fixture(h.storage);Object.assign(reload.rows[0],{dimensions:h.rows[0].dimensions,region:h.rows[0].region});
+  assert.equal(reload.run('reviewSquareFit(data.rows[0])'),true);
+  assert.equal(reload.run('JSON.stringify(trainingCrop(data.rows[0]).box_px)'),'[0,400,1000,2000]');
+});
+
+test('landscape square fit removes upper/lower strips; oversized references stay untouched',()=>{
+  const h=fixture();Object.assign(h.rows[0],{dimensions:[2000,1000],region:{polygon:[[600,200],[1200,200],[1200,800],[600,800]]}});
+  assert.equal(h.run('JSON.stringify(trainingCrop(data.rows[0],{right:true},{},true).box_px)'),'[400,0,2000,1000]');
+  Object.assign(h.rows[0],{dimensions:[1000,2000],region:{polygon:[[100,100],[900,100],[900,1500],[100,1500]]}});
+  assert.equal(h.run('referenceBox(data.rows[0],true)'),null);
+  assert.notEqual(h.run('trainingCrop(data.rows[0],{},{},false)'),null);
+});
