@@ -350,3 +350,15 @@ test('landscape square fit removes upper/lower strips; oversized references stay
   assert.equal(h.run('referenceBox(data.rows[0],true)'),null);
   assert.notEqual(h.run('trainingCrop(data.rows[0],{},{},false)'),null);
 });
+
+test('manual center square explicitly has no match score and confirmation keeps skip decision',async()=>{
+  const h=fixture();Object.assign(h.rows[0],{dimensions:[1000,2000],audit_status:'unavailable',region:{polygon:[[0,500],[1000,500],[1000,1500],[0,1500]]},
+    registration_recovery:{id:'manual-center',metrics:null,evidence:{classification:'manual_center_reference',is_source_match:false}}});
+  h.node('#fast-note').value='find this';h.run("trainingReviews.one={raw_sha256:data.rows[0].raw_sha256,decision:'pending',revision:1}");
+  assert.match(h.run("recoveryControls(data.rows[0],'fast')"),/Bu otomatik eşleşme değil/);
+  assert.equal(h.run('registrationIsReady(data.rows[0])'),false);
+  h.run('bindRecoveryControls(data.rows[0],true)');await h.node('#fast-confirm-registration').onclick();
+  assert.equal(h.requests[0].decision,'pending');assert.equal(h.requests[0].registration_confirmation,'manual-center');
+  assert.equal(h.run('reviewMetrics(data.rows[0])'),null);assert.equal(h.run('fastReview.index'),0);
+  assert.equal(h.run('JSON.stringify(trainingCrop(data.rows[0]).box_px)'),'[0,500,1000,1500]');
+});
