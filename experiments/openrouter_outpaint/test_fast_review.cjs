@@ -128,7 +128,8 @@ test('Space only toggles reliable geometry and never sends or advances a decisio
   h.c.fastKeydown(key);assert.equal(h.node('#fast-boundary').style.display,'none');
   assert.equal(h.requests.length,0);assert.equal(h.run('fastReview.index'),0);
   h.rows[0].audit_status='unavailable';h.run('renderFastReview()');
-  assert.doesNotMatch(h.node('#fast-content').innerHTML,/id="fast-boundary"/);
+  assert.match(h.node('#fast-content').innerHTML,/id="fast-boundary" style="display:none"/);
+  assert.match(h.node('#fast-content').innerHTML,/id="fast-source-boundary" points=""/);
 });
 
 test('intent is durable before the network request and is replayed after refresh',async()=>{
@@ -361,4 +362,32 @@ test('manual center square explicitly has no match score and confirmation keeps 
   assert.equal(h.requests[0].decision,'pending');assert.equal(h.requests[0].registration_confirmation,'manual-center');
   assert.equal(h.run('reviewMetrics(data.rows[0])'),null);assert.equal(h.run('fastReview.index'),0);
   assert.equal(h.run('JSON.stringify(trainingCrop(data.rows[0]).box_px)'),'[0,500,1000,1500]');
+});
+
+test('unknown source has active square button and an overlay; manual center autosaves without accepting',async()=>{
+  const h=fixture();Object.assign(h.rows[0],{audit_status:'unavailable',dimensions:[864,1152],region:null});
+  h.node('#fast-dialog').open=true;h.run('renderFastReview()');
+  assert.equal(h.node('#fast-square-fit').disabled,false);
+  assert.match(h.node('#fast-content').innerHTML,/id="fast-boundary"/);
+  h.run("previewTrainingExtent(data.rows[0],'square','fast','square')");
+  assert.equal(h.requests.length,0);assert.equal(h.node('#fast-source-boundary').attributes.points,'0,144 864,144 864,1008 0,1008');
+  h.run("clearTrainingPreview(data.rows[0],'fast')");
+  await h.run("toggleSquareFit(data.rows[0],'fast')");
+  assert.equal(h.requests[0].center_square,true);assert.equal(h.requests[0].decision,'pending');
+  assert.equal(h.run('fastRegion(data.rows[0])'),true);assert.equal(h.run('reviewMetrics(data.rows[0])'),null);
+  assert.equal(h.run('JSON.stringify(trainingCrop(data.rows[0]).reference_box_px)'),'[0,144,864,1008]');
+  await h.run("toggleTrainingExtent(data.rows[0],'bottom','fast')");
+  assert.equal(h.run('JSON.stringify(trainingCrop(data.rows[0]).box_px)'),'[0,144,864,1152]');
+  const reload=fixture(h.storage);Object.assign(reload.rows[0],{audit_status:'unavailable',dimensions:[864,1152],region:null});
+  assert.equal(reload.run('reviewCenterSquare(data.rows[0])'),true);
+  assert.equal(reload.run('JSON.stringify(trainingCrop(data.rows[0]).reference_box_px)'),'[0,144,864,1008]');
+  await h.run("toggleSquareFit(data.rows[0],'fast')");
+  assert.equal(h.requests.at(-1).center_square,false);assert.equal(h.requests.at(-1).crop_extensions.bottom,false);
+  assert.equal(h.run('trainingCrop(data.rows[0])'),null);
+});
+
+test('landscape without source chooses the centered full-height square',()=>{
+  const h=fixture();Object.assign(h.rows[0],{audit_status:'unavailable',dimensions:[2000,1000],region:null});
+  assert.equal(h.run('JSON.stringify(referenceBox(data.rows[0],true))'),'[500,0,1500,1000]');
+  assert.equal(h.run('JSON.stringify(trainingCrop(data.rows[0],{right:true},{},true).box_px)'),'[500,0,2000,1000]');
 });
