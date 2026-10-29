@@ -26,3 +26,12 @@ test('source overlay is relative to retained target and preview binds exact deci
   assert.deepEqual(relativeSource(row),[[0,0],[800,0],[800,600],[0,600]]);
   assert.match(previewUrl(row,'input'),/sha=hash&revision=7$/);
 });
+
+test('square-fit review is manual geometry and its approved preview follows the gallery route',()=>{
+  const row={id:'one',raw_sha256:'hash',model:'sunburst',audit_status:'reliable',review:{revision:2},
+    candidate:{conditioning:{square_fit:true,reference_box_px:[0,400,1000,1400],target_box_px:[0,400,1000,2000]}}};
+  const counts=modelResults({rows:[row]},{decisions:{one:{raw_sha256:'hash',decision:'accepted',square_fit:true}}});
+  assert.equal(counts[0].accepted,1);assert.equal(counts[0].direct,0);
+  assert.deepEqual(relativeSource(row),[[0,0],[1000,0],[1000,1000],[0,1000]]);
+  assert.match(previewUrl(row,'input','/nilufer'),/^\/nilufer\/training-preview\/one\/input.jpg/);
+});
