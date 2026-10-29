@@ -31,7 +31,7 @@ function reviewRegistrationConfirmation(r){
   return saved?.raw_sha256===r.raw_sha256?saved.registration_confirmation||null:null;
 }
 function registrationIsReady(r){return r.registration_recovery?reviewRegistrationConfirmation(r)===r.registration_recovery.id:r.audit_status==='reliable'}
-function reviewMetrics(r){return r.registration_recovery?(registrationIsReady(r)?r.registration_recovery.metrics:null):r.metrics}
+function reviewMetrics(r){return reviewCenterSquare(r)?null:r.registration_recovery?(registrationIsReady(r)?r.registration_recovery.metrics:null):r.metrics}
 function recoveryControls(r,prefix){
   const recovery=r.registration_recovery;if(!recovery)return '';
   const kind=recovery.evidence.classification,ready=registrationIsReady(r);
@@ -152,6 +152,7 @@ async function sendReviewOperation(operation) {
     if(operation.kind==='note'&&operation.crop_extensions&&same&&latest.crop_extensions)operation.crop_extensions=latest.crop_extensions;
     if(operation.kind==='note'&&operation.target_trim&&same&&latest.target_trim)operation.target_trim=latest.target_trim;
     if(operation.kind==='note'&&same&&'square_fit' in operation)operation.square_fit=latest.square_fit===true;
+    if(operation.kind==='note'&&same&&'center_square' in operation)operation.center_square=latest.center_square===true;
     if(operation.kind==='note'&&same&&'registration_confirmation' in operation)operation.registration_confirmation=latest.registration_confirmation||null;
     operation.attempted=true;
     try{stashReviewOutbox()}catch{}
@@ -172,6 +173,7 @@ async function sendReviewOperation(operation) {
   if(operation.crop_extensions&&['top','bottom'].some(side=>acknowledged.crop_extensions?.[side]!==operation.crop_extensions[side]))throw Error('Eğitim alanı kaydı onaylanmadı; seçim cihazda korunuyor.');
   if(operation.target_trim&&['top','bottom'].some(side=>acknowledged.target_trim?.[side]!==operation.target_trim[side]))throw Error('Hedef kırpma kaydı onaylanmadı; seçim cihazda korunuyor.');
   if('square_fit' in operation&&acknowledged.square_fit!==operation.square_fit)throw Error('Kare referans kaydı onaylanmadı; seçim cihazda korunuyor.');
+  if('center_square' in operation&&acknowledged.center_square!==operation.center_square)throw Error('Manuel merkez kare kaydı onaylanmadı; seçim cihazda korunuyor.');
   if('registration_confirmation' in operation&&acknowledged.registration_confirmation!==operation.registration_confirmation)throw Error('Kaynak alanı onayı kaydedilmedi; bekleyen kayıt korunuyor.');
   trainingReviews=result.decisions;
   // Only delete after the server acknowledges the exact operation.
@@ -185,7 +187,7 @@ function serialReviewJob(job){
 function replayReviewOutbox(){return serialReviewJob(async()=>{
   for(const operation of Object.values(reviewOutbox))await sendReviewOperation(operation);
 })}
-function persistReview(r,decision,reason,cropOverride=null,trimOverride=null,registrationOverride=undefined,squareOverride=undefined) {
+function persistReview(r,decision,reason,cropOverride=null,trimOverride=null,registrationOverride=undefined,squareOverride=undefined,centerOverride=undefined) {
   // Write intent synchronously, before the first network wait or page navigation.
   // A single id per operation makes retry after a lost response safe.
   const saved=trainingReviews[r.id];
@@ -195,7 +197,7 @@ function persistReview(r,decision,reason,cropOverride=null,trimOverride=null,reg
     for(const [id,op] of Object.entries(reviewOutbox))if(op.id===r.id&&op.raw_sha256===r.raw_sha256)delete reviewOutbox[id];
   }
   const revision=saved?.raw_sha256===r.raw_sha256?saved.revision:0;
-  const operation={id:r.id,raw_sha256:r.raw_sha256,decision:typeof decision==='function'?decision():decision,reason,revision,kind:typeof decision==='function'?(cropOverride||trimOverride||registrationOverride!==undefined||squareOverride!==undefined?'geometry':'note'):'decision',crop_extensions:cropOverride||reviewCropExtensions(r),target_trim:trimOverride||reviewTargetTrim(r),registration_confirmation:registrationOverride===undefined?reviewRegistrationConfirmation(r):registrationOverride,square_fit:squareOverride===undefined?reviewSquareFit(r):squareOverride,request_id:crypto.randomUUID()};
+  const operation={id:r.id,raw_sha256:r.raw_sha256,decision:typeof decision==='function'?decision():decision,reason,revision,kind:typeof decision==='function'?(cropOverride||trimOverride||registrationOverride!==undefined||squareOverride!==undefined||centerOverride!==undefined?'geometry':'note'):'decision',crop_extensions:cropOverride||reviewCropExtensions(r),target_trim:trimOverride||reviewTargetTrim(r),registration_confirmation:registrationOverride===undefined?reviewRegistrationConfirmation(r):registrationOverride,square_fit:squareOverride===undefined?reviewSquareFit(r):squareOverride,center_square:centerOverride===undefined?reviewCenterSquare(r):centerOverride,request_id:crypto.randomUUID()};
   reviewOutbox[operation.request_id]=operation;
   try{stashReviewOutbox()}catch{autosaveStatus('Tarayıcı yedeği yazılamadı; dosya kaydı bekleniyor.',true)}
   autosaveStatus('Kaydediliyor…');
@@ -226,7 +228,7 @@ function setupReviewAutosave(){
   setInterval(retry,4000);
 }
 function exportReviews() {
-  const selections=data.rows.map(r=>({id:r.id,cover_id:r.cover_id,model:r.model,raw_sha256:r.raw_sha256,title:r.title,decision:reviewDecision(r),reason:trainingReviews[r.id]?.raw_sha256===r.raw_sha256?trainingReviews[r.id].reason:'',crop_extensions:reviewCropExtensions(r),target_trim:reviewTargetTrim(r),square_fit:reviewSquareFit(r),registration_confirmation:reviewRegistrationConfirmation(r),conditioning:trainingCrop(r)}));
+  const selections=data.rows.map(r=>({id:r.id,cover_id:r.cover_id,model:r.model,raw_sha256:r.raw_sha256,title:r.title,decision:reviewDecision(r),reason:trainingReviews[r.id]?.raw_sha256===r.raw_sha256?trainingReviews[r.id].reason:'',crop_extensions:reviewCropExtensions(r),target_trim:reviewTargetTrim(r),square_fit:reviewSquareFit(r),center_square:reviewCenterSquare(r),registration_confirmation:reviewRegistrationConfirmation(r),conditioning:trainingCrop(r)}));
   const blob=new Blob([JSON.stringify({schema_version:4,policy:'explicit_accept_and_reliable_registration',selections},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
   a.href=url;a.download='artworker-egitim-secimleri.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
