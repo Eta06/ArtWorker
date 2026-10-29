@@ -1,8 +1,12 @@
 """Offline recovery controls: plausible features alone never certify a region."""
 import unittest
+import tempfile
+from pathlib import Path
 import cv2
 import numpy as np
-from recover_registration import assess
+from PIL import Image
+from recover_registration import assess, refine_assessment, needs_recovery, center_reference
+from source_fidelity import sha
 
 
 class RecoveryTests(unittest.TestCase):
@@ -41,6 +45,43 @@ class RecoveryTests(unittest.TestCase):
     def test_invalid_and_severely_clipped_matrices_are_rejected(self):
         for matrix in ([[1, 0, -200], [0, 1, 200]], [[float('nan'), 0, 0], [0, 1, 0]], []):
             self.assertIsNone(assess(self.reference, self.output, {**self.diagnostic, 'matrix_source_to_output': matrix}))
+
+    def test_skipped_scope_includes_missing_notes_but_not_stale_or_rejected(self):
+        row={'audit_status':'unavailable','raw_sha256':'image'}
+        review={'raw_sha256':'image','decision':'pending','reason':''}
+        self.assertTrue(needs_recovery(row,review,'skipped'))
+        self.assertFalse(needs_recovery(row,review,'noted'))
+        self.assertFalse(needs_recovery(row,{**review,'decision':'rejected'},'skipped'))
+        self.assertFalse(needs_recovery(row,{**review,'raw_sha256':'old'},'skipped'))
+
+    def test_pixel_refinement_corrects_a_nearby_feature_seed(self):
+        seed={**self.diagnostic,'method':'orb','matrix_source_to_output':[[1,0,2],[0,1,201]]}
+        result=refine_assessment(self.reference,self.output,[seed])
+        self.assertIsNotNone(result)
+        self.assertEqual(result['evidence']['classification'],'dense_verified')
+        self.assertLess(abs(result['diagnostic']['matrix_source_to_output'][0][2]),.2)
+        self.assertGreater(result['evidence']['informative_luminance_correlation'],.99)
+
+    def test_refinement_does_not_certify_unrelated_pixels_or_flat_art(self):
+        seed={**self.diagnostic,'method':'orb'}
+        unrelated=np.random.default_rng(29).integers(0,256,self.output.shape,dtype=np.uint8)
+        self.assertIsNone(refine_assessment(self.reference,unrelated,[seed,{**seed,'method':'sift'}]))
+        self.assertIsNone(refine_assessment(np.full_like(self.reference,110),self.output,[seed]))
+
+    def test_manual_center_is_square_and_has_no_fake_matching_metrics(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);asset=root/'asset';asset.mkdir();out=root/'out';out.mkdir()
+            Image.new('RGB',(64,96),'orange').save(asset/'raw.png')
+            Image.new('RGB',(64,64),'blue').save(asset/'source.png')
+            row={'dimensions':[64,96],'raw_sha256':sha(asset/'raw.png')}
+            audit={'raw_sha256':row['raw_sha256'],'source_png_sha256':sha(asset/'source.png')}
+            result=center_reference(row,audit,asset,out)
+            self.assertEqual(result['region']['polygon'],[[0,16],[64,16],[64,80],[0,80]])
+            self.assertEqual(result['status'],'review_pending')
+            self.assertFalse(result['evidence']['is_source_match'])
+            self.assertIsNone(result['metrics'])
+            self.assertFalse((Path(result['directory'])/'aligned.png').exists())
+            self.assertEqual(sha(asset/'raw.png'),row['raw_sha256'])
 
 
 if __name__ == '__main__':
