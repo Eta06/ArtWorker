@@ -99,7 +99,7 @@ def snapshot(state_path,output):
                 raise ValueError('Recovery proposal no longer matches its baseline evidence')
             folder=Path(recovery['directory']);target=asset/('recovery-'+recovery['id'][:12]);target.mkdir(exist_ok=True)
             for filename in ('source.png','aligned.png','aligned-overlay.png','aligned-difference.png','placement.png'):
-                alias(folder/filename,target/('audit-'+filename))
+                if (folder/filename).is_file():alias(folder/filename,target/('audit-'+filename))
             rows[-1]['registration_recovery']={k:recovery[k] for k in ('id','evidence','metrics','original_audit_sha256','algorithm')}
             rows[-1]['registration_recovery']['asset']='assets/'+name+'/'+target.name+'/'
             rows[-1]['region']=recovery['region']
