@@ -272,6 +272,35 @@ class TrainingReviewTests(unittest.TestCase):
         with self.assertRaises(ValueError):self.store.decide({**self.decision('a','accepted'),'square_fit':'yes'})
         self.assertFalse(self.store.path.exists())
 
+    def test_unknown_source_can_use_explicit_manual_center_without_quality_acceptance(self):
+        self.rows[1].pop('region');self.publish()
+        payload={**self.decision('b','pending'),'square_fit':True,'center_square':True}
+        result=self.store.decide(payload)
+        self.assertEqual(result['manifest']['candidates'],[])
+        self.assertEqual(result['decisions']['b']['decision'],'pending')
+        self.assertIsNone(result['decisions']['b']['registration_confirmation'])
+        result=self.store.decide({**payload,'revision':1,'decision':'accepted'})
+        candidate=result['manifest']['candidates'][0]
+        self.assertEqual(candidate['conditioning']['reference_box_px'],[0,500,1000,1500])
+        self.assertEqual(candidate['conditioning']['reference_kind'],'manual_center_square')
+        self.assertFalse(candidate['reference_provenance']['is_source_match'])
+        self.assertEqual(self.rows[1]['audit_status'],'unavailable')
+        result=self.store.decide(self.decision('b','accepted',2))
+        self.assertTrue(result['decisions']['b']['center_square'])
+        result=self.store.decide({**self.decision('b','accepted',3),'square_fit':False})
+        self.assertFalse(result['decisions']['b']['center_square'])
+        self.assertEqual(result['manifest']['candidates'],[])
+
+    def test_manual_center_is_stable_when_source_registration_later_changes(self):
+        self.rows[1].pop('region');self.publish()
+        self.store.decide({**self.decision('b','pending'),'square_fit':True,'center_square':True})
+        self.rows[1].update(audit_status='reliable',region={'polygon':[[200,200],[800,200],[800,800],[200,800]]})
+        self.publish()
+        result=self.store.decide(self.decision('b','accepted',1))
+        self.assertEqual(result['manifest']['candidates'][0]['conditioning']['reference_box_px'],[0,500,1000,1500])
+        with self.assertRaises(ValueError):
+            self.store.decide({**self.decision('b','accepted',2),'square_fit':False,'center_square':True})
+
     def test_http_persistence_and_foreign_origin_block(self):
         server = HTTPServer(('127.0.0.1', 0), partial(Handler, store=self.store, directory=str(self.root)))
         thread = threading.Thread(target=server.serve_forever, daemon=True)
