@@ -232,6 +232,46 @@ class TrainingReviewTests(unittest.TestCase):
         self.assertCountEqual(result,['saved','conflict'])
         self.assertEqual(ReviewStore(self.root).snapshot()['decisions']['a']['revision'],1)
 
+    def test_square_fit_fills_short_edge_before_bottom_or_side_extension(self):
+        self.rows[0]['region']['polygon']=[[200,600],[800,600],[800,1200],[200,1200]]
+        row=self.rows[0]
+        crop=training_crop(row,{'bottom':True},square_fit=True)
+        self.assertEqual(crop['reference_box_px'],[0,400,1000,1400])
+        self.assertEqual(crop['box_px'],[0,400,1000,2000])
+        self.assertEqual(crop['remaining_target_pixels'],400000)
+        landscape={**row,'dimensions':[2000,1000],'region':{'polygon':[[600,200],[1200,200],[1200,800],[600,800]]}}
+        crop=training_crop(landscape,{'right':True},square_fit=True)
+        self.assertEqual(crop['reference_box_px'],[400,0,1400,1000])
+        self.assertEqual(crop['box_px'],[400,0,2000,1000])
+        self.assertEqual(crop['remaining_target_pixels'],400000)
+
+    def test_square_choice_persists_export_matches_and_old_note_client_keeps_it(self):
+        self.rows[0]['region']['polygon']=[[200,600],[800,600],[800,1200],[200,1200]]
+        self.publish()
+        original=json.dumps(self.rows[0]['region'])
+        payload={**self.decision('a','accepted'),'square_fit':True,'request_id':'square-operation',
+                 'crop_extensions':{'top':False,'bottom':True}}
+        result=self.store.decide(payload)
+        self.assertEqual(result['manifest']['candidates'][0]['conditioning']['box_px'],[0,400,1000,2000])
+        self.assertTrue(ReviewStore(self.root).snapshot()['decisions']['a']['square_fit'])
+        self.assertEqual(self.store.decide(payload)['decisions']['a']['revision'],1)
+        with self.assertRaises(FileExistsError):self.store.decide({**payload,'square_fit':False})
+        result=self.store.decide(self.decision('a','accepted',1))
+        self.assertTrue(result['decisions']['a']['square_fit'])
+        result=self.store.decide({**self.decision('a','accepted',2),'square_fit':False})
+        self.assertEqual(result['manifest']['candidates'][0]['conditioning']['box_px'],[200,600,800,2000])
+        self.assertEqual(json.dumps(self.rows[0]['region']),original)
+
+    def test_square_fit_contains_reference_at_canvas_edge_and_refuses_clipping(self):
+        row={**self.rows[0],'region':{'polygon':[[200,1500],[800,1500],[800,1900],[200,1900]]}}
+        self.assertEqual(training_crop(row,{},square_fit=True)['reference_box_px'],[0,1000,1000,2000])
+        self.rows[0]['region']['polygon']=[[100,100],[900,100],[900,1500],[100,1500]]
+        self.publish()
+        self.assertIsNone(training_crop(self.rows[0],{},square_fit=True))
+        with self.assertRaises(ValueError):self.store.decide({**self.decision('a','accepted'),'square_fit':True})
+        with self.assertRaises(ValueError):self.store.decide({**self.decision('a','accepted'),'square_fit':'yes'})
+        self.assertFalse(self.store.path.exists())
+
     def test_http_persistence_and_foreign_origin_block(self):
         server = HTTPServer(('127.0.0.1', 0), partial(Handler, store=self.store, directory=str(self.root)))
         thread = threading.Thread(target=server.serve_forever, daemon=True)
