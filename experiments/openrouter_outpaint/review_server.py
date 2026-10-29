@@ -7,11 +7,12 @@ from __future__ import annotations
 
 import argparse
 from datetime import datetime, timezone
-from functools import partial
-from http.server import HTTPServer, SimpleHTTPRequestHandler
+from functools import partial, wraps
+from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 import json
 import math
 from pathlib import Path
+from threading import RLock
 from urllib.parse import parse_qs, urlsplit
 
 
@@ -57,10 +58,19 @@ def registration_row(row, confirmation):
     return row
 
 
+def serialized(method):
+    @wraps(method)
+    def call(self, *args, **kwargs):
+        with self.lock:
+            return method(self, *args, **kwargs)
+    return call
+
+
 class ReviewStore:
     def __init__(self, gallery: Path):
         self.gallery = gallery
         self.path = gallery / 'training-reviews.json'
+        self.lock = RLock()
 
     def rows(self):
         return {r['id']: r for r in json.loads((self.gallery / 'data.json').read_text())['rows']}
@@ -70,6 +80,7 @@ class ReviewStore:
             return {}
         return json.loads(self.path.read_text())['decisions']
 
+    @serialized
     def snapshot(self):
         rows, saved = self.rows(), self.records()
         # A decision never carries over to a different output with the same id.
@@ -115,6 +126,7 @@ class ReviewStore:
             os.fsync(stream.fileno())
         temp.replace(path)
 
+    @serialized
     def decide(self, payload):
         if payload.get('decision') not in ('accepted', 'rejected', 'pending'):
             raise ValueError('Unknown decision')
@@ -178,7 +190,13 @@ class ReviewStore:
         return snapshot
 
 
+class ReviewServer(ThreadingHTTPServer):
+    """Idle browser preconnections must not monopolize the whole gallery."""
+    daemon_threads = True
+
+
 class Handler(SimpleHTTPRequestHandler):
+    timeout = 10
     def __init__(self, *args, store, route='/sumbul', **kwargs):
         self.store = store
         self.route = route
@@ -265,7 +283,7 @@ def main():
     # Regenerate the derived manifest from authoritative decisions on restart.
     store.write(store.gallery / 'training-admission.json', store.snapshot()['manifest'])
     handler = partial(Handler, directory=str(args.directory.resolve()), store=store,route=args.route)
-    server = HTTPServer(('127.0.0.1', args.port), handler)
+    server = ReviewServer(('127.0.0.1', args.port), handler)
     print(f'Gallery and training reviews: http://127.0.0.1:{args.port}{args.route}/', flush=True)
     server.serve_forever()
 
