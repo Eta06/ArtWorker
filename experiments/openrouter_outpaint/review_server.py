@@ -16,15 +16,20 @@ from threading import RLock
 from urllib.parse import parse_qs, urlsplit
 
 
-def reference_box(row, square_fit=False):
+def reference_box(row, square_fit=False, center_square=False):
     """Reference bounds, optionally enclosed in a full-short-edge square."""
+    dimensions = row.get('dimensions', [])
+    if len(dimensions) != 2:
+        return None
+    w, h = dimensions
+    if w <= 0 or h <= 0:return None
+    if square_fit and center_square:
+        side=min(w,h);x,y=(w-side)//2,(h-side)//2
+        return [x,y,x+side,y+side]
     if row.get('audit_status') != 'reliable' or not row.get('region'):
         return None
     points = row['region'].get('polygon', [])
-    dimensions = row.get('dimensions', [])
-    if len(points) != 4 or len(dimensions) != 2 or any(len(p) != 2 for p in points):
-        return None
-    w, h = dimensions
+    if len(points) != 4 or any(len(p) != 2 for p in points):return None
     if w <= 0 or h <= 0 or not all(math.isfinite(v) for p in points for v in p):
         return None
     xs, ys = zip(*points)
@@ -42,9 +47,9 @@ def reference_box(row, square_fit=False):
     return base
 
 
-def training_crop(row, extensions, trim=None, square_fit=False):
+def training_crop(row, extensions, trim=None, square_fit=False, center_square=False):
     """Axis-aligned teacher crop; square fitting precedes extensions/trimming."""
-    base = reference_box(row, square_fit)
+    base = reference_box(row, square_fit, center_square)
     if base is None:
         return None
     w, h = row['dimensions']
@@ -63,6 +68,7 @@ def training_crop(row, extensions, trim=None, square_fit=False):
         return None
     return {'source': 'teacher_output_crop', 'box_px': box,
             'square_fit': square_fit, 'reference_box_px': base,
+            'reference_kind':'manual_center_square' if center_square else 'registered_source',
             'raw_dimensions': [w, h], 'target_box_px': target,
             'target_dimensions': [target[2]-target[0], target[3]-target[1]],
             'input_box_in_target_px': [box[0]-target[0], box[1]-target[1], box[2]-target[0], box[3]-target[1]],
@@ -113,13 +119,17 @@ class ReviewStore:
             item['raw_file'] = str((self.gallery / row['asset'] / 'raw.png').resolve())
             extensions = decisions.get(key, {}).get('crop_extensions', {'top': False, 'bottom': False})
             trim = decisions.get(key, {}).get('target_trim', {'top': False, 'bottom': False})
-            crop = training_crop(row, extensions, trim, decisions.get(key, {}).get('square_fit', False))
+            square=decisions.get(key, {}).get('square_fit', False)
+            center=decisions.get(key, {}).get('center_square', False) and square
+            crop = training_crop(row, extensions, trim, square, center)
             if crop:
                 item['conditioning'] = crop
-            if row.get('registration_recovery'):
+            if center:
+                item['reference_provenance']={'kind':'manual_center_square','human_selected':True,'is_source_match':False}
+            elif row.get('registration_recovery'):
                 item['registration_provenance'] = {'proposal_id': row['registration_recovery']['id'],
                     'human_confirmed': row['audit_status']=='reliable', 'evidence': row['registration_recovery']['evidence']}
-            if decision == 'accepted' and row['audit_status'] == 'reliable':
+            if decision == 'accepted' and (row['audit_status'] == 'reliable' or center):
                 if not crop:
                     blocked.append({**item, 'reason': 'valid_training_crop_required'})
                 elif crop['remaining_target_pixels'] == 0:
@@ -130,7 +140,7 @@ class ReviewStore:
                 blocked.append({**item, 'reason': 'registration_recovery_confirmation_required' if row.get('registration_recovery') else 'reliable_source_registration_required'})
             else:
                 excluded.append({**item, 'reason': decision})
-        manifest = {'schema_version': 3, 'policy': 'explicit_accept_and_reliable_registration',
+        manifest = {'schema_version': 3, 'policy': 'explicit_accept_and_registered_or_manual_reference',
                     'training_started': False, 'candidates': candidates,
                     'excluded': excluded, 'blocked': blocked}
         return {'schema_version': 1, 'decisions': decisions, 'manifest': manifest}
@@ -166,21 +176,24 @@ class ReviewStore:
                                  if old.get('raw_sha256') == row['raw_sha256'] else False)
         if type(square_fit) is not bool:
             raise ValueError('Square fit must be a boolean')
-        if square_fit and reference_box(row, True) is None:
+        center_square=payload.get('center_square',old.get('center_square',False) if square_fit and old.get('raw_sha256')==row['raw_sha256'] else False)
+        if type(center_square) is not bool or (center_square and not square_fit):
+            raise ValueError('Manual center square requires square fit')
+        if square_fit and reference_box(row, True, center_square) is None:
             raise ValueError('Complete reference cannot fit inside a canvas square')
         extensions = payload.get('crop_extensions', old.get('crop_extensions', {'top': False, 'bottom': False})
                                  if old.get('raw_sha256') == row['raw_sha256'] else {'top': False, 'bottom': False})
         if (not isinstance(extensions, dict) or set(extensions) not in ({'top', 'bottom'},{'top','bottom','left','right'})
                 or any(type(value) is not bool for value in extensions.values())):
             raise ValueError('Invalid crop extensions')
-        if any(extensions.values()) and not training_crop(row, extensions, square_fit=square_fit):
+        if any(extensions.values()) and not training_crop(row, extensions, square_fit=square_fit, center_square=center_square):
             raise ValueError('Reliable registration required for extending the training crop')
         trim = payload.get('target_trim', old.get('target_trim', {'top': False, 'bottom': False})
                            if old.get('raw_sha256') == row['raw_sha256'] else {'top': False, 'bottom': False})
         if (not isinstance(trim, dict) or set(trim) not in ({'top', 'bottom'},{'top','bottom','left','right'})
                 or any(type(value) is not bool for value in trim.values())):
             raise ValueError('Invalid target trim')
-        if any(trim.values()) and not training_crop(row, extensions, trim, square_fit):
+        if any(trim.values()) and not training_crop(row, extensions, trim, square_fit, center_square):
             raise ValueError('Reliable registration required for trimming the training target')
         revision = old.get('revision', 0) if old.get('raw_sha256') == row['raw_sha256'] else 0
         request_id = payload.get('request_id')
@@ -197,6 +210,8 @@ class ReviewStore:
                 raise FileExistsError('Request id reused for different registration confirmation')
             if 'square_fit' in payload and old.get('square_fit', False) != square_fit:
                 raise FileExistsError('Request id reused for different square fit')
+            if 'center_square' in payload and old.get('center_square',False)!=center_square:
+                raise FileExistsError('Request id reused for different manual center square')
             snapshot = self.snapshot()
             self.write(self.gallery / 'training-admission.json', snapshot['manifest'])
             return snapshot
@@ -207,6 +222,7 @@ class ReviewStore:
                               'crop_extensions': extensions,
                               'target_trim': trim,
                               'square_fit': square_fit,
+                              'center_square': center_square,
                               'registration_confirmation': confirmation,
                               'revision': revision + 1,
                               'updated_utc': datetime.now(timezone.utc).isoformat()}
