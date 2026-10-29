@@ -16,8 +16,8 @@ from threading import RLock
 from urllib.parse import parse_qs, urlsplit
 
 
-def training_crop(row, extensions, trim=None):
-    """Axis-aligned crop of the teacher output, distinct from source registration."""
+def reference_box(row, square_fit=False):
+    """Reference bounds, optionally enclosed in a full-short-edge square."""
     if row.get('audit_status') != 'reliable' or not row.get('region'):
         return None
     points = row['region'].get('polygon', [])
@@ -28,9 +28,27 @@ def training_crop(row, extensions, trim=None):
     if w <= 0 or h <= 0 or not all(math.isfinite(v) for p in points for v in p):
         return None
     xs, ys = zip(*points)
-    trim = trim or {'top': False, 'bottom': False}
     base = [max(0, min(w, math.floor(min(xs)))), max(0, min(h, math.floor(min(ys)))),
             max(0, min(w, math.ceil(max(xs)))), max(0, min(h, math.ceil(max(ys))))]
+    if base[2] <= base[0] or base[3] <= base[1]:
+        return None
+    if square_fit:
+        side = min(w, h)
+        if base[2]-base[0] > side or base[3]-base[1] > side:
+            return None
+        x = max(max(0, base[2]-side), min(min(w-side, base[0]), math.floor((base[0]+base[2]-side)/2)))
+        y = max(max(0, base[3]-side), min(min(h-side, base[1]), math.floor((base[1]+base[3]-side)/2)))
+        base = [x, y, x+side, y+side]
+    return base
+
+
+def training_crop(row, extensions, trim=None, square_fit=False):
+    """Axis-aligned teacher crop; square fitting precedes extensions/trimming."""
+    base = reference_box(row, square_fit)
+    if base is None:
+        return None
+    w, h = row['dimensions']
+    trim = trim or {'top': False, 'bottom': False}
     vertical = trim.get('top') or trim.get('bottom')
     horizontal = trim.get('left') or trim.get('right')
     target = [base[0] if trim.get('left') or (vertical and not horizontal) else 0,
@@ -44,6 +62,7 @@ def training_crop(row, extensions, trim=None):
     if box[2] <= box[0] or box[3] <= box[1]:
         return None
     return {'source': 'teacher_output_crop', 'box_px': box,
+            'square_fit': square_fit, 'reference_box_px': base,
             'raw_dimensions': [w, h], 'target_box_px': target,
             'target_dimensions': [target[2]-target[0], target[3]-target[1]],
             'input_box_in_target_px': [box[0]-target[0], box[1]-target[1], box[2]-target[0], box[3]-target[1]],
@@ -94,7 +113,7 @@ class ReviewStore:
             item['raw_file'] = str((self.gallery / row['asset'] / 'raw.png').resolve())
             extensions = decisions.get(key, {}).get('crop_extensions', {'top': False, 'bottom': False})
             trim = decisions.get(key, {}).get('target_trim', {'top': False, 'bottom': False})
-            crop = training_crop(row, extensions, trim)
+            crop = training_crop(row, extensions, trim, decisions.get(key, {}).get('square_fit', False))
             if crop:
                 item['conditioning'] = crop
             if row.get('registration_recovery'):
@@ -143,19 +162,25 @@ class ReviewStore:
         if confirmation is not None and confirmation != row.get('registration_recovery', {}).get('id'):
             raise ValueError('Registration confirmation does not match the current proposal')
         row = registration_row(row, confirmation)
+        square_fit = payload.get('square_fit', old.get('square_fit', False)
+                                 if old.get('raw_sha256') == row['raw_sha256'] else False)
+        if type(square_fit) is not bool:
+            raise ValueError('Square fit must be a boolean')
+        if square_fit and reference_box(row, True) is None:
+            raise ValueError('Complete reference cannot fit inside a canvas square')
         extensions = payload.get('crop_extensions', old.get('crop_extensions', {'top': False, 'bottom': False})
                                  if old.get('raw_sha256') == row['raw_sha256'] else {'top': False, 'bottom': False})
         if (not isinstance(extensions, dict) or set(extensions) not in ({'top', 'bottom'},{'top','bottom','left','right'})
                 or any(type(value) is not bool for value in extensions.values())):
             raise ValueError('Invalid crop extensions')
-        if any(extensions.values()) and not training_crop(row, extensions):
+        if any(extensions.values()) and not training_crop(row, extensions, square_fit=square_fit):
             raise ValueError('Reliable registration required for extending the training crop')
         trim = payload.get('target_trim', old.get('target_trim', {'top': False, 'bottom': False})
                            if old.get('raw_sha256') == row['raw_sha256'] else {'top': False, 'bottom': False})
         if (not isinstance(trim, dict) or set(trim) not in ({'top', 'bottom'},{'top','bottom','left','right'})
                 or any(type(value) is not bool for value in trim.values())):
             raise ValueError('Invalid target trim')
-        if any(trim.values()) and not training_crop(row, extensions, trim):
+        if any(trim.values()) and not training_crop(row, extensions, trim, square_fit):
             raise ValueError('Reliable registration required for trimming the training target')
         revision = old.get('revision', 0) if old.get('raw_sha256') == row['raw_sha256'] else 0
         request_id = payload.get('request_id')
@@ -170,6 +195,8 @@ class ReviewStore:
                 raise FileExistsError('Request id reused for a different training target')
             if 'registration_confirmation' in payload and old.get('registration_confirmation') != confirmation:
                 raise FileExistsError('Request id reused for different registration confirmation')
+            if 'square_fit' in payload and old.get('square_fit', False) != square_fit:
+                raise FileExistsError('Request id reused for different square fit')
             snapshot = self.snapshot()
             self.write(self.gallery / 'training-admission.json', snapshot['manifest'])
             return snapshot
@@ -179,6 +206,7 @@ class ReviewStore:
                               'decision': payload['decision'], 'reason': reason,
                               'crop_extensions': extensions,
                               'target_trim': trim,
+                              'square_fit': square_fit,
                               'registration_confirmation': confirmation,
                               'revision': revision + 1,
                               'updated_utc': datetime.now(timezone.utc).isoformat()}
