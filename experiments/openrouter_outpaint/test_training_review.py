@@ -1,15 +1,18 @@
 """Offline admission/persistence tests; all writes stay in temporary fixtures."""
 from functools import partial
+from concurrent.futures import ThreadPoolExecutor
 from http.server import HTTPServer
 import json
 from pathlib import Path
 import tempfile
 import threading
+import socket
+import time
 import unittest
 from urllib.error import HTTPError
 from urllib.request import Request, urlopen
 
-from review_server import Handler, ReviewStore, training_crop
+from review_server import Handler, ReviewServer, ReviewStore, training_crop
 
 
 class TrainingReviewTests(unittest.TestCase):
@@ -189,6 +192,45 @@ class TrainingReviewTests(unittest.TestCase):
                             headers={'Origin':origin,'Content-Type':'application/json'})
             with urlopen(request) as response:self.assertEqual(json.load(response)['decisions']['a']['decision'],'accepted')
         finally:server.shutdown();server.server_close();thread.join()
+
+    def test_idle_browser_connection_does_not_block_page_or_api(self):
+        (self.root/'index.html').write_text('review fixture')
+        server=ReviewServer(('127.0.0.1',0),partial(Handler,store=self.store,directory=str(self.root),route='/nilufer'))
+        thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
+        idle=socket.create_connection(server.server_address,timeout=1)
+        try:
+            origin=f'http://127.0.0.1:{server.server_port}'
+            with urlopen(origin+'/',timeout=1) as response:
+                self.assertEqual(response.read(),b'review fixture')
+            with urlopen(origin+'/nilufer/review-api',timeout=1) as response:
+                self.assertEqual(json.load(response)['decisions'],{})
+        finally:
+            idle.close();server.shutdown();server.server_close();thread.join()
+
+    def parallel_decisions(self, payloads):
+        barrier=threading.Barrier(2)
+        records=self.store.records
+        def slow_records():
+            saved=records();time.sleep(.02);return saved
+        self.store.records=slow_records
+        def save(payload):
+            barrier.wait(timeout=2)
+            try:self.store.decide(payload);return 'saved'
+            except FileExistsError:return 'conflict'
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            return list(pool.map(save,payloads))
+
+    def test_parallel_different_decisions_both_persist(self):
+        result=self.parallel_decisions([self.decision('a','accepted'),self.decision('c','rejected')])
+        self.assertEqual(result,['saved','saved'])
+        saved=ReviewStore(self.root).snapshot()['decisions']
+        self.assertEqual(saved['a']['decision'],'accepted')
+        self.assertEqual(saved['c']['decision'],'rejected')
+
+    def test_parallel_same_revision_has_one_conflict(self):
+        result=self.parallel_decisions([self.decision('a','accepted'),self.decision('a','rejected')])
+        self.assertCountEqual(result,['saved','conflict'])
+        self.assertEqual(ReviewStore(self.root).snapshot()['decisions']['a']['revision'],1)
 
     def test_http_persistence_and_foreign_origin_block(self):
         server = HTTPServer(('127.0.0.1', 0), partial(Handler, store=self.store, directory=str(self.root)))
