@@ -133,11 +133,11 @@ def verify_manifest(model_path: Path, manifest_path: Path, verify_payloads: bool
     return result
 
 
-def prepare_inputs(track_id: str, destination: Path) -> tuple:
+def prepare_inputs(track_id: str, destination: Path, inputs_file: Path | None = None) -> tuple:
     import numpy as np
     from PIL import Image
 
-    shared = json.loads((ROOT / "experiments/evaluation/inputs/inputs.json").read_text())
+    shared = json.loads((inputs_file or ROOT / "experiments/evaluation/inputs/inputs.json").read_text())
     track = next(item for item in shared["tracks"] if item["id"] == track_id)
     width, height = shared["canvas_size"]
     rect = shared["source_rect_xyxy"]
@@ -171,6 +171,7 @@ def prepare_inputs(track_id: str, destination: Path) -> tuple:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--track", choices=("track1", "track2", "track3"), default="track3")
+    parser.add_argument("--inputs-file", type=Path, default=ROOT / "experiments/evaluation/inputs/inputs.json")
     parser.add_argument("--steps", type=int, choices=(30, 50), default=50)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--guidance", type=float, default=30.0)
@@ -223,7 +224,7 @@ def main() -> None:
         from mflux.models.flux.variants.fill.mask_util import MaskUtil
         from mflux.models.flux.latent_creator.flux_latent_creator import FluxLatentCreator
 
-        source, input_info = prepare_inputs(args.track, destination)
+        source, input_info = prepare_inputs(args.track, destination, args.inputs_file)
         metrics.update(input_info)
         metrics["checkpoint_inventory"] = checkpoint_inventory(model_path)
         metrics["checkpoint_manifest"] = verify_manifest(model_path, manifest_path)
