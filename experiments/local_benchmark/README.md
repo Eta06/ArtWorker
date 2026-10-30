@@ -72,6 +72,13 @@ The default decoder is unchanged without the environment flag. This changes
 decoder computation and can change pixel values; it is a separately recorded
 memory-saving recipe, not a demonstrated equivalent output to full-frame decode.
 
+The subsequent `low-memory-execution.patch` adds a separate opt-in
+`ARTWORKER_LOW_MEMORY=1` profile. It evaluates/clears after each transformer block
+and caps phase caches at 64 MiB. The benchmark arm field `low_memory: true`
+selects it and requires the native confirmation log; unmodified native runtimes
+are rejected. Without the flag, the upstream/past experimental execution stays
+unchanged. See [Firuze](../../docs/stages/firuze.md) for actual execution status.
+
 `state.json` is the live queue status, `summary.json` contains only execution
 measurements and `comparisons/*.jpg` contain completed composite contact sheets.
 Every successful leaf has `raw.png`, `composite.png`, `result.json`, and a guarded
