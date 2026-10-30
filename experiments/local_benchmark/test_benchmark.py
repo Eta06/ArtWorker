@@ -94,6 +94,18 @@ class BenchmarkTests(unittest.TestCase):
             self.assertEqual(updated[1]['status'],'completed')
             self.assertEqual((old/'execution.log').read_text(),'preserved first attempt')
 
+    def test_low_memory_recipe_refuses_unmodified_native_runtime(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            folder=Path(tmp);out=folder/'out';out.mkdir()
+            arm={'model':'klein-4b','steps':4,'bits':4,'low_memory':True}
+            def fake_native(*args,**kwargs):
+                self.assertEqual(kwargs['env']['ARTWORKER_LOW_MEMORY'],'1')
+                kwargs['stdout'].write('Unmodified runtime produced no low-memory confirmation\n')
+            with patch.object(bench,'ROOT',folder),patch.object(bench.subprocess,'run',side_effect=fake_native):
+                with self.assertRaisesRegex(ValueError,'Low-memory execution was not confirmed'):
+                    bench.klein(arm,folder/'inputs.json',out)
+            self.assertFalse((out/'result.json').exists())
+
     def test_source_paste_does_not_hide_raw_error_or_change_exterior(self):
         from PIL import Image
         with tempfile.TemporaryDirectory() as tmp:
