@@ -1,0 +1,24 @@
+--- a/Sources/Flux2Core/Pipeline/Flux2Pipeline.swift
++++ b/Sources/Flux2Core/Pipeline/Flux2Pipeline.swift
+@@ -1921,7 +1921,20 @@
+             let finalLatents = LatentUtils.unpatchifyLatents(finalPatchified)
+             eval(finalLatents)
+ 
+-            let decoded = vae!.decode(finalLatents)
++            let decoded: MLXArray
++            if ProcessInfo.processInfo.environment["ARTWORKER_VAE_TILING"] == "portrait80" {
++                // This fixed benchmark has two 80-row latent tiles with a
++                // 16-row overlap. Unlike arbitrary clamped-edge tiling, these
++                // origins exactly cover 144x64 without changing output size.
++                guard finalLatents.shape[2] == 144 && finalLatents.shape[3] == 64 else {
++                    throw Flux2Error.generationFailed("portrait80 VAE tiling requires 512x1152 output")
++                }
++                Flux2Debug.log("ArtWorker: portrait80 tiled VAE decode enabled (2 vertical tiles)")
++                decoded = vae!.decodeWithTiling(finalLatents,
++                    tiling: VAETilingConfig(tileSize: 80, tileOverlap: 16, minTileThreshold: 0))
++            } else {
++                decoded = vae!.decode(finalLatents)
++            }
+             eval(decoded)
+             profiler.end("7. VAE Decode")
+ 
