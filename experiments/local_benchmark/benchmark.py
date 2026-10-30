@@ -141,6 +141,7 @@ def klein(arm,inputs,out):
         if sha(emb)!=expected:raise ValueError('Fixed embedding fingerprint mismatch')
         env.update(ARTWORKER_FIXED_EMBEDDING=str(emb),ARTWORKER_FIXED_EMBEDDING_SHA256=expected)
     if arm.get('profile'):env['ARTWORKER_QUANT_PROFILE']=arm['profile']
+    if arm.get('low_memory'):env['ARTWORKER_LOW_MEMORY']='1'
     if arm.get('vae_tiling'):
         if arm['vae_tiling']!='portrait80':raise ValueError('Unsupported benchmark VAE tiling recipe')
         env['ARTWORKER_VAE_TILING']=arm['vae_tiling']
@@ -150,9 +151,10 @@ def klein(arm,inputs,out):
     if arm.get('baked') and ('LoRA weights BAKED IN' not in text or 'Loaded pre-quantized' not in text):raise ValueError('Baked/prequantized load unconfirmed')
     if arm.get('cached') and ('ArtWorker fixed embedding validated; text encoder not loaded' not in text or 'Loading text encoder for' in text):raise ValueError('Encoder bypass unconfirmed')
     if arm.get('profile') and f"ArtWorker quantization profile validated: {arm['profile']}" not in text:raise ValueError('Mixed precision load unconfirmed')
+    if arm.get('low_memory') and 'ArtWorker: low-memory execution, evalEvery=1' not in text:raise ValueError('Low-memory execution was not confirmed')
     if arm.get('vae_tiling') and 'ArtWorker: portrait80 tiled VAE decode enabled (2 vertical tiles)' not in text:raise ValueError('Tiled VAE decode was not confirmed')
     if arm.get('lora') and '[LoRA] Merged 88 layers (0 not found)' not in text:raise ValueError('All 88 adapter layers were not confirmed')
-    return out/'raw.png',{'command':cmd,'prompt':prompt,'binary_sha256':sha(cmd[0]),'vae_tiling':arm.get('vae_tiling'),'method':'native image-conditioned edit; no color harmonization'}
+    return out/'raw.png',{'command':cmd,'prompt':prompt,'binary_sha256':sha(cmd[0]),'vae_tiling':arm.get('vae_tiling'),'low_memory':arm.get('low_memory',False),'method':'native image-conditioned edit; no color harmonization'}
 
 
 def worker(folder,arm_id,cover_id,out):
