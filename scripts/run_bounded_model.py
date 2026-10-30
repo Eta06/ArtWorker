@@ -36,6 +36,14 @@ def pressure_and_swap() -> tuple[int, int]:
     return int(values[0]), swap
 
 
+def free_memory_percent() -> int:
+    value = subprocess.check_output(['memory_pressure', '-Q'], text=True)
+    match = re.search(r'System-wide memory free percentage:\s*(\d+)%', value)
+    if not match:
+        raise RuntimeError('Cannot read system memory headroom; refusing unmonitored execution.')
+    return int(match.group(1))
+
+
 def group_memory(pid: int) -> tuple[int, int]:
     snapshot = subprocess.check_output(['ps', '-axo', 'pid,ppid,rss'], text=True)
     rows = [tuple(map(int, row.split())) for row in snapshot.splitlines()[1:] if row.strip()]
@@ -48,7 +56,12 @@ def group_memory(pid: int) -> tuple[int, int]:
     return sum(rss * 1024 for child, parent, rss in rows if child in ids), sum(footprint(child) for child in ids)
 
 
-def run(command: list[str], output: Path, max_gib: float, timeout: float, max_swap_mib: float = 256) -> dict:
+def run(command: list[str], output: Path, max_gib: float, timeout: float, max_swap_mib: float = 256,
+        *, allowed_pressure_levels: tuple[int, ...] = (1,), min_free_percent: int | None = None) -> dict:
+    if not allowed_pressure_levels or not set(allowed_pressure_levels).issubset({1, 2}):
+        raise ValueError('Only normal or explicitly allowed warning pressure may run; critical pressure is forbidden.')
+    if min_free_percent is not None and not 0 <= min_free_percent <= 100:
+        raise ValueError('Invalid system memory headroom floor')
     output.mkdir(parents=True, exist_ok=True)
     telemetry_path = output / 'memory.jsonl'
     receipt_path = output / 'launch.json'
@@ -59,13 +72,17 @@ def run(command: list[str], output: Path, max_gib: float, timeout: float, max_sw
     with lock_path.open('a+') as lock:
         fcntl.flock(lock.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
         initial_pressure, initial_swap = pressure_and_swap()
-        if initial_pressure != 1:
+        if initial_pressure not in allowed_pressure_levels:
             raise RuntimeError('Memory pressure is already elevated; no model launched.')
-        receipt = {'status':'running', 'command':command, 'footprint_limit_bytes':int(max_gib * 1024**3), 'swap_growth_limit_bytes':int(max_swap_mib * 1024**2), 'timeout_seconds':timeout, 'sample_interval_seconds':0.1, 'initial_swap_bytes':initial_swap}
+        free_percent = free_memory_percent() if min_free_percent is not None else None
+        if min_free_percent is not None and free_percent < min_free_percent:
+            raise RuntimeError('System memory headroom is below the configured floor; no model launched.')
+        receipt = {'status':'running', 'command':command, 'footprint_limit_bytes':int(max_gib * 1024**3), 'swap_growth_limit_bytes':int(max_swap_mib * 1024**2), 'timeout_seconds':timeout, 'sample_interval_seconds':0.1, 'initial_swap_bytes':initial_swap, 'allowed_pressure_levels':list(allowed_pressure_levels), 'min_system_free_percent':min_free_percent}
         receipt_path.write_text(json.dumps(receipt, indent=2) + '\n')
         start = time.monotonic()
         peak_rss = peak_footprint = 0
         reason = 'complete'
+        next_headroom_check = 0.0
         with (output / 'execution.log').open('w') as log, telemetry_path.open('w') as telemetry:
             child = subprocess.Popen(['nice', '-n', '15', *command], stdout=log, stderr=subprocess.STDOUT, start_new_session=True, cwd=ROOT)
             receipt['pid'] = child.pid
@@ -75,16 +92,21 @@ def run(command: list[str], output: Path, max_gib: float, timeout: float, max_sw
                     rss, physical = group_memory(child.pid)
                     level, swap = pressure_and_swap()
                     elapsed = time.monotonic() - start
+                    if min_free_percent is not None and elapsed >= next_headroom_check:
+                        free_percent = free_memory_percent()
+                        next_headroom_check = elapsed + 1
                     peak_rss = max(peak_rss, rss)
                     peak_footprint = max(peak_footprint, physical)
-                    telemetry.write(json.dumps({'seconds':round(elapsed,3),'rss_bytes':rss,'phys_footprint_bytes':physical,'pressure_level':level,'swap_bytes':swap}) + '\n')
+                    telemetry.write(json.dumps({'seconds':round(elapsed,3),'rss_bytes':rss,'phys_footprint_bytes':physical,'pressure_level':level,'swap_bytes':swap,'system_free_percent':free_percent}) + '\n')
                     telemetry.flush()
                     if max(rss, physical) > receipt['footprint_limit_bytes']:
                         reason = 'memory_limit'
-                    elif level != 1:
+                    elif level not in allowed_pressure_levels:
                         reason = 'system_memory_pressure'
                     elif swap - initial_swap > receipt['swap_growth_limit_bytes']:
                         reason = 'swap_growth_limit'
+                    elif min_free_percent is not None and free_percent < min_free_percent:
+                        reason = 'system_memory_headroom'
                     elif elapsed > timeout:
                         reason = 'wall_time_limit'
                     if reason != 'complete':
