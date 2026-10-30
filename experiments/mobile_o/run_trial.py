@@ -24,6 +24,7 @@ sys.path.insert(0, str(REPO))
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--tracks", nargs="+", default=["track1", "track2", "track3"])
+    parser.add_argument("--inputs-file", type=Path, default=ROOT / "experiments/evaluation/inputs/inputs.json")
     parser.add_argument("--steps", type=int, default=20)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--width", type=int, default=512)
@@ -99,7 +100,8 @@ def main():
             "diffusers": __import__("diffusers").__version__,
         }
         print(f"READY load={metadata['model_load_seconds']:.2f}s parameters={metadata['parameter_count']}", flush=True)
-        inputs = json.loads((ROOT / "experiments/evaluation/inputs/inputs.json").read_text())
+        inputs = json.loads(args.inputs_file.read_text())
+        metadata["inputs_file"] = str(args.inputs_file.resolve())
         instruction = (
             "Extend this album artwork vertically to fill the blank top and bottom areas. "
             "Continue the existing scenery, colors, lighting and textures naturally. "
