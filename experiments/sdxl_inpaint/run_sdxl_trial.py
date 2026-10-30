@@ -83,6 +83,7 @@ def manifest_check(model_path: Path, manifest_path: Path, payloads: bool = False
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--track", choices=("track1", "track2", "track3"), default="track3")
+    parser.add_argument("--inputs-file", type=Path, default=ROOT / "experiments/evaluation/inputs/inputs.json")
     parser.add_argument("--steps", type=int, choices=(20, 30), default=20)
     parser.add_argument("--guidance", type=float, default=8.0)
     parser.add_argument("--strength", type=float, default=0.99)
@@ -137,7 +138,7 @@ def main() -> None:
         metrics.update({"torch_version": torch.__version__, "diffusers_version": diffusers.__version__, "python_version": sys.version})
         source_file = Path(inspect.getsourcefile(StableDiffusionXLInpaintPipeline))
         metrics["pipeline_source"] = {"path": str(source_file), "sha256": file_sha256(source_file)}
-        shared = json.loads((ROOT / "experiments/evaluation/inputs/inputs.json").read_text())
+        shared = json.loads(args.inputs_file.read_text())
         track = next(item for item in shared["tracks"] if item["id"] == args.track)
         width, height = shared["canvas_size"]
         rect = shared["source_rect_xyxy"]
