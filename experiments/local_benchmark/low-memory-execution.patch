@@ -1,0 +1,36 @@
+--- a/Sources/Flux2Core/Pipeline/Flux2Pipeline.swift
++++ b/Sources/Flux2Core/Pipeline/Flux2Pipeline.swift
+@@ -308,9 +308,15 @@
+         self.model = model
+         self.quantization = quantization
+         self.vaeVariant = vaeVariant
+-        self.memoryOptimization = memoryOptimization ?? MemoryOptimizationConfig.recommended(
+-            forRAMGB: Flux2MemoryManager.shared.physicalMemoryGB
+-        )
++        if ProcessInfo.processInfo.environment["ARTWORKER_LOW_MEMORY"] == "1" {
++            self.memoryOptimization = MemoryOptimizationConfig(
++                evalFrequency: 1, clearCacheOnEval: true, evalBetweenPhases: true)
++            Flux2Debug.log("ArtWorker: low-memory execution, evalEvery=1")
++        } else {
++            self.memoryOptimization = memoryOptimization ?? MemoryOptimizationConfig.recommended(
++                forRAMGB: Flux2MemoryManager.shared.physicalMemoryGB
++            )
++        }
+         self.scheduler = FlowMatchEulerScheduler()
+         self.downloader = hfToken != nil ? Flux2ModelDownloader(hfToken: hfToken) : Flux2ModelDownloader()
+         self.kleinEncoderPath = kleinEncoderPath
+--- a/Sources/Flux2Core/Configuration/MemoryConfig.swift
++++ b/Sources/Flux2Core/Configuration/MemoryConfig.swift
+@@ -156,8 +156,10 @@
+ 
+     /// Apply cache limit with specific byte value
+     public static func applyCacheLimit(bytes: Int) {
+-        Memory.cacheLimit = bytes
+-        Flux2Debug.log("GPU cache limit: \(bytes / MB) MB")
++        let limit = ProcessInfo.processInfo.environment["ARTWORKER_LOW_MEMORY"] == "1"
++            ? min(bytes, 64 * MB) : bytes
++        Memory.cacheLimit = limit
++        Flux2Debug.log("GPU cache limit: \(limit / MB) MB")
+     }
+ 
+     /// Clear GPU cache
